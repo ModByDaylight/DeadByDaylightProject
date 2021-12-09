@@ -1,0 +1,16 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-PlatformsProviders.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Data\Projects\DeadByDaylight\Intermediate\Build\Win64\DeadByDaylightEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\PlatformsProviders\Intermediate\Build\Win64\UE4Editor\Development\PlatformsProviders\PlatformsProvidersModule.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\PlatformsProviders\Intermediate\Build\Win64\UE4Editor\Development\PlatformsProviders\EPlatformFlag.gen.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\PlatformsProviders\Intermediate\Build\Win64\UE4Editor\Development\PlatformsProviders\EProviderFlag.gen.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\PlatformsProviders\Intermediate\Build\Win64\UE4Editor\Development\PlatformsProviders\PlatformsProviders.init.gen.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\PlatformsProviders\Intermediate\Build\Win64\UE4Editor\Development\PlatformsProviders\Default.rc2.res"
+/OUT:"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\PlatformsProviders\Intermediate\Build\Win64\UE4Editor\Development\PlatformsProviders\UE4Editor-PlatformsProviders.lib"
+/INCLUDE:IMPLEMENT_MODULE_PlatformsProviders

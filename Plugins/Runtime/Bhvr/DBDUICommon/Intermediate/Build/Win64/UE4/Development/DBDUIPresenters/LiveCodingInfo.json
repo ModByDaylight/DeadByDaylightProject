@@ -1,0 +1,54 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.DBDUIPresenters.cpp.obj": [
+			"ContextObserver.cpp.obj",
+			"DBDUIPresentersModule.cpp.obj",
+			"ExamplePresenter.cpp.obj",
+			"FocusHandler.cpp.obj",
+			"GameManualSubPresenter.cpp.obj",
+			"HudObjectivesPresenter.cpp.obj",
+			"HudPresenter.cpp.obj",
+			"HudRootContainer.cpp.obj",
+			"OnboardingMenuPresenter.cpp.obj",
+			"OnboardingTutorialSubPresenter.cpp.obj",
+			"PawnObserver.cpp.obj",
+			"Presenter.cpp.obj",
+			"PresenterGroup.cpp.obj",
+			"PresenterGroupHandler.cpp.obj",
+			"RootContainer.cpp.obj",
+			"SkillCheckPresenter.cpp.obj",
+			"SubPresenter.cpp.obj",
+			"SubtitlesPresenter.cpp.obj",
+			"TemplatePresenter.cpp.obj",
+			"TestPresenter.cpp.obj",
+			"UIComponent.cpp.obj",
+			"UIConsoleCommands.cpp.obj"
+		],
+		"Module.DBDUIPresenters.gen.cpp.obj": [
+			"ContextObserver.gen.cpp.obj",
+			"DBDUIPresenters.init.gen.cpp.obj",
+			"EContextSection.gen.cpp.obj",
+			"ExamplePresenter.gen.cpp.obj",
+			"FocusHandler.gen.cpp.obj",
+			"GameManualSubPresenter.gen.cpp.obj",
+			"HudObjectivesPresenter.gen.cpp.obj",
+			"HudPresenter.gen.cpp.obj",
+			"HudRootContainer.gen.cpp.obj",
+			"OnboardingMenuPresenter.gen.cpp.obj",
+			"OnboardingTutorialSubPresenter.gen.cpp.obj",
+			"PawnObserver.gen.cpp.obj",
+			"Presenter.gen.cpp.obj",
+			"PresenterGroup.gen.cpp.obj",
+			"PresenterGroupHandler.gen.cpp.obj",
+			"RootContainer.gen.cpp.obj",
+			"SkillCheckPresenter.gen.cpp.obj",
+			"SubPresenter.gen.cpp.obj",
+			"SubtitlesPresenter.gen.cpp.obj",
+			"TemplatePresenter.gen.cpp.obj",
+			"TestPresenter.gen.cpp.obj",
+			"UIComponent.gen.cpp.obj",
+			"UIConsoleCommands.gen.cpp.obj"
+		]
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.SentryIo.cpp.obj": [
+			"SentryIoBaseSubsystem.cpp.obj",
+			"SentryIoModule.cpp.obj",
+			"SentryIoSubsystem.cpp.obj"
+		],
+		"Module.SentryIo.gen.cpp.obj": [
+			"SentryIo.init.gen.cpp.obj",
+			"SentryIoBaseSubsystem.gen.cpp.obj",
+			"SentryIoSubsystem.gen.cpp.obj"
+		]
+	}
+}

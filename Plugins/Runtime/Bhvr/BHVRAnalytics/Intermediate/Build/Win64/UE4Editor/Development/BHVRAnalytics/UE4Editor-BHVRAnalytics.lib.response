@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-BHVRAnalytics.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Data\Projects\DeadByDaylight\Intermediate\Build\Win64\DeadByDaylightEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\BHVRAnalytics\Intermediate\Build\Win64\UE4Editor\Development\BHVRAnalytics\Module.BHVRAnalytics.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\BHVRAnalytics\Intermediate\Build\Win64\UE4Editor\Development\BHVRAnalytics\Module.BHVRAnalytics.gen.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\BHVRAnalytics\Intermediate\Build\Win64\UE4Editor\Development\BHVRAnalytics\Default.rc2.res"
+/OUT:"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\BHVRAnalytics\Intermediate\Build\Win64\UE4Editor\Development\BHVRAnalytics\UE4Editor-BHVRAnalytics.lib"
+/INCLUDE:IMPLEMENT_MODULE_BHVRAnalytics

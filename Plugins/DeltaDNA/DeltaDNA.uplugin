@@ -1,0 +1,18 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "DeltaDNA Integration",
+	"Description": "DeltaDNA Integration",
+	"Category": "Online Platform",
+	"CreatedBy": "Behaviour Interactive Inc.",
+	"CreatedByURL": "http://bhvr.com",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EnabledByDefault": true,
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false
+}

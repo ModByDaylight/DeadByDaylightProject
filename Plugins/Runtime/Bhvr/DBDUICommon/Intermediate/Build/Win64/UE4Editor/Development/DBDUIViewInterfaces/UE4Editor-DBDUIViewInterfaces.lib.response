@@ -1,0 +1,16 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-DBDUIViewInterfaces.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Data\Projects\DeadByDaylight\Intermediate\Build\Win64\DeadByDaylightEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\DBDUICommon\Intermediate\Build\Win64\UE4Editor\Development\DBDUIViewInterfaces\Module.DBDUIViewInterfaces.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\DBDUICommon\Intermediate\Build\Win64\UE4Editor\Development\DBDUIViewInterfaces\Module.DBDUIViewInterfaces.gen.1_of_3.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\DBDUICommon\Intermediate\Build\Win64\UE4Editor\Development\DBDUIViewInterfaces\Module.DBDUIViewInterfaces.gen.2_of_3.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\DBDUICommon\Intermediate\Build\Win64\UE4Editor\Development\DBDUIViewInterfaces\Module.DBDUIViewInterfaces.gen.3_of_3.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\DBDUICommon\Intermediate\Build\Win64\UE4Editor\Development\DBDUIViewInterfaces\Default.rc2.res"
+/OUT:"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\DBDUICommon\Intermediate\Build\Win64\UE4Editor\Development\DBDUIViewInterfaces\UE4Editor-DBDUIViewInterfaces.lib"
+/INCLUDE:IMPLEMENT_MODULE_DBDUIViewInterfaces

@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-BeUtil.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Data\Projects\DeadByDaylight\Intermediate\Build\Win64\DeadByDaylightEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\BeUtil\Intermediate\Build\Win64\UE4Editor\Development\BeUtil\Module.BeUtil.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\BeUtil\Intermediate\Build\Win64\UE4Editor\Development\BeUtil\Module.BeUtil.gen.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\BeUtil\Intermediate\Build\Win64\UE4Editor\Development\BeUtil\Default.rc2.res"
+/OUT:"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\BeUtil\Intermediate\Build\Win64\UE4Editor\Development\BeUtil\UE4Editor-BeUtil.lib"
+/INCLUDE:IMPLEMENT_MODULE_BeUtil

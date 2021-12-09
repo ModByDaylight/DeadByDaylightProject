@@ -1,0 +1,19 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.BeUtil.cpp.obj": [
+			"BeMaterialEditorHelper.cpp.obj",
+			"BeMaterialScalar.cpp.obj",
+			"BeMaterialTexture.cpp.obj",
+			"BeMaterialVector.cpp.obj",
+			"BeUtilModule.cpp.obj"
+		],
+		"Module.BeUtil.gen.cpp.obj": [
+			"BeMaterialEditorHelper.gen.cpp.obj",
+			"BeMaterialScalar.gen.cpp.obj",
+			"BeMaterialTexture.gen.cpp.obj",
+			"BeMaterialVector.gen.cpp.obj",
+			"BeUtil.init.gen.cpp.obj"
+		]
+	}
+}

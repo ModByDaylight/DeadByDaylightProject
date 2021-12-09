@@ -1,0 +1,20 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.UITween.cpp.obj": [
+			"UITween.cpp.obj",
+			"UITweenInstance.cpp.obj",
+			"UITweenMaterialScalarProperties.cpp.obj",
+			"UITweenMaterialVectorProperties.cpp.obj",
+			"UITweenModule.cpp.obj"
+		],
+		"Module.UITween.gen.cpp.obj": [
+			"EEasingType.gen.cpp.obj",
+			"UITween.gen.cpp.obj",
+			"UITween.init.gen.cpp.obj",
+			"UITweenInstance.gen.cpp.obj",
+			"UITweenMaterialScalarProperties.gen.cpp.obj",
+			"UITweenMaterialVectorProperties.gen.cpp.obj"
+		]
+	}
+}

@@ -1,0 +1,5 @@
+#include "StartLitActivationTimerRemainingCooldownElapsedIconStrategy.h"
+
+UStartLitActivationTimerRemainingCooldownElapsedIconStrategy::UStartLitActivationTimerRemainingCooldownElapsedIconStrategy() {
+}
+

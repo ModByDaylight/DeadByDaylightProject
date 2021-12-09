@@ -1,0 +1,33 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Ada Integration",
+	"Description": "Ada Integration",
+	"Category": "Online Platform",
+	"CreatedBy": "Behaviour Interactive Inc.",
+	"CreatedByURL": "http://bhvr.com",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EnabledByDefault": true,
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"SupportedTargetPlatforms": [
+		"Android",
+		"IOS",
+		"Win64"
+	],
+	"Plugins": [
+		{
+			"Name": "OnlinePresence",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystem",
+			"Enabled": true
+		}
+	]
+}

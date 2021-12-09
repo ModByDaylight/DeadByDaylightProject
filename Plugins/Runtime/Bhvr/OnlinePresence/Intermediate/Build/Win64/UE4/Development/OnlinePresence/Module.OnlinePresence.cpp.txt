@@ -1,0 +1,11 @@
+C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\OnlinePresence\Intermediate\Build\Win64\UE4\Development\OnlinePresence\Definitions.OnlinePresence.h
+C:/Data/Projects/DeadByDaylight/Plugins/Runtime/Bhvr/OnlinePresence/Source/OnlinePresence/Private/MirrorsConfig.cpp
+C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\OnlinePresence\Source\OnlinePresence\Public\MirrorsConfig.h
+C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\OnlinePresence\Intermediate\Build\Win64\UE4\Inc\OnlinePresence\MirrorsConfig.generated.h
+C:/Data/Projects/DeadByDaylight/Plugins/Runtime/Bhvr/OnlinePresence/Source/OnlinePresence/Private/OnlinePresenceExternalCommands.cpp
+C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\OnlinePresence\Source\OnlinePresence\Public\OnlinePresenceExternalCommands.h
+C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\OnlinePresence\Intermediate\Build\Win64\UE4\Inc\OnlinePresence\OnlinePresenceExternalCommands.generated.h
+C:/Data/Projects/DeadByDaylight/Plugins/Runtime/Bhvr/OnlinePresence/Source/OnlinePresence/Private/OnlinePresenceModule.cpp
+C:/Data/Projects/DeadByDaylight/Plugins/Runtime/Bhvr/OnlinePresence/Source/OnlinePresence/Private/SteamConfig.cpp
+C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\OnlinePresence\Source\OnlinePresence\Public\SteamConfig.h
+C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\OnlinePresence\Intermediate\Build\Win64\UE4\Inc\OnlinePresence\SteamConfig.generated.h

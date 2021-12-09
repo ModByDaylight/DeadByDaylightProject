@@ -1,0 +1,5 @@
+#include "K25LamentConfigurationPossessionChainAttacksEffect.h"
+
+UK25LamentConfigurationPossessionChainAttacksEffect::UK25LamentConfigurationPossessionChainAttacksEffect() {
+}
+

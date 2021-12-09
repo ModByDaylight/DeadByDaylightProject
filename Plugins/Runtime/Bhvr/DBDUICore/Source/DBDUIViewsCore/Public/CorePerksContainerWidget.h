@@ -1,0 +1,26 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "PerksContainerViewInterface.h"
+#include "CoreBaseHudWidget.h"
+#include "CorePerksContainerWidget.generated.h"
+
+class UPerkViewInterface;
+class IPerkViewInterface;
+class UCorePerkWidget;
+
+UCLASS(EditInlineNew)
+class DBDUIVIEWSCORE_API UCorePerksContainerWidget : public UCoreBaseHudWidget, public IPerksContainerViewInterface {
+    GENERATED_BODY()
+public:
+protected:
+    UPROPERTY(BlueprintReadWrite, Export)
+    TArray<UCorePerkWidget*> PerkWidgets;
+    
+private:
+    UPROPERTY(Transient)
+    TArray<TScriptInterface<IPerkViewInterface>> _perkViewInterfaces;
+    
+public:
+    UCorePerksContainerWidget();
+};
+

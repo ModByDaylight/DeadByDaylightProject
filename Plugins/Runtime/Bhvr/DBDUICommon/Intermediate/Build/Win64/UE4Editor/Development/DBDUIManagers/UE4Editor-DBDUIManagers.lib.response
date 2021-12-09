@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-DBDUIManagers.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Data\Projects\DeadByDaylight\Intermediate\Build\Win64\DeadByDaylightEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\DBDUICommon\Intermediate\Build\Win64\UE4Editor\Development\DBDUIManagers\Module.DBDUIManagers.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\DBDUICommon\Intermediate\Build\Win64\UE4Editor\Development\DBDUIManagers\Module.DBDUIManagers.gen.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\DBDUICommon\Intermediate\Build\Win64\UE4Editor\Development\DBDUIManagers\Default.rc2.res"
+/OUT:"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\DBDUICommon\Intermediate\Build\Win64\UE4Editor\Development\DBDUIManagers\UE4Editor-DBDUIManagers.lib"
+/INCLUDE:IMPLEMENT_MODULE_DBDUIManagers

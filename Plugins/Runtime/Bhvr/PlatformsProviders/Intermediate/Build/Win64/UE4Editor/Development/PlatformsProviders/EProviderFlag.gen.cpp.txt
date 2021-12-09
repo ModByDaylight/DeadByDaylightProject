@@ -1,0 +1,5 @@
+C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\PlatformsProviders\Intermediate\Build\Win64\UE4Editor\Development\PlatformsProviders\Definitions.PlatformsProviders.h
+C:\Data\UnrealEngine\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Data\UnrealEngine\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\PlatformsProviders\Source\PlatformsProviders/Public/EProviderFlag.h
+C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\PlatformsProviders\Intermediate\Build\Win64\UE4Editor\Inc\PlatformsProviders\EProviderFlag.generated.h

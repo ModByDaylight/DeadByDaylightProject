@@ -1,0 +1,11 @@
+#include "HillbillyOverheatPresentationItemProgressComponent.h"
+
+class UHillbillyChainsawOverheatComponent;
+
+void UHillbillyOverheatPresentationItemProgressComponent::SetHillbillyChainsawOverheatComponent(UHillbillyChainsawOverheatComponent* hillbillyChainsawOverheatComponent) {
+}
+
+UHillbillyOverheatPresentationItemProgressComponent::UHillbillyOverheatPresentationItemProgressComponent() {
+    this->_hillbillyChainsawOverheatComponent = NULL;
+}
+

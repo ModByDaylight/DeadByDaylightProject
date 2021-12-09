@@ -1,0 +1,31 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.CommandletPlugin.cpp.obj": [
+			"CatalogValidationCommandlet.cpp.obj",
+			"CommandletPluginModule.cpp.obj",
+			"CustomizationValidationCommandlet.cpp.obj",
+			"DataTableToCsvCommandlet.cpp.obj",
+			"FixCustomizationAccessorySocketCommandlet.cpp.obj",
+			"GenerateCurveFloatNetIdTableCommandlet.cpp.obj",
+			"GenerateStoreCustomizationExclusionFileCommandlet.cpp.obj",
+			"JournalsValidationCommandlet.cpp.obj",
+			"LoadoutExportCommandlet.cpp.obj",
+			"StoryDescriptionValidationCommandlet.cpp.obj",
+			"UpdateJournalVignetteCinematicsCommandlet.cpp.obj"
+		],
+		"Module.CommandletPlugin.gen.cpp.obj": [
+			"CatalogValidationCommandlet.gen.cpp.obj",
+			"CommandletPlugin.init.gen.cpp.obj",
+			"CustomizationValidationCommandlet.gen.cpp.obj",
+			"DataTableToCsvCommandlet.gen.cpp.obj",
+			"FixCustomizationAccessorySocketCommandlet.gen.cpp.obj",
+			"GenerateCurveFloatNetIdTableCommandlet.gen.cpp.obj",
+			"GenerateStoreCustomizationExclusionFileCommandlet.gen.cpp.obj",
+			"JournalsValidationCommandlet.gen.cpp.obj",
+			"LoadoutExportCommandlet.gen.cpp.obj",
+			"StoryDescriptionValidationCommandlet.gen.cpp.obj",
+			"UpdateJournalVignetteCinematicsCommandlet.gen.cpp.obj"
+		]
+	}
+}

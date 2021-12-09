@@ -1,0 +1,19 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.OnlinePresence.cpp.obj": [
+			"MirrorsConfig.cpp.obj",
+			"OnlinePresenceExternalCommands.cpp.obj",
+			"OnlinePresenceModule.cpp.obj",
+			"SteamConfig.cpp.obj"
+		],
+		"Module.OnlinePresence.gen.cpp.obj": [
+			"ERichPresenceStatus.gen.cpp.obj",
+			"ERichPresenceUserType.gen.cpp.obj",
+			"MirrorsConfig.gen.cpp.obj",
+			"OnlinePresence.init.gen.cpp.obj",
+			"OnlinePresenceExternalCommands.gen.cpp.obj",
+			"SteamConfig.gen.cpp.obj"
+		]
+	}
+}

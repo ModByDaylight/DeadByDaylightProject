@@ -1,0 +1,18 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "BHVR Utilities",
+	"Description": "Customization of editor's detail window for actors and components",
+	"Category": "BHVR Modules",
+	"CreatedBy": "Behaviour Interactive",
+	"CreatedByURL": "http://www.bhvr.com/",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EnabledByDefault": true,
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false
+}

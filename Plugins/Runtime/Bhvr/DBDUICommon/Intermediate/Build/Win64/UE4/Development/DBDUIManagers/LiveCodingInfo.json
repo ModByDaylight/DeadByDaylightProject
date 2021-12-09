@@ -1,0 +1,21 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.DBDUIManagers.cpp.obj": [
+			"DBDTextManager.cpp.obj",
+			"DBDUIManagersModule.cpp.obj",
+			"DPIScaleCurveForRatio.cpp.obj",
+			"UIDataManager.cpp.obj",
+			"UIScaleManager.cpp.obj"
+		],
+		"Module.DBDUIManagers.gen.cpp.obj": [
+			"DBDTextManager.gen.cpp.obj",
+			"DBDUIManagers.init.gen.cpp.obj",
+			"DPIScaleCurveForRatio.gen.cpp.obj",
+			"EDPIScaleCurveRatio.gen.cpp.obj",
+			"EScaleType.gen.cpp.obj",
+			"UIDataManager.gen.cpp.obj",
+			"UIScaleManager.gen.cpp.obj"
+		]
+	}
+}

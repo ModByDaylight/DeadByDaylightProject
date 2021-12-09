@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-SentryIo.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Data\Projects\DeadByDaylight\Intermediate\Build\Win64\DeadByDaylightEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\SentryIo\Intermediate\Build\Win64\UE4Editor\Development\SentryIo\Module.SentryIo.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\SentryIo\Intermediate\Build\Win64\UE4Editor\Development\SentryIo\Module.SentryIo.gen.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\SentryIo\Intermediate\Build\Win64\UE4Editor\Development\SentryIo\Default.rc2.res"
+/OUT:"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\SentryIo\Intermediate\Build\Win64\UE4Editor\Development\SentryIo\UE4Editor-SentryIo.lib"
+/INCLUDE:IMPLEMENT_MODULE_SentryIo

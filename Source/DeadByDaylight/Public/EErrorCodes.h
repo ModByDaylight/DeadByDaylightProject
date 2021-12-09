@@ -1,0 +1,46 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "EErrorCodes.generated.h"
+
+UENUM()
+enum class EErrorCodes {
+    None,
+    SavefileDeserializationFailure = 0x64,
+    SavefileDecryptionFailure,
+    SavefileEmpty,
+    SavefileBadPlayerId,
+    SavefileEmptyPlayerUID,
+    SavefileInvalidUniqueNetID,
+    SavefileInvalidPlayerState,
+    SavefileBackendError,
+    KrakenRankError,
+    KrakenRatingsError,
+    SavefileKrakenPlayerForbidden,
+    SyncCachedCurrencyError,
+    CurrencyTransactionError,
+    StateDownloadFailed,
+    StatcacheDecryptionFailed,
+    SavefilePlayerLoadUIDMismatch,
+    SavefilePlayerStateUIDMismatch,
+    SavefileEncryptionFailure = 0xC8,
+    SaveFailedInvalidData,
+    SaveFailedInvalidJSON,
+    SaveFailedDecodeDataString,
+    SaveFailedCompressDataString,
+    SaveFailedEncryptString,
+    StatcacheEncryptionFailed,
+    SaveFailedCloudErrorTimeout = 0x12C,
+    JsonToPersistenDataFailed,
+    SaveFailedCloudErrorAfterRetries,
+    StateUploadFailed,
+    GetPlayerLevelRequestError = 0x190,
+    EarnPlayerXpRequestError,
+    EarnPlayerXpParamError,
+    OnboardingFailGet = 0x19A,
+    OnboardingFailUpdate,
+    OnboardingFailRequest,
+    MatchCancelledPlayerLeftDuringLoading = 0x1F4,
+    MatchCancelledInvalidPlayerRoles,
+    MatchCancelledLoadingTimeout,
+};
+

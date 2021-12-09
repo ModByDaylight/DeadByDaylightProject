@@ -1,0 +1,42 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "Templates/SubclassOf.h"
+#include "Components/ActorComponent.h"
+#include "ConditionReceiver.h"
+#include "ModifierReplicatedEventConditionData.h"
+#include "BaseModifierContainer.generated.h"
+
+class UEventDrivenModifierCondition;
+
+UCLASS(Blueprintable)
+class COMPETENCE_API UBaseModifierContainer : public UActorComponent, public IConditionReceiver {
+    GENERATED_BODY()
+public:
+protected:
+    UPROPERTY(BlueprintReadOnly, Replicated, Transient)
+    FName _id;
+    
+private:
+    UPROPERTY(Transient, ReplicatedUsing=OnRep_EventDrivenConditionData_Internal)
+    FModifierReplicatedEventConditionData _eventDrivenConditionData;
+    
+    UFUNCTION()
+    void OnRep_EventDrivenConditionData_Internal(const FModifierReplicatedEventConditionData& oldReplicatedCondition);
+    
+public:
+    UFUNCTION(BlueprintPure)
+    bool IsApplicable() const;
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
+    UEventDrivenModifierCondition* CreateAndSetEventDrivenCondition(TSubclassOf<UEventDrivenModifierCondition> conditionType);
+    
+protected:
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintImplementableEvent)
+    void Authority_OnInstantiateModifierConditions();
+    
+public:
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+    UBaseModifierContainer();
+};
+

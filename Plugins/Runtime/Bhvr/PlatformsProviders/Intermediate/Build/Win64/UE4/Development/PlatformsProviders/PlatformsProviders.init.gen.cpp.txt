@@ -1,0 +1,3 @@
+C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\PlatformsProviders\Intermediate\Build\Win64\UE4\Development\PlatformsProviders\Definitions.PlatformsProviders.h
+C:\Data\UnrealEngine\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Data\UnrealEngine\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h

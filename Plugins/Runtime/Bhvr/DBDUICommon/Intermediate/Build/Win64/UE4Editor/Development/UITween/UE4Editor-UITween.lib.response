@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-UITween.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Data\Projects\DeadByDaylight\Intermediate\Build\Win64\DeadByDaylightEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\DBDUICommon\Intermediate\Build\Win64\UE4Editor\Development\UITween\Module.UITween.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\DBDUICommon\Intermediate\Build\Win64\UE4Editor\Development\UITween\Module.UITween.gen.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\DBDUICommon\Intermediate\Build\Win64\UE4Editor\Development\UITween\Default.rc2.res"
+/OUT:"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\DBDUICommon\Intermediate\Build\Win64\UE4Editor\Development\UITween\UE4Editor-UITween.lib"
+/INCLUDE:IMPLEMENT_MODULE_UITween

@@ -1,0 +1,15 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-MirrorsSdk.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Data\Projects\DeadByDaylight\Intermediate\Build\Win64\DeadByDaylightEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\MirrorsSdk\Intermediate\Build\Win64\UE4Editor\Development\MirrorsSdk\MirrorsSdkModule.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\MirrorsSdk\Intermediate\Build\Win64\UE4Editor\Development\MirrorsSdk\EMirrorsRequestLogLevel.gen.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\MirrorsSdk\Intermediate\Build\Win64\UE4Editor\Development\MirrorsSdk\MirrorsSdk.init.gen.cpp.obj"
+"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\MirrorsSdk\Intermediate\Build\Win64\UE4Editor\Development\MirrorsSdk\Default.rc2.res"
+/OUT:"C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\MirrorsSdk\Intermediate\Build\Win64\UE4Editor\Development\MirrorsSdk\UE4Editor-MirrorsSdk.lib"
+/INCLUDE:IMPLEMENT_MODULE_MirrorsSdk

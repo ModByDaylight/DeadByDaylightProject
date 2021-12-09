@@ -1,0 +1,15 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.BHVRAnalytics.cpp.obj": [
+			"BaseSingleStructIndexAnalytics.cpp.obj",
+			"BHVRAnalytics.cpp.obj",
+			"BHVRAnalyticsModule.cpp.obj"
+		],
+		"Module.BHVRAnalytics.gen.cpp.obj": [
+			"BaseSingleStructIndexAnalytics.gen.cpp.obj",
+			"BHVRAnalytics.gen.cpp.obj",
+			"BHVRAnalytics.init.gen.cpp.obj"
+		]
+	}
+}
