@@ -3,8 +3,8 @@
 #include "UMGGenericPopup.h"
 #include "UMGRefundPopup.generated.h"
 
-class UUMGRefundDataWidget;
 class UVerticalBox;
+class UUMGRefundDataWidget;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGRefundPopup : public UUMGGenericPopup {

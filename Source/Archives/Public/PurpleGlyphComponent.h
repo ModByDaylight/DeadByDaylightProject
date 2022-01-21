@@ -2,19 +2,19 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Components/ActorComponent.h"
-#include "UObject/NoExportTypes.h"
 #include "AITypes.h"
 #include "DBDTunableRowHandle.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "PurpleGlyphComponent.generated.h"
 
-class UBloodTrailSettings;
-class UTileSpawnPoint;
 class UNavigationQueryFilter;
+class UTileSpawnPoint;
+class UBloodTrailSettings;
 class ADBDPlayer;
 class AGlyph;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UPurpleGlyphComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -53,6 +53,7 @@ private:
     UBloodTrailSettings* _bloodTrailSettings;
     
 public:
+    UPurpleGlyphComponent();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void StopGlyphMovement(bool useDeceleration);
     
@@ -92,6 +93,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void Authority_AbortMove();
     
-    UPurpleGlyphComponent();
 };
 

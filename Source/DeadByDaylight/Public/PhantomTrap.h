@@ -4,9 +4,9 @@
 #include "UObject/NoExportTypes.h"
 #include "PhantomTrap.generated.h"
 
-class AActor;
-class UTerrorRadiusEmitterComponent;
 class ASlasherPlayer;
+class UTerrorRadiusEmitterComponent;
+class AActor;
 class USkeletalMeshComponent;
 
 UCLASS()
@@ -21,6 +21,7 @@ private:
     float _lineOfSightTraceMinInterval;
     
 public:
+    APhantomTrap();
     UFUNCTION(BlueprintNativeEvent, BlueprintPure)
     bool IsTrapSet() const;
     
@@ -35,6 +36,5 @@ public:
     UFUNCTION(BlueprintCallable)
     bool EvaluateLineOfSight(const FVector& start, const FVector& end, const AActor* ignoredActor);
     
-    APhantomTrap();
 };
 

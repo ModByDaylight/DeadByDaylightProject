@@ -10,6 +10,7 @@ UCLASS()
 class UTwinSubjectProvider : public UModifierSubjectProvider {
     GENERATED_BODY()
 public:
+    UTwinSubjectProvider();
 private:
     UFUNCTION()
     void OnTwinSet(AConjoinedTwin* twin);
@@ -17,7 +18,5 @@ private:
     UFUNCTION()
     void ListenToTwinSet(ASlasherPlayer* killer);
     
-public:
-    UTwinSubjectProvider();
 };
 

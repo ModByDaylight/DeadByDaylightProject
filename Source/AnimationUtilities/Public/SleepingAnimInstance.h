@@ -9,6 +9,7 @@ UCLASS(NonTransient)
 class ANIMATIONUTILITIES_API USleepingAnimInstance : public UAnimInstance {
     GENERATED_BODY()
 public:
+    USleepingAnimInstance();
     UFUNCTION(BlueprintCallable)
     void Wakeup();
     
@@ -18,6 +19,5 @@ public:
     UFUNCTION()
     void OnMontageStart(UAnimMontage* montage);
     
-    USleepingAnimInstance();
 };
 

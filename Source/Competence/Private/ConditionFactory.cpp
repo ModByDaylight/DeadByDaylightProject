@@ -1,12 +1,12 @@
 #include "ConditionFactory.h"
 #include "Templates/SubclassOf.h"
 
+class UEventDrivenModifierCondition;
 class UConditionReceiver;
 class IConditionReceiver;
 class UTimerObject;
 class UOrModifierCondition;
 class UAndModifierCondition;
-class UEventDrivenModifierCondition;
 class UNotModifierCondition;
 class UIsTimerDoneCondition;
 class URangeBasedCondition;

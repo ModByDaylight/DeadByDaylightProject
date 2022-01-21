@@ -1,14 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ScreenBase.h"
-#include "CharacterSlideData.h"
 #include "DownloadProgression.h"
+#include "CharacterSlideData.h"
 #include "SplashScreen.generated.h"
 
 UCLASS()
 class DEADBYDAYLIGHT_API USplashScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    USplashScreen();
     UFUNCTION()
     void UpdateShadersPrecompilingProgression(const float percentageCompleted) const;
     
@@ -59,6 +60,5 @@ public:
     UFUNCTION()
     void HideCharacterSlideShow();
     
-    USplashScreen();
 };
 

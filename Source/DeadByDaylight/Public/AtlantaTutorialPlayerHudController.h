@@ -8,6 +8,7 @@ UCLASS(BlueprintType)
 class UAtlantaTutorialPlayerHudController : public UObject {
     GENERATED_BODY()
 public:
+    UAtlantaTutorialPlayerHudController();
     UFUNCTION(BlueprintCallable)
     void ShowHudComponent(EHudComponent hudComponentToShow);
     
@@ -17,6 +18,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void HideHudComponent(EHudComponent hudComponentToHide);
     
-    UAtlantaTutorialPlayerHudController();
 };
 

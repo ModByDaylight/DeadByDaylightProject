@@ -6,7 +6,7 @@
 
 class UUserWidget;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDUIPRESENTERS_API URootContainer : public UUIComponent {
     GENERATED_BODY()
 public:

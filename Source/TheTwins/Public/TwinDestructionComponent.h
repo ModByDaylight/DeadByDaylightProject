@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Components/ActorComponent.h"
-#include "UObject/NoExportTypes.h"
 #include "AnimationMontageDescriptor.h"
+#include "UObject/NoExportTypes.h"
 #include "TwinDestructionComponent.generated.h"
 
 class AActor;
 class AConjoinedTwin;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UTwinDestructionComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -25,6 +25,10 @@ private:
     
     UPROPERTY(EditDefaultsOnly)
     float _dyingFromSurvivorTranslation;
+    
+public:
+    UTwinDestructionComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
     UFUNCTION(BlueprintImplementableEvent)
@@ -44,9 +48,5 @@ protected:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_OnTwinQuickDestroyOver();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UTwinDestructionComponent();
 };
 

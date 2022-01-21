@@ -5,7 +5,7 @@
 
 class AGenerator;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDeadMansSwitch : public UPerk {
     GENERATED_BODY()
 public:
@@ -19,12 +19,13 @@ private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_BlockedGenerators)
     TArray<AGenerator*> _blockedGenerators;
     
+public:
+    UDeadMansSwitch();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_BlockedGenerators();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UDeadMansSwitch();
 };
 

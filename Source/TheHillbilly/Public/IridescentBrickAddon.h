@@ -5,7 +5,7 @@
 
 class UStatusEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIridescentBrickAddon : public UOnEventBaseAddon {
     GENERATED_BODY()
 public:

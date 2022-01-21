@@ -3,10 +3,11 @@
 #include "PounceAttack.h"
 #include "K25PounceAttack.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK25PounceAttack : public UPounceAttack {
     GENERATED_BODY()
 public:
+    UK25PounceAttack();
 private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_DownedTargetHoldingLamentConfiguration();
@@ -14,7 +15,5 @@ private:
     UFUNCTION(Client, Reliable)
     void Client_InvalidateDownedTargetHoldingLamentConfiguration();
     
-public:
-    UK25PounceAttack();
 };
 

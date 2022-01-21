@@ -8,9 +8,9 @@ UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreCharacterRewardWidget : public UCoreRewardWidget {
     GENERATED_BODY()
 public:
+    UCoreCharacterRewardWidget();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetData(const FCharacterRewardViewData& characterRewardViewData);
     
-    UCoreCharacterRewardWidget();
 };
 

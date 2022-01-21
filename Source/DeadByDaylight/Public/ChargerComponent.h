@@ -2,13 +2,12 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "EnergyPoweredInterface.h"
+#include "ChargeStateChangeDelegate.h"
+#include "ChargePercentChangeDelegate.h"
 #include "EEnergyTypeEnum.h"
 #include "ChargerComponent.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChargerComponentOnChargeStateChange, bool, Empty);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChargerComponentOnChargePercentChange, float, ChargePercent);
-
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UChargerComponent : public UActorComponent, public IEnergyPoweredInterface {
     GENERATED_BODY()
 public:
@@ -16,10 +15,10 @@ public:
     FString ChargerComponentID;
     
     UPROPERTY(BlueprintAssignable)
-    FChargerComponentOnChargeStateChange OnChargeStateChange;
+    FChargeStateChangeDelegate OnChargeStateChange;
     
     UPROPERTY(BlueprintAssignable)
-    FChargerComponentOnChargePercentChange OnChargePercentChange;
+    FChargePercentChangeDelegate OnChargePercentChange;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
@@ -33,6 +32,9 @@ private:
     float _maxEnergyLevel;
     
 public:
+    UChargerComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void UseEnergy(float seconds, float energyUseModifier);
     
@@ -65,8 +67,7 @@ public:
     UFUNCTION(BlueprintPure)
     float GetEnergyLevel() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UChargerComponent();
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -20,6 +20,7 @@ public:
     UPROPERTY(Transient)
     bool UsePathfinding;
     
+    UAICharacterBehaviourInteractWithActorData();
     UFUNCTION(BlueprintCallable)
     void WatchGameEventTypes(TArray<FGameplayTag> gameEventTypes);
     
@@ -29,6 +30,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void Init(AActor* actor, ECharacterMovementTypes NewCharacterMovementType, bool NewUsePathfinding);
     
-    UAICharacterBehaviourInteractWithActorData();
 };
 

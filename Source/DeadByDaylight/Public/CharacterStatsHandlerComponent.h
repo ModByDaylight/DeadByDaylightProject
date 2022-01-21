@@ -1,17 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
-#include "GameEventData.h"
 #include "EDBDScoreTypes.h"
+#include "Components/ActorComponent.h"
 #include "GameplayTagContainer.h"
+#include "GameEventData.h"
 #include "CharacterStatsHandlerComponent.generated.h"
 
 class AActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCharacterStatsHandlerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UCharacterStatsHandlerComponent();
     UFUNCTION()
     void ReceiveGameEvent(EDBDScoreTypes scoreType, float amount, AActor* instigator, AActor* target);
     
@@ -22,7 +23,5 @@ private:
     UFUNCTION()
     void InitializePreMatchStats();
     
-public:
-    UCharacterStatsHandlerComponent();
 };
 

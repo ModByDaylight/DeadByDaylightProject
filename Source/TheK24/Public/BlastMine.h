@@ -5,13 +5,13 @@
 #include "UObject/NoExportTypes.h"
 #include "BlastMine.generated.h"
 
-class UInteractionDefinition;
 class AGenerator;
+class UInteractionDefinition;
 class ASlasherPlayer;
-class AActor;
 class UChargeableInteractionDefinition;
+class AActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UBlastMine : public UPerk {
     GENERATED_BODY()
 public:
@@ -68,6 +68,10 @@ private:
     UPROPERTY(Transient)
     AGenerator* _repairProgressGenerator;
     
+public:
+    UBlastMine();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void TrapDettachedToGenerator_Cosmetic(AGenerator* trappedGenerator);
@@ -99,9 +103,5 @@ private:
     UFUNCTION()
     void Authority_OnRepairProgress(float IndividualChargeAmount, float TotalChargeAmount, AActor* ChargeInstigator, bool WasCoop, float DeltaTime);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UBlastMine();
 };
 

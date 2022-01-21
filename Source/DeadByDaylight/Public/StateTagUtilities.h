@@ -11,6 +11,7 @@ UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UStateTagUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UStateTagUtilities();
     UFUNCTION(BlueprintCallable)
     static void RemoveStateTagToPlayer(const ADBDPlayer* player, FGameplayTag tag);
     
@@ -29,6 +30,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void AddStateTagToPlayer(const ADBDPlayer* player, FGameplayTag tag);
     
-    UStateTagUtilities();
 };
 

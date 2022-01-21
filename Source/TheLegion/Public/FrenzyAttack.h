@@ -3,7 +3,7 @@
 #include "PounceAttack.h"
 #include "FrenzyAttack.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THELEGION_API UFrenzyAttack : public UPounceAttack {
     GENERATED_BODY()
 public:

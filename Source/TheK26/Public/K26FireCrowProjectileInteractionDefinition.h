@@ -1,21 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnProjectileFired.h"
 #include "InteractionDefinition.h"
 #include "K26FireCrowProjectileInteractionDefinition.generated.h"
 
 class UK26CooldownInteractionDefinition;
+class ASlasherPlayer;
 class UK26AmmoHandlerComponent;
 class UK26PathHandlerComponent;
-class ASlasherPlayer;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FK26FireCrowProjectileInteractionDefinitionOnProjectileFired);
-
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK26FireCrowProjectileInteractionDefinition : public UInteractionDefinition {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FK26FireCrowProjectileInteractionDefinitionOnProjectileFired OnProjectileFired;
+    FOnProjectileFired OnProjectileFired;
     
 private:
     UPROPERTY(Export, Transient)
@@ -28,6 +27,7 @@ private:
     UK26PathHandlerComponent* _pathHandler;
     
 public:
+    UK26FireCrowProjectileInteractionDefinition();
     UFUNCTION(BlueprintCallable)
     void SetDependencies(UK26AmmoHandlerComponent* ammoHandler, UK26PathHandlerComponent* pathHandler, UK26CooldownInteractionDefinition* cooldownInteraction);
     
@@ -38,7 +38,5 @@ private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_OnProjectileFired(const ASlasherPlayer* killer);
     
-public:
-    UK26FireCrowProjectileInteractionDefinition();
 };
 

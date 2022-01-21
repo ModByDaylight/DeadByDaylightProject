@@ -5,41 +5,40 @@
 #include "OngoingScoreData.h"
 #include "CharacterStateData.h"
 #include "EAIDifficultyLevel.h"
-#include "PlayerStateData.h"
+#include "AIFinishedPlayingEvent.h"
 #include "EPlayerRole.h"
+#include "PlayerGameplayEventDelegate.h"
+#include "PlayerStateData.h"
 #include "EquippedPlayerCustomization.h"
-#include "EDBDScoreTypes.h"
-#include "EGameState.h"
+#include "OnGameStateChanged.h"
+#include "OnPlayerGameStateChanged.h"
 #include "AwardedScores.h"
 #include "UserGameStats.h"
+#include "AwardedScore.h"
 #include "DBDRecentGameplayEvents.h"
+#include "GameplayTagContainer.h"
 #include "EPlatformFlag.h"
 #include "EProviderFlag.h"
-#include "GameplayTagContainer.h"
+#include "EGameState.h"
 #include "ScoreEventData.h"
-#include "AwardedScore.h"
+#include "EDBDScoreTypes.h"
 #include "StatusViewSource.h"
 #include "GameEventData.h"
 #include "DBDPlayerState.generated.h"
 
 class URitualHandlerComponent;
 class UDedicatedServerHandlerComponent;
-class AActor;
-class UAchievementHandlerComponent;
 class UGameplayNotificationManager;
+class UAchievementHandlerComponent;
 class UCharacterStatsHandlerComponent;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDBDPlayerStateOnAIFinishedPlayingEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FDBDPlayerStateOnPlayerGameplayEvent, EDBDScoreTypes, playerGameplayEventType, float, amount, AActor*, effector, AActor*, target);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDBDPlayerStateOnGameStateChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDPlayerStateOnPlayerGameStateChanged, const EGameState, gameState);
+class AActor;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ADBDPlayerState : public APlayerState, public IPlayerflowEventsNotifier {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerStateOnAIFinishedPlayingEvent OnAIFinishedPlayingEvent;
+    FAIFinishedPlayingEvent OnAIFinishedPlayingEvent;
     
     UPROPERTY(Replicated, Transient)
     FString MirrorsId;
@@ -75,13 +74,13 @@ public:
     FEquippedPlayerCustomization PlayerCustomization;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerStateOnPlayerGameplayEvent OnPlayerGameplayEvent;
+    FPlayerGameplayEventDelegate OnPlayerGameplayEvent;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerStateOnGameStateChanged OnGameStateChanged;
+    FOnGameStateChanged OnGameStateChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerStateOnPlayerGameStateChanged OnPlayerGameStateChanged;
+    FOnPlayerGameStateChanged OnPlayerGameStateChanged;
     
 protected:
     UPROPERTY()
@@ -138,6 +137,10 @@ private:
     
     UPROPERTY(Replicated, Transient)
     bool _hasActiveSubscription;
+    
+public:
+    ADBDPlayerState();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
     UFUNCTION()
@@ -271,8 +274,7 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_CancelOngoingScoreEvent(FGameplayTag scoreTypeTag);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    ADBDPlayerState();
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -4,12 +4,12 @@
 #include "UObject/NoExportTypes.h"
 #include "SurvivorOutlineUpdateStrategy.generated.h"
 
+class ACamperPlayer;
 class UTexture;
 class ASlasherPlayer;
-class ACamperPlayer;
 class UGameplayModifierContainer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API USurvivorOutlineUpdateStrategy : public UOutlineUpdateStrategy {
     GENERATED_BODY()
 public:
@@ -39,6 +39,7 @@ private:
     bool _trappedIconActive;
     
 public:
+    USurvivorOutlineUpdateStrategy();
     UFUNCTION(BlueprintCallable)
     void SetTrappedIconActive(bool value);
     
@@ -51,6 +52,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static TArray<UGameplayModifierContainer*> GetEffectsProtectingFromKillerAuraReading(const ACamperPlayer* subject, const ASlasherPlayer* killer);
     
-    USurvivorOutlineUpdateStrategy();
 };
 

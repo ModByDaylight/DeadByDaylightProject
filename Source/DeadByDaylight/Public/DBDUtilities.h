@@ -1,54 +1,55 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EPlayerRole.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "UObject/NoExportTypes.h"
-#include "Engine/EngineTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "EShadowSystem.h"
-#include "EPlayerRole.h"
 #include "Engine/EngineTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "Engine/EngineTypes.h"
+#include "Engine/EngineTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "DBDUtilities.generated.h"
 
 class UPrimitiveComponent;
+class AProceduralLevelBuilder;
+class UMaterialInterface;
+class USkeletalMeshComponent;
+class USphereComponent;
+class AActor;
 class ADBDPlayerControllerBase;
 class ADBDPlayerState;
 class UAnimInstance;
-class USphereComponent;
-class ADBDGameState;
-class UMaterialInterface;
-class AActor;
 class UObject;
+class UBoxComponent;
 class UMeshComponent;
-class UAkAudioBank;
-class ADBDAIPlayerController;
+class ADBDPlayerCameraManager;
 class UTileSpawnPoint;
-class ADBDPlayer;
 class AGenerator;
 class ASlasherPlayer;
-class AProceduralLevelBuilder;
-class UAnimMontage;
-class ADBDBasePlayer;
-class USkeletalMeshComponent;
-class ACamperPlayer;
-class UWorld;
-class UBoxComponent;
-class UMaterialHelper;
-class ADBDPlayerCameraManager;
-class ADBDGameMode;
-class UDBDGameInstance;
 class UActorComponent;
-class UAnimSequence;
+class UWorld;
+class UAnimMontage;
+class ADBDGameMode;
+class ADBDBasePlayer;
+class ACamperPlayer;
+class UMaterialHelper;
 class UActorSpawner;
+class ADBDPlayer;
+class ADBDGameState;
+class UDBDGameInstance;
+class ADBDAIPlayerController;
+class UAnimSequence;
+class UAkAudioBank;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UDBDUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UDBDUtilities();
     UFUNCTION(BlueprintPure)
     static bool WithinRangeExclusive(float min, float max, float value);
     
@@ -310,6 +311,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static UActorComponent* AddComponentToActor(UClass* compClass, FName compName, AActor* actor);
     
-    UDBDUtilities();
 };
 

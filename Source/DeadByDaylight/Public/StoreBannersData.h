@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EStoreBannerLocation.h"
 #include "DBDTableRowBase.h"
+#include "EStoreBannerLocation.h"
 #include "StoreFeaturedBannerData.h"
 #include "StoreBannersData.generated.h"
 

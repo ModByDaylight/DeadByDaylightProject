@@ -8,7 +8,7 @@
 class UInteractionDefinition;
 class ADBDPlayer;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UTwinLockerBlockerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -19,6 +19,9 @@ private:
     UPROPERTY(EditDefaultsOnly)
     TArray<TSubclassOf<UInteractionDefinition>> _interactionsToDisableOnLockerClasses;
     
+public:
+    UTwinLockerBlockerComponent();
+private:
     UFUNCTION()
     void OnSurvivorInLockerChanged(ADBDPlayer* oldSurvivor, ADBDPlayer* newSurvivor);
     
@@ -43,7 +46,5 @@ private:
     UFUNCTION()
     void Authority_OnLevelReadyToPlay();
     
-public:
-    UTwinLockerBlockerComponent();
 };
 

@@ -5,12 +5,12 @@
 #include "VaultData.h"
 #include "Window.generated.h"
 
+class UAkAudioEvent;
 class UChildActorComponent;
+class UAkComponent;
 class UInteractionDefinition;
 class UMaterialHelper;
-class UAkComponent;
 class ACamperPlayer;
-class UAkAudioEvent;
 class ULocalPlayerTrackerComponent;
 class UBlockableComponent;
 class ADBDPlayer;
@@ -61,6 +61,11 @@ private:
     UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UDBDNavEvadeLoopComponent* _navEvadeLoopComponent;
     
+public:
+    AWindow();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_blockedByLevel();
     
@@ -107,9 +112,5 @@ protected:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_OnVaultInternal(ADBDPlayer* player, bool canBlockVault);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    AWindow();
 };
 

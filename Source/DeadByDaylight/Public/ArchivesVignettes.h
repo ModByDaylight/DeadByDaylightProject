@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ArchivesVignetteEntry.h"
 #include "DBDTableRowBase.h"
+#include "ArchivesVignetteEntry.h"
 #include "ArchivesVignettes.generated.h"
 
 class UMediaSource;

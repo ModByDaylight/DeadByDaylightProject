@@ -7,7 +7,7 @@
 class UK25SurvivorChainAttachmentComponent;
 class AK25Chain;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK25RemoveChainInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

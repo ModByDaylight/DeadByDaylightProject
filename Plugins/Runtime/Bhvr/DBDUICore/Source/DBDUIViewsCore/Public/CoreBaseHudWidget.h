@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EEasingType.h"
 #include "CoreBaseUserWidget.h"
+#include "EEasingType.h"
 #include "CoreBaseHudWidget.generated.h"
 
 UCLASS(Abstract, EditInlineNew)
@@ -25,12 +25,12 @@ protected:
     float FocusAnimationMinOpacity;
     
 public:
+    UCoreBaseHudWidget();
     UFUNCTION(BlueprintNativeEvent, BlueprintPure)
     bool ShouldPlayFocusAnimation() const;
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void PlayFocusAnimation();
     
-    UCoreBaseHudWidget();
 };
 

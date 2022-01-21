@@ -31,13 +31,14 @@ protected:
     UPROPERTY(BlueprintReadWrite, Transient)
     uint8 _indexInTrail;
     
+public:
+    ABaseTormentTrailPoint();
+protected:
     UFUNCTION(BlueprintCallable)
     void EndOfDisapearCosmetic();
     
     UFUNCTION(BlueprintImplementableEvent)
     void DisappearCosmetic();
     
-public:
-    ABaseTormentTrailPoint();
 };
 

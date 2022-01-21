@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/ActorComponent.h"
 #include "BoneSocketLocalVelocityEvaluator.generated.h"
 
 class USkeletalMeshComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class ANIMATIONUTILITIES_API UBoneSocketLocalVelocityEvaluator : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -18,9 +18,9 @@ private:
     TArray<FName> _trackedBoneSocketNames;
     
 public:
+    UBoneSocketLocalVelocityEvaluator();
     UFUNCTION(BlueprintCosmetic, BlueprintPure)
     FVector GetLocalVelocity(const FName boneSocketName) const;
     
-    UBoneSocketLocalVelocityEvaluator();
 };
 

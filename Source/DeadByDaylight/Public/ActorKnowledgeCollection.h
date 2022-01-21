@@ -4,10 +4,10 @@
 #include "EKnowledgeSharingType.h"
 #include "ActorKnowledgeCollection.generated.h"
 
-class ACharacter;
 class AActor;
+class ACharacter;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UActorKnowledgeCollection : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -25,6 +25,9 @@ private:
     EKnowledgeSharingType _sharing;
     
 public:
+    UActorKnowledgeCollection();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void Local_SetAvailable(bool value);
     
@@ -55,8 +58,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     bool Authority_Add(AActor* actor);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UActorKnowledgeCollection();
 };
 

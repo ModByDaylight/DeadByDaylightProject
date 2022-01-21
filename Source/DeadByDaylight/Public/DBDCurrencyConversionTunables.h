@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECurrencyType.h"
 #include "Engine/DataAsset.h"
+#include "ECurrencyType.h"
 #include "CurrencyConversion.h"
 #include "DBDCurrencyConversionTunables.generated.h"
 

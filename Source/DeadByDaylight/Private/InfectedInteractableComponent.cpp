@@ -1,7 +1,7 @@
 #include "InfectedInteractableComponent.h"
 
-class ADBDPlayer;
 class AInteractable;
+class ADBDPlayer;
 class ACamperPlayer;
 
 void UInfectedInteractableComponent::SetInteractableMeshAlpha(float alpha) {

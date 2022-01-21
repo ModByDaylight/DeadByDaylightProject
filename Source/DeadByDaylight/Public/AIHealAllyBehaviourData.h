@@ -14,9 +14,9 @@ protected:
     ACamperPlayer* _targetAlly;
     
 public:
+    UAIHealAllyBehaviourData();
     UFUNCTION(BlueprintCallable)
     void Init(ACamperPlayer* allyToHealTarget);
     
-    UAIHealAllyBehaviourData();
 };
 

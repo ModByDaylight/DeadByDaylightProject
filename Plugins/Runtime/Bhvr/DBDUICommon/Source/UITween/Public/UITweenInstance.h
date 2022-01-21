@@ -1,29 +1,28 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
+#include "TweenCompleted.h"
+#include "TweenUpdated.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "EEasingType.h"
 #include "UITweenInstance.generated.h"
 
+class UUITweenMaterialScalarProperties;
+class UMaterialInstanceDynamic;
+class UUITweenMaterialVectorProperties;
 class UUITweenInstance;
 class UWidget;
-class UUITweenMaterialScalarProperties;
-class UUITweenMaterialVectorProperties;
-class UMaterialInstanceDynamic;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUITweenInstanceTweenUpdatedDelegate, UUITweenInstance*, tween);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUITweenInstanceTweenCompletedDelegate, UUITweenInstance*, tween);
 
 UCLASS(BlueprintType)
 class UITWEEN_API UUITweenInstance : public UObject {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FUITweenInstanceTweenCompletedDelegate TweenCompletedDelegate;
+    FTweenCompleted TweenCompletedDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FUITweenInstanceTweenUpdatedDelegate TweenUpdatedDelegate;
+    FTweenUpdated TweenUpdatedDelegate;
     
 protected:
     UPROPERTY(Transient)
@@ -33,6 +32,7 @@ protected:
     TArray<UUITweenMaterialVectorProperties*> _materialVectorProperties;
     
 public:
+    UUITweenInstance();
     UFUNCTION(BlueprintCallable)
     UUITweenInstance* ToTranslation(FVector2D targetValue);
     
@@ -93,6 +93,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void Begin();
     
-    UUITweenInstance();
 };
 

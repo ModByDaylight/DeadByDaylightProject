@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AITunableParameter.h"
 #include "BTService_OnRelevantBase.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
+#include "AITunableParameter.h"
 #include "BTService_SetBBEntry.generated.h"
 
 UCLASS()

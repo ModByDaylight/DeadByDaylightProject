@@ -5,7 +5,7 @@
 
 class ACamperPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UInfectiousFright : public UPerk {
     GENERATED_BODY()
 public:
@@ -22,6 +22,10 @@ private:
     UPROPERTY(Transient)
     ACamperPlayer* _targetSurvivor;
     
+public:
+    UInfectiousFright();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void RevealSurvivorLocation(ACamperPlayer* target);
@@ -30,9 +34,5 @@ private:
     UFUNCTION()
     void OnRep_PerkActivationCount();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UInfectiousFright();
 };
 

@@ -18,9 +18,9 @@ private:
     ECharacterMovementTypes _characterMovementType;
     
 public:
+    UAICharacterRepairGeneratorBehaviourData();
     UFUNCTION(BlueprintCallable)
     void Init(AGenerator* generator, ECharacterMovementTypes characterMovementType);
     
-    UAICharacterRepairGeneratorBehaviourData();
 };
 

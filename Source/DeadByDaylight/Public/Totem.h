@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Interactable.h"
-#include "AIPointOfInterestTargetInterface.h"
 #include "UObject/NoExportTypes.h"
-#include "ETotemState.h"
+#include "AIPointOfInterestTargetInterface.h"
 #include "DBDTunableRowHandle.h"
+#include "ETotemState.h"
 #include "Totem.generated.h"
 
-class UAIPerceptionStimuliSourceComponent;
-class UTotemBoundPerk;
-class ATotem;
 class UBlockableComponent;
+class UTotemBoundPerk;
+class UAIPerceptionStimuliSourceComponent;
 class ULocalPlayerTrackerComponent;
+class ADBDPlayer;
 class UActivatorComponent;
 class UGameplayTagContainerComponent;
-class UTotemOutlineUpdateStrategy;
 class USceneComponent;
-class ADBDPlayer;
+class UTotemOutlineUpdateStrategy;
+class ATotem;
 class UInteractor;
 class UChargeableInteractionDefinition;
 
@@ -64,6 +64,10 @@ private:
     
     UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     bool _canBeBoundToBoonPerk;
+    
+public:
+    ATotem();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
@@ -120,8 +124,7 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
     UChargeableInteractionDefinition* GetBlessTotemInteraction() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    ATotem();
+    // Fix for true pure virtual functions not being implemented
 };
 

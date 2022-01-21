@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EGameplayElementType.h"
 #include "ElementSubstitutions.h"
 #include "SubstitutionElements.h"
-#include "EGameplayElementType.h"
 #include "GameplayElementSubstitutions.generated.h"
 
 USTRUCT(BlueprintType)

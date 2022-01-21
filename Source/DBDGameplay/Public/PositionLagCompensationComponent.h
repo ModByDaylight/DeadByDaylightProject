@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "PositionLagCompensationComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UPositionLagCompensationComponent : public UActorComponent {
     GENERATED_BODY()
 public:

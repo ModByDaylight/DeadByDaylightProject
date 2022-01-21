@@ -9,5 +9,7 @@ class DBDUIVIEWSCORE_API UCoreLeaningArrowsWidget : public UCoreBaseHudWidget, p
     GENERATED_BODY()
 public:
     UCoreLeaningArrowsWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

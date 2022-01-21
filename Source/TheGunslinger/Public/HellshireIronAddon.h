@@ -5,7 +5,7 @@
 
 class UStatusEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UHellshireIronAddon : public UItemAddon {
     GENERATED_BODY()
 public:

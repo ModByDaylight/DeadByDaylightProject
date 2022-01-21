@@ -2,9 +2,9 @@
 #include "CoreMinimal.h"
 #include "CoreBaseUserWidget.h"
 #include "SubtitlesViewInterface.h"
-#include "ESubtitlesPosition.h"
 #include "SubtitlesEntry.h"
 #include "Engine/EngineTypes.h"
+#include "ESubtitlesPosition.h"
 #include "CoreSubtitlesWidget.generated.h"
 
 class UDBDTextBlock;
@@ -33,6 +33,8 @@ private:
     UPROPERTY(Transient)
     FTimerHandle _timerHandle;
     
+public:
+    UCoreSubtitlesWidget();
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetSubtitlesPosition(ESubtitlesPosition position);
@@ -41,7 +43,7 @@ private:
     UFUNCTION()
     void OnEntryTimedOut();
     
-public:
-    UCoreSubtitlesWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

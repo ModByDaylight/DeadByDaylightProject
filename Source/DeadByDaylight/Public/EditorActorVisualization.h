@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/SceneComponent.h"
+#include "UObject/NoExportTypes.h"
 #include "EditorActorVisualization.generated.h"
 
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UEditorActorVisualization : public USceneComponent {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 #include "EventDrivenModifierCondition.h"
 #include "KillerIsLowOnAmmo.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UKillerIsLowOnAmmo : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:

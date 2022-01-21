@@ -6,7 +6,7 @@
 
 class AActor;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class GAMEPLAYUTILITIES_API UAuthoritativeActorPoolComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -21,15 +21,16 @@ private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_Pool)
     TArray<AActor*> _pool;
     
+public:
+    UAuthoritativeActorPoolComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_Pool(TArray<AActor*> previousPool);
     
     UFUNCTION()
     void Authority_OnActorDestroyed(AActor* destroyedActor);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UAuthoritativeActorPoolComponent();
 };
 

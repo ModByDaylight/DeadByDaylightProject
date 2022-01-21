@@ -3,10 +3,10 @@
 #include "ItemAddon.h"
 #include "Addon_ThePig_JigsawSketch.generated.h"
 
-class ACamperPlayer;
 class AGenerator;
+class ACamperPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAddon_ThePig_JigsawSketch : public UItemAddon {
     GENERATED_BODY()
 public:

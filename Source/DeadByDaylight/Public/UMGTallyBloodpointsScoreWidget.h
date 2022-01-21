@@ -9,9 +9,9 @@ UCLASS(EditInlineNew)
 class UUMGTallyBloodpointsScoreWidget : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
+    UUMGTallyBloodpointsScoreWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void UpdateWidgetByScoreData(const FText& title, const UTexture2D* asset, int32 scoreValue);
     
-    UUMGTallyBloodpointsScoreWidget();
 };
 

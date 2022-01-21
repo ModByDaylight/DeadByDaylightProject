@@ -1,27 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EFireHarpoonRifleAimingInteractionSubState.h"
-#include "InteractionDefinition.h"
 #include "DBDTunableRowHandle.h"
+#include "InteractionDefinition.h"
+#include "EFireHarpoonRifleAimingInteractionSubState.h"
 #include "TunableStat.h"
 #include "FireHarpoonRifleInteraction.generated.h"
 
+class ADBDPlayer;
 class AHarpoonProjectile;
 class UCurveFloat;
-class ADBDPlayer;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFireHarpoonRifleInteractionOnFireHarpoon);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFireHarpoonRifleInteractionOnHitPlayer);
-
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API UFireHarpoonRifleInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FFireHarpoonRifleInteractionOnFireHarpoon OnFireHarpoon;
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnHitPlayer);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFireHarpoon);
     
     UPROPERTY(BlueprintAssignable)
-    FFireHarpoonRifleInteractionOnHitPlayer OnHitPlayer;
+    FOnFireHarpoon OnFireHarpoon;
+    
+    UPROPERTY(BlueprintAssignable)
+    FOnHitPlayer OnHitPlayer;
     
 private:
     UPROPERTY(Replicated)
@@ -93,15 +93,16 @@ private:
     UPROPERTY(EditAnywhere)
     FDBDTunableRowHandle _successShotDuration;
     
+public:
+    UFireHarpoonRifleInteraction();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION(Reliable, Server)
     void Server_SetAimingSubstate(EFireHarpoonRifleAimingInteractionSubState newState);
     
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_HandleMissShotScores(const TArray<ADBDPlayer*>& nearMissedPlayers);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UFireHarpoonRifleInteraction();
 };
 

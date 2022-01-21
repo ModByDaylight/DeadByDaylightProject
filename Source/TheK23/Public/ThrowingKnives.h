@@ -4,7 +4,6 @@
 #include "Collectable.h"
 #include "ThrowingKnives.generated.h"
 
-class ASlasherPlayer;
 class UKnivesProvider;
 class UKnivesLauncher;
 class UFlurryComboScoreComponent;
@@ -14,6 +13,7 @@ class UK23PowerProgressPresentationComponent;
 class UPowerChargeComponent;
 class UReloadKnives;
 class AActor;
+class ASlasherPlayer;
 
 UCLASS()
 class AThrowingKnives : public ACollectable {
@@ -50,6 +50,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _minimumTimeBetweenBroadcast;
     
+public:
+    AThrowingKnives();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnItemUsedStateChanged(bool pressed);
     
@@ -84,8 +89,5 @@ public:
     UFUNCTION()
     void Authority_SpawnReloadInteractionOnLockers();
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    AThrowingKnives();
 };
 

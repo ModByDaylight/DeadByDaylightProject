@@ -7,9 +7,9 @@ UCLASS()
 class QUERYSERVICE_API AActorPairQueryEvaluatorSubscriberTest : public AActor {
     GENERATED_BODY()
 public:
+    AActorPairQueryEvaluatorSubscriberTest();
     UFUNCTION()
     void OnRangeChanged(const bool inRange);
     
-    AActorPairQueryEvaluatorSubscriberTest();
 };
 

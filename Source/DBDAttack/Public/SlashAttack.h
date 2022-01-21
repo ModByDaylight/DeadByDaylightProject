@@ -3,7 +3,7 @@
 #include "PounceAttack.h"
 #include "SlashAttack.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDATTACK_API USlashAttack : public UPounceAttack {
     GENERATED_BODY()
 public:

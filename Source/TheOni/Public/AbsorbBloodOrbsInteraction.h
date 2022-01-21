@@ -5,13 +5,13 @@
 
 class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THEONI_API UAbsorbBloodOrbsInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:
+    UAbsorbBloodOrbsInteraction();
     UFUNCTION(BlueprintCallable)
     void SetPlayerOwner(const ADBDPlayer* player);
     
-    UAbsorbBloodOrbsInteraction();
 };
 

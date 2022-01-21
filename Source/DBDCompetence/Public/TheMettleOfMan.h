@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ETheMettleOfManPhase.h"
 #include "Perk.h"
+#include "ETheMettleOfManPhase.h"
 #include "TheMettleOfMan.generated.h"
 
 class UStatusEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UTheMettleOfMan : public UPerk {
     GENERATED_BODY()
 public:
@@ -30,15 +30,16 @@ private:
     UPROPERTY(Export, Transient)
     UStatusEffect* _revealToKillerEffect;
     
+public:
+    UTheMettleOfMan();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_NumTokenSoFar();
     
     UFUNCTION()
     void OnRep_CurrentPhase();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UTheMettleOfMan();
 };
 

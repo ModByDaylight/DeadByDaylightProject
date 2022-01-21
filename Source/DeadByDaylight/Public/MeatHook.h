@@ -2,29 +2,29 @@
 #include "CoreMinimal.h"
 #include "Interactable.h"
 #include "AIInteractableTargetInterface.h"
+#include "AnimationMontageDescriptor.h"
 #include "AIPointOfInterestTargetInterface.h"
-#include "CharmAttachable.h"
 #include "NoiseIndicatorEmitterInterface.h"
+#include "CharmAttachable.h"
 #include "UObject/NoExportTypes.h"
 #include "GameplayTagContainer.h"
 #include "DBDTimer.h"
-#include "AnimationMontageDescriptor.h"
 #include "MeatHook.generated.h"
 
-class UAIPerceptionStimuliSourceComponent;
+class USceneComponent;
 class UDBDClipRegionComponent;
-class ADBDPlayer;
+class UMontagePlayer;
 class UCharacterPusherComponent;
+class AEntity;
 class UCapsuleComponent;
 class UPollableEventListener;
+class UAIPerceptionStimuliSourceComponent;
 class ACamperPlayer;
+class ADBDPlayer;
 class UInteractor;
-class USceneComponent;
-class UChargeableInteractionDefinition;
-class AEntity;
 class UMapActorComponent;
+class UChargeableInteractionDefinition;
 class ACharacter;
-class UMontagePlayer;
 class UAkComponent;
 class USphereComponent;
 class UBoxComponent;
@@ -130,6 +130,8 @@ private:
     UPROPERTY(Export, Transient)
     UMapActorComponent* _cachedMapActor;
     
+public:
+    AMeatHook();
 protected:
     UFUNCTION(BlueprintCallable)
     void UpdateSlasherBlockerCollision();
@@ -379,6 +381,7 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_SendOnUnhookAnalytics(ADBDPlayer* rescuer);
     
-    AMeatHook();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

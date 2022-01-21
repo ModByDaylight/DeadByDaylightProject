@@ -3,7 +3,7 @@
 #include "ItemAddon.h"
 #include "Addon_TheBlight_ConsecutiveDashSpeedBonus.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAddon_TheBlight_ConsecutiveDashSpeedBonus : public UItemAddon {
     GENERATED_BODY()
 public:

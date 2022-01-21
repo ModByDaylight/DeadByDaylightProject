@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EDoorStatus.h"
-#include "ECharacterStatus.h"
 #include "UniquelyIdentifiedAnalytic.h"
 #include "EPlayerRole.h"
+#include "EDoorStatus.h"
 #include "EHatchStatus.h"
 #include "EHealthStatus.h"
+#include "ECharacterStatus.h"
 #include "EGameState.h"
 #include "DisconnectionDetailsAnalytics.generated.h"
 

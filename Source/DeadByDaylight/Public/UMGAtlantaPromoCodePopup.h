@@ -1,20 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UMGGenericPopup.h"
-#include "Types/SlateEnums.h"
 #include "Layout/Margin.h"
+#include "Types/SlateEnums.h"
 #include "UMGAtlantaPromoCodePopup.generated.h"
 
 class UOverlay;
-class UHorizontalBox;
 class UImage;
 class UUMGAtlantaPromoCodeRewardItemWidget;
+class UHorizontalBox;
 class UEditableTextBox;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlantaPromoCodePopup : public UUMGGenericPopup {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPromoCodeInputOnPopup, const FString&, name);
+    
 protected:
     UPROPERTY(Export)
     UOverlay* RewardPanel;
@@ -44,9 +46,9 @@ protected:
     UImage* InvalidIcon;
     
 public:
+    UUMGAtlantaPromoCodePopup();
     UFUNCTION(BlueprintCallable)
     void PromoCodeCommitted(const FText& name, TEnumAsByte<ETextCommit::Type> commitType);
     
-    UUMGAtlantaPromoCodePopup();
 };
 

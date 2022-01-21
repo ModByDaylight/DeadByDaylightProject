@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EAIGameState.h"
 #include "EAIDangerState.h"
+#include "EAIGameState.h"
 #include "DangerStateGameStateMapContainer.generated.h"
 
 USTRUCT(BlueprintType)

@@ -1,8 +1,11 @@
 #include "DBDPlayerState.h"
 #include "Net/UnrealNetwork.h"
+#include "RitualHandlerComponent.h"
+#include "AchievementHandlerComponent.h"
+#include "CharacterStatsHandlerComponent.h"
 
-class AActor;
 class UGameplayNotificationManager;
+class AActor;
 
 void ADBDPlayerState::UpdateOngoingScores() {
 }
@@ -191,8 +194,12 @@ ADBDPlayerState::ADBDPlayerState() {
     this->_difficultyLevel = EAIDifficultyLevel::Max;
     this->IsPlayerReady = false;
     this->GameRole = EPlayerRole::VE_None;
+    this->RitualHandler = CreateDefaultSubobject<URitualHandlerComponent>(TEXT("RitualHandler"));
     this->DedicatedServerHandler = NULL;
     this->_inParadise = false;
+    this->_gameplayNotificationManager = CreateDefaultSubobject<UGameplayNotificationManager>(TEXT("GameplayNotificationManager"));
+    this->_achievementHandler = CreateDefaultSubobject<UAchievementHandlerComponent>(TEXT("AchievementHandler"));
+    this->_characterStatsHandler = CreateDefaultSubobject<UCharacterStatsHandlerComponent>(TEXT("CharacterStatsHandler"));
     this->_selectedCamperIndex = -1;
     this->_selectedSlasherIndex = -1;
     this->_platform = EPlatformFlag::None;

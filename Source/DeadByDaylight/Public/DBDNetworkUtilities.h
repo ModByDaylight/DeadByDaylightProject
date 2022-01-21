@@ -9,12 +9,12 @@ UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UDBDNetworkUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UDBDNetworkUtilities();
     UFUNCTION(BlueprintPure)
     static bool IsRunningDedicatedServerFlow();
     
     UFUNCTION(BlueprintPure)
     static bool IsOnDedicatedServerNetwork(const UObject* worldContextObject);
     
-    UDBDNetworkUtilities();
 };
 

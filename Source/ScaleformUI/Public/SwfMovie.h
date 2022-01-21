@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
 #include "FlashTextureRescale.h"
+#include "UObject/Object.h"
 #include "SwfMovie.generated.h"
 
 UCLASS(BlueprintType, MinimalAPI)

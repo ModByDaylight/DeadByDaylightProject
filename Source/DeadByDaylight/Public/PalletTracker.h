@@ -3,8 +3,8 @@
 #include "GameFramework/Actor.h"
 #include "PalletTracker.generated.h"
 
-class USceneComponent;
 class APallet;
+class USceneComponent;
 class ASlasherPlayer;
 
 UCLASS()
@@ -22,6 +22,9 @@ private:
     USceneComponent* _indicatorLocation;
     
 public:
+    APalletTracker();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void RevealToLocalPlayerBP(bool shown);
     
@@ -36,8 +39,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool CanSpawnDreamPalletAtLocation() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    APalletTracker();
 };
 

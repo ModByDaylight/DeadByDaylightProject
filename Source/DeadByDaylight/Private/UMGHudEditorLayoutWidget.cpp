@@ -1,9 +1,9 @@
 #include "UMGHudEditorLayoutWidget.h"
 
 class UUMGDragWidget_HudEditor;
-class UCustomWidgetWrapper_HudEditor;
 class UAkAudioEvent;
 class UUMGHudEditorScreen;
+class UCustomWidgetWrapper_HudEditor;
 
 void UUMGHudEditorLayoutWidget::ShowSurvivorLayout() {
 }

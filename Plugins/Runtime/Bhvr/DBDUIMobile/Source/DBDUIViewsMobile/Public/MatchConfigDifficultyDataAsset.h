@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "MatchConfigDifficultyData.h"
 #include "Engine/DataAsset.h"
 #include "ECustomMatchDifficulty.h"
-#include "MatchConfigDifficultyData.h"
 #include "MatchConfigDifficultyDataAsset.generated.h"
 
 UCLASS()

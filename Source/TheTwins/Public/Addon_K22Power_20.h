@@ -3,7 +3,7 @@
 #include "OnEventBaseAddon.h"
 #include "Addon_K22Power_20.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAddon_K22Power_20 : public UOnEventBaseAddon {
     GENERATED_BODY()
 public:

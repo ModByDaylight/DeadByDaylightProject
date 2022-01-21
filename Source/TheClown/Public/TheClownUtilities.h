@@ -3,15 +3,16 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "TheClownUtilities.generated.h"
 
+class ADBDPlayer;
 class UActiveGasCloudTrackerComponent;
 class UGassedStatusEffect;
-class ADBDPlayer;
 class UObject;
 
 UCLASS(BlueprintType)
 class UTheClownUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UTheClownUtilities();
     UFUNCTION(BlueprintPure)
     static bool IsGassed(const ADBDPlayer* player);
     
@@ -27,6 +28,5 @@ public:
     UFUNCTION(BlueprintPure)
     static bool CanBeGassed(const ADBDPlayer* player);
     
-    UTheClownUtilities();
 };
 

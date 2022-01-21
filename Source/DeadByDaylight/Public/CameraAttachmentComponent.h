@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CameraAttachment.h"
 #include "Components/ActorComponent.h"
+#include "CameraAttachment.h"
 #include "CameraAttachmentComponent.generated.h"
 
 class USceneComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCameraAttachmentComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -21,6 +21,7 @@ private:
     FCameraAttachment _currentCameraAttachment;
     
 public:
+    UCameraAttachmentComponent();
     UFUNCTION(BlueprintCallable)
     void Reset();
     
@@ -30,6 +31,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void Detach();
     
-    UCameraAttachmentComponent();
 };
 

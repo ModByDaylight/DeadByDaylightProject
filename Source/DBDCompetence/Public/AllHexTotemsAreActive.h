@@ -3,7 +3,7 @@
 #include "EventDrivenModifierCondition.h"
 #include "AllHexTotemsAreActive.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UAllHexTotemsAreActive : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:

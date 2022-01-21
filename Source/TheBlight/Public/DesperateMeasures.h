@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "DesperateMeasures.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDesperateMeasures : public UPerk {
     GENERATED_BODY()
 public:
@@ -15,8 +15,8 @@ private:
     int32 _nbInjuredHookedOrDyingSurvivors;
     
 public:
+    UDesperateMeasures();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UDesperateMeasures();
 };
 

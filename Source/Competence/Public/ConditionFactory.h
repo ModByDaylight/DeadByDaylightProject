@@ -4,13 +4,13 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "ConditionFactory.generated.h"
 
+class UIsTimerDoneCondition;
 class UTimerObject;
 class UOrModifierCondition;
+class UEventDrivenModifierCondition;
 class UConditionReceiver;
 class IConditionReceiver;
 class UNotModifierCondition;
-class UEventDrivenModifierCondition;
-class UIsTimerDoneCondition;
 class URangeBasedCondition;
 class UAndModifierCondition;
 
@@ -18,6 +18,7 @@ UCLASS(BlueprintType)
 class COMPETENCE_API UConditionFactory : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UConditionFactory();
     UFUNCTION(BlueprintCallable)
     static UOrModifierCondition* Or(TScriptInterface<IConditionReceiver> conditionReceiver);
     
@@ -42,6 +43,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static UAndModifierCondition* And(TScriptInterface<IConditionReceiver> conditionReceiver);
     
-    UConditionFactory();
 };
 

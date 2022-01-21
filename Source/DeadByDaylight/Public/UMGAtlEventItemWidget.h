@@ -4,8 +4,8 @@
 #include "EventItemsContentTypeUIData.h"
 #include "UMGAtlEventItemWidget.generated.h"
 
-class UCanvasPanel;
 class UImage;
+class UCanvasPanel;
 class UTextBlock;
 
 UCLASS(Abstract, EditInlineNew)

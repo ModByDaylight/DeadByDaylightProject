@@ -9,9 +9,9 @@ UCLASS()
 class ACharacterToolPlayMode : public ACharacterTool {
     GENERATED_BODY()
 public:
+    ACharacterToolPlayMode();
     UFUNCTION(BlueprintCallable)
     TArray<UAnimInstance*> GetAnimationInstances();
     
-    ACharacterToolPlayMode();
 };
 

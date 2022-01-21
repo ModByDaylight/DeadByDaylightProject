@@ -4,8 +4,8 @@
 #include "UMGAtlantaPromoCodeRewardItemWidget.generated.h"
 
 class UPanelWidget;
-class UWidgetAnimation;
 class UImage;
+class UWidgetAnimation;
 class UTextBlock;
 
 UCLASS(Abstract, EditInlineNew)

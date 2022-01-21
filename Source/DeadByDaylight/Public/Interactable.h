@@ -6,11 +6,11 @@
 #include "UObject/NoExportTypes.h"
 #include "Interactable.generated.h"
 
-class UInteractionDefinition;
 class UPrimitiveComponent;
 class UInteractor;
 class UInterruptionDefinition;
 class UInteractableTransformOptimizer;
+class UInteractionDefinition;
 class ADBDPlayer;
 
 UCLASS()
@@ -34,6 +34,8 @@ private:
     UPROPERTY(Transient)
     TMap<UPrimitiveComponent*, FInteractionArray> _zoneToInteractions;
     
+public:
+    AInteractable();
 protected:
     UFUNCTION(BlueprintCallable)
     void SetSingleZone(UPrimitiveComponent* zone);
@@ -91,6 +93,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AttachEveryInteractionToZone(UPrimitiveComponent* zone);
     
-    AInteractable();
 };
 

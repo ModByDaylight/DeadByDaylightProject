@@ -3,12 +3,12 @@
 #include "Components/ActorComponent.h"
 #include "FranklinsDemiseConsumedByEntityComponent.generated.h"
 
-class UChargerComponent;
-class ADBDPlayer;
 class UTimerObject;
 class UStatusEffect;
+class UChargerComponent;
+class ADBDPlayer;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UFranklinsDemiseConsumedByEntityComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -28,6 +28,11 @@ private:
     UPROPERTY(Export, Transient)
     UChargerComponent* _itemChargerComponent;
     
+public:
+    UFranklinsDemiseConsumedByEntityComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_ConsumeTimer();
     
@@ -38,8 +43,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_StartConsume(float duration, ADBDPlayer* previousOwner, ADBDPlayer* slasher);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UFranklinsDemiseConsumedByEntityComponent();
 };
 

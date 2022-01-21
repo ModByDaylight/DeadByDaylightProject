@@ -5,13 +5,13 @@
 
 class ATormentMode;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UActivateTormentModeInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
+    UActivateTormentModeInteraction();
     UFUNCTION(BlueprintCallable)
     void SetTormentMode(ATormentMode* tormentModeComponent);
     
-    UActivateTormentModeInteraction();
 };
 

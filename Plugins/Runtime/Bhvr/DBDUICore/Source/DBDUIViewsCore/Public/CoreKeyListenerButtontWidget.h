@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CoreButtonWidget.h"
 #include "EUIActionType.h"
+#include "CoreButtonWidget.h"
 #include "CoreKeyListenerButtontWidget.generated.h"
 
 class UDBDTextBlock;
@@ -15,9 +15,9 @@ protected:
     UDBDTextBlock* InputNameTB;
     
 public:
+    UCoreKeyListenerButtontWidget();
     UFUNCTION(BlueprintCallable)
     void SetUIAction(const EUIActionType actionType);
     
-    UCoreKeyListenerButtontWidget();
 };
 

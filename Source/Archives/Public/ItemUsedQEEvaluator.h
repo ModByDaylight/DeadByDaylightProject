@@ -9,11 +9,10 @@ UCLASS()
 class ARCHIVES_API UItemUsedQEEvaluator : public UQuestEventEvaluatorBase {
     GENERATED_BODY()
 public:
+    UItemUsedQEEvaluator();
 private:
     UFUNCTION()
     void OnItemUsed(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-public:
-    UItemUsedQEEvaluator();
 };
 

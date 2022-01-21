@@ -14,9 +14,9 @@ protected:
     UHorizontalBox* GuestButtonContainer;
     
 public:
+    UUMGAuthentificationProviderListWidget();
     UFUNCTION(BlueprintCallable)
     void HideGuestButton();
     
-    UUMGAuthentificationProviderListWidget();
 };
 

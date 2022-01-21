@@ -5,7 +5,7 @@
 
 class AGenerator;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UCoupDeGrace : public UPerk {
     GENERATED_BODY()
 public:

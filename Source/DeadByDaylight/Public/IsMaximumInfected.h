@@ -3,7 +3,7 @@
 #include "GameplayModifierCondition.h"
 #include "IsMaximumInfected.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIsMaximumInfected : public UGameplayModifierCondition {
     GENERATED_BODY()
 public:

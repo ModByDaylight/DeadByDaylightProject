@@ -21,6 +21,7 @@ protected:
     UScreenController* _screenController;
     
 public:
+    UScreenBase();
     UFUNCTION()
     void SetFadesOut(bool fadesOut) const;
     
@@ -51,6 +52,5 @@ public:
     UFUNCTION()
     void BroadcastOnHighlightedElementClickedEvent(const FName onBoardingID);
     
-    UScreenBase();
 };
 

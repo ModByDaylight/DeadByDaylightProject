@@ -6,7 +6,7 @@
 
 class ADBDPlayer;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UGeneratorDreamworldComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -14,6 +14,9 @@ private:
     UPROPERTY(EditDefaultsOnly)
     TArray<FName> _beamSocketsForBloodEffect;
     
+public:
+    UGeneratorDreamworldComponent();
+private:
     UFUNCTION()
     void OnRepairSkillCheckFailed(bool success, bool bonus, ADBDPlayer* player, bool triggerLoudNoise, bool hadInput, ESkillCheckCustomType type, float chargeChange);
     
@@ -21,7 +24,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnPlayerFailSkillCheck(ADBDPlayer* player);
     
-public:
-    UGeneratorDreamworldComponent();
 };
 

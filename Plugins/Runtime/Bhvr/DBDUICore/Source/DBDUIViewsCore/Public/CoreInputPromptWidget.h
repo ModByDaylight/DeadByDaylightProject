@@ -20,6 +20,7 @@ private:
     bool _isEnabled;
     
 public:
+    UCoreInputPromptWidget();
     UFUNCTION(BlueprintCallable)
     void SetInputKey(const FKey& inputKey);
     
@@ -49,7 +50,5 @@ protected:
     UFUNCTION(BlueprintImplementableEvent)
     void DisplayPrompt();
     
-public:
-    UCoreInputPromptWidget();
 };
 

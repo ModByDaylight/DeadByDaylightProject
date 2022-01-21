@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTunableRowHandle.h"
-#include "PounceAttack.h"
 #include "UObject/NoExportTypes.h"
+#include "PounceAttack.h"
+#include "DBDTunableRowHandle.h"
 #include "TwinJumpAttack.generated.h"
 
+class UCurveFloat;
 class UPhysicalMaterial;
 class ADBDPlayer;
-class UCurveFloat;
 class AConjoinedTwin;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UTwinJumpAttack : public UPounceAttack {
     GENERATED_BODY()
 public:
@@ -34,6 +34,9 @@ private:
     bool _shouldTwinHaveJumpObjectType;
     
 public:
+    UTwinJumpAttack();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_StopJump();
     
@@ -74,9 +77,5 @@ private:
     UFUNCTION(Client, Reliable)
     void Client_Debug_PrintFinalDecisionOnScreen(bool foundPath);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UTwinJumpAttack();
 };
 

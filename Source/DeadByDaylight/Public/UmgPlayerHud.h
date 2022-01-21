@@ -1,35 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "EInputInteractionType.h"
+#include "OnHudPerkButtonClickedEvent.h"
+#include "OnTutorialButtonClickedEvent.h"
+#include "OnSettingsButtonClickedEvent.h"
 #include "Styling/SlateBrush.h"
+#include "EInputInteractionType.h"
 #include "UmgPlayerHud.generated.h"
 
+class UPerkHudWidget;
 class UCanvasPanel;
-class UUMGAlertsWidget;
-class UAtlantaSkillCheckWidget;
 class UUMGMapThemeWidget;
+class UAtlantaSkillCheckWidget;
+class UUMGAlertsWidget;
 class UPerkActionButton;
 class UUMGObjectivesWidget;
-class UUMGEndGameCollapseWidget;
-class UPerkHudWidget;
-class ADBDPlayer;
 class UUMGStatusEffectsWidget;
 class UUMGChargeableInteractionWidget;
 class UAtlantaPromptWidget;
 class UUMGPlayersStatusWidget;
 class UVerticalBox;
 class UActionButton;
+class ADBDPlayerController;
+class UUMGEndGameCollapseWidget;
 class UPerkSoundHudWidget;
 class UMobileBaseUserWidget;
-class ADBDPlayerController;
 class UAtlantaHudDirectionalStick;
+class ADBDPlayer;
 class UInteractionDefinition;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUmgPlayerHudOnPerkClickedEvent, FName, perkId, bool, clickedOnPerksWidget);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUmgPlayerHudOnTutorialLeaveClickedEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUmgPlayerHudOnTutorialNextClickedEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUmgPlayerHudOnSettingsClickedEvent);
 
 UCLASS(Abstract, EditInlineNew)
 class UUmgPlayerHud : public UUserWidget {
@@ -99,16 +97,16 @@ public:
     UUMGEndGameCollapseWidget* EndGameCollapseWidget;
     
     UPROPERTY(BlueprintAssignable)
-    FUmgPlayerHudOnPerkClickedEvent OnPerkClickedEvent;
+    FOnHudPerkButtonClickedEvent OnPerkClickedEvent;
     
     UPROPERTY(BlueprintAssignable)
-    FUmgPlayerHudOnTutorialLeaveClickedEvent OnTutorialLeaveClickedEvent;
+    FOnTutorialButtonClickedEvent OnTutorialLeaveClickedEvent;
     
     UPROPERTY(BlueprintAssignable)
-    FUmgPlayerHudOnTutorialNextClickedEvent OnTutorialNextClickedEvent;
+    FOnTutorialButtonClickedEvent OnTutorialNextClickedEvent;
     
     UPROPERTY(BlueprintAssignable)
-    FUmgPlayerHudOnSettingsClickedEvent OnSettingsClickedEvent;
+    FOnSettingsButtonClickedEvent OnSettingsClickedEvent;
     
 protected:
     UPROPERTY(BlueprintReadOnly, Transient)
@@ -130,6 +128,8 @@ private:
     UPROPERTY(EditAnywhere)
     FSlateBrush _lockedVirtualJoystickThumbImage;
     
+public:
+    UUmgPlayerHud();
 protected:
     UFUNCTION(BlueprintCallable)
     void TutorialTallyNextSelected();
@@ -170,7 +170,5 @@ protected:
     UFUNCTION(BlueprintPure)
     UInteractionDefinition* GetCurrentOrAvailableInteractionOfType(EInputInteractionType interactionInputType) const;
     
-public:
-    UUmgPlayerHud();
 };
 

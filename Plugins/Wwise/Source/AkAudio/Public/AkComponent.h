@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AkGameObject.h"
 #include "Engine/EngineTypes.h"
+#include "AkGameObject.h"
 #include "AkExternalSourceInfo.h"
 #include "Engine/LatentActionManager.h"
 #include "ERTPCValueType.h"
 #include "AkComponent.generated.h"
 
-class UAkTrigger;
 class UAkAuxBus;
 class UAkSwitchValue;
 class UAkRtpc;
 class UAkComponent;
+class UAkTrigger;
 class UAkAudioEvent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class AKAUDIO_API UAkComponent : public UAkGameObject {
     GENERATED_BODY()
 public:
@@ -89,6 +89,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float MaxDistance;
     
+    UAkComponent();
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     void UseReverbVolumes(bool inUseReverbVolumes);
     
@@ -143,6 +144,5 @@ public:
     UFUNCTION(BlueprintCosmetic, BlueprintPure)
     float GetAttenuationRadius() const;
     
-    UAkComponent();
 };
 

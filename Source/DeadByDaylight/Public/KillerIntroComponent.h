@@ -4,7 +4,7 @@
 #include "EFPVTransitionStrategy.h"
 #include "KillerIntroComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UKillerIntroComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -21,6 +21,9 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _startKillerIntroDelay;
     
+public:
+    UKillerIntroComponent();
+private:
     UFUNCTION()
     void OnLevelReadyToPlay();
     
@@ -30,7 +33,5 @@ private:
     UFUNCTION()
     void KillerCameraPanInUpdateNative(const float killerIntroCompletedPercent);
     
-public:
-    UKillerIntroComponent();
 };
 

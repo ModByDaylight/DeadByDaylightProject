@@ -1,6 +1,4 @@
 #include "CharacterSightComponent.h"
-
-#include "GameFramework/Character.h"
 #include "Net/UnrealNetwork.h"
 
 class ACharacter;

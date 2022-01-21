@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
 #include "AccessKey.h"
+#include "UObject/Object.h"
 #include "AccessKeys.generated.h"
 
 UCLASS(Config=Game)

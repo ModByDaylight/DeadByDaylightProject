@@ -5,7 +5,7 @@
 
 class ALocker;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DBDINTERACTION_API UBaseLockerInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:

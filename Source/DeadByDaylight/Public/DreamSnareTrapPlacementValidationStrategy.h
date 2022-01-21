@@ -3,7 +3,7 @@
 #include "DefaultObjectPlacementValidationStrategy.h"
 #include "DreamSnareTrapPlacementValidationStrategy.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UDreamSnareTrapPlacementValidationStrategy : public UDefaultObjectPlacementValidationStrategy {
     GENERATED_BODY()
 public:

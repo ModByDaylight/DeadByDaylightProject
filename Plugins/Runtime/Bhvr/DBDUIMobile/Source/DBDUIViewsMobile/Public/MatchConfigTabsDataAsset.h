@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MatchConfigTabData.h"
 #include "Engine/DataAsset.h"
 #include "ECustomMatchTab.h"
+#include "MatchConfigTabData.h"
 #include "MatchConfigTabsDataAsset.generated.h"
 
 UCLASS()

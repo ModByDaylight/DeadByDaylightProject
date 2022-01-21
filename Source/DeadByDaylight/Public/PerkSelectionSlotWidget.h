@@ -3,8 +3,8 @@
 #include "MobileBaseUserWidget.h"
 #include "PerkSelectionSlotWidget.generated.h"
 
-class UTextBlock;
 class UPerkActionButton;
+class UTextBlock;
 class UImage;
 class UUMGHtmlRichText;
 
@@ -55,10 +55,11 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     float DescriptionBackgroundLowOpacity;
     
+public:
+    UPerkSelectionSlotWidget();
+protected:
     UFUNCTION(BlueprintCallable)
     void OnButtonClicked();
     
-public:
-    UPerkSelectionSlotWidget();
 };
 

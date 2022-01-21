@@ -3,10 +3,11 @@
 #include "Components/ActorComponent.h"
 #include "HookableComponent.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UHookableComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UHookableComponent();
 private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_SetDrainTimerPercentLeft(float percentTime);
@@ -21,6 +22,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_SetDrainTimerPercentLeft(float percentTime);
     
-    UHookableComponent();
 };
 

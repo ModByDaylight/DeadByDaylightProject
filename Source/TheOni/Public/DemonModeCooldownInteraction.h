@@ -5,10 +5,11 @@
 
 class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THEONI_API UDemonModeCooldownInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:
+    UDemonModeCooldownInteraction();
     UFUNCTION(BlueprintCallable)
     void SetPlayerOwner(const ADBDPlayer* owner);
     
@@ -16,7 +17,5 @@ private:
     UFUNCTION()
     void OnLevelReadyToPlay();
     
-public:
-    UDemonModeCooldownInteraction();
 };
 

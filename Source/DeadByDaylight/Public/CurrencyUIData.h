@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DBDTableRowBase.h"
-#include "Styling/SlateColor.h"
 #include "ECurrencyType.h"
+#include "Styling/SlateColor.h"
 #include "CurrencyUIData.generated.h"
 
 USTRUCT(BlueprintType)

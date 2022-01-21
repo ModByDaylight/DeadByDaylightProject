@@ -13,10 +13,11 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     ACamperPlayer* _owningSurvivor;
     
+public:
+    UBaseSurvivorAnimInstance();
+protected:
     UFUNCTION(BlueprintPure)
     ACamperPlayer* GetOwningSurvivor() const;
     
-public:
-    UBaseSurvivorAnimInstance();
 };
 

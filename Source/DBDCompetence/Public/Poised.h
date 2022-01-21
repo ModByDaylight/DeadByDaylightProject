@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "Poised.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UPoised : public UPerk {
     GENERATED_BODY()
 public:

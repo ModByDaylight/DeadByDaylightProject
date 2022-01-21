@@ -1,56 +1,51 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "ChargeApplied.h"
 #include "Components/ActorComponent.h"
-#include "ESkillCheckCustomType.h"
+#include "ChargeableEmptiedDelegate.h"
+#include "ChargeableCompletionStateChangeDelegate.h"
+#include "ChargeableSkillCheckResponse.h"
+#include "ChargeableCompletionPercentChangeDelegate.h"
+#include "ChargeableCompletionPercentChangeCosmeticDelegate.h"
+#include "DechargeBegin.h"
+#include "DechargeEnd.h"
 #include "SpeedBasedNetSyncedValue.h"
 #include "DBDTimer.h"
 #include "ChargeData.h"
 #include "ChargeableComponent.generated.h"
 
 class AActor;
-class ADBDPlayer;
-class UChargeableComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FChargeableComponentOnInteractionEmptiedEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChargeableComponentDechargeBeginDelegate, UChargeableComponent*, ChargeableComponent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_SevenParams(FChargeableComponentSkillCheckResponseAestheticDelegate, bool, Success, bool, Bonus, ADBDPlayer*, Player, bool, TriggerLoudNoise, bool, hadInput, ESkillCheckCustomType, type, float, ChargeChange);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_SevenParams(FChargeableComponentSkillCheckResponseAuthorityDelegate, bool, Success, bool, Bonus, ADBDPlayer*, Player, bool, TriggerLoudNoise, bool, hadInput, ESkillCheckCustomType, type, float, ChargeChange);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FChargeableComponentOnInteractionCompletionStateChanged, bool, completed, const TArray<AActor*>&, instigatorsForCompletion);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FChargeableComponentChargeAppliedAuthorityDelegate, float, IndividualChargeAmount, float, TotalChargeAmount, AActor*, ChargeInstigator, bool, WasCoop, float, DeltaTime);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FChargeableComponentChargeableCompletionPercentChangeCosmeticDelegate, UChargeableComponent*, ChargeableComponent, float, TotalPercentComplete);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FChargeableComponentChargeableCompletionPercentChangeAuthorityDelegate, UChargeableComponent*, ChargeableComponent, float, PercentCompletionChange, float, TotalPercentComplete);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChargeableComponentDechargeEndDelegate, UChargeableComponent*, ChargeableComponent);
-
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UChargeableComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FChargeableComponentOnInteractionEmptiedEvent OnInteractionEmptiedEvent;
+    FChargeableEmptiedDelegate OnInteractionEmptiedEvent;
     
     UPROPERTY(BlueprintAssignable)
-    FChargeableComponentOnInteractionCompletionStateChanged OnInteractionCompletionStateChanged;
+    FChargeableCompletionStateChangeDelegate OnInteractionCompletionStateChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FChargeableComponentSkillCheckResponseAestheticDelegate SkillCheckResponseAestheticDelegate;
+    FChargeableSkillCheckResponse SkillCheckResponseAestheticDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FChargeableComponentSkillCheckResponseAuthorityDelegate SkillCheckResponseAuthorityDelegate;
+    FChargeableSkillCheckResponse SkillCheckResponseAuthorityDelegate;
     
     UPROPERTY(BlueprintAssignable, Transient)
-    FChargeableComponentChargeAppliedAuthorityDelegate ChargeAppliedAuthorityDelegate;
+    FChargeApplied ChargeAppliedAuthorityDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FChargeableComponentChargeableCompletionPercentChangeAuthorityDelegate ChargeableCompletionPercentChangeAuthorityDelegate;
+    FChargeableCompletionPercentChangeDelegate ChargeableCompletionPercentChangeAuthorityDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FChargeableComponentChargeableCompletionPercentChangeCosmeticDelegate ChargeableCompletionPercentChangeCosmeticDelegate;
+    FChargeableCompletionPercentChangeCosmeticDelegate ChargeableCompletionPercentChangeCosmeticDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FChargeableComponentDechargeBeginDelegate DechargeBeginDelegate;
+    FDechargeBegin DechargeBeginDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FChargeableComponentDechargeEndDelegate DechargeEndDelegate;
+    FDechargeEnd DechargeEndDelegate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool AllowSkillChecksAtFullCharge;
@@ -105,6 +100,9 @@ private:
     bool _stopDechargingWhenComplete;
     
 public:
+    UChargeableComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetSecondsToCharge(float secondsToCharge);
     
@@ -176,8 +174,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_AddCharge(float chargeAmount, AActor* instigator, bool bypassSkillCheckFail);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UChargeableComponent();
 };
 

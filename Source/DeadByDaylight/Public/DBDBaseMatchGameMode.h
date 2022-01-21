@@ -22,9 +22,9 @@ private:
     ANetworkFenceActor* _theFence;
     
 public:
+    ADBDBaseMatchGameMode();
     UFUNCTION(BlueprintPure)
     UEndGameComponent* GetEndGameComponent() const;
     
-    ADBDBaseMatchGameMode();
 };
 

@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ObjectPlacementValidationStrategy.h"
 #include "UObject/NoExportTypes.h"
+#include "ObjectPlacementValidationStrategy.h"
 #include "UObject/NoExportTypes.h"
 #include "DefaultObjectPlacementValidationStrategy.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UDefaultObjectPlacementValidationStrategy : public UObjectPlacementValidationStrategy {
     GENERATED_BODY()
 public:

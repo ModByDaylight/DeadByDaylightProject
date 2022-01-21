@@ -1,11 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TagStateBool.h"
-#include "UObject/NoExportTypes.h"
 #include "Animation/AnimInstance.h"
-#include "EInteractionAnimation.h"
-#include "EOniAttackType.h"
+#include "OnDynamicEvent.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "EOniAttackType.h"
+#include "TagStateBool.h"
+#include "EInteractionAnimation.h"
 #include "EAttackSubstate.h"
 #include "SlasherAnimInstance.generated.h"
 
@@ -16,17 +17,15 @@ class UChargedAttackStateComponent;
 class UOniDemonModeAttackStateComponent;
 class UEvilWithinComponent;
 class UFrenzyComponent;
-class UPhaseWalkingComponent;
 class UArmIKSensorComponent;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSlasherAnimInstanceOnFootTrapped);
+class UPhaseWalkingComponent;
 
 UCLASS(NonTransient)
 class DEADBYDAYLIGHT_API USlasherAnimInstance : public UAnimInstance {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FSlasherAnimInstanceOnFootTrapped OnFootTrapped;
+    FOnDynamicEvent OnFootTrapped;
     
 protected:
     UPROPERTY(BlueprintReadWrite)
@@ -198,6 +197,7 @@ protected:
     UArmIKSensorComponent* _armIKSensorComponent;
     
 public:
+    USlasherAnimInstance();
     UFUNCTION(BlueprintCallable)
     void SetIsCrouched(const bool value);
     
@@ -205,7 +205,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void CallOnFootTrapped();
     
-public:
-    USlasherAnimInstance();
 };
 

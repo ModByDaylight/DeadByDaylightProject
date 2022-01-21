@@ -23,10 +23,11 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     float _tormentModeHorizontalInput;
     
+public:
+    UTheExecutionerAnimInstance();
+protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void NoInputFeedbackCosmetic();
     
-public:
-    UTheExecutionerAnimInstance();
 };
 

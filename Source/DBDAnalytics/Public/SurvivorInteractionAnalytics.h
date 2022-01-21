@@ -9,6 +9,7 @@ UCLASS(BlueprintType)
 class USurvivorInteractionAnalytics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    USurvivorInteractionAnalytics();
     UFUNCTION(BlueprintCallable)
     static void RecordHealSuccess(ACamperPlayer* survivor);
     
@@ -18,6 +19,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void IncrementHealCount(ACamperPlayer* survivor);
     
-    USurvivorInteractionAnalytics();
 };
 

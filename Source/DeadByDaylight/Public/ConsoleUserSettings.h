@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerInput.h"
-#include "AtlantaCustomizedHudSettings.h"
 #include "GameFramework/PlayerInput.h"
+#include "AtlantaCustomizedHudSettings.h"
 #include "ConsoleUserSettings.generated.h"
 
 USTRUCT(BlueprintType)

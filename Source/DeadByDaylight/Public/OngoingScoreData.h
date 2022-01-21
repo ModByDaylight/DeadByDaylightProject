@@ -4,8 +4,8 @@
 #include "GameplayTagContainer.h"
 #include "OngoingScoreData.generated.h"
 
-class AActor;
 class UObject;
+class AActor;
 
 USTRUCT(BlueprintType)
 struct FOngoingScoreData {

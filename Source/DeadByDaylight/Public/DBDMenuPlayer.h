@@ -1,19 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EItemHandPosition.h"
 #include "DBDBasePlayer.h"
 #include "StandDisplayable.h"
-#include "EItemHandPosition.h"
 #include "CharmAttachable.h"
+#include "OnItemEquipped.h"
 #include "ECustomizationCategory.h"
 #include "DBDMenuPlayer.generated.h"
 
-class UMaterialHelper;
-class UMaterialInterface;
 class AActor;
 class USkeletalMeshComponent;
+class UMaterialInterface;
+class UMaterialHelper;
 class UCharmSpawnerComponent;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDBDMenuPlayerOnItemEquipped);
 
 UCLASS()
 class DEADBYDAYLIGHT_API ADBDMenuPlayer : public ADBDBasePlayer, public IStandDisplayable, public ICharmAttachable {
@@ -26,7 +25,7 @@ public:
     bool IsOnline;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDMenuPlayerOnItemEquipped OnItemEquipped;
+    FOnItemEquipped OnItemEquipped;
     
 private:
     UPROPERTY(EditAnywhere)
@@ -44,6 +43,9 @@ private:
     UPROPERTY()
     FName _equippedItemName;
     
+public:
+    ADBDMenuPlayer();
+private:
     UFUNCTION()
     void WrappedOnDestroyed(AActor* DestroyedActor);
     
@@ -78,7 +80,7 @@ protected:
     UFUNCTION(BlueprintImplementableEvent)
     void BeginCreateSequence();
     
-public:
-    ADBDMenuPlayer();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

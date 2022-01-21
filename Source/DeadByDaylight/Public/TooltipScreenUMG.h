@@ -13,10 +13,11 @@ private:
     UPROPERTY(Export, Transient)
     UBaseTooltipWidget* _tooltipWidget;
     
+public:
+    UTooltipScreenUMG();
+private:
     UFUNCTION()
     void OnCloseTriggered();
     
-public:
-    UTooltipScreenUMG();
 };
 

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AIController.h"
-#include "DBDTunableRowHandle.h"
 #include "UObject/NoExportTypes.h"
+#include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
 #include "Perception/AIPerceptionTypes.h"
 #include "ZombieAIController.generated.h"
@@ -63,13 +63,14 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _zombieAttackCooldownTime;
     
+public:
+    AZombieAIController();
+private:
     UFUNCTION()
     void OnSlasherSet(ASlasherPlayer* slasher);
     
     UFUNCTION()
     void Authority_OnTargetPerceptionUpdated(AActor* actor, FAIStimulus stimulus);
     
-public:
-    AZombieAIController();
 };
 

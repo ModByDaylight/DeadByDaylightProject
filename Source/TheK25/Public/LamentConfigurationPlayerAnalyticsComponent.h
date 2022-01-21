@@ -4,7 +4,7 @@
 #include "LamentConfigurationPlayerPossessionData.h"
 #include "LamentConfigurationPlayerAnalyticsComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ULamentConfigurationPlayerAnalyticsComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -15,12 +15,13 @@ private:
     UPROPERTY(Replicated)
     FLamentConfigurationPlayerPossessionData _possessionAnalytics;
     
+public:
+    ULamentConfigurationPlayerAnalyticsComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_AnalyticsCount();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ULamentConfigurationPlayerAnalyticsComponent();
 };
 

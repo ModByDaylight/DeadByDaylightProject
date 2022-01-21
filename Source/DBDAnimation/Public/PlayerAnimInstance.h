@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "Animation/AnimInstance.h"
-#include "TaggedAnimCollection.h"
-#include "Activatable.h"
 #include "GameplayTagContainer.h"
+#include "Animation/AnimInstance.h"
+#include "Activatable.h"
+#include "TaggedAnimCollection.h"
 #include "AnimSequenceSelector.h"
 #include "ActivationDefinition.h"
 #include "PlayerAnimInstance.generated.h"
 
 class ADBDPlayer;
 class UAnimEffectBlackBoard;
-class UAnimEffectHandler;
 class UAnimSequence;
+class UAnimEffectHandler;
 class UBlendSpace;
 class UAimOffsetBlendSpace;
 class UBlendSpace1D;
@@ -74,6 +74,9 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     FActivationDefinition _activationDefinition;
     
+public:
+    UPlayerAnimInstance();
+protected:
     UFUNCTION()
     void OnLevelReadyToPlay();
     
@@ -88,7 +91,7 @@ protected:
     UFUNCTION(BlueprintPure)
     ADBDPlayer* GetOwningPlayer() const;
     
-public:
-    UPlayerAnimInstance();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

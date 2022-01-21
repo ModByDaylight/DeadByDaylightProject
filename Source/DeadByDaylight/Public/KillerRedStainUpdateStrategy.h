@@ -6,7 +6,7 @@
 
 class UCurveFloat;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UKillerRedStainUpdateStrategy : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -17,11 +17,11 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     FGameplayTagContainer _hideRedStainStateTags;
     
+public:
+    UKillerRedStainUpdateStrategy();
 private:
     UFUNCTION()
     void OnHeadHiddenChanged(bool isHidden);
     
-public:
-    UKillerRedStainUpdateStrategy();
 };
 

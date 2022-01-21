@@ -3,8 +3,8 @@
 #include "UMGBaseSideMainMenuButton.h"
 #include "UMGMenuBaseBanner.generated.h"
 
-class UTextBlock;
 class UImage;
+class UTextBlock;
 class USlateTextureAtlasInterface;
 class ISlateTextureAtlasInterface;
 

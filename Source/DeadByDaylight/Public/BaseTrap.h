@@ -12,12 +12,12 @@ protected:
     bool _isTrapSet;
     
 public:
+    ABaseTrap();
     UFUNCTION(BlueprintCallable)
     void SetIsTrapSet(const bool value);
     
     UFUNCTION(BlueprintPure)
     bool IsTrapSet() const;
     
-    ABaseTrap();
 };
 

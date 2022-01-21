@@ -5,10 +5,11 @@
 
 class UChargeableComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UChaseeCharacterComponent : public UChaseComponent {
     GENERATED_BODY()
 public:
+    UChaseeCharacterComponent();
 private:
     UFUNCTION()
     void Authority_OnLevelReadyToPlay();
@@ -16,7 +17,5 @@ private:
     UFUNCTION()
     void Authority_OnGeneratorPercentChanged(UChargeableComponent* chargeableComponent, float percentCompletionChange, float totalPercentComplete);
     
-public:
-    UChaseeCharacterComponent();
 };
 

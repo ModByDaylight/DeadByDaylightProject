@@ -17,9 +17,9 @@ protected:
     bool _displayToLocallyObserved;
     
 public:
+    ABubbleIndicator();
     UFUNCTION(BlueprintImplementableEvent)
     void SetSilhouette(UStaticMesh* staticMesh);
     
-    ABubbleIndicator();
 };
 

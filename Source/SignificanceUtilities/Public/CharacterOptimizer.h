@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-//CROSS-MODULE INCLUDE: Engine BHVRPerDetailModeFloat
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BHVRPerDetailModeFloat -FallbackName=BHVRPerDetailModeFloat
 #include "CharacterOptimizer.generated.h"
 
 class AActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class SIGNIFICANCEUTILITIES_API UCharacterOptimizer : public UActorComponent {
     GENERATED_BODY()
 public:
 private:
-    //UPROPERTY(EditAnywhere)
-    //FBHVRPerDetailModeFloat _distance;
+    UPROPERTY(EditAnywhere)
+    FBHVRPerDetailModeFloat _distance;
     
     UPROPERTY(EditAnywhere)
     float _characterMovementTickRateWhenInsignificant;
@@ -24,8 +24,8 @@ private:
     TArray<AActor*> _dependentActorsToCheckSignficance;
     
 public:
+    UCharacterOptimizer();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UCharacterOptimizer();
 };
 

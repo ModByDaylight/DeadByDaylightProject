@@ -4,10 +4,11 @@
 #include "GameplayTagContainer.h"
 #include "ServerCorrectionDisablerComponent.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class NETWORKUTILITIES_API UServerCorrectionDisablerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UServerCorrectionDisablerComponent();
     UFUNCTION(BlueprintCallable)
     void SetServerCorrectionEnabled(const bool enabled, FGameplayTag channel);
     
@@ -17,6 +18,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool GetServerCorrectionEnabled() const;
     
-    UServerCorrectionDisablerComponent();
 };
 

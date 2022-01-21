@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/SceneComponent.h"
+#include "UObject/NoExportTypes.h"
 #include "ScreenSpaceLocationComponent.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UScreenSpaceLocationComponent : public USceneComponent {
     GENERATED_BODY()
 public:
@@ -27,12 +27,12 @@ private:
     TArray<FTransform> _previousTransforms;
     
 public:
+    UScreenSpaceLocationComponent();
     UFUNCTION(BlueprintPure)
     bool HasValidPosition() const;
     
     UFUNCTION(BlueprintPure)
     FVector2D GetCurrentResolution() const;
     
-    UScreenSpaceLocationComponent();
 };
 

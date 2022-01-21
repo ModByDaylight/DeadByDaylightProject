@@ -3,7 +3,7 @@
 #include "StatusEffect.h"
 #include "PreventKOEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UPreventKOEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

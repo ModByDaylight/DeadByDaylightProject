@@ -5,7 +5,7 @@
 
 class AConjoinedTwin;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTwinBaseAddon : public UItemAddon {
     GENERATED_BODY()
 public:
@@ -16,10 +16,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _customParam;
     
+public:
+    UTwinBaseAddon();
+private:
     UFUNCTION()
     void Authority_OnTwinSet(AConjoinedTwin* twin);
     
-public:
-    UTwinBaseAddon();
 };
 

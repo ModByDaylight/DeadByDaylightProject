@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "Overcharge.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UOvercharge : public UPerk {
     GENERATED_BODY()
 public:

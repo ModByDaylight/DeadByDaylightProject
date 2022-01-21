@@ -5,9 +5,9 @@
 #include "EAIDifficultyLevel.h"
 #include "UMGPartyBotSlotWidget.generated.h"
 
+class UCanvasPanel;
 class UTextBlock;
 class UUMGBaseButtonWidget;
-class UCanvasPanel;
 class UImage;
 
 UCLASS(Abstract, EditInlineNew)
@@ -39,6 +39,8 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     TMap<EAIDifficultyLevel, FSlateColor> DifficultyColors;
     
+public:
+    UUMGPartyBotSlotWidget();
 private:
     UFUNCTION()
     void HandleInvitePartyButtonEvent();
@@ -46,7 +48,5 @@ private:
     UFUNCTION()
     void HandleEditButtonEvent();
     
-public:
-    UUMGPartyBotSlotWidget();
 };
 

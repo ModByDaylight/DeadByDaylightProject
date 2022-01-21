@@ -6,18 +6,17 @@
 
 class UUserWidget;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDUIPRESENTERS_API UExamplePresenter : public UHudPresenter {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     TSubclassOf<UUserWidget> ExampleWidgetClass;
     
+    UExamplePresenter();
 private:
     UFUNCTION()
     void OnButtonClick();
     
-public:
-    UExamplePresenter();
 };
 

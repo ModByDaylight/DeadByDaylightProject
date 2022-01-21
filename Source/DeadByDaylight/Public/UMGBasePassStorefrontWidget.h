@@ -13,6 +13,8 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UUMGSubscriptionsPageScrollWidget* SubscriptionsPageScroll;
     
+public:
+    UUMGBasePassStorefrontWidget();
 private:
     UFUNCTION()
     void HandleSubscriptionInfoButtonClickedEvent(const FString& subscriptionDetails);
@@ -20,7 +22,5 @@ private:
     UFUNCTION()
     void HandleBuySubscriptionPackButtonClickedEvent(FName subscriptionPackID);
     
-public:
-    UUMGBasePassStorefrontWidget();
 };
 

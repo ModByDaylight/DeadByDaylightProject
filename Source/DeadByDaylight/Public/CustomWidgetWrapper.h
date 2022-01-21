@@ -1,20 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/CanvasPanel.h"
+#include "OnVersionDelegate.h"
 #include "GameplayTagContainer.h"
 #include "CustomWidgetWrapper.generated.h"
 
 class UCustomWidgetWrapper;
 class UCustomWidgetWrapperInitializer;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCustomWidgetWrapperOnVersion, int32, version);
-
 UCLASS(Abstract)
 class DEADBYDAYLIGHT_API UCustomWidgetWrapper : public UCanvasPanel {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FCustomWidgetWrapperOnVersion OnVersion;
+    FOnVersionDelegate OnVersion;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     FGameplayTag Id;
@@ -28,6 +27,7 @@ public:
     UPROPERTY(Export, Transient)
     UCustomWidgetWrapperInitializer* InitializerWidget;
     
+    UCustomWidgetWrapper();
     UFUNCTION(BlueprintCallable)
     void ApplyVersion(int32 version);
     
@@ -37,6 +37,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ApplyOpacity(float opacity);
     
-    UCustomWidgetWrapper();
 };
 

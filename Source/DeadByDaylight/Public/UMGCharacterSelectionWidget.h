@@ -1,6 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
+#include "OnCharacterSelectedEvent.h"
+#include "OnCharacterRoleButtonClickedEvent.h"
+#include "OnCharacterInfoButtonClickedEvent.h"
 #include "UMGCharacterSelectionWidget.generated.h"
 
 class UUMGCharacterSelectSubmenu;
@@ -8,22 +11,18 @@ class UUMGCharacterPageScrollWidget;
 class UUMGCharacterInfoWidget;
 class UWidgetSwitcher;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGCharacterSelectionWidgetOnCharacterSelected, int32, charIndex);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGCharacterSelectionWidgetOnCharacterRoleButtonClicked);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGCharacterSelectionWidgetOnCharacterInfoButtonClicked);
-
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGCharacterSelectionWidget : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FUMGCharacterSelectionWidgetOnCharacterSelected OnCharacterSelected;
+    FOnCharacterSelectedEvent OnCharacterSelected;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGCharacterSelectionWidgetOnCharacterRoleButtonClicked OnCharacterRoleButtonClicked;
+    FOnCharacterRoleButtonClickedEvent OnCharacterRoleButtonClicked;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGCharacterSelectionWidgetOnCharacterInfoButtonClicked OnCharacterInfoButtonClicked;
+    FOnCharacterInfoButtonClickedEvent OnCharacterInfoButtonClicked;
     
 protected:
     UPROPERTY(BlueprintReadOnly, Export)
@@ -41,6 +40,9 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     bool _isKiller;
     
+public:
+    UUMGCharacterSelectionWidget();
+protected:
     UFUNCTION()
     void SwitchPanel();
     
@@ -50,7 +52,5 @@ protected:
     UFUNCTION()
     void BroadcastRoleButtonClicked();
     
-public:
-    UUMGCharacterSelectionWidget();
 };
 

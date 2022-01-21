@@ -6,7 +6,7 @@
 
 class AZombieEscapeDoorPointsActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAddon_K24_18 : public UImposeStatusEffectOnEventAddon {
     GENERATED_BODY()
 public:

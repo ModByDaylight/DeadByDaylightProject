@@ -5,7 +5,7 @@
 
 class UActorSpawner;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UObjectRandomizer : public USceneComponent {
     GENERATED_BODY()
 public:

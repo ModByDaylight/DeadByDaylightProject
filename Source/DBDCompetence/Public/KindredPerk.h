@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "KindredPerk.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UKindredPerk : public UPerk {
     GENERATED_BODY()
 public:

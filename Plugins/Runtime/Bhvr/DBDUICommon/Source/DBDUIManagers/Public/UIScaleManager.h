@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
-#include "EDPIScaleCurveRatio.h"
 #include "EScaleType.h"
+#include "EDPIScaleCurveRatio.h"
 #include "UIScaleManager.generated.h"
 
-class UDataTable;
 class UCurveFloat;
+class UDataTable;
 
 UCLASS(BlueprintType)
 class DBDUIMANAGERS_API UUIScaleManager : public UGameInstanceSubsystem {
@@ -20,6 +20,7 @@ private:
     UCurveFloat* _dpiScaleCurve;
     
 public:
+    UUIScaleManager();
     UFUNCTION(BlueprintPure)
     float GetSkillCheckScaleFactor() const;
     
@@ -35,6 +36,5 @@ public:
     UFUNCTION(BlueprintCallable)
     EDPIScaleCurveRatio GetDPIScaleCurveRatio();
     
-    UUIScaleManager();
 };
 

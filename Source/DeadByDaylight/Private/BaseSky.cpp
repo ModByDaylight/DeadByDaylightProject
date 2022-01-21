@@ -1,10 +1,10 @@
 #include "BaseSky.h"
 
+class UStaticMeshComponent;
 class AActor;
 class USkyLightComponent;
-class UDirectionalLightComponent;
 class UPostProcessComponent;
-class UStaticMeshComponent;
+class UDirectionalLightComponent;
 class UExponentialHeightFogComponent;
 
 

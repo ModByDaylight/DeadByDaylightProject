@@ -4,31 +4,31 @@
 #include "Styling/SlateBrush.h"
 #include "UMGBaseButtonWidget.generated.h"
 
+class UImage;
 class UTextBlock;
 class UButton;
-class UImage;
 class UAkAudioEvent;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGBaseButtonWidgetOnBaseButtonClickedEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGBaseButtonWidgetOnBaseButtonPressedEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGBaseButtonWidgetOnBaseButtonLongPressEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGBaseButtonWidgetOnBaseButtonReleasedEvent);
 
 UCLASS(Abstract, EditInlineNew)
 class DBDUIVIEWSMOBILE_API UUMGBaseButtonWidget : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FUMGBaseButtonWidgetOnBaseButtonClickedEvent OnBaseButtonClickedEvent;
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBaseButtonReleased);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBaseButtonPressed);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBaseButtonLongPress);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBaseButtonClicked);
     
     UPROPERTY(BlueprintAssignable)
-    FUMGBaseButtonWidgetOnBaseButtonPressedEvent OnBaseButtonPressedEvent;
+    FOnBaseButtonClicked OnBaseButtonClickedEvent;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGBaseButtonWidgetOnBaseButtonReleasedEvent OnBaseButtonReleasedEvent;
+    FOnBaseButtonPressed OnBaseButtonPressedEvent;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGBaseButtonWidgetOnBaseButtonLongPressEvent OnBaseButtonLongPressEvent;
+    FOnBaseButtonReleased OnBaseButtonReleasedEvent;
+    
+    UPROPERTY(BlueprintAssignable)
+    FOnBaseButtonLongPress OnBaseButtonLongPressEvent;
     
 protected:
     UPROPERTY(BlueprintReadOnly, Export)
@@ -61,6 +61,9 @@ protected:
     UPROPERTY(EditAnywhere)
     UAkAudioEvent* OnHoveredSound;
     
+public:
+    UUMGBaseButtonWidget();
+protected:
     UFUNCTION(BlueprintCallable)
     void HandleButtonReleasedEvent();
     
@@ -76,7 +79,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void HandleButtonClickedEvent();
     
-public:
-    UUMGBaseButtonWidget();
 };
 

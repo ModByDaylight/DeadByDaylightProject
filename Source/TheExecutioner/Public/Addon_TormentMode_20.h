@@ -3,7 +3,7 @@
 #include "SpawnEffectsOnAllSurvivorsBaseAddon.h"
 #include "Addon_TormentMode_20.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAddon_TormentMode_20 : public USpawnEffectsOnAllSurvivorsBaseAddon {
     GENERATED_BODY()
 public:

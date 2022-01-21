@@ -14,10 +14,11 @@ private:
     UPROPERTY()
     TMap<FName, AStatusView*> _statusViews;
     
+public:
+    UDBDHud();
+private:
     UFUNCTION()
     void RemoveStatusViewOnDestroy(AActor* actor);
     
-public:
-    UDBDHud();
 };
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "RoleItemCategoryDropdown.h"
 #include "EGender.h"
+#include "RoleItemCategoryDropdown.h"
 #include "ScreenshotViewSetting.h"
 #include "GenderViewSetting.generated.h"
 

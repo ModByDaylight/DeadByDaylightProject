@@ -2,14 +2,13 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "DBDBaseMatchGameMode.h"
+#include "OnPlayersLoadoutsCreated.h"
 #include "EGameState.h"
 #include "DBDGameMode.generated.h"
 
-class APlayerStart;
-class APlayerController;
 class APlayerState;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDBDGameModeOnPlayersLoadoutsCreated);
+class APlayerController;
+class APlayerStart;
 
 UCLASS(NonTransient)
 class DEADBYDAYLIGHT_API ADBDGameMode : public ADBDBaseMatchGameMode {
@@ -17,7 +16,7 @@ class DEADBYDAYLIGHT_API ADBDGameMode : public ADBDBaseMatchGameMode {
 public:
 protected:
     UPROPERTY(BlueprintAssignable)
-    FDBDGameModeOnPlayersLoadoutsCreated OnPlayersLoadoutsCreated;
+    FOnPlayersLoadoutsCreated OnPlayersLoadoutsCreated;
     
     UPROPERTY(BlueprintReadOnly, EditAnywhere, NoClear)
     TSubclassOf<APlayerController> _killerPlayerControllerClass;
@@ -33,6 +32,7 @@ private:
     int32 KillerCreationPositionOrder;
     
 public:
+    ADBDGameMode();
     UFUNCTION(BlueprintCallable)
     void SetEscapeOpened(bool val);
     
@@ -60,7 +60,5 @@ protected:
     UFUNCTION(BlueprintPure)
     bool AreLoadoutsCreated() const;
     
-public:
-    ADBDGameMode();
 };
 

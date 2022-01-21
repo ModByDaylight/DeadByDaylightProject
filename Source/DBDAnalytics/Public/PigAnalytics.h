@@ -10,6 +10,7 @@ UCLASS(BlueprintType)
 class UPigAnalytics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UPigAnalytics();
     UFUNCTION(BlueprintCallable)
     static void RecordRBTSearch(ACamperPlayer* searchingPlayer, bool success);
     
@@ -22,6 +23,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void IncrementRBTKilledCount(ACamperPlayer* playerKilled, bool killedByExecutionZone);
     
-    UPigAnalytics();
 };
 

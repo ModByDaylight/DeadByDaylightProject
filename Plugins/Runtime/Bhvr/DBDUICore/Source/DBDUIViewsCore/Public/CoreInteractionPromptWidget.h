@@ -5,8 +5,8 @@
 #include "CoreInteractionPromptWidget.generated.h"
 
 class UScaleBox;
-class UDBDTextManager;
 class UDBDTextBlock;
+class UDBDTextManager;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreInteractionPromptWidget : public UUserWidget {
@@ -27,6 +27,7 @@ private:
     UDBDTextManager* _textManager;
     
 public:
+    UCoreInteractionPromptWidget();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetData(const FInteractionPromptViewData& data);
     
@@ -38,6 +39,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ClearData();
     
-    UCoreInteractionPromptWidget();
 };
 

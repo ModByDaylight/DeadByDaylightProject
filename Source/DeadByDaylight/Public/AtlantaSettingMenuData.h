@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DBDTableRowBase.h"
-#include "EOverlayMode.h"
 #include "EOverlayTabs.h"
+#include "EOverlayMode.h"
 #include "EAtlantaSettingMenuType.h"
 #include "AtlantaSettingMenuData.generated.h"
 

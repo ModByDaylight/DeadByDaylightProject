@@ -7,7 +7,7 @@
 
 class AGenerator;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UCruelConfinement : public UPerk {
     GENERATED_BODY()
 public:

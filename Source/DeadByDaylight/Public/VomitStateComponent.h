@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ELinkedVomitState.h"
 #include "Components/ActorComponent.h"
+#include "ELinkedVomitState.h"
 #include "TagStateBool.h"
 #include "VomitStateComponent.generated.h"
 
 class UGameplayTagContainerComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UVomitStateComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -16,6 +16,7 @@ private:
     FTagStateBool _isCharging;
     
 public:
+    UVomitStateComponent();
     UFUNCTION(BlueprintCallable)
     void SetVomitState(ELinkedVomitState newVomitState);
     
@@ -28,6 +29,5 @@ public:
     UFUNCTION(BlueprintPure)
     ELinkedVomitState getVomitState() const;
     
-    UVomitStateComponent();
 };
 

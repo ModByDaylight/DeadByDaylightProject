@@ -6,7 +6,7 @@
 
 class AGenerator;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UThrillingTremors : public UPerk {
     GENERATED_BODY()
 public:
@@ -29,12 +29,13 @@ private:
     UPROPERTY(Transient)
     TArray<AGenerator*> _revealedGenerators;
     
+public:
+    UThrillingTremors();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_BlockedGenerators();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UThrillingTremors();
 };
 

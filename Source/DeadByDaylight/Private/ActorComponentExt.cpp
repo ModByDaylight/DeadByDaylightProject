@@ -1,12 +1,12 @@
 #include "ActorComponentExt.h"
 
-class ACharacter;
-class UActorComponent;
 class APawn;
+class UActorComponent;
 class AActor;
 class ACamperPlayer;
 class ADBDPlayer;
 class ASlasherPlayer;
+class ACharacter;
 
 bool UActorComponentExt::IsLocallyObserved(const UActorComponent* actorComponent, bool recursiveSearch) {
     return false;

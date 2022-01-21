@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "ActionOnFriend.h"
 #include "FriendWidgetList.h"
+#include "ActionOnFriend.h"
 #include "EActionOnFriendType.h"
 #include "UMGAtlantaFriendListScreen.generated.h"
 
-class UUMGFriendSearchBarWidget;
-class UUMGFriendTabButtonWidget;
-class UUMGBaseButtonWidget;
 class UWidgetSwitcher;
-class UHorizontalBox;
-class UTextBlock;
+class UUMGBaseButtonWidget;
 class UUMGBaseFriendListElement;
+class UTextBlock;
+class UUMGFriendSearchBarWidget;
+class UHorizontalBox;
 class UUMGFriendListTabWidget;
 class UUMGSuggestionsListTabWidget;
 class UUMGRequestsListTabWidget;
+class UUMGFriendTabButtonWidget;
 class UUMGBaseFriendListContextualMenuWidget;
 class UExpandableArea;
 
@@ -106,6 +106,9 @@ private:
     UPROPERTY(Export)
     TMap<FString, UUMGBaseFriendListElement*> _existingFriendInvitePartyWidget;
     
+public:
+    UUMGAtlantaFriendListScreen();
+private:
     UFUNCTION()
     void VerifyReceivedFriendRequestFocus(UExpandableArea* expandableArea, bool bIsExpanded);
     
@@ -130,7 +133,5 @@ private:
     UFUNCTION()
     void HandleCloseButtonClicked();
     
-public:
-    UUMGAtlantaFriendListScreen();
 };
 

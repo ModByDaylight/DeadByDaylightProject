@@ -3,7 +3,7 @@
 #include "Components/PointLightComponent.h"
 #include "StationaryPointLightComponent.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UStationaryPointLightComponent : public UPointLightComponent {
     GENERATED_BODY()
 public:

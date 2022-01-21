@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ItemAvailability.h"
 #include "DBDTableRowBase.h"
 #include "ItemUIData.h"
+#include "ItemAvailability.h"
 #include "OutfitData.generated.h"
 
 USTRUCT()

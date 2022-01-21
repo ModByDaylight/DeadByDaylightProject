@@ -6,7 +6,7 @@
 
 class UBoxComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API UDBDBoxReflectionCaptureSpawnerComponent : public UDBDReflectionCaptureSpawnerComponent {
     GENERATED_BODY()
 public:

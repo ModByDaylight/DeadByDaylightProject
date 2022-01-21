@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EPlayerRole.h"
-#include "EItemRarity.h"
 #include "PriceViewData.h"
+#include "EItemRarity.h"
 #include "CustomizationTooltipViewData.generated.h"
 
 USTRUCT(BlueprintType)

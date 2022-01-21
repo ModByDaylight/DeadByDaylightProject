@@ -21,6 +21,9 @@ private:
     UMapActorComponent* _mapActor;
     
 public:
+    AReverseBearTrapRemover();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void PlayRemoveFailMontage();
     
@@ -47,8 +50,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddKey(int32 keyId);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    AReverseBearTrapRemover();
+    // Fix for true pure virtual functions not being implemented
 };
 

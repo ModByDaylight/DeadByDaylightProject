@@ -1,10 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CoreBaseHudWidget.h"
+#include "ExampleButtonClickDelegate.h"
 #include "ExampleViewInterface.h"
 #include "CoreExampleWidget.generated.h"
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCoreExampleWidgetExampleButtonClickDelegate);
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreExampleWidget : public UCoreBaseHudWidget, public IExampleViewInterface {
@@ -36,9 +35,11 @@ public:
     
 private:
     UPROPERTY(BlueprintCallable)
-    FCoreExampleWidgetExampleButtonClickDelegate ExampleButtonClickDelegate;
+    FExampleButtonClickDelegate ExampleButtonClickDelegate;
     
 public:
     UCoreExampleWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

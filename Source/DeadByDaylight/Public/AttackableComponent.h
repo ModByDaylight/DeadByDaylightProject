@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "AttackableComponent.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UAttackableComponent : public UActorComponent {
     GENERATED_BODY()
 public:

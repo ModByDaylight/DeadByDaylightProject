@@ -42,11 +42,11 @@ private:
     UPROPERTY(Export)
     TArray<UUserWidget*> _childWidgets;
     
+public:
+    UUMGExpandableListWidget();
 protected:
     UFUNCTION()
     void ToggleExpansion();
     
-public:
-    UUMGExpandableListWidget();
 };
 

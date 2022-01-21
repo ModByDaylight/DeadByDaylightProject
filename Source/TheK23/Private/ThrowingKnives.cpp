@@ -1,10 +1,14 @@
 #include "ThrowingKnives.h"
 #include "Net/UnrealNetwork.h"
-#include "ReloadKnives.h"
+#include "FlurryComboScoreComponent.h"
 #include "LacerationComponent.h"
+#include "TricksterSuperModeComponent.h"
+#include "K23PowerProgressPresentationComponent.h"
+#include "PowerChargeComponent.h"
+#include "ReloadKnives.h"
 
-class ASlasherPlayer;
 class UKnivesLauncher;
+class ASlasherPlayer;
 
 void AThrowingKnives::OnItemUsedStateChanged(bool pressed) {
 }
@@ -39,6 +43,10 @@ void AThrowingKnives::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutL
 }
 
 AThrowingKnives::AThrowingKnives() {
+    this->_flurryScoreComponent = CreateDefaultSubobject<UFlurryComboScoreComponent>(TEXT("FlurryComboScoreCombonent"));
+    this->_superModeComponent = CreateDefaultSubobject<UTricksterSuperModeComponent>(TEXT("TricksterSuperModeComponent"));
+    this->_superModeChargePresentationComponent = CreateDefaultSubobject<UK23PowerProgressPresentationComponent>(TEXT("SuperModeChargePresentationComponent"));
+    this->_superModeChargeComponent = CreateDefaultSubobject<UPowerChargeComponent>(TEXT("SuperModeChargeComponent"));
     this->_knivesProvider = NULL;
     this->_knivesLauncher = NULL;
     this->_lacerationComponentClass = ULacerationComponent::StaticClass();

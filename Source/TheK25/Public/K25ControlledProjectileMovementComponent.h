@@ -7,7 +7,7 @@
 
 class UCurveFloat;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK25ControlledProjectileMovementComponent : public UPhysicsBasedProjectileMovementComponent {
     GENERATED_BODY()
 public:

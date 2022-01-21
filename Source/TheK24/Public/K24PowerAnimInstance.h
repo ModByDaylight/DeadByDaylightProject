@@ -58,6 +58,8 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     bool _isKilling;
     
+public:
+    UK24PowerAnimInstance();
 private:
     UFUNCTION()
     void OnLevelReadyToPlay();
@@ -68,7 +70,5 @@ private:
     UFUNCTION()
     void OnIntroCompleted();
     
-public:
-    UK24PowerAnimInstance();
 };
 

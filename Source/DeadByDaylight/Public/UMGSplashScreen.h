@@ -1,26 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
+#include "OnSaveGamePopupComplete.h"
+#include "OnScreenTouched.h"
 #include "UMGSplashScreen.generated.h"
 
 class UUMGDownloadProgressionWidget;
-class UCanvasPanel;
-class UUMGCharacterSlideShowWidget;
 class UButton;
 class UTextBlock;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGSplashScreenOnScreenTouched);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGSplashScreenOnSaveGamePopupCompleteEvent);
+class UCanvasPanel;
+class UUMGCharacterSlideShowWidget;
 
 UCLASS(EditInlineNew)
 class UUMGSplashScreen : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FUMGSplashScreenOnSaveGamePopupCompleteEvent OnSaveGamePopupCompleteEvent;
+    FOnSaveGamePopupComplete OnSaveGamePopupCompleteEvent;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGSplashScreenOnScreenTouched OnScreenTouched;
+    FOnScreenTouched OnScreenTouched;
     
 protected:
     UPROPERTY(BlueprintReadOnly, Export)
@@ -51,6 +50,9 @@ private:
     UPROPERTY(Export)
     UUMGCharacterSlideShowWidget* CharacterSlideShow;
     
+public:
+    UUMGSplashScreen();
+private:
     UFUNCTION()
     void OnTapButtonClicked();
     
@@ -58,6 +60,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void OnSaveGamePopupComplete() const;
     
-    UUMGSplashScreen();
 };
 

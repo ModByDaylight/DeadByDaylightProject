@@ -17,6 +17,8 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     float SecondsBeforeNextSlide;
     
+public:
+    UUMGCharacterSlideShowWidget();
 private:
     UFUNCTION()
     void WaitAndFadeOut();
@@ -34,7 +36,5 @@ protected:
     UFUNCTION(BlueprintImplementableEvent)
     void DisplayCharacterSlide(const FCharacterSlideData& characterSlide);
     
-public:
-    UUMGCharacterSlideShowWidget();
 };
 

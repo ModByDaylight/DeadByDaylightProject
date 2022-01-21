@@ -3,9 +3,9 @@
 #include "BaseTooltipWidget.h"
 #include "RankTooltipWidget.generated.h"
 
-class UUMGPlayerRankInfo;
-class UTextBlock;
 class UGridPanel;
+class UTextBlock;
+class UUMGPlayerRankInfo;
 
 UCLASS(Abstract, EditInlineNew)
 class URankTooltipWidget : public UBaseTooltipWidget {

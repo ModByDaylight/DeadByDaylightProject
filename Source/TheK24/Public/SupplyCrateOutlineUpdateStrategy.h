@@ -3,7 +3,7 @@
 #include "DefaultOutlineUpdateStrategy.h"
 #include "SupplyCrateOutlineUpdateStrategy.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class USupplyCrateOutlineUpdateStrategy : public UDefaultOutlineUpdateStrategy {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 #include "OnEventBaseAddon.h"
 #include "Addon_TheBlight_14.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAddon_TheBlight_14 : public UOnEventBaseAddon {
     GENERATED_BODY()
 public:

@@ -4,7 +4,7 @@
 #include "ReflectionCaptureTwoStates.h"
 #include "GenyReflectionCaptureComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UGenyReflectionCaptureComponent : public USceneComponent {
     GENERATED_BODY()
 public:

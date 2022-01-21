@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EInventoryItemType.h"
-#include "EPerkCategory.h"
 #include "EOfferingCategory.h"
+#include "EPerkCategory.h"
+#include "EInventoryItemType.h"
+#include "EItemAvailability.h"
 #include "EItemRarity.h"
 #include "EStatusEffectType.h"
-#include "EItemAvailability.h"
 #include "SpecialEventUIInfo.h"
 #include "InventorySlotData.generated.h"
 

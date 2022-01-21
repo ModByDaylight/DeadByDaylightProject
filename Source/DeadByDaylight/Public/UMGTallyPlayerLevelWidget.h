@@ -10,6 +10,7 @@ UCLASS(EditInlineNew)
 class UUMGTallyPlayerLevelWidget : public UUMGTallyListElementWidget {
     GENERATED_BODY()
 public:
+    UUMGTallyPlayerLevelWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void OnSetInitialPlayerXp(int32 initialXp, const FPlayerLevelData& initialLevelData);
     
@@ -31,6 +32,5 @@ public:
     UFUNCTION(BlueprintPure)
     int32 GetFinalXp() const;
     
-    UUMGTallyPlayerLevelWidget();
 };
 

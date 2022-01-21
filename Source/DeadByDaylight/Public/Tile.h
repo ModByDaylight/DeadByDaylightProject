@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
-#include "GameFramework/Actor.h"
-#include "EBasementType.h"
-#include "EscapeStrategyType.h"
-#include "EDensity.h"
-#include "ETileType.h"
 #include "EPathType.h"
+#include "EDensity.h"
+#include "GameFramework/Actor.h"
+#include "ETileType.h"
+#include "UObject/NoExportTypes.h"
+#include "EBasementType.h"
 #include "EQuadrantSpawnType.h"
+#include "EscapeStrategyType.h"
 #include "UObject/NoExportTypes.h"
 #include "Tile.generated.h"
 
-class UActorVariationSpawner;
 class UTileSpawnPoint;
 class UObjectRandomizer;
 class UActorSpawner;
+class UActorVariationSpawner;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ATile : public AActor {
@@ -94,6 +94,9 @@ protected:
     bool _initialized;
     
 public:
+    ATile();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintImplementableEvent)
     void OnSetSpawnObject(UTileSpawnPoint* tileSpawnPoint, AActor* spawnedObject);
     
@@ -109,9 +112,5 @@ protected:
     UFUNCTION(BlueprintImplementableEvent)
     void InitOnSpawned();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ATile();
 };
 

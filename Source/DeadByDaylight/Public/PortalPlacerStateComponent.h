@@ -7,14 +7,14 @@
 class ADemogorgonPortal;
 class ASlasherPlayer;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPortalPlacerStateComponentOnTeleportCooldownComplete);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UPortalPlacerStateComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDemogorgonTeleportCooldownComplete);
+    
     UPROPERTY(BlueprintAssignable)
-    FPortalPlacerStateComponentOnTeleportCooldownComplete OnTeleportCooldownComplete;
+    FOnDemogorgonTeleportCooldownComplete OnTeleportCooldownComplete;
     
 private:
     UPROPERTY(Replicated, Transient)
@@ -26,6 +26,11 @@ private:
     UPROPERTY(Replicated, Transient)
     TArray<FPortalRestrictedLocation> _restrictedPortalLocations;
     
+public:
+    UPortalPlacerStateComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void UpdateRemainingPortalCount();
     
@@ -47,8 +52,5 @@ public:
     UFUNCTION(BlueprintPure)
     int32 GetRemainingPortalCount() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UPortalPlacerStateComponent();
 };
 

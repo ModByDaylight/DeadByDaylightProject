@@ -1,24 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Engine/EngineTypes.h"
 #include "GameFramework/Character.h"
+#include "OnCustomizationChanged.h"
 #include "GameplayTagContainer.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
-#include "Engine/EngineTypes.h"
 #include "DBDBasePlayer.generated.h"
 
-class UAkComponent;
-class UCustomizedAudioComponent;
 class UBaseGroundDetectorComponent;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDBDBasePlayerOnCustomizationChanged);
+class UCustomizedAudioComponent;
+class UAkComponent;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ADBDBasePlayer : public ACharacter {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FDBDBasePlayerOnCustomizationChanged OnCustomizationChanged;
+    FOnCustomizationChanged OnCustomizationChanged;
     
 protected:
     UPROPERTY(EditDefaultsOnly)
@@ -35,6 +34,7 @@ private:
     int32 _characterIndex;
     
 public:
+    ADBDBasePlayer();
     UFUNCTION(BlueprintCallable)
     bool TeleportWithClothHandling(const FVector& location, const FRotator& rotation, bool checkCollisions);
     
@@ -77,7 +77,5 @@ protected:
     UFUNCTION(Exec)
     void DBD_SwapCosmetics(FName cosmeticId);
     
-public:
-    ADBDBasePlayer();
 };
 

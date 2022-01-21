@@ -3,7 +3,7 @@
 #include "Perception/PawnSensingComponent.h"
 #include "DBDPawnSensingComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDPawnSensingComponent : public UPawnSensingComponent {
     GENERATED_BODY()
 public:

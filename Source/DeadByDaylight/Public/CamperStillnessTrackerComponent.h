@@ -5,12 +5,12 @@
 #include "Engine/EngineTypes.h"
 #include "CamperStillnessTrackerComponent.generated.h"
 
-class AActor;
 class ACamperExposerInstance;
 class UExposerInteriorZoneComponent;
 class UPrimitiveComponent;
+class AActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCamperStillnessTrackerComponent : public UStillnessTrackerComponent {
     GENERATED_BODY()
 public:
@@ -36,6 +36,8 @@ private:
     UPROPERTY(Export, Transient)
     UExposerInteriorZoneComponent* _interiorZone;
     
+public:
+    UCamperStillnessTrackerComponent();
 protected:
     UFUNCTION()
     void OnOverlapExit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
@@ -53,6 +55,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void EnterInteriorZone(UExposerInteriorZoneComponent* zone);
     
-    UCamperStillnessTrackerComponent();
 };
 

@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "BaseSurvivorAnimInstance.h"
 #include "ECamperGuidedAction.h"
-#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "EInteractionAnimation.h"
 #include "SurvivorAnimInstance.generated.h"
 
-class ACamperPlayer;
 class UAnimMontage;
+class ACamperPlayer;
 class UAnimCompositeBase;
 
 UCLASS(NonTransient)
@@ -200,6 +200,7 @@ protected:
     bool HasLinkInput;
     
 public:
+    USurvivorAnimInstance();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetAudioRummageAkEvent(FName distance);
     
@@ -212,6 +213,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void AddAudioRepairRateRadius(int32 distance);
     
-    USurvivorAnimInstance();
 };
 

@@ -4,8 +4,8 @@
 #include "UObject/NoExportTypes.h"
 #include "UMGMonthlyPassRewardItemWidget.generated.h"
 
-class UTextBlock;
 class UCanvasPanel;
+class UTextBlock;
 class UImage;
 
 UCLASS(Abstract, EditInlineNew)

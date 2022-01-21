@@ -4,7 +4,7 @@
 #include "EGestureID.h"
 #include "GestureInteractionDefinition.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UGestureInteractionDefinition : public UInteractionDefinition {
     GENERATED_BODY()
 public:

@@ -6,7 +6,7 @@
 class UMaterialInterface;
 class USkeletalMeshComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBD_CrossDissolver : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -19,12 +19,12 @@ public:
     UPROPERTY(BlueprintReadOnly, Export)
     TArray<USkeletalMeshComponent*> ClonedSkeletalMeshes;
     
+    UDBD_CrossDissolver();
     UFUNCTION(BlueprintCallable)
     void MakeClone();
     
     UFUNCTION(BlueprintCallable)
     void KillClone();
     
-    UDBD_CrossDissolver();
 };
 

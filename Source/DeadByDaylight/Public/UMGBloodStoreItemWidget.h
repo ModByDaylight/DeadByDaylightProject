@@ -5,8 +5,8 @@
 #include "UObject/NoExportTypes.h"
 #include "UMGBloodStoreItemWidget.generated.h"
 
-class UCanvasPanel;
 class UImage;
+class UCanvasPanel;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGBloodStoreItemWidget : public UMobileBaseUserWidget {
@@ -53,6 +53,7 @@ protected:
     float _consumedOpacity;
     
 public:
+    UUMGBloodStoreItemWidget();
     UFUNCTION(BlueprintNativeEvent)
     void UnFocusNode();
     
@@ -80,7 +81,5 @@ private:
     UFUNCTION(BlueprintCallable)
     void BroadcastBloodNodeSelected();
     
-public:
-    UUMGBloodStoreItemWidget();
 };
 

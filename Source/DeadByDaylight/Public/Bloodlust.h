@@ -3,11 +3,11 @@
 #include "StatusEffect.h"
 #include "Bloodlust.generated.h"
 
-class ADBDPlayer;
 class UCurveFloat;
 class ASlasherPlayer;
+class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UBloodlust : public UStatusEffect {
     GENERATED_BODY()
 public:
@@ -22,6 +22,11 @@ private:
     UPROPERTY(Transient)
     ASlasherPlayer* _owningKiller;
     
+public:
+    UBloodlust();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_BloodlustTime(float oldBloodlustTime);
     
@@ -41,8 +46,5 @@ public:
     UFUNCTION(Exec)
     void DBD_SetBloodlust(const int32 amount, const bool enableDecay);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UBloodlust();
 };
 

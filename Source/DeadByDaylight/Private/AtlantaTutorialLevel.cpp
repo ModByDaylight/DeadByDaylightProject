@@ -2,8 +2,8 @@
 
 class AActor;
 class ADBDPlayer;
-class ADBDAIPlayerController;
 class APlayerController;
+class ADBDAIPlayerController;
 
 void AAtlantaTutorialLevel::StartCameraFadeIn() {
 }

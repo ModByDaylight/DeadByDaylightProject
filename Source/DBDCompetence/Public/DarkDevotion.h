@@ -5,7 +5,7 @@
 
 class UTerrorRadiusEmitterComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UDarkDevotion : public UPerk {
     GENERATED_BODY()
 public:

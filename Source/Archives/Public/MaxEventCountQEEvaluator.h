@@ -19,6 +19,9 @@ private:
     UPROPERTY(EditDefaultsOnly)
     TArray<FGameplayTag> _stopEventCount;
     
+public:
+    UMaxEventCountQEEvaluator();
+private:
     UFUNCTION()
     void OnStopEventCount(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
@@ -28,7 +31,5 @@ private:
     UFUNCTION()
     void OnDecrementEventCount(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-public:
-    UMaxEventCountQEEvaluator();
 };
 

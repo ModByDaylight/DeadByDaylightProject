@@ -3,7 +3,7 @@
 #include "DBDPlayerData.h"
 #include "DBDCamperData.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDCamperData : public UDBDPlayerData {
     GENERATED_BODY()
 public:

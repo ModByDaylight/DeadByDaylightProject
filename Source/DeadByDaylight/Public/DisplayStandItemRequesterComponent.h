@@ -5,15 +5,14 @@
 
 class AActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDisplayStandItemRequesterComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UDisplayStandItemRequesterComponent();
 private:
     UFUNCTION()
     void LoadItemsOnCharacter(AActor* actor);
     
-public:
-    UDisplayStandItemRequesterComponent();
 };
 

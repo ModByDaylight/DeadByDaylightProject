@@ -7,7 +7,7 @@
 class UStalkerComponent;
 class UGhostStalkedComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UGhostStalkPowerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -25,6 +25,7 @@ private:
     bool _debugMode;
     
 public:
+    UGhostStalkPowerComponent();
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void RefreshSurvivorMaximumSightDistance() const;
     
@@ -38,7 +39,5 @@ private:
     UFUNCTION()
     void Authority_OnStalkModeChanged(bool isInStalkMode);
     
-public:
-    UGhostStalkPowerComponent();
 };
 

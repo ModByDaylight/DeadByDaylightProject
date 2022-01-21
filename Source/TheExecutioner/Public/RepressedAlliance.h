@@ -4,10 +4,10 @@
 #include "SecondaryInteractionProperties.h"
 #include "RepressedAlliance.generated.h"
 
-class UInteractionDefinition;
 class AGenerator;
+class UInteractionDefinition;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class URepressedAlliance : public UPerk {
     GENERATED_BODY()
 public:
@@ -27,6 +27,11 @@ private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_BlockedGenerator)
     AGenerator* _blockedGenerator;
     
+public:
+    URepressedAlliance();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_OnActionInputPressed(AGenerator* generator);
     
@@ -36,9 +41,5 @@ private:
     UFUNCTION()
     void OnRep_BlockedGenerator(AGenerator* oldGenerator);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    URepressedAlliance();
 };
 

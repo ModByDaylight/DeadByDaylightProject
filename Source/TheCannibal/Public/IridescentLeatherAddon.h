@@ -3,7 +3,7 @@
 #include "CannibalChainsawHitEventAddon.h"
 #include "IridescentLeatherAddon.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIridescentLeatherAddon : public UCannibalChainsawHitEventAddon {
     GENERATED_BODY()
 public:

@@ -4,7 +4,7 @@
 #include "AttackableComponent.h"
 #include "SnowmanAttackableComponent.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class USnowmanAttackableComponent : public UAttackableComponent {
     GENERATED_BODY()
 public:

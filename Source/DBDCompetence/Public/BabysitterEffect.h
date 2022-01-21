@@ -3,7 +3,7 @@
 #include "StatusEffect.h"
 #include "BabysitterEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UBabysitterEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

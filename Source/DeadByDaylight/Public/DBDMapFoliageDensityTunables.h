@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TypeFoliageToAutomateDensity.h"
 #include "UObject/Object.h"
+#include "TypeFoliageToAutomateDensity.h"
 #include "DBDMapFoliageDensityTunables.generated.h"
 
 UCLASS(Transient, Config=Design)

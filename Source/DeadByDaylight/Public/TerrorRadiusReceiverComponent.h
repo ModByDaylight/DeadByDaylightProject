@@ -1,18 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "OnIsInTerrorRadiusChanged.h"
 #include "TerrorRadiusReceiverComponent.generated.h"
 
 class UCurveFloat;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTerrorRadiusReceiverComponentOnIsInTerrorRadiusChanged);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UTerrorRadiusReceiverComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FTerrorRadiusReceiverComponentOnIsInTerrorRadiusChanged OnIsInTerrorRadiusChanged;
+    FOnIsInTerrorRadiusChanged OnIsInTerrorRadiusChanged;
     
 protected:
     UPROPERTY(EditDefaultsOnly)
@@ -22,12 +21,12 @@ protected:
     float _heartbeatMasterVolumeInterpolationSpeed;
     
 public:
+    UTerrorRadiusReceiverComponent();
     UFUNCTION(BlueprintPure)
     bool IsInTerrorRadiusRange() const;
     
     UFUNCTION(BlueprintPure)
     bool IsInTerrorRadius() const;
     
-    UTerrorRadiusReceiverComponent();
 };
 

@@ -7,7 +7,7 @@
 
 class USectionnedChargeableComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UHalloweenEventComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -15,6 +15,11 @@ private:
     UPROPERTY(Export, VisibleAnywhere, ReplicatedUsing=OnRep_Vial)
     USectionnedChargeableComponent* _toxinVialComponent;
     
+public:
+    UHalloweenEventComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_SpawnVial(float initialCharge);
     
@@ -31,8 +36,5 @@ public:
     UFUNCTION(BlueprintPure)
     USectionnedChargeableComponent* GetVial() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UHalloweenEventComponent();
 };
 

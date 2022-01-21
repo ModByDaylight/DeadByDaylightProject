@@ -3,7 +3,7 @@
 #include "BaseHitValidationConfigurator.h"
 #include "HitValidatorConfigurator.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UHitValidatorConfigurator : public UBaseHitValidationConfigurator {
     GENERATED_BODY()
 public:

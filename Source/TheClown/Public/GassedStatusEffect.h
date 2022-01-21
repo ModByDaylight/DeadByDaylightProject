@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EBombType.h"
 #include "StatusEffect.h"
+#include "EBombType.h"
 #include "GassedStatusEffect.generated.h"
 
 class ABaseGasCloudProjectile;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UGassedStatusEffect : public UStatusEffect {
     GENERATED_BODY()
 public:
@@ -25,6 +25,10 @@ private:
     
     UPROPERTY(ReplicatedUsing=OnRep_TotalTimesEnteringToxicClouds)
     uint16 _totalTimesEnteringToxicClouds;
+    
+public:
+    UGassedStatusEffect();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -96,8 +100,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_AddOverlappingCloud(ABaseGasCloudProjectile* cloud);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UGassedStatusEffect();
 };
 

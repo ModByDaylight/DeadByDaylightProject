@@ -7,6 +7,7 @@ UCLASS()
 class UArchiveRewardsScreen : public UArchiveBaseScreen {
     GENERATED_BODY()
 public:
+    UArchiveRewardsScreen();
 private:
     UFUNCTION()
     void OnRotateCharacter(float mouseDistanceChange);
@@ -23,7 +24,5 @@ private:
     UFUNCTION()
     void OnPurchasePremiumPass();
     
-public:
-    UArchiveRewardsScreen();
 };
 

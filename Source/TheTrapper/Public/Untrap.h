@@ -5,7 +5,7 @@
 
 class ABearTrap;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UUntrap : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -19,10 +19,11 @@ protected:
     UPROPERTY(EditAnywhere)
     FName _bearTrapFinishMontageID;
     
+public:
+    UUntrap();
+protected:
     UFUNCTION(BlueprintPure)
     ABearTrap* GetTrap() const;
     
-public:
-    UUntrap();
 };
 

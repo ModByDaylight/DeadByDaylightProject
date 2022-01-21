@@ -18,8 +18,8 @@ void UUMGAtlantaTallyScreen::HandleAddFriendEvent(const FString& playerID) {
 
 UUMGAtlantaTallyScreen::UUMGAtlantaTallyScreen() {
     this->TallyScrollWidget = NULL;
-    this->TextLeaveLobby = INVTEXT("LEAVE");
-    this->SpectateButtonText = INVTEXT("SPECTATE");
+    this->TextLeaveLobby = FText::FromString(TEXT("LEAVE"));
+    this->SpectateButtonText = FText::FromString(TEXT("SPECTATE"));
     this->PlayerRole = EPlayerRole::VE_None;
     this->GameType = EGameType::Online;
     this->PlayerStatus = 0;

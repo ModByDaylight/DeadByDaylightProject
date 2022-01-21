@@ -3,7 +3,7 @@
 #include "StatusEffect.h"
 #include "DeceptionEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDeceptionEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

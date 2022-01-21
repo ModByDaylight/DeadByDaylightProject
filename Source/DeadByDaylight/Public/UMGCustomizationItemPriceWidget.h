@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "Styling/SlateColor.h"
 #include "ECurrencyType.h"
+#include "Styling/SlateColor.h"
 #include "UMGCustomizationItemPriceWidget.generated.h"
 
 class UTexture2D;

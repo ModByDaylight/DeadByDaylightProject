@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Perk.h"
 #include "GameplayTagContainer.h"
+#include "Perk.h"
 #include "GameEventData.h"
 #include "BetterTogether.generated.h"
 
 class ADBDPlayer;
 class AActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UBetterTogether : public UPerk {
     GENERATED_BODY()
 public:
@@ -32,10 +32,11 @@ private:
     UPROPERTY(EditAnywhere, EditFixedSize)
     float _durationByLevel[3];
     
+public:
+    UBetterTogether();
+private:
     UFUNCTION()
     void OnStartedGeneratorRepair(const FGameplayTag gameplayTag, const FGameEventData& gameEventData);
     
-public:
-    UBetterTogether();
 };
 

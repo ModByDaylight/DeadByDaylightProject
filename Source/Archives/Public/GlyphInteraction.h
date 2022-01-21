@@ -3,7 +3,7 @@
 #include "ChargeableInteractionDefinition.h"
 #include "GlyphInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UGlyphInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

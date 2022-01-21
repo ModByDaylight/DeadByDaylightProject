@@ -18,9 +18,9 @@ private:
     bool ShowWorkbench;
     
 public:
+    UTestWidget();
     UFUNCTION(BlueprintCallable)
     void SetShowWorkbench(bool NewShowWorkbench);
     
-    UTestWidget();
 };
 

@@ -1,9 +1,10 @@
 #include "Interactable.h"
+#include "InteractableTransformOptimizer.h"
 
-class UInteractionDefinition;
 class UPrimitiveComponent;
 class UInteractor;
 class ADBDPlayer;
+class UInteractionDefinition;
 class UInterruptionDefinition;
 
 void AInteractable::SetSingleZone(UPrimitiveComponent* zone) {
@@ -65,5 +66,6 @@ void AInteractable::AttachEveryInteractionToZone(UPrimitiveComponent* zone) {
 AInteractable::AInteractable() {
     this->_singleZone = NULL;
     this->_useSingleZone = false;
+    this->_transformOptimizer = CreateDefaultSubobject<UInteractableTransformOptimizer>(TEXT("InteractableOptimizer"));
 }
 

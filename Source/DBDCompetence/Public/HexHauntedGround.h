@@ -3,7 +3,7 @@
 #include "HexPerk.h"
 #include "HexHauntedGround.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UHexHauntedGround : public UHexPerk {
     GENERATED_BODY()
 public:

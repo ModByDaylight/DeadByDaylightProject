@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EOnboardingMenuState.h"
 #include "UObject/Interface.h"
+#include "EOnboardingMenuState.h"
 #include "OnboardingMenuViewInterface.generated.h"
 
 class UOnboardingTutorialViewInterface;

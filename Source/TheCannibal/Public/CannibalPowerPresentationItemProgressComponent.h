@@ -5,7 +5,7 @@
 
 class UCannibalChainsawPowerComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class THECANNIBAL_API UCannibalPowerPresentationItemProgressComponent : public UPresentationItemProgressComponent {
     GENERATED_BODY()
 public:
@@ -14,9 +14,9 @@ private:
     UCannibalChainsawPowerComponent* _cannibalPowerChainsawComponent;
     
 public:
+    UCannibalPowerPresentationItemProgressComponent();
     UFUNCTION(BlueprintCallable)
     void SetCannibalChainsawPowerComponent(UCannibalChainsawPowerComponent* cannibalPowerChainsawComponent);
     
-    UCannibalPowerPresentationItemProgressComponent();
 };
 

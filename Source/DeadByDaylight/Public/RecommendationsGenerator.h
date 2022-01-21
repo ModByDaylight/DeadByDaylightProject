@@ -3,9 +3,9 @@
 #include "UObject/Object.h"
 #include "RecommendationsGenerator.generated.h"
 
-class URecommendationsFilter;
-class UShopManager;
 class UDBDGameInstance;
+class UShopManager;
+class URecommendationsFilter;
 
 UCLASS()
 class URecommendationsGenerator : public UObject {

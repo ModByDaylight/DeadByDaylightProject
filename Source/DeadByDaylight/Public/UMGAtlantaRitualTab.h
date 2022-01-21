@@ -3,8 +3,8 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGAtlantaRitualTab.generated.h"
 
-class UVerticalBox;
 class UUMGAltantaRitual;
+class UVerticalBox;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlantaRitualTab : public UMobileBaseUserWidget {
@@ -18,10 +18,11 @@ private:
     UPROPERTY(EditAnywhere, NoClear)
     TSoftClassPtr<UUMGAltantaRitual> _itemWidgetClass;
     
+public:
+    UUMGAtlantaRitualTab();
+private:
     UFUNCTION()
     void BroadcastOnClaimRewardsButtonPressed(const int32 ritualId);
     
-public:
-    UUMGAtlantaRitualTab();
 };
 

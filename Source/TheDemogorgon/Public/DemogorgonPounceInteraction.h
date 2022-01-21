@@ -6,7 +6,7 @@
 class UChargedAttackStateComponent;
 class ASlasherPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UDemogorgonPounceInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -17,6 +17,8 @@ private:
     UPROPERTY(Transient)
     ASlasherPlayer* _owningSlasher;
     
+public:
+    UDemogorgonPounceInteraction();
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void TriggerHuntingAudioEvent(bool isHunting);
@@ -30,7 +32,5 @@ protected:
     UFUNCTION(BlueprintNativeEvent)
     void OnCancelCooldownComplete();
     
-public:
-    UDemogorgonPounceInteraction();
 };
 

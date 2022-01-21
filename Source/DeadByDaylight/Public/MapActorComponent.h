@@ -7,7 +7,7 @@
 class UPrimitiveComponent;
 class ADBDPlayer;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UMapActorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -22,6 +22,7 @@ private:
     bool _detectionEnabled;
     
 public:
+    UMapActorComponent();
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, NetMulticast, Reliable)
     void Multicast_SetDetectionEnabled(bool enabled);
     
@@ -31,6 +32,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool GetDetectionEnabled() const;
     
-    UMapActorComponent();
 };
 

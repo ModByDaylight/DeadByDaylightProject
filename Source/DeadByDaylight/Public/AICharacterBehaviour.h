@@ -7,6 +7,7 @@ UCLASS()
 class UAICharacterBehaviour : public UObject {
     GENERATED_BODY()
 public:
+    UAICharacterBehaviour();
     UFUNCTION()
     void Update(float deltaTime);
     
@@ -28,6 +29,5 @@ public:
     UFUNCTION()
     bool IsEnabled() const;
     
-    UAICharacterBehaviour();
 };
 

@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "RespawnableInteractable.h"
 #include "ESnowmanDestructionType.h"
 #include "ESnowmanState.h"
+#include "RespawnableInteractable.h"
 #include "DBDTunableRowHandle.h"
 #include "SnowmanSpawnData.h"
 #include "UObject/NoExportTypes.h"
 #include "Snowman.generated.h"
 
 class USkeletalMeshComponent;
-class ACamperPlayer;
 class UDBDOutlineComponent;
-class ASlasherPlayer;
+class ACamperPlayer;
 class UCapsuleComponent;
 class UHideInSnowmanInteraction;
 class UChargeableComponent;
 class UInteractor;
 class UPrimitiveComponent;
 class USnowmanAttackableComponent;
+class ASlasherPlayer;
 
 UCLASS()
 class ASnowman : public ARespawnableInteractable {
@@ -69,6 +69,11 @@ private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_IsMoving)
     bool _isMoving;
     
+public:
+    ASnowman();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_SurvivorUsingSnowman();
     
@@ -131,9 +136,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnCosmeticUnlockRequirementsSatisfiedForKiller(ASlasherPlayer* killerAttackingSnowman);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ASnowman();
 };
 

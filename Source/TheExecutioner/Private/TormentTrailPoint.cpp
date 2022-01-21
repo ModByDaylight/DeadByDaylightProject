@@ -1,4 +1,5 @@
 #include "TormentTrailPoint.h"
+#include "AuthoritativePoolableActorComponent.h"
 
 class USplineComponent;
 
@@ -21,6 +22,7 @@ void ATormentTrailPoint::GetTrailLocationAndTangeant(const int32 indexInTrail, c
 
 
 ATormentTrailPoint::ATormentTrailPoint() {
+    this->_poolableComponent = CreateDefaultSubobject<UAuthoritativePoolableActorComponent>(TEXT("PollableComponent"));
     this->_splineMeshOverlapDistance = 0.00f;
 }
 

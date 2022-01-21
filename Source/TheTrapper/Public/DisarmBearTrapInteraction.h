@@ -3,7 +3,7 @@
 #include "ChargeableInteractionDefinition.h"
 #include "DisarmBearTrapInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UDisarmBearTrapInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

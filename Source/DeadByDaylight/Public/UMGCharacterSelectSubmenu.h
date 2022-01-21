@@ -7,6 +7,7 @@ UCLASS(EditInlineNew)
 class UUMGCharacterSelectSubmenu : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
+    UUMGCharacterSelectSubmenu();
     UFUNCTION(BlueprintImplementableEvent)
     void SetInInfoPanelMode(bool isInInfoPanel);
     
@@ -20,7 +21,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void BroadcastInfoButtonClicked();
     
-public:
-    UUMGCharacterSelectSubmenu();
 };
 

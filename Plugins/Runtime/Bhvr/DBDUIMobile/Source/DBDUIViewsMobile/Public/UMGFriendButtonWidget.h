@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Styling/SlateBrush.h"
 #include "UMGBaseButtonWidget.h"
 #include "EFriendTypeButton.h"
+#include "Styling/SlateBrush.h"
 #include "UMGFriendButtonWidget.generated.h"
 
-class UImage;
-class UCanvasPanel;
 class UTextBlock;
+class UCanvasPanel;
+class UImage;
 
 UCLASS(Abstract, EditInlineNew)
 class DBDUIVIEWSMOBILE_API UUMGFriendButtonWidget : public UUMGBaseButtonWidget {

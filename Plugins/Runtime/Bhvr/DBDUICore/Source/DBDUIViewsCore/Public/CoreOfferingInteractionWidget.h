@@ -9,5 +9,7 @@ class DBDUIVIEWSCORE_API UCoreOfferingInteractionWidget : public UCoreBaseHudWid
     GENERATED_BODY()
 public:
     UCoreOfferingInteractionWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

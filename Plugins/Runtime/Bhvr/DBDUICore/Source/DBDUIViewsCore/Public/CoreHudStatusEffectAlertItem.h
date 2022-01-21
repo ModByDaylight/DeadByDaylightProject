@@ -8,9 +8,9 @@ UCLASS(EditInlineNew)
 class UCoreHudStatusEffectAlertItem : public UCoreBaseUserWidget {
     GENERATED_BODY()
 public:
+    UCoreHudStatusEffectAlertItem();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetData(const FStatusEffectAlertViewData& data);
     
-    UCoreHudStatusEffectAlertItem();
 };
 

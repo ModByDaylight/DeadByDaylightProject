@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECharmCategory.h"
 #include "CustomizationData.h"
 #include "ECustomizationCategory.h"
 #include "MaterialReplacerData.h"
+#include "ECharmCategory.h"
 #include "ConditionalMaterialReplacer.h"
 #include "BPAttachementSocketData.h"
 #include "UnlockSaveStatCondition.h"
@@ -11,8 +11,8 @@
 #include "CustomAnimData.h"
 #include "CustomizationItemData.generated.h"
 
-class UAnimInstance;
 class USkeletalMesh;
+class UAnimInstance;
 class AActor;
 
 USTRUCT()

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTableRowBase.h"
 #include "EInventoryItemType.h"
+#include "DBDTableRowBase.h"
 #include "ItemUIData.h"
 #include "BaseItemData.generated.h"
 

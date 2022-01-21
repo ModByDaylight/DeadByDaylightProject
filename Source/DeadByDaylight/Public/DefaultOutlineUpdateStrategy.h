@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "DefaultOutlineUpdateStrategy.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDefaultOutlineUpdateStrategy : public UOutlineUpdateStrategy {
     GENERATED_BODY()
 public:

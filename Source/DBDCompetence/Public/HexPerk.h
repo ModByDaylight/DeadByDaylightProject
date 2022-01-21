@@ -5,16 +5,20 @@
 #include "HexPerk.generated.h"
 
 class ADBDPlayer;
-class AActor;
 class ATotem;
+class AActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UHexPerk : public UTotemBoundPerk {
     GENERATED_BODY()
 public:
 private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_PlayersWhoKnowCurse)
     TArray<ADBDPlayer*> _playersWhoKnowCurse;
+    
+public:
+    UHexPerk();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
     UFUNCTION(BlueprintCallable)
@@ -45,9 +49,5 @@ protected:
     UFUNCTION(BlueprintImplementableEvent)
     void Authority_Reactivate_BP(ATotem* totem);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UHexPerk();
 };
 

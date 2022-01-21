@@ -6,7 +6,7 @@
 class ACamperPlayer;
 class UStatusEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UStarstruck : public UPerk {
     GENERATED_BODY()
 public:

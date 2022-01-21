@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
 #include "TunableStat.h"
+#include "UObject/Object.h"
 #include "DBDTunableRowHandle.h"
 #include "BlightPowerState.generated.h"
 
@@ -37,9 +37,9 @@ protected:
     bool _displayCollisionIndicator;
     
 public:
+    UBlightPowerState();
     UFUNCTION(BlueprintPure)
     float GetStateDuration() const;
     
-    UBlightPowerState();
 };
 

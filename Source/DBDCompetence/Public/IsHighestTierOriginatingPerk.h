@@ -3,10 +3,10 @@
 #include "EventDrivenModifierCondition.h"
 #include "IsHighestTierOriginatingPerk.generated.h"
 
-class UGameplayModifierContainer;
 class UStatusEffect;
+class UGameplayModifierContainer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIsHighestTierOriginatingPerk : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:
@@ -14,13 +14,14 @@ private:
     UPROPERTY(Export, Transient)
     TArray<UStatusEffect*> _applicableEffects;
     
+public:
+    UIsHighestTierOriginatingPerk();
+private:
     UFUNCTION()
     void OnStatusEffectApplicableChanged(UGameplayModifierContainer* gameplayModifierContainer, bool isApplicable);
     
     UFUNCTION()
     void OnStatusEffectAddedOrRemoved(UStatusEffect* effect, bool valid);
     
-public:
-    UIsHighestTierOriginatingPerk();
 };
 

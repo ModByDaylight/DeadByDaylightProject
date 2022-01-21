@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-//CROSS-MODULE INCLUDE: Engine BHVRPerDetailModeFloat
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BHVRPerDetailModeFloat -FallbackName=BHVRPerDetailModeFloat
 #include "DistanceBasedTickDisabler.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class SIGNIFICANCEUTILITIES_API UDistanceBasedTickDisabler : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -15,8 +15,8 @@ private:
     UPROPERTY(EditAnywhere)
     bool _autoRegisterTimelines;
     
-    //UPROPERTY(EditAnywhere)
-    //FBHVRPerDetailModeFloat _tickDisableDistance;
+    UPROPERTY(EditAnywhere)
+    FBHVRPerDetailModeFloat _tickDisableDistance;
     
     UPROPERTY(EditAnywhere)
     bool _insignificantWhenBehindTheCamera;
@@ -25,12 +25,12 @@ private:
     TArray<UActorComponent*> _components;
     
 public:
+    UDistanceBasedTickDisabler();
     UFUNCTION(BlueprintCallable)
     void UnregisterComponent(UActorComponent* component);
     
     UFUNCTION(BlueprintCallable)
     void RegisterComponent(UActorComponent* component);
     
-    UDistanceBasedTickDisabler();
 };
 

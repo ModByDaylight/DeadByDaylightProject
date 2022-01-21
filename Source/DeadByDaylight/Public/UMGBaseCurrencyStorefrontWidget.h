@@ -7,11 +7,10 @@ UCLASS(Abstract, EditInlineNew)
 class UUMGBaseCurrencyStorefrontWidget : public UUMGBaseStorefrontWidget {
     GENERATED_BODY()
 public:
+    UUMGBaseCurrencyStorefrontWidget();
 protected:
     UFUNCTION()
     void BroadcastOnAuricCellButtonClicked(int32 cellIndex);
     
-public:
-    UUMGBaseCurrencyStorefrontWidget();
 };
 

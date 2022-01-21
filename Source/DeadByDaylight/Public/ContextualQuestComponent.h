@@ -4,10 +4,14 @@
 #include "SpecialBehaviourObjectsInfo.h"
 #include "ContextualQuestComponent.generated.h"
 
-UCLASS()
+class ADBDPlayer;
+
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UContextualQuestComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSpecialBehaviourSet, const ADBDPlayer*, dbdPlayer);
+    
 private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_SpecialBehaviourObjectsInfo)
     TArray<FSpecialBehaviourObjectsInfo> _specialBehaviourObjectsInfo;
@@ -15,12 +19,13 @@ private:
     UPROPERTY(Transient)
     bool _isInitialized;
     
+public:
+    UContextualQuestComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_SpecialBehaviourObjectsInfo();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UContextualQuestComponent();
 };
 

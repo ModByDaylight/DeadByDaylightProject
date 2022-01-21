@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "DBDTunableRowHandle.h"
 #include "InteractionDefinition.h"
 #include "AnimationMontageDescriptor.h"
-#include "DBDTunableRowHandle.h"
 #include "ActivateSuperMode.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UActivateSuperMode : public UInteractionDefinition {
     GENERATED_BODY()
 public:

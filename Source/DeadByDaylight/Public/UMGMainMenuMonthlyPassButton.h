@@ -27,10 +27,11 @@ protected:
     UPROPERTY(EditAnywhere)
     UAkAudioEvent* OnClickSound;
     
+public:
+    UUMGMainMenuMonthlyPassButton();
+protected:
     UFUNCTION(BlueprintCallable)
     void OnButtonClick();
     
-public:
-    UUMGMainMenuMonthlyPassButton();
 };
 

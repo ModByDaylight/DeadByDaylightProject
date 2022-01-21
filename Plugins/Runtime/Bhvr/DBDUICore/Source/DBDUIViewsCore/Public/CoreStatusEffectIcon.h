@@ -8,6 +8,7 @@ UCLASS(EditInlineNew)
 class UCoreStatusEffectIcon : public UCoreBaseUserWidget {
     GENERATED_BODY()
 public:
+    UCoreStatusEffectIcon();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void UpdateWidget();
     
@@ -26,6 +27,5 @@ public:
     UFUNCTION(BlueprintPure)
     int32 GetInactiveTicks() const;
     
-    UCoreStatusEffectIcon();
 };
 

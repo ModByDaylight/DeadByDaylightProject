@@ -9,10 +9,11 @@
 
 class ABaseProjectile;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class PROJECTILE_API UBaseProjectileReplicationComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UBaseProjectileReplicationComponent();
 private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_TryDetectPlayer(ABaseProjectile* projectile, FImpactInfo impactInfo, const FVector_NetQuantize100 projectileLocation, const FVector_NetQuantize10 projectileRotation, const float targetLocationTimestamp);
@@ -39,6 +40,5 @@ public:
     UFUNCTION(Client, Reliable)
     void Client_LaunchRefusedByServer(ABaseProjectile* projectile);
     
-    UBaseProjectileReplicationComponent();
 };
 

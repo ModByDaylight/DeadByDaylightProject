@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EventDrivenModifierCondition.h"
 #include "FK26AttachedCrowRemovalReason.h"
+#include "EventDrivenModifierCondition.h"
 #include "K26IsLastCrowRemovalReasonDueToInteraction.generated.h"
 
 class AK26AttachedCrow;
@@ -9,7 +9,7 @@ class UK26PowerStatusHandlerComponent;
 class ACamperPlayer;
 class ASlasherPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK26IsLastCrowRemovalReasonDueToInteraction : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:
@@ -20,6 +20,11 @@ private:
     UPROPERTY(Export, Transient)
     UK26PowerStatusHandlerComponent* _statusHandlerComponent;
     
+public:
+    UK26IsLastCrowRemovalReasonDueToInteraction();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnSurvivorStatusIndicatorSet(AK26AttachedCrow* attachedCrow);
     
@@ -35,9 +40,5 @@ private:
     UFUNCTION()
     void Authority_OnKillerSet(ASlasherPlayer* killer);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UK26IsLastCrowRemovalReasonDueToInteraction();
 };
 

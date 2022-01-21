@@ -1,9 +1,9 @@
 #include "AtlantaPatchingLibrary.h"
 
-class UAtlantaPendingContent;
 class UAtlantaInstalledContent;
+class UAtlantaPendingContent;
 
-void UAtlantaPatchingLibrary::RequestContent(const FString& RemoteManifestURL, const FString& CloudURL, const FString& InstallDirectory, FAtlantaPatchingLibraryOnSucceeded OnSucceeded, FAtlantaPatchingLibraryOnFailed OnFailed, UAtlantaPendingContent* MobilePendingContent) {
+void UAtlantaPatchingLibrary::RequestContent(const FString& RemoteManifestURL, const FString& CloudURL, const FString& InstallDirectory, FOnAtlantaRequestContentSucceeded OnSucceeded, FOnAtlantaRequestContentFailed OnFailed, UAtlantaPendingContent* MobilePendingContent) {
 }
 
 void UAtlantaPatchingLibrary::PrintPakLocations() {

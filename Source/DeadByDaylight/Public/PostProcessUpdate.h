@@ -7,9 +7,9 @@ UCLASS()
 class DEADBYDAYLIGHT_API APostProcessUpdate : public AActor {
     GENERATED_BODY()
 public:
+    APostProcessUpdate();
     UFUNCTION(BlueprintImplementableEvent)
     void PostProcessToggle(bool toggle);
     
-    APostProcessUpdate();
 };
 

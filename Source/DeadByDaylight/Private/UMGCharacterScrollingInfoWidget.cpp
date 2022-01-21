@@ -13,13 +13,13 @@ UUMGCharacterScrollingInfoWidget::UUMGCharacterScrollingInfoWidget() {
     this->KillerInfoPanel = NULL;
     this->KillerPower = NULL;
     this->CharacterBackstoryBox = NULL;
-    this->_perksTitle = INVTEXT("PERKS");
-    this->_teachablesTitle = INVTEXT("TEACHABLE");
-    this->_powerTitle = INVTEXT("POWER");
-    this->_attributesTitle = INVTEXT("ATTRIBUTES");
+    this->_perksTitle = FText::FromString(TEXT("PERKS"));
+    this->_teachablesTitle = FText::FromString(TEXT("TEACHABLE"));
+    this->_powerTitle = FText::FromString(TEXT("POWER"));
+    this->_attributesTitle = FText::FromString(TEXT("ATTRIBUTES"));
     this->FirstTeachablePerkText = NULL;
     this->SecondTeachablePerkText = NULL;
     this->ThirdTeachablePerkText = NULL;
-    this->_backStoryTitle = INVTEXT("View Story");
+    this->_backStoryTitle = FText::FromString(TEXT("View Story"));
 }
 

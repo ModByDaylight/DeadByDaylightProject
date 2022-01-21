@@ -1,41 +1,40 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Components/SceneComponent.h"
-#include "EInputInteractionType.h"
 #include "ESnapBackPositionType.h"
-#include "GameplayTagContainer.h"
-#include "ESnapBackType.h"
-#include "Activatable.h"
+#include "EInputInteractionType.h"
+#include "Components/SceneComponent.h"
 #include "Interaction.h"
-#include "UObject/NoExportTypes.h"
+#include "Activatable.h"
+#include "InteractionAnimNotify.h"
 #include "EInteractionAnimation.h"
-#include "EPowerProgressBar.h"
 #include "UObject/NoExportTypes.h"
+#include "MontagePlaybackDefinition.h"
+#include "ESnapBackType.h"
+#include "EPowerProgressBar.h"
 #include "EInteractionOwnership.h"
+#include "GameplayTagContainer.h"
 #include "EButtonType.h"
 #include "AnimationMontageDescriptor.h"
 #include "GameplayTagContainer.h"
+#include "UObject/NoExportTypes.h"
 #include "SecondaryInteractionProperties.h"
 #include "ActivationDefinition.h"
-#include "MontagePlaybackDefinition.h"
 #include "EInteractionComparisonPriority.h"
 #include "InteractionDefinition.generated.h"
 
-class UObject;
-class UInterruptionDefinition;
+class AInteractable;
 class UCurveFloat;
+class UInterruptionDefinition;
 class UInteractor;
 class UInteractionDefinition;
 class UPrimitiveComponent;
 class UPlayerInteractionHandler;
 class ADBDPlayer;
-class AInteractable;
+class UObject;
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInteractionDefinitionOnInteractionAnimNotify, FName, NotifyId);
-
-UCLASS(Blueprintable, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UInteractionDefinition : public USceneComponent, public IActivatable, public IInteraction {
     GENERATED_BODY()
 public:
@@ -283,7 +282,7 @@ public:
     TArray<UInterruptionDefinition*> _interruptionDefinitions;
     
     UPROPERTY(BlueprintAssignable)
-    FInteractionDefinitionOnInteractionAnimNotify OnInteractionAnimNotify;
+    FInteractionAnimNotify OnInteractionAnimNotify;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool DebugUnavailability;
@@ -414,6 +413,7 @@ private:
     FSecondaryInteractionProperties DEPRECATED_SecondaryInteractionProperties;
     
 public:
+    UInteractionDefinition();
     UFUNCTION(BlueprintPure)
     bool ShouldStartUpdateMontageDuringEnter(const ADBDPlayer* character) const;
     
@@ -683,6 +683,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddDisablingTags(FGameplayTag tagToAdd);
     
-    UInteractionDefinition();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

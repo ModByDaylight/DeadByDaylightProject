@@ -7,6 +7,7 @@ UCLASS()
 class ABlightPowerEstimatedCollisionIndicator : public AActor {
     GENERATED_BODY()
 public:
+    ABlightPowerEstimatedCollisionIndicator();
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void OnShowIndicator_Cosmetic();
@@ -14,7 +15,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void OnHideIndicator_Cosmetic();
     
-public:
-    ABlightPowerEstimatedCollisionIndicator();
 };
 

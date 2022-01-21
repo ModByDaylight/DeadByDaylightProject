@@ -13,11 +13,11 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UButton* FullScreenButton;
     
+public:
+    UUMGCloseTooltipWidget();
 private:
     UFUNCTION()
     void HandleCloseTooltipButton();
     
-public:
-    UUMGCloseTooltipWidget();
 };
 

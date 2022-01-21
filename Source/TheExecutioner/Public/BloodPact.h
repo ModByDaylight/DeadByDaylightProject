@@ -6,7 +6,7 @@
 class UStatusEffect;
 class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UBloodPact : public UPerk {
     GENERATED_BODY()
 public:
@@ -38,10 +38,11 @@ private:
     UPROPERTY(Transient)
     ADBDPlayer* _otherPlayer;
     
+public:
+    UBloodPact();
+private:
     UFUNCTION()
     void Authority_OnInRangeChanged(const bool inRange);
     
-public:
-    UBloodPact();
 };
 

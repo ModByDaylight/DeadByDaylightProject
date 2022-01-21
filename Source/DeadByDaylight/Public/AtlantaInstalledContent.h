@@ -7,6 +7,7 @@ UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UAtlantaInstalledContent : public UObject {
     GENERATED_BODY()
 public:
+    UAtlantaInstalledContent();
     UFUNCTION(BlueprintCallable)
     bool Mount(int32 PakOrder, const FString& MountPoint);
     
@@ -16,6 +17,5 @@ public:
     UFUNCTION(BlueprintPure)
     float GetFreeDiskSpace();
     
-    UAtlantaInstalledContent();
 };
 

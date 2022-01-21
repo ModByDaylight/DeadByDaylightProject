@@ -7,6 +7,7 @@ UCLASS(Abstract, EditInlineNew)
 class UUMGSettingContextWidget : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
+    UUMGSettingContextWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void SetContextTitle(const FText& contextTitle);
     
@@ -14,7 +15,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void HandleContextButtonClickEvent(int32 buttonData);
     
-public:
-    UUMGSettingContextWidget();
 };
 

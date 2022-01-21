@@ -3,11 +3,11 @@
 #include "UObject/Object.h"
 #include "OnlineSystemHandler.generated.h"
 
-class UCrossPlatformManager;
-class ULocalPlayer;
 class UDBDGameInstance;
-class UDBDServerInstance;
+class ULocalPlayer;
 class UGameSessionDS;
+class UDBDServerInstance;
+class UCrossPlatformManager;
 
 UCLASS(Transient)
 class DEADBYDAYLIGHT_API UOnlineSystemHandler : public UObject {

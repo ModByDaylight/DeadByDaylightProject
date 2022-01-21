@@ -5,13 +5,13 @@
 
 class UGameplayModifierContainer;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UEnduranceVFXComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UEnduranceVFXComponent();
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_ShowHighlight(UGameplayModifierContainer* preventKOSource);
     
-    UEnduranceVFXComponent();
 };
 

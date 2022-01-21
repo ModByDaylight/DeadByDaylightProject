@@ -8,6 +8,7 @@ UCLASS(Abstract, EditInlineNew)
 class UUMGCustomizationCategoriesBar : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
+    UUMGCustomizationCategoriesBar();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetSelectedCategory(const ECustomizationCategory category);
     
@@ -18,7 +19,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void BroadcastCustomizationCategoryButtonPressed(ECustomizationCategory categoryIndex);
     
-public:
-    UUMGCustomizationCategoriesBar();
 };
 

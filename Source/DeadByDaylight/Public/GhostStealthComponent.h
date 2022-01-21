@@ -1,40 +1,40 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EGhostStealthState.h"
 #include "Components/ActorComponent.h"
+#include "EGhostStealthState.h"
 #include "GhostStealthComponent.generated.h"
 
-class UCharacterSightableComponent;
-class ACharacter;
-class UStalkerComponent;
-class UTimerObject;
 class ADBDPlayer;
+class UTimerObject;
+class ACharacter;
 class AScreenIndicatorWorldMarker;
+class UCharacterSightableComponent;
+class UStalkerComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGhostStealthComponentOnSuccessfulAttackInStealth, ADBDPlayer*, target);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGhostStealthComponentOnStealthStateChanged, EGhostStealthState, stealthState);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGhostStealthComponentOnIsStealthChanged, bool, isStealth);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGhostStealthComponentOnIsBeingSpotChanged, bool, isBeingSpot);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGhostStealthComponentLocal_OnStealthCancelledByPlayer, ADBDPlayer*, player);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UGhostStealthComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FGhostStealthComponentOnSuccessfulAttackInStealth OnSuccessfulAttackInStealth;
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSuccessfulAttackInStealth, ADBDPlayer*, target);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStealthStateChanged, EGhostStealthState, stealthState);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStealthCancelledByPlayer, ADBDPlayer*, player);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsStealthChanged, bool, isStealth);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsBeingSpotChanged, bool, isBeingSpot);
     
     UPROPERTY(BlueprintAssignable)
-    FGhostStealthComponentOnStealthStateChanged OnStealthStateChanged;
+    FOnSuccessfulAttackInStealth OnSuccessfulAttackInStealth;
     
     UPROPERTY(BlueprintAssignable)
-    FGhostStealthComponentOnIsStealthChanged OnIsStealthChanged;
+    FOnStealthStateChanged OnStealthStateChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FGhostStealthComponentOnIsBeingSpotChanged OnIsBeingSpotChanged;
+    FOnIsStealthChanged OnIsStealthChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FGhostStealthComponentLocal_OnStealthCancelledByPlayer Local_OnStealthCancelledByPlayer;
+    FOnIsBeingSpotChanged OnIsBeingSpotChanged;
+    
+    UPROPERTY(BlueprintAssignable)
+    FOnStealthCancelledByPlayer Local_OnStealthCancelledByPlayer;
     
 private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_StealthState)
@@ -58,6 +58,11 @@ private:
     UPROPERTY(Export, Transient)
     UStalkerComponent* _stalkerComponent;
     
+public:
+    UGhostStealthComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void SetRedStainVisibility(const bool visible);
     
@@ -91,8 +96,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_TryActivateStealth();
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UGhostStealthComponent();
 };
 

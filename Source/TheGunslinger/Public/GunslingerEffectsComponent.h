@@ -5,18 +5,18 @@
 
 class AHarpoonRifle;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGunslingerEffectsComponentOnIsAimingChanged, bool, isAiming);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGunslingerEffectsComponentPlayOutOfAmmoSound);
-
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API UGunslingerEffectsComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FGunslingerEffectsComponentOnIsAimingChanged OnIsAimingChanged;
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayOutOfAmmoSound);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsAimingChanged, bool, isAiming);
     
     UPROPERTY(BlueprintAssignable)
-    FGunslingerEffectsComponentPlayOutOfAmmoSound PlayOutOfAmmoSound;
+    FOnIsAimingChanged OnIsAimingChanged;
+    
+    UPROPERTY(BlueprintAssignable)
+    FPlayOutOfAmmoSound PlayOutOfAmmoSound;
     
 protected:
     UPROPERTY(EditAnywhere)
@@ -26,13 +26,14 @@ private:
     UPROPERTY(Transient)
     AHarpoonRifle* _rifle;
     
+public:
+    UGunslingerEffectsComponent();
+private:
     UFUNCTION()
     void OnItemUsedStateChanged(bool isPressed);
     
     UFUNCTION(NetMulticast, Unreliable)
     void Multicast_PlayOutOfAmmoSound();
     
-public:
-    UGunslingerEffectsComponent();
 };
 

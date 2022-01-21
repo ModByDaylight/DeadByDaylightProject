@@ -3,9 +3,9 @@
 #include "UMGTallyListElementWidget.h"
 #include "UMGTallyCharacterProgressionWidget.generated.h"
 
-class UImage;
 class UUMGTallyCharacterProgressionBar;
 class UTextBlock;
+class UImage;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGTallyCharacterProgressionWidget : public UUMGTallyListElementWidget {
@@ -40,6 +40,7 @@ protected:
     int32 ExperiencePerSecond;
     
 public:
+    UUMGTallyCharacterProgressionWidget();
     UFUNCTION(BlueprintCallable)
     void StartSequence();
     
@@ -58,7 +59,5 @@ private:
     UFUNCTION()
     void OnFullBarIn();
     
-public:
-    UUMGTallyCharacterProgressionWidget();
 };
 

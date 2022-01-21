@@ -29,10 +29,13 @@ private:
     UPROPERTY(Export, Transient)
     TMap<FName, UCoreTutorialObjectiveItem*> _objectiveItems;
     
+public:
+    UCoreTutorialObjectivesContainer();
+private:
     UFUNCTION()
     void OnTutorialObjectiveCompleted(UCoreTutorialObjectiveItem* item);
     
-public:
-    UCoreTutorialObjectivesContainer();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

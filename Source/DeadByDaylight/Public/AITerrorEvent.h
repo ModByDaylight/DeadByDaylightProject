@@ -4,8 +4,8 @@
 #include "GenericTeamAgentInterface.h"
 #include "AITerrorEvent.generated.h"
 
-class UTerrorRadiusEmitterComponent;
 class AActor;
+class UTerrorRadiusEmitterComponent;
 
 USTRUCT(BlueprintType)
 struct DEADBYDAYLIGHT_API FAITerrorEvent {

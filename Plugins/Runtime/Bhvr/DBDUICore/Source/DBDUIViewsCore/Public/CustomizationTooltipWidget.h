@@ -15,6 +15,7 @@ protected:
     UDBDTextBlock* ToolTipStatusTB;
     
 public:
+    UCustomizationTooltipWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void SetTooltipData(const FCustomizationTooltipViewData& customizationViewData);
     
@@ -22,7 +23,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void SetStatusText(const bool isEquipped, const bool isOwned, const bool isLocked);
     
-public:
-    UCustomizationTooltipWidget();
 };
 

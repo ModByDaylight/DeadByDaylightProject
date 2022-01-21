@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ETunableComparison.h"
 #include "BTDecorator_TickableBase.h"
+#include "ETunableComparison.h"
 #include "AITunableParameter.h"
 #include "BTDecorator_IsTunable.generated.h"
 

@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "UObject/Object.h"
 #include "PerkLevelDefinition.h"
-#include "GameplayTagContainer.h"
 #include "DBDDesignTunables.generated.h"
 
-class UDBDTextDesignTunables;
 class UDBDCoreUMGDesignTunables;
+class UDBDTextDesignTunables;
 class UDBDAtlantaDesignTunables;
 
 UCLASS(BlueprintType, Transient, Config=Design)
@@ -61,9 +61,9 @@ public:
     UPROPERTY(BlueprintReadOnly, Transient)
     UDBDAtlantaDesignTunables* AtlantaDesignTunables;
     
+    UDBDDesignTunables();
     UFUNCTION(BlueprintPure)
     float GetTunableValue(FName ID, bool warnIfRowMissing) const;
     
-    UDBDDesignTunables();
 };
 

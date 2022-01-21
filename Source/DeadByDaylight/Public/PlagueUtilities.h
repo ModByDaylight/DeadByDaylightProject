@@ -3,13 +3,14 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "PlagueUtilities.generated.h"
 
-class ADBDPlayer;
 class USurvivorPlagueEffect;
+class ADBDPlayer;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UPlagueUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UPlagueUtilities();
     UFUNCTION(BlueprintPure)
     static bool IsPlagueDebugModeActive();
     
@@ -25,6 +26,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void Authority_AddSicknessToPlayer(ADBDPlayer* player, float sicknessToAdd);
     
-    UPlagueUtilities();
 };
 

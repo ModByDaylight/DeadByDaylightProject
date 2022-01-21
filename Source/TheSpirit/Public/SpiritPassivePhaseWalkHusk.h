@@ -17,6 +17,9 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Export)
     UCustomizedSkeletalMesh* _huskCustomizedSkeletalMesh;
     
+public:
+    ASpiritPassivePhaseWalkHusk();
+protected:
     UFUNCTION(BlueprintCallable)
     void SetScalarParameterOnAllChildrenMeshes(FName parameterName, float value);
     
@@ -38,6 +41,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void CaptureSpiritPose();
     
-    ASpiritPassivePhaseWalkHusk();
 };
 

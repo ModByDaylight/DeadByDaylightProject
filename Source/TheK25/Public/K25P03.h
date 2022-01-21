@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Perk.h"
 #include "GameplayTagContainer.h"
+#include "Perk.h"
 #include "GameEventData.h"
 #include "K25P03.generated.h"
 
 class ACamperPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK25P03 : public UPerk {
     GENERATED_BODY()
 public:
@@ -18,6 +18,9 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _state2ActionSpeedDebuffPercentage[3];
     
+public:
+    UK25P03();
+private:
     UFUNCTION()
     void OnSurvivorRemoved(ACamperPlayer* survivor);
     
@@ -27,7 +30,5 @@ private:
     UFUNCTION()
     void OnCamperUnhookedFromScourgeHook(const FGameEventData& gameEventData);
     
-public:
-    UK25P03();
 };
 

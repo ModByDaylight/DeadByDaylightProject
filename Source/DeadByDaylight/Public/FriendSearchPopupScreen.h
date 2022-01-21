@@ -7,6 +7,7 @@ UCLASS()
 class UFriendSearchPopupScreen : public UGenericPopupScreen {
     GENERATED_BODY()
 public:
+    UFriendSearchPopupScreen();
     UFUNCTION()
     void OnUnblockPlayer(const FString& friendKrakenID);
     
@@ -19,6 +20,5 @@ public:
     UFUNCTION()
     void OnAcceptFriendInvite(const FString& friendKrakenID);
     
-    UFriendSearchPopupScreen();
 };
 

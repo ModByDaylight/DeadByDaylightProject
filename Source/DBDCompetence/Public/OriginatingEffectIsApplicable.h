@@ -3,7 +3,7 @@
 #include "EventDrivenModifierCondition.h"
 #include "OriginatingEffectIsApplicable.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UOriginatingEffectIsApplicable : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:

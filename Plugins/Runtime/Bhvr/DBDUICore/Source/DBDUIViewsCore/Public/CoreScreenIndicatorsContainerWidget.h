@@ -5,8 +5,8 @@
 #include "ScreenIndicatorsContainerViewInterface.h"
 #include "CoreScreenIndicatorsContainerWidget.generated.h"
 
-class UCanvasPanel;
 class UCoreScreenIndicatorWidget;
+class UCanvasPanel;
 
 UCLASS(EditInlineNew)
 class UCoreScreenIndicatorsContainerWidget : public UCoreBaseHudWidget, public IScreenIndicatorsContainerViewInterface {
@@ -29,6 +29,8 @@ private:
     UPROPERTY(Export, Transient)
     TArray<UCoreScreenIndicatorWidget*> _screenIndicatorsPool;
     
+public:
+    UCoreScreenIndicatorsContainerWidget();
 protected:
     UFUNCTION(BlueprintCallable)
     TMap<FString, UCoreScreenIndicatorWidget*> GetScreenIndicatorsMap();
@@ -36,7 +38,7 @@ protected:
     UFUNCTION(BlueprintPure)
     FString FindScreenIndicatorKey(UCoreScreenIndicatorWidget* value) const;
     
-public:
-    UCoreScreenIndicatorsContainerWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

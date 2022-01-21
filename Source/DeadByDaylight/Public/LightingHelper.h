@@ -3,12 +3,12 @@
 #include "UObject/Object.h"
 #include "LightingHelper.generated.h"
 
-class UTextureCube;
-class UPostProcessComponent;
-class ULightingFactory;
 class ABaseSky;
 class AActor;
 class ULightingInterpolator;
+class UPostProcessComponent;
+class ULightingFactory;
+class UTextureCube;
 
 UCLASS(BlueprintType)
 class ULightingHelper : public UObject {
@@ -43,6 +43,7 @@ private:
     bool _bIsDreamworldActive;
     
 public:
+    ULightingHelper();
     UFUNCTION(BlueprintCallable)
     void ToggleDreamworldLighting(bool bActivateDreamworld);
     
@@ -56,7 +57,5 @@ private:
     UFUNCTION(BlueprintCallable, Exec)
     void DBD_ModifyExposure(float value);
     
-public:
-    ULightingHelper();
 };
 

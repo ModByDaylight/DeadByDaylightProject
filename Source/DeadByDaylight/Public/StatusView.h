@@ -28,12 +28,12 @@ private:
     ADBDPlayer* _localDBDPlayer;
     
 public:
+    AStatusView();
     UFUNCTION(BlueprintNativeEvent)
     void ResetView(const ADBDPlayer* dbdPlayer);
     
     UFUNCTION(BlueprintCallable)
     void FireNotification(const FStatusViewSource statusViewSource);
     
-    AStatusView();
 };
 

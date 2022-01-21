@@ -7,6 +7,7 @@ UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGAtlantaLegalMenuScreen : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
+    UUMGAtlantaLegalMenuScreen();
     UFUNCTION(BlueprintImplementableEvent)
     void SetLegalText(const FString& title, const FString& legalText);
     
@@ -17,7 +18,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void HandleMenuButtonClickEvent(bool isAccept);
     
-public:
-    UUMGAtlantaLegalMenuScreen();
 };
 

@@ -3,7 +3,7 @@
 #include "OnEventBaseAddon.h"
 #include "HillbillyChainsawHitEventAddon.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UHillbillyChainsawHitEventAddon : public UOnEventBaseAddon {
     GENERATED_BODY()
 public:

@@ -6,17 +6,17 @@
 #include "UObject/NoExportTypes.h"
 #include "DBDProjectileMovementComponent.generated.h"
 
-class UPrimitiveComponent;
 class USceneComponent;
+class UPrimitiveComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FDBDProjectileMovementComponentOnComponentToSweepCollisionBP, UPrimitiveComponent*, primitiveComponent, const FHitResult&, hitResult);
-
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class PROJECTILE_API UDBDProjectileMovementComponent : public UProjectileMovementComponent {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnComponentToSweepCollisionBP, UPrimitiveComponent*, primitiveComponent, const FHitResult&, hitResult);
+    
     UPROPERTY(BlueprintAssignable)
-    FDBDProjectileMovementComponentOnComponentToSweepCollisionBP OnComponentToSweepCollisionBP;
+    FOnComponentToSweepCollisionBP OnComponentToSweepCollisionBP;
     
 private:
     UPROPERTY(Transient)
@@ -41,12 +41,12 @@ private:
     float _maximumTravelDistance;
     
 public:
+    UDBDProjectileMovementComponent();
     UFUNCTION(BlueprintPure)
     FVector GetPreviousLocation() const;
     
     UFUNCTION(BlueprintCallable)
     void AddComponentToSweep(UPrimitiveComponent* component);
     
-    UDBDProjectileMovementComponent();
 };
 

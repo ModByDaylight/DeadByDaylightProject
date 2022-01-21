@@ -10,7 +10,7 @@ class UUserWidget;
 class UGameManualSubPresenter;
 class USubPresenter;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDUIPRESENTERS_API UOnboardingMenuPresenter : public UPresenter {
     GENERATED_BODY()
 public:
@@ -27,6 +27,9 @@ private:
     UPROPERTY(Export, Transient)
     USubPresenter* _activeSubPresenter;
     
+public:
+    UOnboardingMenuPresenter();
+private:
     UFUNCTION()
     void OnSetUIEnabled(bool enabled);
     
@@ -39,7 +42,5 @@ private:
     UFUNCTION()
     void OnBackAction();
     
-public:
-    UOnboardingMenuPresenter();
 };
 

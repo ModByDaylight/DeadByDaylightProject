@@ -4,9 +4,9 @@
 #include "CoreBaseHudWidget.h"
 #include "CorePerksContainerWidget.generated.h"
 
+class UCorePerkWidget;
 class UPerkViewInterface;
 class IPerkViewInterface;
-class UCorePerkWidget;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCorePerksContainerWidget : public UCoreBaseHudWidget, public IPerksContainerViewInterface {
@@ -22,5 +22,7 @@ private:
     
 public:
     UCorePerksContainerWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

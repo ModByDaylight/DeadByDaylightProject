@@ -24,10 +24,11 @@ private:
     UPROPERTY(Export, Transient)
     UInteractionDefinition* _openChestInteraction;
     
+public:
+    UChestAnimInstance();
+private:
     UFUNCTION()
     void OnSearchedChanged(bool searched);
     
-public:
-    UChestAnimInstance();
 };
 

@@ -7,7 +7,7 @@ class UDemonModeComponent;
 class UOniDemonModeAttackStateComponent;
 class ASlasherPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UOniPounceInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

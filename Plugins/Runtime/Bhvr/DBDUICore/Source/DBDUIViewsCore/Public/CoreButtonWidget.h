@@ -5,35 +5,35 @@
 #include "EButtonWidgetVisibility.h"
 #include "CoreButtonWidget.generated.h"
 
-class UCoreButtonWidget;
 class UAkAudioEvent;
+class UCoreButtonWidget;
 class UDBDButton;
 class UDBDTextBlock;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCoreButtonWidgetOnClickedDelegate, UCoreButtonWidget*, buttonTarget);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCoreButtonWidgetOnHoveredDelegate, UCoreButtonWidget*, buttonTarget);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCoreButtonWidgetOnUnhoveredDelegate, UCoreButtonWidget*, buttonTarget);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCoreButtonWidgetOnPressedDelegate, UCoreButtonWidget*, buttonTarget);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCoreButtonWidgetOnReleasedDelegate, UCoreButtonWidget*, buttonTarget);
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreButtonWidget : public UCoreBaseUserWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FCoreButtonWidgetOnHoveredDelegate OnHoveredDelegate;
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUnhoveredDelegate, UCoreButtonWidget*, buttonTarget);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnReleasedDelegate, UCoreButtonWidget*, buttonTarget);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPressedDelegate, UCoreButtonWidget*, buttonTarget);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHoveredDelegate, UCoreButtonWidget*, buttonTarget);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnClickedDelegate, UCoreButtonWidget*, buttonTarget);
     
     UPROPERTY(BlueprintAssignable)
-    FCoreButtonWidgetOnUnhoveredDelegate OnUnhoveredDelegate;
+    FOnHoveredDelegate OnHoveredDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FCoreButtonWidgetOnPressedDelegate OnPressedDelegate;
+    FOnUnhoveredDelegate OnUnhoveredDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FCoreButtonWidgetOnReleasedDelegate OnReleasedDelegate;
+    FOnPressedDelegate OnPressedDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FCoreButtonWidgetOnClickedDelegate OnClickedDelegate;
+    FOnReleasedDelegate OnReleasedDelegate;
+    
+    UPROPERTY(BlueprintAssignable)
+    FOnClickedDelegate OnClickedDelegate;
     
     UPROPERTY(EditAnywhere)
     FString HoveredSfxName;
@@ -64,6 +64,7 @@ protected:
     UDBDTextBlock* LabelTB;
     
 public:
+    UCoreButtonWidget();
     UFUNCTION(BlueprintCallable)
     void SetVisible(EButtonWidgetVisibility visible);
     
@@ -126,6 +127,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool IsEnabled() const;
     
-    UCoreButtonWidget();
 };
 

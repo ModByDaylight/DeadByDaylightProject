@@ -7,12 +7,12 @@ UCLASS(Abstract, EditInlineNew)
 class UUMGMapThemeWidget : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
+    UUMGMapThemeWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void SetThemeName(const FString& themeName);
     
     UFUNCTION(BlueprintImplementableEvent)
     void SetMapName(const FString& mapName);
     
-    UUMGMapThemeWidget();
 };
 

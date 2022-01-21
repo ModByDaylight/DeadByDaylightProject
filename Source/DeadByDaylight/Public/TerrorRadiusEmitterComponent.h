@@ -5,7 +5,7 @@
 
 class UTerrorRadiusReceiverComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UTerrorRadiusEmitterComponent : public USceneComponent {
     GENERATED_BODY()
 public:
@@ -36,6 +36,7 @@ private:
     TMap<TWeakObjectPtr<UTerrorRadiusReceiverComponent>, bool> _receiversPhysicallyInRadiusRangeMap;
     
 public:
+    UTerrorRadiusEmitterComponent();
     UFUNCTION(BlueprintCallable)
     void SetTerrorRadius(float radius);
     
@@ -72,6 +73,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool GetGeneratesChaseMusic() const;
     
-    UTerrorRadiusEmitterComponent();
 };
 

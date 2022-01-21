@@ -5,10 +5,10 @@
 #include "ESharedAuthenticationProvider.h"
 #include "SharedAuthenticationComponent.generated.h"
 
+class UUserWidget;
 class UUMGAutheticationProviderSelection;
 class UUMGAuthenticationProviderSelection;
 class USharedAuthenticationMigrateComponent;
-class UUserWidget;
 
 UCLASS()
 class SHAREDAUTHENTICATIONUTILITIES_API USharedAuthenticationComponent : public UObject {

@@ -16,6 +16,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TArray<AOfferingCard*> Cards;
     
+    AOfferingSequenceAssets();
     UFUNCTION(BlueprintImplementableEvent)
     void PlaySmoke();
     
@@ -25,6 +26,5 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
     void PlayFadeIn();
     
-    AOfferingSequenceAssets();
 };
 

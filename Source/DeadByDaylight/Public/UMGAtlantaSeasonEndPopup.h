@@ -4,8 +4,8 @@
 #include "Engine/EngineTypes.h"
 #include "UMGAtlantaSeasonEndPopup.generated.h"
 
-class UUMGTallyRankBanner;
 class UHorizontalBox;
+class UUMGTallyRankBanner;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlantaSeasonEndPopup : public UUMGGenericPopup {
@@ -37,13 +37,14 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _timerBeforeFadeOutAnimation;
     
+public:
+    UUMGAtlantaSeasonEndPopup();
+private:
     UFUNCTION()
     void TriggerFadeOutAnimationTimer();
     
     UFUNCTION()
     void PlayNewRankFadeInAnimation();
     
-public:
-    UUMGAtlantaSeasonEndPopup();
 };
 

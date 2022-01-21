@@ -5,10 +5,10 @@
 #include "EPartyPlayerSlotWidgetState.h"
 #include "UMGPartySlotsWidget.generated.h"
 
-class UUMGPartyBotSlotWidget;
 class UPanelWidget;
 class UUMGPartyPlayerSlotWidget;
 class UVerticalBox;
+class UUMGPartyBotSlotWidget;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGPartySlotsWidget : public UMobileBaseUserWidget {
@@ -36,6 +36,8 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     FSlateColor NormalCharacterColor;
     
+public:
+    UUMGPartySlotsWidget();
 private:
     UFUNCTION(BlueprintCallable)
     void SwapWidgets(int32 first, int32 second);
@@ -55,7 +57,5 @@ private:
     UFUNCTION()
     void HandleBotEditButtonClickEvent(const int32 index);
     
-public:
-    UUMGPartySlotsWidget();
 };
 

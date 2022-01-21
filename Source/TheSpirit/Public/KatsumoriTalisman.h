@@ -3,7 +3,7 @@
 #include "ItemAddon.h"
 #include "KatsumoriTalisman.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UKatsumoriTalisman : public UItemAddon {
     GENERATED_BODY()
 public:

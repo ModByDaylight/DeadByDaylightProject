@@ -3,7 +3,7 @@
 #include "DBDCharacterMovementComponent.h"
 #include "TwinCharacterMovementComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTwinCharacterMovementComponent : public UDBDCharacterMovementComponent {
     GENERATED_BODY()
 public:

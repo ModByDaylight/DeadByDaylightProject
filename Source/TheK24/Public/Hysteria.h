@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "Hysteria.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UHysteria : public UPerk {
     GENERATED_BODY()
 public:

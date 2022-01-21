@@ -1,8 +1,8 @@
 #include "BaseProjectile.h"
 
-class UBaseProjectileLauncher;
 class USphereComponent;
 class UPrimitiveComponent;
+class UBaseProjectileLauncher;
 
 bool ABaseProjectile::SphereTraceSingle(FVector start, FVector end, USphereComponent* sphere, FHitResult& outHitResult) const {
     return false;

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "BaseSurvivorAnimInstance.h"
 #include "GameplayTagContainer.h"
-#include "UObject/NoExportTypes.h"
 #include "OpenChestSurvivorSubAnimInstance.generated.h"
 
 UCLASS(NonTransient)

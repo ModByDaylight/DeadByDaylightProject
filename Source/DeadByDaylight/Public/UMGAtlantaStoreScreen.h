@@ -19,6 +19,7 @@ protected:
     UUniformGridPanel* AuricCellsGridPanel;
     
 public:
+    UUMGAtlantaStoreScreen();
     UFUNCTION(BlueprintImplementableEvent)
     void SetBank(ECurrencyType currencyType, int32 bank);
     
@@ -28,6 +29,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void HandleOnClickedBuyAuricCell(int32 cellIndex);
     
-    UUMGAtlantaStoreScreen();
 };
 

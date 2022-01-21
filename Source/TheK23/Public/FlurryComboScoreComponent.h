@@ -5,7 +5,7 @@
 #include "GameplayTagContainer.h"
 #include "FlurryComboScoreComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UFlurryComboScoreComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -43,12 +43,13 @@ private:
     UPROPERTY(EditDefaultsOnly)
     TArray<FGameplayTag> _comboScoreEvents;
     
+public:
+    UFlurryComboScoreComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_ComboScore() const;
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UFlurryComboScoreComponent();
 };
 

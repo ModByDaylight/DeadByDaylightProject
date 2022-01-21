@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AITunableParameter.h"
 #include "BehaviorTree/Decorators/BTDecorator_TimeLimit.h"
 #include "AIDisplayDebugInterface.h"
-#include "BehaviorTree/BehaviorTreeTypes.h"
+#include "AITunableParameter.h"
 #include "BehaviorTree/Blackboard/BlackboardKeyType.h"
+#include "BehaviorTree/BehaviorTreeTypes.h"
 #include "BTDecorator_ExtTimeLimit.generated.h"
 
 UCLASS()
@@ -21,5 +21,7 @@ public:
     TEnumAsByte<EBasicKeyOperation::Type> FilterOperation;
     
     UBTDecorator_ExtTimeLimit();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

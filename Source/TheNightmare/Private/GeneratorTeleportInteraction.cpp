@@ -1,9 +1,9 @@
 #include "GeneratorTeleportInteraction.h"
 #include "Net/UnrealNetwork.h"
 
-class ADBDPlayer;
 class AGenerator;
 class ASlasherPlayer;
+class ADBDPlayer;
 
 void UGeneratorTeleportInteraction::StopBloodSpurts() {
 }

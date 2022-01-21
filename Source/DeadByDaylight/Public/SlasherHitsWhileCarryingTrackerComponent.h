@@ -7,7 +7,7 @@
 
 class ACamperPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USlasherHitsWhileCarryingTrackerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -15,6 +15,9 @@ private:
     UPROPERTY()
     TSet<ACamperPlayer*> _campersHitDuringLastCarry;
     
+public:
+    USlasherHitsWhileCarryingTrackerComponent();
+private:
     UFUNCTION()
     void OnPostAttack(FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
@@ -24,7 +27,5 @@ private:
     UFUNCTION()
     void OnAttack(FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-public:
-    USlasherHitsWhileCarryingTrackerComponent();
 };
 

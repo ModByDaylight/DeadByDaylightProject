@@ -3,10 +3,10 @@
 #include "UMGGenericPopup.h"
 #include "UMGAtlantaRankUpPopup.generated.h"
 
-class UUMGTallyRankBanner;
 class UHorizontalBox;
-class UCanvasPanel;
+class UUMGTallyRankBanner;
 class UUMGRewardWidget;
+class UCanvasPanel;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlantaRankUpPopup : public UUMGGenericPopup {
@@ -25,11 +25,11 @@ protected:
     UPROPERTY(EditAnywhere, NoClear)
     TSoftClassPtr<UUMGRewardWidget> RewardWidgetClass;
     
+public:
+    UUMGAtlantaRankUpPopup();
 private:
     UFUNCTION()
     void PlayRankUpBannerAnimation();
     
-public:
-    UUMGAtlantaRankUpPopup();
 };
 

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTunableRowHandle.h"
 #include "StatusEffect.h"
+#include "DBDTunableRowHandle.h"
 #include "SurvivorWasRecentlyUnhookedEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USurvivorWasRecentlyUnhookedEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

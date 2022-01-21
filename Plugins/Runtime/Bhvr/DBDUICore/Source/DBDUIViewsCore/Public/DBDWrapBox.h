@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Types/SlateEnums.h"
 #include "Components/PanelWidget.h"
 #include "UObject/NoExportTypes.h"
-#include "Types/SlateEnums.h"
 #include "DBDWrapBox.generated.h"
 
 class UDBDWrapBoxSlot;
@@ -24,6 +24,7 @@ public:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     TEnumAsByte<EHorizontalAlignment> HorizontalAlignment;
     
+    UDBDWrapBox();
     UFUNCTION(BlueprintCallable)
     void SetInnerSlotPadding(FVector2D InPadding);
     
@@ -33,6 +34,5 @@ public:
     UFUNCTION(BlueprintCallable)
     UDBDWrapBoxSlot* AddChildToWrapBox(UWidget* Content);
     
-    UDBDWrapBox();
 };
 

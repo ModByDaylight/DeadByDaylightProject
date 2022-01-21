@@ -5,7 +5,7 @@
 
 class UPortalPlacerStateComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDemogorgonPowerItemProgressComponent : public UPresentationItemProgressComponent {
     GENERATED_BODY()
 public:

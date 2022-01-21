@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AISkill_Interaction.h"
 #include "ELoadoutItemType.h"
+#include "AISkill_Interaction.h"
 #include "AISkill_InteractionUseItem.generated.h"
 
 UCLASS(EditInlineNew)

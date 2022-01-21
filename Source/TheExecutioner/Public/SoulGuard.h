@@ -4,7 +4,7 @@
 #include "CamperHealResult.h"
 #include "SoulGuard.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USoulGuard : public UPerk {
     GENERATED_BODY()
 public:
@@ -19,6 +19,8 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _enduranceEffectDuration[3];
     
+public:
+    USoulGuard();
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void Authority_ShowOnKOPreventedFX();
@@ -27,7 +29,5 @@ private:
     UFUNCTION()
     void Authority_OnSurvivorHealed(const FCamperHealResult& healResult);
     
-public:
-    USoulGuard();
 };
 

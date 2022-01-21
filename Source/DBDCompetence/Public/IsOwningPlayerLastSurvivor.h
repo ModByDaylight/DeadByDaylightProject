@@ -3,7 +3,7 @@
 #include "EventDrivenModifierCondition.h"
 #include "IsOwningPlayerLastSurvivor.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIsOwningPlayerLastSurvivor : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:

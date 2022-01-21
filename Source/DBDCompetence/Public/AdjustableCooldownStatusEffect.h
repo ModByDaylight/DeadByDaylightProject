@@ -4,7 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "AdjustableCooldownStatusEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UAdjustableCooldownStatusEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

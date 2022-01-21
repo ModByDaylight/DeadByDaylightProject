@@ -27,6 +27,8 @@ private:
     UPROPERTY(BlueprintReadOnly, Export, meta=(AllowPrivateAccess=true))
     UTextBlock* AimTextFullScreenCanvas;
     
+public:
+    UUMGControlTypeWidget();
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetOptionChecked(bool NewIsChecked);
@@ -40,7 +42,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void HandleButtonClicked();
     
-public:
-    UUMGControlTypeWidget();
 };
 

@@ -5,13 +5,14 @@
 
 class AActor;
 class ADBDPlayer;
-class ADBDAIPlayerController;
 class APlayerController;
+class ADBDAIPlayerController;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AAtlantaTutorialLevel : public ATutorialLevel {
     GENERATED_BODY()
 public:
+    AAtlantaTutorialLevel();
     UFUNCTION(BlueprintCallable)
     void StartCameraFadeIn();
     
@@ -44,6 +45,5 @@ public:
     UFUNCTION(BlueprintPure)
     AActor* GetTutorialElement(const FString& elementKey) const;
     
-    AAtlantaTutorialLevel();
 };
 

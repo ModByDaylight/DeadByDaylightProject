@@ -15,9 +15,11 @@ private:
     UAuthoritativeActorPoolComponent* _pool;
     
 public:
+    UAuthoritativePoolProjectileProviderAdapter();
     UFUNCTION(BlueprintCallable)
     void Init(UAuthoritativeActorPoolComponent* pool);
     
-    UAuthoritativePoolProjectileProviderAdapter();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

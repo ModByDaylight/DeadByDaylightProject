@@ -7,6 +7,7 @@ UCLASS()
 class UUIConsoleCommands : public UObject {
     GENERATED_BODY()
 public:
+    UUIConsoleCommands();
     UFUNCTION(Exec)
     void DBD_ToggleTestWidget();
     
@@ -25,6 +26,5 @@ public:
     UFUNCTION(Exec)
     void DBD_SetApplicationScale(float applicationScale);
     
-    UUIConsoleCommands();
 };
 

@@ -1,11 +1,11 @@
 #include "TutorialFunctionLibrary.h"
 
-class UTutorialObjectiveController;
+class ATutorialGameMode;
 class UObject;
+class UTutorialObjectiveController;
 class UTutorialNotificationController;
 class UTutorialHighlightController;
 class ATutorialGameState;
-class ATutorialGameMode;
 
 bool UTutorialFunctionLibrary::IsInTutorial(const UObject* WorldContextObject) {
     return false;

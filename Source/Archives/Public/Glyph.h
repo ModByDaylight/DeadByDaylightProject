@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
+#include "DBDTunableRowHandle.h"
 #include "SpecialBehaviourInteractable.h"
 #include "AI/Navigation/NavAgentInterface.h"
 #include "EAllowedPlayerType.h"
+#include "UObject/NoExportTypes.h"
 #include "GameplayTagContainer.h"
-#include "DBDTunableRowHandle.h"
 #include "Glyph.generated.h"
 
+class UDBDOutlineComponent;
+class UInteractor;
+class ADBDPlayer;
 class UPrimitiveComponent;
 class UChargeableComponent;
-class UInteractor;
+class AActor;
 class UGlyphInteraction;
-class ADBDPlayer;
-class UDBDOutlineComponent;
 class UStaticMeshComponent;
 class UNearTrackedActorComponent;
-class AActor;
 
 UCLASS()
 class AGlyph : public ASpecialBehaviourInteractable, public INavAgentInterface {
@@ -87,6 +87,10 @@ private:
     UPROPERTY(Replicated, Transient)
     TArray<ADBDPlayer*> _playersThatInteractedWithGlyph;
     
+public:
+    AGlyph();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
 protected:
     UFUNCTION()
     void OnRep_PlayersWithVisibility();
@@ -120,9 +124,7 @@ protected:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintImplementableEvent)
     void Authority_OnInteractionCompleted(ADBDPlayer* interactingPlayer);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    AGlyph();
+    // Fix for true pure virtual functions not being implemented
 };
 

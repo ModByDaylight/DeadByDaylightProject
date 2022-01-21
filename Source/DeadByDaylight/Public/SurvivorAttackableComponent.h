@@ -7,10 +7,11 @@
 class ADBDPlayer;
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API USurvivorAttackableComponent : public UAttackableComponent {
     GENERATED_BODY()
 public:
+    USurvivorAttackableComponent();
 private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_HitCosmetic_NonLocal(const ADBDPlayer* attacker, EAttackType attackType, bool causedKO, bool isWeaponHit);
@@ -22,6 +23,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_HitCosmetic(const AActor* attacker, EAttackType attackType, bool causeKO, bool isWeaponHit);
     
-    USurvivorAttackableComponent();
 };
 

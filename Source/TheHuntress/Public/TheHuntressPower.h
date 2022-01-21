@@ -12,6 +12,7 @@ UCLASS()
 class ATheHuntressPower : public ACollectable {
     GENERATED_BODY()
 public:
+    ATheHuntressPower();
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintNativeEvent)
     void StartHatchetShineCosmetic();
     
@@ -48,6 +49,5 @@ public:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnThrowInteractionCancelled();
     
-    ATheHuntressPower();
 };
 

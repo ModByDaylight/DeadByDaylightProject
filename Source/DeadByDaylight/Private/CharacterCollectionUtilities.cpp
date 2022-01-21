@@ -1,10 +1,10 @@
 #include "CharacterCollectionUtilities.h"
 
-class ACharacter;
+class ACamperPlayer;
 class UObject;
 class ASlasherPlayer;
-class ACamperPlayer;
 class ADBDPlayer;
+class ACharacter;
 
 int32 UCharacterCollectionUtilities::GetNumberOfInjuredHookedOrDyingSurvivors(const UObject* worldContextObject) {
     return 0;

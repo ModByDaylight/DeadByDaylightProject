@@ -3,8 +3,8 @@
 #include "Animation/AnimInstance.h"
 #include "DemogorgonHuskAnimInstance.generated.h"
 
-class APawn;
 class UAnimSequence;
+class APawn;
 class UAnimMontage;
 class UPortalPlacerStateComponent;
 class ASlasherPlayer;
@@ -42,10 +42,11 @@ private:
     UPROPERTY(Export, Transient)
     TWeakObjectPtr<UPortalPlacerStateComponent> _demogorgonPortalPlacerState;
     
+public:
+    UDemogorgonHuskAnimInstance();
+private:
     UFUNCTION()
     void OnKillerSet(ASlasherPlayer* killer);
     
-public:
-    UDemogorgonHuskAnimInstance();
 };
 

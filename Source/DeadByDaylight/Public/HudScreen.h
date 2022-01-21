@@ -7,6 +7,7 @@ UCLASS()
 class DEADBYDAYLIGHT_API UHudScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    UHudScreen();
     UFUNCTION()
     void OnTutorialNotificationClosedByUserInput();
     
@@ -34,6 +35,5 @@ public:
     UFUNCTION()
     void OnCancelQuitGameButtonClick();
     
-    UHudScreen();
 };
 

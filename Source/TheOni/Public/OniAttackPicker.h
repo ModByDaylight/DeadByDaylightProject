@@ -3,7 +3,7 @@
 #include "SlasherAttackPickerComponent.h"
 #include "OniAttackPicker.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UOniAttackPicker : public USlasherAttackPickerComponent {
     GENERATED_BODY()
 public:

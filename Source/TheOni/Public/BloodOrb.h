@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
 #include "EBloodOrbState.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "BloodOrb.generated.h"
 
+class UBloodOrbFadeComponent;
 class USceneComponent;
 class UDBDOutlineComponent;
-class UBloodOrbFadeComponent;
 class ADBDPlayer;
 
 UCLASS()
@@ -37,6 +37,10 @@ private:
     
     UPROPERTY(Export, VisibleDefaultsOnly)
     UBloodOrbFadeComponent* _fadeComponent;
+    
+public:
+    ABloodOrb();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
@@ -77,8 +81,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_Despawn();
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ABloodOrb();
 };
 

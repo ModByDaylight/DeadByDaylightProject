@@ -2,21 +2,20 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Components/ActorComponent.h"
+#include "DreamStateChangedDelegate.h"
 #include "CharacterDreamworldComponent.generated.h"
 
-class UObject;
 class AActor;
 class APostProcessUpdate;
 class ADBDPlayer;
+class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCharacterDreamworldComponentDreamStateChanged, bool, isInDreamworld, bool, locallyObservedChanged);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCharacterDreamworldComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FCharacterDreamworldComponentDreamStateChanged DreamStateChanged;
+    FDreamStateChangedDelegate DreamStateChanged;
     
     UPROPERTY(EditAnywhere)
     TSubclassOf<AActor> _mobileDreamworldPostProcessClass;
@@ -29,6 +28,9 @@ private:
     APostProcessUpdate* _mobileDreamworldPostProcess;
     
 public:
+    UCharacterDreamworldComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintPure)
     bool ShouldShowVignette() const;
     
@@ -49,8 +51,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_SetIsInDreamworld(bool newValue, bool isScripted);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UCharacterDreamworldComponent();
 };
 

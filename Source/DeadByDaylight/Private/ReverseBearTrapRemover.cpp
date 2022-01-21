@@ -40,5 +40,6 @@ void AReverseBearTrapRemover::GetLifetimeReplicatedProps(TArray<FLifetimePropert
 }
 
 AReverseBearTrapRemover::AReverseBearTrapRemover() {
+    this->_mapActor = CreateDefaultSubobject<UMapActorComponent>(TEXT("Map Actor"));
 }
 

@@ -3,7 +3,7 @@
 #include "EventDrivenModifierCondition.h"
 #include "IsActivationTimerActive.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UIsActivationTimerActive : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:

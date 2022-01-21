@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "BaseInputAccelerationConstraintStrategy.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class GAMEPLAYUTILITIES_API UBaseInputAccelerationConstraintStrategy : public UActorComponent {
     GENERATED_BODY()
 public:

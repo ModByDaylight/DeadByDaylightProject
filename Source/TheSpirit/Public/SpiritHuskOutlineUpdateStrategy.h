@@ -5,15 +5,14 @@
 
 class ASlasherPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THESPIRIT_API USpiritHuskOutlineUpdateStrategy : public UOutlineUpdateStrategy {
     GENERATED_BODY()
 public:
+    USpiritHuskOutlineUpdateStrategy();
 private:
     UFUNCTION()
     void OnSlasherSet(ASlasherPlayer* slasher);
     
-public:
-    USpiritHuskOutlineUpdateStrategy();
 };
 

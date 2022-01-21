@@ -3,8 +3,8 @@
 #include "UObject/Object.h"
 #include "AtlantaTooltipManager.generated.h"
 
-class UBaseTooltipWidget;
 class UUMGCloseTooltipWidget;
+class UBaseTooltipWidget;
 
 UCLASS()
 class UAtlantaTooltipManager : public UObject {
@@ -17,6 +17,9 @@ private:
     UPROPERTY(Export, Transient)
     UUMGCloseTooltipWidget* _closeTooltipWidget;
     
+public:
+    UAtlantaTooltipManager();
+private:
     UFUNCTION()
     void TryCloseActiveTooltipWithWidget();
     
@@ -24,6 +27,5 @@ public:
     UFUNCTION()
     bool TryCloseActiveTooltip();
     
-    UAtlantaTooltipManager();
 };
 

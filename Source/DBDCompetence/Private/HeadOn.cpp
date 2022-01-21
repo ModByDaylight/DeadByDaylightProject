@@ -1,8 +1,8 @@
 #include "HeadOn.h"
 
 class UPrimitiveComponent;
-class AActor;
 class UStunnableComponent;
+class AActor;
 class ADBDPlayer;
 
 void UHeadOn::OnPawnOverlapExit(UPrimitiveComponent* hitComponent, AActor* otherActor, UPrimitiveComponent* otherComp, int32 otherBodyIndex) {

@@ -20,9 +20,9 @@ private:
     float _minEscapeDist;
     
 public:
+    UCharacterEvasionBehaviourData();
     UFUNCTION(BlueprintCallable)
     void Init(AActor* hunter, TArray<AActor*> escapePoints, float minEscapeDist);
     
-    UCharacterEvasionBehaviourData();
 };
 

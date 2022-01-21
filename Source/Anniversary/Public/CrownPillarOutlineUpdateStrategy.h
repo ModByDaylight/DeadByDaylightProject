@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "CrownPillarOutlineUpdateStrategy.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UCrownPillarOutlineUpdateStrategy : public UOutlineUpdateStrategy {
     GENERATED_BODY()
 public:

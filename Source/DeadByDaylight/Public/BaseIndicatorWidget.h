@@ -3,9 +3,9 @@
 #include "MobileBaseUserWidget.h"
 #include "BaseIndicatorWidget.generated.h"
 
-class UImage;
 class UCanvasPanel;
 class UCanvasPanelSlot;
+class UImage;
 
 UCLASS(EditInlineNew)
 class UBaseIndicatorWidget : public UMobileBaseUserWidget {
@@ -30,10 +30,11 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UImage* ArrowImage;
     
+public:
+    UBaseIndicatorWidget();
+protected:
     UFUNCTION()
     void OnOutAnimationFinished();
     
-public:
-    UBaseIndicatorWidget();
 };
 

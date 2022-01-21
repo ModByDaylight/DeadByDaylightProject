@@ -1,27 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "ChargeableDefSkillCheckResponse.h"
 #include "InteractionDefinition.h"
+#include "GameplayTagContainer.h"
 #include "EChargeableInteractionBarType.h"
 #include "ESkillCheckCustomType.h"
-#include "GameplayTagContainer.h"
 #include "ChargeableInteractionDefinition.generated.h"
 
 class UChargeableComponent;
 class ADBDPlayer;
 class ACollectable;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FChargeableInteractionDefinitionSkillCheckResponseAestheticDelegate, bool, Success, bool, Bonus, ADBDPlayer*, Player, bool, TriggerLoudNoise, ESkillCheckCustomType, type);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FChargeableInteractionDefinitionSkillCheckResponseAuthorityDelegate, bool, Success, bool, Bonus, ADBDPlayer*, Player, bool, TriggerLoudNoise, ESkillCheckCustomType, type);
-
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UChargeableInteractionDefinition : public UInteractionDefinition {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FChargeableInteractionDefinitionSkillCheckResponseAestheticDelegate SkillCheckResponseAestheticDelegate;
+    FChargeableDefSkillCheckResponse SkillCheckResponseAestheticDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FChargeableInteractionDefinitionSkillCheckResponseAuthorityDelegate SkillCheckResponseAuthorityDelegate;
+    FChargeableDefSkillCheckResponse SkillCheckResponseAuthorityDelegate;
     
     UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
     bool StopInteractionOnChargeComplete;
@@ -68,6 +66,7 @@ private:
     FGameplayTagContainer _interactionSpecificActionSpeedAdditiveTags;
     
 public:
+    UChargeableInteractionDefinition();
     UFUNCTION(BlueprintPure)
     bool ShouldShowSpeedProficiencyForMultipleInteractors() const;
     
@@ -171,6 +170,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_AddCharge(float deltaSeconds, ADBDPlayer* character);
     
-    UChargeableInteractionDefinition();
 };
 

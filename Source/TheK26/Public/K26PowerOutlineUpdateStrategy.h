@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "K26PowerOutlineUpdateStrategy.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK26PowerOutlineUpdateStrategy : public UOutlineUpdateStrategy {
     GENERATED_BODY()
 public:
@@ -19,12 +19,12 @@ protected:
     bool _isOnlyVisibleForKiller;
     
 public:
+    UK26PowerOutlineUpdateStrategy();
     UFUNCTION(BlueprintCallable)
     void SetOutlineVisibility(bool isActive);
     
     UFUNCTION(BlueprintPure)
     bool IsOutlineVisible() const;
     
-    UK26PowerOutlineUpdateStrategy();
 };
 

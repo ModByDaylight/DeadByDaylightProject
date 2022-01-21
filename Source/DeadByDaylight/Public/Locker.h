@@ -2,30 +2,30 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Interactable.h"
-#include "GameplayTagContainer.h"
 #include "ECamperDamageState.h"
+#include "GameplayTagContainer.h"
 #include "Engine/EngineTypes.h"
 #include "Locker.generated.h"
 
-class UChildActorComponent;
 class UAnimationMontageSlave;
+class ULockerAnimInstance;
 class ADBDPlayer;
-class AActor;
+class UPrimitiveComponent;
 class UMontagePlayer;
 class UInteractor;
 class ACamperPlayer;
 class UInteractionDefinition;
-class UPrimitiveComponent;
-class ULockerAnimInstance;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FLockerOnSurvivorInLockerChanged, ADBDPlayer*, oldSurvivor, ADBDPlayer*, newSurvivor);
+class UChildActorComponent;
+class AActor;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ALocker : public AInteractable {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnSurvivorInLockerChanged, ADBDPlayer*, oldSurvivor, ADBDPlayer*, newSurvivor);
+    
     UPROPERTY(BlueprintAssignable)
-    FLockerOnSurvivorInLockerChanged OnSurvivorInLockerChanged;
+    FOnSurvivorInLockerChanged OnSurvivorInLockerChanged;
     
     UPROPERTY(EditAnywhere)
     float FastDoorActivationAudibleRange;
@@ -75,6 +75,9 @@ private:
     bool _preventAllInteractionsLocally;
     
 public:
+    ALocker();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void StopMinNearOutlineDistLerp(ADBDPlayer* player);
     
@@ -134,8 +137,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool AreInteractionsAllowed() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ALocker();
 };
 

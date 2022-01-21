@@ -7,6 +7,7 @@ UCLASS()
 class ADBDMarketingCameraController : public ADebugCameraController {
     GENERATED_BODY()
 public:
+    ADBDMarketingCameraController();
     UFUNCTION(Exec)
     void DBD_SetMarketingCameraTriggerSensitivity(const float triggerSensitivity);
     
@@ -19,6 +20,5 @@ public:
     UFUNCTION(Exec)
     void DBD_MarketingCameraToggleDampening();
     
-    ADBDMarketingCameraController();
 };
 

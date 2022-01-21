@@ -5,10 +5,10 @@
 
 class AOfferingSequenceAssets;
 class UDBDGameInstance;
-class APlayerController;
+class ACameraActor;
 class ADBDLobbyHud;
 class UOfferingHandler;
-class ACameraActor;
+class APlayerController;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AOfferingSequenceManager : public AActor {
@@ -33,10 +33,11 @@ private:
     UPROPERTY(Transient)
     ACameraActor* _offeringCamera;
     
+public:
+    AOfferingSequenceManager();
+private:
     UFUNCTION()
     void FadeInScreen();
     
-public:
-    AOfferingSequenceManager();
 };
 

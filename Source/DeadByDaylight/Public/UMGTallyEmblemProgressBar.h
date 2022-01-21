@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EEmblemQuality.h"
 #include "MobileBaseUserWidget.h"
 #include "UObject/NoExportTypes.h"
-#include "EEmblemQuality.h"
 #include "Styling/SlateBrush.h"
 #include "UMGTallyEmblemProgressBar.generated.h"
 

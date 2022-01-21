@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ItemAddon.h"
-#include "TunableStat.h"
 #include "GameplayTagContainer.h"
+#include "TunableStat.h"
 #include "SecondsToRateModifierBaseAddon.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USecondsToRateModifierBaseAddon : public UItemAddon {
     GENERATED_BODY()
 public:

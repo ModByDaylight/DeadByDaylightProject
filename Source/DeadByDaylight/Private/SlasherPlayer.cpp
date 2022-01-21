@@ -1,9 +1,23 @@
 #include "SlasherPlayer.h"
 #include "Net/UnrealNetwork.h"
+#include "SlasherStunnableComponent.h"
+#include "StillnessTrackerComponent.h"
+#include "KillerSoundCuesComponent.h"
+#include "DBDNavModifierComponent.h"
+#include "SlasherHitsWhileCarryingTrackerComponent.h"
+#include "MoriComponent.h"
+#include "KillerBlindingFXComponent.h"
+#include "HitValidatorComponent.h"
+#include "HitValidatorConfigurator.h"
+#include "DBDAttackerComponent.h"
+#include "ArmIKSensorComponent.h"
+#include "FirstPersonViewComponent.h"
+#include "KillerIntroComponent.h"
+#include "KillerRedStainUpdateStrategy.h"
 
 class ACamperPlayer;
-class AActor;
 class USceneComponent;
+class AActor;
 class ADBDPlayer;
 class USlasherTREmitterComponent;
 class UChaserCharacterComponent;
@@ -407,12 +421,17 @@ ASlasherPlayer::ASlasherPlayer() {
     this->ShouldDisplayAttackZones = false;
     this->CamperExposer = NULL;
     this->KillerMoodInfluence = EKillerMoodInfluence::VE_None;
+    this->KillerSoundCuesComponent = CreateDefaultSubobject<UKillerSoundCuesComponent>(TEXT("Killer Sound Cues Component"));
     this->ShowKillerPowerDebugInfo = false;
     this->HasDamagedGeneratorSinceHook = false;
+    this->_terrorNavModifierComponent = CreateDefaultSubobject<UDBDNavModifierComponent>(TEXT("TerrorNavModifierComponent"));
     this->_slasherLightIntensity = 1.00f;
     this->_defaultAmountToSquish = 1.00f;
+    this->_stillnessTracker = CreateDefaultSubobject<UStillnessTrackerComponent>(TEXT("StillnessTracker"));
     this->_aimAssistComponent = NULL;
+    this->_terrorRadiusEmitter = CreateDefaultSubobject<USlasherTREmitterComponent>(TEXT("Terror Radius Component"));
     this->_loudNoiseIndicator = NULL;
+    this->_hitsWhileCarryingTracker = CreateDefaultSubobject<USlasherHitsWhileCarryingTrackerComponent>(TEXT("HitsWhileCarryingTracker"));
     this->_stealthIncreaseRate = 0.00f;
     this->_stealthDecreaseRate = 0.00f;
     this->_isKilling = false;
@@ -424,9 +443,19 @@ ASlasherPlayer::ASlasherPlayer() {
     this->_enableKillerCrouchInput = false;
     this->_canStartAttackWhileCrouched = false;
     this->_carriedCamper = NULL;
+    this->_moriComponent = CreateDefaultSubobject<UMoriComponent>(TEXT("MoriComponent"));
+    this->_hitValidator = CreateDefaultSubobject<UHitValidatorComponent>(TEXT("Hit Validator"));
+    this->_hitValidationConfigurator = CreateDefaultSubobject<UHitValidatorConfigurator>(TEXT("Hit Validator Configurator"));
+    this->_attackerComponent = CreateDefaultSubobject<UDBDAttackerComponent>(TEXT("Attacker Component"));
     this->_basicAttackType = EAttackType::VE_Pounce;
+    this->_armIKSensorComponent = CreateDefaultSubobject<UArmIKSensorComponent>(TEXT("ArmIKSensor"));
     this->_survivorBeingKilled = NULL;
+    this->_firstPersonViewComponent = CreateDefaultSubobject<UFirstPersonViewComponent>(TEXT("FirstPersonViewComponent"));
+    this->_killerIntroComponent = CreateDefaultSubobject<UKillerIntroComponent>(TEXT("KillerIntroComponent"));
+    this->_blindingFXComponent = CreateDefaultSubobject<UKillerBlindingFXComponent>(TEXT("Blinding FX Component"));
+    this->_redStainUpdateStrategy = CreateDefaultSubobject<UKillerRedStainUpdateStrategy>(TEXT("KillerRedStainUpdateStrategy"));
     this->_attackZonePivot = NULL;
+    this->_slasherStunnableComponent = CreateDefaultSubobject<USlasherStunnableComponent>(TEXT("SlasherStunnableComponent"));
     this->_turnInPlaceThresholdAngle = 45.00f;
 }
 

@@ -12,9 +12,9 @@ private:
     bool _preventWiggleSuccess;
     
 public:
+    UAICharacterEscapeCarriedData();
     UFUNCTION(BlueprintCallable)
     void Init(bool preventWiggleSuccess);
     
-    UAICharacterEscapeCarriedData();
 };
 

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MobileBaseUserWidget.h"
-#include "StatusEffectSlotData.h"
-#include "Components/SlateWrapperTypes.h"
 #include "EBarColor.h"
+#include "MobileBaseUserWidget.h"
+#include "Components/SlateWrapperTypes.h"
+#include "StatusEffectSlotData.h"
 #include "UMGChargeableInteractionWidget.generated.h"
 
 class UImage;
@@ -25,6 +25,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient)
     ESlateVisibility InteractionHudVisibility;
     
+public:
+    UUMGChargeableInteractionWidget();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void SetSecondaryMessage(const FString& secondMessage);
     
@@ -56,7 +59,5 @@ protected:
     UFUNCTION(BlueprintImplementableEvent)
     void ClearProficienciesData();
     
-public:
-    UUMGChargeableInteractionWidget();
 };
 

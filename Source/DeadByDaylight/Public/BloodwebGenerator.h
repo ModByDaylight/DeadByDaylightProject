@@ -4,12 +4,12 @@
 #include "UObject/NoExportTypes.h"
 #include "BloodwebGenerator.generated.h"
 
-class UBloodwebSettings;
+class UBloodwebDistribution;
+class UBloodwebTunables;
 class UDBDBloodwebDefinitionBase;
 class IDBDBloodwebDefinitionBase;
 class UDBDDesignTunables;
-class UBloodwebTunables;
-class UBloodwebDistribution;
+class UBloodwebSettings;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UBloodwebGenerator : public UObject {

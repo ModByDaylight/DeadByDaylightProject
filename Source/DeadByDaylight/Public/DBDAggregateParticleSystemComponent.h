@@ -5,7 +5,7 @@
 
 class USceneComponent;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDAggregateParticleSystemComponent : public UParticleSystemComponent {
     GENERATED_BODY()
 public:

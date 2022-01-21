@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "GameplayTagContainer.h"
 #include "ChainLinkableComponent.h"
 #include "DBDTunableRowHandle.h"
 #include "Engine/NetSerialization.h"
-#include "GameplayTagContainer.h"
 #include "SurvivorChainLinkableComponent.generated.h"
 
-class UStatusEffect;
 class USurvivorReelVelocityAdditiveStrategy;
+class UStatusEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API USurvivorChainLinkableComponent : public UChainLinkableComponent {
     GENERATED_BODY()
 public:
@@ -42,12 +42,13 @@ private:
     UPROPERTY(Export, Transient, ReplicatedUsing=OnRep_VelocityAdditiveStrategy)
     USurvivorReelVelocityAdditiveStrategy* _velocityAdditiveStrategy;
     
+public:
+    USurvivorChainLinkableComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_VelocityAdditiveStrategy();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    USurvivorChainLinkableComponent();
 };
 

@@ -8,6 +8,7 @@ UCLASS()
 class NETWORKUTILITIES_API ANetworkFenceActor : public AActor {
     GENERATED_BODY()
 public:
+    ANetworkFenceActor();
 private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_ClientPassedFence(const TArray<FGuid>& Fences);
@@ -15,7 +16,5 @@ private:
     UFUNCTION(Client, Reliable, WithValidation)
     void Client_AllPassedFence(const TArray<FGuid>& Fences);
     
-public:
-    ANetworkFenceActor();
 };
 

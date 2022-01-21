@@ -8,7 +8,7 @@
 class USkeletalMeshComponent;
 class UCameraComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UArmIKSensorComponent : public UActorComponent {
     GENERATED_BODY()
 public:

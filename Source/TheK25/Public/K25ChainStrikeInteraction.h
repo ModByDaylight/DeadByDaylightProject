@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "GameplayTagContainer.h"
 #include "ChargeableInteractionDefinition.h"
-#include "DBDTunableRowHandle.h"
-#include "EChainStrikeCameraViewTarget.h"
 #include "EChainStrikeEndReason.h"
+#include "EChainStrikeCameraViewTarget.h"
+#include "DBDTunableRowHandle.h"
+#include "GameplayTagContainer.h"
 #include "K25ChainStrikeInteraction.generated.h"
 
-class ASlasherPlayer;
 class UFiniteStateMachine;
 class UCurveFloat;
+class ASlasherPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK25ChainStrikeInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -67,6 +67,9 @@ private:
     bool _hasHitSurvivor;
     
 public:
+    UK25ChainStrikeInteraction();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(Reliable, Server)
     void Server_SetShouldIncrementChargeableComponent(bool shouldIncrement);
     
@@ -114,9 +117,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_ResetAllVignetteValues(ASlasherPlayer* killer);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UK25ChainStrikeInteraction();
 };
 

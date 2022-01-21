@@ -1,8 +1,8 @@
 #include "TutorialsUtilities.h"
 
 class UObject;
-class ATutorialsUtilities;
 class AAIController;
+class ATutorialsUtilities;
 
 void ATutorialsUtilities::TriggerTutorialHudFadeOut() {
 }

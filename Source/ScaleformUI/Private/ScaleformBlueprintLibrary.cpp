@@ -1,9 +1,9 @@
 #include "ScaleformBlueprintLibrary.h"
 
 class USwfMovie;
-class UGFxMoviePlayer;
 class UObject;
 class UTextureRenderTarget2D;
+class UGFxMoviePlayer;
 class UGFxObject;
 
 UGFxMoviePlayer* UScaleformBlueprintLibrary::OpenMovie(USwfMovie* Movie, UObject* ExternalInterface, UTextureRenderTarget2D* RenderTexture, UGFxMoviePlayer* MoviePlayer, bool DisplayWithHudOff, bool StartPaused) {

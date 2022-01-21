@@ -9,12 +9,12 @@ UCLASS()
 class AKnifeRack : public AActor {
     GENERATED_BODY()
 public:
+    AKnifeRack();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnReloadMontageStarted(float actionSpeedMultiplier, ADBDPlayer* player);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnReloadEnded(ADBDPlayer* player);
     
-    AKnifeRack();
 };
 

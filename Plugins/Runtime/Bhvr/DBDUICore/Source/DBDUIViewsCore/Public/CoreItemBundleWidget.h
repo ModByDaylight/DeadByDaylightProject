@@ -9,5 +9,7 @@ class DBDUIVIEWSCORE_API UCoreItemBundleWidget : public UCoreBaseUserWidget, pub
     GENERATED_BODY()
 public:
     UCoreItemBundleWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

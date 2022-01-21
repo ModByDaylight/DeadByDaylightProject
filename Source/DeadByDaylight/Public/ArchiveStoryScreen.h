@@ -7,6 +7,7 @@ UCLASS()
 class UArchiveStoryScreen : public UArchiveBaseScreen {
     GENERATED_BODY()
 public:
+    UArchiveStoryScreen();
 private:
     UFUNCTION()
     void OnVignetteSelected(const FString& vignetteId);
@@ -50,7 +51,5 @@ private:
     UFUNCTION()
     void OnAllNodesReceived();
     
-public:
-    UArchiveStoryScreen();
 };
 

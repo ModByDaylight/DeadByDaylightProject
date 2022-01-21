@@ -3,8 +3,8 @@
 #include "MobileBaseUserWidget.h"
 #include "PerkHudWidget.generated.h"
 
-class UCanvasPanel;
 class UPerkActionButton;
+class UCanvasPanel;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UPerkHudWidget : public UMobileBaseUserWidget {
@@ -27,12 +27,12 @@ private:
     TMap<FName, UPerkActionButton*> _externalPerksMap;
     
 public:
+    UPerkHudWidget();
     UFUNCTION(BlueprintCallable)
     void RemoveExistingPerk(FName perkID, bool isExternal);
     
     UFUNCTION(BlueprintImplementableEvent)
     void OnPerkClickedHandler(FName perkID);
     
-    UPerkHudWidget();
 };
 

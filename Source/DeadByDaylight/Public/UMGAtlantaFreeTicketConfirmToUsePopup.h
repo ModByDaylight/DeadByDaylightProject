@@ -16,6 +16,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
     FText PopupTitleContent;
     
+    UUMGAtlantaFreeTicketConfirmToUsePopup();
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void SetPopupTitle(const FText& characterName);
@@ -26,7 +27,5 @@ protected:
     UFUNCTION(BlueprintImplementableEvent)
     UUMGRichTextFreeTicketDecorator* GetDecorator();
     
-public:
-    UUMGAtlantaFreeTicketConfirmToUsePopup();
 };
 

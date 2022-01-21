@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "EAIDifficultyLevel.h"
-#include "AIDisplayDebugInterface.h"
+#include "EDBDScoreTypes.h"
 #include "GameStatePressureZoneLevelMapContainer.h"
+#include "AIDisplayDebugInterface.h"
+#include "EAIPressureZoneLevel.h"
 #include "EAIObjectiveState.h"
 #include "DangerStateGameStateMapContainer.h"
-#include "EAIPressureZoneLevel.h"
-#include "EDBDScoreTypes.h"
+#include "EAIDifficultyLevel.h"
 #include "GameplayTagContainer.h"
 #include "GameEventData.h"
 #include "DBDAIStateComponent.generated.h"
 
 class AActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDBOTS_API UDBDAIStateComponent : public UActorComponent, public IAIDisplayDebugInterface {
     GENERATED_BODY()
 public:
@@ -60,6 +60,7 @@ public:
     UPROPERTY(EditDefaultsOnly)
     float FoVToStimulusValidDuration;
     
+    UDBDAIStateComponent();
 private:
     UFUNCTION()
     void OnUniqueGameplayEvent(EDBDScoreTypes eventType, float amount, AActor* instigator, AActor* target);
@@ -70,7 +71,7 @@ private:
     UFUNCTION()
     void OnSpecialAttackEventDispatched(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-public:
-    UDBDAIStateComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

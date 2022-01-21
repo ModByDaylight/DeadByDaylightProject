@@ -7,9 +7,9 @@ UCLASS()
 class ULoadingScreenScaleform : public ULoadingScreen {
     GENERATED_BODY()
 public:
+    ULoadingScreenScaleform();
     UFUNCTION()
     void OnLoadingTextTimerComplete() const;
     
-    ULoadingScreenScaleform();
 };
 

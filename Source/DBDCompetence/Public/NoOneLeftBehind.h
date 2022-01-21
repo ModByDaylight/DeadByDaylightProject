@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "NoOneLeftBehind.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UNoOneLeftBehind : public UPerk {
     GENERATED_BODY()
 public:
@@ -12,9 +12,9 @@ private:
     TArray<float> _speedBoostEffect;
     
 public:
+    UNoOneLeftBehind();
     UFUNCTION(BlueprintPure)
     float GetSpeedBoostEffect() const;
     
-    UNoOneLeftBehind();
 };
 

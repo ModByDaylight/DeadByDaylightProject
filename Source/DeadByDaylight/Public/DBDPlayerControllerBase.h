@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
-#include "PlayerLoadoutData.h"
 #include "PlayerSavedProfileDataShared.h"
+#include "PlayerLoadoutData.h"
 #include "DBDPlayerControllerBase.generated.h"
 
 class ADBDPlayer;
@@ -16,6 +16,9 @@ private:
     ADBDPlayer* _mainCharacter;
     
 public:
+    ADBDPlayerControllerBase();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_UpdateReplicatedPips(int32 pipsToAdd);
     
@@ -107,9 +110,5 @@ private:
     UFUNCTION(Reliable, Server, WithValidation)
     void CallConsoleCmdOnServer_Server(const FString& commandLine);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ADBDPlayerControllerBase();
 };
 

@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "MapMeshToAkAudioEvent.h"
 #include "MapSoundsToAvoid.h"
+#include "MapMeshToAkAudioEvent.h"
 #include "Engine/EngineTypes.h"
 #include "DBD_SoundClipUtil.generated.h"
 
 class AActor;
-class UAkAudioEvent;
 class UStaticMeshComponent;
+class UAkAudioEvent;
 class UPrimitiveComponent;
 
-UCLASS(Abstract, Blueprintable)
+UCLASS(Abstract, Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBD_SoundClipUtil : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -28,6 +28,9 @@ protected:
     UPROPERTY(Transient)
     TMap<UAkAudioEvent*, float> _nextSoundPlayTime;
     
+public:
+    UDBD_SoundClipUtil();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void OnGotMeshToTriggerSound(UStaticMeshComponent* usm);
     
@@ -37,7 +40,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     UAkAudioEvent* GetAudioEventForMesh(UStaticMeshComponent* usm);
     
-public:
-    UDBD_SoundClipUtil();
 };
 

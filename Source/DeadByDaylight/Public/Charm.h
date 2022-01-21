@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
 #include "StandDisplayable.h"
+#include "GameFramework/Actor.h"
 #include "Charm.generated.h"
 
 class USkeletalMeshComponent;
@@ -19,11 +19,13 @@ private:
     UPROPERTY(Transient)
     AItemVfx* _actorVfx;
     
+public:
+    ACharm();
 protected:
     UFUNCTION(BlueprintNativeEvent)
     void BeginDestroySequence_Internal();
     
-public:
-    ACharm();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

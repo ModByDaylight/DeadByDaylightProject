@@ -3,10 +3,11 @@
 #include "Components/ActorComponent.h"
 #include "K25CheatComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK25CheatComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UK25CheatComponent();
     UFUNCTION(Exec)
     void DBD_K25TriggerUncontrolledChainsOnLocalSurvivor(const int32 numbChains);
     
@@ -34,6 +35,5 @@ public:
     UFUNCTION(Exec)
     void DBD_K25ComeToMeLamentConfiguration();
     
-    UK25CheatComponent();
 };
 

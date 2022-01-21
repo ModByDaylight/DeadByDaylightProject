@@ -3,7 +3,7 @@
 #include "DefaultOutlineUpdateStrategy.h"
 #include "SerumOutlineUpdateStrategy.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class USerumOutlineUpdateStrategy : public UDefaultOutlineUpdateStrategy {
     GENERATED_BODY()
 public:

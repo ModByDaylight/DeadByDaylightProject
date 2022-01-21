@@ -4,8 +4,8 @@
 #include "TormentTrailPointInfo.h"
 #include "MobileTormentTrailRenderer.generated.h"
 
-class UInstancedStaticMeshComponent;
 class ABaseTormentTrailPoint;
+class UInstancedStaticMeshComponent;
 class UMaterialInstanceDynamic;
 
 UCLASS()
@@ -35,12 +35,12 @@ private:
     UMaterialInstanceDynamic* _trailMaterialInstanceDynamic;
     
 public:
+    AMobileTormentTrailRenderer();
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_RemoveInstance(ABaseTormentTrailPoint* trailPoint);
     
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_AddInstance(ABaseTormentTrailPoint* trailPoint, bool isAttackTrailPoint);
     
-    AMobileTormentTrailRenderer();
 };
 

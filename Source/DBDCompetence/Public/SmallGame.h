@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "SmallGame.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API USmallGame : public UPerk {
     GENERATED_BODY()
 public:
@@ -17,6 +17,9 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     bool _totemDetected;
     
+public:
+    USmallGame();
+protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void VFXTotemFound();
     
@@ -34,7 +37,5 @@ protected:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_SetTotemDetected(bool value);
     
-public:
-    USmallGame();
 };
 

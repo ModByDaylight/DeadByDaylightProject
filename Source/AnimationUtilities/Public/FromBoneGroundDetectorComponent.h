@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "FromBoneGroundDetectorComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ANIMATIONUTILITIES_API UFromBoneGroundDetectorComponent : public UBaseGroundDetectorComponent {
     GENERATED_BODY()
 public:

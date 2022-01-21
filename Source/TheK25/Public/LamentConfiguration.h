@@ -2,26 +2,26 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Collectable.h"
-#include "AkObservedPlayerSoundLoop.h"
 #include "ObjectStateProvider.h"
 #include "DBDTunableRowHandle.h"
 #include "EAttachToSocketNameEnum.h"
+#include "UObject/NoExportTypes.h"
+#include "GameEventData.h"
+#include "AkObservedPlayerSoundLoop.h"
 #include "ELamentConfigurationState.h"
 #include "GameplayTagContainer.h"
-#include "GameEventData.h"
-#include "UObject/NoExportTypes.h"
 #include "LamentConfiguration.generated.h"
 
-class ULamentConfigurationOutlineStrategy;
-class UMontagePlayer;
-class UDBDOutlineComponent;
+class UK25CollectLamentConfigurationInteraction;
+class ULamentConfigurationSpawnStrategy;
 class USpherePlayerOverlapComponent;
 class UInteractor;
 class UMaterialHelper;
-class UK25CollectLamentConfigurationInteraction;
-class ULamentConfigurationSpawnStrategy;
+class UDBDOutlineComponent;
+class ULamentConfigurationOutlineStrategy;
 class ULamentConfigurationChainHuntComponent;
 class UAnimationMontageSlave;
+class UMontagePlayer;
 class AK25AnimationFollowerActor;
 class AK25LamentConfigurationTeleportIndicator;
 class ACamperPlayer;
@@ -132,6 +132,10 @@ private:
     UPROPERTY(Transient)
     AK25LamentConfigurationTeleportIndicator* _lamentConfigurationTeleportIndicator;
     
+public:
+    ALamentConfiguration();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void TriggerKillerPickUpSFX(const TArray<ACamperPlayer*>& affectedSurvivors);
@@ -171,6 +175,9 @@ protected:
     
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_TriggerSolvedSFX();
+    
+    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    void Cosmetic_TriggerRespawnDuringChainHuntSFX();
     
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_TriggerOnSurvivorEscapedWithLamentConfigurationSFX();
@@ -222,9 +229,7 @@ private:
     UFUNCTION()
     void Authority_OnEndGameOver(FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    ALamentConfiguration();
+    // Fix for true pure virtual functions not being implemented
 };
 

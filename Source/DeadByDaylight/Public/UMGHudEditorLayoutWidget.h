@@ -4,10 +4,10 @@
 #include "UMGHudEditorLayoutWidget.generated.h"
 
 class UUMGHudEditorScreen;
-class UCustomWidgetWrapper_HudEditor;
-class UUMGHudEditorLayoutScreen;
 class UAkAudioEvent;
 class UUMGDragWidget_HudEditor;
+class UCustomWidgetWrapper_HudEditor;
+class UUMGHudEditorLayoutScreen;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGHudEditorLayoutWidget : public UUMGDragWidget {
@@ -27,6 +27,7 @@ private:
     TMap<UUMGHudEditorLayoutScreen*, bool> _isSaveDirtyMap;
     
 public:
+    UUMGHudEditorLayoutWidget();
     UFUNCTION(BlueprintCallable)
     void ShowSurvivorLayout();
     
@@ -63,6 +64,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void FlagSaveAsDirty();
     
-    UUMGHudEditorLayoutWidget();
 };
 

@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UMGTallyListElementWidget.h"
+#include "TallyItemChangedData.h"
 #include "Components/SlateWrapperTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "EDBDScoreCategory.h"
 #include "ScoreCategoryUIExtraData.h"
-#include "TallyItemChangedData.h"
 #include "UMGTallyBloodpointsWidget.generated.h"
 
 class UHorizontalBox;
@@ -36,6 +36,9 @@ protected:
     UPROPERTY(EditAnywhere, Transient)
     TMap<EDBDScoreCategory, FScoreCategoryUIExtraData> _scoreCategoryExtraDataMap;
     
+public:
+    UUMGTallyBloodpointsWidget();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void UpdateTallyTotalBloodpoints(int32 totalValue);
     
@@ -48,7 +51,5 @@ protected:
     UFUNCTION(BlueprintImplementableEvent)
     void ShowTallyItemWidget(bool isShow);
     
-public:
-    UUMGTallyBloodpointsWidget();
 };
 

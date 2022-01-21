@@ -7,9 +7,9 @@ UCLASS()
 class AHatchetRack : public AActor {
     GENERATED_BODY()
 public:
+    AHatchetRack();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetMovableHatchetVisibility(bool visible);
     
-    AHatchetRack();
 };
 

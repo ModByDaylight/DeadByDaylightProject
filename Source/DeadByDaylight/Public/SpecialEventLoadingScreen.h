@@ -7,9 +7,9 @@ UCLASS()
 class USpecialEventLoadingScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    USpecialEventLoadingScreen();
     UFUNCTION()
     void OnLoadingTextTimerComplete() const;
     
-    USpecialEventLoadingScreen();
 };
 

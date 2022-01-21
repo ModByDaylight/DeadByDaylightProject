@@ -1,4 +1,5 @@
 #include "ZombieAIController.h"
+#include "Perception/AIPerceptionComponent.h"
 
 class ASlasherPlayer;
 class AActor;
@@ -11,6 +12,7 @@ void AZombieAIController::Authority_OnTargetPerceptionUpdated(AActor* actor, FAI
 
 AZombieAIController::AZombieAIController() {
     this->_zombieBehaviorTree = NULL;
+    this->_aiPerceptionComponent = CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("AiPerceptionComponent"));
     this->_chaseTargetSurvivor = NULL;
 }
 

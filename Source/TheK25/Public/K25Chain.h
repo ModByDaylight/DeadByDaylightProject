@@ -2,28 +2,27 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "PoolableActor.h"
-#include "DBDTunableRowHandle.h"
 #include "UObject/NoExportTypes.h"
-#include "FastTimer.h"
+#include "OnAcquiredChanged.h"
+#include "DBDTunableRowHandle.h"
 #include "EK25ChainState.h"
+#include "FastTimer.h"
 #include "EK25ChainCreationStrategy.h"
 #include "EK25ChainDetachmentReason.h"
 #include "K25Chain.generated.h"
 
-class UCurveFloat;
 class AK25Projectile;
+class UCurveFloat;
 class AK25SurvivorChainAttachmentAnchor;
 class USplineComponent;
 class UInstancedStaticMeshComponent;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FK25ChainOnAcquiredChanged, const bool, acquired);
 
 UCLASS()
 class AK25Chain : public AActor, public IPoolableActor {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FK25ChainOnAcquiredChanged OnAcquiredChanged;
+    FOnAcquiredChanged OnAcquiredChanged;
     
     UPROPERTY(EditAnywhere)
     UCurveFloat* _attachedToProjectileInfluenceCurve;
@@ -124,6 +123,7 @@ private:
     EK25ChainCreationStrategy _chainCreationStrategy;
     
 public:
+    AK25Chain();
     UFUNCTION(BlueprintCallable)
     void SetSplineComponent(USplineComponent* component);
     
@@ -176,7 +176,7 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnChainAppears();
     
-public:
-    AK25Chain();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

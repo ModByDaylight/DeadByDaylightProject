@@ -3,7 +3,7 @@
 #include "ChargeableInteractionDefinition.h"
 #include "ActivateBlightPower.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UActivateBlightPower : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

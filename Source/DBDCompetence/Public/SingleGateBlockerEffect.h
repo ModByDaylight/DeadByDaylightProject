@@ -5,7 +5,7 @@
 
 class AEscapeDoor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API USingleGateBlockerEffect : public UGateBlockerEffect {
     GENERATED_BODY()
 public:
@@ -20,8 +20,8 @@ private:
     bool _isInRange;
     
 public:
+    USingleGateBlockerEffect();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    USingleGateBlockerEffect();
 };
 

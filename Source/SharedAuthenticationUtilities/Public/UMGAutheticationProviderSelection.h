@@ -8,9 +8,9 @@ UCLASS(Abstract, EditInlineNew)
 class SHAREDAUTHENTICATIONUTILITIES_API UUMGAutheticationProviderSelection : public UUserWidget {
     GENERATED_BODY()
 public:
+    UUMGAutheticationProviderSelection();
     UFUNCTION(BlueprintCallable)
     void SetSelectedAuthenticationProvider(ESharedAuthenticationProvider provider);
     
-    UUMGAutheticationProviderSelection();
 };
 

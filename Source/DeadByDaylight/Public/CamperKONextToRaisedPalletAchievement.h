@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "CamperKONextToRaisedPalletAchievement.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UCamperKONextToRaisedPalletAchievement : public UActorComponent {
     GENERATED_BODY()
 public:

@@ -3,20 +3,19 @@
 #include "Components/ActorComponent.h"
 #include "PossessNegationEffectComponent.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPossessNegationEffectComponentPlayCantPossessSound);
-
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UPossessNegationEffectComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FPossessNegationEffectComponentPlayCantPossessSound PlayCantPossessSound;
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayCantPossessSound);
     
+    UPROPERTY(BlueprintAssignable)
+    FPlayCantPossessSound PlayCantPossessSound;
+    
+    UPossessNegationEffectComponent();
 protected:
     UFUNCTION()
     void OnLevelReadyToPlay();
     
-public:
-    UPossessNegationEffectComponent();
 };
 

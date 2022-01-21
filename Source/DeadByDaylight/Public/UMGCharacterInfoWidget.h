@@ -1,7 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
+#include "OnTeachableTooltipLongPressEvent.h"
 #include "Styling/SlateColor.h"
+#include "OnLoadoutItemButtonLongPressEvent.h"
 #include "TeachableData.h"
 #include "UObject/NoExportTypes.h"
 #include "InventorySlotData.h"
@@ -9,12 +11,9 @@
 
 class UScrollBox;
 class UUMGCharacterScrollingInfoWidget;
-class UImage;
-class UCanvasPanel;
 class UTextBlock;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUMGCharacterInfoWidgetOnTeachableTooltipTriggeredLongPressEvent, const FTeachableData&, teachableData, const FVector2D&, position);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUMGCharacterInfoWidgetOnPowerItemTooltipTriggeredLongPressEvent, const FInventorySlotData&, itemSlotData, FVector2D, position);
+class UCanvasPanel;
+class UImage;
 
 UCLASS(EditInlineNew)
 class UUMGCharacterInfoWidget : public UMobileBaseUserWidget {
@@ -62,18 +61,19 @@ protected:
     
 private:
     UPROPERTY()
-    FUMGCharacterInfoWidgetOnTeachableTooltipTriggeredLongPressEvent _onTeachableTooltipTriggeredLongPressEvent;
+    FOnTeachableTooltipLongPressEvent _onTeachableTooltipTriggeredLongPressEvent;
     
     UPROPERTY()
-    FUMGCharacterInfoWidgetOnPowerItemTooltipTriggeredLongPressEvent _onPowerItemTooltipTriggeredLongPressEvent;
+    FOnLoadoutItemButtonLongPressEvent _onPowerItemTooltipTriggeredLongPressEvent;
     
+public:
+    UUMGCharacterInfoWidget();
+private:
     UFUNCTION()
     void HandleTooltipLongPressedEvent(const FTeachableData& teachableData, const FVector2D& position);
     
     UFUNCTION()
     void HandlePowerItemTooltipLongPressedEvent(const FInventorySlotData& slotData, FVector2D position);
     
-public:
-    UUMGCharacterInfoWidget();
 };
 

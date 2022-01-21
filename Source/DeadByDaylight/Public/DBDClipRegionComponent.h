@@ -4,11 +4,11 @@
 #include "AffectedMaterialAndVariant.h"
 #include "DBDClipRegionComponent.generated.h"
 
-class UDBDClipRegionComponent;
 class UMeshComponent;
 class UMaterialInstanceDynamic;
+class UDBDClipRegionComponent;
 
-UCLASS(Abstract, Blueprintable)
+UCLASS(Abstract, Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDClipRegionComponent : public UDBDLocatorComponent {
     GENERATED_BODY()
 public:
@@ -16,6 +16,9 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     TArray<FAffectedMaterialAndVariant> AffectedMaterialsAndVariants;
     
+public:
+    UDBDClipRegionComponent();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void NotifyShouldClipComponent(UMeshComponent* InMeshComponent);
     
@@ -34,6 +37,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void ApplyArrayOfClipsToDynamicMaterial(TArray<UDBDClipRegionComponent*> InRegions, UMaterialInstanceDynamic* dynamicInstanceToClip);
     
-    UDBDClipRegionComponent();
 };
 

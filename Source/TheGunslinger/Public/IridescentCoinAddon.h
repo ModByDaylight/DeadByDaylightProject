@@ -5,7 +5,7 @@
 
 class UStatusEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIridescentCoinAddon : public UItemAddon {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 #include "SpawnEffectsOnAllSurvivorsBaseAddon.h"
 #include "TrailEffectLastingTimeBaseAddon.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTrailEffectLastingTimeBaseAddon : public USpawnEffectsOnAllSurvivorsBaseAddon {
     GENERATED_BODY()
 public:

@@ -9,11 +9,10 @@ UCLASS(EditInlineNew)
 class USisterBlindFlashlightableLightingStrategy : public UBlindFlashlightableLightingStrategy {
     GENERATED_BODY()
 public:
+    USisterBlindFlashlightableLightingStrategy();
 private:
     UFUNCTION()
     void OnTwinSet(AConjoinedTwin* twin);
     
-public:
-    USisterBlindFlashlightableLightingStrategy();
 };
 

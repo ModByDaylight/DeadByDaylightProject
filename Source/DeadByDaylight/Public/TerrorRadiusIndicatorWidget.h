@@ -12,9 +12,9 @@ protected:
     float _anchorY;
     
 public:
+    UTerrorRadiusIndicatorWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void SetSoundDistancePercentage(float distancePercentage);
     
-    UTerrorRadiusIndicatorWidget();
 };
 

@@ -9,5 +9,7 @@ class ONLINETRANSACTIONS_API UForceRefreshBloodMarketTransaction : public UObjec
     GENERATED_BODY()
 public:
     UForceRefreshBloodMarketTransaction();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

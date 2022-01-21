@@ -5,11 +5,11 @@
 #include "Interactor.generated.h"
 
 class UInteractionDefinition;
-class AInteractable;
 class ADBDPlayer;
 class UInterruptionDefinition;
+class AInteractable;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UInteractor : public USceneComponent {
     GENERATED_BODY()
 public:
@@ -34,6 +34,9 @@ private:
     TArray<UInteractionDefinition*> _interactionDefinitions;
     
 public:
+    UInteractor();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetIsUsable(bool isUsableParam);
     
@@ -75,8 +78,5 @@ public:
     UFUNCTION(BlueprintPure)
     ADBDPlayer* Authority_GetInteractingPlayer() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UInteractor();
 };
 

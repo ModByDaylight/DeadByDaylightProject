@@ -1,90 +1,88 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DBDPlayer.h"
-#include "CharmAttachable.h"
-#include "Engine/EngineTypes.h"
-#include "NoiseIndicatorEmitterInterface.h"
-#include "ECamperImmobilizeState.h"
-#include "EGender.h"
-#include "EEscapeType.h"
-#include "DBDTimer.h"
-#include "ESkillCheckCustomType.h"
 #include "UObject/NoExportTypes.h"
+#include "OnHPSlotChanged.h"
+#include "NoiseIndicatorEmitterInterface.h"
+#include "CharmAttachable.h"
+#include "OnHookStateChanged.h"
+#include "OnGuidedStateChanged.h"
+#include "OnPickedUpEvent.h"
+#include "OnImmobilizeStateChanged.h"
+#include "OnHookEscapeFailedCosmetic.h"
+#include "EGender.h"
+#include "DBDTimer.h"
+#include "ECamperImmobilizeState.h"
+#include "ESkillCheckCustomType.h"
+#include "EEscapeType.h"
 #include "ECamperGuidedAction.h"
+#include "Engine/EngineTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "ECamperDamageState.h"
 #include "EAuthoritativeMovementFlag.h"
-#include "UObject/NoExportTypes.h"
 #include "CamperPlayer.generated.h"
 
+class UChargeableComponent;
 class UCamperStillnessTrackerComponent;
-class UAnimationMontageSlave;
-class UCurveFloat;
-class UDBDCamperData;
 class UStalkedComponent;
-class UCharacterPositionRecorderComponent;
-class USurvivorHitSprintEffect;
+class UInteractionDefinition;
+class AReverseBearTrap;
+class UCurveFloat;
+class UCamperBloodTrailComponent;
 class AActor;
 class USpherePlayerOverlapComponent;
-class UDBDPawnSensingComponent;
-class UCapsuleComponent;
-class UPrimitiveComponent;
-class UCamperSlashableComponent;
-class UTerrorRadiusReceiverComponent;
-class UProtectionHitComponent;
-class USurviveTimerScoreEventComponent;
 class UMoveComponentToComponent;
+class UCapsuleComponent;
+class UDBDClipRegionComponent;
+class UCamperSlashableComponent;
 class UCamperHealthComponent;
-class UChargeableComponent;
+class UTerrorRadiusReceiverComponent;
+class UDBDPawnSensingComponent;
+class USurviveTimerScoreEventComponent;
 class UBloodTrailSettings;
-class UCamperBloodTrailComponent;
+class ACamperPlayer;
 class UKillerInstinctComponent;
 class UCameraAttachmentComponent;
 class UCharmSpawnerComponent;
 class UHookableComponent;
+class UProtectionHitComponent;
 class UScreamComponent;
-class ACamperPlayer;
-class UInteractionDefinition;
-class UCamperEndGameComponent;
 class UAkComponent;
-class AReverseBearTrap;
+class UCharacterPositionRecorderComponent;
+class UCamperEndGameComponent;
+class USurvivorHitSprintEffect;
+class UPrimitiveComponent;
+class UAnimationMontageSlave;
 class UAkAudioEvent;
 class APawn;
-class UCamperAnimInstance;
-class UDBDClipRegionComponent;
 class UChaseeCharacterComponent;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCamperPlayerOnHookedStateChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCamperPlayerOnGuidedStateChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCamperPlayerOnImmobilizeStateChanged, ECamperImmobilizeState, oldState, ECamperImmobilizeState, newState);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCamperPlayerOnPickedUpDelegate, ADBDPlayer*, picker);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCamperPlayerOnPickedUpEndDelegate, ADBDPlayer*, picker);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCamperPlayerOnHPSlotChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCamperPlayerOnHookEscapeFailedCosmetic);
+class UDBDCamperData;
+class UCamperAnimInstance;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ACamperPlayer : public ADBDPlayer, public ICharmAttachable, public INoiseIndicatorEmitterInterface {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FCamperPlayerOnHookedStateChanged OnHookedStateChanged;
+    FOnHookStateChanged OnHookedStateChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FCamperPlayerOnGuidedStateChanged OnGuidedStateChanged;
+    FOnGuidedStateChanged OnGuidedStateChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FCamperPlayerOnPickedUpDelegate OnPickedUpDelegate;
+    FOnPickedUpEvent OnPickedUpDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FCamperPlayerOnPickedUpEndDelegate OnPickedUpEndDelegate;
+    FOnPickedUpEvent OnPickedUpEndDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FCamperPlayerOnHPSlotChanged OnHPSlotChanged;
+    FOnHPSlotChanged OnHPSlotChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FCamperPlayerOnImmobilizeStateChanged OnImmobilizeStateChanged;
+    FOnImmobilizeStateChanged OnImmobilizeStateChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FCamperPlayerOnHookEscapeFailedCosmetic OnHookEscapeFailedCosmetic;
+    FOnHookEscapeFailedCosmetic OnHookEscapeFailedCosmetic;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float InputMashCount;
@@ -263,6 +261,9 @@ private:
     USurvivorHitSprintEffect* _sprintEffect;
     
 public:
+    ACamperPlayer();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void UpdateKillerDistanceEvent(float deltaSeconds);
     
@@ -747,8 +748,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void ActionInputPressed();
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    ACamperPlayer();
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -1,38 +1,48 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EInteractionAnimation.h"
-#include "EDBDScoreTypes.h"
-#include "PerkOwnerInterface.h"
-#include "DBDBasePlayer.h"
 #include "PerkManagerOwnerInterface.h"
-#include "EInputInteractionType.h"
+#include "OnForwardInputLockedChanged.h"
+#include "DBDBasePlayer.h"
+#include "Perception/AISightTargetInterface.h"
+#include "PerkOwnerInterface.h"
 #include "AnimTagProvider.h"
-#include "PushableInterface.h"
 #include "ObjectStateProvider.h"
 #include "GenericTeamAgentInterface.h"
-#include "Perception/AISightTargetInterface.h"
+#include "PushableInterface.h"
 #include "DynamicGrassEffectorInterface.h"
-#include "EAttackType.h"
+#include "AnimNotifyDelegate_Pickup.h"
 #include "UObject/NoExportTypes.h"
+#include "OnAttackedEvent.h"
+#include "DamageTargetDelegate.h"
+#include "OnSensedDelegate.h"
+#include "AnimNotifyDelegate_Release.h"
+#include "SecondaryActionInputDelegate.h"
+#include "OnFirstPersonModeChanged.h"
+#include "OnDreamworldComponentSet.h"
 #include "UObject/NoExportTypes.h"
-#include "EDetectionZone.h"
+#include "OnRunningAndMovingChanged.h"
+#include "OnLocallyObservedChangedForPlayer.h"
+#include "EffectCameraTypeSettings.h"
 #include "ECamperState.h"
 #include "EAttackSubstate.h"
-#include "EffectCameraTypeSettings.h"
-#include "GameplayTagContainer.h"
+#include "EDetectionZone.h"
+#include "EInputInteractionType.h"
+#include "EDBDScoreTypes.h"
 #include "EAnimNotifyType.h"
 #include "UObject/NoExportTypes.h"
+#include "EPawnType.h"
 #include "Engine/EngineTypes.h"
+#include "EInteractionAnimation.h"
 #include "EAuthoritativeMovementFlag.h"
 #include "CharmIdSlot.h"
+#include "GameplayTagContainer.h"
 #include "ScoreEventData.h"
 #include "AnimationMontageDescriptor.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
 #include "EPlayerTeam.h"
 #include "EPlayerRole.h"
-#include "EPawnType.h"
 #include "MontagePlaybackDefinition.h"
 #include "InteractionPlayerProperties.h"
 #include "Components/SkinnedMeshComponent.h"
@@ -40,58 +50,58 @@
 #include "EStunType.h"
 #include "DBDPlayer.generated.h"
 
-class APlayerInteractable;
-class UBlindableComponent;
-class ADBDPlayerController;
-class USoundCue;
-class UMontagePlayer;
-class AActor;
-class USpringArmComponent;
-class UActorComponent;
-class UCharacterSightableComponent;
 class ADBDPlayer;
-class UInteractionDetectorComponent;
-class UGameplayTagContainerComponent;
-class UMaterialHelper;
-class UInteractionDefinition;
-class UCharacterInventoryComponent;
-class UCurveFloat;
-class AInteractable;
-class UCameraComponent;
-class UAIPerceptionStimuliSourceComponent;
-class UCharacterDreamworldComponent;
-class UBoxOcclusionQueryComponent;
-class UBoxComponent;
-class UContextualQuestComponent;
 class UActivatorComponent;
-class UAuthoritativeMovementComponent;
 class UDBDPlayerData;
-class UStateMachine;
-class UPlayerInteractionHandler;
-class UPerkManager;
-class UAudioFXComponent;
-class UAxisFlickMasher;
-class UPlayerGameRelevancyComponent;
+class UAIPerceptionStimuliSourceComponent;
+class UMontagePlayer;
 class UStatusEffect;
-class UCharacterChaseVisualComponent;
+class UInteractionDetectorComponent;
+class UBoxOcclusionQueryComponent;
+class UGameplayTagContainerComponent;
+class UPollableEventListener;
 class UCameraHandlerComponent;
 class UCharacterSightComponent;
-class USceneComponent;
-class ADBDPlayerState;
-class UOtherCharactersVerticalCollisionsHandler;
-class UChargeableComponent;
-class UPollableEventListener;
-class UChargeableProgressProviderComponent;
-class UChaseComponent;
-class UZoneDetectorComponent;
+class USpringArmComponent;
+class UAxisFlickMasher;
+class UCurveFloat;
+class UStateMachine;
 class UPrimitiveComponent;
+class UZoneDetectorComponent;
+class UCameraComponent;
+class UInteractionDefinition;
+class UMaterialHelper;
+class APlayerInteractable;
+class UCharacterInventoryComponent;
+class USoundCue;
+class UBoxComponent;
+class UPerkManager;
+class UPlayerInteractionHandler;
+class UCharacterChaseVisualComponent;
+class UCharacterDreamworldComponent;
+class UDynamicCapsuleResizerComponent;
+class USceneComponent;
+class AActor;
+class UChargeableComponent;
+class UBlindableComponent;
+class UChaseComponent;
+class UAuthoritativeMovementComponent;
+class UAudioFXComponent;
 class UPlayerPerspectiveComponent;
+class UCharacterSightableComponent;
 class UPrimitivesRegistererComponent;
 class UClippableProviderComponent;
-class UDynamicCapsuleResizerComponent;
-class ACollectable;
+class UPlayerGameRelevancyComponent;
+class UContextualQuestComponent;
+class UActorComponent;
+class UChargeableProgressProviderComponent;
+class ADBDPlayerState;
+class UOtherCharactersVerticalCollisionsHandler;
 class UAnimMontage;
+class ACollectable;
 class AController;
+class AInteractable;
+class ADBDPlayerController;
 class UItemModifier;
 class UItemAddon;
 class UCustomizedSkeletalMesh;
@@ -102,23 +112,12 @@ class ACharacter;
 class UGameplayModifierContainer;
 class UInteractor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDPlayerOnDreamworldComponentSet, ADBDPlayer*, player);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDBDPlayerAuthority_OnAttackedDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FDBDPlayerOnDamageTargetDelegate, ADBDPlayer*, source, ADBDPlayer*, target, EAttackType, attackType, bool, didDamage);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDPlayerOnSensed, ADBDPlayer*, player);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDPlayerOnAnimNotify_Pickup, ADBDPlayer*, player);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDPlayerOnFirstPersonModeChanged, bool, firstPerson);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDPlayerOnAnimNotify_Release, ADBDPlayer*, player);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FDBDPlayerAuthority_OnSecondaryActionInput, ADBDPlayer*, player, UInteractionDefinition*, interaction, bool, fromCancelRequest);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDPlayerOnForwardInputLockedChanged, bool, forwardInputLockValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDPlayerOnIsCrouchedChanged, bool, isCrouched);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDPlayerOnRunningAndMovingChanged, bool, isRunningAndMoving);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDPlayerOnLocallyObservedChangedForPlayer, ADBDPlayer*, player);
-
 UCLASS(Abstract)
 class DEADBYDAYLIGHT_API ADBDPlayer : public ADBDBasePlayer, public IPerkOwnerInterface, public IPerkManagerOwnerInterface, public IAnimTagProvider, public IObjectStateProvider, public IGenericTeamAgentInterface, public IAISightTargetInterface, public IPushableInterface, public IDynamicGrassEffectorInterface {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsCrouchedChanged, bool, isCrouched);
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool AllowInterrupting;
     
@@ -168,31 +167,31 @@ public:
     float PelvisHeightForPounceOnCrouchingCamper;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerAuthority_OnAttackedDelegate Authority_OnAttackedDelegate;
+    FOnAttackedEvent Authority_OnAttackedDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerOnDamageTargetDelegate OnDamageTargetDelegate;
+    FDamageTargetDelegate OnDamageTargetDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerOnSensed OnSensed;
+    FOnSensedDelegate OnSensed;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerOnAnimNotify_Pickup OnAnimNotify_Pickup;
+    FAnimNotifyDelegate_Pickup OnAnimNotify_Pickup;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerOnAnimNotify_Release OnAnimNotify_Release;
+    FAnimNotifyDelegate_Release OnAnimNotify_Release;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerAuthority_OnSecondaryActionInput Authority_OnSecondaryActionInput;
+    FSecondaryActionInputDelegate Authority_OnSecondaryActionInput;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerOnFirstPersonModeChanged OnFirstPersonModeChanged;
+    FOnFirstPersonModeChanged OnFirstPersonModeChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerOnDreamworldComponentSet OnDreamworldComponentSet;
+    FOnDreamworldComponentSet OnDreamworldComponentSet;
     
     UPROPERTY()
-    FDBDPlayerOnForwardInputLockedChanged OnForwardInputLockedChanged;
+    FOnForwardInputLockedChanged OnForwardInputLockedChanged;
     
     UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere)
     USpringArmComponent* CameraBoom;
@@ -243,13 +242,13 @@ public:
     UCurveFloat* JoyconSettingToPitchRateCurve;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerOnIsCrouchedChanged OnIsCrouchedChanged;
+    FOnIsCrouchedChanged OnIsCrouchedChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerOnRunningAndMovingChanged OnRunningAndMovingChanged;
+    FOnRunningAndMovingChanged OnRunningAndMovingChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerOnLocallyObservedChangedForPlayer OnLocallyObservedChangedForPlayer;
+    FOnLocallyObservedChangedForPlayer OnLocallyObservedChangedForPlayer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Export)
     UCameraComponent* Camera;
@@ -470,6 +469,9 @@ private:
     UOtherCharactersVerticalCollisionsHandler* _otherCharactersVerticalCollisionsHandler;
     
 public:
+    ADBDPlayer();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION()
     void UpdateLoadoutFromInventory();
     
@@ -1342,8 +1344,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void AbilityInputPressed();
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    ADBDPlayer();
+    // Fix for true pure virtual functions not being implemented
 };
 

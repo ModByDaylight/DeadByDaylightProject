@@ -1,37 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "UObject/NoExportTypes.h"
-#include "EInventoryButtonState.h"
-#include "InventorySlotData.h"
 #include "Components/SlateWrapperTypes.h"
+#include "OnLoadoutItemButtonClickedEvent.h"
+#include "OnLoadoutItemButtonLongPressEvent.h"
 #include "Styling/SlateBrush.h"
+#include "InventorySlotData.h"
+#include "EInventoryButtonState.h"
 #include "EItemRarity.h"
 #include "EStatusEffectType.h"
 #include "UMGLoadoutItemButton.generated.h"
 
 class UButton;
+class UCanvasPanel;
 class UTextBlock;
 class UImage;
-class UCanvasPanel;
 class UVerticalBox;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGLoadoutItemButtonOnDisabledItemButtonClicked, FName, itemID);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGLoadoutItemButtonOnLoadoutItemButtonClicked, FName, itemID);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUMGLoadoutItemButtonOnLoadoutItemButtonLongPress, const FInventorySlotData&, itemSlotData, FVector2D, position);
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGLoadoutItemButton : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FUMGLoadoutItemButtonOnLoadoutItemButtonClicked OnLoadoutItemButtonClicked;
+    FOnLoadoutItemButtonClickedEvent OnLoadoutItemButtonClicked;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGLoadoutItemButtonOnDisabledItemButtonClicked OnDisabledItemButtonClicked;
+    FOnLoadoutItemButtonClickedEvent OnDisabledItemButtonClicked;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGLoadoutItemButtonOnLoadoutItemButtonLongPress OnLoadoutItemButtonLongPress;
+    FOnLoadoutItemButtonLongPressEvent OnLoadoutItemButtonLongPress;
     
     UPROPERTY(BlueprintReadWrite)
     bool HideStackCount;
@@ -122,6 +119,7 @@ protected:
     UTextBlock* TextUnlockLevel;
     
 public:
+    UUMGLoadoutItemButton();
     UFUNCTION(BlueprintCallable)
     void UpdateWidgetByState(EInventoryButtonState state);
     
@@ -172,6 +170,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void BroadcastClickedEvent(FName itemID);
     
-    UUMGLoadoutItemButton();
 };
 

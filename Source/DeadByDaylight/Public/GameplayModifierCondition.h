@@ -6,10 +6,11 @@
 class UGameplayModifierContainer;
 class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UGameplayModifierCondition : public UBaseModifierCondition {
     GENERATED_BODY()
 public:
+    UGameplayModifierCondition();
     UFUNCTION(BlueprintCallable)
     void SetOwningGameplayModifier(UGameplayModifierContainer* OwningGameplayModifier);
     
@@ -25,6 +26,5 @@ public:
     UFUNCTION(BlueprintPure)
     UGameplayModifierContainer* GetOwningGameplayModifier() const;
     
-    UGameplayModifierCondition();
 };
 

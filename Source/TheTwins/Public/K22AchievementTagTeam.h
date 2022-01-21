@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "K22AchievementTagTeam.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK22AchievementTagTeam : public UActorComponent {
     GENERATED_BODY()
 public:

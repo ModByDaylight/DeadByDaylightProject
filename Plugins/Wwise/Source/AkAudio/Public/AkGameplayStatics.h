@@ -1,47 +1,43 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "EAkResult.h"
-#include "AkActionOnEventType.h"
+#include "AkChannelMask.h"
 #include "Engine/LatentActionManager.h"
+#include "OnAkBankCallback.h"
+#include "OnAkPostEventCallback.h"
 #include "UObject/NoExportTypes.h"
-#include "AkChannelConfiguration.h"
+#include "UObject/NoExportTypes.h"
+#include "EAkCurveInterpolation.h"
+#include "PanningRule.h"
 #include "UObject/NoExportTypes.h"
 #include "AkMultiPositionType.h"
-#include "UObject/NoExportTypes.h"
-#include "PanningRule.h"
-#include "Engine/EngineTypes.h"
-#include "AkChannelMask.h"
-#include "EAkCallbackType.h"
+#include "AkChannelConfiguration.h"
+#include "OnSetCurrentAudioCultureCallback.h"
 #include "AkExternalSourceInfo.h"
 #include "ERTPCValueType.h"
-#include "EAkCurveInterpolation.h"
+#include "Engine/EngineTypes.h"
+#include "AkActionOnEventType.h"
 #include "AkGameplayStatics.generated.h"
 
-class UAkAudioBank;
-class AActor;
 class UAkAuxBus;
-class UAkComponent;
+class AActor;
+class UAkAudioBank;
 class UObject;
-class UAkAudioEvent;
-class UAkSwitchValue;
-class UAkStateValue;
-class UAkRtpc;
-class UAkCallbackInfo;
-class UAkTrigger;
+class UAkComponent;
 class UAkMediaAsset;
+class UAkAudioEvent;
+class UAkStateValue;
+class UAkSwitchValue;
+class UAkRtpc;
+class UAkTrigger;
 class USceneComponent;
 class UAkAudioType;
-
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FAkGameplayStaticsBankUnloadedCallback, EAkResult, Result);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FAkGameplayStaticsPostEventCallback, EAkCallbackType, CallbackType, UAkCallbackInfo*, CallbackInfo);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FAkGameplayStaticsCompleted, bool, Succeeded);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FAkGameplayStaticsBankLoadedCallback, EAkResult, Result);
 
 UCLASS(BlueprintType)
 class AKAUDIO_API UAkGameplayStatics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UAkGameplayStatics();
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     static void UseReverbVolumes(bool inUseReverbVolumes, AActor* Actor);
     
@@ -52,7 +48,7 @@ public:
     static void UnloadBankByName(const FString& BankName);
     
     UFUNCTION(BlueprintCallable)
-    static void UnloadBankAsync(UAkAudioBank* Bank, const FAkGameplayStaticsBankUnloadedCallback& BankUnloadedCallback);
+    static void UnloadBankAsync(UAkAudioBank* Bank, const FOnAkBankCallback& BankUnloadedCallback);
     
     UFUNCTION(BlueprintCallable)
     static void UnloadBank(UAkAudioBank* Bank, const FString& BankName, FLatentActionInfo LatentInfo, UObject* WorldContextObject);
@@ -121,7 +117,7 @@ public:
     static void SetMultipleChannelEmitterPositions(UAkComponent* GameObjectAkComponent, TArray<AkChannelConfiguration> ChannelMasks, TArray<FTransform> Positions, AkMultiPositionType MultiPositionType);
     
     UFUNCTION(BlueprintCallable)
-    static void SetCurrentAudioCultureAsync(const FString& AudioCulture, const FAkGameplayStaticsCompleted& Completed);
+    static void SetCurrentAudioCultureAsync(const FString& AudioCulture, const FOnSetCurrentAudioCultureCallback& Completed);
     
     UFUNCTION(BlueprintCallable)
     static void SetCurrentAudioCulture(const FString& AudioCulture, FLatentActionInfo LatentInfo, UObject* WorldContextObject);
@@ -145,7 +141,7 @@ public:
     static int32 PostEventAtLocation(UAkAudioEvent* AkEvent, FVector Location, FRotator Orientation, const FString& EventName, UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
-    static int32 PostEvent(UAkAudioEvent* AkEvent, AActor* Actor, int32 CallbackMask, const FAkGameplayStaticsPostEventCallback& PostEventCallback, const TArray<FAkExternalSourceInfo>& ExternalSources, bool bStopWhenAttachedToDestroyed, const FString& EventName);
+    static int32 PostEvent(UAkAudioEvent* AkEvent, AActor* Actor, int32 CallbackMask, const FOnAkPostEventCallback& PostEventCallback, const TArray<FAkExternalSourceInfo>& ExternalSources, bool bStopWhenAttachedToDestroyed, const FString& EventName);
     
     UFUNCTION(BlueprintCallable)
     static void PostAndWaitForEndOfEventAsync(UAkAudioEvent* AkEvent, AActor* Actor, int32& PlayingID, bool bStopWhenAttachedToDestroyed, const TArray<FAkExternalSourceInfo>& ExternalSources, FLatentActionInfo LatentInfo);
@@ -163,7 +159,7 @@ public:
     static void LoadBankByName(const FString& BankName);
     
     UFUNCTION(BlueprintCallable)
-    static void LoadBankAsync(UAkAudioBank* Bank, const FAkGameplayStaticsBankLoadedCallback& BankLoadedCallback);
+    static void LoadBankAsync(UAkAudioBank* Bank, const FOnAkBankCallback& BankLoadedCallback);
     
     UFUNCTION(BlueprintCallable)
     static void LoadBank(UAkAudioBank* Bank, const FString& BankName, FLatentActionInfo LatentInfo, UObject* WorldContextObject);
@@ -208,11 +204,10 @@ public:
     static void ClearBanks();
     
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
-    static void CancelEventCallback(const FAkGameplayStaticsPostEventCallback& PostEventCallback);
+    static void CancelEventCallback(const FOnAkPostEventCallback& PostEventCallback);
     
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     static void AddOutputCaptureMarker(const FString& MarkerText);
     
-    UAkGameplayStatics();
 };
 

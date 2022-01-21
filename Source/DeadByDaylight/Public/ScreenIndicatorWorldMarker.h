@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "UObject/NoExportTypes.h"
 #include "EHudScreenIndicatorType.h"
+#include "UObject/NoExportTypes.h"
 #include "ScreenIndicatorWorldMarker.generated.h"
 
 class UTexture2D;

@@ -3,7 +3,7 @@
 #include "AimPointProcessor.h"
 #include "AimPointPerlinNoise.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UAimPointPerlinNoise : public UAimPointProcessor {
     GENERATED_BODY()
 public:
@@ -24,6 +24,9 @@ private:
     float _timeOffset;
     
 public:
+    UAimPointPerlinNoise();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetNoiseFrequencyMultiplier(const float multiplier);
     
@@ -42,8 +45,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetBaseInaccuracyNoiseAmplitude(const float amplitude);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UAimPointPerlinNoise();
 };
 

@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "Components/ActorComponent.h"
-#include "DBDTunableRowHandle.h"
 #include "SurvivorStatusInterface.h"
+#include "Components/ActorComponent.h"
 #include "TagStateBool.h"
+#include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
 #include "EContaminator.h"
 #include "SurvivorContaminationComponent.generated.h"
 
-class UInteractionDefinition;
 class UChargeableComponent;
+class UInteractionDefinition;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class THEK24_API USurvivorContaminationComponent : public UActorComponent, public ISurvivorStatusInterface {
     GENERATED_BODY()
 public:
@@ -38,6 +38,11 @@ private:
     UPROPERTY(Export, Transient, ReplicatedUsing=OnRep_InjectSerumInteractions)
     TArray<UInteractionDefinition*> _injectSerumInteractions;
     
+public:
+    USurvivorContaminationComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_IsContaminated();
     
@@ -62,8 +67,7 @@ public:
     UFUNCTION(BlueprintPure)
     bool IsContaminated() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    USurvivorContaminationComponent();
+    // Fix for true pure virtual functions not being implemented
 };
 

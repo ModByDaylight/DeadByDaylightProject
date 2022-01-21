@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Materials/MaterialExpressionCustomOutput.h"
 #include "UObject/NoExportTypes.h"
+#include "Materials/MaterialExpressionCustomOutput.h"
 #include "MaterialExpressionBHVRCustomColorOutput.generated.h"
 
 UCLASS(CollapseCategories)

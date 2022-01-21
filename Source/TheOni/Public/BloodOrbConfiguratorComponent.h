@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "Components/ActorComponent.h"
 #include "GameEventBloodOrbDropParams.h"
+#include "Components/ActorComponent.h"
 #include "UObject/NoExportTypes.h"
 #include "BloodOrbConfiguratorComponent.generated.h"
 
 class UBloodOrbVisibilityComponent;
 class ABloodOrb;
-class ADBDPlayer;
 class AMobileBloodOrbRenderer;
+class ADBDPlayer;
 class UBloodOrbAbsorberComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UBloodOrbConfiguratorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -41,6 +41,8 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     TSubclassOf<AMobileBloodOrbRenderer> _mobileBloodOrbRendererClass;
     
+public:
+    UBloodOrbConfiguratorComponent();
 private:
     UFUNCTION()
     void UpdateSurvivorBloodOrbVisibilityRange(UBloodOrbVisibilityComponent* bloodOrbVisibilityComponent, const ADBDPlayer* killer) const;
@@ -57,7 +59,5 @@ private:
     UFUNCTION()
     void Authority_UpdateSurvivorBloodOrbDropperOnCrouchModifier(const ADBDPlayer* killer) const;
     
-public:
-    UBloodOrbConfiguratorComponent();
 };
 

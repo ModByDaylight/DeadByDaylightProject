@@ -2,15 +2,14 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Blueprint/UserWidget.h"
+#include "HUDWidgetsFadeOutCompleted.h"
 #include "CoreHudRootWidget.generated.h"
 
+class UCurveFloat;
 class UCoreBaseViewInterface;
 class ICoreBaseViewInterface;
-class UCurveFloat;
 class UScaleBox;
 class UOverlay;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCoreHudRootWidgetHUDWidgetsFadeOutCompletedDelegate);
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UCoreHudRootWidget : public UUserWidget {
@@ -111,9 +110,10 @@ private:
     TArray<TScriptInterface<ICoreBaseViewInterface>> _coreBaseViewInterfaces;
     
     UPROPERTY(BlueprintCallable)
-    FCoreHudRootWidgetHUDWidgetsFadeOutCompletedDelegate HUDWidgetsFadeOutCompletedDelegate;
+    FHUDWidgetsFadeOutCompleted HUDWidgetsFadeOutCompletedDelegate;
     
 public:
+    UCoreHudRootWidget();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetWidgetsVisibility(bool visible);
     
@@ -126,6 +126,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void FadeInWidgets();
     
-    UCoreHudRootWidget();
 };
 

@@ -6,14 +6,14 @@
 
 class ADBDPlayer;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRiflePlayerLinkerOnLinkedPlayerSet, ADBDPlayer*, linkedPlayer);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API URiflePlayerLinker : public UActorComponent {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLinkedPlayerSet, ADBDPlayer*, linkedPlayer);
+    
     UPROPERTY(BlueprintAssignable)
-    FRiflePlayerLinkerOnLinkedPlayerSet OnLinkedPlayerSet;
+    FOnLinkedPlayerSet OnLinkedPlayerSet;
     
 private:
     UPROPERTY(Transient)
@@ -43,6 +43,11 @@ private:
     UPROPERTY(EditAnywhere)
     float _movementAccelerationTreshold;
     
+public:
+    URiflePlayerLinker();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_OnClientConfirmTensionBreakChain(ADBDPlayer* player);
     
@@ -63,9 +68,5 @@ private:
     UFUNCTION(Client, Reliable)
     void Client_OnAuthorityTensionBreakChain(ADBDPlayer* player);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    URiflePlayerLinker();
 };
 

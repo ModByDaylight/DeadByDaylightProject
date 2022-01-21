@@ -3,7 +3,7 @@
 #include "SpawnEffectsOnAllSurvivorsBaseAddon.h"
 #include "Addon_K22Power_11.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAddon_K22Power_11 : public USpawnEffectsOnAllSurvivorsBaseAddon {
     GENERATED_BODY()
 public:

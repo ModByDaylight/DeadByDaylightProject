@@ -3,7 +3,7 @@
 #include "StatusEffect.h"
 #include "AlertKillerRevealEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAlertKillerRevealEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

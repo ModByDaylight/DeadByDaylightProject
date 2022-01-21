@@ -1,9 +1,11 @@
 #include "Pallet.h"
+#include "DBDNavEvadeLoopComponent.h"
+#include "PalletPulldownBlockerComponent.h"
 
-class UPrimitiveComponent;
 class USkeletalMeshComponent;
-class ADBDPlayer;
 class AActor;
+class ADBDPlayer;
+class UPrimitiveComponent;
 class ACamperPlayer;
 
 void APallet::UpdateIllusionaryPallet() {
@@ -85,6 +87,8 @@ APallet::APallet() {
     this->_stunBoxLeft = NULL;
     this->_stunBoxRight = NULL;
     this->_playerExecutingPulldown = NULL;
+    this->_navEvadeLoopComponent = CreateDefaultSubobject<UDBDNavEvadeLoopComponent>(TEXT("NavEvadeLoopComponent"));
+    this->_palletPulldownBlockerComponent = CreateDefaultSubobject<UPalletPulldownBlockerComponent>(TEXT("PalletPulldownBlockerComponent"));
     this->_isDreamPallet = false;
 }
 

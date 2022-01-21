@@ -40,10 +40,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _blightPowerRechargeRate;
     
+public:
+    ABlightPower();
+private:
     UFUNCTION()
     void OnPowerStateChanged(const EWallGrabState previousState, const EWallGrabState newState);
     
-public:
-    ABlightPower();
 };
 

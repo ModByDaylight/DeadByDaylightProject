@@ -14,9 +14,9 @@ protected:
     UDBDPlayerData* _playerData;
     
 public:
+    ADBDObserverPlayer();
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_PlayerReady();
     
-    ADBDObserverPlayer();
 };
 

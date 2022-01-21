@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CurrencyProgressionUIData.h"
 #include "DBDTableRowBase.h"
 #include "EProgressionType.h"
+#include "CurrencyProgressionUIData.h"
 #include "ProgressionUIDataRow.generated.h"
 
 USTRUCT(BlueprintType)

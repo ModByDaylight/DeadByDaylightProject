@@ -4,18 +4,18 @@ FAKWaapiJsonObject UAkWaapiCalls::Unsubscribe(const FAkWaapiSubscriptionId& Subs
     return FAKWaapiJsonObject{};
 }
 
-FAKWaapiJsonObject UAkWaapiCalls::SubscribeToWaapi(const FAkWaapiUri& WaapiUri, const FAKWaapiJsonObject& WaapiOptions, const FAkWaapiCallsCallBack2& CallBack, FAkWaapiSubscriptionId& SubscriptionId, bool& SubscriptionDone) {
+FAKWaapiJsonObject UAkWaapiCalls::SubscribeToWaapi(const FAkWaapiUri& WaapiUri, const FAKWaapiJsonObject& WaapiOptions, const FOnEventCallback& CallBack, FAkWaapiSubscriptionId& SubscriptionId, bool& SubscriptionDone) {
     return FAKWaapiJsonObject{};
 }
 
 void UAkWaapiCalls::SetSubscriptionID(const FAkWaapiSubscriptionId& Subscription, int32 id) {
 }
 
-bool UAkWaapiCalls::RegisterWaapiProjectLoadedCallback(const FAkWaapiCallsCallback1& Callback) {
+bool UAkWaapiCalls::RegisterWaapiProjectLoadedCallback(const FOnWaapiProjectLoaded& Callback) {
     return false;
 }
 
-bool UAkWaapiCalls::RegisterWaapiConnectionLostCallback(const FAkWaapiCallsCallback1& Callback) {
+bool UAkWaapiCalls::RegisterWaapiConnectionLostCallback(const FOnWaapiConnectionLost& Callback) {
     return false;
 }
 

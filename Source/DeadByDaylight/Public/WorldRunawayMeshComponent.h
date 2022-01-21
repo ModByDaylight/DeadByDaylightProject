@@ -3,7 +3,7 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "WorldRunawayMeshComponent.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UWorldRunawayMeshComponent : public USkeletalMeshComponent {
     GENERATED_BODY()
 public:
@@ -18,6 +18,7 @@ protected:
     float _returnMustTickDuration;
     
 public:
+    UWorldRunawayMeshComponent();
     UFUNCTION(BlueprintCallable)
     void SetShouldRunAwayWithRandomDelay(bool should, float delayRange);
     
@@ -30,6 +31,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool GetShouldRunAway() const;
     
-    UWorldRunawayMeshComponent();
 };
 

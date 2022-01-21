@@ -1,13 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ScreenBase.h"
 #include "EGameType.h"
+#include "ScreenBase.h"
 #include "OverlayMenuScreen.generated.h"
 
 UCLASS()
 class DEADBYDAYLIGHT_API UOverlayMenuScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    UOverlayMenuScreen();
     UFUNCTION()
     void SetGameType(EGameType gameType);
     
@@ -68,6 +69,5 @@ public:
     UFUNCTION()
     void OnAimAssistClick(bool value);
     
-    UOverlayMenuScreen();
 };
 

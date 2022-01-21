@@ -20,9 +20,9 @@ private:
     float _sqrtMaxTargetPositionDiff;
     
 public:
+    UAISlasherChaseAndAttackBehaviourData();
     UFUNCTION(BlueprintCallable)
     void Init(ACamperPlayer* targetSurvivor, float attackRangeDistance, float locationDistance);
     
-    UAISlasherChaseAndAttackBehaviourData();
 };
 

@@ -1,13 +1,15 @@
 #include "Locker.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
+#include "MontagePlayer.h"
+#include "AnimationMontageSlave.h"
 
 class AActor;
-class UPrimitiveComponent;
 class UInteractionDefinition;
 class UInteractor;
 class ACamperPlayer;
 class ADBDPlayer;
+class UPrimitiveComponent;
 
 
 void ALocker::SpawnKillerReloadActor(TSubclassOf<AActor> actorClass) {
@@ -81,6 +83,8 @@ void ALocker::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeP
 ALocker::ALocker() {
     this->FastDoorActivationAudibleRange = 1600.00f;
     this->NormalDoorActivationAudibleRange = 800.00f;
+    this->_montageFollower = CreateDefaultSubobject<UAnimationMontageSlave>(TEXT("MontageSlave"));
+    this->_montagePlayer = CreateDefaultSubobject<UMontagePlayer>(TEXT("AnimMontagePlayer"));
     this->_playerOpeningLocker = NULL;
     this->_survivorInLocker = NULL;
     this->_mainInteractor = NULL;

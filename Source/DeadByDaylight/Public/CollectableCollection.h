@@ -5,7 +5,7 @@
 
 class ACollectable;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCollectableCollection : public UActorComponent {
     GENERATED_BODY()
 public:

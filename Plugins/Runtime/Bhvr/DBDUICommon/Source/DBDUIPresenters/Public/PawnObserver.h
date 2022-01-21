@@ -5,7 +5,7 @@
 
 class APawn;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDUIPRESENTERS_API UPawnObserver : public UUIComponent {
     GENERATED_BODY()
 public:
@@ -14,9 +14,9 @@ private:
     APawn* _pawn;
     
 public:
+    UPawnObserver();
     UFUNCTION()
     void OnLocallyObservedChanged();
     
-    UPawnObserver();
 };
 

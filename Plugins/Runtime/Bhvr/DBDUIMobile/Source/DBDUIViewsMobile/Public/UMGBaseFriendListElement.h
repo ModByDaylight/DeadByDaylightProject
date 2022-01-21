@@ -6,9 +6,9 @@
 #include "UMGBaseFriendListElement.generated.h"
 
 class UNamedSlot;
-class UCanvasPanel;
 class UImage;
 class UDataTable;
+class UCanvasPanel;
 class UTextBlock;
 class UUMGBaseButtonWidget;
 
@@ -42,9 +42,9 @@ protected:
     UDataTable* FriendUIStatusDataTable;
     
 public:
+    UUMGBaseFriendListElement();
     UFUNCTION(BlueprintCallable)
     void TriggerActionOnThisFriend(EActionOnFriendType actionType);
     
-    UUMGBaseFriendListElement();
 };
 

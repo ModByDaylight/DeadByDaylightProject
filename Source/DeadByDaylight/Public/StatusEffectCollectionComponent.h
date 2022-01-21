@@ -5,7 +5,7 @@
 
 class UStatusEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UStatusEffectCollectionComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -16,12 +16,13 @@ private:
     UPROPERTY(Export, Transient)
     TArray<UStatusEffect*> _local_oldArray;
     
+public:
+    UStatusEffectCollectionComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_Array();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UStatusEffectCollectionComponent();
 };
 

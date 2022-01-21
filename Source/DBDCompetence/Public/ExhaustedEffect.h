@@ -3,7 +3,7 @@
 #include "AdjustableCooldownStatusEffect.h"
 #include "ExhaustedEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UExhaustedEffect : public UAdjustableCooldownStatusEffect {
     GENERATED_BODY()
 public:

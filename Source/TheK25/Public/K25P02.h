@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "HexPerk.h"
 #include "DBDPlayerTotemPair.h"
+#include "HexPerk.h"
 #include "K25P02.generated.h"
 
 class ADBDPlayer;
 class ATotem;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK25P02 : public UHexPerk {
     GENERATED_BODY()
 public:
@@ -34,12 +34,13 @@ private:
     UPROPERTY(Transient)
     FDBDPlayerTotemPair _lastPlayerTotemPair;
     
+public:
+    UK25P02();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_CursedSurvivors();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UK25P02();
 };
 

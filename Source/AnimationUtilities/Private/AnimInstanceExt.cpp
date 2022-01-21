@@ -1,9 +1,9 @@
 #include "AnimInstanceExt.h"
 
-class USkeletalMeshComponent;
 class UAnimInstance;
-class ACharacter;
 class AActor;
+class USkeletalMeshComponent;
+class ACharacter;
 
 UAnimInstance* UAnimInstanceExt::GetSubAnimInstance(const UAnimInstance* root, UClass* type) {
     return NULL;

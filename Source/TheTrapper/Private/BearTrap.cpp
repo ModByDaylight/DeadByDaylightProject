@@ -1,12 +1,22 @@
 #include "BearTrap.h"
 #include "Net/UnrealNetwork.h"
+#include "BearTrapOutlineUpdateStrategy.h"
+#include "Components/SphereComponent.h"
+#include "BoxPlayerOverlapComponent.h"
+#include "CapsulePlayerOverlapComponent.h"
+#include "Components/BoxComponent.h"
+#include "DBDOutlineComponent.h"
+#include "MapActorComponent.h"
+#include "MontagePlayer.h"
+#include "DBDNavModifierComponent.h"
+#include "AnimationMontageSlave.h"
 
 class ADBDPlayer;
 class UAnimMontage;
-class UInteractionDefinition;
 class UPrimitiveComponent;
 class AActor;
 class ASlasherPlayer;
+class UInteractionDefinition;
 class UInteractor;
 class UBearTrapAnimInstance;
 
@@ -84,7 +94,17 @@ void ABearTrap::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetim
 }
 
 ABearTrap::ABearTrap() {
+    this->_interactionVolume = CreateDefaultSubobject<UBoxPlayerOverlapComponent>(TEXT("Interaction Volume"));
+    this->_trapPlayerDetectionZone = CreateDefaultSubobject<UCapsulePlayerOverlapComponent>(TEXT("Trap Player Detection Zone"));
+    this->_killerSafetyZoneComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("Killer Safety Zone Component"));
+    this->_outlineComponent = CreateDefaultSubobject<UDBDOutlineComponent>(TEXT("Outline Component"));
+    this->_outlineUpdateStrategy = CreateDefaultSubobject<UBearTrapOutlineUpdateStrategy>(TEXT("Outline Update Strategy"));
+    this->_mapActorComponent = CreateDefaultSubobject<UMapActorComponent>(TEXT("Map Actor Component"));
+    this->_mapActorCollision = CreateDefaultSubobject<USphereComponent>(TEXT("Map Actor Collision"));
+    this->_trapBlocker = CreateDefaultSubobject<USphereComponent>(TEXT("Trap Blocker"));
+    this->_montagePlayer = CreateDefaultSubobject<UMontagePlayer>(TEXT("Montage Player Component"));
     this->_ownerPlayer = NULL;
+    this->_dangerNavModifierComponent = CreateDefaultSubobject<UDBDNavModifierComponent>(TEXT("DangerNavModifierComponent"));
     this->_isTrapperOutOfSafetyZone = true;
     this->_maximumAttemptsForSelfUntrap = 6;
     this->_selfUntrapAttemptsRemaining = 0;
@@ -92,5 +112,6 @@ ABearTrap::ABearTrap() {
     this->_trapSurvivor = NULL;
     this->_trapKiller = NULL;
     this->_trappedPlayer = NULL;
+    this->_animationMontageSlave = CreateDefaultSubobject<UAnimationMontageSlave>(TEXT("Animation Montage Slave"));
 }
 

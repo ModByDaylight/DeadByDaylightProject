@@ -20,10 +20,11 @@ private:
     UPROPERTY(Transient)
     int32 _remainingTasks;
     
+public:
+    UDownloadMultiTextureTask();
+private:
     UFUNCTION()
     void OnTextureDownloadComplete(UDownloadingTextureTask* taskCompleted);
     
-public:
-    UDownloadMultiTextureTask();
 };
 

@@ -9,5 +9,7 @@ class UDBDAtlantaBloodwebDefinition : public UObject, public IDBDBloodwebDefinit
     GENERATED_BODY()
 public:
     UDBDAtlantaBloodwebDefinition();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

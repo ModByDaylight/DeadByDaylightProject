@@ -6,7 +6,7 @@
 
 class AK24Power;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UActivateK24PowerInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -21,9 +21,9 @@ private:
     FDBDTunableRowHandle _maximumTimeToTriggerRegularAttack;
     
 public:
+    UActivateK24PowerInteraction();
     UFUNCTION(BlueprintCallable)
     void SetK24Power(AK24Power* k24Power);
     
-    UActivateK24PowerInteraction();
 };
 

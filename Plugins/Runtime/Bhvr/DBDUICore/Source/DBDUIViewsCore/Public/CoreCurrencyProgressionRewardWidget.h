@@ -8,9 +8,9 @@ UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreCurrencyProgressionRewardWidget : public UCoreRewardWidget {
     GENERATED_BODY()
 public:
+    UCoreCurrencyProgressionRewardWidget();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetData(const FCurrencyProgressionRewardViewData& currencyProgressionRewardViewData);
     
-    UCoreCurrencyProgressionRewardWidget();
 };
 

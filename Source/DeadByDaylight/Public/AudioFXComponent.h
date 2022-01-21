@@ -5,7 +5,7 @@
 
 class UPrimitiveComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UAudioFXComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -14,6 +14,7 @@ private:
     UPrimitiveComponent* _audioAmbientDetector;
     
 public:
+    UAudioFXComponent();
     UFUNCTION(BlueprintCallable)
     void SetAudioAmbientDetector(UPrimitiveComponent* audioAmbientDetector);
     
@@ -28,6 +29,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     void Deafen(float duration);
     
-    UAudioFXComponent();
 };
 

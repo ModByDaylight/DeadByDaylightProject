@@ -8,7 +8,7 @@
 
 class ANavLinkProxy;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDBOTS_API UDBDNavLinkCustomComponent : public UNavLinkCustomComponent {
     GENERATED_BODY()
 public:
@@ -64,10 +64,11 @@ private:
     UPROPERTY()
     TArray<ANavLinkProxy*> _navLinkProxyInProximity;
     
+public:
+    UDBDNavLinkCustomComponent();
+private:
     UFUNCTION()
     void OnLevelReadyToPlay();
     
-public:
-    UDBDNavLinkCustomComponent();
 };
 

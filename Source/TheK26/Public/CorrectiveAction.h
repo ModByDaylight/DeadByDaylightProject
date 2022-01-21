@@ -4,7 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "CorrectiveAction.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UCorrectiveAction : public UPerk {
     GENERATED_BODY()
 public:

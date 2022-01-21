@@ -31,6 +31,7 @@ public:
     UPROPERTY(BlueprintReadWrite, Transient)
     float IdleTime;
     
+    UPerkActionButton();
     UFUNCTION(BlueprintImplementableEvent)
     void UpdateWidgetPercentage(float percentage);
     
@@ -46,6 +47,5 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
     void CallHidePerkLevel();
     
-    UPerkActionButton();
 };
 

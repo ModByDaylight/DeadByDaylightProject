@@ -4,8 +4,8 @@
 #include "UObject/NoExportTypes.h"
 #include "NavLinkProxy_DirectMove.generated.h"
 
-class ADBDPlayer;
 class UNavMovePath;
+class ADBDPlayer;
 
 UCLASS()
 class DBDBOTS_API ANavLinkProxy_DirectMove : public ANavLinkProxy_Base {
@@ -21,10 +21,11 @@ private:
     UPROPERTY(Transient)
     TMap<ADBDPlayer*, UNavMovePath*> _playersOnPath;
     
+public:
+    ANavLinkProxy_DirectMove();
+private:
     UFUNCTION()
     void OnDisplayDebugInfo();
     
-public:
-    ANavLinkProxy_DirectMove();
 };
 

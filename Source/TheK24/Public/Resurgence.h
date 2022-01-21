@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "Resurgence.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UResurgence : public UPerk {
     GENERATED_BODY()
 public:

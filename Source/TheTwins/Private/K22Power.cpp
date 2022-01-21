@@ -1,8 +1,10 @@
 #include "K22Power.h"
 #include "Net/UnrealNetwork.h"
+#include "PowerChargeComponent.h"
+#include "K22PowerChargePresentationItemProgressComponent.h"
 
-class UChargeableComponent;
 class AConjoinedTwin;
+class UChargeableComponent;
 
 void AK22Power::OnRep_ConjoinedTwin() {
 }
@@ -30,8 +32,12 @@ void AK22Power::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetim
 }
 
 AK22Power::AK22Power() {
+    this->_releaseConjoinedTwinChargeable = CreateDefaultSubobject<UChargeableComponent>(TEXT("ReleaseConjoinedTwinChargeable"));
+    this->_possessConjoinedTwinChargeable = CreateDefaultSubobject<UChargeableComponent>(TEXT("PossessConjoinedTwinChargeable"));
     this->_conjoinedTwin = NULL;
     this->_conjoinedTwinParadise = NULL;
+    this->_powerCharge = CreateDefaultSubobject<UPowerChargeComponent>(TEXT("PowerChargeComponent"));
+    this->_powerChargePresentationItemProgress = CreateDefaultSubobject<UK22PowerChargePresentationItemProgressComponent>(TEXT("K22PowerChargePresentationItemProgressComponent"));
     this->_conjoinedTwinClass = NULL;
 }
 

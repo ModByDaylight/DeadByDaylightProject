@@ -7,7 +7,7 @@
 
 class UInGameAssetPreloaderGatherer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UInGameAssetPreloaderComponent : public UActorComponent {
     GENERATED_BODY()
 public:

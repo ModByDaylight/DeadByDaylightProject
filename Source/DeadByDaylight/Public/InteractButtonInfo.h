@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Styling/SlateBrush.h"
-#include "EInputInteractionType.h"
 #include "Engine/DataTable.h"
+#include "Styling/SlateBrush.h"
 #include "EPlayerRole.h"
+#include "EInputInteractionType.h"
 #include "EButtonType.h"
 #include "InteractButtonInfo.generated.h"
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AkCommonInitializationSettingsWithSampleRate.h"
 #include "UObject/Object.h"
+#include "AkCommonInitializationSettingsWithSampleRate.h"
 #include "AkCommunicationSettingsWithSystemInitialization.h"
 #include "AkWinGDKAdvancedInitializationSettings.h"
 #include "AkWinGDKInitializationSettings.generated.h"
@@ -19,9 +19,9 @@ public:
     UPROPERTY(AdvancedDisplay, Config, EditAnywhere)
     FAkWinGDKAdvancedInitializationSettings AdvancedSettings;
     
+    UAkWinGDKInitializationSettings();
     UFUNCTION()
     void MigrateMultiCoreRendering(bool NewValue);
     
-    UAkWinGDKInitializationSettings();
 };
 

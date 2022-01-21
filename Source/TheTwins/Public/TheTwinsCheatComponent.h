@@ -5,10 +5,11 @@
 
 class UTwinPossessionComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTheTwinsCheatComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UTheTwinsCheatComponent();
 private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_TrySendThePlayerBackInKiller(UTwinPossessionComponent* twinPossessionComponent);
@@ -17,6 +18,5 @@ public:
     UFUNCTION(Exec)
     void DBD_TwinDestroyTheTwin();
     
-    UTheTwinsCheatComponent();
 };
 

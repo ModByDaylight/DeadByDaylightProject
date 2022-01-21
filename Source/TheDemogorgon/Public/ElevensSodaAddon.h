@@ -5,10 +5,11 @@
 
 class AGenerator;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UElevensSodaAddon : public UItemAddon {
     GENERATED_BODY()
 public:
+    UElevensSodaAddon();
 private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_UnhighlightGenerator(const AGenerator* generator) const;
@@ -16,7 +17,5 @@ private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_HighlightGenerator(const AGenerator* generator) const;
     
-public:
-    UElevensSodaAddon();
 };
 

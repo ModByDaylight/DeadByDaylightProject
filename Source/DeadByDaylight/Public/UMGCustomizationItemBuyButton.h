@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UMGCustomizationItemPriceWidget.h"
 #include "UObject/NoExportTypes.h"
 #include "ECurrencyType.h"
+#include "UMGCustomizationItemPriceWidget.h"
 #include "UObject/NoExportTypes.h"
 #include "UMGCustomizationItemBuyButton.generated.h"
 
@@ -25,10 +25,11 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     FLinearColor _enabledOpacity;
     
+public:
+    UUMGCustomizationItemBuyButton();
+protected:
     UFUNCTION(BlueprintCallable)
     void BroadcastUnlockWithCurrency();
     
-public:
-    UUMGCustomizationItemBuyButton();
 };
 

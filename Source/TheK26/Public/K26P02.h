@@ -4,10 +4,10 @@
 #include "GameEventData.h"
 #include "K26P02.generated.h"
 
-class ADBDPlayer;
 class AGenerator;
+class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK26P02 : public UPerk {
     GENERATED_BODY()
 public:
@@ -18,6 +18,9 @@ private:
     UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     float _screamRevealLocationDuration;
     
+public:
+    UK26P02();
+private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_TriggerPerk(AGenerator* explodingGenerator);
     
@@ -32,7 +35,5 @@ private:
     UFUNCTION()
     void Authority_OnSurvivorHookedOnScourgeHook(const FGameEventData& gameEventData);
     
-public:
-    UK26P02();
 };
 

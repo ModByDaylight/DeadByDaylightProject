@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "SmashHit.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USmashHit : public UPerk {
     GENERATED_BODY()
 public:

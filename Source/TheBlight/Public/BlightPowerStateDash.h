@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ViewRotationStrategy.h"
 #include "BlightPowerState.h"
+#include "ViewRotationStrategy.h"
 #include "TunableStat.h"
 #include "BlightPowerStateDash.generated.h"
 
@@ -29,5 +29,7 @@ protected:
     
 public:
     UBlightPowerStateDash();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

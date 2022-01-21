@@ -7,7 +7,7 @@ class UBlightedSerumCooldownInteraction;
 class UBlightedSerumCollisionInteraction;
 class UCurveFloat;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class HALLOWEEN2020_API UBlightedSerumDashInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -52,12 +52,12 @@ private:
     float _wallDashCollisionRange;
     
 public:
+    UBlightedSerumDashInteraction();
     UFUNCTION(BlueprintCallable)
     void SetCooldownInteraction(UBlightedSerumCooldownInteraction* cooldownInteraction);
     
     UFUNCTION(BlueprintCallable)
     void SetCollisionInteraction(UBlightedSerumCollisionInteraction* collisionInteraction);
     
-    UBlightedSerumDashInteraction();
 };
 

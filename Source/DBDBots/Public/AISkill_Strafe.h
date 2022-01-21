@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AITunableParameter.h"
 #include "AISkill.h"
+#include "AITunableParameter.h"
 #include "AISkill_Strafe.generated.h"
 
 UCLASS(EditInlineNew)

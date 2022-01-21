@@ -4,7 +4,7 @@
 #include "EContextSection.h"
 #include "ContextObserver.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDUIPRESENTERS_API UContextObserver : public UUIComponent {
     GENERATED_BODY()
 public:

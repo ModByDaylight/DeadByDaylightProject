@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "SelfPreservation.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USelfPreservation : public UPerk {
     GENERATED_BODY()
 public:

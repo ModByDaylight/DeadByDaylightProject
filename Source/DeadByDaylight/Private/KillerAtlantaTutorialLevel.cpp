@@ -2,10 +2,10 @@
 
 class AWindow;
 class AHatch;
+class ACamperPlayer;
 class AGenerator;
 class AEscapeDoor;
 class ASlasherPlayer;
-class ACamperPlayer;
 
 
 

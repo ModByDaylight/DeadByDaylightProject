@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AkXboxOneAdvancedInitializationSettings.h"
-#include "AkXboxOneApuHeapInitializationSettings.h"
 #include "UObject/Object.h"
+#include "AkXboxOneApuHeapInitializationSettings.h"
 #include "AkCommonInitializationSettings.h"
 #include "AkCommunicationSettingsWithSystemInitialization.h"
+#include "AkXboxOneAdvancedInitializationSettings.h"
 #include "AkXboxOneInitializationSettings.generated.h"
 
 UCLASS(DefaultConfig, Config=Game)
@@ -23,9 +23,9 @@ public:
     UPROPERTY(AdvancedDisplay, Config, EditAnywhere)
     FAkXboxOneAdvancedInitializationSettings AdvancedSettings;
     
+    UAkXboxOneInitializationSettings();
     UFUNCTION()
     void MigrateMultiCoreRendering(bool NewValue);
     
-    UAkXboxOneInitializationSettings();
 };
 

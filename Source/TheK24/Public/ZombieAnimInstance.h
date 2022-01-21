@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Animation/AnimInstance.h"
-#include "EZombieState.h"
 #include "EZombieGender.h"
+#include "EZombieState.h"
 #include "ZombieAnimInstance.generated.h"
 
 class AZombieCharacter;

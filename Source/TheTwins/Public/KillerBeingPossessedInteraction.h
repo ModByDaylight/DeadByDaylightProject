@@ -5,7 +5,7 @@
 
 class UCurveFloat;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UKillerBeingPossessedInteraction : public UBeingPossessedInteraction {
     GENERATED_BODY()
 public:

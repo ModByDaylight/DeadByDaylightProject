@@ -6,7 +6,7 @@
 
 class AEndGameEntity;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCamperEndGameComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -21,6 +21,9 @@ private:
     bool _readyToBeSacrificed;
     
 public:
+    UCamperEndGameComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void OnEndGameSacrificeEnd();
     
@@ -32,8 +35,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool GetSacrificedByEndGame() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UCamperEndGameComponent();
 };
 

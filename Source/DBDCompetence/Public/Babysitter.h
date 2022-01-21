@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "Babysitter.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UBabysitter : public UPerk {
     GENERATED_BODY()
 public:

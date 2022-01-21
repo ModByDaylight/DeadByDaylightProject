@@ -1,17 +1,16 @@
 #include "AkGameplayStatics.h"
 
-class AActor;
 class UAkAuxBus;
+class AActor;
 class UAkAudioBank;
-class UObject;
+class UAkMediaAsset;
 class UAkAudioEvent;
+class UObject;
+class UAkStateValue;
 class UAkComponent;
 class UAkSwitchValue;
-class UAkStateValue;
 class UAkRtpc;
-class UAkCallbackInfo;
 class UAkTrigger;
-class UAkMediaAsset;
 class USceneComponent;
 class UAkAudioType;
 
@@ -24,7 +23,7 @@ void UAkGameplayStatics::UseEarlyReflections(AActor* Actor, UAkAuxBus* AuxBus, i
 void UAkGameplayStatics::UnloadBankByName(const FString& BankName) {
 }
 
-void UAkGameplayStatics::UnloadBankAsync(UAkAudioBank* Bank, const FAkGameplayStaticsBankUnloadedCallback& BankUnloadedCallback) {
+void UAkGameplayStatics::UnloadBankAsync(UAkAudioBank* Bank, const FOnAkBankCallback& BankUnloadedCallback) {
 }
 
 void UAkGameplayStatics::UnloadBank(UAkAudioBank* Bank, const FString& BankName, FLatentActionInfo LatentInfo, UObject* WorldContextObject) {
@@ -94,7 +93,7 @@ void UAkGameplayStatics::SetMultipleChannelMaskEmitterPositions(UAkComponent* Ga
 void UAkGameplayStatics::SetMultipleChannelEmitterPositions(UAkComponent* GameObjectAkComponent, TArray<AkChannelConfiguration> ChannelMasks, TArray<FTransform> Positions, AkMultiPositionType MultiPositionType) {
 }
 
-void UAkGameplayStatics::SetCurrentAudioCultureAsync(const FString& AudioCulture, const FAkGameplayStaticsCompleted& Completed) {
+void UAkGameplayStatics::SetCurrentAudioCultureAsync(const FString& AudioCulture, const FOnSetCurrentAudioCultureCallback& Completed) {
 }
 
 void UAkGameplayStatics::SetCurrentAudioCulture(const FString& AudioCulture, FLatentActionInfo LatentInfo, UObject* WorldContextObject) {
@@ -120,7 +119,7 @@ int32 UAkGameplayStatics::PostEventAtLocation(UAkAudioEvent* AkEvent, FVector Lo
     return 0;
 }
 
-int32 UAkGameplayStatics::PostEvent(UAkAudioEvent* AkEvent, AActor* Actor, int32 CallbackMask, const FAkGameplayStaticsPostEventCallback& PostEventCallback, const TArray<FAkExternalSourceInfo>& ExternalSources, bool bStopWhenAttachedToDestroyed, const FString& EventName) {
+int32 UAkGameplayStatics::PostEvent(UAkAudioEvent* AkEvent, AActor* Actor, int32 CallbackMask, const FOnAkPostEventCallback& PostEventCallback, const TArray<FAkExternalSourceInfo>& ExternalSources, bool bStopWhenAttachedToDestroyed, const FString& EventName) {
     return 0;
 }
 
@@ -140,7 +139,7 @@ void UAkGameplayStatics::LoadBanks(const TArray<UAkAudioBank*>& SoundBanks, bool
 void UAkGameplayStatics::LoadBankByName(const FString& BankName) {
 }
 
-void UAkGameplayStatics::LoadBankAsync(UAkAudioBank* Bank, const FAkGameplayStaticsBankLoadedCallback& BankLoadedCallback) {
+void UAkGameplayStatics::LoadBankAsync(UAkAudioBank* Bank, const FOnAkBankCallback& BankLoadedCallback) {
 }
 
 void UAkGameplayStatics::LoadBank(UAkAudioBank* Bank, const FString& BankName, FLatentActionInfo LatentInfo, UObject* WorldContextObject) {
@@ -193,7 +192,7 @@ void UAkGameplayStatics::ExecuteActionOnEvent(UAkAudioEvent* AkEvent, AkActionOn
 void UAkGameplayStatics::ClearBanks() {
 }
 
-void UAkGameplayStatics::CancelEventCallback(const FAkGameplayStaticsPostEventCallback& PostEventCallback) {
+void UAkGameplayStatics::CancelEventCallback(const FOnAkPostEventCallback& PostEventCallback) {
 }
 
 void UAkGameplayStatics::AddOutputCaptureMarker(const FString& MarkerText) {

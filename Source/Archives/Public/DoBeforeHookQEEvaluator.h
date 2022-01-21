@@ -9,9 +9,9 @@ UCLASS()
 class UDoBeforeHookQEEvaluator : public UQuestEventEvaluatorBase {
     GENERATED_BODY()
 public:
+    UDoBeforeHookQEEvaluator();
     UFUNCTION()
     void OnHooked(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-    UDoBeforeHookQEEvaluator();
 };
 

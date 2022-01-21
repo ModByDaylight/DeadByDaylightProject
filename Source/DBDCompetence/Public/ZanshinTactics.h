@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "ZanshinTactics.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UZanshinTactics : public UPerk {
     GENERATED_BODY()
 public:

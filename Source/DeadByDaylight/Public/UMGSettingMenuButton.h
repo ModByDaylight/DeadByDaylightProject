@@ -7,6 +7,7 @@ UCLASS(Abstract, EditInlineNew)
 class UUMGSettingMenuButton : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
+    UUMGSettingMenuButton();
     UFUNCTION(BlueprintImplementableEvent)
     void SetTabButtonText(const FText& buttonText);
     
@@ -17,7 +18,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void HandleSettingTabButtonClick();
     
-public:
-    UUMGSettingMenuButton();
 };
 

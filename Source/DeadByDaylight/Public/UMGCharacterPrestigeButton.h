@@ -4,8 +4,8 @@
 #include "EPlayerRole.h"
 #include "UMGCharacterPrestigeButton.generated.h"
 
-class UButton;
 class UCanvasPanel;
+class UButton;
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGCharacterPrestigeButton : public UUMGCharacterPrestigeIcon {
@@ -19,6 +19,7 @@ protected:
     UCanvasPanel* PrestigeAnimationCanvas;
     
 public:
+    UUMGCharacterPrestigeButton();
     UFUNCTION(BlueprintCallable)
     void SetCharacterPrestigeData(bool canPrestige, const int32 prestigeLevel, const EPlayerRole role);
     
@@ -26,7 +27,5 @@ protected:
     UFUNCTION()
     void OnPrestigeButtonClicked();
     
-public:
-    UUMGCharacterPrestigeButton();
 };
 

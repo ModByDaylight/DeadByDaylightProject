@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CoreBaseUserWidget.h"
+#include "ButtonPromptTriggeredDelegate.h"
 #include "EUIActionType.h"
 #include "InputCoreTypes.h"
 #include "CoreButtonPromptWidget.generated.h"
@@ -8,8 +9,6 @@
 class UAkAudioEvent;
 class UCoreInputPromptTextWidget;
 class UTextBlock;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCoreButtonPromptWidgetButtonPromptTriggeredDelegate);
 
 UCLASS(EditInlineNew)
 class UCoreButtonPromptWidget : public UCoreBaseUserWidget {
@@ -33,9 +32,10 @@ protected:
     
 private:
     UPROPERTY(BlueprintAssignable, BlueprintCallable)
-    FCoreButtonPromptWidgetButtonPromptTriggeredDelegate _buttonPromptTriggeredDelegate;
+    FButtonPromptTriggeredDelegate _buttonPromptTriggeredDelegate;
     
 public:
+    UCoreButtonPromptWidget();
     UFUNCTION(BlueprintCallable)
     void SetText(const FText& text);
     
@@ -51,6 +51,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void DisablePrompts();
     
-    UCoreButtonPromptWidget();
 };
 

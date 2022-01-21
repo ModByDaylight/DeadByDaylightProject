@@ -21,9 +21,9 @@ protected:
     bool _usePathfinding;
     
 public:
+    UAIMoveToPositionData();
     UFUNCTION(BlueprintCallable)
     void Init(AActor* positionActor, ECharacterMovementTypes movementType, bool usePathfinding);
     
-    UAIMoveToPositionData();
 };
 

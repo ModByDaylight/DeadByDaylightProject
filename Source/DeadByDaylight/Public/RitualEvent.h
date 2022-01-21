@@ -4,9 +4,9 @@
 #include "GameplayTagContainer.h"
 #include "RitualEvent.generated.h"
 
+class ADBDPlayer;
 class ADBDPlayerState;
 class AActor;
-class ADBDPlayer;
 
 USTRUCT(BlueprintType)
 struct FRitualEvent {

@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TormentAttackDamageCooldownInterface.h"
+#include "SurvivorStatusInterface.h"
 #include "Components/ActorComponent.h"
 #include "DBDTunableRowHandle.h"
-#include "SurvivorStatusInterface.h"
+#include "TormentAttackDamageCooldownInterface.h"
 #include "TagStateBool.h"
-#include "GameplayTagContainer.h"
 #include "AgonyDisplayFxEvent.h"
+#include "GameplayTagContainer.h"
 #include "GameEventData.h"
 #include "AgonyComponent.generated.h"
 
 class ADBDPlayer;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UAgonyComponent : public UActorComponent, public ISurvivorStatusInterface, public ITormentAttackDamageCooldownInterface {
     GENERATED_BODY()
 public:
@@ -37,6 +37,10 @@ private:
     
     UPROPERTY(EditAnywhere)
     TArray<FAgonyDisplayFxEvent> _hideAgonyFXEvents;
+    
+public:
+    UAgonyComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
@@ -91,9 +95,7 @@ private:
     UFUNCTION()
     void Authority_OnAttackTrailDamageCooldownTimerDone();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UAgonyComponent();
+    // Fix for true pure virtual functions not being implemented
 };
 

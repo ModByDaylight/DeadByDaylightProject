@@ -1,29 +1,28 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
+#include "OnLoadoutWidgetSlotClickedEvent.h"
+#include "OnLoadoutWidgetInventoryItemSelectedEvent.h"
+#include "OnLoadoutWidgetInventoryItemUnselectedEvent.h"
 #include "UMGSwitcherScreen.generated.h"
 
 class UUMGCharacterSelectionWidget;
-class UWidgetSwitcher;
 class UUMGBloodStoreWidget;
 class UUMGLoadoutWidget;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGSwitcherScreenOnLoadoutWidgetSlotClicked, int32, slotID);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGSwitcherScreenOnLoadoutWidgetInventoryItemSelected, int32, itemIndex);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGSwitcherScreenOnLoadoutWidgetInventoryItemUnselected, int32, itemIndex);
+class UWidgetSwitcher;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGSwitcherScreen : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FUMGSwitcherScreenOnLoadoutWidgetSlotClicked OnLoadoutWidgetSlotClicked;
+    FOnLoadoutWidgetSlotClickedEvent OnLoadoutWidgetSlotClicked;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGSwitcherScreenOnLoadoutWidgetInventoryItemSelected OnLoadoutWidgetInventoryItemSelected;
+    FOnLoadoutWidgetInventoryItemSelectedEvent OnLoadoutWidgetInventoryItemSelected;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGSwitcherScreenOnLoadoutWidgetInventoryItemUnselected OnLoadoutWidgetInventoryItemUnselected;
+    FOnLoadoutWidgetInventoryItemUnselectedEvent OnLoadoutWidgetInventoryItemUnselected;
     
 protected:
     UPROPERTY(BlueprintReadOnly, Export)
@@ -38,6 +37,9 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UUMGCharacterSelectionWidget* CharacterSelectionWidget;
     
+public:
+    UUMGSwitcherScreen();
+protected:
     UFUNCTION(BlueprintCallable)
     void BroadcastSlotClickedEvent(int32 loadoutSlot);
     
@@ -65,7 +67,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void BroadcastBloodNodePurchase(int32 characterId);
     
-public:
-    UUMGSwitcherScreen();
 };
 

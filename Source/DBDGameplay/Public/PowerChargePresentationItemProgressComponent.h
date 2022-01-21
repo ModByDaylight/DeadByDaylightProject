@@ -6,7 +6,7 @@
 class UPowerChargeComponent;
 class UPowerToggleComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UPowerChargePresentationItemProgressComponent : public UPresentationItemProgressComponent {
     GENERATED_BODY()
 public:

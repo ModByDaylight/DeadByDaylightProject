@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "BaseHitValidationConfigurator.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class UBaseHitValidationConfigurator : public UActorComponent {
     GENERATED_BODY()
 public:

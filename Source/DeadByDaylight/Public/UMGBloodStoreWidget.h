@@ -1,32 +1,31 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnBloodStoreRegenerateEvent.h"
 #include "MobileBaseUserWidget.h"
+#include "OnBloodNodeSelectedEvent.h"
+#include "OnBloodNodePurchaseEvent.h"
+#include "OnCharacterRoleButtonClickedEvent.h"
 #include "UMGBloodStoreWidget.generated.h"
 
-class UUMGBloodStoreArrayWidget;
 class UUMGBloodStoreItemPreviewWidget;
 class UUMGBloodStoreSubMenu;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FUMGBloodStoreWidgetOnBloodNodeSelected, int32, characterId, int32, nodeId, int32, nodeDepth);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGBloodStoreWidgetOnBloodStoreRegenerate, int32, characterId);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGBloodStoreWidgetOnBloodNodePurchase, int32, characterId);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGBloodStoreWidgetOnCharacterRoleButtonClicked);
+class UUMGBloodStoreArrayWidget;
 
 UCLASS(EditInlineNew)
 class UUMGBloodStoreWidget : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FUMGBloodStoreWidgetOnBloodNodeSelected OnBloodNodeSelected;
+    FOnBloodNodeSelectedEvent OnBloodNodeSelected;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGBloodStoreWidgetOnBloodNodePurchase OnBloodNodePurchase;
+    FOnBloodNodePurchaseEvent OnBloodNodePurchase;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGBloodStoreWidgetOnBloodStoreRegenerate OnBloodStoreRegenerate;
+    FOnBloodStoreRegenerateEvent OnBloodStoreRegenerate;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGBloodStoreWidgetOnCharacterRoleButtonClicked OnCharacterRoleButtonClicked;
+    FOnCharacterRoleButtonClickedEvent OnCharacterRoleButtonClicked;
     
 protected:
     UPROPERTY(BlueprintReadOnly, Export)
@@ -47,6 +46,8 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     FText _survivorsTitle;
     
+public:
+    UUMGBloodStoreWidget();
 private:
     UFUNCTION()
     void UnselectNode();
@@ -68,7 +69,5 @@ private:
     UFUNCTION()
     void PurchaseSelectedNode();
     
-public:
-    UUMGBloodStoreWidget();
 };
 

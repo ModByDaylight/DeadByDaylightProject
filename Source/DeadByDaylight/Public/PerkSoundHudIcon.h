@@ -10,12 +10,12 @@ public:
     UPROPERTY(EditDefaultsOnly)
     FName PerkID;
     
+    UPerkSoundHudIcon();
     UFUNCTION()
     void ClearPerk();
     
     UFUNCTION()
     void ActivatePerk(float percentage);
     
-    UPerkSoundHudIcon();
 };
 

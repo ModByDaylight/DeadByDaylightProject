@@ -3,7 +3,7 @@
 #include "ItemAddon.h"
 #include "SpawnEffectsOnAllSurvivorsBaseAddon.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API USpawnEffectsOnAllSurvivorsBaseAddon : public UItemAddon {
     GENERATED_BODY()
 public:

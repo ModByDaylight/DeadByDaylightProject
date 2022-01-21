@@ -6,7 +6,7 @@
 
 class APallet;
 
-UCLASS(Abstract, EditInlineNew)
+UCLASS(Abstract, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DBDINTERACTION_API UPalletPullUpInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ScreenIndicatorViewData.h"
 #include "CoreBaseUserWidget.h"
 #include "UObject/NoExportTypes.h"
+#include "ScreenIndicatorViewData.h"
 #include "CoreScreenIndicatorWidget.generated.h"
 
 UCLASS(EditInlineNew)
@@ -24,12 +24,12 @@ public:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     float MinDistanceAlpha;
     
+    UCoreScreenIndicatorWidget();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetData(const FScreenIndicatorViewData& data);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ClearData();
     
-    UCoreScreenIndicatorWidget();
 };
 

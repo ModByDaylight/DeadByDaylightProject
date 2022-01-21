@@ -25,6 +25,7 @@ public:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     TEnumAsByte<EVerticalAlignment> VerticalAlignment;
     
+    UDBDWrapBoxSlot();
     UFUNCTION(BlueprintCallable)
     void SetVerticalAlignment(TEnumAsByte<EVerticalAlignment> InVerticalAlignment);
     
@@ -40,6 +41,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetFillEmptySpace(bool InbFillEmptySpace);
     
-    UDBDWrapBoxSlot();
 };
 

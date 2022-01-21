@@ -4,7 +4,7 @@
 #include "DBDTunableRowHandle.h"
 #include "BlackBox.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UBlackBox : public UItemAddon {
     GENERATED_BODY()
 public:

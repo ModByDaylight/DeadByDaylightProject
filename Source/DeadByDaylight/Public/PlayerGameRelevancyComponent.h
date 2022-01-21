@@ -4,7 +4,7 @@
 #include "TagStateBool.h"
 #include "PlayerGameRelevancyComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UPlayerGameRelevancyComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -13,8 +13,8 @@ private:
     FTagStateBool _isRelevantToGameplay;
     
 public:
+    UPlayerGameRelevancyComponent();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UPlayerGameRelevancyComponent();
 };
 

@@ -5,11 +5,11 @@
 #include "UObject/NoExportTypes.h"
 #include "DBDReflectionCaptureSpawnerComponent.generated.h"
 
-class UReflectionCaptureComponent;
 class UTextureCube;
+class UReflectionCaptureComponent;
 class AReflectionCapture;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API UDBDReflectionCaptureSpawnerComponent : public USceneComponent {
     GENERATED_BODY()
 public:
@@ -45,6 +45,7 @@ protected:
     TArray<UReflectionCaptureComponent*> SpawnedReflectionCaptureComponents;
     
 public:
+    UDBDReflectionCaptureSpawnerComponent();
     UFUNCTION(BlueprintCallable)
     void SetIBLMultiplicator(float NewIBLMultiplicator);
     
@@ -54,6 +55,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetBrightness(float NewBrightness);
     
-    UDBDReflectionCaptureSpawnerComponent();
 };
 

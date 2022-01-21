@@ -5,10 +5,11 @@
 
 class ABearTrap;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UBearTrapKillerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UBearTrapKillerComponent();
     UFUNCTION(Reliable, Server)
     void Server_TryDisarmTrap(ABearTrap* trapToDisarm);
     
@@ -16,7 +17,5 @@ private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_DisarmTrap(ABearTrap* trapToDisarm);
     
-public:
-    UBearTrapKillerComponent();
 };
 

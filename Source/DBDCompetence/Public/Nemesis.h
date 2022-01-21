@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "Nemesis.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class UNemesis : public UPerk {
     GENERATED_BODY()
 public:

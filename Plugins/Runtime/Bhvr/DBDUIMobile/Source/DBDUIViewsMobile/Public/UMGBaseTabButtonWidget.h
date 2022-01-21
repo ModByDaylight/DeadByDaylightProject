@@ -4,9 +4,9 @@
 #include "UMGBaseTabButtonWidget.generated.h"
 
 class URichTextBlock;
+class UCanvasPanel;
 class UTextBlock;
 class UImage;
-class UCanvasPanel;
 
 UCLASS(Abstract, EditInlineNew)
 class DBDUIVIEWSMOBILE_API UUMGBaseTabButtonWidget : public UUMGBaseButtonWidget {

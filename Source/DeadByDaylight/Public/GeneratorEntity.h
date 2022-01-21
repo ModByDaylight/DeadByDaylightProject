@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
 #include "AnimationMontageDescriptor.h"
+#include "GameFramework/Actor.h"
 #include "GeneratorEntity.generated.h"
 
-class UMontagePlayer;
 class AGenerator;
+class UMontagePlayer;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AGeneratorEntity : public AActor {
@@ -19,6 +19,7 @@ private:
     UMontagePlayer* _montagePlayer;
     
 public:
+    AGeneratorEntity();
     UFUNCTION(BlueprintCallable)
     void SetSkeletalMeshActive(bool active);
     
@@ -31,6 +32,5 @@ public:
     UFUNCTION(BlueprintPure)
     UMontagePlayer* GetMontagePlayer() const;
     
-    AGeneratorEntity();
 };
 

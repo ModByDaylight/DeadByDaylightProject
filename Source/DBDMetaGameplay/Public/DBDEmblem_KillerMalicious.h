@@ -5,7 +5,7 @@
 
 class ACamperPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDBDEmblem_KillerMalicious : public UDBDEmblem {
     GENERATED_BODY()
 public:
@@ -14,9 +14,9 @@ private:
     TMap<ACamperPlayer*, int32> _remainingSurvivorHookStates;
     
 public:
+    UDBDEmblem_KillerMalicious();
     UFUNCTION()
     void OnLevelReadyToPlay();
     
-    UDBDEmblem_KillerMalicious();
 };
 

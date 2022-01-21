@@ -5,15 +5,14 @@
 
 class ACamperPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class URemoveOnOriginatingSurvivorGoneStatusEffect : public UStatusEffect {
     GENERATED_BODY()
 public:
+    URemoveOnOriginatingSurvivorGoneStatusEffect();
 protected:
     UFUNCTION()
     void Authority_OnSurvivorRemoved(ACamperPlayer* survivor);
     
-public:
-    URemoveOnOriginatingSurvivorGoneStatusEffect();
 };
 

@@ -1,18 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "DBDMaterialBlueprintLibrary.generated.h"
 
 class UMeshComponent;
-class UMaterialInstanceDynamic;
 class UParticleSystemComponent;
+class UMaterialInstanceDynamic;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UDBDMaterialBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UDBDMaterialBlueprintLibrary();
     UFUNCTION(BlueprintCallable)
     static void SetVectorParameterValueOnMeshComponent(UMeshComponent* Mesh, FName ParameterName, FLinearColor Value);
     
@@ -28,6 +29,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static TArray<UMaterialInstanceDynamic*> CreateDynamicMaterialInstanceForParticleSystem(UParticleSystemComponent* System);
     
-    UDBDMaterialBlueprintLibrary();
 };
 

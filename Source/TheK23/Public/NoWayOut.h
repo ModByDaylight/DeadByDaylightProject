@@ -7,7 +7,7 @@ class ACamperPlayer;
 class ADBDPlayer;
 class AEscapeDoor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UNoWayOut : public UPerk {
     GENERATED_BODY()
 public:
@@ -21,10 +21,11 @@ private:
     UPROPERTY(Transient)
     TArray<ACamperPlayer*> _hookedSurvivors;
     
+public:
+    UNoWayOut();
+private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_TriggerLoudNoise(ADBDPlayer* instigator, AEscapeDoor* escapeDoor);
     
-public:
-    UNoWayOut();
 };
 

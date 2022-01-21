@@ -4,11 +4,11 @@
 #include "StatusEffect.h"
 #include "BlessedStatusEffect.generated.h"
 
-class ATotem;
 class UBlessedVignetteController;
+class ATotem;
 class ACamperPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UBlessedStatusEffect : public UStatusEffect {
     GENERATED_BODY()
 public:
@@ -16,6 +16,8 @@ private:
     UPROPERTY(EditDefaultsOnly)
     TSubclassOf<UBlessedVignetteController> _vignetteControllerBlueprint;
     
+public:
+    UBlessedStatusEffect();
 protected:
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void OnExitBoonRange();
@@ -35,7 +37,5 @@ private:
     UFUNCTION()
     void Authority_OnSurvivorRemovedFromGame(ACamperPlayer* survivor);
     
-public:
-    UBlessedStatusEffect();
 };
 

@@ -7,7 +7,7 @@
 
 class UCurveFloat;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UHatchetLauncher : public UKillerProjectileLauncher {
     GENERATED_BODY()
 public:
@@ -45,10 +45,11 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _hatchetLaunchPitchMax;
     
+public:
+    UHatchetLauncher();
+protected:
     UFUNCTION(BlueprintPure)
     bool IsLaunchedHatchetFullyCharged() const;
     
-public:
-    UHatchetLauncher();
 };
 

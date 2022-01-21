@@ -1,40 +1,59 @@
 #include "DBDPlayer.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
+#include "DynamicCapsuleResizerComponent.h"
+#include "ActivatorComponent.h"
+#include "MaterialHelper.h"
+#include "Components/BoxComponent.h"
+#include "CharacterChaseVisualComponent.h"
+#include "CameraHandlerComponent.h"
+#include "Perception/AIPerceptionStimuliSourceComponent.h"
+#include "ChargeableComponent.h"
+#include "PollableEventListener.h"
+#include "ZoneDetectorComponent.h"
+#include "AudioFXComponent.h"
+#include "PlayerPerspectiveComponent.h"
+#include "CharacterSightComponent.h"
+#include "CharacterSightableComponent.h"
+#include "PrimitivesRegistererComponent.h"
+#include "ClippableProviderComponent.h"
+#include "PlayerGameRelevancyComponent.h"
+#include "ContextualQuestComponent.h"
+#include "ChargeableProgressProviderComponent.h"
 
+class USceneComponent;
+class ADBDPlayer;
+class UInteractionDefinition;
+class UMontagePlayer;
+class UAnimMontage;
+class UActorComponent;
+class ADBDPlayerCameraManager;
+class AActor;
 class UBlindableComponent;
 class ADBDPlayerController;
-class ADBDPlayer;
-class UInteractionDetectorComponent;
-class UGameplayTagContainerComponent;
-class UInteractionDefinition;
-class UPerkManager;
-class UActorComponent;
-class UMontagePlayer;
-class AActor;
-class UCharacterDreamworldComponent;
-class AInteractable;
-class UCameraComponent;
-class UGameplayModifierContainer;
+class UAnimInstance;
+class UBoxOcclusionQueryComponent;
 class ACollectable;
 class UStatusEffect;
-class UChaseComponent;
-class UAnimMontage;
+class UInteractionDetectorComponent;
 class AController;
-class UPlayerInteractionHandler;
-class UBoxOcclusionQueryComponent;
-class ADBDPlayerState;
-class UOtherCharactersVerticalCollisionsHandler;
 class APlayerState;
-class USceneComponent;
+class UCustomizedSkeletalMesh;
+class AInteractable;
+class UPlayerInteractionHandler;
+class UCameraComponent;
+class UPerkManager;
+class UOtherCharactersVerticalCollisionsHandler;
+class UGameplayTagContainerComponent;
 class UItemModifier;
 class UItemAddon;
+class UCharacterDreamworldComponent;
 class UPrimitiveComponent;
-class UCustomizedSkeletalMesh;
-class UCharacterInventoryComponent;
-class ADBDPlayerCameraManager;
+class ADBDPlayerState;
+class UChaseComponent;
 class UAuthoritativeMovementComponent;
-class UAnimInstance;
+class UCharacterInventoryComponent;
+class UGameplayModifierContainer;
 class ACharacter;
 class UInteractor;
 
@@ -1122,9 +1141,15 @@ ADBDPlayer::ADBDPlayer() {
     this->JoyconSettingToYawRateCurve = NULL;
     this->JoyconSettingToPitchRateCurve = NULL;
     this->Camera = NULL;
+    this->MaterialHelper = CreateDefaultSubobject<UMaterialHelper>(TEXT("MaterialHelperNative"));
     this->Interactable = NULL;
+    this->_characterInventoryComponent = CreateDefaultSubobject<UCharacterInventoryComponent>(TEXT("CharacterInventoryComponent"));
     this->CarryJointName = TEXT("Camper_SocketLT");
     this->_pitchOffsetForInteractionPriority = 0.00f;
+    this->_renderedPixelCounter = CreateDefaultSubobject<UBoxOcclusionQueryComponent>(TEXT("RenderedPixelCounter"));
+    this->_standingOcclusionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("Standing Occlusion Box"));
+    this->_crouchingOcclusionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("Crouching Occlusion Box"));
+    this->_activator = CreateDefaultSubobject<UActivatorComponent>(TEXT("Activator"));
     this->IsInteracting = false;
     this->_aiCanBeSeenTestCrouchScale = 0.70f;
     this->_aiCanBeSeenTestRightOffset = 15.00f;
@@ -1140,6 +1165,9 @@ ADBDPlayer::ADBDPlayer() {
     this->DeathSound = NULL;
     this->CurrentCamperState = ECamperState::VE_None;
     this->_stateMachine = NULL;
+    this->_interactionHandler = CreateDefaultSubobject<UPlayerInteractionHandler>(TEXT("InteractionHandler"));
+    this->_montagePlayer = CreateDefaultSubobject<UMontagePlayer>(TEXT("MontagePlayer"));
+    this->_perkManager = CreateDefaultSubobject<UPerkManager>(TEXT("PerkManager"));
     this->_playerData = NULL;
     this->_wiggleAxisFlickMasher = NULL;
     this->_interactable = NULL;
@@ -1147,13 +1175,37 @@ ADBDPlayer::ADBDPlayer() {
     this->_interactingPlayer = NULL;
     this->_nextAttackSubstate = EAttackSubstate::VE_None;
     this->_dreamworldComponent = NULL;
+    this->_characterChaseVisualComponent = CreateDefaultSubobject<UCharacterChaseVisualComponent>(TEXT("CharacterChaseVisualComponent"));
+    this->_cameraHandlerComponent = CreateDefaultSubobject<UCameraHandlerComponent>(TEXT("CameraHandlerComponent"));
+    this->_itemDropOffPosition = CreateDefaultSubobject<USceneComponent>(TEXT("ItemDropOffPosition"));
+    this->_perceptionStimuliComponent = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("AIPerceptionStimuliSourceComponent"));
+    this->_blindingChargeableComponent = CreateDefaultSubobject<UChargeableComponent>(TEXT("BlindnessChargeableComponent"));
     this->_shouldUpdateStateMachineDriverOnPossessed = true;
+    this->_blindableComponent = CreateDefaultSubobject<UBlindableComponent>(TEXT("BlindableComponent"));
     this->_tutorialChargeableInteractionMultiplier = 1.00f;
+    this->_eventListener = CreateDefaultSubobject<UPollableEventListener>(TEXT("EventListener"));
+    this->_chaseComponent = CreateDefaultSubobject<UChaseComponent>(TEXT("Chase Component"));
+    this->_meatHookZoneDetector = CreateDefaultSubobject<UZoneDetectorComponent>(TEXT("MeatHookZoneDetector"));
+    this->_basementZoneDetector = CreateDefaultSubobject<UZoneDetectorComponent>(TEXT("BasementZoneDetector"));
     this->_bookmarkedInteraction = NULL;
+    this->_authoritativeMovementComponent = CreateDefaultSubobject<UAuthoritativeMovementComponent>(TEXT("AuthoritativeMovement"));
     this->_screenAspectRatio = 1.78f;
+    this->_objectState = CreateDefaultSubobject<UGameplayTagContainerComponent>(TEXT("ObjectState"));
+    this->_audioFXComponent = CreateDefaultSubobject<UAudioFXComponent>(TEXT("AudioFXComponent"));
+    this->_playerPerspectiveComponent = CreateDefaultSubobject<UPlayerPerspectiveComponent>(TEXT("PlayerPerspectiveComponent"));
+    this->_characterSightComponent = CreateDefaultSubobject<UCharacterSightComponent>(TEXT("CharacterSightComponent"));
+    this->_characterSightableComponent = CreateDefaultSubobject<UCharacterSightableComponent>(TEXT("CharacterSightableComponent"));
+    this->_interactionDetectorComponent = CreateDefaultSubobject<UInteractionDetectorComponent>(TEXT("InteractionDetectorComponent"));
+    this->_clippablePrimitivesRegistererComponent = CreateDefaultSubobject<UPrimitivesRegistererComponent>(TEXT("PrimitiveRegistererComponent"));
+    this->_clippableProviderComponent = CreateDefaultSubobject<UClippableProviderComponent>(TEXT("ClippableProviderComponent"));
+    this->_dynCapsuleResizer = CreateDefaultSubobject<UDynamicCapsuleResizerComponent>(TEXT("Dyn Capsule Resizer"));
+    this->_playerGameRelevancyComponent = CreateDefaultSubobject<UPlayerGameRelevancyComponent>(TEXT("PlayerGameRelevancyComponent"));
+    this->_contextualQuestComponent = CreateDefaultSubobject<UContextualQuestComponent>(TEXT("ContextualQuestComponent"));
     this->_questEventHandler = NULL;
+    this->_presentationChargeableProgressComponent = CreateDefaultSubobject<UChargeableProgressProviderComponent>(TEXT("Presentation Chargeable Progress"));
     this->_currentGamepadYawCurve = NULL;
     this->_currentGamepadPitchCurve = NULL;
     this->_associatedPlayerStateCache = NULL;
+    this->_otherCharactersVerticalCollisionsHandler = CreateDefaultSubobject<UOtherCharactersVerticalCollisionsHandler>(TEXT("OtherCharactersVerticalCollisionsHandler"));
 }
 

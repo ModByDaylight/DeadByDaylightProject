@@ -3,7 +3,7 @@
 #include "OwningPlayerInTotemRange.h"
 #include "OwningPlayerInDullTotemRange.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UOwningPlayerInDullTotemRange : public UOwningPlayerInTotemRange {
     GENERATED_BODY()
 public:

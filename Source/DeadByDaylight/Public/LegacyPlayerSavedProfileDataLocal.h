@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "LegacyCharacterSavedProfileData.h"
 #include "LegacySavedDailyRitualContainer.h"
 #include "LegacySavedFearMarketOfferingInstance.h"
-#include "UObject/NoExportTypes.h"
 #include "LegacySavedPlayerLoadoutData.h"
 #include "LegacyPlayerSavedProfileDataLocal.generated.h"
 

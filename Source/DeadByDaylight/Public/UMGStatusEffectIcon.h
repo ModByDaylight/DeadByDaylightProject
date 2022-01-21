@@ -11,12 +11,12 @@ public:
     UPROPERTY(BlueprintReadOnly, Transient)
     FStatusEffectSlotData StatusEffectData;
     
+    UUMGStatusEffectIcon();
     UFUNCTION(BlueprintImplementableEvent)
     void UpdateWidget();
     
     UFUNCTION(BlueprintImplementableEvent)
     void UpdatePercentageFill(float percentage);
     
-    UUMGStatusEffectIcon();
 };
 

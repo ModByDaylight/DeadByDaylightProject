@@ -3,25 +3,22 @@
 #include "Templates/SubclassOf.h"
 #include "Components/ActorComponent.h"
 #include "BlightPowerStateInterface.h"
-#include "UObject/NoExportTypes.h"
+#include "BlightPowerCollisionDelegate.h"
 #include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
 #include "EWallGrabState.h"
 #include "BlightPowerStateComponent.generated.h"
 
-class UTimerObject;
-class ADBDPlayer;
-class UInteractionDefinition;
 class UBlightPowerState;
+class UInteractionDefinition;
+class UTimerObject;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FBlightPowerStateComponentOnPowerCollided, ADBDPlayer*, collidingPlayer, FVector, collisionLocation, FVector, collisionNormal);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class UBlightPowerStateComponent : public UActorComponent, public IBlightPowerStateInterface {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FBlightPowerStateComponentOnPowerCollided OnPowerCollided;
+    FBlightPowerCollisionDelegate OnPowerCollided;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
@@ -61,6 +58,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FTunableStat _tokenChargeRate;
     
+public:
+    UBlightPowerStateComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_SetWallGrabState(const EWallGrabState newState);
     
@@ -109,8 +111,7 @@ public:
     UFUNCTION(BlueprintPure)
     bool CanDash() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UBlightPowerStateComponent();
+    // Fix for true pure virtual functions not being implemented
 };
 

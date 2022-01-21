@@ -4,7 +4,7 @@
 #include "InboxMessageData.h"
 #include "OnlineMessagesContainerComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ONLINEMESSAGESUTILITIES_API UOnlineMessagesContainerComponent : public UActorComponent {
     GENERATED_BODY()
 public:

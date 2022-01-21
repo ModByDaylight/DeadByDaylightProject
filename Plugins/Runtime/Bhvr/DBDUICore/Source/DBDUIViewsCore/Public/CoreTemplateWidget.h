@@ -9,5 +9,7 @@ class DBDUIVIEWSCORE_API UCoreTemplateWidget : public UUserWidget, public ITempl
     GENERATED_BODY()
 public:
     UCoreTemplateWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -3,7 +3,7 @@
 #include "AbilityStealthUndetectableEffect.h"
 #include "InsidiousEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UInsidiousEffect : public UAbilityStealthUndetectableEffect {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 #include "BasePoolableActorComponent.h"
 #include "AuthoritativePoolableActorComponent.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class GAMEPLAYUTILITIES_API UAuthoritativePoolableActorComponent : public UBasePoolableActorComponent {
     GENERATED_BODY()
 public:
@@ -11,12 +11,13 @@ private:
     UPROPERTY(ReplicatedUsing=OnRep_Acquired)
     bool _acquired;
     
+public:
+    UAuthoritativePoolableActorComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_Acquired();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UAuthoritativePoolableActorComponent();
 };
 

@@ -1,9 +1,9 @@
 #include "K26FireCrowProjectileInteractionDefinition.h"
 
+class ASlasherPlayer;
 class UK26AmmoHandlerComponent;
 class UK26PathHandlerComponent;
 class UK26CooldownInteractionDefinition;
-class ASlasherPlayer;
 
 void UK26FireCrowProjectileInteractionDefinition::SetDependencies(UK26AmmoHandlerComponent* ammoHandler, UK26PathHandlerComponent* pathHandler, UK26CooldownInteractionDefinition* cooldownInteraction) {
 }

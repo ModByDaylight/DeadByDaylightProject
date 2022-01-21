@@ -4,11 +4,11 @@
 #include "ClippedActor.h"
 #include "ActorClipperComponent.generated.h"
 
-class USphereComponent;
 class AActor;
+class USphereComponent;
 class UPrimitiveCollection;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UActorClipperComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -24,6 +24,7 @@ private:
     TWeakObjectPtr<UPrimitiveCollection> _clippables;
     
 public:
+    UActorClipperComponent();
     UFUNCTION(BlueprintCallable)
     void SetPrimitiveCollection(const UPrimitiveCollection* clippables);
     
@@ -34,7 +35,5 @@ private:
     UFUNCTION()
     void OnOwnerLocallyObservedChanged(bool locallyObserved);
     
-public:
-    UActorClipperComponent();
 };
 

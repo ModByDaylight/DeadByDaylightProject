@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "BaseCharacterVelocityAdditiveStrategy.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class GAMEPLAYUTILITIES_API UBaseCharacterVelocityAdditiveStrategy : public UActorComponent {
     GENERATED_BODY()
 public:

@@ -5,7 +5,7 @@
 
 class UAkRoomComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class AKAUDIO_API UAkRoomComponent : public UAkGameObject {
     GENERATED_BODY()
 public:

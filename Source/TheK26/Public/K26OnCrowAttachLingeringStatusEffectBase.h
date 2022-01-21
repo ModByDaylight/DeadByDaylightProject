@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTunableRowHandle.h"
 #include "StatusEffect.h"
 #include "GameplayTagContainer.h"
+#include "DBDTunableRowHandle.h"
 #include "K26OnCrowAttachLingeringStatusEffectBase.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK26OnCrowAttachLingeringStatusEffectBase : public UStatusEffect {
     GENERATED_BODY()
 public:
@@ -16,10 +16,11 @@ protected:
     UPROPERTY(EditAnywhere)
     FDBDTunableRowHandle _lingerTime;
     
+public:
+    UK26OnCrowAttachLingeringStatusEffectBase();
+protected:
     UFUNCTION(BlueprintPure)
     float GetLingerTime() const;
     
-public:
-    UK26OnCrowAttachLingeringStatusEffectBase();
 };
 

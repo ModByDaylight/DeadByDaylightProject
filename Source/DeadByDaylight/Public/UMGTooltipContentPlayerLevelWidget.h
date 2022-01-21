@@ -25,9 +25,9 @@ protected:
     UTextBlock* ExperienceToNextLevelText;
     
 public:
+    UUMGTooltipContentPlayerLevelWidget();
     UFUNCTION()
     void SetInfo(const int32 playerLevel, const int32 playerPrestige, const int32 currentExperience, const int32 nextLevelExperience);
     
-    UUMGTooltipContentPlayerLevelWidget();
 };
 

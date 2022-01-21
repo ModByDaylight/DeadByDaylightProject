@@ -3,7 +3,7 @@
 #include "FootstepsPerceptionComponent.h"
 #include "SurvivorFootstepsPerceptionComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API USurvivorFootstepsPerceptionComponent : public UFootstepsPerceptionComponent {
     GENERATED_BODY()
 public:

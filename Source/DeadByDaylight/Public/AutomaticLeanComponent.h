@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "SocketOrBoneCache.h"
 #include "ELeanState.h"
+#include "SocketOrBoneCache.h"
 #include "AutomaticLeanComponent.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAutomaticLeanComponentOnCanInitiateLeanChanged, bool, canInitiate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAutomaticLeanComponentOnLeanStateChanged, ELeanState, leanState);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UAutomaticLeanComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FAutomaticLeanComponentOnLeanStateChanged OnLeanStateChanged;
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLeanStateChanged, ELeanState, leanState);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCanInitiateLeanChanged, bool, canInitiate);
     
     UPROPERTY(BlueprintAssignable)
-    FAutomaticLeanComponentOnCanInitiateLeanChanged OnCanInitiateLeanChanged;
+    FOnLeanStateChanged OnLeanStateChanged;
+    
+    UPROPERTY(BlueprintAssignable)
+    FOnCanInitiateLeanChanged OnCanInitiateLeanChanged;
     
 private:
     UPROPERTY(BlueprintReadOnly, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -67,6 +67,11 @@ private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_LeanState)
     ELeanState _leanState;
     
+public:
+    UAutomaticLeanComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_SetLeanState(ELeanState leanState);
     
@@ -95,8 +100,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool CanInitiateLean() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UAutomaticLeanComponent();
 };
 

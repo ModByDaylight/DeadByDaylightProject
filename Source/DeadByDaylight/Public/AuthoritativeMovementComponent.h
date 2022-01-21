@@ -9,7 +9,7 @@ class UCapsuleComponent;
 class UPrimitiveComponent;
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UAuthoritativeMovementComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -30,6 +30,9 @@ private:
     TArray<ACharacter*> _previousAuthoritativeIgnoreOverlapCharacters;
     
 public:
+    UAuthoritativeMovementComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetPawnDetector(UCapsuleComponent* pawnDetector);
     
@@ -44,9 +47,5 @@ protected:
     UFUNCTION()
     void OnPawnDetectorOverlapEnter(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UAuthoritativeMovementComponent();
 };
 

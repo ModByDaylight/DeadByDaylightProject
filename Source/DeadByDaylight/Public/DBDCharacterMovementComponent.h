@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MontageStopDefinition.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "MontageStopDefinition.h"
 #include "SnappingData.h"
 #include "EMovementCurveType.h"
 #include "MontagePlaybackDefinition.h"
@@ -10,14 +10,14 @@
 #include "YawAndPitchRotator_NetQuantize32.h"
 #include "DBDCharacterMovementComponent.generated.h"
 
-class UBaseCharacterRotationStrategy;
+class AActor;
 class UBaseCharacterVelocityAdditiveStrategy;
 class UBaseInputAccelerationConstraintStrategy;
-class AActor;
-class UAnimMontage;
+class UBaseCharacterRotationStrategy;
 class UCurveFloat;
+class UAnimMontage;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDCharacterMovementComponent : public UCharacterMovementComponent {
     GENERATED_BODY()
 public:
@@ -50,6 +50,7 @@ private:
     AActor* _lookAtTarget;
     
 public:
+    UDBDCharacterMovementComponent();
     UFUNCTION(BlueprintCallable)
     void SetRandomInputAmplitude(float value);
     
@@ -127,7 +128,5 @@ protected:
     UFUNCTION(Client, Reliable)
     void Client_PreventMovement(const bool value);
     
-public:
-    UDBDCharacterMovementComponent();
 };
 

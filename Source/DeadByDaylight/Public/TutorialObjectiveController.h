@@ -7,6 +7,7 @@ UCLASS(BlueprintType)
 class UTutorialObjectiveController : public UObject {
     GENERATED_BODY()
 public:
+    UTutorialObjectiveController();
     UFUNCTION(BlueprintCallable)
     void RemoveObjective(FName tutorialObjectiveId);
     
@@ -19,6 +20,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddObjective(FName tutorialObjectiveId);
     
-    UTutorialObjectiveController();
 };
 

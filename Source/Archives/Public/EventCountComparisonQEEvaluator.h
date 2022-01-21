@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EventCountComparisonOperator.h"
 #include "QuestEventEvaluatorBase.h"
 #include "GameplayTagContainer.h"
+#include "EventCountComparisonOperator.h"
 #include "EventCountComparisonQEEvaluator.generated.h"
 
 UCLASS()

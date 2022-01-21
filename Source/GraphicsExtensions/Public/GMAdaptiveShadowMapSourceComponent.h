@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "GMAdaptiveShadowMapSourceComponent.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GRAPHICSEXTENSIONS_API UGMAdaptiveShadowMapSourceComponent : public USceneComponent {
     GENERATED_BODY()
 public:
@@ -26,9 +26,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     int32 PreGeneratedLevels;
     
+    UGMAdaptiveShadowMapSourceComponent();
     UFUNCTION(BlueprintCallable)
     void SetLightRadiusWithBounds(FVector BoundingSphereCenter, float BoundingSphereRadius);
     
-    UGMAdaptiveShadowMapSourceComponent();
 };
 

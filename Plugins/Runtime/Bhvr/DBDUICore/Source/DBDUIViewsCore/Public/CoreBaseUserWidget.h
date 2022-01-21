@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "CoreBaseViewInterface.h"
 #include "InteractiveWidgetInterface.h"
-#include "EControlMode.h"
+#include "CoreBaseViewInterface.h"
 #include "EScaleType.h"
+#include "EControlMode.h"
 #include "CoreBaseUserWidget.generated.h"
 
-class UDBDInputManager;
 class UScaleBox;
+class UDBDInputManager;
 
 UCLASS(Abstract, EditInlineNew)
 class UCoreBaseUserWidget : public UUserWidget, public ICoreBaseViewInterface, public IInteractiveWidgetInterface {
@@ -32,6 +32,7 @@ private:
     UDBDInputManager* _inputManager;
     
 public:
+    UCoreBaseUserWidget();
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void UpdateScale(float scale);
     
@@ -45,7 +46,7 @@ protected:
     UFUNCTION(BlueprintCallable)
     void DeregisterFromInput();
     
-public:
-    UCoreBaseUserWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

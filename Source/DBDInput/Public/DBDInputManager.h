@@ -3,9 +3,9 @@
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "DBDInputManager.generated.h"
 
+class UControlModeManager;
 class UVirtualKeyboardManager;
 class USwitchDockStateManager;
-class UControlModeManager;
 class UDataTable;
 
 UCLASS()

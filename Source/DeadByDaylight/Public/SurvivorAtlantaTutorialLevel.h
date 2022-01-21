@@ -3,14 +3,15 @@
 #include "AtlantaTutorialLevel.h"
 #include "SurvivorAtlantaTutorialLevel.generated.h"
 
-class ADBDAIPlayerController;
 class ASlasherPlayer;
+class ADBDAIPlayerController;
 class ACamperPlayer;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ASurvivorAtlantaTutorialLevel : public AAtlantaTutorialLevel {
     GENERATED_BODY()
 public:
+    ASurvivorAtlantaTutorialLevel();
     UFUNCTION(BlueprintCallable)
     void SetSlasherPlayer(ASlasherPlayer* slasherPlayer);
     
@@ -23,6 +24,5 @@ public:
     UFUNCTION(BlueprintPure)
     ACamperPlayer* GetCamperPlayer() const;
     
-    ASurvivorAtlantaTutorialLevel();
 };
 

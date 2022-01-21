@@ -12,8 +12,8 @@ UUMGCharacterInfoWidget::UUMGCharacterInfoWidget() {
     this->CharacterDLCPanel = NULL;
     this->CharacterBackgroundImage = NULL;
     this->CharacterName = NULL;
-    this->_characterDifficultyText = INVTEXT("EASY");
+    this->_characterDifficultyText = FText::FromString(TEXT("EASY"));
     this->_isKiller = false;
-    this->_characterDLCTitle = INVTEXT("CHARACTER FROM");
+    this->_characterDLCTitle = FText::FromString(TEXT("CHARACTER FROM"));
 }
 

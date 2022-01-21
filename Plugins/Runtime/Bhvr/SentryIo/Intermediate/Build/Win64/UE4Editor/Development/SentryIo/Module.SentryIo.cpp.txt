@@ -1,8 +1,0 @@
-C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\SentryIo\Intermediate\Build\Win64\UE4Editor\Development\SentryIo\Definitions.SentryIo.h
-C:/Data/Projects/DeadByDaylight/Plugins/Runtime/Bhvr/SentryIo/Source/SentryIo/Private/SentryIoBaseSubsystem.cpp
-C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\SentryIo\Source\SentryIo\Public\SentryIoBaseSubsystem.h
-C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\SentryIo\Intermediate\Build\Win64\UE4Editor\Inc\SentryIo\SentryIoBaseSubsystem.generated.h
-C:/Data/Projects/DeadByDaylight/Plugins/Runtime/Bhvr/SentryIo/Source/SentryIo/Private/SentryIoModule.cpp
-C:/Data/Projects/DeadByDaylight/Plugins/Runtime/Bhvr/SentryIo/Source/SentryIo/Private/SentryIoSubsystem.cpp
-C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\SentryIo\Source\SentryIo\Public\SentryIoSubsystem.h
-C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\SentryIo\Intermediate\Build\Win64\UE4Editor\Inc\SentryIo\SentryIoSubsystem.generated.h

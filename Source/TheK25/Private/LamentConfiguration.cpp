@@ -1,5 +1,15 @@
 #include "LamentConfiguration.h"
 #include "Net/UnrealNetwork.h"
+#include "Interactor.h"
+#include "MontagePlayer.h"
+#include "K25CollectLamentConfigurationInteraction.h"
+#include "LamentConfigurationSpawnStrategy.h"
+#include "SpherePlayerOverlapComponent.h"
+#include "DBDOutlineComponent.h"
+#include "MaterialHelper.h"
+#include "LamentConfigurationOutlineStrategy.h"
+#include "LamentConfigurationChainHuntComponent.h"
+#include "AnimationMontageSlave.h"
 
 class ACamperPlayer;
 
@@ -43,6 +53,7 @@ float ALamentConfiguration::GetChainHuntProgressPercentage() const {
 
 
 
+
 void ALamentConfiguration::Authority_RespawnLamentConfiguration(bool triggerChainHuntUponSpawning) {
 }
 
@@ -68,9 +79,20 @@ void ALamentConfiguration::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
 }
 
 ALamentConfiguration::ALamentConfiguration() {
+    this->_interactable = CreateDefaultSubobject<USpherePlayerOverlapComponent>(TEXT("InteractableZone"));
+    this->_collectableInteractor = CreateDefaultSubobject<UInteractor>(TEXT("CollectableInteractor"));
+    this->_survivorCollectItemInteraction = CreateDefaultSubobject<UK25CollectLamentConfigurationInteraction>(TEXT("SurvivorCollectItem"));
+    this->_killerCollectItemInteraction = CreateDefaultSubobject<UK25CollectLamentConfigurationInteraction>(TEXT("KillerCollectItem"));
+    this->_outlineComponent = CreateDefaultSubobject<UDBDOutlineComponent>(TEXT("OutlineComponent"));
+    this->_materialHelper = CreateDefaultSubobject<UMaterialHelper>(TEXT("MaterialHelper"));
+    this->_outlineStrategy = CreateDefaultSubobject<ULamentConfigurationOutlineStrategy>(TEXT("Outline Strategy"));
+    this->_spawnStrategy = CreateDefaultSubobject<ULamentConfigurationSpawnStrategy>(TEXT("Spawn Strategy"));
+    this->_chainHuntComponent = CreateDefaultSubobject<ULamentConfigurationChainHuntComponent>(TEXT("Chain Hunt"));
     this->_dotProductMinValue = 0.50f;
     this->_survivorAttachmentSocket = EAttachToSocketNameEnum::HandItemSocket;
     this->_killerAttachmentSocket = EAttachToSocketNameEnum::Weapon_SocketRT;
+    this->_montageFollower = CreateDefaultSubobject<UAnimationMontageSlave>(TEXT("MontageSlave"));
+    this->_montagePlayer = CreateDefaultSubobject<UMontagePlayer>(TEXT("AnimMontagePlayer"));
     this->_chainAnimationActorClass = NULL;
     this->_lamentConfigurationTeleportIndicatorClass = NULL;
     this->_chainAnimationFollowerAttachmentSocketName = TEXT("LamentBox_joint_char");

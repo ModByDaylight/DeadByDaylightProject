@@ -18,5 +18,6 @@ UMontagePlayer* AGeneratorEntity::GetMontagePlayer() const {
 
 AGeneratorEntity::AGeneratorEntity() {
     this->_associatedGenerator = NULL;
+    this->_montagePlayer = CreateDefaultSubobject<UMontagePlayer>(TEXT("MontagePlayer"));
 }
 

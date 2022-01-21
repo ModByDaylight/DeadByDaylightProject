@@ -3,7 +3,7 @@
 #include "StatusEffect.h"
 #include "DeadMansSwitchEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UDeadMansSwitchEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
 #include "AnimationMontageDescriptor.h"
+#include "GameFramework/Actor.h"
 #include "K25AnimationFollowerActor.generated.h"
 
-class UMontagePlayer;
 class USkeletalMeshComponent;
 class UAnimationMontageSlave;
+class UMontagePlayer;
 
 UCLASS()
 class AK25AnimationFollowerActor : public AActor {
@@ -22,6 +22,8 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
     UMontagePlayer* _montagePlayer;
     
+public:
+    AK25AnimationFollowerActor();
 private:
     UFUNCTION()
     void OnMontageStopped(const FAnimationMontageDescriptor id);
@@ -32,7 +34,5 @@ private:
     UFUNCTION()
     void OnMontageEnd(const FAnimationMontageDescriptor montage, bool interrupted);
     
-public:
-    AK25AnimationFollowerActor();
 };
 

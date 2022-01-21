@@ -3,15 +3,14 @@
 #include "Templates/SubclassOf.h"
 #include "GameplayModifierContainer.h"
 #include "GameplayModifierData.h"
+#include "OnTokenCountChangedBP.h"
 #include "PerkInitializationData.h"
 #include "Perk.generated.h"
 
 class UBasePerkIconStrategy;
 class UTimerObject;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPerkOnTokenCountChangedBP, int32, tokenCount);
-
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UPerk : public UGameplayModifierContainer {
     GENERATED_BODY()
 public:
@@ -23,7 +22,7 @@ protected:
     TSubclassOf<UBasePerkIconStrategy> PerkIconStrategyClass;
     
     UPROPERTY(BlueprintAssignable)
-    FPerkOnTokenCountChangedBP OnTokenCountChangedBP;
+    FOnTokenCountChangedBP OnTokenCountChangedBP;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_IsUsable, meta=(AllowPrivateAccess=true))
@@ -63,6 +62,9 @@ private:
     UTimerObject* _hudIconTimer;
     
 public:
+    UPerk();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetIsUsable(bool value);
     
@@ -133,8 +135,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_DecrementToken();
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UPerk();
 };
 

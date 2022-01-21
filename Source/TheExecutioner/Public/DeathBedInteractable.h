@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Engine/EngineTypes.h"
 #include "Interactable.h"
 #include "AIInteractableTargetInterface.h"
 #include "AIPointOfInterestTargetInterface.h"
 #include "UObject/NoExportTypes.h"
 #include "DBDTunableRowHandle.h"
-#include "Engine/EngineTypes.h"
 #include "DeathBedInteractable.generated.h"
 
-class UAIPerceptionStimuliSourceComponent;
 class USceneComponent;
-class USkeletalMeshComponent;
-class ACamperPlayer;
-class UChargeableComponent;
 class UBoxComponent;
 class AActor;
+class USkeletalMeshComponent;
+class UAIPerceptionStimuliSourceComponent;
+class ACamperPlayer;
+class UChargeableComponent;
 class UMontagePlayer;
 class UAnimationMontageSlave;
 class UAnimMontage;
-class UPrimitiveComponent;
 class UDeathBedAntiCampComponent;
+class UPrimitiveComponent;
 class ADeathBedInteractable;
 
 UCLASS()
@@ -69,6 +69,9 @@ private:
     UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UAIPerceptionStimuliSourceComponent* _perceptionStimuliComponent;
     
+public:
+    ADeathBedInteractable();
+private:
     UFUNCTION(BlueprintCallable)
     void TeleportCamperToDeathBed();
     
@@ -137,7 +140,7 @@ private:
     UFUNCTION(BlueprintCallable)
     void ActivateDeathBed(const bool value);
     
-public:
-    ADeathBedInteractable();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

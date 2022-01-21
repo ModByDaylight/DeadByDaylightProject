@@ -1,12 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
+#include "OnLoadoutFilterClickedEvent.h"
 #include "UMGLoadoutFilterButton.generated.h"
 
 class UTexture2D;
 class UButton;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGLoadoutFilterButtonOnLoadoutFilterButtonClicked, FName, filterName);
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGLoadoutFilterButton : public UMobileBaseUserWidget {
@@ -16,8 +15,9 @@ public:
     UButton* ActionButton;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGLoadoutFilterButtonOnLoadoutFilterButtonClicked OnLoadoutFilterButtonClicked;
+    FOnLoadoutFilterClickedEvent OnLoadoutFilterButtonClicked;
     
+    UUMGLoadoutFilterButton();
     UFUNCTION(BlueprintImplementableEvent)
     void SetIsSelected(bool isSelected);
     
@@ -32,6 +32,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void InitFilterButton(const FName& filterName, const TSoftObjectPtr<UTexture2D> filterTexture);
     
-    UUMGLoadoutFilterButton();
 };
 

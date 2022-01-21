@@ -43,7 +43,6 @@ EColorVisionDeficiency UDBDGameUserSettings::GetColorBlindMode() const {
 }
 
 UDBDGameUserSettings::UDBDGameUserSettings() {
-    this->ScreenScaleForWindowedMode = 100;
     this->ScalabilityLevel = 3;
     this->AutoScalabilitySet = false;
     this->AutoAdjust = false;
@@ -75,7 +74,7 @@ UDBDGameUserSettings::UDBDGameUserSettings() {
     this->SurvivorInvertY = false;
     this->Language = TEXT("en");
     this->LanguageIsDefinedByPlayer = false;
-    this->HighestWeightSeenNews = 3030;
+    this->HighestWeightSeenNews = 3058;
     this->LastPanelContextId = 0;
     this->ArchivesAutoPlayVoiceOver = true;
     this->HasAcceptedCrossplayPopup = true;

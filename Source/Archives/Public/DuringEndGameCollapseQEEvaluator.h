@@ -9,11 +9,10 @@ UCLASS()
 class UDuringEndGameCollapseQEEvaluator : public UQuestEventEvaluatorBase {
     GENERATED_BODY()
 public:
+    UDuringEndGameCollapseQEEvaluator();
 private:
     UFUNCTION()
     void OnEndGameCollapseStart(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-public:
-    UDuringEndGameCollapseQEEvaluator();
 };
 

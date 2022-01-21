@@ -3,7 +3,7 @@
 #include "BaseModifierCondition.h"
 #include "EventDrivenModifierCondition.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class COMPETENCE_API UEventDrivenModifierCondition : public UBaseModifierCondition {
     GENERATED_BODY()
 public:

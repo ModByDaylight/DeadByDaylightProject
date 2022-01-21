@@ -5,7 +5,7 @@
 
 class UStatusEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAlert : public UPerk {
     GENERATED_BODY()
 public:
@@ -17,11 +17,11 @@ private:
     UPROPERTY(Export, Transient)
     UStatusEffect* _alertKillerRevealEffect;
     
+public:
+    UAlert();
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void OnPerkActivate_Cosmetic();
     
-public:
-    UAlert();
 };
 

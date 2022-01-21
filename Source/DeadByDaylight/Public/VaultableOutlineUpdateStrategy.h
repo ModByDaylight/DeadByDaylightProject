@@ -3,7 +3,7 @@
 #include "SourceBasedOutlineUpdateStrategy.h"
 #include "VaultableOutlineUpdateStrategy.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UVaultableOutlineUpdateStrategy : public USourceBasedOutlineUpdateStrategy {
     GENERATED_BODY()
 public:
@@ -12,9 +12,9 @@ private:
     bool _canBeRevealedToLocalPlayer;
     
 public:
+    UVaultableOutlineUpdateStrategy();
     UFUNCTION(BlueprintCallable)
     void SetCanBeRevealedToLocalPlayer(bool canBeRevealedToLocalPlayer);
     
-    UVaultableOutlineUpdateStrategy();
 };
 

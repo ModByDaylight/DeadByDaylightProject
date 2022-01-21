@@ -1,23 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UMGLoadoutBaseWidget.h"
+#include "OnTallyScoreboardAddFriendEvent.h"
 #include "TallyPlayerResultData.h"
+#include "OnTallyScoreboardReportEvent.h"
 #include "UMGTallyScoreboardPlayerInfoWidget.generated.h"
 
 class UImage;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGTallyScoreboardPlayerInfoWidgetOnTallyScoreboardAddFriendEvent, const FString&, playerID);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGTallyScoreboardPlayerInfoWidgetOnTallyScoreboardReportEvent, const FString&, playerID);
 
 UCLASS(EditInlineNew)
 class UUMGTallyScoreboardPlayerInfoWidget : public UUMGLoadoutBaseWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FUMGTallyScoreboardPlayerInfoWidgetOnTallyScoreboardAddFriendEvent OnTallyScoreboardAddFriendEvent;
+    FOnTallyScoreboardAddFriendEvent OnTallyScoreboardAddFriendEvent;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGTallyScoreboardPlayerInfoWidgetOnTallyScoreboardReportEvent OnTallyScoreboardReportEvent;
+    FOnTallyScoreboardReportEvent OnTallyScoreboardReportEvent;
     
     UPROPERTY(BlueprintReadOnly, Export)
     UImage* ImageHorizontalSeparation;
@@ -29,6 +28,9 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     bool LoadoutIsBlocked;
     
+public:
+    UUMGTallyScoreboardPlayerInfoWidget();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void UpdateWidget();
     
@@ -54,6 +56,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void HandleAddFriendEvent(FName buttonID);
     
-    UUMGTallyScoreboardPlayerInfoWidget();
 };
 

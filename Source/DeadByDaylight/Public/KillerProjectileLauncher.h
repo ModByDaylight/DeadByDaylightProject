@@ -5,15 +5,14 @@
 
 class ASlasherPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UKillerProjectileLauncher : public UBaseProjectileLauncher {
     GENERATED_BODY()
 public:
+    UKillerProjectileLauncher();
 protected:
     UFUNCTION(BlueprintPure)
     ASlasherPlayer* GetOwningKiller() const;
     
-public:
-    UKillerProjectileLauncher();
 };
 

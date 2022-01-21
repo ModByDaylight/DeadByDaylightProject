@@ -1,16 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/PlayerInput.h"
 #include "GameFramework/GameUserSettings.h"
-#include "AtlantaCustomizedHudSettings.h"
 #include "GameFramework/PlayerInput.h"
+#include "GameFramework/PlayerInput.h"
+#include "OnSetAtlantaCustomizedHudsTimestamp.h"
 #include "SharedAuthenticationTokenInformation.h"
+#include "AtlantaCustomizedHudSettings.h"
 #include "Rendering/RenderingCommon.h"
 #include "DBDGameUserSettings.generated.h"
 
 class UDBDGameUserSettings;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDBDGameUserSettingsOnSetCustomizedHudsTimestamp);
 
 UCLASS()
 class DEADBYDAYLIGHT_API UDBDGameUserSettings : public UGameUserSettings {
@@ -23,14 +22,11 @@ public:
     TArray<FInputAxisKeyMapping> AxisMappings;
     
     UPROPERTY()
-    FDBDGameUserSettingsOnSetCustomizedHudsTimestamp OnSetCustomizedHudsTimestamp;
+    FOnSetAtlantaCustomizedHudsTimestamp OnSetCustomizedHudsTimestamp;
     
 private:
     UPROPERTY(Config)
     FString DeviceLoginTokenID;
-    
-    UPROPERTY(Config)
-    int32 ScreenScaleForWindowedMode;
     
     UPROPERTY(Config)
     int32 ScalabilityLevel;
@@ -180,6 +176,7 @@ private:
     int32 SubtitlesSize;
     
 public:
+    UDBDGameUserSettings();
     UFUNCTION(BlueprintPure)
     int32 GetSkillCheckScaleFactor() const;
     
@@ -210,6 +207,5 @@ public:
     UFUNCTION(BlueprintPure)
     EColorVisionDeficiency GetColorBlindMode() const;
     
-    UDBDGameUserSettings();
 };
 

@@ -17,10 +17,11 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
     float _cooldownTime;
     
+public:
+    UAISkill_InteractionTarget_ThrowAntidote();
+protected:
     UFUNCTION()
     void OnPathUpdated();
     
-public:
-    UAISkill_InteractionTarget_ThrowAntidote();
 };
 

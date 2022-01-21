@@ -5,8 +5,8 @@
 
 class UAkAudioEvent;
 class UCanvasPanel;
-class UHorizontalBox;
 class UUMGScrollListPageButton;
+class UHorizontalBox;
 
 UCLASS(Abstract, EditInlineNew)
 class DBDUIVIEWSMOBILE_API UUMGPageScrollWidget : public UMobileBaseUserWidget {
@@ -56,9 +56,9 @@ protected:
     TArray<UMobileBaseUserWidget*> _activeWidgets;
     
 public:
+    UUMGPageScrollWidget();
     UFUNCTION()
     void HandlePageButtonClicked(int32 pageIndex);
     
-    UUMGPageScrollWidget();
 };
 

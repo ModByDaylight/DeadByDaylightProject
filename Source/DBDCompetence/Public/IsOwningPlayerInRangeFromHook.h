@@ -3,15 +3,14 @@
 #include "AnyActorPairQueryRangeIsTrue.h"
 #include "IsOwningPlayerInRangeFromHook.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIsOwningPlayerInRangeFromHook : public UAnyActorPairQueryRangeIsTrue {
     GENERATED_BODY()
 public:
+    UIsOwningPlayerInRangeFromHook();
 protected:
     UFUNCTION()
     void OnLevelReadyToPlay();
     
-public:
-    UIsOwningPlayerInRangeFromHook();
 };
 

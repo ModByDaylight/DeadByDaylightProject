@@ -3,7 +3,7 @@
 #include "InjectSerumInteraction.h"
 #include "InjectSerumOther.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UInjectSerumOther : public UInjectSerumInteraction {
     GENERATED_BODY()
 public:

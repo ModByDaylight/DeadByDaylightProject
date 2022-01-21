@@ -12,6 +12,7 @@ public:
     UPROPERTY(BlueprintReadWrite, Transient)
     bool IsHeartbeatShown;
     
+    AAtlantaHeartbeatActor();
     UFUNCTION(BlueprintImplementableEvent)
     void ShowHeartbeat();
     
@@ -29,6 +30,5 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
     void HideHeartbeat();
     
-    AAtlantaHeartbeatActor();
 };
 

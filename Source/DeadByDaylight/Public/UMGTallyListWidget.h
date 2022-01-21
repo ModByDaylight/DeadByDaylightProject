@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UMGPageScrollWidget.h"
-#include "ETallyListPageID.h"
 #include "EPlayerRole.h"
+#include "ETallyListPageID.h"
 #include "UMGTallyListWidget.generated.h"
 
-class UUMGTallyListElementWidget;
 class UCanvasPanel;
+class UUMGTallyListElementWidget;
 
 UCLASS(EditInlineNew)
 class UUMGTallyListWidget : public UUMGPageScrollWidget {

@@ -4,10 +4,10 @@
 #include "DBDEmblem.h"
 #include "DBDEmblem_SurvivorUnbroken.generated.h"
 
-class UDBDRankDesignTunables;
 class UCurveFloat;
+class UDBDRankDesignTunables;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDBDEmblem_SurvivorUnbroken : public UDBDEmblem {
     GENERATED_BODY()
 public:
@@ -18,10 +18,11 @@ private:
     UPROPERTY(EditAnywhere)
     TSubclassOf<UDBDRankDesignTunables> _rankTunablesClass;
     
+public:
+    UDBDEmblem_SurvivorUnbroken();
+private:
     UFUNCTION()
     void OnIntroCompleted();
     
-public:
-    UDBDEmblem_SurvivorUnbroken();
 };
 

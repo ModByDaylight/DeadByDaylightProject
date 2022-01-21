@@ -6,7 +6,7 @@
 class UParticleSystem;
 class UParticleSystemComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDAggregateParticleLocatorComponent : public UDBDLocatorComponent {
     GENERATED_BODY()
 public:

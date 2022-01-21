@@ -30,6 +30,8 @@ private:
     UPROPERTY(Export)
     TArray<UUMGAtlantaEventsTab*> _eventsArray;
     
+public:
+    UUMGAtlantaEventsScreen();
 protected:
     UFUNCTION(BlueprintCallable)
     void HandleEventTabClicked(const FString& id);
@@ -41,7 +43,5 @@ private:
     UFUNCTION()
     void BroadcastDeepLinkRequest(const FString& id);
     
-public:
-    UUMGAtlantaEventsScreen();
 };
 

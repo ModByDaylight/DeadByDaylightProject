@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MaterialOriginalState.h"
 #include "GameFramework/Actor.h"
+#include "MaterialOriginalState.h"
 #include "UObject/NoExportTypes.h"
 #include "ClipManager.generated.h"
 
-class UMaterialInterface;
+class UDBDClipRegionComponent;
 class UDataTable;
 class UMeshComponent;
-class UDBDClipRegionComponent;
+class UMaterialInterface;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AClipManager : public AActor {
@@ -34,12 +34,12 @@ private:
     UDataTable* _sphericalDissolveMaterials;
     
 public:
+    AClipManager();
     UFUNCTION(BlueprintCallable)
     void SphericalDissolveAt(FVector Location, float radius);
     
     UFUNCTION(BlueprintCallable)
     void RemoveDissolveMaterials();
     
-    AClipManager();
 };
 

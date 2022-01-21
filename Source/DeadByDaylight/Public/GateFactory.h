@@ -10,9 +10,9 @@ UCLASS()
 class AGateFactory : public AActor {
     GENERATED_BODY()
 public:
+    AGateFactory();
     UFUNCTION(BlueprintCallable)
     AGate* GetGate(EGateType gateType);
     
-    AGateFactory();
 };
 

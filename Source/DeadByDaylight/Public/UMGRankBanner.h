@@ -1,17 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "EPlayerRole.h"
 #include "Highlightable.h"
-#include "TooltipPressedData.h"
+#include "OnTooltipTriggeredEvent.h"
+#include "EPlayerRole.h"
 #include "UMGRankBanner.generated.h"
 
-class UAkAudioEvent;
 class UUMGTallyRankFrame;
 class UButton;
 class UImage;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGRankBannerOnLongPressRankTooltipEvent, const FTooltipPressedData&, tooltipPressedData);
+class UAkAudioEvent;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGRankBanner : public UMobileBaseUserWidget, public IHighlightable {
@@ -32,9 +30,10 @@ protected:
     
 private:
     UPROPERTY()
-    FUMGRankBannerOnLongPressRankTooltipEvent _onLongPressRankTooltipEvent;
+    FOnTooltipTriggeredEvent _onLongPressRankTooltipEvent;
     
 public:
+    UUMGRankBanner();
     UFUNCTION(BlueprintCallable)
     void StopHighlight();
     
@@ -48,7 +47,7 @@ private:
     UFUNCTION()
     void HandleTooltipLongPressedEvent();
     
-public:
-    UUMGRankBanner();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

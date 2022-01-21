@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
 #include "GameplayTagContainer.h"
+#include "UObject/Object.h"
 #include "GameEventData.h"
 #include "EscapeRequirementTracker.generated.h"
 
@@ -19,10 +19,11 @@ private:
     UPROPERTY(Transient)
     ADBDGameState* _dbdGameState;
     
+public:
+    UEscapeRequirementTracker();
+private:
     UFUNCTION()
     void OnGameEventDispatched(FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-public:
-    UEscapeRequirementTracker();
 };
 

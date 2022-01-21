@@ -5,7 +5,7 @@
 
 class ATotem;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UOwningPlayerInBoonBlessingRange : public UAnyActorPairQueryRangeIsTrue {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "FurtiveChase.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UFurtiveChase : public UPerk {
     GENERATED_BODY()
 public:

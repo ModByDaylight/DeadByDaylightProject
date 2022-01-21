@@ -1,49 +1,46 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "DemonModeReadyDelegate.h"
 #include "Components/ActorComponent.h"
-#include "UObject/NoExportTypes.h"
+#include "DemonModeStartedDelegate.h"
+#include "DemonModeEndedDelegate.h"
+#include "DemonModeInterruptedDuringStartupDelegate.h"
+#include "DemonModeInterruptedDuringEndingDelegate.h"
+#include "DemonModeChargeGainedAfterAttackDelegate.h"
+#include "DemonModeChargeGainedAfterLockerGrabDelegate.h"
 #include "EDemonModeState.h"
 #include "AnimationMontageDescriptor.h"
 #include "DemonModeComponent.generated.h"
 
-class UPowerToggleComponent;
-class ACamperPlayer;
 class UPowerChargeComponent;
+class UPowerToggleComponent;
 class UInteractionStarterComponent;
 class UInteractionDefinition;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDemonModeComponentOnChargeGainedAfterLockerGrabCosmetic, ACamperPlayer*, camperInLocker);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDemonModeComponentOnDemonModeReady);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDemonModeComponentOnChargeGainedAfterAttackCosmetic, FVector, targetLocation);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDemonModeComponentOnDemonModeStarted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDemonModeComponentOnDemonModeEnded);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDemonModeComponentOnDemonModeInterruptedDuringStartup);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDemonModeComponentOnDemonModeInterruptedDuringEnding);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class THEONI_API UDemonModeComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FDemonModeComponentOnDemonModeReady OnDemonModeReady;
+    FDemonModeReadyDelegate OnDemonModeReady;
     
     UPROPERTY(BlueprintAssignable)
-    FDemonModeComponentOnDemonModeStarted OnDemonModeStarted;
+    FDemonModeStartedDelegate OnDemonModeStarted;
     
     UPROPERTY(BlueprintAssignable)
-    FDemonModeComponentOnDemonModeEnded OnDemonModeEnded;
+    FDemonModeEndedDelegate OnDemonModeEnded;
     
     UPROPERTY(BlueprintAssignable)
-    FDemonModeComponentOnDemonModeInterruptedDuringStartup OnDemonModeInterruptedDuringStartup;
+    FDemonModeInterruptedDuringStartupDelegate OnDemonModeInterruptedDuringStartup;
     
     UPROPERTY(BlueprintAssignable)
-    FDemonModeComponentOnDemonModeInterruptedDuringEnding OnDemonModeInterruptedDuringEnding;
+    FDemonModeInterruptedDuringEndingDelegate OnDemonModeInterruptedDuringEnding;
     
     UPROPERTY(BlueprintAssignable)
-    FDemonModeComponentOnChargeGainedAfterAttackCosmetic OnChargeGainedAfterAttackCosmetic;
+    FDemonModeChargeGainedAfterAttackDelegate OnChargeGainedAfterAttackCosmetic;
     
     UPROPERTY(BlueprintAssignable)
-    FDemonModeComponentOnChargeGainedAfterLockerGrabCosmetic OnChargeGainedAfterLockerGrabCosmetic;
+    FDemonModeChargeGainedAfterLockerGrabDelegate OnChargeGainedAfterLockerGrabCosmetic;
     
 private:
     UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
@@ -62,6 +59,9 @@ private:
     EDemonModeState _demonModeState;
     
 public:
+    UDemonModeComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintPure)
     bool ShouldLoseDemonModeOnStun() const;
     
@@ -117,8 +117,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_AddCharge(const float chargeAmount);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UDemonModeComponent();
 };
 

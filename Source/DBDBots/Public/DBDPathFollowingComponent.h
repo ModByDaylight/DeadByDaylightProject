@@ -5,7 +5,7 @@
 
 class ANavLinkProxy;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDBOTS_API UDBDPathFollowingComponent : public UPathFollowingComponent {
     GENERATED_BODY()
 public:

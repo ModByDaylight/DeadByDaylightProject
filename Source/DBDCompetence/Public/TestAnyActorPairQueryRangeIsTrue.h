@@ -5,7 +5,7 @@
 
 class UActorPairQueryEvaluatorComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTestAnyActorPairQueryRangeIsTrue : public UAnyActorPairQueryRangeIsTrue {
     GENERATED_BODY()
 public:

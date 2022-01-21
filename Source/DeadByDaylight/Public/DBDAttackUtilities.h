@@ -10,12 +10,12 @@ UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UDBDAttackUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UDBDAttackUtilities();
     UFUNCTION(BlueprintPure)
     static EAttackType GetCurrentAttackType(const AActor* attacker);
     
     UFUNCTION(BlueprintPure)
     static float GetCurrentAttackSubstateRemainingTime(const AActor* attacker);
     
-    UDBDAttackUtilities();
 };
 

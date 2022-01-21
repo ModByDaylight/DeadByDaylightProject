@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "MagicFountainOutlineUpdateStrategy.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UMagicFountainOutlineUpdateStrategy : public UOutlineUpdateStrategy {
     GENERATED_BODY()
 public:
@@ -13,9 +13,9 @@ private:
     FLinearColor _outlineColor;
     
 public:
+    UMagicFountainOutlineUpdateStrategy();
     UFUNCTION(BlueprintCallable)
     void SetFountainCorrupted(const bool corrupted);
     
-    UMagicFountainOutlineUpdateStrategy();
 };
 

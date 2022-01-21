@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Styling/SlateBrush.h"
 #include "UmgPlayableHud.h"
+#include "Styling/SlateBrush.h"
 #include "UObject/NoExportTypes.h"
 #include "EInputInteractionType.h"
 #include "EInventoryType.h"
 #include "UmgKillerHud.generated.h"
 
+class UAtlantaHudPowerAttackJoystick;
 class UPowerButton;
 class UCanvasPanel;
 class UActionButton;
 class ASlasherPlayer;
 class UMobileBaseUserWidget;
 class UUMGGhostfaceSpecific;
-class UAtlantaHudPowerAttackJoystick;
 class ACollectable;
 class UInteractionDefinition;
 
@@ -88,6 +88,8 @@ protected:
     UPROPERTY(EditAnywhere)
     FVector2D _powerAttackJoystickThumbUnpressedSize;
     
+public:
+    UUmgKillerHud();
 private:
     UFUNCTION()
     void UpdatePowerButtonTier(int32 previousTier, int32 currentTier, bool isFirstTime);
@@ -162,7 +164,5 @@ private:
     UFUNCTION(BlueprintPure)
     UInteractionDefinition* GetCurrentPowerUseInteraction() const;
     
-public:
-    UUmgKillerHud();
 };
 

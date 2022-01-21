@@ -7,6 +7,7 @@ UCLASS()
 class UReportPlayerPopupScreen : public UGenericPopupScreen {
     GENERATED_BODY()
 public:
+    UReportPlayerPopupScreen();
 private:
     UFUNCTION()
     void OnTextInputMouseOver(bool isMouseOver);
@@ -14,7 +15,5 @@ private:
     UFUNCTION()
     void OnConfirmReportPlayer(const FString& category, const FString& comment);
     
-public:
-    UReportPlayerPopupScreen();
 };
 

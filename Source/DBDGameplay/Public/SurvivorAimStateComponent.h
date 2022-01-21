@@ -5,7 +5,7 @@
 
 class ACollectable;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USurvivorAimStateComponent : public UActorComponent {
     GENERATED_BODY()
 public:

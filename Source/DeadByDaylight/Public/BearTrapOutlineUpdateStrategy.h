@@ -4,10 +4,10 @@
 #include "UObject/NoExportTypes.h"
 #include "BearTrapOutlineUpdateStrategy.generated.h"
 
-class UCurveLinearColor;
 class UMapActorComponent;
+class UCurveLinearColor;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UBearTrapOutlineUpdateStrategy : public UOutlineUpdateStrategy {
     GENERATED_BODY()
 public:
@@ -25,9 +25,9 @@ private:
     UMapActorComponent* _owningBearTrapMapActorComponent;
     
 public:
+    UBearTrapOutlineUpdateStrategy();
     UFUNCTION(BlueprintCallable)
     void SetOwningBearTrapMapActorComponent(UMapActorComponent* mapActorComponent);
     
-    UBearTrapOutlineUpdateStrategy();
 };
 

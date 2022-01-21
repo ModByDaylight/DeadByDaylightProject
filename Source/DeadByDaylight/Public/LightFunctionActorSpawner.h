@@ -5,7 +5,7 @@
 
 class UTexture;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ULightFunctionActorSpawner : public UActorSpawner {
     GENERATED_BODY()
 public:

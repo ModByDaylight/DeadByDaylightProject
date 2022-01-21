@@ -33,11 +33,11 @@ private:
     UPROPERTY(Export, Transient)
     UUMGEndGameCollapseProgressWidget* _topBar;
     
+public:
+    UUMGEndGameCollapseWidget();
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void PlayToZeroAnimation();
     
-public:
-    UUMGEndGameCollapseWidget();
 };
 

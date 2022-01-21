@@ -6,9 +6,9 @@
 #include "ConjoinedTwinAnimInstance.generated.h"
 
 class AConjoinedTwin;
-class UTwinLockerBlockerComponent;
 class UDBDAttackerComponent;
 class UTwinAttachmentComponent;
+class UTwinLockerBlockerComponent;
 
 UCLASS(NonTransient)
 class UConjoinedTwinAnimInstance : public UPlayerAnimInstance {
@@ -96,10 +96,11 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     EAttackSubstate _attackState;
     
+public:
+    UConjoinedTwinAnimInstance();
+protected:
     UFUNCTION(BlueprintPure)
     AConjoinedTwin* GetOwningConjoinedTwin() const;
     
-public:
-    UConjoinedTwinAnimInstance();
 };
 

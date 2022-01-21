@@ -4,8 +4,8 @@
 #include "UObject/Object.h"
 #include "FSM_State.generated.h"
 
-class UFSM_State;
 class UFSM_Transition;
+class UFSM_State;
 class UFiniteStateMachine;
 
 UCLASS(Abstract)

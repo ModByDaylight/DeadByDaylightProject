@@ -18,9 +18,9 @@ private:
     USpawnerStrategy* _spawnerStrategy;
     
 public:
+    UDecalSpawner();
     UFUNCTION(BlueprintCallable)
     USpawnerStrategy* GetSpawnerStrategy();
     
-    UDecalSpawner();
 };
 

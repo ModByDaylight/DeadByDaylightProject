@@ -3,10 +3,10 @@
 #include "ChargeableInteractionDefinition.h"
 #include "OniDashInteraction.generated.h"
 
-class ADBDPlayer;
 class UCurveFloat;
+class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UOniDashInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -24,6 +24,7 @@ protected:
     UCurveFloat* _cooldownSpeedCurve;
     
 public:
+    UOniDashInteraction();
     UFUNCTION(BlueprintCallable)
     void SetPlayerOwner(const ADBDPlayer* player);
     
@@ -44,7 +45,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void OnChargeBegin(ADBDPlayer* player);
     
-public:
-    UOniDashInteraction();
 };
 

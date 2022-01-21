@@ -1,5 +1,6 @@
 #include "BloodOrb.h"
 #include "Net/UnrealNetwork.h"
+#include "BloodOrbFadeComponent.h"
 
 class ADBDPlayer;
 
@@ -37,5 +38,6 @@ ABloodOrb::ABloodOrb() {
     this->_outlineComponent = NULL;
     this->_despawnDelay = 0.00f;
     this->_state = EBloodOrbState::Invalid;
+    this->_fadeComponent = CreateDefaultSubobject<UBloodOrbFadeComponent>(TEXT("FadeComponent"));
 }
 

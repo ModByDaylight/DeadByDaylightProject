@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "ResiliencePerk.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UResiliencePerk : public UPerk {
     GENERATED_BODY()
 public:

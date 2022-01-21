@@ -5,8 +5,8 @@
 #include "Navigation/PathFollowingComponent.h"
 #include "AICharacterRepairGeneratorBehaviour.generated.h"
 
-class ADBDAIPlayerController;
 class ADBDPlayer;
+class ADBDAIPlayerController;
 class UInteractor;
 class UAICharacterRepairGeneratorBehaviourData;
 
@@ -27,13 +27,14 @@ private:
     UPROPERTY()
     UAICharacterRepairGeneratorBehaviourData* _characterRepairGeneratorData;
     
+public:
+    UAICharacterRepairGeneratorBehaviour();
+private:
     UFUNCTION()
     void OnMovementFinished(FAIRequestID RequestID, TEnumAsByte<EPathFollowingResult::Type> Result);
     
     UFUNCTION()
     void OnGeneratorRepairedEventHandler(bool isAutoCompleted);
     
-public:
-    UAICharacterRepairGeneratorBehaviour();
 };
 

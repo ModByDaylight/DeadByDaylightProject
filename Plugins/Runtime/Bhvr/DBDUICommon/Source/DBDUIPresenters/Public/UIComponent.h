@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "UIComponent.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class DBDUIPRESENTERS_API UUIComponent : public UActorComponent {
     GENERATED_BODY()
 public:

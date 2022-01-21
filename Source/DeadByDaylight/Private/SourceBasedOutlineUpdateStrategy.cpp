@@ -1,8 +1,8 @@
 #include "SourceBasedOutlineUpdateStrategy.h"
 
 class UObject;
-class ADBDPlayer;
 class AActor;
+class ADBDPlayer;
 
 void USourceBasedOutlineUpdateStrategy::ResetReveal() {
 }

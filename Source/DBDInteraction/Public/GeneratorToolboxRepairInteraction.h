@@ -6,7 +6,7 @@
 
 class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UGeneratorToolboxRepairInteraction : public UGeneratorRepairInteraction {
     GENERATED_BODY()
 public:
@@ -21,6 +21,7 @@ private:
     FDBDTunableRowHandle _repairSkillCheckChanceWhenEmpty;
     
 public:
+    UGeneratorToolboxRepairInteraction();
     UFUNCTION(BlueprintPure)
     bool HasChargedToolBox(const ADBDPlayer* player) const;
     
@@ -28,7 +29,5 @@ protected:
     UFUNCTION(BlueprintPure)
     FString GetInteractionTextWhenEmpty() const;
     
-public:
-    UGeneratorToolboxRepairInteraction();
 };
 

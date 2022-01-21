@@ -8,9 +8,9 @@ UCLASS(Blueprintable)
 class URitualEvaluatorBase : public UObject {
     GENERATED_BODY()
 public:
+    URitualEvaluatorBase();
     UFUNCTION(BlueprintNativeEvent)
     bool EvaluateEvent(const FRitualEvent& ritualEvent);
     
-    URitualEvaluatorBase();
 };
 

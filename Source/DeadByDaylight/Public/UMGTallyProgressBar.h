@@ -26,12 +26,12 @@ protected:
     FVector2D _pipsAlignment;
     
 public:
+    UUMGTallyProgressBar();
     UFUNCTION(BlueprintCallable)
     void SetPercent(float value);
     
     UFUNCTION(BlueprintPure)
     int32 GetPipsCount() const;
     
-    UUMGTallyProgressBar();
 };
 

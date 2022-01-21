@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ChaseComponent.h"
-#include "ChaseUpdateInfo.h"
 #include "GameplayTagContainer.h"
+#include "ChaseUpdateInfo.h"
 #include "ChaserCharacterComponent.generated.h"
 
+class APawn;
 class UDBDPawnSensingComponent;
 class ADBDPlayer;
 class ACamperPlayer;
-class APawn;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UChaserCharacterComponent : public UChaseComponent {
     GENERATED_BODY()
 public:
@@ -30,6 +30,11 @@ private:
     UPROPERTY(EditAnywhere)
     FGameplayTagContainer _preventChaseTags;
     
+public:
+    UChaserCharacterComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnKillerLocallyObservedChanged(bool locallyObserved);
     
@@ -45,9 +50,5 @@ private:
     UFUNCTION()
     void Authority_OnChaseTargetFound(APawn* pawn);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UChaserCharacterComponent();
 };
 

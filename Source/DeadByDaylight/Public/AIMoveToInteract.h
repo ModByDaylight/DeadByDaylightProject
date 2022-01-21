@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AICharacterBehaviour.h"
-#include "Navigation/PathFollowingComponent.h"
 #include "AITypes.h"
+#include "Navigation/PathFollowingComponent.h"
 #include "AIMoveToInteract.generated.h"
 
-class ADBDAIPlayerController;
 class UAIMoveToInteractData;
-class ADBDPlayer;
 class UAICharacterBehaviourData;
+class ADBDAIPlayerController;
+class ADBDPlayer;
 
 UCLASS()
 class UAIMoveToInteract : public UAICharacterBehaviour {
@@ -21,6 +21,9 @@ private:
     UPROPERTY(Transient)
     ADBDAIPlayerController* _aiController;
     
+public:
+    UAIMoveToInteract();
+private:
     UFUNCTION()
     void InteractionPointReached(FAIRequestID RequestID, TEnumAsByte<EPathFollowingResult::Type> Result);
     
@@ -28,6 +31,5 @@ public:
     UFUNCTION()
     void Init(ADBDPlayer* character, UAICharacterBehaviourData* behaviourData);
     
-    UAIMoveToInteract();
 };
 

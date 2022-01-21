@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "ECurrencyType.h"
 #include "TooltipPressedData.h"
+#include "ECurrencyType.h"
 #include "UMGBaseRootStorefrontWidget.generated.h"
 
-class UNamedSlot;
 class UPanelWidget;
+class UNamedSlot;
 class UUMGBaseButtonWidget;
 class UTextBlock;
 
@@ -27,6 +27,9 @@ protected:
     UPROPERTY(Export)
     UTextBlock* StorefrontTitle;
     
+public:
+    UUMGBaseRootStorefrontWidget();
+protected:
     UFUNCTION()
     void OnPurchaseAuricCellButtonPressed();
     
@@ -36,7 +39,5 @@ protected:
     UFUNCTION()
     void OnBackButtonPressed();
     
-public:
-    UUMGBaseRootStorefrontWidget();
 };
 

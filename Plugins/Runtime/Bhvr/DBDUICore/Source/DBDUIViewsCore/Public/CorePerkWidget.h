@@ -9,5 +9,7 @@ class DBDUIVIEWSCORE_API UCorePerkWidget : public UCoreBaseLoadoutPartWidget, pu
     GENERATED_BODY()
 public:
     UCorePerkWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

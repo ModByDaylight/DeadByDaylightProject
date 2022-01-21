@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TunableStat.h"
 #include "KillerAnimInstance.h"
 #include "DBDTunableRowHandle.h"
+#include "TunableStat.h"
 #include "GunslingerAnimInstance.generated.h"
 
 class UAnimSequence;

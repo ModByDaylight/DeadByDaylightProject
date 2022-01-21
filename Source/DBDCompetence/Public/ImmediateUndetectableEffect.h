@@ -3,7 +3,7 @@
 #include "StatusEffect.h"
 #include "ImmediateUndetectableEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UImmediateUndetectableEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

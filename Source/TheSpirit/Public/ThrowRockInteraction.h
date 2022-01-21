@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InteractionDefinition.h"
 #include "DBDTunableRowHandle.h"
+#include "InteractionDefinition.h"
 #include "ThrowRockInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UThrowRockInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:

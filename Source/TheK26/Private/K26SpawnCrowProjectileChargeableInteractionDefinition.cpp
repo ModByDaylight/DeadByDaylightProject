@@ -1,10 +1,10 @@
 #include "K26SpawnCrowProjectileChargeableInteractionDefinition.h"
 
-class ADBDPlayer;
+class ASlasherPlayer;
 class UK26AmmoHandlerComponent;
 class UK26PathHandlerComponent;
 class UK26PowerStatusHandlerComponent;
-class ASlasherPlayer;
+class ADBDPlayer;
 
 void UK26SpawnCrowProjectileChargeableInteractionDefinition::SetSummonCooldown() {
 }

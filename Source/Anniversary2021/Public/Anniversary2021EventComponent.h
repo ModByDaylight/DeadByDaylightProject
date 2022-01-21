@@ -6,7 +6,7 @@
 class UInteractionRespawnableTrigger;
 class UTimedRespawnableTrigger;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAnniversary2021EventComponent : public URespawningEventComponent {
     GENERATED_BODY()
 public:
@@ -17,10 +17,11 @@ private:
     UPROPERTY(Export, Transient)
     UTimedRespawnableTrigger* _timedRespawnableTrigger;
     
+public:
+    UAnniversary2021EventComponent();
+private:
     UFUNCTION()
     void Authority_OnIntroComplete();
     
-public:
-    UAnniversary2021EventComponent();
 };
 

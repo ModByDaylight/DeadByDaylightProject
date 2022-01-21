@@ -4,8 +4,8 @@
 #include "BaseTooltipWidget.generated.h"
 
 class UButton;
-class UTextBlock;
 class UCanvasPanel;
+class UTextBlock;
 class UUMGHtmlRichText;
 class UAkAudioEvent;
 
@@ -29,10 +29,11 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     UAkAudioEvent* TooltipOpeningSound;
     
+public:
+    UBaseTooltipWidget();
+protected:
     UFUNCTION()
     void OnQuitButtonClicked();
     
-public:
-    UBaseTooltipWidget();
 };
 

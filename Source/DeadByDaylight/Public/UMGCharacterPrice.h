@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PurchaseCurrencyData.h"
 #include "MobileBaseUserWidget.h"
 #include "UObject/NoExportTypes.h"
+#include "PurchaseCurrencyData.h"
 #include "UMGCharacterPrice.generated.h"
 
 class UTextBlock;
@@ -22,9 +22,9 @@ protected:
     FColor UnaffordableColor;
     
 public:
+    UUMGCharacterPrice();
     UFUNCTION()
     void SetCurrencyData(const FPurchaseCurrencyData& currencyData);
     
-    UUMGCharacterPrice();
 };
 

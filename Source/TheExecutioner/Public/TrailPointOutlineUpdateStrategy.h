@@ -4,7 +4,7 @@
 #include "DBDTunableRowHandle.h"
 #include "TrailPointOutlineUpdateStrategy.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UTrailPointOutlineUpdateStrategy : public USourceBasedOutlineUpdateStrategy {
     GENERATED_BODY()
 public:

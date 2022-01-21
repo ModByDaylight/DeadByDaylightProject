@@ -3,7 +3,7 @@
 #include "AdjustableCooldownStatusEffect.h"
 #include "MindbreakerBlindnessEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UMindbreakerBlindnessEffect : public UAdjustableCooldownStatusEffect {
     GENERATED_BODY()
 public:

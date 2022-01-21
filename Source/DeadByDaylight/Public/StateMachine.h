@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "StateMachine.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UStateMachine : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -15,6 +15,11 @@ private:
     UPROPERTY(Transient, ReplicatedUsing=NetIDStackChanged)
     TArray<uint16> _netStateIDStackInitial;
     
+public:
+    UStateMachine();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_SetStateStack(const TArray<uint16>& netStateIDStack);
     
@@ -24,9 +29,5 @@ private:
     UFUNCTION(NetMulticast, Reliable, WithValidation)
     void Multicast_SetStateStack(const TArray<uint16>& netStateIDStack);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UStateMachine();
 };
 

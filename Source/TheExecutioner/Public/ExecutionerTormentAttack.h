@@ -5,10 +5,11 @@
 
 class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEEXECUTIONER_API UExecutionerTormentAttack : public UPounceAttack {
     GENERATED_BODY()
 public:
+    UExecutionerTormentAttack();
 private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_TormentTryHitTargetNotInCoolDown(ADBDPlayer* target);
@@ -16,7 +17,5 @@ private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_TormentHitTarget(ADBDPlayer* target);
     
-public:
-    UExecutionerTormentAttack();
 };
 

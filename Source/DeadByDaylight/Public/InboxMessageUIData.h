@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EInboxMessageUIType.h"
 #include "UObject/NoExportTypes.h"
-#include "EInboxMessageUIState.h"
+#include "EInboxMessageUIType.h"
 #include "ClaimableInboxMessage.h"
+#include "EInboxMessageUIState.h"
 #include "InboxMessageUIData.generated.h"
 
 USTRUCT(BlueprintType)

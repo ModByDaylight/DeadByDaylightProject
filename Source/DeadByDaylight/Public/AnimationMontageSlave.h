@@ -6,10 +6,11 @@
 
 class UMontagePlayer;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UAnimationMontageSlave : public UActorComponent {
     GENERATED_BODY()
 public:
+    UAnimationMontageSlave();
     UFUNCTION(BlueprintCallable)
     void SetLeader(UMontagePlayer* leader);
     
@@ -20,7 +21,5 @@ private:
     UFUNCTION()
     void OnMontageStarted(const FAnimationMontageDescriptor id, const float rate);
     
-public:
-    UAnimationMontageSlave();
 };
 

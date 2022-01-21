@@ -4,10 +4,10 @@
 #include "HexPerk.h"
 #include "HexPentimento.generated.h"
 
-class ATotem;
 class URekindleTotemInteraction;
+class ATotem;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEK26_API UHexPentimento : public UHexPerk {
     GENERATED_BODY()
 public:

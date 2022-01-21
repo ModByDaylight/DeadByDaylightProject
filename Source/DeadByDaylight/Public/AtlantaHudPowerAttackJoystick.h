@@ -3,8 +3,8 @@
 #include "MobileBaseUserWidget.h"
 #include "AtlantaHudPowerAttackJoystick.generated.h"
 
-class UImage;
 class UCanvasPanel;
+class UImage;
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UAtlantaHudPowerAttackJoystick : public UMobileBaseUserWidget {
@@ -29,13 +29,14 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UImage* Icon;
     
+public:
+    UAtlantaHudPowerAttackJoystick();
+protected:
     UFUNCTION()
     void OnFinishedTutorialAnimationIn();
     
     UFUNCTION()
     void OnFinishedAvailableAnimation();
     
-public:
-    UAtlantaHudPowerAttackJoystick();
 };
 

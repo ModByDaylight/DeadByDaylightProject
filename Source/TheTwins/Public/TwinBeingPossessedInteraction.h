@@ -3,7 +3,7 @@
 #include "BeingPossessedInteraction.h"
 #include "TwinBeingPossessedInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UTwinBeingPossessedInteraction : public UBeingPossessedInteraction {
     GENERATED_BODY()
 public:

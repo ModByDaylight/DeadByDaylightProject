@@ -10,6 +10,7 @@ UCLASS(BlueprintType)
 class UGameplayModifierFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UGameplayModifierFunctionLibrary();
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static void Authority_SetPlayerGameplayModifier(ADBDPlayer* targetPlayer, FGameplayTag modifierType, float modifierValue);
     
@@ -28,6 +29,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static void Authority_ClearAllPlayerGameplayFlags(ADBDPlayer* targetPlayer);
     
-    UGameplayModifierFunctionLibrary();
 };
 

@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "ChainsawAnalyticsBaseComponent.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class THEHILLBILLY_API UChainsawAnalyticsBaseComponent : public UActorComponent {
     GENERATED_BODY()
 public:

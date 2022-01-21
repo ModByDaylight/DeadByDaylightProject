@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
+#include "Components/ActorComponent.h"
 #include "BaseGroundDetectorComponent.generated.h"
 
 class USkinnedMeshComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class ANIMATIONUTILITIES_API UBaseGroundDetectorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -31,12 +31,12 @@ private:
     FName _startSlopeTransformName;
     
 public:
+    UBaseGroundDetectorComponent();
     UFUNCTION(BlueprintCallable)
     void InitSkinnedMeshComponent(USkinnedMeshComponent* mesh);
     
     UFUNCTION(BlueprintCallable)
     FVector GetGroundPosition(const FVector targetPos, const FVector extraOffset);
     
-    UBaseGroundDetectorComponent();
 };
 

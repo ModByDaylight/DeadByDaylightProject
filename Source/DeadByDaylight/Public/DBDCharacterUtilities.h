@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
 #include "EPlayerRole.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "DBDCharacterUtilities.generated.h"
 
 class ADBDBasePlayer;
@@ -12,6 +12,7 @@ UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UDBDCharacterUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UDBDCharacterUtilities();
     UFUNCTION(BlueprintPure)
     static bool IsWilliamBillOverbeck(const ADBDBasePlayer* targetPlayer);
     
@@ -150,6 +151,5 @@ public:
     UFUNCTION(BlueprintPure)
     static EPlayerRole GetLocallyObservedPlayerRole(const UObject* worldContextObject);
     
-    UDBDCharacterUtilities();
 };
 

@@ -8,7 +8,7 @@
 
 class USkeletalMeshComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ANIMATIONUTILITIES_API UDetectionFanComponent : public USceneComponent {
     GENERATED_BODY()
 public:

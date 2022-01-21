@@ -7,7 +7,7 @@ class UMaterialInterface;
 class UMaterialInstanceDynamic;
 class USkeletalMeshComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API UOuterlineComponent : public USceneComponent {
     GENERATED_BODY()
 public:
@@ -32,9 +32,9 @@ private:
     USkeletalMeshComponent* _overlaySkeletalMesh;
     
 public:
+    UOuterlineComponent();
     UFUNCTION(BlueprintCallable)
     void SetIntensity(float intensity);
     
-    UOuterlineComponent();
 };
 

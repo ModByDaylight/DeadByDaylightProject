@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "ESleepingUIState.h"
+#include "PlayerStatusViewData.h"
 #include "CoreBaseHudWidget.h"
 #include "PlayerStatusViewInterface.h"
-#include "PlayerStatusAssets.h"
 #include "EPlayerStatus.h"
+#include "PlayerStatusAssets.h"
 #include "GameplayTagContainer.h"
-#include "PlayerStatusViewData.h"
+#include "ESleepingUIState.h"
 #include "EObsessionUIState.h"
 #include "EPlayerStateChangeType.h"
 #include "CorePlayerStatusWidget.generated.h"
 
-class UAkAudioEvent;
 class UDBDTextBlock;
 class UOverlay;
+class UAkAudioEvent;
 class UCorePlayerStatusKillerEffectWidget;
 
 UCLASS(EditInlineNew)
@@ -44,6 +44,8 @@ private:
     UPROPERTY(BlueprintReadOnly, Export, Transient, meta=(AllowPrivateAccess=true))
     UCorePlayerStatusKillerEffectWidget* _killerStatusEffectWidget;
     
+public:
+    UCorePlayerStatusWidget();
 protected:
     UFUNCTION(BlueprintPure)
     bool ShouldPlaySleepAnimation(ESleepingUIState newSleepState) const;
@@ -69,7 +71,7 @@ protected:
     UFUNCTION(BlueprintPure)
     UCorePlayerStatusKillerEffectWidget* GetKillerStatusEffectWidget() const;
     
-public:
-    UCorePlayerStatusWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -3,15 +3,14 @@
 #include "Components/ActorComponent.h"
 #include "SurviveTimerScoreEventComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API USurviveTimerScoreEventComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    USurviveTimerScoreEventComponent();
 private:
     UFUNCTION()
     void Authority_OnGameStarted();
     
-public:
-    USurviveTimerScoreEventComponent();
 };
 

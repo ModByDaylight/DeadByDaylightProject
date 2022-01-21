@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InteractionDefinition.h"
 #include "DBDTunableRowHandle.h"
+#include "InteractionDefinition.h"
 #include "k24PowerCooldownInteraction.generated.h"
 
-class AK24Power;
 class UCurveFloat;
+class AK24Power;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class Uk24PowerCooldownInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -25,9 +25,9 @@ private:
     UCurveFloat* _playedCooldownSpeedCurve;
     
 public:
+    Uk24PowerCooldownInteraction();
     UFUNCTION(BlueprintCallable)
     void SetK24Power(AK24Power* k24Power);
     
-    Uk24PowerCooldownInteraction();
 };
 

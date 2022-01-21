@@ -1,8 +1,8 @@
 #include "PerkManager.h"
 
+class UPerk;
 class UStatusEffect;
 class UGameplayModifierContainer;
-class UPerk;
 class ADBDPlayer;
 
 bool UPerkManager::HasStatusEffect(const FName statusEffectID) const {

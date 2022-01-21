@@ -15,6 +15,9 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     TArray<FString> InteractionIDs;
     
+public:
+    UInteractionProficiency();
+protected:
     UFUNCTION(BlueprintNativeEvent, BlueprintPure)
     float GetValue(const UChargeableInteractionDefinition* chargeableInteraction, const ADBDPlayer* player) const;
     
@@ -27,7 +30,5 @@ protected:
     UFUNCTION(BlueprintNativeEvent, BlueprintPure)
     bool GetIsActive(const UChargeableInteractionDefinition* chargeableInteraction, const ADBDPlayer* player) const;
     
-public:
-    UInteractionProficiency();
 };
 

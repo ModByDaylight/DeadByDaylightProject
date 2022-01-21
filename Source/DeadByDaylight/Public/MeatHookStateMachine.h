@@ -3,7 +3,7 @@
 #include "StateMachine.h"
 #include "MeatHookStateMachine.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UMeatHookStateMachine : public UStateMachine {
     GENERATED_BODY()
 public:

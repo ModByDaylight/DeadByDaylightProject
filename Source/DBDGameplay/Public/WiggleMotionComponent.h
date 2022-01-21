@@ -7,7 +7,7 @@
 class ADBDPlayer;
 class UDBDCharacterMovementComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UWiggleMotionComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -19,6 +19,7 @@ private:
     UDBDCharacterMovementComponent* _ownerMovementComponent;
     
 public:
+    UWiggleMotionComponent();
     UFUNCTION(BlueprintCallable)
     void SetIsBeingWiggled(const bool isBeingWiggled);
     
@@ -38,7 +39,5 @@ private:
     UFUNCTION()
     void OnHideWiggleSkillCheck(ESkillCheckCustomType type);
     
-public:
-    UWiggleMotionComponent();
 };
 

@@ -1,27 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
+#include "InterpolationDoneEvent.h"
 #include "LightingInterpolator.generated.h"
 
-class ULightComponent;
-class USkyLightComponent;
 class UExponentialHeightFogComponent;
 class ABaseSky;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLightingInterpolatorOnInterpolationDone);
+class ULightComponent;
+class USkyLightComponent;
 
 UCLASS(BlueprintType)
 class ULightingInterpolator : public UObject {
     GENERATED_BODY()
 public:
     UPROPERTY(Transient)
-    FLightingInterpolatorOnInterpolationDone OnInterpolationDone;
+    FInterpolationDoneEvent OnInterpolationDone;
     
 private:
     UPROPERTY(Transient)
     ABaseSky* _targetLighting;
     
 public:
+    ULightingInterpolator();
     UFUNCTION(BlueprintCallable)
     static void LerpSkylight(USkyLightComponent* Target, USkyLightComponent* A, USkyLightComponent* B, float alpha);
     
@@ -31,6 +31,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void LerpHeightFog(UExponentialHeightFogComponent* Target, UExponentialHeightFogComponent* A, UExponentialHeightFogComponent* B, float alpha);
     
-    ULightingInterpolator();
 };
 

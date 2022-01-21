@@ -17,8 +17,8 @@ private:
     TArray<FName> _levelPerkIDs;
     
 public:
+    UOfferingHandler();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UOfferingHandler();
 };
 

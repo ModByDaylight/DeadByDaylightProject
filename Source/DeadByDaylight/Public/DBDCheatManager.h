@@ -23,6 +23,9 @@ private:
     UPROPERTY(Transient)
     UVirtualKeyboard* _virtualKeyboard;
     
+public:
+    UDBDCheatManager();
+private:
     UFUNCTION(Exec)
     void DBD_WakeUpSurvivor();
     
@@ -1372,7 +1375,5 @@ private:
     UFUNCTION(Exec)
     void DBD_AcceptPartyInvite(const FString& partyId);
     
-public:
-    UDBDCheatManager();
 };
 

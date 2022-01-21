@@ -2,6 +2,8 @@
 #include "CoreMinimal.h"
 #include "BaseSurvivorAnimInstance.h"
 #include "SkillCheckFailureTracker.h"
+#include "GameplayTagContainer.h"
+#include "GameEventData.h"
 #include "HealSurvivorSubAnimInstance.generated.h"
 
 class ADBDPlayer;
@@ -47,13 +49,24 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     bool _hasHealerSkillCheckFailed;
     
+public:
+    UHealSurvivorSubAnimInstance();
+protected:
     UFUNCTION(BlueprintCallable)
     void ResetHealerSkillCheckFailed();
     
     UFUNCTION()
     void OnHealerSkillCheckResponseAesthetic(bool success, ADBDPlayer* healer);
     
+    
+    // Fix for true pure virtual functions not being implemented
 public:
-    UHealSurvivorSubAnimInstance();
+    UFUNCTION(BlueprintCallable)
+    void ResetSkillCheckFailed() override PURE_VIRTUAL(ResetSkillCheckFailed,);
+    
+protected:
+    UFUNCTION()
+    void OnSkillCheckFailed(const FGameplayTag gameEventType, const FGameEventData& gameEventData) override PURE_VIRTUAL(OnSkillCheckFailed,);
+    
 };
 

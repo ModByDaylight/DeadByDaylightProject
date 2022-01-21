@@ -19,6 +19,7 @@ private:
     UUMGDragWidget_HudEditor* _onEditWidget;
     
 public:
+    UUMGHudEditorVersionWidget();
     UFUNCTION(BlueprintCallable)
     void Show();
     
@@ -30,6 +31,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void Hide();
     
-    UUMGHudEditorVersionWidget();
 };
 

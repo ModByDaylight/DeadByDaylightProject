@@ -4,9 +4,9 @@
 #include "UMGStoreEventItemsPackButton.generated.h"
 
 class UUMGAtlStorePriceWidget;
+class UImage;
 class UCanvasPanel;
 class UUniformGridPanel;
-class UImage;
 class UTextBlock;
 class UUMGBaseButtonWidget;
 class UUMGAtlEndDateTimerWidget;
@@ -50,6 +50,9 @@ private:
     UPROPERTY(EditDefaultsOnly)
     int32 nbColumns;
     
+public:
+    UUMGStoreEventItemsPackButton();
+private:
     UFUNCTION()
     void ShowSelectedCanvas();
     
@@ -62,7 +65,5 @@ private:
     UFUNCTION()
     void HandleButtonClicked();
     
-public:
-    UUMGStoreEventItemsPackButton();
 };
 

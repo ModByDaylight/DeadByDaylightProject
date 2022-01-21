@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "SpectatingActorLinker.h"
 #include "DBDTunableRowHandle.h"
-#include "FastTimer.h"
+#include "SpectatingActorLinker.h"
 #include "TunableStat.h"
 #include "UObject/NoExportTypes.h"
+#include "FastTimer.h"
 #include "UObject/NoExportTypes.h"
 #include "K25Gateway.generated.h"
 
@@ -81,6 +81,11 @@ private:
     UPROPERTY(Transient)
     FFastTimer _possessionTimer;
     
+public:
+    AK25Gateway();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION(Reliable, Server)
     void Server_StartGatewayPossession(FVector possessionLocation, FRotator gatewayRotation);
     
@@ -154,9 +159,7 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_SetIsGatewayPositionValid(bool isGatewayPlacementValid);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    AK25Gateway();
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -3,7 +3,7 @@
 #include "EventDrivenModifierCondition.h"
 #include "BoonTotemIsActive.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UBoonTotemIsActive : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:

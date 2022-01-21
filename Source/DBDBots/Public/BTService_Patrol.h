@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTService.h"
-#include "BehaviorTree/BehaviorTreeTypes.h"
 #include "BehaviorTree/Blackboard/BlackboardKeyType.h"
+#include "BehaviorTree/BehaviorTreeTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "BTService_Patrol.generated.h"
 

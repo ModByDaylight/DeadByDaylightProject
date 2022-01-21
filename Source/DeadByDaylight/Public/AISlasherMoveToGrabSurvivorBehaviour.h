@@ -3,9 +3,9 @@
 #include "AICharacterBehaviour.h"
 #include "AISlasherMoveToGrabSurvivorBehaviour.generated.h"
 
-class ADBDAIPlayerController;
 class UAISlasherMoveToGrabSurvivorBehaviourData;
 class ASlasherPlayer;
+class ADBDAIPlayerController;
 
 UCLASS()
 class UAISlasherMoveToGrabSurvivorBehaviour : public UAICharacterBehaviour {

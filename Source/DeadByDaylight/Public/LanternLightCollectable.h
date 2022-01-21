@@ -14,11 +14,11 @@ private:
     ALanternInteractable* _parentLantern;
     
 public:
+    ALanternLightCollectable();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetParentLantern(ALanternInteractable* parentLantern);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ALanternLightCollectable();
 };
 

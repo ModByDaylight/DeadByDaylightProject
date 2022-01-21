@@ -3,7 +3,7 @@
 #include "GameplayModifierCondition.h"
 #include "OwningSlasherHasBeenStill.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UOwningSlasherHasBeenStill : public UGameplayModifierCondition {
     GENERATED_BODY()
 public:

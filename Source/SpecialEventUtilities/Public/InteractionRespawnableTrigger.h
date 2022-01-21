@@ -6,7 +6,7 @@
 class URespawningEventComponent;
 class ARespawnableInteractable;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class SPECIALEVENTUTILITIES_API UInteractionRespawnableTrigger : public URespawnableTrigger {
     GENERATED_BODY()
 public:
@@ -15,12 +15,12 @@ private:
     URespawningEventComponent* _respawningEventComponent;
     
 public:
+    UInteractionRespawnableTrigger();
     UFUNCTION()
     void Authority_OnNewRespawnableSubscribed(ARespawnableInteractable* newRespawnableInteractable);
     
     UFUNCTION()
     void Authority_OnInteractionEnded(ARespawnableInteractable* respawnableInteractable);
     
-    UInteractionRespawnableTrigger();
 };
 

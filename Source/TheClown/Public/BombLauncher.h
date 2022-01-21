@@ -6,7 +6,7 @@
 
 class UCurveFloat;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UBombLauncher : public UKillerProjectileLauncher {
     GENERATED_BODY()
 public:
@@ -22,6 +22,9 @@ private:
     EBombType _currentBombType;
     
 public:
+    UBombLauncher();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetProjectileSpeedCurve(UCurveFloat* newProjectileSpeedCurve);
     
@@ -49,8 +52,5 @@ public:
     UFUNCTION(BlueprintPure)
     EBombType GetCurrentBombType() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UBombLauncher();
 };
 

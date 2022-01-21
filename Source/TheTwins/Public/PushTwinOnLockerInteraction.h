@@ -4,11 +4,11 @@
 #include "DBDTunableRowHandle.h"
 #include "PushTwinOnLockerInteraction.generated.h"
 
-class AConjoinedTwin;
 class UChargeableComponent;
+class AConjoinedTwin;
 class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UPushTwinOnLockerInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -19,6 +19,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _pushTwinOnLockerMaxCharge;
     
+public:
+    UPushTwinOnLockerInteraction();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnTwinSet(AConjoinedTwin* twin);
     
@@ -28,9 +33,5 @@ private:
     UFUNCTION()
     void Authority_OnSurvivorInLockerChanged(ADBDPlayer* oldSurvivor, ADBDPlayer* newSurvivor);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UPushTwinOnLockerInteraction();
 };
 

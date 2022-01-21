@@ -3,8 +3,8 @@
 #include "UObject/Object.h"
 #include "AtlantaTutorialObjectiveManager.generated.h"
 
-class UVerticalBox;
 class UAtlantaObjectiveWidget;
+class UVerticalBox;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UAtlantaTutorialObjectiveManager : public UObject {

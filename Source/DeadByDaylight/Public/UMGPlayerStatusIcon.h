@@ -3,12 +3,12 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGPlayerStatusIcon.generated.h"
 
+class UUMGStalkingStatusEffectUI;
 class UProgressBar;
-class UImage;
-class UCanvasPanel;
 class UTexture2D;
 class UTextBlock;
-class UUMGStalkingStatusEffectUI;
+class UCanvasPanel;
+class UImage;
 class UMaterialInstanceDynamic;
 class UUMGLacerationStatusEffectUI;
 
@@ -159,6 +159,7 @@ private:
     UUMGLacerationStatusEffectUI* _lacerationStatusEffectUI;
     
 public:
+    UUMGPlayerStatusIcon();
     UFUNCTION(BlueprintImplementableEvent)
     void SetSleepingTimer(const float progress);
     
@@ -168,6 +169,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void OnPlayerStatusButtonClicked();
     
-    UUMGPlayerStatusIcon();
 };
 

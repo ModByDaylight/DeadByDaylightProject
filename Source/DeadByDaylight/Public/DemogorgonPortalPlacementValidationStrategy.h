@@ -6,7 +6,7 @@
 class UPortalPlacerStateComponent;
 class UChargedAttackStateComponent;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UDemogorgonPortalPlacementValidationStrategy : public UDefaultObjectPlacementValidationStrategy {
     GENERATED_BODY()
 public:

@@ -5,7 +5,7 @@
 
 class UAnimSequence;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UResetBearTrapInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

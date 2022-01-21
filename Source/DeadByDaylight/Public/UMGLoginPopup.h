@@ -14,9 +14,9 @@ protected:
     UUMGAuthentificationProviderListWidget* AuthenticationProviderList;
     
 public:
+    UUMGLoginPopup();
     UFUNCTION(BlueprintCallable)
     void ChooseProvider(const uint8 provider);
     
-    UUMGLoginPopup();
 };
 

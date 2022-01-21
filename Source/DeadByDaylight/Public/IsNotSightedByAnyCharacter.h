@@ -3,7 +3,7 @@
 #include "EventDrivenModifierCondition.h"
 #include "IsNotSightedByAnyCharacter.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UIsNotSightedByAnyCharacter : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:

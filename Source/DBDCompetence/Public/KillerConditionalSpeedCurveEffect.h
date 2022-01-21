@@ -5,7 +5,7 @@
 
 class UCurveFloat;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UKillerConditionalSpeedCurveEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

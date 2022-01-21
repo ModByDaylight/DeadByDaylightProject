@@ -1,8 +1,8 @@
 #include "InteractionDefinition.h"
 
 class ADBDPlayer;
-class UObject;
 class UInterruptionDefinition;
+class UObject;
 class UInteractor;
 class AInteractable;
 class AActor;

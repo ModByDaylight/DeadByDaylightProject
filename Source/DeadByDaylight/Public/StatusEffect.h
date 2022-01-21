@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameplayModifierContainer.h"
-#include "GameplayModifierData.h"
-#include "StatusEffectInitializationData.h"
-#include "EStatusEffectType.h"
 #include "GameplayNotificationData.h"
+#include "StatusEffectInitializationData.h"
+#include "GameplayModifierData.h"
+#include "EStatusEffectType.h"
 #include "Engine/EngineTypes.h"
 #include "StatusEffect.generated.h"
 
-class AActor;
 class UStatusEffect;
 class ADBDPlayer;
+class AActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UStatusEffect : public UGameplayModifierContainer {
     GENERATED_BODY()
 public:
@@ -53,6 +53,10 @@ private:
     
     UPROPERTY(EditDefaultsOnly)
     TArray<TSoftClassPtr<UStatusEffect>> _nonStackingEffects;
+    
+public:
+    UStatusEffect();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
     UFUNCTION(BlueprintNativeEvent)
@@ -158,8 +162,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintNativeEvent)
     void Authority_EndSelf();
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UStatusEffect();
 };
 

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPlayerRole.h"
-#include "ECharacterDifficulty.h"
 #include "PurchaseCurrencyData.h"
-#include "SpecialEventUIInfo.h"
+#include "ECharacterDifficulty.h"
 #include "AtlantaFreeTicketAffectedUIData.h"
+#include "SpecialEventUIInfo.h"
+#include "EPlayerRole.h"
 #include "CharacterSlotData.generated.h"
 
 USTRUCT(BlueprintType)

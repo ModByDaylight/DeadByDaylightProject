@@ -6,11 +6,11 @@
 
 class ALocker;
 class UPrimitiveComponent;
-class AActor;
 class UStunnableComponent;
+class AActor;
 class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UHeadOn : public UPerk {
     GENERATED_BODY()
 public:
@@ -31,6 +31,9 @@ private:
     UPROPERTY(Transient)
     ALocker* _locker;
     
+public:
+    UHeadOn();
+private:
     UFUNCTION()
     void OnPawnOverlapExit(UPrimitiveComponent* hitComponent, AActor* otherActor, UPrimitiveComponent* otherComp, int32 otherBodyIndex);
     
@@ -52,6 +55,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_ActivatePerk();
     
-    UHeadOn();
 };
 

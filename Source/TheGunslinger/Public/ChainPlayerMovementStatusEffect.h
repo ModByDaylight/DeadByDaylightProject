@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTunableRowHandle.h"
 #include "StatusEffect.h"
+#include "DBDTunableRowHandle.h"
 #include "ChainPlayerMovementStatusEffect.generated.h"
 
 class ARifleChain;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UChainPlayerMovementStatusEffect : public UStatusEffect {
     GENERATED_BODY()
 public:
@@ -20,10 +20,11 @@ private:
     UPROPERTY(Transient)
     ARifleChain* _chain;
     
+public:
+    UChainPlayerMovementStatusEffect();
+private:
     UFUNCTION()
     void OnIsChainCollidingChanged(bool isColliding);
     
-public:
-    UChainPlayerMovementStatusEffect();
 };
 

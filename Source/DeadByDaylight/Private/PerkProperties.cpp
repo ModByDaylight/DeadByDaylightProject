@@ -6,6 +6,5 @@ FPerkProperties::FPerkProperties() {
     this->TeachableOnBloodweblevel = 0;
     this->AtlantaTeachableLevel = 0;
     this->AtlantaLowPriority = false;
-    this->PerkLevelRarity.AddDefaulted(3);
 }
 

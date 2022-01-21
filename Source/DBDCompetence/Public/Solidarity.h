@@ -5,11 +5,11 @@
 #include "Solidarity.generated.h"
 
 class UChargeableComponent;
-class AActor;
 class UChargeableInteractionDefinition;
 class ADBDPlayer;
+class AActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API USolidarity : public UPerk {
     GENERATED_BODY()
 public:
@@ -26,13 +26,14 @@ private:
     UPROPERTY(Export, Transient)
     UChargeableInteractionDefinition* _healOtherInteraction;
     
+public:
+    USolidarity();
+private:
     UFUNCTION()
     void Authority_OnSkillCheckResponse(bool success, bool bonus, ADBDPlayer* player, bool triggerLoudNoise, bool hadInput, ESkillCheckCustomType type, float chargeChange);
     
     UFUNCTION()
     void Authority_OnHealthChargeApplied(float individualChargeAmount, float totalChargeAmount, AActor* chargeInstigator, bool wasCoop, float deltaTime);
     
-public:
-    USolidarity();
 };
 

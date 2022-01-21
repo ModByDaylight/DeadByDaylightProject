@@ -5,10 +5,11 @@
 
 class ADBDPlayer;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UK25ChainHuntEffectsComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UK25ChainHuntEffectsComponent();
     UFUNCTION(BlueprintPure)
     ADBDPlayer* GetOwningPlayer() const;
     
@@ -22,7 +23,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_ActivateChainHuntEffects(const bool hasChainHuntStarted);
     
-public:
-    UK25ChainHuntEffectsComponent();
 };
 

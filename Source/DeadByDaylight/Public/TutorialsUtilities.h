@@ -1,13 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "TutorialUIReadyEventDynamicDelegate.h"
 #include "TutorialsUtilities.generated.h"
 
+class UObject;
 class AAIController;
 class ATutorialsUtilities;
-class UObject;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTutorialsUtilitiesOnTutorialUIReady);
 
 UCLASS()
 class DEADBYDAYLIGHT_API ATutorialsUtilities : public AActor {
@@ -15,9 +14,10 @@ class DEADBYDAYLIGHT_API ATutorialsUtilities : public AActor {
 public:
 private:
     UPROPERTY(BlueprintAssignable, Transient)
-    FTutorialsUtilitiesOnTutorialUIReady OnTutorialUIReady;
+    FTutorialUIReadyEventDynamicDelegate OnTutorialUIReady;
     
 public:
+    ATutorialsUtilities();
     UFUNCTION(BlueprintCallable)
     void TriggerTutorialHudFadeOut();
     
@@ -30,6 +30,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void DestroyAI(AAIController* aiController);
     
-    ATutorialsUtilities();
 };
 

@@ -8,7 +8,7 @@
 class USnowmanSpawnPlacementStrategy;
 class ASnowman;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UWinter2021EventComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -28,6 +28,9 @@ private:
     UPROPERTY(Transient)
     TArray<ASnowman*> _snowmen;
     
+public:
+    UWinter2021EventComponent();
+private:
     UFUNCTION(Exec)
     void DBD_Winter2021VisualizeCalculatedSpawnData(float numberOfSeconds);
     
@@ -40,7 +43,5 @@ private:
     UFUNCTION(Exec)
     void DBD_Winter2021ForceRespawnAllSnowmen();
     
-public:
-    UWinter2021EventComponent();
 };
 

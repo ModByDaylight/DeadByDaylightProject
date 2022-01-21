@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BaseSurvivorAnimInstance.h"
 #include "UObject/NoExportTypes.h"
+#include "BaseSurvivorAnimInstance.h"
 #include "SurvivorAimableSubAnimInstance.generated.h"
 
 UCLASS(NonTransient)

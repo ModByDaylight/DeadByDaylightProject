@@ -13,11 +13,11 @@ protected:
     UPROPERTY(Export, Transient)
     UUMGGenericPopup* _popup;
     
+public:
+    UGenericPopupScreen();
 private:
     UFUNCTION()
     void OnChoiceSelected(int32 selectedButtonType);
     
-public:
-    UGenericPopupScreen();
 };
 

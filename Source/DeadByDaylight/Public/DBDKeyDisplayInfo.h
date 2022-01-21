@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InputCoreTypes.h"
 #include "UObject/Object.h"
-#include "EPlayerRole.h"
 #include "KeyDisplayInfo.h"
 #include "EInputInteractionType.h"
+#include "EPlayerRole.h"
+#include "InputCoreTypes.h"
 #include "DBDKeyDisplayInfo.generated.h"
 
 class UPlayerInput;
@@ -30,6 +30,7 @@ private:
     TMap<EInputInteractionType, FName> _interactionTypeToActionMap_Slasher;
     
 public:
+    UDBDKeyDisplayInfo();
     UFUNCTION()
     bool IsExcludedKey(FKey key);
     
@@ -45,6 +46,5 @@ public:
     UFUNCTION()
     FName GetActionForInteractionType(EPlayerRole playerRole, EInputInteractionType inputInteractionType, bool useGamePad, bool ignoreInteractMash);
     
-    UDBDKeyDisplayInfo();
 };
 

@@ -1,5 +1,7 @@
 #include "SupplyCrateInteractable.h"
 #include "Net/UnrealNetwork.h"
+#include "ChargeableComponent.h"
+#include "Components/SceneComponent.h"
 
 void ASupplyCrateInteractable::OnRep_IsOpen() {
 }
@@ -16,8 +18,11 @@ void ASupplyCrateInteractable::GetLifetimeReplicatedProps(TArray<FLifetimeProper
 }
 
 ASupplyCrateInteractable::ASupplyCrateInteractable() {
+    this->_chargeableComponent = CreateDefaultSubobject<UChargeableComponent>(TEXT("ChargeableComponent"));
     this->_contamainationSerumCollectable = NULL;
     this->_itemInSupplyCrate = NULL;
+    this->_itemSpawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("SerumSpawnPoint"));
+    this->_itemDropPoint = CreateDefaultSubobject<USceneComponent>(TEXT("ItemDropPoint"));
     this->_isOpen = false;
     this->_isAutoClosing = false;
 }

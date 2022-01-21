@@ -4,7 +4,7 @@
 #include "SelectableTileSpawnPoint.h"
 #include "TileSpawnPointSelector.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UTileSpawnPointSelector : public USceneComponent {
     GENERATED_BODY()
 public:

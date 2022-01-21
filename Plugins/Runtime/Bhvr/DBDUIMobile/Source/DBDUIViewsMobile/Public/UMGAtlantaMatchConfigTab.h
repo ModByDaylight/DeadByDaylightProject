@@ -3,9 +3,9 @@
 #include "UMGBaseButtonWidget.h"
 #include "UMGAtlantaMatchConfigTab.generated.h"
 
-class UTextBlock;
 class USizeBox;
 class UCanvasPanel;
+class UTextBlock;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlantaMatchConfigTab : public UUMGBaseButtonWidget {

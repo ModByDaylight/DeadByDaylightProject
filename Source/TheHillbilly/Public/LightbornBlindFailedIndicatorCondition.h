@@ -3,7 +3,7 @@
 #include "EventDrivenModifierCondition.h"
 #include "LightbornBlindFailedIndicatorCondition.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEHILLBILLY_API ULightbornBlindFailedIndicatorCondition : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:
@@ -15,12 +15,13 @@ private:
     UPROPERTY(ReplicatedUsing=OnRep_ReplicatedIsTrue)
     bool _replicatedIsTrue;
     
+public:
+    ULightbornBlindFailedIndicatorCondition();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_ReplicatedIsTrue();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ULightbornBlindFailedIndicatorCondition();
 };
 

@@ -3,7 +3,7 @@
 #include "EventDrivenModifierCondition.h"
 #include "IsChainHuntActive.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIsChainHuntActive : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:

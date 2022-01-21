@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "PalletPulldownBlockerComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UPalletPulldownBlockerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -14,6 +14,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _blockedDisappearFxTime;
     
+public:
+    UPalletPulldownBlockerComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_IsPalletPulldownBlockedByEntity();
     
@@ -23,9 +28,5 @@ private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_PalletPulldownBlockedHideCosmetic();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UPalletPulldownBlockerComponent();
 };
 

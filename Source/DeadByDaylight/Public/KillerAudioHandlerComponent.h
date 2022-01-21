@@ -1,16 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "EAttackType.h"
+#include "Components/ActorComponent.h"
 #include "KillerAudioHandlerComponent.generated.h"
 
 class ACamperPlayer;
 class ADBDPlayer;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UKillerAudioHandlerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UKillerAudioHandlerComponent();
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void TriggerSurvivorDamageHitAudioSFX(ACamperPlayer* camper, EAttackType attackType, bool causedKO, bool isWeaponHit, bool isLightHit);
     
@@ -29,6 +30,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void ChaseTriggerKillerReactionSpecificSurvivorSFX(ADBDPlayer* camper);
     
-    UKillerAudioHandlerComponent();
 };
 

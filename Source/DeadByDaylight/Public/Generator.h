@@ -1,35 +1,31 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "Interactable.h"
 #include "AIPointOfInterestTargetInterface.h"
+#include "OnIsDamagedChangedEvent.h"
 #include "NoiseIndicatorEmitterInterface.h"
-#include "UObject/NoExportTypes.h"
+#include "GeneratorRepairedEvent.h"
+#include "GeneratorRepairedBySurvivorEvent.h"
 #include "GameplayTagContainer.h"
 #include "DamageData.h"
 #include "PlayerFloatTuple.h"
-#include "EAkCallbackType.h"
+#include "OnAkPostEventCallback.h"
 #include "AkExternalSourceInfo.h"
 #include "ESkillCheckCustomType.h"
 #include "Generator.generated.h"
 
-class UAIPerceptionStimuliSourceComponent;
-class ADBDPlayer;
-class AGenerator;
-class UInteractor;
 class UCurveLinearColor;
+class ACamperPlayer;
+class UAIPerceptionStimuliSourceComponent;
 class UObject;
 class UChargeableComponent;
 class UCoopRepairTracker;
+class ADBDPlayer;
 class UAkAudioEvent;
-class UAkCallbackInfo;
-class AActor;
 class USkeletalMeshComponent;
-class ACamperPlayer;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FGeneratorOnIsDamagedChanged, AGenerator*, generator, ADBDPlayer*, player);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGeneratorOnGeneratorRepaired, bool, isAutoCompleted);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FGeneratorPostEventCallback, EAkCallbackType, CallbackType, UAkCallbackInfo*, CallbackInfo);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGeneratorOnGeneratorRepairedBySurvivor, ADBDPlayer*, repairingSurvivor);
+class AActor;
+class UInteractor;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AGenerator : public AInteractable, public IAIPointOfInterestTargetInterface, public INoiseIndicatorEmitterInterface {
@@ -57,13 +53,13 @@ public:
     float NativePercentComplete;
     
     UPROPERTY(BlueprintAssignable)
-    FGeneratorOnGeneratorRepaired OnGeneratorRepaired;
+    FGeneratorRepairedEvent OnGeneratorRepaired;
     
     UPROPERTY(BlueprintAssignable)
-    FGeneratorOnGeneratorRepairedBySurvivor OnGeneratorRepairedBySurvivor;
+    FGeneratorRepairedBySurvivorEvent OnGeneratorRepairedBySurvivor;
     
     UPROPERTY(BlueprintAssignable)
-    FGeneratorOnIsDamagedChanged OnIsDamagedChanged;
+    FOnIsDamagedChangedEvent OnIsDamagedChanged;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
@@ -109,6 +105,10 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _VFX_LightDistanceDefault;
     
+public:
+    AGenerator();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void VFXClampTopActivationSingleLight(float distance, FName parameterName);
@@ -150,7 +150,7 @@ protected:
     
 public:
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
-    int32 PostAkEvent(UAkAudioEvent* AkEvent, int32 CallbackMask, const FGeneratorPostEventCallback& PostEventCallback, const TArray<FAkExternalSourceInfo>& ExternalSources, const FString& in_EventName);
+    int32 PostAkEvent(UAkAudioEvent* AkEvent, int32 CallbackMask, const FOnAkPostEventCallback& PostEventCallback, const TArray<FAkExternalSourceInfo>& ExternalSources, const FString& in_EventName);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void PlayFailSparksFX(ADBDPlayer* interactingPlayer, bool explode);
@@ -317,8 +317,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure=false)
     void ActivateTeleportGeneratorIndicator(bool activate) const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    AGenerator();
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -1,19 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
+#include "OnScrollListPageButtonClicked.h"
 #include "UMGScrollListPageButton.generated.h"
 
 class UButton;
 class UImage;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGScrollListPageButtonOnClicked, int32, pageIndex);
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSMOBILE_API UUMGScrollListPageButton : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FUMGScrollListPageButtonOnClicked OnClicked;
+    FOnScrollListPageButtonClicked OnClicked;
     
     UPROPERTY(BlueprintReadWrite, Transient)
     int32 PageIndex;
@@ -26,12 +25,12 @@ protected:
     UImage* SelectedImage;
     
 public:
+    UUMGScrollListPageButton();
     UFUNCTION(BlueprintCallable)
     void SetIsSelected(bool selected);
     
     UFUNCTION()
     void HandleActionButtonClick();
     
-    UUMGScrollListPageButton();
 };
 

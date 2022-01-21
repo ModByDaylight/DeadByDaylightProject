@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "Insidious.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UInsidious : public UPerk {
     GENERATED_BODY()
 public:

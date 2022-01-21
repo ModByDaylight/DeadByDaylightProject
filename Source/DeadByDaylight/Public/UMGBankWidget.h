@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "TooltipPressedData.h"
 #include "ECurrencyType.h"
+#include "TooltipPressedData.h"
 #include "UMGBankWidget.generated.h"
 
 class UUMGCurrencyWidget;
@@ -22,13 +22,14 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UUMGCurrencyWidget* IridescentShardsCurrency;
     
+public:
+    UUMGBankWidget();
+protected:
     UFUNCTION()
     void OnPurchaseAuricCellsClicked();
     
     UFUNCTION()
     void OnCurrencyTooltipRequested(const FTooltipPressedData& tooltipPressedData, const ECurrencyType currencyType);
     
-public:
-    UUMGBankWidget();
 };
 

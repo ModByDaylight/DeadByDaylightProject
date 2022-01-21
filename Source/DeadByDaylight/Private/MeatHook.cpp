@@ -1,17 +1,19 @@
 #include "MeatHook.h"
+#include "Perception/AIPerceptionStimuliSourceComponent.h"
+#include "PollableEventListener.h"
 
-class ACharacter;
-class UMapActorComponent;
-class UCharacterPusherComponent;
-class ADBDPlayer;
-class ACamperPlayer;
-class AEntity;
 class UMontagePlayer;
+class UMapActorComponent;
 class UChargeableInteractionDefinition;
+class AEntity;
+class ADBDPlayer;
+class ACharacter;
+class ACamperPlayer;
 class USceneComponent;
 class UInteractor;
 class UPrimitiveComponent;
 class UHookableComponent;
+class UCharacterPusherComponent;
 
 void AMeatHook::UpdateSlasherBlockerCollision() {
 }
@@ -235,6 +237,7 @@ AMeatHook::AMeatHook() {
     this->_struggleThreshold = 0.50f;
     this->_characterPusher = NULL;
     this->_slasherCollisionBlocker = NULL;
+    this->_eventListener = CreateDefaultSubobject<UPollableEventListener>(TEXT("EventListener"));
     this->_hookedSurvivor = NULL;
     this->_hookBreakerPlayer = NULL;
     this->_mainInteractor = NULL;
@@ -243,6 +246,7 @@ AMeatHook::AMeatHook() {
     this->_camperHookedSnapTransform = NULL;
     this->_entity = NULL;
     this->_preventDrainProgression = false;
+    this->_perceptionStimuliComponent = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("AIPerceptionStimuliSourceComponent"));
     this->_interactingPlayer = NULL;
     this->_initialized = false;
     this->_cachedMapActor = NULL;

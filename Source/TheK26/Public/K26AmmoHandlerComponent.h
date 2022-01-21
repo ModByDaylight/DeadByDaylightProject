@@ -1,30 +1,30 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "EK26AmmoCooldownReason.h"
 #include "Components/ActorComponent.h"
-#include "EK26AmmoState.h"
+#include "OnMaxAmmoSetEvent.h"
+#include "OnCurrentAmmoStateChanged.h"
 #include "TagStateBool.h"
 #include "TunableStat.h"
-#include "EK26AmmoCooldownReason.h"
 #include "DBDTunableRowHandle.h"
+#include "EK26AmmoState.h"
 #include "K26AmmoHandlerComponent.generated.h"
 
-class UK26PathHandlerComponent;
 class AActor;
+class UK26PathHandlerComponent;
 class UK26PowerStatusHandlerComponent;
 class UAuthoritativeActorPoolComponent;
 class ASlasherPlayer;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FK26AmmoHandlerComponentOnCurrentAmmoStateChanged, const EK26AmmoState, newAmmoState, const int32, currentAmmo, const int32, maxAmmo);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FK26AmmoHandlerComponentCallback, const int32, maxAmmo);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FK26AmmoHandlerComponentOnMaxAmmoSet, const int32, maxAmmo);
-
-UCLASS(Blueprintable, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK26AmmoHandlerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FOnMaxAmmoSetDelegate, const int32, maxAmmo);
+    
     UPROPERTY(BlueprintAssignable)
-    FK26AmmoHandlerComponentOnCurrentAmmoStateChanged OnCurrentAmmoStateChanged;
+    FOnCurrentAmmoStateChanged OnCurrentAmmoStateChanged;
     
 protected:
     UPROPERTY(Replicated, Transient)
@@ -32,7 +32,7 @@ protected:
     
 private:
     UPROPERTY(BlueprintAssignable)
-    FK26AmmoHandlerComponentOnMaxAmmoSet _onMaxAmmoSet;
+    FOnMaxAmmoSetEvent _onMaxAmmoSet;
     
     UPROPERTY(Transient)
     float _rechargeEndTime;
@@ -86,6 +86,9 @@ private:
     float _fallbackFireCooldown;
     
 public:
+    UK26AmmoHandlerComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetDependencies(UK26PathHandlerComponent* pathHandler, UK26PowerStatusHandlerComponent* statusHandler, UAuthoritativeActorPoolComponent* authoritativeActorPoolComponent);
     
@@ -139,7 +142,7 @@ protected:
     
 public:
     UFUNCTION(BlueprintCallable)
-    void CallOnMaxAmmoSet(FK26AmmoHandlerComponentCallback callback);
+    void CallOnMaxAmmoSet(UK26AmmoHandlerComponent::FOnMaxAmmoSetDelegate callback);
     
 private:
     UFUNCTION()
@@ -148,9 +151,5 @@ private:
     UFUNCTION()
     void Authority_InitializePoolComponent(const int32 maxAmmo);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UK26AmmoHandlerComponent();
 };
 

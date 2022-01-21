@@ -5,11 +5,11 @@
 #include "InteractionDetectorComponent.generated.h"
 
 class UPrimitiveComponent;
-class ADBDPlayer;
 class AInteractable;
 class AActor;
+class ADBDPlayer;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UInteractionDetectorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -27,6 +27,7 @@ private:
     TSet<AActor*> _ignoredActors;
     
 public:
+    UInteractionDetectorComponent();
     UFUNCTION(BlueprintCallable)
     void SetDetectionPrimitive(UPrimitiveComponent* detectionPrimitive);
     
@@ -49,6 +50,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddIgnoredActor(AActor* ignored);
     
-    UInteractionDetectorComponent();
 };
 

@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "Oppression.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UOppression : public UPerk {
     GENERATED_BODY()
 public:

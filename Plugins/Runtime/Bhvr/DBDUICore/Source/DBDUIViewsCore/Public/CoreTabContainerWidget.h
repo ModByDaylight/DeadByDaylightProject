@@ -33,12 +33,12 @@ protected:
     bool CanLoop;
     
 public:
+    UCoreTabContainerWidget();
     UFUNCTION(BlueprintCallable)
     void RemoveTabs();
     
     UFUNCTION(BlueprintCallable)
     void Init(const TArray<FTabWidgetData>& tabsData);
     
-    UCoreTabContainerWidget();
 };
 

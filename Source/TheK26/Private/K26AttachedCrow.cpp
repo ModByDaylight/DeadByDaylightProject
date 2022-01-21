@@ -1,10 +1,18 @@
 #include "K26AttachedCrow.h"
 #include "Net/UnrealNetwork.h"
+#include "FirecrackerEffectHandlerComponent.h"
+#include "DBDOutlineComponent.h"
+#include "LightBurnable.h"
+#include "FlashlightableComponent.h"
+#include "ChargeableComponent.h"
+#include "K26PowerOutlineUpdateStrategy.h"
+#include "Components/StaticMeshComponent.h"
+#include "Components/SceneComponent.h"
 
-class AActor;
+class ACamperPlayer;
 class AK26AttachedCrow;
 class ASlasherPlayer;
-class ACamperPlayer;
+class AActor;
 
 void AK26AttachedCrow::OnRep_AttachmentStatus() {
 }
@@ -51,6 +59,9 @@ void AK26AttachedCrow::Authority_OnOtherSurvivorGuidedActionChanged() {
 void AK26AttachedCrow::Authority_OnOtherSurvivorDamageStateChanged(ECamperDamageState before, ECamperDamageState after) {
 }
 
+void AK26AttachedCrow::Authority_OnOtherAttachedCrowRemoved() {
+}
+
 void AK26AttachedCrow::Authority_OnKillerSet(ASlasherPlayer* killer) {
 }
 
@@ -73,6 +84,14 @@ void AK26AttachedCrow::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
 }
 
 AK26AttachedCrow::AK26AttachedCrow() {
+    this->_firecrackerEffectHandlerComponent = CreateDefaultSubobject<UFirecrackerEffectHandlerComponent>(TEXT("FirecrackerEffectHandlerComponent"));
+    this->_flashLightableComponent = CreateDefaultSubobject<UFlashlightableComponent>(TEXT("FlashlightableComponent"));
+    this->_lightBurnableComponent = CreateDefaultSubobject<ULightBurnable>(TEXT("LightBurnableComponent"));
+    this->_flashlightDestroyChargeable = CreateDefaultSubobject<UChargeableComponent>(TEXT("CrowDestroyChargeable"));
+    this->_outlineUpdateStrategy = CreateDefaultSubobject<UK26PowerOutlineUpdateStrategy>(TEXT("OutlineUpdateStrategy"));
+    this->_outlineComponent = CreateDefaultSubobject<UDBDOutlineComponent>(TEXT("OutlineComponent"));
+    this->_visualStaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Visual"));
+    this->_rootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("rootComponent"));
     this->_statusHandler = NULL;
     this->_authority_isInfecting = false;
 }

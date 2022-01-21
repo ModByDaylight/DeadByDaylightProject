@@ -5,10 +5,10 @@
 #include "GameplayTagContainer.h"
 #include "CamperSlashableComponent.generated.h"
 
-class USlashableActivationSourceCollection;
 class UCapsuleComponent;
+class USlashableActivationSourceCollection;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCamperSlashableComponent : public UActorComponent, public ISlashableInterface {
     GENERATED_BODY()
 public:
@@ -36,6 +36,7 @@ private:
     USlashableActivationSourceCollection* _slashableActivationSources;
     
 public:
+    UCamperSlashableComponent();
     UFUNCTION(BlueprintCallable)
     void SetUseCrouchSlashableCapsule(bool useCrouchCapsule);
     
@@ -51,6 +52,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetCrouchCapsuleHalfHeight(float height);
     
-    UCamperSlashableComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -9,11 +9,10 @@ UCLASS()
 class UKillerSubjectProvider : public UModifierSubjectProvider {
     GENERATED_BODY()
 public:
+    UKillerSubjectProvider();
 private:
     UFUNCTION()
     void RegisterWhenKillerSet(ASlasherPlayer* killer);
     
-public:
-    UKillerSubjectProvider();
 };
 

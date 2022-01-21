@@ -3,7 +3,7 @@
 #include "OnEventBaseAddon.h"
 #include "CarburetorTuningGuideAddon.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UCarburetorTuningGuideAddon : public UOnEventBaseAddon {
     GENERATED_BODY()
 public:

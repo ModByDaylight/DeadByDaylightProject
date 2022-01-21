@@ -5,7 +5,7 @@
 
 class ADBDGameState;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDBDEmblem_KillerGatekeeperTest : public UDBDEmblem_KillerGatekeeper {
     GENERATED_BODY()
 public:

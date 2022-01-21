@@ -9,9 +9,9 @@ UCLASS(BlueprintType)
 class DBDAUDIO_API UAudioUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UAudioUtilities();
     UFUNCTION(BlueprintCallable)
     static void PostAkAudioEvent(UAkAudioEvent* audioEvent);
     
-    UAudioUtilities();
 };
 

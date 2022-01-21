@@ -4,21 +4,21 @@
 #include "AkObservedPlayerSoundLoop.h"
 #include "FlashlightFXComponent.generated.h"
 
+class UFlashlightTargetFXComponent;
 class USceneComponent;
 class UStaticMeshComponent;
-class UFlashlightTargetFXComponent;
 class USplineMeshComponent;
-class ADBDPlayer;
 class UCurveFloat;
+class ADBDPlayer;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFlashlightFXComponentOnFlashEvent);
-
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UFlashlightFXComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFlashEvent);
+    
     UPROPERTY(BlueprintAssignable)
-    FFlashlightFXComponentOnFlashEvent OnFlashEvent;
+    FOnFlashEvent OnFlashEvent;
     
 protected:
     UPROPERTY(BlueprintReadWrite, Export)
@@ -88,6 +88,9 @@ private:
     UPROPERTY(Export, Transient)
     TSet<UFlashlightTargetFXComponent*> _targets;
     
+public:
+    UFlashlightFXComponent();
+private:
     UFUNCTION()
     void UpdateFXTargets();
     
@@ -125,6 +128,5 @@ public:
     UFUNCTION(BlueprintPure)
     float GetBlindingSuccessRatio() const;
     
-    UFlashlightFXComponent();
 };
 

@@ -5,7 +5,7 @@
 
 class UDrawSphereComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API UDBDSphereReflectionCaptureSpawnerComponent : public UDBDReflectionCaptureSpawnerComponent {
     GENERATED_BODY()
 public:

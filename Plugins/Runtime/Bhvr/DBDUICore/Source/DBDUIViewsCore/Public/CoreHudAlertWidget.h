@@ -7,9 +7,9 @@
 #include "CoreHudAlertWidget.generated.h"
 
 class UCoreHudScoreAlertItem;
-class UCoreBaseUserWidget;
 class UCoreHudStatusEffectAlertItem;
 class UGridPanel;
+class UCoreBaseUserWidget;
 class UUITweenInstance;
 
 UCLASS(EditInlineNew)
@@ -60,6 +60,9 @@ private:
     UPROPERTY(Export, Transient)
     TArray<UCoreHudStatusEffectAlertItem*> _statusEffectAlertPool;
     
+public:
+    UCoreHudAlertWidget();
+private:
     UFUNCTION()
     void PopAlert();
     
@@ -83,7 +86,7 @@ private:
     UFUNCTION()
     void ClearAlerts();
     
-public:
-    UCoreHudAlertWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

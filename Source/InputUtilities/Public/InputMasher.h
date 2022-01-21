@@ -5,7 +5,7 @@
 
 class UInputComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class INPUTUTILITIES_API UInputMasher : public UActorComponent {
     GENERATED_BODY()
 public:

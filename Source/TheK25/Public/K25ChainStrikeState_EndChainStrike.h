@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EChainStrikeEndReason.h"
 #include "K25ChainStrikeBaseState.h"
+#include "EChainStrikeEndReason.h"
 #include "K25ChainStrikeState_EndChainStrike.generated.h"
 
 UCLASS(Abstract)

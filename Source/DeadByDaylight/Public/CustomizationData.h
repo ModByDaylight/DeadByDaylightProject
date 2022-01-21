@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ItemAvailability.h"
-#include "EItemRarity.h"
-#include "DBDTableRowBase.h"
 #include "EPlayerRole.h"
+#include "DBDTableRowBase.h"
+#include "EItemRarity.h"
 #include "ItemUIData.h"
+#include "ItemAvailability.h"
 #include "CustomizationData.generated.h"
 
 USTRUCT()

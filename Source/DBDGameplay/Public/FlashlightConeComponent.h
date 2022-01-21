@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/ActorComponent.h"
 #include "UObject/NoExportTypes.h"
 #include "DBDTunableRowHandle.h"
 #include "FlashlightConeComponent.generated.h"
 
-class AActor;
 class USceneComponent;
+class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UFlashlightConeComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -34,6 +34,7 @@ private:
     TWeakObjectPtr<AActor> _cacheCollidingActor;
     
 public:
+    UFlashlightConeComponent();
     UFUNCTION(BlueprintPure)
     float GetOcclusionDistance() const;
     
@@ -43,6 +44,5 @@ public:
     UFUNCTION(BlueprintPure)
     float GetEffectiveConeHalfAngle() const;
     
-    UFlashlightConeComponent();
 };
 

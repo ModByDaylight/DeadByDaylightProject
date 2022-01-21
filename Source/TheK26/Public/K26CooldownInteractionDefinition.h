@@ -6,7 +6,7 @@
 
 class ASlasherPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK26CooldownInteractionDefinition : public UInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -14,11 +14,11 @@ private:
     UPROPERTY(EditAnywhere)
     FTunableStat _cooldownTime;
     
+public:
+    UK26CooldownInteractionDefinition();
 protected:
     UFUNCTION()
     void OnKillerSet(ASlasherPlayer* killer);
     
-public:
-    UK26CooldownInteractionDefinition();
 };
 

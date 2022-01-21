@@ -8,7 +8,7 @@ class UCustomizedSkeletalMesh;
 class ADBDBasePlayer;
 class UAnimInstance;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCustomizedAnimationComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -22,10 +22,11 @@ private:
     UPROPERTY(Transient)
     TSubclassOf<UAnimInstance> _defaultAnimClass;
     
+public:
+    UCustomizedAnimationComponent();
+private:
     UFUNCTION()
     void OnCustomizationChanged();
     
-public:
-    UCustomizedAnimationComponent();
 };
 

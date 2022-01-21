@@ -5,7 +5,7 @@
 
 class UStatusEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UHighestLevelAndClosestEffectCondition : public UGameplayModifierCondition {
     GENERATED_BODY()
 public:
@@ -20,12 +20,12 @@ private:
     TArray<UStatusEffect*> _effectsLevel3;
     
 public:
+    UHighestLevelAndClosestEffectCondition();
     UFUNCTION(BlueprintCallable)
     void SetCurrentEffectLevel(int32 level);
     
     UFUNCTION(BlueprintCallable)
     void InitEffectArrays(FName effectIDLevel1, FName effectIDLevel2, FName effectIDLevel3);
     
-    UHighestLevelAndClosestEffectCondition();
 };
 

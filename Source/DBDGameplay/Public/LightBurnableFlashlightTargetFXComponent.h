@@ -5,7 +5,7 @@
 
 class ULightBurnable;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API ULightBurnableFlashlightTargetFXComponent : public UFlashlightTargetFXComponent {
     GENERATED_BODY()
 public:

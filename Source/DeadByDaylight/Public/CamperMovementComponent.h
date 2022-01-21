@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDCharacterMovementComponent.h"
 #include "UObject/NoExportTypes.h"
+#include "DBDCharacterMovementComponent.h"
 #include "ECamperDamageState.h"
 #include "CamperMovementComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UCamperMovementComponent : public UDBDCharacterMovementComponent {
     GENERATED_BODY()
 public:
@@ -23,6 +23,7 @@ protected:
     FRotator _rotationRateWhileCrawling;
     
 public:
+    UCamperMovementComponent();
     UFUNCTION()
     void OnCamperHealthStateChanged(ECamperDamageState oldDamageState, ECamperDamageState currentDamageState);
     
@@ -32,6 +33,5 @@ public:
     UFUNCTION(BlueprintPure)
     FRotator GetDefaultRotationRate() const;
     
-    UCamperMovementComponent();
 };
 

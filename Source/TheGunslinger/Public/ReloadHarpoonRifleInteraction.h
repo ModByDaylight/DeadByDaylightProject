@@ -4,7 +4,7 @@
 #include "DBDTunableRowHandle.h"
 #include "ReloadHarpoonRifleInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API UReloadHarpoonRifleInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

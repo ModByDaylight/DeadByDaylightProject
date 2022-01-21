@@ -1,35 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "OnChargingStopped.h"
 #include "ChargeableInteractionDefinition.h"
+#include "OnChargingStarted.h"
+#include "OnProjectileSummoned.h"
 #include "DBDTunableRowHandle.h"
 #include "UObject/NoExportTypes.h"
 #include "K26SpawnCrowProjectileChargeableInteractionDefinition.generated.h"
 
-class UK26PowerStatusHandlerComponent;
-class AK26AimingGuide;
-class UCurveFloat;
 class UK26AmmoHandlerComponent;
+class AK26AimingGuide;
 class UK26PathHandlerComponent;
+class UK26PowerStatusHandlerComponent;
+class UCurveFloat;
 class ASlasherPlayer;
 class ADBDPlayer;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FK26SpawnCrowProjectileChargeableInteractionDefinitionOnChargingStopped);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FK26SpawnCrowProjectileChargeableInteractionDefinitionOnChargingStarted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FK26SpawnCrowProjectileChargeableInteractionDefinitionOnProjectileSummoned, int32, remainingAmmo, int32, maxAmmo);
-
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK26SpawnCrowProjectileChargeableInteractionDefinition : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FK26SpawnCrowProjectileChargeableInteractionDefinitionOnChargingStarted OnChargingStarted;
+    FOnChargingStarted OnChargingStarted;
     
     UPROPERTY(BlueprintAssignable)
-    FK26SpawnCrowProjectileChargeableInteractionDefinitionOnChargingStopped OnChargingStopped;
+    FOnChargingStopped OnChargingStopped;
     
     UPROPERTY(BlueprintAssignable)
-    FK26SpawnCrowProjectileChargeableInteractionDefinitionOnProjectileSummoned OnProjectileSummoned;
+    FOnProjectileSummoned OnProjectileSummoned;
     
 private:
     UPROPERTY(EditDefaultsOnly)
@@ -83,6 +82,8 @@ private:
     UPROPERTY(EditDefaultsOnly)
     UCurveFloat* _globalCooldownMovementSpeedCurve;
     
+public:
+    UK26SpawnCrowProjectileChargeableInteractionDefinition();
 protected:
     UFUNCTION(BlueprintCallable)
     void SetSummonCooldown();
@@ -132,7 +133,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     bool CanSummonCrow();
     
-public:
-    UK26SpawnCrowProjectileChargeableInteractionDefinition();
 };
 

@@ -3,7 +3,7 @@
 #include "ItemCraftInteraction.h"
 #include "InClosetFlashbangItemCraftInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UInClosetFlashbangItemCraftInteraction : public UItemCraftInteraction {
     GENERATED_BODY()
 public:

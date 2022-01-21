@@ -1,25 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/ActorComponent.h"
+#include "ActorComponentChaseStartSignature.h"
+#include "ActorComponentChaseEndSignature.h"
 #include "UObject/NoExportTypes.h"
 #include "CharacterChaseVisualComponent.generated.h"
 
 class UMaterialHelperUnaffectedStaticMeshComp;
 class ADBDPlayer;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCharacterChaseVisualComponentOnChaseStartEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCharacterChaseVisualComponentOnChaseEndEvent);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCharacterChaseVisualComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FCharacterChaseVisualComponentOnChaseStartEvent OnChaseStartEvent;
+    FActorComponentChaseStartSignature OnChaseStartEvent;
     
     UPROPERTY(BlueprintAssignable)
-    FCharacterChaseVisualComponentOnChaseEndEvent OnChaseEndEvent;
+    FActorComponentChaseEndSignature OnChaseEndEvent;
     
 private:
     UPROPERTY(Export, Transient)
@@ -38,12 +37,12 @@ private:
     float _fovModifyFactor;
     
 public:
+    UCharacterChaseVisualComponent();
     UFUNCTION()
     void OnObservedCharacterChange(ADBDPlayer* player);
     
     UFUNCTION()
     void OnAllChaseEnd();
     
-    UCharacterChaseVisualComponent();
 };
 

@@ -12,6 +12,7 @@ private:
     float _playRate;
     
 public:
+    UAnimationWidget();
     UFUNCTION(BlueprintCallable)
     void SetPlayRate(float rate);
     
@@ -19,7 +20,5 @@ protected:
     UFUNCTION(BlueprintPure)
     float GetPlayRate() const;
     
-public:
-    UAnimationWidget();
 };
 

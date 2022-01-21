@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CustomWidgetWrapper.h"
-#include "GameplayTagContainer.h"
-#include "UObject/NoExportTypes.h"
 #include "HudEditorDragFromParentAxisLimit.h"
+#include "CustomWidgetWrapper.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "GameplayTagContainer.h"
 #include "CustomWidgetWrapper_HudEditor.generated.h"
 
 class UWidget;
@@ -56,6 +56,7 @@ public:
     UPROPERTY(EditAnywhere)
     FColor OverlapStatusTintColor;
     
+    UCustomWidgetWrapper_HudEditor();
     UFUNCTION(BlueprintPure)
     float GetScale() const;
     
@@ -83,6 +84,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddToTranslation(FVector2D translation);
     
-    UCustomWidgetWrapper_HudEditor();
 };
 

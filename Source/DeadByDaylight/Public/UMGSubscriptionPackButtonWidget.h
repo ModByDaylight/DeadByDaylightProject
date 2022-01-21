@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UMGBaseButtonWidget.h"
 #include "UObject/NoExportTypes.h"
+#include "UMGBaseButtonWidget.h"
 #include "UMGSubscriptionPackButtonWidget.generated.h"
 
 class USubscriptionRewardDataAsset;
-class UUniformGridPanel;
-class UImage;
-class UCanvasPanel;
 class UButton;
+class UUniformGridPanel;
 class UTextBlock;
+class UCanvasPanel;
+class UImage;
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGSubscriptionPackButtonWidget : public UUMGBaseButtonWidget {
@@ -94,11 +94,11 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UCanvasPanel* NonActiveFrame;
     
+public:
+    UUMGSubscriptionPackButtonWidget();
 private:
     UFUNCTION(BlueprintCallable)
     void OnInfoButtonClicked();
     
-public:
-    UUMGSubscriptionPackButtonWidget();
 };
 

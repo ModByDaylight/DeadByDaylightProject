@@ -1,28 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnCurrentInteractionChangedBP.h"
 #include "Components/ActorComponent.h"
 #include "InteractionPerformer.h"
+#include "OnSecondaryActionDone.h"
 #include "EInteractionLayer.h"
-#include "ESkillCheckCustomType.h"
+#include "OnDeactivateSkillCheck.h"
 #include "EInputInteractionType.h"
-#include "StoredInteraction.h"
+#include "ESkillCheckCustomType.h"
 #include "ERequestState.h"
+#include "StoredInteraction.h"
 #include "EInteractionValidationState.h"
 #include "PlayerInteractionHandler.generated.h"
 
-class USkillCheck;
-class UInteractionDefinition;
-class ADBDPlayer;
 class UInterruptionDefinition;
+class ADBDPlayer;
+class UInteractionDefinition;
+class USkillCheck;
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerInteractionHandlerAuthority_SecondaryActionDoneDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FPlayerInteractionHandlerOnDeactivateSkillCheckDelegate, bool, HadInput, bool, Success, bool, Bonus, ESkillCheckCustomType, type);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerInteractionHandlerNewInteractionRequestedDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerInteractionHandlerServerValidatedInteractionStartedDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerInteractionHandlerServerValidatedInteractionEndedDelegate);
-
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UPlayerInteractionHandler : public UActorComponent, public IInteractionPerformer {
     GENERATED_BODY()
 public:
@@ -33,22 +30,22 @@ public:
     float BotPriorityConeAngle;
     
     UPROPERTY(BlueprintAssignable)
-    FPlayerInteractionHandlerAuthority_SecondaryActionDoneDelegate Authority_SecondaryActionDoneDelegate;
+    FOnSecondaryActionDone Authority_SecondaryActionDoneDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FPlayerInteractionHandlerNewInteractionRequestedDelegate NewInteractionRequestedDelegate;
+    FOnCurrentInteractionChangedBP NewInteractionRequestedDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FPlayerInteractionHandlerServerValidatedInteractionStartedDelegate ServerValidatedInteractionStartedDelegate;
+    FOnCurrentInteractionChangedBP ServerValidatedInteractionStartedDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FPlayerInteractionHandlerServerValidatedInteractionEndedDelegate ServerValidatedInteractionEndedDelegate;
+    FOnCurrentInteractionChangedBP ServerValidatedInteractionEndedDelegate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     EInteractionLayer InteractionLayer;
     
     UPROPERTY(BlueprintAssignable)
-    FPlayerInteractionHandlerOnDeactivateSkillCheckDelegate OnDeactivateSkillCheckDelegate;
+    FOnDeactivateSkillCheck OnDeactivateSkillCheckDelegate;
     
 private:
     UPROPERTY(Transient)
@@ -100,6 +97,7 @@ private:
     TArray<UInteractionDefinition*> _interactionsInZone;
     
 public:
+    UPlayerInteractionHandler();
     UFUNCTION(BlueprintCallable)
     void UnPauseSkillCheckTimer();
     
@@ -237,6 +235,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddInteraction(UInteractionDefinition* interaction);
     
-    UPlayerInteractionHandler();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

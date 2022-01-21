@@ -7,8 +7,8 @@
 #include "Layout/Margin.h"
 #include "CoreInteractionPromptsContainerWidget.generated.h"
 
-class UDBDWrapBox;
 class UCoreInteractionPromptWidget;
+class UDBDWrapBox;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreInteractionPromptsContainerWidget : public UCoreBaseHudWidget, public IInteractionPromptsContainerViewInterface, public ITutorialHighlightViewInterface {
@@ -45,5 +45,7 @@ private:
     
 public:
     UCoreInteractionPromptsContainerWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

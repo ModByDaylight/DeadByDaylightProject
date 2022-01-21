@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EUMGDailyRewardWidgetState.h"
 #include "EAtlantaRewardType.h"
 #include "EItemRarity.h"
-#include "EUMGDailyRewardWidgetState.h"
 #include "DailyRewardData.generated.h"
 
 USTRUCT(BlueprintType)

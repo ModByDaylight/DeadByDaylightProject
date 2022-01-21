@@ -24,6 +24,7 @@ protected:
     bool _wasJustDisarmed;
     
 public:
+    UBearTrapAnimInstance();
     UFUNCTION(BlueprintCallable)
     void SetWasJustDisarmed(bool wasJustDisarmed);
     
@@ -36,6 +37,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetContainsSurvivor(bool containsSurvivor);
     
-    UBearTrapAnimInstance();
 };
 

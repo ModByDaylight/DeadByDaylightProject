@@ -3,7 +3,7 @@
 #include "K25ChainHuntEffectsComponent.h"
 #include "K25KillerChainHuntEffectsComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK25KillerChainHuntEffectsComponent : public UK25ChainHuntEffectsComponent {
     GENERATED_BODY()
 public:

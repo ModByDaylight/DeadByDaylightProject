@@ -7,11 +7,10 @@ UCLASS()
 class AK25LamentConfigurationTeleportIndicator : public AActor {
     GENERATED_BODY()
 public:
+    AK25LamentConfigurationTeleportIndicator();
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_UpdateIndicatorVisibility(bool isVisible);
     
-public:
-    AK25LamentConfigurationTeleportIndicator();
 };
 

@@ -3,7 +3,7 @@
 #include "InteractionDefinition.h"
 #include "SnuffTotem.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class USnuffTotem : public UInteractionDefinition {
     GENERATED_BODY()
 public:

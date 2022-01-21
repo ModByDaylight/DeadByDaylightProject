@@ -4,7 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "HinderOnIdleAndAttachStatusEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UHinderOnIdleAndAttachStatusEffect : public ULingeringStateTagStatusEffect {
     GENERATED_BODY()
 public:

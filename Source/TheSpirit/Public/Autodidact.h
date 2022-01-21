@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "Autodidact.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAutodidact : public UPerk {
     GENERATED_BODY()
 public:

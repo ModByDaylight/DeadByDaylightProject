@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PhysicsBasedProjectile.h"
 #include "DBDTunableRowHandle.h"
+#include "PhysicsBasedProjectile.h"
 #include "EBombType.h"
 #include "GameplayTagContainer.h"
 #include "Engine/EngineTypes.h"
 #include "BaseGasCloudProjectile.generated.h"
 
-class USpherePlayerOverlapComponent;
+class UActiveGasCloudTrackerComponent;
 class UPoolableProjectileComponent;
+class ACamperPlayer;
+class AActor;
 class USphereComponent;
 class UParticleSystemComponent;
-class ACamperPlayer;
-class UActiveGasCloudTrackerComponent;
+class USpherePlayerOverlapComponent;
 class UPrimitiveComponent;
-class AActor;
 
 UCLASS()
 class ABaseGasCloudProjectile : public APhysicsBasedProjectile {
@@ -92,6 +92,7 @@ private:
     float _cumulativeLifetime;
     
 public:
+    ABaseGasCloudProjectile();
     UFUNCTION(BlueprintCallable)
     void SetIsDissipating(bool NewIsDissipating);
     
@@ -146,7 +147,5 @@ protected:
     UFUNCTION(BlueprintImplementableEvent)
     void ActivateCosmetic_BP();
     
-public:
-    ABaseGasCloudProjectile();
 };
 

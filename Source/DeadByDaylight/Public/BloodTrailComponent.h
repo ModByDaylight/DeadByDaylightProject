@@ -4,12 +4,12 @@
 #include "BloodDecal.h"
 #include "BloodTrailComponent.generated.h"
 
-class UBloodTrailSettings;
 class UDBDDecalComponent;
-class UDecalSpawner;
+class UBloodTrailSettings;
 class UBloodDecalEffect;
+class UDecalSpawner;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UBloodTrailComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -28,9 +28,9 @@ private:
     UDecalSpawner* _decalSpawner;
     
 public:
+    UBloodTrailComponent();
     UFUNCTION(BlueprintCallable)
     void ConditionalStartBleeding();
     
-    UBloodTrailComponent();
 };
 

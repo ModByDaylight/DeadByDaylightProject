@@ -22,9 +22,9 @@ private:
     UTextBlock* TitleText;
     
 public:
+    UUMGControlTypeSelectionWidget();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void UpdateControlType(EAtlantaControlTypeSetting controlType);
     
-    UUMGControlTypeSelectionWidget();
 };
 

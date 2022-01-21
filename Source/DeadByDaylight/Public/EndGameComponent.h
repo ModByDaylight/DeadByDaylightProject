@@ -4,10 +4,11 @@
 #include "GameEventData.h"
 #include "EndGameComponent.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UEndGameComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UEndGameComponent();
     UFUNCTION(BlueprintCallable)
     void UnpauseEndGameTimer();
     
@@ -28,6 +29,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void DisableEndGameScenario();
     
-    UEndGameComponent();
 };
 

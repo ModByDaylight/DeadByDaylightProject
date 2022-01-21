@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "StatusEffect.h"
-#include "UObject/NoExportTypes.h"
 #include "TunableStat.h"
+#include "UObject/NoExportTypes.h"
 #include "SurvivorPlagueEffect.generated.h"
 
 class AInteractable;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API USurvivorPlagueEffect : public UStatusEffect {
     GENERATED_BODY()
 public:
@@ -40,6 +40,9 @@ private:
     bool _debugMode;
     
 public:
+    USurvivorPlagueEffect();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void RefreshSicknessGainValues();
     
@@ -125,8 +128,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_AddSickness(float sicknessToAdd);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    USurvivorPlagueEffect();
 };
 

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
-#include "CurrencyProgressionTooltipViewData.h"
-#include "CustomizationTooltipViewData.h"
 #include "Layout/Geometry.h"
+#include "CustomizationTooltipViewData.h"
+#include "CurrencyProgressionTooltipViewData.h"
 #include "CharacterTooltipViewData.h"
 #include "DBDTooltipManager.generated.h"
 
@@ -18,6 +18,7 @@ private:
     UUserWidget* _currentTooltip;
     
 public:
+    UDBDTooltipManager();
     UFUNCTION(BlueprintCallable)
     void ShowCustomizationTooltip(const FCustomizationTooltipViewData& tooltipViewData, const FGeometry triggerGeometry);
     
@@ -30,6 +31,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void HideTooltip();
     
-    UDBDTooltipManager();
 };
 

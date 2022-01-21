@@ -5,7 +5,7 @@
 
 class ABaseGasCloudProjectile;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UActiveGasCloudTrackerComponent : public UActorComponent {
     GENERATED_BODY()
 public:

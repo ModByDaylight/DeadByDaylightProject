@@ -24,13 +24,14 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     float _timerShowSkipButton;
     
+public:
+    UUMGStreamVideoWidget();
+protected:
     UFUNCTION()
     void OnTapButtonClicked();
     
     UFUNCTION(BlueprintCallable)
     void OnSkipButtonClicked();
     
-public:
-    UUMGStreamVideoWidget();
 };
 

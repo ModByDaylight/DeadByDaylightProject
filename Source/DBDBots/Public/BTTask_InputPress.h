@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTTaskNode.h"
 #include "EPawnInputPressTypes.h"
-#include "AITunableParameter.h"
 #include "ETaskInputPressModes.h"
+#include "AITunableParameter.h"
 #include "BTTask_InputPress.generated.h"
 
 UCLASS()

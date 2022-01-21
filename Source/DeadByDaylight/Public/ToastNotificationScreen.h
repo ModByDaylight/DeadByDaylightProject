@@ -7,6 +7,7 @@ UCLASS()
 class UToastNotificationScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    UToastNotificationScreen();
     UFUNCTION()
     void OnPromptSelected(int32 notificationId);
     
@@ -16,6 +17,5 @@ public:
     UFUNCTION()
     void OnButtonSelected(int32 buttonId, int32 notificationId);
     
-    UToastNotificationScreen();
 };
 

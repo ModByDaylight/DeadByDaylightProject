@@ -4,12 +4,12 @@
 #include "DBDTunableRowHandle.h"
 #include "CrownPillarInteractable.generated.h"
 
-class UInteractor;
+class UStaticMeshComponent;
 class UDBDOutlineComponent;
 class UCrownPickupInteraction;
 class UPrimitiveComponent;
 class UChargeableComponent;
-class UStaticMeshComponent;
+class UInteractor;
 class UNearTrackedActorComponent;
 class UCrownPillarOutlineUpdateStrategy;
 class ADBDPlayer;
@@ -59,6 +59,9 @@ private:
     UPROPERTY(BlueprintReadOnly, Export, NoClear, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UCrownPillarOutlineUpdateStrategy* _crownPillarOutlineUpdateStrategy;
     
+public:
+    ACrownPillarInteractable();
+private:
     UFUNCTION()
     void Local_OnIntroCompleted();
     
@@ -78,7 +81,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnInteractionCancelled();
     
-public:
-    ACrownPillarInteractable();
 };
 

@@ -7,9 +7,9 @@ UCLASS()
 class UUMGHtmlRichText : public URichTextBlock {
     GENERATED_BODY()
 public:
+    UUMGHtmlRichText();
     UFUNCTION(BlueprintCallable)
     void SetHtmlText(const FString& InText);
     
-    UUMGHtmlRichText();
 };
 

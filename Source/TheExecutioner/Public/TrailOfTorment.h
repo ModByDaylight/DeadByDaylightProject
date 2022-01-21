@@ -6,7 +6,7 @@
 class AGenerator;
 class UStatusEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTrailOfTorment : public UPerk {
     GENERATED_BODY()
 public:
@@ -26,12 +26,13 @@ private:
     UPROPERTY(Export, Transient)
     UStatusEffect* _statusEffect;
     
+public:
+    UTrailOfTorment();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_HighlightGenerator(AGenerator* _oldHighlightedGenerator);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UTrailOfTorment();
 };
 

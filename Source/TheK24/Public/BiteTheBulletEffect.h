@@ -3,7 +3,7 @@
 #include "BaseLingeringStatusEffect.h"
 #include "BiteTheBulletEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UBiteTheBulletEffect : public UBaseLingeringStatusEffect {
     GENERATED_BODY()
 public:

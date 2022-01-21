@@ -3,7 +3,7 @@
 #include "EventObjectComponent.h"
 #include "EventGeneratorComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UEventGeneratorComponent : public UEventObjectComponent {
     GENERATED_BODY()
 public:

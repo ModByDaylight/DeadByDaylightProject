@@ -9,9 +9,9 @@ UCLASS()
 class ARCHIVES_API UEndOfGameQEEvaluator : public UQuestEventEvaluatorBase {
     GENERATED_BODY()
 public:
+    UEndOfGameQEEvaluator();
     UFUNCTION()
     void OnFinishedPlaying(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-    UEndOfGameQEEvaluator();
 };
 

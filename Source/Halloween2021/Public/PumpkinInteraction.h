@@ -3,7 +3,7 @@
 #include "ChargeableInteractionDefinition.h"
 #include "PumpkinInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UPumpkinInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

@@ -5,7 +5,7 @@
 
 class ADBDPlayer;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UStillnessTrackerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -34,11 +34,11 @@ protected:
     UPROPERTY(Transient)
     TWeakObjectPtr<ADBDPlayer> _trackedPlayer;
     
+public:
+    UStillnessTrackerComponent();
 private:
     UFUNCTION()
     void StartTracking();
     
-public:
-    UStillnessTrackerComponent();
 };
 

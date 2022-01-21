@@ -1,10 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GameEventDelegate.h"
 #include "GameplayTagContainer.h"
-#include "GameEventData.h"
 #include "GameEventDispatcherHandleBP.generated.h"
-
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FGameEventDispatcherHandleBPGameEventDelegate, const FGameplayTag, gameEventType, const FGameEventData&, gameEventData);
 
 USTRUCT(BlueprintType)
 struct FGameEventDispatcherHandleBP {
@@ -14,7 +12,7 @@ public:
     FGameplayTag Filter;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
-    FGameEventDispatcherHandleBPGameEventDelegate GameEventDelegate;
+    FGameEventDelegate GameEventDelegate;
     
     DEADBYDAYLIGHT_API FGameEventDispatcherHandleBP();
 };

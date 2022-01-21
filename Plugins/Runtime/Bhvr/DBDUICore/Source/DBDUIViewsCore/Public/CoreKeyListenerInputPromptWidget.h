@@ -1,13 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CoreBaseUserWidget.h"
+#include "OnKeyListenerInputPromptTriggeredDelegate.h"
 #include "EUIActionType.h"
 #include "CoreKeyListenerInputPromptWidget.generated.h"
 
 class UCoreInputPromptWidget;
 class UDBDTextBlock;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCoreKeyListenerInputPromptWidgetOnKeyListenerInputPromptTriggeredDelegate);
 
 UCLASS(EditInlineNew)
 class UCoreKeyListenerInputPromptWidget : public UCoreBaseUserWidget {
@@ -22,9 +21,10 @@ protected:
     
 private:
     UPROPERTY(BlueprintAssignable, BlueprintCallable)
-    FCoreKeyListenerInputPromptWidgetOnKeyListenerInputPromptTriggeredDelegate _onKeyListenerInputPromptTriggeredDelegate;
+    FOnKeyListenerInputPromptTriggeredDelegate _onKeyListenerInputPromptTriggeredDelegate;
     
 public:
+    UCoreKeyListenerInputPromptWidget();
     UFUNCTION(BlueprintCallable)
     void SetUIAction(const EUIActionType actionType);
     
@@ -42,6 +42,5 @@ public:
     UFUNCTION(BlueprintCallable)
     bool IsEnabled();
     
-    UCoreKeyListenerInputPromptWidget();
 };
 

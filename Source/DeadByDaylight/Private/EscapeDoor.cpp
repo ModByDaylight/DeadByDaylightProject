@@ -1,5 +1,10 @@
 #include "EscapeDoor.h"
 #include "Net/UnrealNetwork.h"
+#include "Components/SceneComponent.h"
+#include "Perception/AIPerceptionStimuliSourceComponent.h"
+#include "BlockableComponent.h"
+#include "ChargeableComponent.h"
+#include "AkComponent.h"
 
 class AEscapeBlocker;
 class ADBDPlayer;
@@ -88,10 +93,16 @@ void AEscapeDoor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifet
 }
 
 AEscapeDoor::AEscapeDoor() {
+    this->_killerOpenChargeable = CreateDefaultSubobject<UChargeableComponent>(TEXT("KillerOpenChargeable"));
+    this->_openChargeable = CreateDefaultSubobject<UChargeableComponent>(TEXT("openChargeable"));
+    this->_ak_audio_escape = CreateDefaultSubobject<UAkComponent>(TEXT("ak_audio_escape"));
     this->_escapeDoorAnimInstance = NULL;
+    this->_rootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("rootComponent"));
     this->_activated = false;
     this->_escapeBlockerInstance = NULL;
     this->_spotlight = NULL;
     this->_localOverlappingCamper = NULL;
+    this->_perceptionStimuliComponent = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("AIPerceptionStimuliSourceComponent"));
+    this->_doorSwitchBlockableComponent = CreateDefaultSubobject<UBlockableComponent>(TEXT("DoorSwitchBlockableComponent"));
 }
 

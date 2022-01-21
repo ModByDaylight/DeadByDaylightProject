@@ -4,7 +4,7 @@
 #include "DBDTunableRowHandle.h"
 #include "PrisonChainAddon.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UPrisonChainAddon : public UItemAddon {
     GENERATED_BODY()
 public:

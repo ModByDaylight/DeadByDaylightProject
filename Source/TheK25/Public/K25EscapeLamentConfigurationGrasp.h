@@ -3,7 +3,7 @@
 #include "ChargeableInteractionDefinition.h"
 #include "K25EscapeLamentConfigurationGrasp.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK25EscapeLamentConfigurationGrasp : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

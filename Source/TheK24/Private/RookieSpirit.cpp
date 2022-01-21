@@ -1,8 +1,8 @@
 #include "RookieSpirit.h"
 #include "Net/UnrealNetwork.h"
 
-class ADBDPlayer;
 class AGenerator;
+class ADBDPlayer;
 
 void URookieSpirit::OnRep_NumberOfGreatSkillChecksOnGeneratorRepair() {
 }

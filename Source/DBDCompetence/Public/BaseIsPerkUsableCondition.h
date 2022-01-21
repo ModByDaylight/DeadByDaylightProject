@@ -3,7 +3,7 @@
 #include "EventDrivenModifierCondition.h"
 #include "BaseIsPerkUsableCondition.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class UBaseIsPerkUsableCondition : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:

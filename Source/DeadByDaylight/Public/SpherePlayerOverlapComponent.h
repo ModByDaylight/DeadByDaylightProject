@@ -3,7 +3,7 @@
 #include "Components/SphereComponent.h"
 #include "SpherePlayerOverlapComponent.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API USpherePlayerOverlapComponent : public USphereComponent {
     GENERATED_BODY()
 public:

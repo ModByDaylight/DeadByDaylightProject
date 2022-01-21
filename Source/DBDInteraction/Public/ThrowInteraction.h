@@ -5,7 +5,7 @@
 
 class UCurveFloat;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DBDINTERACTION_API UThrowInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -16,6 +16,8 @@ private:
     UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float _throwCancellationExitTime;
     
+public:
+    UThrowInteraction();
 protected:
     UFUNCTION(BlueprintCallable)
     void InitThrowCancellationExitTime(float value);
@@ -23,7 +25,5 @@ protected:
     UFUNCTION(BlueprintPure)
     bool HasCancelledThrow() const;
     
-public:
-    UThrowInteraction();
 };
 

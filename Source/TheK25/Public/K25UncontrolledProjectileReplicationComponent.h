@@ -6,15 +6,14 @@
 
 class AK25UncontrolledProjectile;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THEK25_API UK25UncontrolledProjectileReplicationComponent : public UK25ProjectileReplicationComponent {
     GENERATED_BODY()
 public:
+    UK25UncontrolledProjectileReplicationComponent();
 private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_LaunchProjectile(AK25UncontrolledProjectile* projectile, FLaunchInfo launchInfo);
     
-public:
-    UK25UncontrolledProjectileReplicationComponent();
 };
 

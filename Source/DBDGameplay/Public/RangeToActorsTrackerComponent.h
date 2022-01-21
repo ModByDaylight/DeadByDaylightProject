@@ -5,7 +5,7 @@
 
 class URangeToActorsTrackerStrategy;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API URangeToActorsTrackerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -13,11 +13,11 @@ protected:
     UPROPERTY(EditDefaultsOnly, Export, NoClear)
     TArray<URangeToActorsTrackerStrategy*> _rangeTrackers;
     
+public:
+    URangeToActorsTrackerComponent();
 private:
     UFUNCTION()
     void OnLevelReadyToPlay();
     
-public:
-    URangeToActorsTrackerComponent();
 };
 

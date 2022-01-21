@@ -1,7 +1,7 @@
 #include "GeneratorDamageInteraction.h"
 
-class AGenerator;
 class ADBDPlayer;
+class AGenerator;
 
 void UGeneratorDamageInteraction::Authority_DamageGenerator(ADBDPlayer* damageBy, AGenerator* generator) const {
 }

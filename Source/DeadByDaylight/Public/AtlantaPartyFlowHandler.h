@@ -7,11 +7,10 @@ UCLASS()
 class UAtlantaPartyFlowHandler : public UObject {
     GENERATED_BODY()
 public:
+    UAtlantaPartyFlowHandler();
 private:
     UFUNCTION()
     void DisplayPartyFlowHandlerInfo();
     
-public:
-    UAtlantaPartyFlowHandler();
 };
 

@@ -4,9 +4,9 @@
 #include "DBDTunableRowHandle.h"
 #include "ZombiesManagement.generated.h"
 
+class UAuthoritativeActorPoolComponent;
 class AZombieEscapeDoorPointsActor;
 class UZombiesPatrolAreaManager;
-class UAuthoritativeActorPoolComponent;
 class AZombieCharacter;
 
 UCLASS()
@@ -32,10 +32,11 @@ private:
     UPROPERTY(Transient)
     TArray<AZombieEscapeDoorPointsActor*> _zombieEscapeDoorPoints;
     
+public:
+    AZombiesManagement();
+private:
     UFUNCTION()
     void Authority_OnIntroComplete();
     
-public:
-    AZombiesManagement();
 };
 

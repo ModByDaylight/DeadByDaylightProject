@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "Engine/StaticMeshActor.h"
 #include "UObject/NoExportTypes.h"
-#include "Engine/EngineTypes.h"
 #include "ETotemState.h"
+#include "Engine/EngineTypes.h"
 #include "RekindledTotem.generated.h"
 
-class USourceBasedOutlineUpdateStrategy;
-class ATotem;
-class UDBDOutlineComponent;
 class AActor;
+class USourceBasedOutlineUpdateStrategy;
+class UDBDOutlineComponent;
+class ATotem;
 
 UCLASS()
 class THEK26_API ARekindledTotem : public AStaticMeshActor {
@@ -25,6 +25,8 @@ private:
     UPROPERTY(Export, VisibleAnywhere)
     UDBDOutlineComponent* _outlineComponent;
     
+public:
+    ARekindledTotem();
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void RebuildTotem(ATotem* totem);
@@ -43,7 +45,5 @@ protected:
     UFUNCTION(BlueprintImplementableEvent)
     void CleanseTotem(ATotem* totem, const ETotemState oldTotemState);
     
-public:
-    ARekindledTotem();
 };
 

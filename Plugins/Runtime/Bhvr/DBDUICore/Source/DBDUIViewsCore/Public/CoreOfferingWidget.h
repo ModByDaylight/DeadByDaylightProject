@@ -9,5 +9,7 @@ class DBDUIVIEWSCORE_API UCoreOfferingWidget : public UCoreBaseLoadoutPartWidget
     GENERATED_BODY()
 public:
     UCoreOfferingWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnButtonClickEvent.h"
 #include "MobileBaseUserWidget.h"
 #include "Components/SlateWrapperTypes.h"
 #include "TooltipPressedData.h"
@@ -12,8 +13,6 @@ class UTextBlock;
 class UUMGSelectedCharacterWidget;
 class UUMGMainMenuMonthlyPassButton;
 class UUMGRankBanner;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGBankAndPlayerInfoWidgetOnCancelPartyButtonClickedEvent);
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGBankAndPlayerInfoWidget : public UMobileBaseUserWidget {
@@ -42,8 +41,11 @@ protected:
     UUMGMainMenuMonthlyPassButton* MonthlyPassButton;
     
     UPROPERTY(BlueprintAssignable, BlueprintCallable)
-    FUMGBankAndPlayerInfoWidgetOnCancelPartyButtonClickedEvent _onCancelPartyButtonClickedEvent;
+    FOnButtonClickEvent _onCancelPartyButtonClickedEvent;
     
+public:
+    UUMGBankAndPlayerInfoWidget();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void SetPlayerLevelBP(int32 level, int32 devotion, int32 currentLevelXp, int32 totalLevelXp, bool isSlasher, bool playUpdateAnim);
     
@@ -73,7 +75,5 @@ private:
     UFUNCTION()
     void OnCancelPartyButtonClicked();
     
-public:
-    UUMGBankAndPlayerInfoWidget();
 };
 

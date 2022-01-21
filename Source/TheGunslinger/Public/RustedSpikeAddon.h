@@ -3,7 +3,7 @@
 #include "ItemAddon.h"
 #include "RustedSpikeAddon.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class URustedSpikeAddon : public UItemAddon {
     GENERATED_BODY()
 public:

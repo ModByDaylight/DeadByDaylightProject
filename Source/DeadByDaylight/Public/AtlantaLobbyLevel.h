@@ -4,8 +4,8 @@
 #include "Engine/EngineTypes.h"
 #include "AtlantaLobbyLevel.generated.h"
 
-class AActor;
 class AAtlantaOfflineLobbyCamera;
+class AActor;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AAtlantaLobbyLevel : public ALobbyLevel {
@@ -30,13 +30,14 @@ private:
     UPROPERTY(Transient)
     AActor* _loadoutSelectionLobbyCameraPosition;
     
+public:
+    AAtlantaLobbyLevel();
+private:
     UFUNCTION()
     void OnFrontPawnSpawned(AActor* forefrontPawn);
     
     UFUNCTION()
     void OnBackPawnSpawned(AActor* backgroundPawn);
     
-public:
-    AAtlantaLobbyLevel();
 };
 

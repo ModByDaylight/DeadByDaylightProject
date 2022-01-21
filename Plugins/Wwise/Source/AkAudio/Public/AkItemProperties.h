@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/Widget.h"
+#include "OnItemPropertySelectionChanged.h"
+#include "OnItemPropertyDragDetected.h"
 #include "AkItemProperties.generated.h"
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAkItemPropertiesOnSelectionChanged, const FString&, PropertySelected);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAkItemPropertiesOnPropertyDragged, const FString&, PropertyDragged);
 
 UCLASS(DefaultConfig, Config=Editor)
 class AKAUDIO_API UAkItemProperties : public UWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FAkItemPropertiesOnSelectionChanged OnSelectionChanged;
+    FOnItemPropertySelectionChanged OnSelectionChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FAkItemPropertiesOnPropertyDragged OnPropertyDragged;
+    FOnItemPropertyDragDetected OnPropertyDragged;
     
+    UAkItemProperties();
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     void SetSearchText(const FString& newText);
     
@@ -25,6 +25,5 @@ public:
     UFUNCTION(BlueprintCosmetic, BlueprintPure)
     FString GetSearchText() const;
     
-    UAkItemProperties();
 };
 

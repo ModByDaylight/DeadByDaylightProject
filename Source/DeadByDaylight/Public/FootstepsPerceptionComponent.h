@@ -4,7 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "FootstepsPerceptionComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UFootstepsPerceptionComponent : public UActorComponent {
     GENERATED_BODY()
 public:

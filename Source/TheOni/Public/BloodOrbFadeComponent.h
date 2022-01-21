@@ -3,7 +3,7 @@
 #include "FadeComponent.h"
 #include "BloodOrbFadeComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UBloodOrbFadeComponent : public UFadeComponent {
     GENERATED_BODY()
 public:

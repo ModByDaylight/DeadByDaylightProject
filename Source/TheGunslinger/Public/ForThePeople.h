@@ -6,7 +6,7 @@
 
 class ACamperPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UForThePeople : public UPerk {
     GENERATED_BODY()
 public:
@@ -17,6 +17,9 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FSecondaryInteractionProperties _secondaryActionProperties;
     
+public:
+    UForThePeople();
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_OnActionInputPressed();
     
@@ -28,7 +31,5 @@ private:
     UFUNCTION(NetMulticast, Unreliable)
     void Multicast_OnHealAbilityUsed(ACamperPlayer* healingSurvivor, ACamperPlayer* healedSurvivor);
     
-public:
-    UForThePeople();
 };
 

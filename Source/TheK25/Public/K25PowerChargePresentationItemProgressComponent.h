@@ -6,7 +6,7 @@
 class UPowerChargeComponent;
 class AK25Power;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class UK25PowerChargePresentationItemProgressComponent : public UPresentationItemProgressComponent {
     GENERATED_BODY()
 public:

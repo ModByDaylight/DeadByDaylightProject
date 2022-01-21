@@ -13,6 +13,9 @@ private:
     UPROPERTY(Export, Transient)
     UUMGAtlantaRitualsScreen* _umgScreen;
     
+public:
+    UAtlantaRitualsScreen();
+private:
     UFUNCTION()
     void OnRefreshRitual();
     
@@ -22,7 +25,5 @@ private:
     UFUNCTION()
     void OnClaimRewards(int32 ritualId);
     
-public:
-    UAtlantaRitualsScreen();
 };
 

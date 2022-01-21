@@ -7,11 +7,10 @@ UCLASS()
 class ARCHIVES_API UNearKillerQEEvaluator : public UQuestEventEvaluatorBase {
     GENERATED_BODY()
 public:
+    UNearKillerQEEvaluator();
 private:
     UFUNCTION()
     void OnRangeChanged(const bool inRange);
     
-public:
-    UNearKillerQEEvaluator();
 };
 

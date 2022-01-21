@@ -57,5 +57,6 @@ UBlinkerComponent::UBlinkerComponent() {
     this->_rayCastLength = 1000.00f;
     this->_minimumIndicatorVelocity = 460.00f;
     this->_IndicatorVelocityEasingFactor = 0.05f;
+    this->_blinkChainTimer = CreateDefaultSubobject<UDBDTimerComponent>(TEXT("BlinkerChainTimer"));
 }
 

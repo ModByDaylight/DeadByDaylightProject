@@ -1,36 +1,36 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DynamicGrassEffectorInterface.h"
-#include "GameFramework/Character.h"
-#include "SlashableInterface.h"
+#include "FirecrackerEffectData.h"
 #include "PushableInterface.h"
-#include "GenericTeamAgentInterface.h"
+#include "GameFramework/Character.h"
+#include "EAttackType.h"
+#include "DynamicGrassEffectorInterface.h"
+#include "SlashableInterface.h"
 #include "TunableStat.h"
+#include "GenericTeamAgentInterface.h"
 #include "EZombieState.h"
 #include "UObject/NoExportTypes.h"
 #include "EZombieGender.h"
 #include "DBDTunableRowHandle.h"
-#include "EAttackType.h"
 #include "Engine/EngineTypes.h"
-#include "FirecrackerEffectData.h"
 #include "ZombieCharacter.generated.h"
 
-class UFlashlightableComponent;
-class UZombieBlindableComponent;
-class USphereComponent;
 class UOtherCharactersVerticalCollisionsHandler;
 class UAuthoritativePoolableActorComponent;
+class UZombieBlindableComponent;
+class AActor;
+class USphereComponent;
 class UStaticMeshComponent;
-class UAuthoritativeMovementComponent;
 class USkeletalMesh;
 class UChargeableComponent;
-class UFirecrackerEffectHandlerComponent;
-class UFlashlightComponent;
 class UCharacterPositionRecorderComponent;
+class UFirecrackerEffectHandlerComponent;
+class UFlashlightableComponent;
 class UGameplayTagContainerComponent;
-class AActor;
+class UAuthoritativeMovementComponent;
 class ASlasherPlayer;
 class UPrimitiveComponent;
+class UFlashlightComponent;
 
 UCLASS()
 class AZombieCharacter : public ACharacter, public IDynamicGrassEffectorInterface, public ISlashableInterface, public IPushableInterface, public IGenericTeamAgentInterface {
@@ -110,6 +110,10 @@ private:
     UPROPERTY(EditAnywhere)
     float _afterInAirAttackCooldown;
     
+public:
+    AZombieCharacter();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void ZombieKilledByKiller_Cosmetic(EAttackType attackType);
@@ -174,9 +178,7 @@ private:
     UFUNCTION()
     void Authority_DeactivateZombieAndStartRespawnTimer();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    AZombieCharacter();
+    // Fix for true pure virtual functions not being implemented
 };
 

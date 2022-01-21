@@ -3,7 +3,7 @@
 #include "ChainLinkableComponent.h"
 #include "KillerChainLinkableComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API UKillerChainLinkableComponent : public UChainLinkableComponent {
     GENERATED_BODY()
 public:

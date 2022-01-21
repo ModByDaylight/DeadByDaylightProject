@@ -5,13 +5,13 @@
 
 class ASlasherPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UOwningPlayerInSpiritHuskRange : public UAnyActorPairQueryRangeIsTrue {
     GENERATED_BODY()
 public:
+    UOwningPlayerInSpiritHuskRange();
     UFUNCTION()
     void OnKillerSet(ASlasherPlayer* killer);
     
-    UOwningPlayerInSpiritHuskRange();
 };
 

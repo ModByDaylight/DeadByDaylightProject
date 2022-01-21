@@ -3,13 +3,13 @@
 #include "Components/ActorComponent.h"
 #include "TwinHuskStateComponent.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class UTwinHuskStateComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UTwinHuskStateComponent();
     UFUNCTION(BlueprintPure)
     bool IsDeadFromSurvivorBack() const;
     
-    UTwinHuskStateComponent();
 };
 

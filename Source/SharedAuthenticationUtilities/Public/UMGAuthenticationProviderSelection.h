@@ -12,6 +12,9 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     bool _isAsia;
     
+public:
+    UUMGAuthenticationProviderSelection();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void UpdateWidgetsVisibility();
     
@@ -25,6 +28,5 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
     void SetMigrateWarningMessageAndShowPopup(const FString& playerName);
     
-    UUMGAuthenticationProviderSelection();
 };
 

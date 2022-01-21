@@ -6,7 +6,7 @@
 class USceneComponent;
 class UMeshComponent;
 
-UCLASS(Transient)
+UCLASS(Transient, meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API UClonedMeshComponent : public UBatchMeshCommands {
     GENERATED_BODY()
 public:

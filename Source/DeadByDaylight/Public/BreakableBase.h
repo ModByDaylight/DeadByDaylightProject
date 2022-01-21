@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Interactable.h"
-#include "UObject/NoExportTypes.h"
 #include "EBreakableState.h"
+#include "UObject/NoExportTypes.h"
 #include "BreakableBase.generated.h"
 
-class ADBDPlayer;
 class UBoxComponent;
 class UAkComponent;
+class ADBDPlayer;
 class UAkAudioEvent;
 class USceneComponent;
 
@@ -33,6 +33,7 @@ private:
     USceneComponent* _rootComponent;
     
 public:
+    ABreakableBase();
     UFUNCTION(BlueprintCallable)
     void PlayAudioBreakable();
     
@@ -47,6 +48,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void Explode(ADBDPlayer* player);
     
-    ABreakableBase();
 };
 

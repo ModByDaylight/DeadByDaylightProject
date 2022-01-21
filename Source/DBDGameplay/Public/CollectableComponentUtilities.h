@@ -10,9 +10,9 @@ UCLASS(BlueprintType)
 class DBDGAMEPLAY_API UCollectableComponentUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UCollectableComponentUtilities();
     UFUNCTION(BlueprintPure)
     static ADBDPlayer* GetCollector(const UActorComponent* component);
     
-    UCollectableComponentUtilities();
 };
 

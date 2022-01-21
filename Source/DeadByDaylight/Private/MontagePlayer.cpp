@@ -1,8 +1,8 @@
 #include "MontagePlayer.h"
 
-class UAnimInstance;
 class USkeletalMeshComponent;
 class UAnimMontage;
+class UAnimInstance;
 
 void UMontagePlayer::Stop(float blendOutTime) {
 }

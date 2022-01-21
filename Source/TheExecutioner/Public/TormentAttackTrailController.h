@@ -3,10 +3,10 @@
 #include "Templates/SubclassOf.h"
 #include "TunableStat.h"
 #include "TrailControllerBase.h"
-#include "UObject/NoExportTypes.h"
-#include "SpawnedAttackPoint.h"
 #include "DBDTunableRowHandle.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "SpawnedAttackPoint.h"
 #include "Engine/NetSerialization.h"
 #include "UObject/NoExportTypes.h"
 #include "TormentAttackTrailController.generated.h"
@@ -62,6 +62,8 @@ private:
     UPROPERTY(Transient)
     AMobileTormentTrailRenderer* _mobileTormentTrailRenderer;
     
+public:
+    ATormentAttackTrailController();
 protected:
     UFUNCTION(BlueprintNativeEvent)
     void OnTrailPointRemovedCosmetic(int32 index);
@@ -85,7 +87,5 @@ protected:
     UFUNCTION(BlueprintNativeEvent)
     void DisplayAttackTrailSpawnSign();
     
-public:
-    ATormentAttackTrailController();
 };
 

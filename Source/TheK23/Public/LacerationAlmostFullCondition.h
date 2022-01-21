@@ -3,7 +3,7 @@
 #include "BaseLacerationLevelCondition.h"
 #include "LacerationAlmostFullCondition.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class THEK23_API ULacerationAlmostFullCondition : public UBaseLacerationLevelCondition {
     GENERATED_BODY()
 public:

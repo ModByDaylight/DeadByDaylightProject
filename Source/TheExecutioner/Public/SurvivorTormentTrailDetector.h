@@ -3,7 +3,7 @@
 #include "TormentTrailDetectorComponent.h"
 #include "SurvivorTormentTrailDetector.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USurvivorTormentTrailDetector : public UTormentTrailDetectorComponent {
     GENERATED_BODY()
 public:

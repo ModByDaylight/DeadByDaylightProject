@@ -1,4 +1,6 @@
 #include "Medkit.h"
+#include "ChargerComponent.h"
+#include "AkComponent.h"
 
 class ADBDPlayer;
 
@@ -26,6 +28,8 @@ void AMedkit::Authority_ConsumeIfNotInteracting() {
 }
 
 AMedkit::AMedkit() {
+    this->_akComponent = CreateDefaultSubobject<UAkComponent>(TEXT("Ak_Audio_Medkit"));
+    this->_charger = CreateDefaultSubobject<UChargerComponent>(TEXT("Charger"));
     this->_dustRingTemplate = NULL;
     this->_medkitGetAkEvent = NULL;
     this->_medkitDropAkEvent = NULL;

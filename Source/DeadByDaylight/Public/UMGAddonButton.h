@@ -9,11 +9,10 @@ UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGAddonButton : public UUMGInventoryItemButton {
     GENERATED_BODY()
 public:
+    UUMGAddonButton();
 private:
     UFUNCTION(BlueprintCallable)
     void UpdateAddonButton(UItemAddon* addon);
     
-public:
-    UUMGAddonButton();
 };
 

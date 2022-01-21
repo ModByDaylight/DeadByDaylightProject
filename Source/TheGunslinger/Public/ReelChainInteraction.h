@@ -5,7 +5,7 @@
 
 class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API UReelChainInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:

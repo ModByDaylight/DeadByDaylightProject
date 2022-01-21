@@ -7,8 +7,8 @@
 
 class UUMGTallyPipsContainer;
 class UUMGTallyRankFrame;
-class UCanvasPanel;
 class UImage;
+class UCanvasPanel;
 class UTextBlock;
 
 UCLASS(Abstract, EditInlineNew)
@@ -47,9 +47,9 @@ protected:
     float _disableOpacity;
     
 public:
+    UUMGPlayerRankInfo();
     UFUNCTION(BlueprintCallable)
     void SetData(int32 rank, int32 pipsRequiredForNextRank, int32 filledPips, FText NewTitleLabel, FText NewPipLabel, EPlayerRole playerRole, bool IsHighlight);
     
-    UUMGPlayerRankInfo();
 };
 

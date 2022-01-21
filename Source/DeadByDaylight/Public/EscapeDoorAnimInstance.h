@@ -17,6 +17,7 @@ protected:
     bool _isOpenByKiller;
     
 public:
+    UEscapeDoorAnimInstance();
     UFUNCTION(BlueprintCallable)
     void SetIsOpenByKiller(const bool isOpenByKiller);
     
@@ -26,6 +27,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void PlaySound(UAkAudioEvent* akEvent);
     
-    UEscapeDoorAnimInstance();
 };
 

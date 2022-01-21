@@ -25,10 +25,11 @@ private:
     UPROPERTY(Export, Transient)
     TMap<FString, UUMGPlayerStatusIcon*> playerIconsByName;
     
+public:
+    UUMGPlayersStatusWidget();
+private:
     UFUNCTION()
     void OnPlayerStatusClicked(UUMGPlayerStatusIcon* playerStatusIcon);
     
-public:
-    UUMGPlayersStatusWidget();
 };
 

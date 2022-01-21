@@ -19,9 +19,9 @@ protected:
     UTextBlock* Label;
     
 public:
+    UUMGTallyRankFrame();
     UFUNCTION(BlueprintCallable)
     void SetData(int32 rank, EPlayerRole playerRole);
     
-    UUMGTallyRankFrame();
 };
 

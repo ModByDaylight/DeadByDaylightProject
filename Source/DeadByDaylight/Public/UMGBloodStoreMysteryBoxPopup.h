@@ -26,10 +26,11 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     FText _addedToInventory;
     
+public:
+    UUMGBloodStoreMysteryBoxPopup();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void StartRevealSequence();
     
-public:
-    UUMGBloodStoreMysteryBoxPopup();
 };
 

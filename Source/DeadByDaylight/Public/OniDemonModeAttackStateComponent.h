@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ChargedAttackStateComponent.h"
+#include "OnChargedAttackReadyChanged.h"
 #include "OniDemonModeAttackStateComponent.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOniDemonModeAttackStateComponentOnChargedAttackReadyChanged, bool, bIsReady);
-
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UOniDemonModeAttackStateComponent : public UChargedAttackStateComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FOniDemonModeAttackStateComponentOnChargedAttackReadyChanged OnChargedAttackReadyChanged;
+    FOnChargedAttackReadyChanged OnChargedAttackReadyChanged;
     
+    UOniDemonModeAttackStateComponent();
 private:
     UFUNCTION(Reliable, Server)
     void Server_ClearChargingState();
@@ -19,7 +19,5 @@ private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_ClearChargingState();
     
-public:
-    UOniDemonModeAttackStateComponent();
 };
 

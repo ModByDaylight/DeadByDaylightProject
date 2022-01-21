@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "HudObjectivesViewData.h"
 #include "UObject/Interface.h"
+#include "HudObjectivesViewData.h"
 #include "HudObjectivesViewInterface.generated.h"
 
 UINTERFACE(Blueprintable)

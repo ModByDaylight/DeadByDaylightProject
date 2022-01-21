@@ -8,7 +8,7 @@
 class ACollectable;
 class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UItemAddon : public UItemModifier {
     GENERATED_BODY()
 public:
@@ -22,6 +22,10 @@ protected:
 private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_AddonInitializationData)
     FItemAddonInitializationData _addonInitializationData;
+    
+public:
+    UItemAddon();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
     UFUNCTION(BlueprintImplementableEvent)
@@ -64,9 +68,5 @@ private:
     UFUNCTION()
     void Authority_ApplyMetaModifiers();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UItemAddon();
 };
 

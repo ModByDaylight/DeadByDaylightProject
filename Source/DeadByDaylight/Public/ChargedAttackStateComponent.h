@@ -3,10 +3,11 @@
 #include "Components/ActorComponent.h"
 #include "ChargedAttackStateComponent.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UChargedAttackStateComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UChargedAttackStateComponent();
     UFUNCTION(BlueprintCallable)
     void SetIsCharging(bool isCharging);
     
@@ -19,6 +20,5 @@ public:
     UFUNCTION(BlueprintPure)
     float GetChargingPercent() const;
     
-    UChargedAttackStateComponent();
 };
 

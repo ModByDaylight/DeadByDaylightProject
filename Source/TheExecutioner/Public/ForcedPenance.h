@@ -5,7 +5,7 @@
 
 class UStatusEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UForcedPenance : public UPerk {
     GENERATED_BODY()
 public:
@@ -26,8 +26,8 @@ private:
     TArray<UStatusEffect*> _camperBrokenEffects;
     
 public:
+    UForcedPenance();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UForcedPenance();
 };
 

@@ -3,7 +3,7 @@
 #include "Components/HierarchicalInstancedStaticMeshComponent.h"
 #include "FoliageDensityHISM.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UFoliageDensityHISM : public UHierarchicalInstancedStaticMeshComponent {
     GENERATED_BODY()
 public:

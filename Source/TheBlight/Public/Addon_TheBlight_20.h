@@ -5,7 +5,7 @@
 
 class UStatusEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAddon_TheBlight_20 : public UItemAddon {
     GENERATED_BODY()
 public:

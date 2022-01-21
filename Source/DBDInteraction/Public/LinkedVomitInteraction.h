@@ -5,7 +5,7 @@
 
 class UVomitStateComponent;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class ULinkedVomitInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -13,6 +13,8 @@ private:
     UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess=true))
     bool _chargeComplete;
     
+public:
+    ULinkedVomitInteraction();
 protected:
     UFUNCTION(BlueprintPure)
     bool IsVomiting() const;
@@ -23,7 +25,5 @@ protected:
     UFUNCTION(BlueprintPure)
     UVomitStateComponent* GetVomitStateComponent() const;
     
-public:
-    ULinkedVomitInteraction();
 };
 

@@ -1,4 +1,5 @@
 #include "KnifeProjectile.h"
+#include "PoolableProjectileComponent.h"
 
 class UPrimitiveComponent;
 class AActor;
@@ -34,5 +35,6 @@ float AKnifeProjectile::GetAddonExplosionRadius() const {
 AKnifeProjectile::AKnifeProjectile() {
     this->_worldCollider = NULL;
     this->_camperDetector = NULL;
+    this->_poolableActorComponent = CreateDefaultSubobject<UPoolableProjectileComponent>(TEXT("PoolableComponent"));
 }
 

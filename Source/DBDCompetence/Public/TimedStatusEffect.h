@@ -3,7 +3,7 @@
 #include "StatusEffect.h"
 #include "TimedStatusEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTimedStatusEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

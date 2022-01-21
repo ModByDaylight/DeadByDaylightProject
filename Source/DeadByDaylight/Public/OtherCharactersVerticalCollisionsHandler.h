@@ -8,7 +8,7 @@ class AActor;
 class UCapsuleComponent;
 class UPrimitiveComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UOtherCharactersVerticalCollisionsHandler : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -23,6 +23,7 @@ private:
     UCapsuleComponent* _pawnDetector;
     
 public:
+    UOtherCharactersVerticalCollisionsHandler();
     UFUNCTION(BlueprintCallable)
     void SetPawnDetector(UCapsuleComponent* pawnDetector);
     
@@ -36,7 +37,5 @@ private:
     UFUNCTION()
     void InitializeOverlapDetection();
     
-public:
-    UOtherCharactersVerticalCollisionsHandler();
 };
 

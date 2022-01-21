@@ -1,11 +1,20 @@
 #include "ZombieCharacter.h"
 #include "Net/UnrealNetwork.h"
+#include "Components/SphereComponent.h"
+#include "AuthoritativePoolableActorComponent.h"
+#include "Components/StaticMeshComponent.h"
+#include "ZombieBlindableComponent.h"
+#include "ChargeableComponent.h"
+#include "CharacterPositionRecorderComponent.h"
+#include "FirecrackerEffectHandlerComponent.h"
+#include "FlashlightableComponent.h"
+#include "GameplayTagContainerComponent.h"
 
-class UOtherCharactersVerticalCollisionsHandler;
 class ASlasherPlayer;
-class UAuthoritativeMovementComponent;
 class UPrimitiveComponent;
 class AActor;
+class UOtherCharactersVerticalCollisionsHandler;
+class UAuthoritativeMovementComponent;
 class UFlashlightComponent;
 
 
@@ -70,10 +79,21 @@ void AZombieCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
 }
 
 AZombieCharacter::AZombieCharacter() {
+    this->_poolableComponent = CreateDefaultSubobject<UAuthoritativePoolableActorComponent>(TEXT("PollableComponent"));
+    this->_zombieAttackDetector = CreateDefaultSubobject<USphereComponent>(TEXT("ZombieAttackDetector"));
+    this->_attackDamageZone = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ZombieAttackDamageZone"));
     this->_zombieState = EZombieState::InPool;
     this->_zombieGender = EZombieGender::Male;
     this->_femaleSkeletalMesh = NULL;
     this->_audioSwitchState = TEXT("SVR_M01");
+    this->_blindableComponent = CreateDefaultSubobject<UZombieBlindableComponent>(TEXT("ZombieBlindableComponent"));
+    this->_blindingChargeableComponent = CreateDefaultSubobject<UChargeableComponent>(TEXT("BlindnessChargeableComponent"));
+    this->_firecrackerEffectHandlerComponent = CreateDefaultSubobject<UFirecrackerEffectHandlerComponent>(TEXT("FirecrackerEffectHandlerComponent"));
+    this->_flashLightableComponent = CreateDefaultSubobject<UFlashlightableComponent>(TEXT("EyesFlashlightableComponent"));
+    this->_objectState = CreateDefaultSubobject<UGameplayTagContainerComponent>(TEXT("ObjectState"));
+    this->_positionRecorder = CreateDefaultSubobject<UCharacterPositionRecorderComponent>(TEXT("Position Recorder"));
+    this->_authoritativeMovementComponent = CreateDefaultSubobject<UAuthoritativeMovementComponent>(TEXT("AuthoritativeMovement"));
+    this->_otherCharactersVerticalCollisionsHandler = CreateDefaultSubobject<UOtherCharactersVerticalCollisionsHandler>(TEXT("OtherCharactersVerticalCollisionsHandler"));
     this->_zombieStunnedCapsuleRadius = 15.00f;
     this->_minFallHeight = 50.00f;
     this->_afterInAirAttackCooldown = 0.80f;

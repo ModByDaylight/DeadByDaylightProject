@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPromptType.h"
 #include "MobileBaseUserWidget.h"
+#include "EPromptType.h"
 #include "AtlantaPromptWidget.generated.h"
 
 class UTextBlock;

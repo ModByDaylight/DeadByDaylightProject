@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "Appraisal.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAppraisal : public UPerk {
     GENERATED_BODY()
 public:

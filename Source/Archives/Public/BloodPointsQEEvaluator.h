@@ -9,9 +9,9 @@ UCLASS()
 class ARCHIVES_API UBloodPointsQEEvaluator : public UQuestEventEvaluatorBase {
     GENERATED_BODY()
 public:
+    UBloodPointsQEEvaluator();
     UFUNCTION()
     void OnFinishedPlaying(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-    UBloodPointsQEEvaluator();
 };
 

@@ -7,7 +7,7 @@
 class ATotem;
 class AActor;
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UTotemBoundPerk : public UPerk {
     GENERATED_BODY()
 public:
@@ -30,6 +30,10 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
     int32 _numTotemsToBind;
     
+public:
+    UTotemBoundPerk();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
 private:
     UFUNCTION()
     void OnRep_BoundTotems();
@@ -50,8 +54,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     bool Authority_BindToDullTotems(bool allowAdditionalBoundTotems);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UTotemBoundPerk();
 };
 

@@ -5,11 +5,11 @@
 #include "DBDTunableRowHandle.h"
 #include "ActivePhaseWalkInteraction.generated.h"
 
-class ADBDPlayer;
-class UCurveFloat;
 class UAnimMontage;
+class UCurveFloat;
+class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UActivePhaseWalkInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -32,6 +32,9 @@ private:
     UPROPERTY(EditDefaultsOnly)
     UAnimMontage* _activePhaseWalkChargingMontage;
     
+public:
+    UActivePhaseWalkInteraction();
+private:
     UFUNCTION()
     void OnPowerCollected(ADBDPlayer* collector);
     
@@ -45,7 +48,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_ResetChargeVFX(ADBDPlayer* player);
     
-public:
-    UActivePhaseWalkInteraction();
 };
 

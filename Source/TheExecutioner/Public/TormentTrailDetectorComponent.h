@@ -7,7 +7,7 @@
 
 class ATormentTrailPoint;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEEXECUTIONER_API UTormentTrailDetectorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -26,8 +26,8 @@ private:
     FTunableStat _inTormentTrailLastingEffectTime;
     
 public:
+    UTormentTrailDetectorComponent();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UTormentTrailDetectorComponent();
 };
 

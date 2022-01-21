@@ -7,6 +7,7 @@ UCLASS()
 class DEADBYDAYLIGHT_API UTallyScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    UTallyScreen();
 protected:
     UFUNCTION()
     void OnSpectateButtonClick();
@@ -38,7 +39,5 @@ protected:
     UFUNCTION()
     void OnBloodwebButtonClick();
     
-public:
-    UTallyScreen();
 };
 

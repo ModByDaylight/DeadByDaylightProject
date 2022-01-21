@@ -4,7 +4,7 @@
 #include "DBDTunableRowHandle.h"
 #include "HarpoonLauncher.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API UHarpoonLauncher : public UKillerProjectileLauncher {
     GENERATED_BODY()
 public:

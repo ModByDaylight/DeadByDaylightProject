@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "TwinOutlineUpdateStrategy.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTwinOutlineUpdateStrategy : public UOutlineUpdateStrategy {
     GENERATED_BODY()
 public:

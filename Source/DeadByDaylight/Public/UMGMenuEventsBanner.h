@@ -17,13 +17,14 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UTextBlock* FallbackTitle;
     
+public:
+    UUMGMenuEventsBanner();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void SetDefaultWidgetLayout();
     
     UFUNCTION(BlueprintImplementableEvent)
     void SetCustomWidgetLayout();
     
-public:
-    UUMGMenuEventsBanner();
 };
 

@@ -7,7 +7,7 @@ class ADBDPlayer;
 class ADBDSpectator;
 class APawn;
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class DBDUIPRESENTERS_API UHudPresenter : public UPresenter {
     GENERATED_BODY()
 public:
@@ -21,13 +21,14 @@ private:
     UPROPERTY(Transient)
     ADBDSpectator* _spectatorPawn;
     
+public:
+    UHudPresenter();
+private:
     UFUNCTION()
     void OnPawnUnpossessed(APawn* pawn);
     
     UFUNCTION()
     void OnPawnPossessed(APawn* pawn);
     
-public:
-    UHudPresenter();
 };
 

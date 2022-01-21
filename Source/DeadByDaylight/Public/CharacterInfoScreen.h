@@ -7,11 +7,10 @@ UCLASS()
 class UCharacterInfoScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    UCharacterInfoScreen();
 private:
     UFUNCTION()
     void OnBackButtonClick();
     
-public:
-    UCharacterInfoScreen();
 };
 

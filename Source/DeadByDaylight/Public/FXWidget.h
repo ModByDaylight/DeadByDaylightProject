@@ -19,6 +19,7 @@ private:
     FFXWidgetPlayer _particlePlayer;
     
 public:
+    UFXWidget();
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure=false)
     void StopParticle() const;
     
@@ -28,6 +29,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     UNiagaraComponent* GetNiagaraFX();
     
-    UFXWidget();
 };
 

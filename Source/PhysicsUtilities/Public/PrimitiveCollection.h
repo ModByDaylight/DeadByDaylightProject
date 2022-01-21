@@ -14,12 +14,12 @@ private:
     TSet<TWeakObjectPtr<UPrimitiveComponent>> _primitives;
     
 public:
+    UPrimitiveCollection();
     UFUNCTION(BlueprintCallable)
     void Remove(UPrimitiveComponent* primitive);
     
     UFUNCTION(BlueprintCallable)
     void Add(UPrimitiveComponent* primitive);
     
-    UPrimitiveCollection();
 };
 

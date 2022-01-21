@@ -7,6 +7,7 @@ UCLASS()
 class ULegalMenuScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    ULegalMenuScreen();
 protected:
     UFUNCTION()
     void OnOkClick();
@@ -17,7 +18,5 @@ protected:
     UFUNCTION()
     void OnAcceptClick();
     
-public:
-    ULegalMenuScreen();
 };
 

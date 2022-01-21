@@ -4,10 +4,10 @@
 #include "Styling/SlateColor.h"
 #include "UMGGenericPopup.generated.h"
 
-class URichTextBlock;
-class UUMGHtmlRichText;
-class UImage;
 class UUMGPopupButton;
+class UUMGHtmlRichText;
+class URichTextBlock;
+class UImage;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGGenericPopup : public UMobileBaseUserWidget {
@@ -46,12 +46,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
     FSlateColor DefaultTitleBackgroundColor;
     
+    UUMGGenericPopup();
     UFUNCTION(BlueprintImplementableEvent)
     void OnPopupDisappearance();
     
     UFUNCTION(BlueprintImplementableEvent)
     void OnPopupAppearance();
     
-    UUMGGenericPopup();
 };
 

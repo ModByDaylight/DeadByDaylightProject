@@ -2,11 +2,10 @@
 #include "CoreMinimal.h"
 #include "SpectateBarViewInterface.h"
 #include "CoreBaseHudWidget.h"
+#include "SpectateLeaveButtonClickDelegate.h"
+#include "SpectateLeftArrowClickDelegate.h"
+#include "SpectateRightArrowClickDelegate.h"
 #include "CoreSpectateBarWidget.generated.h"
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCoreSpectateBarWidgetLeaveButtonClickDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCoreSpectateBarWidgetLeftArrowClickDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCoreSpectateBarWidgetRightArrowClickDelegate);
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreSpectateBarWidget : public UCoreBaseHudWidget, public ISpectateBarViewInterface {
@@ -14,15 +13,17 @@ class DBDUIVIEWSCORE_API UCoreSpectateBarWidget : public UCoreBaseHudWidget, pub
 public:
 private:
     UPROPERTY(BlueprintAssignable, BlueprintCallable)
-    FCoreSpectateBarWidgetLeaveButtonClickDelegate _leaveButtonClickDelegate;
+    FSpectateLeaveButtonClickDelegate _leaveButtonClickDelegate;
     
     UPROPERTY(BlueprintAssignable, BlueprintCallable)
-    FCoreSpectateBarWidgetLeftArrowClickDelegate _leftArrowClickDelegate;
+    FSpectateLeftArrowClickDelegate _leftArrowClickDelegate;
     
     UPROPERTY(BlueprintAssignable, BlueprintCallable)
-    FCoreSpectateBarWidgetRightArrowClickDelegate _rightArrowClickDelegate;
+    FSpectateRightArrowClickDelegate _rightArrowClickDelegate;
     
 public:
     UCoreSpectateBarWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

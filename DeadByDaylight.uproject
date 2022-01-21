@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "4.25",
+	"EngineAssociation": "{079B8BF0-41DA-35F9-B754-E8AD33F1E63B}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -842,10 +842,6 @@
 			"BlacklistTargetConfigurations": [
 				"Shipping"
 			]
-		},
-		{
-			"Name": "ChaosEditor",
-			"Enabled": false
 		}
 	],
 	"TargetPlatforms": [

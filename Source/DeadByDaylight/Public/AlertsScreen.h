@@ -7,11 +7,10 @@ UCLASS()
 class DEADBYDAYLIGHT_API UAlertsScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    UAlertsScreen();
 private:
     UFUNCTION()
     void RewardAlertSequenceCompleted() const;
     
-public:
-    UAlertsScreen();
 };
 

@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "SleepingSkinnedMeshRegisterer.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ANIMATIONUTILITIES_API USleepingSkinnedMeshRegisterer : public UActorComponent {
     GENERATED_BODY()
 public:

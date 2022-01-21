@@ -1,8 +1,8 @@
 #include "DBDGameEventUtilities.h"
 
 class UObject;
-class AActor;
 class ADBDPlayer;
+class AActor;
 
 void UDBDGameEventUtilities::RemotelyDispatchGameEvent(const UObject* worldContextObject, const FGameplayTag gameEventType, ADBDPlayer* instigator, AActor* target, float customValue, UObject* customObjectParameter, int32 customIntValue) {
 }

@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "GnomePlayerComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UGnomePlayerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -12,8 +12,8 @@ private:
     bool _hasInteractedWithGnomeThisGame;
     
 public:
+    UGnomePlayerComponent();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UGnomePlayerComponent();
 };
 

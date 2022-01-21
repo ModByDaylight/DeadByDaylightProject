@@ -1,21 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "OnHeatChargeUpdateDelegate.h"
 #include "TagStateBool.h"
 #include "TunableStat.h"
 #include "HillbillyChainsawOverheatComponent.generated.h"
 
 class UPowerChargeComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FHillbillyChainsawOverheatComponentOnHeatChargeUpdateDelegate, const float, currentChargePercent, const bool, isChainsawOverheating);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class UHillbillyChainsawOverheatComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:
     UPROPERTY(BlueprintAssignable)
-    FHillbillyChainsawOverheatComponentOnHeatChargeUpdateDelegate OnHeatChargeUpdateDelegate;
+    FOnHeatChargeUpdateDelegate OnHeatChargeUpdateDelegate;
     
 private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_IsChainsawOverheating)
@@ -42,6 +41,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FTunableStat _overheatDischargeRate;
     
+public:
+    UHillbillyChainsawOverheatComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_IsChainsawOverheating();
     
@@ -62,9 +66,5 @@ private:
     UFUNCTION()
     void Authority_OnHeatChargeEmpty();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UHillbillyChainsawOverheatComponent();
 };
 

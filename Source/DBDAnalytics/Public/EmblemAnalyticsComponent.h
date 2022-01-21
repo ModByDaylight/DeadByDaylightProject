@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "EmblemAnalyticsComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UEmblemAnalyticsComponent : public UActorComponent {
     GENERATED_BODY()
 public:

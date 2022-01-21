@@ -6,7 +6,7 @@
 
 class AK25ControlledProjectile;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK25ProjectileLauncher : public UBaseProjectileLauncher {
     GENERATED_BODY()
 public:

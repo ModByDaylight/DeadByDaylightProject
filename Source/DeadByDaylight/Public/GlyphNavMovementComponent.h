@@ -3,10 +3,10 @@
 #include "GameFramework/NavMovementComponent.h"
 #include "GlyphNavMovementComponent.generated.h"
 
-class UPathFollowingComponent;
 class AActor;
+class UPathFollowingComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UGlyphNavMovementComponent : public UNavMovementComponent {
     GENERATED_BODY()
 public:
@@ -34,6 +34,7 @@ private:
     float _brakingDeceleration;
     
 public:
+    UGlyphNavMovementComponent();
     UFUNCTION(BlueprintCallable)
     void SetMaxSpeed(float maxSpeed);
     
@@ -46,6 +47,5 @@ public:
     UFUNCTION(BlueprintPure)
     AActor* GetGlyphOwner() const;
     
-    UGlyphNavMovementComponent();
 };
 

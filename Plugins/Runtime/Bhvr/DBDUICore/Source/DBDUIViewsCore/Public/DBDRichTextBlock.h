@@ -31,9 +31,9 @@ protected:
     FTextBlockOverrideProperties _undockedProperties;
     
 public:
+    UDBDRichTextBlock();
     UFUNCTION(BlueprintCallable)
     void SetHTMLText(const FText& InText);
     
-    UDBDRichTextBlock();
 };
 

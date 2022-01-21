@@ -3,7 +3,7 @@
 #include "ChainsawAnalyticsBaseComponent.h"
 #include "CannibalAnalyticsComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UCannibalAnalyticsComponent : public UChainsawAnalyticsBaseComponent {
     GENERATED_BODY()
 public:

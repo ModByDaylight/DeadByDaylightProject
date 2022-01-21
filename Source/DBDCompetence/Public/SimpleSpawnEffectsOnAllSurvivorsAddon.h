@@ -4,7 +4,7 @@
 #include "SimpleSpawnEffectsOnAllSurvivorsAddonParams.h"
 #include "SimpleSpawnEffectsOnAllSurvivorsAddon.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API USimpleSpawnEffectsOnAllSurvivorsAddon : public USpawnEffectsOnAllSurvivorsBaseAddon {
     GENERATED_BODY()
 public:

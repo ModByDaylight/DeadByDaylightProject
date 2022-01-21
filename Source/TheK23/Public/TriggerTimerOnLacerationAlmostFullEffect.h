@@ -5,7 +5,7 @@
 
 class ULacerationComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTriggerTimerOnLacerationAlmostFullEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

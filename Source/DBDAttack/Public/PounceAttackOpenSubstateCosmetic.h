@@ -9,6 +9,7 @@ UCLASS(Blueprintable)
 class UPounceAttackOpenSubstateCosmetic : public UObject {
     GENERATED_BODY()
 public:
+    UPounceAttackOpenSubstateCosmetic();
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void OnLungeAttackStartCosmetic(ADBDPlayer* slasherPlayer);
     
@@ -26,6 +27,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool IsLungeAttackAugmented(ADBDPlayer* slasherPlayer) const;
     
-    UPounceAttackOpenSubstateCosmetic();
 };
 

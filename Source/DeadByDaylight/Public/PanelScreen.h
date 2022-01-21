@@ -7,6 +7,7 @@ UCLASS()
 class UPanelScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    UPanelScreen();
     UFUNCTION()
     void OnWebNodeSelected(int32 characterId, int32 id, int32 nodeDepth);
     
@@ -70,6 +71,5 @@ public:
     UFUNCTION()
     void OnAvailableItemClicked(int32 clickedItemIndex);
     
-    UPanelScreen();
 };
 

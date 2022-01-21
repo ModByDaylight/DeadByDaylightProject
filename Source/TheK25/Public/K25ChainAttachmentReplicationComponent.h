@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/ActorComponent.h"
 #include "EK25ChainDetachmentReason.h"
 #include "K25ChainAttachmentReplicationComponent.generated.h"
 
@@ -9,10 +9,11 @@ class UK25SurvivorChainAttachmentComponent;
 class AK25Chain;
 class AK25SurvivorChainAttachmentAnchor;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THEK25_API UK25ChainAttachmentReplicationComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UK25ChainAttachmentReplicationComponent();
 private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_StartChainReelback(AK25Chain* chainToAttach);
@@ -26,7 +27,5 @@ private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_AttachChainToAnchor(UK25SurvivorChainAttachmentComponent* chainAttachementComponent, AK25Chain* chainToAttach, AK25SurvivorChainAttachmentAnchor* anchorPoint);
     
-public:
-    UK25ChainAttachmentReplicationComponent();
 };
 

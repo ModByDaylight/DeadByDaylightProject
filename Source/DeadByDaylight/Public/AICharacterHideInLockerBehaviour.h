@@ -5,8 +5,8 @@
 #include "Navigation/PathFollowingComponent.h"
 #include "AICharacterHideInLockerBehaviour.generated.h"
 
-class ADBDAIPlayerController;
 class ADBDPlayer;
+class ADBDAIPlayerController;
 class UAICharacterHideInLockerBehaviourData;
 
 UCLASS()
@@ -23,10 +23,11 @@ private:
     UPROPERTY()
     UAICharacterHideInLockerBehaviourData* _characterHideInLockerData;
     
+public:
+    UAICharacterHideInLockerBehaviour();
+private:
     UFUNCTION()
     void OnMovementFinished(FAIRequestID RequestID, TEnumAsByte<EPathFollowingResult::Type> Result);
     
-public:
-    UAICharacterHideInLockerBehaviour();
 };
 

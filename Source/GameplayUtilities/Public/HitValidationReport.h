@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "HitValidatorInstigatorParams.h"
 #include "UObject/NoExportTypes.h"
 #include "HitValidatorTargetParams.h"
-#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "HitValidationReport.generated.h"
 

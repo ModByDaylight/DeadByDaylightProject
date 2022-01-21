@@ -7,7 +7,7 @@
 
 class UAnimMontage;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class USelfUntrap : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -34,8 +34,8 @@ protected:
     bool _canEscape;
     
 public:
+    USelfUntrap();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    USelfUntrap();
 };
 

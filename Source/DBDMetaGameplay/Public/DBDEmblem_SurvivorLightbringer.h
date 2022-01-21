@@ -3,7 +3,7 @@
 #include "DBDEmblem.h"
 #include "DBDEmblem_SurvivorLightbringer.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDBDEmblem_SurvivorLightbringer : public UDBDEmblem {
     GENERATED_BODY()
 public:

@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ArrayOfSceneComponent.h"
 #include "ESurvivorGrouping.h"
 #include "ForceSpawnTileData.h"
-#include "ManagedGameplayElementData.h"
 #include "Dependency.h"
+#include "ArrayOfSceneComponent.h"
+#include "ManagedGameplayElementData.h"
 #include "GeneratedLevelData.generated.h"
 
-class AActor;
 class USceneComponent;
+class AActor;
 
 USTRUCT(BlueprintType)
 struct FGeneratedLevelData {

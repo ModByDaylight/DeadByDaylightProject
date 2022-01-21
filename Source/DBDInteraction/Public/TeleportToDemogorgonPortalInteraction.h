@@ -11,7 +11,7 @@ class ADemogorgonPortal;
 class ADBDPlayer;
 class ASlasherPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DBDINTERACTION_API UTeleportToDemogorgonPortalInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -43,6 +43,8 @@ private:
     UPROPERTY(EditAnywhere)
     TSubclassOf<AActor> ClassToSpawnForHusk;
     
+public:
+    UTeleportToDemogorgonPortalInteraction();
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void OnTeleportInteractionCanceledVFX();
@@ -51,7 +53,5 @@ private:
     UFUNCTION()
     void OnSlasherSet(ASlasherPlayer* slasher);
     
-public:
-    UTeleportToDemogorgonPortalInteraction();
 };
 

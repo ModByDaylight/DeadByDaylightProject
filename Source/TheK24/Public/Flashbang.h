@@ -6,7 +6,7 @@
 class AGenerator;
 class AActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UFlashbang : public UPerk {
     GENERATED_BODY()
 public:
@@ -20,6 +20,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _generatorRepairPercentToCraftFlashbang[3];
     
+public:
+    UFlashbang();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_GeneratorsRepairProgress();
     
@@ -34,9 +39,5 @@ private:
     UFUNCTION()
     void Authority_OnRepairProgressApplied(float individualChargeAmount, float totalChargeAmount, AActor* chargeInstigator, bool wasCoop, float deltaTime);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UFlashbang();
 };
 

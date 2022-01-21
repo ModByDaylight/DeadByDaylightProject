@@ -6,7 +6,7 @@
 
 class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UPossessPlayer : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -14,6 +14,8 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _possessThePlayerMaxCharge;
     
+public:
+    UPossessPlayer();
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnPossessStart(ADBDPlayer* player);
@@ -21,7 +23,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnPossessCancelled(ADBDPlayer* player);
     
-public:
-    UPossessPlayer();
 };
 

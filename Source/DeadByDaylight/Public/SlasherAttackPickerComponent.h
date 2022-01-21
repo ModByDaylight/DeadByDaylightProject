@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "SlasherAttackPickerComponent.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API USlasherAttackPickerComponent : public UActorComponent {
     GENERATED_BODY()
 public:

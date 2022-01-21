@@ -14,6 +14,7 @@ public:
     UPROPERTY(BlueprintReadOnly, Export)
     UUMGBankAndPlayerInfoWidget* BankAndPlayerInfoWidget;
     
+    UUMGFogWidget();
 protected:
     UFUNCTION()
     void OnRankTooltipTriggered(const FTooltipPressedData& tooltipPressedData);
@@ -27,7 +28,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void HandleOnSettingButtonClick();
     
-public:
-    UUMGFogWidget();
 };
 

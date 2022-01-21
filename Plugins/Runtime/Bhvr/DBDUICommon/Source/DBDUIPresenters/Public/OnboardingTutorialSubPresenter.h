@@ -6,7 +6,7 @@
 class UOnboardingTutorialViewInterface;
 class IOnboardingTutorialViewInterface;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDUIPRESENTERS_API UOnboardingTutorialSubPresenter : public USubPresenter {
     GENERATED_BODY()
 public:
@@ -14,10 +14,11 @@ private:
     UPROPERTY(Transient)
     TScriptInterface<IOnboardingTutorialViewInterface> _onboardingTutorialWidget;
     
+public:
+    UOnboardingTutorialSubPresenter();
+private:
     UFUNCTION()
     void OnSelectTutorial(const FString& stepId, const FString& tutorialId);
     
-public:
-    UOnboardingTutorialSubPresenter();
 };
 

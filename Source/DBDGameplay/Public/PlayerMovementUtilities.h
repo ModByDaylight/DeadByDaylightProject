@@ -3,13 +3,14 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "PlayerMovementUtilities.generated.h"
 
-class UCurveFloat;
 class ADBDPlayer;
+class UCurveFloat;
 
 UCLASS(BlueprintType)
 class DBDGAMEPLAY_API UPlayerMovementUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UPlayerMovementUtilities();
     UFUNCTION(BlueprintCallable)
     static void Local_SetGamepadYawCurve(ADBDPlayer* player, UCurveFloat* curve);
     
@@ -43,6 +44,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void Local_ApplyGamepadPitchScaleMultiplier(ADBDPlayer* player, const float multiplier, const float adjustmentTime);
     
-    UPlayerMovementUtilities();
 };
 

@@ -6,10 +6,10 @@
 #include "Gnome.generated.h"
 
 class USkeletalMeshComponent;
-class UInteractor;
+class UGnomeInteraction;
 class UPrimitiveComponent;
 class UChargeableComponent;
-class UGnomeInteraction;
+class UInteractor;
 class UDBDOutlineComponent;
 class ADBDPlayer;
 
@@ -51,6 +51,8 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FLinearColor _auraColorWhileInteracting;
     
+public:
+    AGnome();
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnStoppedInteracting();
@@ -61,7 +63,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnInteractionCompleted(ADBDPlayer* interactingPlayer);
     
-public:
-    AGnome();
 };
 

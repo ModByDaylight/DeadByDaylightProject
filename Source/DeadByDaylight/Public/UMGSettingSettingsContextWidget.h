@@ -33,6 +33,7 @@ protected:
     bool IsAutoDeclineFriendRequestOn;
     
 public:
+    UUMGSettingSettingsContextWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void ShowLinkAccountRow(bool isShow);
     
@@ -63,6 +64,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void HandleAutoDeclineFriendRequestToggleClick(bool toggleValue);
     
-    UUMGSettingSettingsContextWidget();
 };
 

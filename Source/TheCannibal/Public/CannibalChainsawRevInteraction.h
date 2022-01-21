@@ -3,7 +3,7 @@
 #include "ChainsawRevInteraction.h"
 #include "CannibalChainsawRevInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UCannibalChainsawRevInteraction : public UChainsawRevInteraction {
     GENERATED_BODY()
 public:

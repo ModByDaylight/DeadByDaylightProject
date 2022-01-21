@@ -5,7 +5,7 @@
 
 class URespawningEventComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class SPECIALEVENTUTILITIES_API UTimedRespawnableTrigger : public URespawnableTrigger {
     GENERATED_BODY()
 public:

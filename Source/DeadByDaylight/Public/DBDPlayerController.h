@@ -1,27 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DBDPlayerControllerBase.h"
+#include "OnPawnLeavingGameDelegate.h"
 #include "EPlayerRole.h"
+#include "OnLocallyObservedChangedDelegate.h"
 #include "DBDPlayerController.generated.h"
 
 class ADBDPlayerState;
-class ADBDPlayer;
 class ANetworkFenceActor;
 class UDBDBaseInputHandler;
 class APawn;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDPlayerControllerOnPawnLeavingGame, ADBDPlayer*, leavingPlayer);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDBDPlayerControllerOnLocallyObservedChanged);
+class ADBDPlayer;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ADBDPlayerController : public ADBDPlayerControllerBase {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerControllerOnPawnLeavingGame OnPawnLeavingGame;
+    FOnPawnLeavingGameDelegate OnPawnLeavingGame;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerControllerOnLocallyObservedChanged OnLocallyObservedChanged;
+    FOnLocallyObservedChangedDelegate OnLocallyObservedChanged;
     
 private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_Fence)
@@ -37,6 +36,9 @@ private:
     EPlayerRole _controllerGameRole;
     
 public:
+    ADBDPlayerController();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetShouldMoveInputReplicateToServer(bool shouldReplicate);
     
@@ -112,8 +114,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ActivateAI(bool activate, int32 playerRank);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ADBDPlayerController();
 };
 

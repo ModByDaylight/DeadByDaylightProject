@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "ECamperDamageState.h"
 #include "Components/ActorComponent.h"
 #include "ECamperImmobilizeState.h"
-#include "ECamperDamageState.h"
 #include "SurvivorStatusComponent.generated.h"
 
 class ACamperPlayer;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAYPRESENTER_API USurvivorStatusComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -15,6 +15,9 @@ private:
     UPROPERTY(Transient)
     ACamperPlayer* _survivor;
     
+public:
+    USurvivorStatusComponent();
+private:
     UFUNCTION()
     void OnValidatedInteractionStarted();
     
@@ -87,6 +90,5 @@ public:
     UFUNCTION(BlueprintPure)
     void GetMovementSpeed(float& currentMovementSpeed, float& percentMovementSpeed, float& maximumMovementSpeed) const;
     
-    USurvivorStatusComponent();
 };
 

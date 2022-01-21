@@ -1,17 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EGameplayElementType.h"
 #include "Components/SceneComponent.h"
-#include "ActorSpawnerProperties.h"
-#include "WeightedElement.h"
 #include "SpawnElement.h"
+#include "WeightedElement.h"
+#include "ActorSpawnedDelegate.h"
+#include "EGameplayElementType.h"
+#include "ActorSpawnerProperties.h"
 #include "ActorSpawner.generated.h"
 
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FActorSpawnerOnAsyncActorSpawned, AActor*, actorSpawned);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UActorSpawner : public USceneComponent, public IWeightedElement, public ISpawnElement {
     GENERATED_BODY()
 public:
@@ -40,7 +39,7 @@ public:
     int32 SpawnPriorityTier;
     
     UPROPERTY(BlueprintAssignable)
-    FActorSpawnerOnAsyncActorSpawned OnAsyncActorSpawned;
+    FActorSpawnedDelegate OnAsyncActorSpawned;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -59,6 +58,7 @@ private:
     TWeakObjectPtr<AActor> _spawnedActorOnAuthority;
     
 public:
+    UActorSpawner();
     UFUNCTION(BlueprintCallable)
     bool UseActivatedElement();
     
@@ -77,6 +77,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void Authority_SpawnActorAsyncEvent();
     
-    UActorSpawner();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

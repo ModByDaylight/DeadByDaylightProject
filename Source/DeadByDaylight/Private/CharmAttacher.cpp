@@ -1,8 +1,8 @@
 #include "CharmAttacher.h"
 
-class USkeletalMeshComponent;
-class ACharm;
 class AActor;
+class ACharm;
+class USkeletalMeshComponent;
 
 USkeletalMeshComponent* ACharmAttacher::GetSkeletalMeshComponentAttachedOn() {
     return NULL;
@@ -27,6 +27,7 @@ void ACharmAttacher::BindOnCharmAnimationTagsChanged() {
 }
 
 ACharmAttacher::ACharmAttacher() {
+    this->_chain = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("ChainSkeletalMeshComponent"));
     this->_attachedCharm = NULL;
 }
 

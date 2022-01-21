@@ -7,7 +7,7 @@ class UStaticMeshComponent;
 class UGlassStaticMesh;
 class UMaterialInstanceDynamic;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDDecalComponent : public UDecalComponent {
     GENERATED_BODY()
 public:

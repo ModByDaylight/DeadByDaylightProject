@@ -4,7 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "ActivateOnEventTimedStatusEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UActivateOnEventTimedStatusEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EAttackType.h"
 #include "KillerAttackSubAnimInstance.h"
+#include "EAttackType.h"
 #include "K25AttackSubAnimInstance.generated.h"
 
 UCLASS(NonTransient)
@@ -12,10 +12,11 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     bool _hasDownedTargetHoldingLamentConfiguration;
     
+public:
+    UK25AttackSubAnimInstance();
+protected:
     UFUNCTION()
     void OnAttackStart(const EAttackType attackType);
     
-public:
-    UK25AttackSubAnimInstance();
 };
 

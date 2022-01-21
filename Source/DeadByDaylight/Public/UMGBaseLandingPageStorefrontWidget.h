@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UMGBaseStorefrontWidget.h"
-#include "UObject/NoExportTypes.h"
 #include "EStorefrontState.h"
+#include "UObject/NoExportTypes.h"
 #include "UMGBaseLandingPageStorefrontWidget.generated.h"
 
 class UUMGLandingPageButtonWidget;
@@ -42,10 +42,11 @@ private:
     UPROPERTY(Export)
     TArray<UUMGLandingPageButtonWidget*> _landingPageTabs;
     
+public:
+    UUMGBaseLandingPageStorefrontWidget();
+private:
     UFUNCTION()
     void HandleTabSelected(const EStorefrontState& tabId);
     
-public:
-    UUMGBaseLandingPageStorefrontWidget();
 };
 

@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EPlayerRole.h"
-#include "EProviderFlag.h"
-#include "EPlatformFlag.h"
 #include "PlayerLoadoutData.h"
+#include "UObject/NoExportTypes.h"
 #include "DailyRitualInstance.h"
 #include "PlayerSavedProfileData.h"
-#include "UObject/NoExportTypes.h"
+#include "EPlatformFlag.h"
+#include "EProviderFlag.h"
 #include "PlayerPersistentData.generated.h"
 
 USTRUCT(BlueprintType)

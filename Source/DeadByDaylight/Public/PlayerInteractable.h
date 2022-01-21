@@ -9,11 +9,10 @@ UCLASS()
 class DEADBYDAYLIGHT_API APlayerInteractable : public AInteractable {
     GENERATED_BODY()
 public:
+    APlayerInteractable();
 protected:
     UFUNCTION(BlueprintNativeEvent)
     void InitInteractable(ADBDPlayer* player);
     
-public:
-    APlayerInteractable();
 };
 

@@ -8,7 +8,7 @@ class UTexture2D;
 class UDecalComponent;
 class UMaterial;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UTriplanarDecalComponent : public USceneComponent {
     GENERATED_BODY()
 public:
@@ -44,9 +44,9 @@ private:
     UMaterial* _decalMaterial;
     
 public:
+    UTriplanarDecalComponent();
     UFUNCTION(BlueprintImplementableEvent)
     void UpdateTriplanarDecal();
     
-    UTriplanarDecalComponent();
 };
 

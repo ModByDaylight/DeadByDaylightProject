@@ -3,7 +3,7 @@
 #include "InteractionDefinition.h"
 #include "BlightedSerumCooldownInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class HALLOWEEN2020_API UBlightedSerumCooldownInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:

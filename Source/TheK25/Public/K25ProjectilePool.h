@@ -3,7 +3,7 @@
 #include "AuthoritativeActorPoolComponent.h"
 #include "K25ProjectilePool.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK25ProjectilePool : public UAuthoritativeActorPoolComponent {
     GENERATED_BODY()
 public:

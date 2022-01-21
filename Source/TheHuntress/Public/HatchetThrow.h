@@ -6,7 +6,7 @@
 
 class ATheHuntressPower;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UHatchetThrow : public UThrowInteraction {
     GENERATED_BODY()
 public:
@@ -14,10 +14,11 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _hatchetThrowCancellationCooldown;
     
+public:
+    UHatchetThrow();
+protected:
     UFUNCTION(BlueprintPure)
     ATheHuntressPower* GetOwningHatchetSpawner() const;
     
-public:
-    UHatchetThrow();
 };
 

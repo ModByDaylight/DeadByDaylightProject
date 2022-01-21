@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "ESkillCheckCustomType.h"
-#include "UObject/NoExportTypes.h"
 #include "YellowGlyphComponent.generated.h"
 
+class AGlyph;
 class ADBDPlayer;
 class UTileSpawnPoint;
-class AGlyph;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UYellowGlyphComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -41,6 +41,9 @@ private:
     UPROPERTY()
     TArray<AGlyph*> _allGlyphs;
     
+public:
+    UYellowGlyphComponent();
+private:
     UFUNCTION()
     void TriggerSkillCheck(float currentTickerLocation);
     
@@ -68,7 +71,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     bool Authority_TeleportGlyph(int32 maxNumberOfTries);
     
-public:
-    UYellowGlyphComponent();
 };
 

@@ -7,7 +7,7 @@
 class ACollectable;
 class UBlightedSerumDashInteraction;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class HALLOWEEN2020_API UBlightedSerumAddon : public UItemAddon {
     GENERATED_BODY()
 public:
@@ -24,6 +24,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     int32 _numberOfDashesPerEvent;
     
+public:
+    UBlightedSerumAddon();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_DashInteraction();
     
@@ -31,8 +36,5 @@ public:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void OnBlightedDashEnabledVfxSfx();
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UBlightedSerumAddon();
 };
 

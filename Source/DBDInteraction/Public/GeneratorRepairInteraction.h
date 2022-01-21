@@ -6,7 +6,7 @@
 
 class AGenerator;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UGeneratorRepairInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -15,6 +15,7 @@ private:
     FDBDTunableRowHandle _penaltyPerRepairPlayerCount[3];
     
 public:
+    UGeneratorRepairInteraction();
     UFUNCTION(BlueprintCallable)
     void SetIsObstructed(bool obstructed);
     
@@ -22,7 +23,5 @@ protected:
     UFUNCTION(BlueprintPure)
     AGenerator* GetOwningGenerator() const;
     
-public:
-    UGeneratorRepairInteraction();
 };
 

@@ -26,11 +26,11 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     FAnimSequenceSelector _destroyPalletAnim;
     
+public:
+    UPalletAnimInstance();
 private:
     UFUNCTION()
     void OnKillerSet(ASlasherPlayer* killer);
     
-public:
-    UPalletAnimInstance();
 };
 

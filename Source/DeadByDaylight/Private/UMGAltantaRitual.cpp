@@ -5,8 +5,8 @@ void UUMGAltantaRitual::BroadcastOnClaimRewardsButtonPressed(const int32 ritualI
 }
 
 UUMGAltantaRitual::UUMGAltantaRitual() {
-    this->_claimText = INVTEXT("CLAIM");
-    this->_claimedText = INVTEXT("CLAIMED");
-    this->_completedText = INVTEXT("COMPLETED");
+    this->_claimText = FText::FromString(TEXT("CLAIM"));
+    this->_claimedText = FText::FromString(TEXT("CLAIMED"));
+    this->_completedText = FText::FromString(TEXT("COMPLETED"));
 }
 

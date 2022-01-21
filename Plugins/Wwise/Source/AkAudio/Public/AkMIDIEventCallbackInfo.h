@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AkMidiNoteOnOff.h"
 #include "AkEventCallbackInfo.h"
-#include "EAkMidiEventType.h"
-#include "AkMidiProgramChange.h"
-#include "AkMidiPitchBend.h"
-#include "AkMidiChannelAftertouch.h"
-#include "AkMidiNoteAftertouch.h"
 #include "AkMidiGeneric.h"
+#include "EAkMidiEventType.h"
+#include "AkMidiNoteAftertouch.h"
+#include "AkMidiProgramChange.h"
+#include "AkMidiChannelAftertouch.h"
+#include "AkMidiPitchBend.h"
+#include "AkMidiNoteOnOff.h"
 #include "AkMidiCc.h"
 #include "AkMIDIEventCallbackInfo.generated.h"
 
@@ -15,6 +15,7 @@ UCLASS()
 class UAkMIDIEventCallbackInfo : public UAkEventCallbackInfo {
     GENERATED_BODY()
 public:
+    UAkMIDIEventCallbackInfo();
     UFUNCTION(BlueprintCallable)
     EAkMidiEventType GetType();
     
@@ -45,6 +46,5 @@ public:
     UFUNCTION(BlueprintCallable)
     bool GetCc(FAkMidiCc& AsCc);
     
-    UAkMIDIEventCallbackInfo();
 };
 

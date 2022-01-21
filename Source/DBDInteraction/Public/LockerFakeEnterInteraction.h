@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InteractionDefinition.h"
 #include "DBDTunableRowHandle.h"
+#include "InteractionDefinition.h"
 #include "LockerFakeEnterInteraction.generated.h"
 
 class ALocker;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DBDINTERACTION_API ULockerFakeEnterInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:

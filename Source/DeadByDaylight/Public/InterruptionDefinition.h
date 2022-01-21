@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/SceneComponent.h"
 #include "UObject/NoExportTypes.h"
 #include "AnimationMontageDescriptor.h"
+#include "GameplayTagContainer.h"
+#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "InterruptionDefinition.generated.h"
 
@@ -12,7 +12,7 @@ class ADBDPlayer;
 class UInteractionDefinition;
 class AInteractable;
 
-UCLASS(Blueprintable, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UInterruptionDefinition : public USceneComponent {
     GENERATED_BODY()
 public:
@@ -54,6 +54,7 @@ private:
     FGameplayTag _interruptionScoreEvent;
     
 public:
+    UInterruptionDefinition();
     UFUNCTION(BlueprintCallable)
     void SetInterruptorSnapPoint(const FTransform& Point);
     
@@ -93,6 +94,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool CanInterruptWhileCarrying() const;
     
-    UInterruptionDefinition();
 };
 

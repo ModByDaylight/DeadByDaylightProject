@@ -4,7 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "HasFlag.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UHasFlag : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:

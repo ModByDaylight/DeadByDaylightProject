@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "GameplayTagContainer.h"
-#include "BaseModifierContainer.h"
-#include "GameEventData.h"
 #include "EDBDScoreTypes.h"
+#include "BaseModifierContainer.h"
 #include "ModifierTickableConditionReplicatedData.h"
+#include "GameplayTagContainer.h"
+#include "GameEventData.h"
 #include "EInventoryItemType.h"
 #include "StatusViewSource.h"
 #include "GameplayModifierContainer.generated.h"
 
-class AActor;
 class ADBDPlayer;
 class UTimerObject;
+class AActor;
 class UGameplayModifierContainer;
 class UBaseModifierCondition;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UGameplayModifierContainer : public UBaseModifierContainer {
     GENERATED_BODY()
 public:
@@ -47,6 +47,9 @@ private:
     UTimerObject* _activationTimer;
     
 public:
+    UGameplayModifierContainer();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void UpdateIsApplicable();
     
@@ -205,8 +208,5 @@ public:
     UFUNCTION(BlueprintCallable)
     UBaseModifierCondition* AddCondition(TSubclassOf<UBaseModifierCondition> conditionType);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UGameplayModifierContainer();
 };
 

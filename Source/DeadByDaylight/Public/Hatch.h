@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Interactable.h"
 #include "NoiseIndicatorEmitterInterface.h"
-#include "DBDTunableRowHandle.h"
 #include "EHatchState.h"
+#include "DBDTunableRowHandle.h"
 #include "GameplayTagContainer.h"
 #include "GameEventData.h"
 #include "Hatch.generated.h"
@@ -37,6 +37,10 @@ private:
     
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _hatchOpenDuration;
+    
+public:
+    AHatch();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
     UFUNCTION(BlueprintCallable)
@@ -132,9 +136,7 @@ private:
     UFUNCTION()
     void Authority_CheckedChangeActiveState();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    AHatch();
+    // Fix for true pure virtual functions not being implemented
 };
 

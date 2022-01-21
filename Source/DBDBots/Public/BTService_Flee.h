@@ -7,8 +7,8 @@
 #include "AITunableParameter.h"
 #include "BTService_Flee.generated.h"
 
-class UNavMovePath;
 class UPathStrategySelector;
+class UNavMovePath;
 class UObject;
 
 UCLASS()
@@ -45,5 +45,7 @@ private:
     
 public:
     UBTService_Flee();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

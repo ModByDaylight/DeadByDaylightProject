@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EIsInteractionAvailableOnFilter.h"
 #include "BTDecorator_TickableBase.h"
+#include "EIsInteractionAvailableOnFilter.h"
 #include "BTDecorator_IsInteractionAvailable.generated.h"
 
 UCLASS()

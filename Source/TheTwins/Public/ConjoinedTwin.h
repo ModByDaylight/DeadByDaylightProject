@@ -1,27 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DBDPlayer.h"
-#include "FastTimer.h"
 #include "DBDTunableRowHandle.h"
+#include "FastTimer.h"
 #include "GameplayTagContainer.h"
 #include "GameEventData.h"
 #include "FirecrackerEffectData.h"
 #include "ConjoinedTwin.generated.h"
 
-class UAnimationMontageSlave;
 class UCustomizedAudioComponent;
 class URangeToActorsTrackerComponent;
-class UHitValidatorComponent;
+class UDBDAttackerComponent;
 class UTwinOutlineUpdateStrategy;
+class UFlashlightableComponent;
 class UFirecrackerEffectHandlerComponent;
 class UAkComponent;
+class UHitValidatorComponent;
 class UKillerBlindingFXComponent;
-class UDBDAttackerComponent;
 class UHitValidatorConfigurator;
+class UAnimationMontageSlave;
 class UTwinFirstPersonViewComponent;
-class UFlashlightableComponent;
-class UBlindFlashlightTargetFXComponent;
 class UTwinPossessNegationEffectComponent;
+class UBlindFlashlightTargetFXComponent;
 
 UCLASS()
 class AConjoinedTwin : public ADBDPlayer {
@@ -87,6 +87,7 @@ private:
     UTwinPossessNegationEffectComponent* _twinPossessNegationEffectComponent;
     
 public:
+    AConjoinedTwin();
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_SendAttackInput(bool pressed);
     
@@ -101,7 +102,5 @@ protected:
     UFUNCTION()
     void Authority_OnFirecrackerInRangeBegin(const FFirecrackerEffectData& effectData);
     
-public:
-    AConjoinedTwin();
 };
 

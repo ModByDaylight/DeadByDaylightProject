@@ -5,20 +5,23 @@
 #include "UObject/NoExportTypes.h"
 #include "DBDPlayerData.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDPlayerDataOnItemUseButtonStateChanged, bool, isPressed);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDPlayerData : public UActorComponent {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnItemUseButtonStateChanged, bool, isPressed);
+    
     UPROPERTY(BlueprintAssignable)
-    FDBDPlayerDataOnItemUseButtonStateChanged OnItemUseButtonStateChanged;
+    FOnItemUseButtonStateChanged OnItemUseButtonStateChanged;
     
 private:
     UPROPERTY(Replicated)
     FYawAndPitchRotator_NetQuantize16 _controlRotation;
     
 public:
+    UDBDPlayerData();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION()
     void SetRenderingFeaturesCompleted();
     
@@ -69,8 +72,5 @@ public:
     UFUNCTION()
     bool DidRenderingFeaturesComplete() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UDBDPlayerData();
 };
 

@@ -4,7 +4,7 @@
 #include "DBDTunableRowHandle.h"
 #include "HarpoonProjectileMovementComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API UHarpoonProjectileMovementComponent : public UPhysicsBasedProjectileMovementComponent {
     GENERATED_BODY()
 public:

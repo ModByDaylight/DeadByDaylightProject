@@ -9,9 +9,9 @@ UCLASS(BlueprintType)
 class ARCHIVES_API UQuestEventsHandlerUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UQuestEventsHandlerUtilities();
     UFUNCTION(BlueprintCallable)
     static void InitializeQuestEventHandler(UQuestEventsHandler* questEventsHandler);
     
-    UQuestEventsHandlerUtilities();
 };
 

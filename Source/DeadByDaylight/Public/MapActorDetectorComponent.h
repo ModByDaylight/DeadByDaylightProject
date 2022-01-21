@@ -1,21 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "EMapActorCategory.h"
+#include "OnMapActorDetected.h"
 #include "Engine/EngineTypes.h"
+#include "EMapActorCategory.h"
 #include "MapActorDetectorComponent.generated.h"
 
-class AActor;
 class UPrimitiveComponent;
+class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMapActorDetectorComponentOnActorDetected, AActor*, actor);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UMapActorDetectorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FMapActorDetectorComponentOnActorDetected OnActorDetected;
+    FOnMapActorDetected OnActorDetected;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
@@ -26,6 +25,7 @@ private:
     UPrimitiveComponent* _primitive;
     
 public:
+    UMapActorDetectorComponent();
     UFUNCTION(BlueprintCallable)
     void SetDetectionPrimitive(UPrimitiveComponent* primitive);
     
@@ -33,7 +33,5 @@ protected:
     UFUNCTION()
     void OnOverlapEnter(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     
-public:
-    UMapActorDetectorComponent();
 };
 

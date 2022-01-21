@@ -1,4 +1,5 @@
 #include "PhantomTrap.h"
+#include "TerrorRadiusEmitterComponent.h"
 
 class ASlasherPlayer;
 class AActor;
@@ -16,6 +17,7 @@ bool APhantomTrap::EvaluateLineOfSight(const FVector& start, const FVector& end,
 }
 
 APhantomTrap::APhantomTrap() {
+    this->_terrorRadiusEmitter = CreateDefaultSubobject<UTerrorRadiusEmitterComponent>(TEXT("Terror Radius Component"));
     this->_lineOfSightTraceMinInterval = 0.10f;
 }
 

@@ -6,8 +6,8 @@
 #include "EArmIkMode.h"
 #include "ArmIKSurvivorSubAnimInstance.generated.h"
 
-class USkeletalMeshComponent;
 class UArmDetectionFanComponent;
+class USkeletalMeshComponent;
 
 UCLASS(NonTransient)
 class DBDANIMATION_API UArmIKSurvivorSubAnimInstance : public UBaseSurvivorAnimInstance {
@@ -58,9 +58,9 @@ private:
     USkeletalMeshComponent* _meshComponent;
     
 public:
+    UArmIKSurvivorSubAnimInstance();
     UFUNCTION(BlueprintCallable)
     void ChangeMode(const EArmIkMode newMode);
     
-    UArmIKSurvivorSubAnimInstance();
 };
 

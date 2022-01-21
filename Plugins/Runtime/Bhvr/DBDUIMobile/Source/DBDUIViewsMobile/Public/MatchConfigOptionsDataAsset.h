@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "MatchOptionAssetData.h"
 #include "Engine/DataAsset.h"
 #include "ECustomMatchOptions.h"
-#include "MatchOptionAssetData.h"
 #include "MatchConfigOptionsDataAsset.generated.h"
 
 UCLASS()

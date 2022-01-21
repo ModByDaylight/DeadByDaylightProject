@@ -3,7 +3,7 @@
 #include "ItemAddon.h"
 #include "IridescentStone.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIridescentStone : public UItemAddon {
     GENERATED_BODY()
 public:

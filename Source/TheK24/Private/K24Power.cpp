@@ -1,5 +1,6 @@
 #include "K24Power.h"
 #include "Net/UnrealNetwork.h"
+#include "ChargeableComponent.h"
 
 class APallet;
 class AZombieCharacter;
@@ -54,6 +55,7 @@ void AK24Power::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetim
 }
 
 AK24Power::AK24Power() {
+    this->_activateK24PowerCharge = CreateDefaultSubobject<UChargeableComponent>(TEXT("ActivateK24PowerCharge"));
     this->_activatePowerChargeSpeedCurve = NULL;
     this->_activatePowerChargeLvl3SpeedCurve = NULL;
     this->_k24PowerCooldownInteraction = NULL;

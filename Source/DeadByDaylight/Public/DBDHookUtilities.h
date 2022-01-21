@@ -11,6 +11,7 @@ UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UDBDHookUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UDBDHookUtilities();
     UFUNCTION(BlueprintPure)
     static bool IsWraithHook(AMeatHook* targetHook);
     
@@ -38,6 +39,5 @@ public:
     UFUNCTION(BlueprintPure)
     static float ComputeHookStrugglePercent(const ACamperPlayer* hookedCamper, float hookStruggleThreshold);
     
-    UDBDHookUtilities();
 };
 

@@ -36,12 +36,12 @@ private:
     UUMGDragWidget_HudEditor* _childLinkWidget;
     
 public:
+    UUMGDragWidget_HudEditor();
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void SetOnSelection(bool isSelected);
     
     UFUNCTION(BlueprintPure)
     UCustomWidgetWrapper_HudEditor* GetCustomWrapper() const;
     
-    UUMGDragWidget_HudEditor();
 };
 

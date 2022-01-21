@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
 #include "ChargeableInteractionDefinition.h"
+#include "GameplayTagContainer.h"
 #include "SearchChestInteractionBase.generated.h"
 
 class ASearchable;
 class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class USearchChestInteractionBase : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -28,10 +28,11 @@ private:
     UPROPERTY(Transient)
     bool _onLastInteractionWasComplete;
     
+public:
+    USearchChestInteractionBase();
+private:
     UFUNCTION(BlueprintCallable)
     void FireChestScoreEvent(const ADBDPlayer* player);
     
-public:
-    USearchChestInteractionBase();
 };
 

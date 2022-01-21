@@ -5,12 +5,12 @@
 #include "UObject/NoExportTypes.h"
 #include "UmgSurvivorHud.generated.h"
 
-class UTexture2D;
 class UActionButton;
 class UCanvasPanel;
 class UWiggleWidget;
-class ACamperPlayer;
 class UAtlantaHudLookBackJoystick;
+class ACamperPlayer;
+class UTexture2D;
 
 UCLASS(Abstract, EditInlineNew)
 class UUmgSurvivorHud : public UUmgPlayableHud {
@@ -72,6 +72,9 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FSlateBrush _pressedLookBackJoystickBackgroundImage;
     
+public:
+    UUmgSurvivorHud();
+private:
     UFUNCTION(BlueprintCallable)
     void UpdateCancelButton();
     
@@ -123,7 +126,5 @@ private:
     UFUNCTION(BlueprintCallable)
     void CenterItemClicked(bool fromCancelRequest);
     
-public:
-    UUmgSurvivorHud();
 };
 

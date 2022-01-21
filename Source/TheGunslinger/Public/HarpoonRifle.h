@@ -5,11 +5,11 @@
 #include "DBDTunableRowHandle.h"
 #include "HarpoonRifle.generated.h"
 
-class UChainLinkableComponent;
 class ARifleChain;
+class UChainLinkableComponent;
+class UChargeableComponent;
 class UHarpoonProviderComponent;
 class UHarpoonLauncher;
-class UChargeableComponent;
 class URifleChainTensionComponent;
 class URiflePlayerLinker;
 class UHarpoonChainPositioner;
@@ -67,6 +67,7 @@ private:
     UTriggerableActivatorComponent* _crowsActivatorComponent;
     
 public:
+    AHarpoonRifle();
     UFUNCTION(BlueprintPure)
     ARifleChain* GetChain() const;
     
@@ -74,7 +75,5 @@ private:
     UFUNCTION()
     void Authority_OnFireHarpoon();
     
-public:
-    AHarpoonRifle();
 };
 

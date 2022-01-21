@@ -3,7 +3,7 @@
 #include "StunnableComponent.h"
 #include "TwinStunnableComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTwinStunnableComponent : public UStunnableComponent {
     GENERATED_BODY()
 public:

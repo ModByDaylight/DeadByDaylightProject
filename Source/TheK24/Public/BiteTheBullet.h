@@ -5,7 +5,7 @@
 
 class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UBiteTheBullet : public UPerk {
     GENERATED_BODY()
 public:

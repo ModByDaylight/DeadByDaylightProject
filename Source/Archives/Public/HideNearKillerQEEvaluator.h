@@ -11,6 +11,7 @@ UCLASS()
 class ARCHIVES_API UHideNearKillerQEEvaluator : public UNearKillerQEEvaluator {
     GENERATED_BODY()
 public:
+    UHideNearKillerQEEvaluator();
 private:
     UFUNCTION()
     void OnSlashHarpoonedCamper(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
@@ -32,7 +33,5 @@ private:
     UFUNCTION()
     void OnCamperBreakFreeFromHarpoon(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-public:
-    UHideNearKillerQEEvaluator();
 };
 

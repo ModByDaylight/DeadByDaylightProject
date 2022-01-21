@@ -5,19 +5,19 @@
 #include "CustomKillerInstinctData.h"
 #include "K25Power.generated.h"
 
-class AK25ControlledProjectile;
+class ALamentConfiguration;
+class UK25SurvivorChainTargetterComponent;
 class UChargeableComponent;
 class AK25Gateway;
 class UK25SurvivorChainAttachmentComponent;
-class UK25SurvivorChainTargetterComponent;
-class ALamentConfiguration;
+class AK25ControlledProjectile;
 class AK25Husk;
 class UK25KillerTeleportationPositionFinderComponent;
 class AK25AnimationFollowerActor;
 class UDataTable;
-class UPowerChargeComponent;
 class UK25ProjectileLauncher;
 class UAuthoritativeActorPoolComponent;
+class UPowerChargeComponent;
 class UAuthoritativePoolProjectileProviderAdapter;
 class UK25PowerChargePresentationItemProgressComponent;
 class UK25ChainAttachmentReplicationComponent;
@@ -111,6 +111,11 @@ private:
     UPROPERTY(Replicated)
     bool _isPowerCharged;
     
+public:
+    AK25Power();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnSurvivorAdded(ACamperPlayer* survivor, ASlasherPlayer* killer);
     
@@ -126,9 +131,5 @@ private:
     UFUNCTION()
     void OnKillerAdded(ASlasherPlayer* killer);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    AK25Power();
 };
 

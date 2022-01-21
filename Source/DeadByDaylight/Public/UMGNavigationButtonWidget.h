@@ -3,8 +3,8 @@
 #include "UMGBaseButtonWidget.h"
 #include "UMGNavigationButtonWidget.generated.h"
 
-class UTexture2D;
 class UWidget;
+class UTexture2D;
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGNavigationButtonWidget : public UUMGBaseButtonWidget {
@@ -15,12 +15,12 @@ protected:
     UWidget* NotificationPanel;
     
 public:
+    UUMGNavigationButtonWidget();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetIsSelected(bool isSelected);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetIcon(UTexture2D* Icon);
     
-    UUMGNavigationButtonWidget();
 };
 

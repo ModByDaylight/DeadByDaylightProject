@@ -39,6 +39,9 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     int32 NumberOfItems;
     
+public:
+    UUMGAtlantaDailyRewardsGrid();
+protected:
     UFUNCTION()
     void StartRewardsIntroRewardSequence();
     
@@ -53,7 +56,5 @@ protected:
     UFUNCTION(BlueprintImplementableEvent)
     void InitializeLayouts_BP();
     
-public:
-    UUMGAtlantaDailyRewardsGrid();
 };
 

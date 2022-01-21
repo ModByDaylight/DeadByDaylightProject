@@ -11,11 +11,11 @@ private:
     UPROPERTY(BlueprintReadOnly, Transient, meta=(AllowPrivateAccess=true))
     bool _screamTrigger;
     
+public:
+    UScreamSurvivorSubAnimInstance();
 protected:
     UFUNCTION(BlueprintCallable)
     void ResetScreamTrigger();
     
-public:
-    UScreamSurvivorSubAnimInstance();
 };
 

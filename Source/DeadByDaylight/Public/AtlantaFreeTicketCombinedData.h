@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPlayerRole.h"
 #include "AtlantaFreeTicketUIData.h"
+#include "EPlayerRole.h"
 #include "AtlantaFreeTicketCombinedData.generated.h"
 
 USTRUCT(BlueprintType)

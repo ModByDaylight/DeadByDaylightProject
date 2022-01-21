@@ -4,7 +4,7 @@
 #include "DBDTunableRowHandle.h"
 #include "ChainKillerMovementStatusEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UChainKillerMovementStatusEffect : public UChainPlayerMovementStatusEffect {
     GENERATED_BODY()
 public:

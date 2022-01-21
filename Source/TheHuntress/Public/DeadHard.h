@@ -5,7 +5,7 @@
 
 class UActivatableExhaustedEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDeadHard : public UPerk {
     GENERATED_BODY()
 public:

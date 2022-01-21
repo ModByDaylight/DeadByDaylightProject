@@ -3,7 +3,7 @@
 #include "SearchChestInteractionBase.h"
 #include "SearchOpenedChestInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class USearchOpenedChestInteraction : public USearchChestInteractionBase {
     GENERATED_BODY()
 public:

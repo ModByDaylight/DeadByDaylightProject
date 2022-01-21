@@ -1,5 +1,12 @@
 #include "Snowman.h"
 #include "Net/UnrealNetwork.h"
+#include "Components/SphereComponent.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "DBDOutlineComponent.h"
+#include "Components/CapsuleComponent.h"
+#include "HideInSnowmanInteraction.h"
+#include "Interactor.h"
+#include "SnowmanAttackableComponent.h"
 
 class ACamperPlayer;
 
@@ -58,7 +65,14 @@ ASnowman::ASnowman() {
     this->_snowmanState = ESnowmanState::Destroyed;
     this->_snowmanDestructionType = ESnowmanDestructionType::None;
     this->_survivorUsingThisSnowman = NULL;
+    this->_snowmanSkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SnowmanSkeletalMesh"));
+    this->_snowmanOutlineComponent = CreateDefaultSubobject<UDBDOutlineComponent>(TEXT("SnowmanOutlineComponent"));
+    this->_snowmanCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("SnowmanCapsule"));
+    this->_hideInSnowmanInteraction = CreateDefaultSubobject<UHideInSnowmanInteraction>(TEXT("HideInSnowmanInteraction"));
     this->_hideInSnowmanInteractionChargeable = NULL;
+    this->_snowmanInteractor = CreateDefaultSubobject<UInteractor>(TEXT("SnowmanInteractor"));
+    this->_snowmanInteractionZone = CreateDefaultSubobject<USphereComponent>(TEXT("SnowmanInteractionZone"));
+    this->_snowmanAttackableComponent = CreateDefaultSubobject<USnowmanAttackableComponent>(TEXT("AttackableComponent"));
     this->_isAcquiredFromPool = false;
     this->_isMoving = false;
 }

@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
+#include "ENavigationScreenButton.h"
 #include "Components/SlateWrapperTypes.h"
 #include "PartyMemberUIData.h"
-#include "ENavigationScreenButton.h"
 #include "UMGAtlantaNavigationScreen.generated.h"
 
-class UUMGBankAndPlayerInfoWidget;
 class UButton;
 class UTextBlock;
-class UUMGBaseCountdownWidget;
+class UUMGBankAndPlayerInfoWidget;
 class UWidgetSwitcher;
+class UUMGBaseCountdownWidget;
 class UUMGPartySlotsWidget;
 
 UCLASS(Abstract, EditInlineNew)
@@ -56,12 +56,12 @@ private:
     TArray<FPartyMemberUIData> _partyMembers;
     
 public:
+    UUMGAtlantaNavigationScreen();
     UFUNCTION(BlueprintPure)
     TArray<FPartyMemberUIData> GetPartyMembersData(int32 index) const;
     
     UFUNCTION(BlueprintCallable)
     void ButtonClickEvent(ENavigationScreenButton buttonid);
     
-    UUMGAtlantaNavigationScreen();
 };
 

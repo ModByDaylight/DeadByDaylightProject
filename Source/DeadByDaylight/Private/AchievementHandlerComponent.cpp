@@ -1,4 +1,6 @@
 #include "AchievementHandlerComponent.h"
+#include "GeneratorRepairWithGenericPerksEscapeAchievement.h"
+#include "CamperKONextToRaisedPalletAchievement.h"
 
 class AActor;
 
@@ -9,5 +11,7 @@ void UAchievementHandlerComponent::OnGameEvent(FGameplayTag gameEventType, const
 }
 
 UAchievementHandlerComponent::UAchievementHandlerComponent() {
+    this->_generatorRepairWithGenericPerksOnlyEscapeAchievement = CreateDefaultSubobject<UGeneratorRepairWithGenericPerksEscapeAchievement>(TEXT("Generic Perk Generator Repair Escape Achievement"));
+    this->_camperKONextToRaisedPalletAchievement = CreateDefaultSubobject<UCamperKONextToRaisedPalletAchievement>(TEXT("Camper KO by any method next to raised pallet Achievement"));
 }
 

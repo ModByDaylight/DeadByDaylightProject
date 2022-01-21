@@ -9,6 +9,7 @@ UCLASS()
 class ARCHIVES_API USkillCheckConsecutiveQEEvaluator : public UQuestEventEvaluatorBase {
     GENERATED_BODY()
 public:
+    USkillCheckConsecutiveQEEvaluator();
 private:
     UFUNCTION()
     void OnSkillCheckSuccess(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
@@ -16,7 +17,5 @@ private:
     UFUNCTION()
     void OnSkillCheckFail(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-public:
-    USkillCheckConsecutiveQEEvaluator();
 };
 

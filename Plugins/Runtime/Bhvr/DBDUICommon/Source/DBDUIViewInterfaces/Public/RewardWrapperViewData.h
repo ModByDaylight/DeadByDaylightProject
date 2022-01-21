@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CustomizationRewardViewData.h"
 #include "ERewardType.h"
 #include "CharacterRewardViewData.h"
 #include "CurrencyProgressionRewardViewData.h"
+#include "CustomizationRewardViewData.h"
 #include "RewardWrapperViewData.generated.h"
 
 USTRUCT(BlueprintType)

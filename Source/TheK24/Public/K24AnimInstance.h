@@ -23,11 +23,11 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     int32 _powerLevel;
     
+public:
+    UK24AnimInstance();
 private:
     UFUNCTION()
     void OnKillerPowerLevelChanged(int32 powerLevel);
     
-public:
-    UK24AnimInstance();
 };
 

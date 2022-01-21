@@ -18,9 +18,9 @@ protected:
     UDBDImage* TabImage;
     
 public:
+    UCoreTabWidget();
     UFUNCTION(BlueprintPure)
     int32 GetKey() const;
     
-    UCoreTabWidget();
 };
 

@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
-#include "DBDTunableRowHandle.h"
-#include "FastTimer.h"
-#include "AnimationMontageDescriptor.h"
 #include "ECamperDamageState.h"
+#include "Components/ActorComponent.h"
+#include "FastTimer.h"
+#include "DBDTunableRowHandle.h"
 #include "ECamperImmobilizeState.h"
+#include "AnimationMontageDescriptor.h"
 #include "TwinAttachmentComponent.generated.h"
 
 class ADBDPlayer;
 class UStatusEffect;
 class UChargeableComponent;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UTwinAttachmentComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -32,6 +32,11 @@ private:
     UPROPERTY(Transient)
     TMap<ADBDPlayer*, FFastTimer> _escapeBlockerLingerTimers;
     
+public:
+    UTwinAttachmentComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_AttachedPlayer(ADBDPlayer* oldAttachedPlayer);
     
@@ -74,9 +79,5 @@ private:
     UFUNCTION()
     void Authority_OnRemoveTwinChargePercentChanged(UChargeableComponent* chargeableComponent, float percentCompletionChange, float totalPercentComplete);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UTwinAttachmentComponent();
 };
 

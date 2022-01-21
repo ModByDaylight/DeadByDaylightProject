@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AkCommonInitializationSettingsWithSampleRate.h"
 #include "UObject/Object.h"
+#include "AkCommonInitializationSettingsWithSampleRate.h"
 #include "AkCommunicationSettingsWithSystemInitialization.h"
 #include "AkAndroidAdvancedInitializationSettings.h"
 #include "AkAndroidInitializationSettings.generated.h"
@@ -19,9 +19,9 @@ public:
     UPROPERTY(AdvancedDisplay, Config, EditAnywhere)
     FAkAndroidAdvancedInitializationSettings AdvancedSettings;
     
+    UAkAndroidInitializationSettings();
     UFUNCTION()
     void MigrateMultiCoreRendering(bool NewValue);
     
-    UAkAndroidInitializationSettings();
 };
 

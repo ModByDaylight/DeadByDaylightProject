@@ -6,7 +6,7 @@
 
 class AZombieCharacter;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UZombieResurrector : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -17,10 +17,11 @@ private:
     UPROPERTY(Transient)
     TArray<AZombieCharacter*> _delayedSpawnZombies;
     
+public:
+    UZombieResurrector();
+private:
     UFUNCTION()
     void Authority_OnKillerPowerLevelChanged(int32 powerLevel);
     
-public:
-    UZombieResurrector();
 };
 

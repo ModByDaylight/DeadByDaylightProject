@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TeachableData.h"
 #include "CharacterSlotData.h"
-#include "InventorySlotData.h"
+#include "TeachableData.h"
 #include "KillerAttributesData.h"
+#include "InventorySlotData.h"
 #include "CharacterInfoData.generated.h"
 
 USTRUCT(BlueprintType)

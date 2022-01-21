@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GenderViewSetting.h"
-#include "EScreenShotBatching.h"
 #include "CharacterTool.h"
-#include "CharacterAnimation.h"
-#include "ECustomizationCategory.h"
-#include "ScreenshotViewSetting.h"
 #include "CharacterItemCategoryViewSetting.h"
+#include "EScreenShotBatching.h"
+#include "ECustomizationCategory.h"
+#include "GenderViewSetting.h"
+#include "ScreenshotViewSetting.h"
 #include "ItemViewSetting.h"
 #include "RoleGenderViewSetting.h"
 #include "CharacterViewSetting.h"
 #include "OutfitViewSetting.h"
+#include "CharacterAnimation.h"
 #include "CharmCategorySetting.h"
 #include "CharmViewSetting.h"
 #include "NamedButton.h"
 #include "UIScreenshotTool.generated.h"
 
-class AActor;
 class APostProcessVolume;
 class ACameraActor;
+class AActor;
 
 UCLASS()
 class AUIScreenshotTool : public ACharacterTool {

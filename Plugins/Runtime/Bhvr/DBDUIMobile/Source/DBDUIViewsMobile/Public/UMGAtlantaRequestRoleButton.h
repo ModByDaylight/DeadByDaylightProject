@@ -13,6 +13,9 @@ protected:
     UPROPERTY(Export)
     UWidgetSwitcher* IconSwitcher;
     
+public:
+    UUMGAtlantaRequestRoleButton();
+protected:
     UFUNCTION(BlueprintCallable)
     void SetIsActive(bool isActive);
     
@@ -22,7 +25,5 @@ protected:
     UFUNCTION(BlueprintPure)
     bool GetIsActive() const;
     
-public:
-    UUMGAtlantaRequestRoleButton();
 };
 

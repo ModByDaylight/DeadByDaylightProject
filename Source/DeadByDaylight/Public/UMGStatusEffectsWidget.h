@@ -20,10 +20,11 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export, Transient)
     TMap<FName, UUMGStatusEffectIcon*> _statusEffectsMap;
     
+public:
+    UUMGStatusEffectsWidget();
+protected:
     UFUNCTION(BlueprintCallable)
     void RemoveExistingStatusEffect(const FString& statusEffectID);
     
-public:
-    UUMGStatusEffectsWidget();
 };
 

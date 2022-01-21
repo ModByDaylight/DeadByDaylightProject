@@ -7,7 +7,7 @@ class ACamperPlayer;
 class UStatusEffect;
 class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDeathbound : public UPerk {
     GENERATED_BODY()
 public:
@@ -36,6 +36,11 @@ private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_SurvivorsToReveal)
     TArray<ADBDPlayer*> _survivorsToReveal;
     
+public:
+    UDeathbound();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_SurvivorsToReveal();
     
@@ -47,8 +52,5 @@ public:
     UFUNCTION(BlueprintPure)
     float GetRevealLocationDuration() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UDeathbound();
 };
 

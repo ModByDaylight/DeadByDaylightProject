@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESubtitlesBackgroundOpacity.h"
-#include "ESubtitlesSize.h"
 #include "UObject/Interface.h"
+#include "ESubtitlesBackgroundOpacity.h"
 #include "ESubtitlesPosition.h"
+#include "ESubtitlesSize.h"
 #include "SubtitlesViewInterface.generated.h"
 
 UINTERFACE(Blueprintable)

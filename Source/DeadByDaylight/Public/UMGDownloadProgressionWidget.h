@@ -22,9 +22,9 @@ protected:
     UTextBlock* DownloadDescription;
     
 public:
+    UUMGDownloadProgressionWidget();
     UFUNCTION()
     void UpdateProgression(const FDownloadProgression& downloadProgression);
     
-    UUMGDownloadProgressionWidget();
 };
 

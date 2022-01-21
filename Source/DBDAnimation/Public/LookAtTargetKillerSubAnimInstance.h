@@ -40,6 +40,8 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     bool _hasVisibleTarget;
     
+public:
+    ULookAtTargetKillerSubAnimInstance();
 private:
     UFUNCTION()
     void OnChaseStarted(ADBDPlayer* target);
@@ -47,7 +49,5 @@ private:
     UFUNCTION()
     void OnChaseEnded(ADBDPlayer* target, float chaseTime);
     
-public:
-    ULookAtTargetKillerSubAnimInstance();
 };
 

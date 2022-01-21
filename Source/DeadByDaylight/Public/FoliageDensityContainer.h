@@ -3,8 +3,8 @@
 #include "GameFramework/Actor.h"
 #include "FoliageDensityContainer.generated.h"
 
-class UDBDMapFoliageDensityTunables;
 class AFoliageActor;
+class UDBDMapFoliageDensityTunables;
 class UFoliageDensityHISM;
 
 UCLASS()

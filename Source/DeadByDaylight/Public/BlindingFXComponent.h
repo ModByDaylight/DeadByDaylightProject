@@ -4,10 +4,10 @@
 #include "BlindingFXComponent.generated.h"
 
 class UPostProcessComponent;
-class UMaterialInstanceDynamic;
 class UCurveFloat;
+class UMaterialInstanceDynamic;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UBlindingFXComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -28,12 +28,12 @@ private:
     UMaterialInstanceDynamic* _postProcessMaterial;
     
 public:
+    UBlindingFXComponent();
     UFUNCTION(BlueprintCallable)
     void SetPostProcessMaterial(UMaterialInstanceDynamic* value);
     
     UFUNCTION(BlueprintCallable)
     void SetPostProcess(UPostProcessComponent* value);
     
-    UBlindingFXComponent();
 };
 

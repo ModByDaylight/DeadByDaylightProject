@@ -1,19 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
+#include "OnLoadoutItemButtonLongPressEvent.h"
+#include "OnTeachableTooltipLongPressEvent.h"
+#include "InventorySlotData.h"
 #include "UObject/NoExportTypes.h"
 #include "TeachableData.h"
-#include "InventorySlotData.h"
 #include "UMGCharacterScrollingInfoWidget.generated.h"
 
-class UCanvasPanel;
 class UUMGTeachablePerkButton;
+class UTextBlock;
+class UCanvasPanel;
 class UUMGInventoryItemButton;
 class UUMGHtmlRichText;
-class UTextBlock;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUMGCharacterScrollingInfoWidgetOnTeachableTooltipTriggeredEvent, const FTeachableData&, teachableData, const FVector2D&, position);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUMGCharacterScrollingInfoWidgetOnPowerButtonTooltipLongPressEvent, const FInventorySlotData&, itemSlotData, FVector2D, position);
 
 UCLASS(EditInlineNew)
 class UUMGCharacterScrollingInfoWidget : public UMobileBaseUserWidget {
@@ -76,18 +75,19 @@ protected:
     
 private:
     UPROPERTY()
-    FUMGCharacterScrollingInfoWidgetOnTeachableTooltipTriggeredEvent _onTeachableTooltipTriggeredEvent;
+    FOnTeachableTooltipLongPressEvent _onTeachableTooltipTriggeredEvent;
     
     UPROPERTY()
-    FUMGCharacterScrollingInfoWidgetOnPowerButtonTooltipLongPressEvent _onPowerButtonTooltipLongPressEvent;
+    FOnLoadoutItemButtonLongPressEvent _onPowerButtonTooltipLongPressEvent;
     
+public:
+    UUMGCharacterScrollingInfoWidget();
+private:
     UFUNCTION()
     void HandleTooltipLongPressedKillerPowerEvent(const FInventorySlotData& itemData, FVector2D position);
     
     UFUNCTION()
     void HandleTooltipLongPressedEvent(const FTeachableData& teachableData, const FVector2D& position);
     
-public:
-    UUMGCharacterScrollingInfoWidget();
 };
 

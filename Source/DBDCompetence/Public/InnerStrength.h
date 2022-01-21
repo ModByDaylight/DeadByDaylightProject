@@ -4,7 +4,7 @@
 #include "ECamperImmobilizeState.h"
 #include "InnerStrength.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UInnerStrength : public UPerk {
     GENERATED_BODY()
 public:
@@ -16,15 +16,16 @@ private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_PerkEnabled)
     bool _perkEnabled;
     
+public:
+    UInnerStrength();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_PerkEnabled();
     
     UFUNCTION()
     void OnPlayerImmobilizeStateChanged(const ECamperImmobilizeState oldImmobilizeState, const ECamperImmobilizeState newImmobilizeState);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UInnerStrength();
 };
 

@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
-#include "CompetenceFlagProvider.h"
 #include "EGameplayModifierSource.h"
-#include "ModifierProvider.h"
+#include "Components/ActorComponent.h"
 #include "GameplayTagContainer.h"
+#include "CompetenceFlagProvider.h"
+#include "ModifierProvider.h"
 #include "GameplayTagContainer.h"
 #include "PerkManager.generated.h"
 
 class UPerkCollectionComponent;
+class UPerk;
 class UStatusEffectCollectionComponent;
 class UStatusEffect;
 class UGameplayModifierContainer;
-class UPerk;
 class ADBDPlayer;
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UPerkManager : public UActorComponent, public ICompetenceFlagProvider, public IModifierProvider {
     GENERATED_BODY()
 public:
@@ -27,6 +27,7 @@ private:
     UStatusEffectCollectionComponent* _statusEffects;
     
 public:
+    UPerkManager();
     UFUNCTION(BlueprintPure)
     bool HasStatusEffect(const FName statusEffectID) const;
     
@@ -117,6 +118,7 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_EndStatusEffectByID(FName statusEffectId, bool bRemoveAllWithID);
     
-    UPerkManager();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

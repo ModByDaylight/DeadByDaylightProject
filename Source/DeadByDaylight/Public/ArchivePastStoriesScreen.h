@@ -7,11 +7,10 @@ UCLASS()
 class UArchivePastStoriesScreen : public UArchiveBaseScreen {
     GENERATED_BODY()
 public:
+    UArchivePastStoriesScreen();
 private:
     UFUNCTION()
     void OnStorySelected(const FString& storyId);
     
-public:
-    UArchivePastStoriesScreen();
 };
 

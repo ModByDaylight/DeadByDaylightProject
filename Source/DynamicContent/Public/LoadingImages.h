@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "LoadingImagesHintInfo.h"
 #include "Styling/SlateBrush.h"
+#include "LoadingImagesHintInfo.h"
 #include "LoadingImages.generated.h"
 
 USTRUCT(BlueprintType)

@@ -55,14 +55,14 @@ private:
     bool _landed;
     
 public:
+    ACrowBomb();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void TriggerTakeOff(FVector triggerLocation);
     
     UFUNCTION(BlueprintCallable)
     void TriggerLand();
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ACrowBomb();
 };
 

@@ -9,6 +9,7 @@ UCLASS(BlueprintType)
 class UPerkAnalyticsLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UPerkAnalyticsLibrary();
     UFUNCTION(BlueprintCallable)
     static void SendTinkererUndetectableInterruptAnalytics(ADBDPlayer* interruptedPlayer, ADBDPlayer* slasher);
     
@@ -27,6 +28,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SendFranklinsConsumeItemAnalytics(ADBDPlayer* previousOwner);
     
-    UPerkAnalyticsLibrary();
 };
 

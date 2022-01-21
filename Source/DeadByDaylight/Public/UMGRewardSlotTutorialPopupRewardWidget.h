@@ -3,8 +3,8 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGRewardSlotTutorialPopupRewardWidget.generated.h"
 
-class UWidget;
 class UTextBlock;
+class UWidget;
 class UImage;
 
 UCLASS(Abstract, EditInlineNew)

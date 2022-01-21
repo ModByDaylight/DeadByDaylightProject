@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESnowmanDestructionType.h"
 #include "Animation/AnimInstance.h"
+#include "ESnowmanDestructionType.h"
 #include "SnowmanAnimInstance.generated.h"
 
 class ACamperPlayer;
@@ -43,11 +43,11 @@ private:
     UPROPERTY(Transient)
     TWeakObjectPtr<ACamperPlayer> _survivorUsingSnowman;
     
+public:
+    USnowmanAnimInstance();
 protected:
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnSnowmanDestroyedEvent(ESnowmanDestructionType snowmanDestructionType);
     
-public:
-    USnowmanAnimInstance();
 };
 

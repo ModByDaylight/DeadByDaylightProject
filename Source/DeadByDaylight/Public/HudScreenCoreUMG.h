@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "HudScreen.h"
-#include "ItemBundleViewData.h"
-#include "PlayerStatusViewData.h"
 #include "InteractionProgressViewData.h"
+#include "ItemBundleViewData.h"
 #include "PowerBundleViewData.h"
+#include "PlayerStatusViewData.h"
 #include "HudScreenCoreUMG.generated.h"
 
 class ATutorialsUtilities;
@@ -38,6 +38,9 @@ private:
     UPROPERTY(Transient)
     TArray<FPlayerStatusViewData> _playerStatusViewData;
     
+public:
+    UHudScreenCoreUMG();
+private:
     UFUNCTION()
     void OnTutorialHudFadeOutTriggered();
     
@@ -62,7 +65,5 @@ private:
     UFUNCTION()
     void OnHideStartSequenceCompleted();
     
-public:
-    UHudScreenCoreUMG();
 };
 

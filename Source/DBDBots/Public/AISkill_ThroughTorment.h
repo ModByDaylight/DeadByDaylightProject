@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EAITerrorLevel.h"
 #include "AISkill.h"
+#include "EAITerrorLevel.h"
 #include "AISkill_ThroughTorment.generated.h"
 
 UCLASS(EditInlineNew)

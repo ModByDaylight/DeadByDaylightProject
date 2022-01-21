@@ -8,7 +8,7 @@
 class UStatusEffect;
 class UCurveFloat;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UFlurryOfKnives : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -115,6 +115,11 @@ private:
     UPROPERTY(EditAnywhere)
     UCurveFloat* _throwingGamepadYawCurve;
     
+public:
+    UFlurryOfKnives();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_StartThrowing();
     
@@ -127,9 +132,5 @@ private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_StartThrowing();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UFlurryOfKnives();
 };
 

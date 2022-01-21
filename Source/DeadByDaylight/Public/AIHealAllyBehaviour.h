@@ -5,10 +5,10 @@
 #include "Navigation/PathFollowingComponent.h"
 #include "AIHealAllyBehaviour.generated.h"
 
-class ADBDAIPlayerController;
 class UAIHealAllyBehaviourData;
-class ADBDPlayer;
 class UAICharacterBehaviourData;
+class ADBDAIPlayerController;
+class ADBDPlayer;
 
 UCLASS()
 class UAIHealAllyBehaviour : public UAICharacterBehaviour {
@@ -24,6 +24,9 @@ private:
     UPROPERTY(Transient)
     ADBDPlayer* _aiPlayer;
     
+public:
+    UAIHealAllyBehaviour();
+private:
     UFUNCTION()
     void TargetPositionReached(FAIRequestID RequestID, TEnumAsByte<EPathFollowingResult::Type> Result);
     
@@ -31,6 +34,5 @@ public:
     UFUNCTION()
     void Init(ADBDPlayer* character, UAICharacterBehaviourData* behaviourData);
     
-    UAIHealAllyBehaviour();
 };
 

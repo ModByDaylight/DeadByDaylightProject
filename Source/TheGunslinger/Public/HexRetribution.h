@@ -3,7 +3,7 @@
 #include "HexPerk.h"
 #include "HexRetribution.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UHexRetribution : public UHexPerk {
     GENERATED_BODY()
 public:

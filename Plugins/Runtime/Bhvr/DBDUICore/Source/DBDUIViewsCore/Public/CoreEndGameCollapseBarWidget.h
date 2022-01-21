@@ -12,13 +12,16 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     float _progressBarInterpSpeed;
     
+public:
+    UCoreEndGameCollapseBarWidget();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void UpdateBarProgression(const float progress);
     
     UFUNCTION(BlueprintImplementableEvent)
     void PlayToZeroAnimation();
     
-public:
-    UCoreEndGameCollapseBarWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -1,7 +1,7 @@
 #include "SurveillancePerk.h"
 
-class ADBDPlayer;
 class AGenerator;
+class ADBDPlayer;
 
 void USurveillancePerk::HandleGeneratorIsDamagedChanged(AGenerator* generator, ADBDPlayer* player) {
 }

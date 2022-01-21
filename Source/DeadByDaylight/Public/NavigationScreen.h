@@ -7,6 +7,7 @@ UCLASS()
 class DEADBYDAYLIGHT_API UNavigationScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    UNavigationScreen();
 protected:
     UFUNCTION()
     void OnToggleChatVisibility();
@@ -56,7 +57,5 @@ protected:
     UFUNCTION()
     void OnCancelButtonClick();
     
-public:
-    UNavigationScreen();
 };
 

@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EventDrivenModifierCondition.h"
+#include "OnIsTrueChanged.h"
 #include "K26IsSurvivorInRangeOfAnyIdleCrow.generated.h"
 
-class ACamperPlayer;
 class UAuthoritativeActorPoolComponent;
+class ACamperPlayer;
 class AK26CrowProjectile;
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FK26IsSurvivorInRangeOfAnyIdleCrowOnIsTrueChanged, bool, isTrue);
-
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK26IsSurvivorInRangeOfAnyIdleCrow : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FK26IsSurvivorInRangeOfAnyIdleCrowOnIsTrueChanged OnIsTrueChanged;
+    FOnIsTrueChanged OnIsTrueChanged;
     
+    UK26IsSurvivorInRangeOfAnyIdleCrow();
 private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_SetIsTrue(const bool isTrue);
@@ -35,7 +35,5 @@ private:
     UFUNCTION()
     void Authority_OnCrowAddedToPool(AActor* crowProjectileActor);
     
-public:
-    UK26IsSurvivorInRangeOfAnyIdleCrow();
 };
 

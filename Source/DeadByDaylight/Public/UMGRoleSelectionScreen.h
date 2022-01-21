@@ -13,9 +13,9 @@ protected:
     int32 _newInboxMessageCount;
     
 public:
+    UUMGRoleSelectionScreen();
     UFUNCTION(BlueprintCallable)
     void ButtonClickEvent(ERoleSelectionScreenButton buttonId);
     
-    UUMGRoleSelectionScreen();
 };
 

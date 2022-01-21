@@ -3,7 +3,7 @@
 #include "Components/SceneComponent.h"
 #include "ExposerCirclingComponent.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UExposerCirclingComponent : public USceneComponent {
     GENERATED_BODY()
 public:
@@ -34,12 +34,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     int32 Samples;
     
+    UExposerCirclingComponent();
     UFUNCTION(BlueprintCallable)
     void SetIsCircling(bool circling);
     
     UFUNCTION(BlueprintCallable)
     void Reset();
     
-    UExposerCirclingComponent();
 };
 

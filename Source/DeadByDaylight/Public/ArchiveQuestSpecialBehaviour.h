@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DBDTableRowBaseWithId.h"
-#include "EContextualType.h"
-#include "EStackingBehaviours.h"
 #include "EAdditiveBehaviour.h"
+#include "EContextualType.h"
 #include "EOwnershipBehaviour.h"
+#include "EStackingBehaviours.h"
 #include "ArchiveQuestSpecialBehaviour.generated.h"
 
 USTRUCT(BlueprintType)

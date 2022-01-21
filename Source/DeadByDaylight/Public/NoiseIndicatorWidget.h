@@ -9,9 +9,9 @@ UCLASS(Abstract, EditInlineNew)
 class UNoiseIndicatorWidget : public UBaseIndicatorWidget {
     GENERATED_BODY()
 public:
+    UNoiseIndicatorWidget();
     UFUNCTION(BlueprintCallable)
     void SetIndicatorPanel(UCanvasPanel* panel);
     
-    UNoiseIndicatorWidget();
 };
 

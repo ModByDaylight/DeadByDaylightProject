@@ -5,7 +5,7 @@
 
 class UBlightedSerumCooldownInteraction;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class HALLOWEEN2020_API UBlightedSerumCollisionInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -17,9 +17,9 @@ private:
     float _bounceTime;
     
 public:
+    UBlightedSerumCollisionInteraction();
     UFUNCTION(BlueprintCallable)
     void SetCooldownInteraction(UBlightedSerumCooldownInteraction* cooldownInteraction);
     
-    UBlightedSerumCollisionInteraction();
 };
 

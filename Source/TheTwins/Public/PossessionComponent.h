@@ -6,7 +6,7 @@
 class AAIController;
 class ADBDPlayer;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UPossessionComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -17,6 +17,9 @@ private:
     UPROPERTY(Transient)
     AAIController* _emptyController;
     
+public:
+    UPossessionComponent();
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_StartPossessionOf(ADBDPlayer* playerToPossess, bool shouldStartBeingPossessedInteraction);
     
@@ -53,7 +56,5 @@ private:
     UFUNCTION(Client, Reliable)
     void Client_StartStateMachineDriverChangeProcess();
     
-public:
-    UPossessionComponent();
 };
 

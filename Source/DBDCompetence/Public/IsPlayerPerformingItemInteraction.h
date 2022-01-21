@@ -5,10 +5,11 @@
 
 class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIsPlayerPerformingItemInteraction : public UBaseIsPlayerPerformingInteraction {
     GENERATED_BODY()
 public:
+    UIsPlayerPerformingItemInteraction();
 private:
     UFUNCTION()
     void OnCollectablePickedUp(ADBDPlayer* player);
@@ -19,7 +20,5 @@ private:
     UFUNCTION()
     void OnCollectableChargeStateChange(bool empty);
     
-public:
-    UIsPlayerPerformingItemInteraction();
 };
 

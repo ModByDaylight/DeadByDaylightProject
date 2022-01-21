@@ -6,22 +6,22 @@
 #include "CustomizedSkeletalMesh.generated.h"
 
 class USkinnedMeshComponent;
-class AItemVfx;
-class USlaveAnimInstance;
 class USkeletalMeshComponent;
 class UCustomizedSkeletalMesh;
+class USlaveAnimInstance;
+class AItemVfx;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCustomizedSkeletalMeshOnMeshSwitchBP, ECustomizationCategory, category, USkeletalMeshComponent*, mesh);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCustomizedSkeletalMesh : public UActorComponent {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnMeshSwitchEventBP, ECustomizationCategory, category, USkeletalMeshComponent*, mesh);
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TSubclassOf<USlaveAnimInstance> SlaveAnimInstanceClass;
     
     UPROPERTY(BlueprintAssignable)
-    FCustomizedSkeletalMeshOnMeshSwitchBP OnMeshSwitchBP;
+    FOnMeshSwitchEventBP OnMeshSwitchBP;
     
 protected:
     UPROPERTY(Export, Transient)
@@ -47,6 +47,7 @@ private:
     int32 _characterIdOverride;
     
 public:
+    UCustomizedSkeletalMesh();
     UFUNCTION(BlueprintCallable)
     void SetVfxsVisibility(ECustomizationCategory category, bool visible);
     
@@ -83,6 +84,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ClearAllVfxs();
     
-    UCustomizedSkeletalMesh();
 };
 

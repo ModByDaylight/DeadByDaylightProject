@@ -3,11 +3,11 @@
 #include "BaseCamperCollectable.h"
 #include "Medkit.generated.h"
 
-class UParticleSystem;
 class UAkComponent;
 class ADBDPlayer;
-class UChargerComponent;
 class UAkAudioEvent;
+class UChargerComponent;
+class UParticleSystem;
 class UAkAudioBank;
 
 UCLASS()
@@ -37,6 +37,7 @@ protected:
     float _healOtherChargeMultiplier;
     
 public:
+    AMedkit();
     UFUNCTION(BlueprintCallable)
     void UseCharge(float seconds);
     
@@ -59,7 +60,5 @@ protected:
     UFUNCTION()
     void Authority_ConsumeIfNotInteracting();
     
-public:
-    AMedkit();
 };
 

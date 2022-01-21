@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "StandDisplayable.h"
 #include "GameFramework/Actor.h"
 #include "ECurrencyType.h"
-#include "StandDisplayable.h"
 #include "CurrencyDisplayable.generated.h"
 
 class USkeletalMeshComponent;
@@ -20,6 +20,7 @@ private:
     TMap<ECurrencyType, USkeletalMesh*> _currencyMeshes;
     
 public:
+    ACurrencyDisplayable();
     UFUNCTION(BlueprintImplementableEvent)
     void FinishSpawningCurrency(ECurrencyType currencyType);
     
@@ -27,7 +28,7 @@ protected:
     UFUNCTION(BlueprintNativeEvent)
     void BeginDestroySequence_Internal();
     
-public:
-    ACurrencyDisplayable();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

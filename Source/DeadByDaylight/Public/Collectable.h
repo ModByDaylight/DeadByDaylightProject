@@ -1,38 +1,38 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Interactable.h"
-#include "UObject/NoExportTypes.h"
-#include "EAtlantaItemProgressionBarEnum.h"
-#include "ECollectableCategory.h"
 #include "EItemHandPosition.h"
+#include "Interactable.h"
+#include "Engine/EngineTypes.h"
+#include "ECollectableCategory.h"
+#include "EAtlantaItemProgressionBarEnum.h"
+#include "ELoadoutItemType.h"
 #include "EInputInteractionType.h"
 #include "ECollectableState.h"
-#include "EAttachToSocketNameEnum.h"
 #include "UObject/NoExportTypes.h"
+#include "EAttachToSocketNameEnum.h"
 #include "EInventoryType.h"
 #include "GameplayTagContainer.h"
-#include "ELoadoutItemType.h"
-#include "Engine/EngineTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "Collectable.generated.h"
 
 class ADBDPlayer;
-class USceneComponent;
-class UItemModifier;
-class USkeletalMeshComponent;
-class UInteractor;
-class UGameplayTagContainerComponent;
 class UItemAddon;
+class UItemModifier;
+class UInteractor;
 class AActor;
+class USkeletalMeshComponent;
+class USceneComponent;
+class UGameplayTagContainerComponent;
 class ACamperPlayer;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCollectableOnCollectablePickedUpBP, ADBDPlayer*, player);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FCollectableCallback, ADBDPlayer*, player);
 
 UCLASS()
 class DEADBYDAYLIGHT_API ACollectable : public AInteractable {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FOnCollectablePickedUpBPDelegate, ADBDPlayer*, player);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCollectablePickedUpBP, ADBDPlayer*, player);
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool DisplayUsePercent;
     
@@ -91,7 +91,7 @@ public:
     bool ShouldRegisterToOnSurvivorAdded;
     
     UPROPERTY(BlueprintAssignable)
-    FCollectableOnCollectablePickedUpBP OnCollectablePickedUpBP;
+    FOnCollectablePickedUpBP OnCollectablePickedUpBP;
     
 protected:
     UPROPERTY(BlueprintReadWrite)
@@ -154,6 +154,10 @@ private:
     
     UPROPERTY(EditDefaultsOnly)
     bool _disableAttachmentReplication;
+    
+public:
+    ACollectable();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
     UFUNCTION(BlueprintNativeEvent)
@@ -324,7 +328,7 @@ public:
     bool CanBeCollected(const ADBDPlayer* collector) const;
     
     UFUNCTION(BlueprintCallable)
-    void CallOnCollectablePickedUpBP(FCollectableCallback callback);
+    void CallOnCollectablePickedUpBP(ACollectable::FOnCollectablePickedUpBPDelegate callback);
     
 protected:
     UFUNCTION(BlueprintImplementableEvent)
@@ -349,8 +353,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_AddItemAddon(UItemAddon* addon);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ACollectable();
 };
 

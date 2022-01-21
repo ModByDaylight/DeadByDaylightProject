@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/ActorComponent.h"
 #include "DBDTunableRowHandle.h"
 #include "Engine/NetSerialization.h"
 #include "UObject/NoExportTypes.h"
@@ -9,11 +9,11 @@
 #include "TormentTrailSpawnerComponent.generated.h"
 
 class ATormentTrailController;
+class AActor;
 class UTormentTrailPointCollectionComponent;
 class UAuthoritativeActorPoolComponent;
-class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class THEEXECUTIONER_API UTormentTrailSpawnerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -69,6 +69,9 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _epsilonToAddToSpawnLocationInZ;
     
+public:
+    UTormentTrailSpawnerComponent();
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Sever_SpawnTrailController(ATormentTrailController* trailController, const FVector_NetQuantize10 location, const FRotator rotation);
     
@@ -84,7 +87,5 @@ private:
     UFUNCTION()
     void OnInRangeChanged(const bool inRange, const AActor* actor);
     
-public:
-    UTormentTrailSpawnerComponent();
 };
 

@@ -3,7 +3,7 @@
 #include "SpawnEffectsOnAllSurvivorsBaseAddon.h"
 #include "ApexMufflerAddon.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UApexMufflerAddon : public USpawnEffectsOnAllSurvivorsBaseAddon {
     GENERATED_BODY()
 public:

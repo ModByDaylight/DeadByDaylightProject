@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "PharmacyPerk.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UPharmacyPerk : public UPerk {
     GENERATED_BODY()
 public:

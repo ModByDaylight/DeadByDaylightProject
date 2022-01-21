@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EBloodStoreRowStyle.h"
 #include "MobileBaseUserWidget.h"
 #include "Layout/Margin.h"
+#include "EBloodStoreRowStyle.h"
 #include "UMGBloodStoreRowWidget.generated.h"
 
 class UHorizontalBox;
@@ -43,6 +43,7 @@ private:
     UClass* _itemClass;
     
 public:
+    UUMGBloodStoreRowWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void UnlockRow(bool playAnim);
     
@@ -57,7 +58,5 @@ private:
     UFUNCTION()
     void BroadcastBloodNodeSelected(const FString& id);
     
-public:
-    UUMGBloodStoreRowWidget();
 };
 

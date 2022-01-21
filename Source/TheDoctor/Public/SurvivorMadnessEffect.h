@@ -4,7 +4,7 @@
 #include "Madness.h"
 #include "SurvivorMadnessEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USurvivorMadnessEffect : public UStatusEffect, public IMadness {
     GENERATED_BODY()
 public:
@@ -13,6 +13,9 @@ private:
     float _madness;
     
 public:
+    USurvivorMadnessEffect();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_AddMadness(float madnessToAdd);
     
@@ -71,9 +74,7 @@ protected:
     UFUNCTION(BlueprintImplementableEvent)
     void Authority_OnMadnessScreamTimerEnd_BP();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    USurvivorMadnessEffect();
+    // Fix for true pure virtual functions not being implemented
 };
 

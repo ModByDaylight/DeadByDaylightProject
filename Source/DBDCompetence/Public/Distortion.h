@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "Distortion.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDistortion : public UPerk {
     GENERATED_BODY()
 public:
@@ -14,6 +14,11 @@ private:
     UPROPERTY(ReplicatedUsing=OnRep_AuraBlockIsActive)
     bool _auraBlockIsActive;
     
+public:
+    UDistortion();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_AuraBlockIsActive();
     
@@ -21,8 +26,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool AuraBlockCanBeActive() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UDistortion();
 };
 

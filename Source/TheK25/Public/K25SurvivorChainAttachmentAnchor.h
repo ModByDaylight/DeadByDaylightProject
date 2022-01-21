@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "DBDTunableRowHandle.h"
-#include "UObject/NoExportTypes.h"
 #include "K25SurvivorChainAttachmentData.h"
+#include "UObject/NoExportTypes.h"
 #include "K25SurvivorChainAttachmentAnchor.generated.h"
 
 class AK25Chain;
@@ -33,6 +33,11 @@ private:
     UPROPERTY(Transient)
     FVector _cachedPullDirection;
     
+public:
+    AK25SurvivorChainAttachmentAnchor();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_AttachmentData();
     
@@ -62,9 +67,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnChainAttached(AK25Chain* chainToAttach);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    AK25SurvivorChainAttachmentAnchor();
 };
 

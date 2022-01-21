@@ -5,7 +5,7 @@
 #include "TunableStat.h"
 #include "TricksterSuperModeComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTricksterSuperModeComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -37,6 +37,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _shouldDisableFlurryDuringCooldown;
     
+public:
+    UTricksterSuperModeComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRepIsSuperModeReady();
     
@@ -46,9 +51,5 @@ private:
     UFUNCTION()
     void OnRepIsInCooldown();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UTricksterSuperModeComponent();
 };
 

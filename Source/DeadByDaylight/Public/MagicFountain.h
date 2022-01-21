@@ -12,9 +12,11 @@ public:
     UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
     FVector AIInteractionOffset;
     
+    AMagicFountain();
     UFUNCTION(BlueprintNativeEvent, BlueprintPure)
     bool IsCorrupted() const;
     
-    AMagicFountain();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

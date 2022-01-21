@@ -5,7 +5,7 @@
 
 class UInteractionDefinition;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UInteractionStarterComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -16,15 +16,16 @@ private:
     UPROPERTY(ReplicatedUsing=OnRep_ShouldStartInteraction)
     bool _shouldStartInteraction;
     
+public:
+    UInteractionStarterComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_ShouldStartInteraction();
     
     UFUNCTION()
     void OnInteractionStarted();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UInteractionStarterComponent();
 };
 

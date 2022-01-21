@@ -4,8 +4,8 @@
 #include "Styling/SlateBrush.h"
 #include "UMGAtlantaMatchConfigScreen.generated.h"
 
-class UUMGAtlantaMatchConfigPageScroll;
 class UTextBlock;
+class UUMGAtlantaMatchConfigPageScroll;
 class UHorizontalBox;
 class UVerticalBox;
 class UUMGBaseButtonWidget;
@@ -52,10 +52,11 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float TabsHorizontalPadding;
     
+public:
+    UUMGAtlantaMatchConfigScreen();
+protected:
     UFUNCTION()
     void HandleBackButtonClicked();
     
-public:
-    UUMGAtlantaMatchConfigScreen();
 };
 

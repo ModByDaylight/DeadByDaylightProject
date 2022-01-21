@@ -3,10 +3,11 @@
 #include "StatusEffect.h"
 #include "TwinJumpAudioMutedEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTwinJumpAudioMutedEffect : public UStatusEffect {
     GENERATED_BODY()
 public:
+    UTwinJumpAudioMutedEffect();
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnTwinUnmuted();
@@ -14,7 +15,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnTwinMuted();
     
-public:
-    UTwinJumpAudioMutedEffect();
 };
 

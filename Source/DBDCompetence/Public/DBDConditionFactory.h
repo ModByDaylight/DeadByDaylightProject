@@ -14,12 +14,12 @@ UCLASS(BlueprintType)
 class DBDCOMPETENCE_API UDBDConditionFactory : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UDBDConditionFactory();
     UFUNCTION(BlueprintCallable)
     static UIsPlayerPerformingInteraction* IsPlayerPerformingInteraction(TScriptInterface<IConditionReceiver> conditionReceiver, const FGameplayTagContainer& interactionSemantics);
     
     UFUNCTION(BlueprintCallable)
     static UDoesPerkHaveToken* DoesPerkHaveToken(TScriptInterface<IConditionReceiver> conditionReceiver, UPerk* perk);
     
-    UDBDConditionFactory();
 };
 

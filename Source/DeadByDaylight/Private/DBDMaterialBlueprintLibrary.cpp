@@ -1,8 +1,8 @@
 #include "DBDMaterialBlueprintLibrary.h"
 
 class UMeshComponent;
-class UMaterialInstanceDynamic;
 class UParticleSystemComponent;
+class UMaterialInstanceDynamic;
 
 void UDBDMaterialBlueprintLibrary::SetVectorParameterValueOnMeshComponent(UMeshComponent* Mesh, FName ParameterName, FLinearColor Value) {
 }

@@ -18,6 +18,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TEnumAsByte<ECollisionChannel> ObstructionCollisionChannel;
     
+    AAkAcousticPortal();
     UFUNCTION(BlueprintCallable)
     void OpenPortal();
     
@@ -27,6 +28,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ClosePortal();
     
-    AAkAcousticPortal();
 };
 

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "UMGBaseButtonWidget.h"
 #include "CurrencyPurchaseData.h"
-#include "UObject/NoExportTypes.h"
 #include "UMGStoreAuricCellButton.generated.h"
 
 class UTextBlock;
@@ -23,6 +23,7 @@ protected:
     UOverlay* Timer;
     
 public:
+    UUMGStoreAuricCellButton();
     UFUNCTION(BlueprintImplementableEvent)
     void UpdateWidget(const int32 multiplier, const FDateTime endDate);
     
@@ -37,6 +38,5 @@ public:
     UFUNCTION(BlueprintCallable)
     bool HasBonusExpired(const FDateTime endDate);
     
-    UUMGStoreAuricCellButton();
 };
 

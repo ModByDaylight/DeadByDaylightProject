@@ -4,10 +4,10 @@
 #include "Engine/EngineTypes.h"
 #include "UMGAtlantaTutorialGenericPopup.generated.h"
 
-class UImage;
 class UUMGScrollListPageButton;
-class UVerticalBox;
 class UHorizontalBox;
+class UImage;
+class UVerticalBox;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlantaTutorialGenericPopup : public UUMGGenericPopup {
@@ -36,6 +36,9 @@ private:
     UPROPERTY(Transient)
     FTimerHandle _changeImagesTimerHandle;
     
+public:
+    UUMGAtlantaTutorialGenericPopup();
+private:
     UFUNCTION()
     void TriggerChangeImagesTimer();
     
@@ -43,7 +46,5 @@ protected:
     UFUNCTION()
     void HandleImageButtonClicked(int32 imageIndex);
     
-public:
-    UUMGAtlantaTutorialGenericPopup();
 };
 

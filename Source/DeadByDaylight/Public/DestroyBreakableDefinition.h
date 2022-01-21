@@ -5,7 +5,7 @@
 
 class ABreakableBase;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDestroyBreakableDefinition : public UInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -17,11 +17,11 @@ private:
     UPROPERTY(Transient)
     ABreakableBase* _breakable;
     
+public:
+    UDestroyBreakableDefinition();
 protected:
     UFUNCTION(BlueprintPure)
     ABreakableBase* GetBreakable() const;
     
-public:
-    UDestroyBreakableDefinition();
 };
 

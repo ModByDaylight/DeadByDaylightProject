@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Styling/SlateBrush.h"
-#include "Layout/Margin.h"
 #include "Engine/DataTable.h"
+#include "Styling/SlateBrush.h"
 #include "Styling/SlateTypes.h"
+#include "Layout/Margin.h"
 #include "RichTextRewardRow.generated.h"
 
 USTRUCT()

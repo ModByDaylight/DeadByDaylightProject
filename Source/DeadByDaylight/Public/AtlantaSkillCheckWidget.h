@@ -4,8 +4,8 @@
 #include "UObject/NoExportTypes.h"
 #include "AtlantaSkillCheckWidget.generated.h"
 
-class UImage;
 class UCanvasPanel;
+class UImage;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UAtlantaSkillCheckWidget : public UMobileBaseUserWidget {
@@ -62,6 +62,7 @@ private:
     float PathCoveredAngle;
     
 public:
+    UAtlantaSkillCheckWidget();
     UFUNCTION(BlueprintCallable)
     void SetHexed(bool isHexed);
     
@@ -74,6 +75,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool IsActive() const;
     
-    UAtlantaSkillCheckWidget();
 };
 

@@ -3,7 +3,7 @@
 #include "NavModifierComponent.h"
 #include "DBDNavModifierComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDNavModifierComponent : public UNavModifierComponent {
     GENERATED_BODY()
 public:

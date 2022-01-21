@@ -25,11 +25,11 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UUMGBloodStoreRowWidget* FifthBloodStoreRowWidget;
     
+public:
+    UUMGBloodStoreArrayWidget();
 private:
     UFUNCTION()
     void BroadcastBloodNodeSelected(const FString& id);
     
-public:
-    UUMGBloodStoreArrayWidget();
 };
 

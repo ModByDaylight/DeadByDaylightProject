@@ -4,12 +4,12 @@
 #include "DBDEmblem.h"
 #include "DBDEmblem_KillerChaser.generated.h"
 
+class ACamperPlayer;
+class UCurveFloat;
 class ADBDPlayer;
 class UDBDRankDesignTunables;
-class UCurveFloat;
-class ACamperPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDBDEmblem_KillerChaser : public UDBDEmblem {
     GENERATED_BODY()
 public:
@@ -24,9 +24,9 @@ private:
     TSubclassOf<UDBDRankDesignTunables> _rankTunablesClass;
     
 public:
+    UDBDEmblem_KillerChaser();
     UFUNCTION()
     void OnChaseStart(ADBDPlayer* chasedPlayer);
     
-    UDBDEmblem_KillerChaser();
 };
 

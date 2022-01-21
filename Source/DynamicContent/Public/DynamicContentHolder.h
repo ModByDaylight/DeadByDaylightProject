@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Subsystems/GameInstanceSubsystem.h"
 #include "LRUTextureCache.h"
+#include "Subsystems/GameInstanceSubsystem.h"
 #include "TaskContainer.h"
 #include "DynamicContentHolder.generated.h"
 
-class ULoopBannerProvider;
 class ULoadingImagesDataProvider;
+class ULoopBannerProvider;
 class UDownloadMultiTextureTask;
 
 UCLASS()
@@ -29,10 +29,11 @@ private:
     UPROPERTY(Transient)
     ULoadingImagesDataProvider* _loadingImagesDataProvider;
     
+public:
+    UDynamicContentHolder();
+private:
     UFUNCTION()
     void OnDownloadingTaskComplete(UDownloadMultiTextureTask* completeTask);
     
-public:
-    UDynamicContentHolder();
 };
 

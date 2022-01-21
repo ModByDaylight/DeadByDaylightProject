@@ -5,8 +5,8 @@
 #include "AIPathValidatorInterface.h"
 #include "PathStrategy.generated.h"
 
-class UPathBuilder;
 class ADBDAIBTController;
+class UPathBuilder;
 
 UCLASS(EditInlineNew)
 class DBDBOTS_API UPathStrategy : public UObject, public IAIDisplayDebugInterface, public IAIPathValidatorInterface {
@@ -30,5 +30,7 @@ protected:
     
 public:
     UPathStrategy();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

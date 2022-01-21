@@ -6,7 +6,7 @@
 
 class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UChargeTwinJumpInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -23,11 +23,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _cancelCooldownTime;
     
+public:
+    UChargeTwinJumpInteraction();
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnJumpReadyChanged(ADBDPlayer* twin, const bool ready);
     
-public:
-    UChargeTwinJumpInteraction();
 };
 

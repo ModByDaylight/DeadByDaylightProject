@@ -7,6 +7,7 @@ UCLASS()
 class ONLINEPRESENCE_API UOnlinePresenceExternalCommands : public UObject {
     GENERATED_BODY()
 public:
+    UOnlinePresenceExternalCommands();
     UFUNCTION(Exec)
     void DBD_MirrorsWalletWithdraw(const FString& currencyName, int32 value);
     
@@ -28,6 +29,5 @@ public:
     UFUNCTION(Exec)
     bool DBD_GenerateTestItems();
     
-    UOnlinePresenceExternalCommands();
 };
 

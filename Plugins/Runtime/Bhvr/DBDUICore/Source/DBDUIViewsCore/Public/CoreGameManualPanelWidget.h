@@ -4,6 +4,8 @@
 #include "GameManualViewInterface.h"
 #include "EGameManualMenuState.h"
 #include "EHelpType.h"
+#include "OnSetOnboardingMenuSubtitleDelegate.h"
+#include "OnResetOnboardingMenuSubtitleDelegate.h"
 #include "CoreGameManualPanelWidget.generated.h"
 
 class UCoreGameManualCategoryButton;
@@ -12,9 +14,6 @@ class UPanelWidget;
 class UCoreTabContainerWidget;
 class UDBDRichTextBlock;
 class UCoreSelectableButtonWidget;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCoreGameManualPanelWidgetOnSetOnboardingMenuSubtitleDelegate, FText, subtitle);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCoreGameManualPanelWidgetOnResetOnboardingMenuSubtitleDelegate);
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreGameManualPanelWidget : public UCoreBaseUserWidget, public IGameManualViewInterface {
@@ -56,11 +55,14 @@ protected:
     
 private:
     UPROPERTY(BlueprintAssignable)
-    FCoreGameManualPanelWidgetOnSetOnboardingMenuSubtitleDelegate _onSetOnboardingMenuSubtitleDelegate;
+    FOnSetOnboardingMenuSubtitleDelegate _onSetOnboardingMenuSubtitleDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FCoreGameManualPanelWidgetOnResetOnboardingMenuSubtitleDelegate _onResetOnboardingMenuSubtitleDelegate;
+    FOnResetOnboardingMenuSubtitleDelegate _onResetOnboardingMenuSubtitleDelegate;
     
+public:
+    UCoreGameManualPanelWidget();
+private:
     UFUNCTION(BlueprintCallable)
     void ToggleGameManualMenuState();
     
@@ -81,7 +83,7 @@ private:
     UFUNCTION()
     void OnTopicsTabSelected(UCoreSelectableButtonWidget* selectedButton);
     
-public:
-    UCoreGameManualPanelWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

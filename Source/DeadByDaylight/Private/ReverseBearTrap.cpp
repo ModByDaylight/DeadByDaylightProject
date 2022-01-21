@@ -1,5 +1,6 @@
 #include "ReverseBearTrap.h"
 #include "Net/UnrealNetwork.h"
+#include "AnimationMontageSlave.h"
 
 class ACamperPlayer;
 
@@ -119,6 +120,7 @@ void AReverseBearTrap::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
 
 AReverseBearTrap::AReverseBearTrap() {
     this->_rbtMesh = NULL;
+    this->_animMontageSlave = CreateDefaultSubobject<UAnimationMontageSlave>(TEXT("Anim Montage Slave"));
     this->_keyID = 0;
     this->_exitGatesPoweredAfterAttachment = false;
     this->_generatorFixedAfterAttachment = false;

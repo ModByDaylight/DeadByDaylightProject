@@ -10,6 +10,7 @@ UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UDBDSurfaceTypeName : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UDBDSurfaceTypeName();
     UFUNCTION(BlueprintPure)
     static TEnumAsByte<EPhysicalSurface> GetSurfaceType(const UPhysicalMaterial* physicalMaterial);
     
@@ -22,6 +23,5 @@ public:
     UFUNCTION(BlueprintPure)
     static FName Convert(const TEnumAsByte<EPhysicalSurface> surfaceType);
     
-    UDBDSurfaceTypeName();
 };
 

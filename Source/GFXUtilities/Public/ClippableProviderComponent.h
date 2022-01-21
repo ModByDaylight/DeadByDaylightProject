@@ -5,7 +5,7 @@
 
 class UPrimitiveComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API UClippableProviderComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -14,9 +14,9 @@ private:
     TSet<UPrimitiveComponent*> _ignoredPrimitives;
     
 public:
+    UClippableProviderComponent();
     UFUNCTION(BlueprintCallable)
     void SetIgnoredPrimitives(const TArray<UPrimitiveComponent*>& ignoredPrimitives);
     
-    UClippableProviderComponent();
 };
 

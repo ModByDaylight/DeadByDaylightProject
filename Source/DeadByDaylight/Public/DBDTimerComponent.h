@@ -3,10 +3,11 @@
 #include "Components/ActorComponent.h"
 #include "DBDTimerComponent.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDTimerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UDBDTimerComponent();
     UFUNCTION(BlueprintCallable)
     void Update(float deltaTime);
     
@@ -46,6 +47,5 @@ public:
     UFUNCTION(BlueprintPure)
     float GetPercentTimeElapsed() const;
     
-    UDBDTimerComponent();
 };
 

@@ -3,14 +3,15 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "DBDAudioUtilities.generated.h"
 
-class UAkAudioBank;
 class UAkAudioEvent;
 class UObject;
+class UAkAudioBank;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UDBDAudioUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UDBDAudioUtilities();
     UFUNCTION(BlueprintCallable)
     static void DBD_PostUiEvent(UAkAudioEvent* event);
     
@@ -23,6 +24,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void DBD_LoadPersistentBank(UAkAudioBank* bank);
     
-    UDBDAudioUtilities();
 };
 

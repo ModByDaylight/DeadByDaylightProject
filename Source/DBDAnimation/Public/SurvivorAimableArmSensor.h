@@ -6,7 +6,7 @@
 class ACollectable;
 class UAimableComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDANIMATION_API USurvivorAimableArmSensor : public UArmIKSensorComponent {
     GENERATED_BODY()
 public:

@@ -3,13 +3,13 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGAtlantaPurchasePopup.generated.h"
 
-class UUMGPurchaseBuyButton;
-class UUMGBaseButtonWidget;
 class UWidgetSwitcher;
-class UUMGPurchaseSticker;
-class UImage;
+class UUMGBaseButtonWidget;
 class UHorizontalBox;
+class UImage;
 class UTextBlock;
+class UUMGPurchaseBuyButton;
+class UUMGPurchaseSticker;
 class UUMGPurchaseItemsInfo;
 
 UCLASS(Abstract, EditInlineNew)
@@ -56,13 +56,14 @@ protected:
     UPROPERTY(EditAnywhere, NoClear)
     TSoftClassPtr<UUMGPurchaseItemsInfo> PurchaseItemsInfoWidgetClass;
     
+public:
+    UUMGAtlantaPurchasePopup();
+protected:
     UFUNCTION()
     void HandleCloseButtonClicked();
     
     UFUNCTION()
     void HandleBuyButtonClicked();
     
-public:
-    UUMGAtlantaPurchasePopup();
 };
 

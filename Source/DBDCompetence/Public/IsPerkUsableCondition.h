@@ -3,7 +3,7 @@
 #include "BaseIsPerkUsableCondition.h"
 #include "IsPerkUsableCondition.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIsPerkUsableCondition : public UBaseIsPerkUsableCondition {
     GENERATED_BODY()
 public:

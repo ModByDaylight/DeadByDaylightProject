@@ -6,7 +6,7 @@
 class ACamperPlayer;
 class AMeatHook;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DBDINTERACTION_API UHookSurvivorDefinition : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -14,10 +14,11 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     ACamperPlayer* _survivorBeingHooked;
     
+public:
+    UHookSurvivorDefinition();
+protected:
     UFUNCTION(BlueprintPure)
     AMeatHook* GetMeatHook() const;
     
-public:
-    UHookSurvivorDefinition();
 };
 

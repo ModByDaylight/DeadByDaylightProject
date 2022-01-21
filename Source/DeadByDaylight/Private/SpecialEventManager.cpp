@@ -1,4 +1,5 @@
 #include "SpecialEventManager.h"
+#include "SpecialEventsContainer.h"
 
 class UObject;
 
@@ -15,5 +16,6 @@ bool USpecialEventManager::GetCurrentSpecialEvent(const UObject* worldContextObj
 }
 
 USpecialEventManager::USpecialEventManager() {
+    this->_specialEventsContainer = CreateDefaultSubobject<USpecialEventsContainer>(TEXT("SpecialEventContainer"));
 }
 

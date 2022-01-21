@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "TwinStateHelperComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTwinStateHelperComponent : public UActorComponent {
     GENERATED_BODY()
 public:

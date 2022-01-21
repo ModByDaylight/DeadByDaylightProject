@@ -1,5 +1,16 @@
 #include "K26CrowProjectile.h"
 #include "Net/UnrealNetwork.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "ChargeableComponent.h"
+#include "K26PowerOutlineUpdateStrategy.h"
+#include "LightBurnable.h"
+#include "FlashlightableComponent.h"
+#include "DBDOutlineComponent.h"
+#include "Components/SplineComponent.h"
+#include "Components/StaticMeshComponent.h"
+#include "Components/SceneComponent.h"
+#include "FirecrackerEffectHandlerComponent.h"
+#include "DBDNavModifierComponent.h"
 
 class ACamperPlayer;
 class AActor;
@@ -101,6 +112,23 @@ AK26CrowProjectile::AK26CrowProjectile() {
     this->_projectileOffPathCurveDuration = 1.00f;
     this->_pooledPathIndex = -1;
     this->_currentProjectileState = EK26ProjectileState::Invalid;
+    this->_outlineUpdateStrategy = CreateDefaultSubobject<UK26PowerOutlineUpdateStrategy>(TEXT("OutlineUpdateStrategy"));
+    this->_crowFlockOutlineUpdateStrategy = CreateDefaultSubobject<UK26PowerOutlineUpdateStrategy>(TEXT("CrowFlockOutlineUpdateStrategy"));
+    this->_outlineComponent = CreateDefaultSubobject<UDBDOutlineComponent>(TEXT("OutlineComponent"));
+    this->_pathSplineComponent = CreateDefaultSubobject<USplineComponent>(TEXT("Spline"));
+    this->_collisionStaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Collision"));
+    this->_killerInstinctStaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("KillerInstinctMesh"));
+    this->_visualSkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Visual"));
+    this->_rootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("rootComponent"));
+    this->_firecrackerEffectHandlerComponent = CreateDefaultSubobject<UFirecrackerEffectHandlerComponent>(TEXT("FirecrackerEffectHandlerComponent"));
+    this->_flashLightableComponent = CreateDefaultSubobject<UFlashlightableComponent>(TEXT("FlashlightableComponent"));
+    this->_lightBurnableComponent = CreateDefaultSubobject<ULightBurnable>(TEXT("LightBurnableComponent"));
+    this->_dangerNavModifierComponent = CreateDefaultSubobject<UDBDNavModifierComponent>(TEXT("DangerNavModifierComponent"));
+    this->flashlightPointCenter = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("FlashlightPointCenter"));
+    this->flashlightPointNorth = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("FlashlightPointNorth"));
+    this->flashlightPointEast = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("FlashlightPointEast"));
+    this->flashlightPointSouth = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("FlashlightPointSouth"));
+    this->flashlightPointWest = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("FlashlightPointWest"));
     this->_isBeingFlashlighted = false;
     this->_lastFlashlightProgress = 0.00f;
     this->_lastTimeFlashlightValueIncreased = 0.00f;
@@ -110,5 +138,6 @@ AK26CrowProjectile::AK26CrowProjectile() {
     this->_statusHandlerComponent = NULL;
     this->_ammoHandlerComponent = NULL;
     this->_pathHandlerComponent = NULL;
+    this->_flashlightDestroyChargeable = CreateDefaultSubobject<UChargeableComponent>(TEXT("CrowDestroyChargeable"));
 }
 

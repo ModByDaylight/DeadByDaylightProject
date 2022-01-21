@@ -6,18 +6,18 @@
 #include "TunableStat.h"
 #include "TormentMode.generated.h"
 
-class AMobileTormentTrailRenderer;
-class UPowerChargePresentationItemProgressComponent;
+class UTormentTrailPointCollectionComponent;
 class UChargeableComponent;
 class UPowerChargeComponent;
+class UPowerChargePresentationItemProgressComponent;
 class UPowerToggleComponent;
-class UAuthoritativeActorPoolComponent;
-class UCurveFloat;
 class UTormentTrailSpawnerComponent;
-class UTormentTrailPointCollectionComponent;
+class UAuthoritativeActorPoolComponent;
 class UAgonyComponent;
 class UTormentModeCooldownInteraction;
 class UTormentTrailDetectorComponent;
+class UCurveFloat;
+class AMobileTormentTrailRenderer;
 
 UCLASS()
 class THEEXECUTIONER_API ATormentMode : public ACollectable {
@@ -126,6 +126,9 @@ private:
     UPROPERTY(EditDefaultsOnly)
     TSubclassOf<AMobileTormentTrailRenderer> _mobileTormentTrailRendererClass;
     
+public:
+    ATormentMode();
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_RequestMoreActorInAttackPool();
     
@@ -144,6 +147,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool IsInTormentMode() const;
     
-    ATormentMode();
 };
 

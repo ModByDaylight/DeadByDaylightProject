@@ -7,7 +7,7 @@
 
 class ALanternInteractable;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API ULunarEventComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -18,6 +18,11 @@ private:
     UPROPERTY(Replicated)
     int32 _additionalEventProgressCount;
     
+public:
+    ULunarEventComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_lanternCollectedCount();
     
@@ -57,9 +62,5 @@ private:
     UFUNCTION()
     void Authority_OnCamperEscape(FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ULunarEventComponent();
 };
 

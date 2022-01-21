@@ -19,6 +19,9 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UTextBlock* NewTagText;
     
+public:
+    UUMGAtlantaEventsTab();
+protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetSelectionVisuals(bool isSelected);
     
@@ -28,7 +31,5 @@ protected:
     UFUNCTION(BlueprintImplementableEvent)
     void SetHotTag();
     
-public:
-    UUMGAtlantaEventsTab();
 };
 

@@ -3,8 +3,8 @@
 #include "Templates/SubclassOf.h"
 
 class AActor;
-class ADBDPlayer;
 class UGameplayModifierContainer;
+class ADBDPlayer;
 class UBaseModifierCondition;
 
 void UGameplayModifierContainer::UpdateIsApplicable() {

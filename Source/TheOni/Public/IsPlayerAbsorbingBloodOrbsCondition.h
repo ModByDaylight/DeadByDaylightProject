@@ -3,7 +3,7 @@
 #include "IsPlayerPerformingInteraction.h"
 #include "IsPlayerAbsorbingBloodOrbsCondition.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIsPlayerAbsorbingBloodOrbsCondition : public UIsPlayerPerformingInteraction {
     GENERATED_BODY()
 public:

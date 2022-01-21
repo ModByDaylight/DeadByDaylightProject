@@ -1,7 +1,7 @@
 #include "PlayerMovementUtilities.h"
 
-class UCurveFloat;
 class ADBDPlayer;
+class UCurveFloat;
 
 void UPlayerMovementUtilities::Local_SetGamepadYawCurve(ADBDPlayer* player, UCurveFloat* curve) {
 }

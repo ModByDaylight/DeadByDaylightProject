@@ -8,7 +8,7 @@
 class AActor;
 class USelectiveVisibilityComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTwinJumpTargetVisibleEffect : public UStatusEffect {
     GENERATED_BODY()
 public:
@@ -22,13 +22,14 @@ private:
     UPROPERTY(Export, Transient)
     USelectiveVisibilityComponent* _jumpTargetVisibility;
     
+public:
+    UTwinJumpTargetVisibleEffect();
+private:
     UFUNCTION()
     void OnJumpTargetTick(FVector location);
     
     UFUNCTION()
     void OnHideTargetPosition();
     
-public:
-    UTwinJumpTargetVisibleEffect();
 };
 

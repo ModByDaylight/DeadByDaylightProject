@@ -13,10 +13,11 @@ protected:
     UPROPERTY(Export, Transient)
     UUMGSplashScreen* _splashScreen;
     
+public:
+    USplashScreenUMG();
+protected:
     UFUNCTION()
     void TriggerAnyKey();
     
-public:
-    USplashScreenUMG();
 };
 

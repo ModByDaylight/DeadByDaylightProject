@@ -1,7 +1,7 @@
 #include "PawnUtilities.h"
 
-class APawn;
 class AActor;
+class APawn;
 class UObject;
 
 APawn* UPawnUtilities::GetOwningPawn(const AActor* origin) {

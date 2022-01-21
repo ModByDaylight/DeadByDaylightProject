@@ -3,17 +3,18 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "TutorialFunctionLibrary.generated.h"
 
-class UTutorialHighlightController;
-class UTutorialObjectiveController;
-class UObject;
 class UTutorialNotificationController;
-class ATutorialGameState;
 class ATutorialGameMode;
+class UObject;
+class UTutorialObjectiveController;
+class UTutorialHighlightController;
+class ATutorialGameState;
 
 UCLASS(BlueprintType)
 class UTutorialFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UTutorialFunctionLibrary();
     UFUNCTION(BlueprintPure)
     static bool IsInTutorial(const UObject* WorldContextObject);
     
@@ -32,6 +33,5 @@ public:
     UFUNCTION(BlueprintPure)
     static ATutorialGameMode* GetTutorialGameMode(UObject* WorldContextObject);
     
-    UTutorialFunctionLibrary();
 };
 

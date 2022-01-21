@@ -3,9 +3,9 @@
 #include "UObject/Object.h"
 #include "DedicatedServerManager.generated.h"
 
+class UDBDGameInstance;
 class UDedicatedServerStartupInitializerInterface;
 class IDedicatedServerStartupInitializerInterface;
-class UDBDGameInstance;
 class UOnlineSystemHandler;
 
 UCLASS()

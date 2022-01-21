@@ -34,6 +34,9 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     FText _weeklyRemainingTime;
     
+public:
+    UUMGAtlantaRitualsScreen();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void SetNewRitualNumbers(int32 newDailyRitualNumber, int32 newWeeklyRitualNumber);
     
@@ -45,7 +48,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void BroadcastOnBackButtonPressed();
     
-public:
-    UUMGAtlantaRitualsScreen();
 };
 

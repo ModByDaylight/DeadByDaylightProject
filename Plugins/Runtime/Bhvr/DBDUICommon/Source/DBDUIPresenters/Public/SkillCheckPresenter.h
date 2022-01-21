@@ -6,13 +6,14 @@
 
 class UUserWidget;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDUIPRESENTERS_API USkillCheckPresenter : public UHudPresenter {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     TSubclassOf<UUserWidget> SkillCheckWidgetClass;
     
+    USkillCheckPresenter();
 private:
     UFUNCTION()
     void OnUpdateSkillCheckVisual(bool isActive);
@@ -26,7 +27,5 @@ private:
     UFUNCTION()
     void OnShowSkillCheck();
     
-public:
-    USkillCheckPresenter();
 };
 

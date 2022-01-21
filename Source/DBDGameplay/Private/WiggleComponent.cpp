@@ -1,7 +1,7 @@
 #include "WiggleComponent.h"
 
-class AActor;
 class ADBDPlayer;
+class AActor;
 class UChargeableComponent;
 
 void UWiggleComponent::Server_OnWiggleEnd_Implementation() {
@@ -42,6 +42,7 @@ void UWiggleComponent::Authority_AddWiggleCharge(float chargeAmount) {
 }
 
 UWiggleComponent::UWiggleComponent() {
+    this->_wiggleProgress = CreateDefaultSubobject<UChargeableComponent>(TEXT("WiggleChargeable"));
     this->_killerWigglingFrom = NULL;
     this->_inputComponent = NULL;
 }

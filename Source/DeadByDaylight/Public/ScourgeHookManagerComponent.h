@@ -5,7 +5,7 @@
 
 class AMeatHook;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UScourgeHookManagerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -13,12 +13,13 @@ private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_ScourgeHooks)
     TArray<AMeatHook*> _scourgeHooks;
     
+public:
+    UScourgeHookManagerComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_ScourgeHooks();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UScourgeHookManagerComponent();
 };
 

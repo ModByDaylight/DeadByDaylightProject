@@ -5,7 +5,7 @@
 
 class UHillbillyChainsawOverheatComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class THEHILLBILLY_API UHillbillyOverheatPresentationItemProgressComponent : public UPresentationItemProgressComponent {
     GENERATED_BODY()
 public:
@@ -14,9 +14,9 @@ private:
     UHillbillyChainsawOverheatComponent* _hillbillyChainsawOverheatComponent;
     
 public:
+    UHillbillyOverheatPresentationItemProgressComponent();
     UFUNCTION(BlueprintCallable)
     void SetHillbillyChainsawOverheatComponent(UHillbillyChainsawOverheatComponent* hillbillyChainsawOverheatComponent);
     
-    UHillbillyOverheatPresentationItemProgressComponent();
 };
 

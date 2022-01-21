@@ -1,6 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnSearchingLobbyCancelled.h"
 #include "MobileBaseUserWidget.h"
+#include "OnJoinedLobbyLeaved.h"
 #include "UMGLobbyScreen.generated.h"
 
 class UUMGLobbyJoinedWidget;
@@ -8,9 +10,6 @@ class UUMGLobbySearchingWidget;
 class UWidgetSwitcher;
 class UUMGLobbyOfferingWidget;
 class UUMGFogWidget;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGLobbyScreenOnJoinedLobbyLeaved);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGLobbyScreenOnSearchingLobbyCancelled);
 
 UCLASS(EditInlineNew)
 class UUMGLobbyScreen : public UMobileBaseUserWidget {
@@ -20,10 +19,10 @@ public:
     UUMGLobbySearchingWidget* LobbySearchingWidget;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGLobbyScreenOnJoinedLobbyLeaved OnJoinedLobbyLeaved;
+    FOnJoinedLobbyLeaved OnJoinedLobbyLeaved;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGLobbyScreenOnSearchingLobbyCancelled OnSearchingLobbyCancelled;
+    FOnSearchingLobbyCancelled OnSearchingLobbyCancelled;
     
 protected:
     UPROPERTY(BlueprintReadOnly, Export)
@@ -38,13 +37,14 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UUMGFogWidget* FogWidget;
     
+public:
+    UUMGLobbyScreen();
+protected:
     UFUNCTION(BlueprintCallable)
     void HandleSearchingLobbyCancel();
     
     UFUNCTION(BlueprintCallable)
     void HandleJoinedLobbyLeave();
     
-public:
-    UUMGLobbyScreen();
 };
 

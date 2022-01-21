@@ -4,8 +4,8 @@
 #include "AIInteractableTargetInterface.h"
 #include "WakerObject.generated.h"
 
-class ADBDPlayer;
 class UCamperDreamworldComponent;
+class ADBDPlayer;
 class UPrimitiveComponent;
 
 UCLASS()
@@ -21,6 +21,10 @@ private:
     
     UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     bool _chargeComplete;
+    
+public:
+    AWakerObject();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -73,8 +77,7 @@ public:
     UFUNCTION()
     void BindToCamperDreamStateChanged(ADBDPlayer* player);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    AWakerObject();
+    // Fix for true pure virtual functions not being implemented
 };
 

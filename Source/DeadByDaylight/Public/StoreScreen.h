@@ -7,6 +7,7 @@ UCLASS()
 class UStoreScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    UStoreScreen();
 protected:
     UFUNCTION()
     void OnUnlockWithCurrency(int32 currencyId, const FString& combinedItem);
@@ -74,7 +75,5 @@ protected:
     UFUNCTION()
     void OnBuyCurrencyBundle(int32 index);
     
-public:
-    UStoreScreen();
 };
 

@@ -6,7 +6,7 @@
 class UAkAuxBus;
 class UAkLateReverbComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class AKAUDIO_API UAkLateReverbComponent : public USceneComponent {
     GENERATED_BODY()
 public:

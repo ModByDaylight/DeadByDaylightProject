@@ -20,6 +20,9 @@ private:
     UPROPERTY(Transient)
     UPaperTileMap* _tileMap;
     
+public:
+    ADBDClientSyncer();
+private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_SyncSeed(int32 seed, UPaperTileMap* tileMap, int32 generationPlayerCount, const FString& premadeMap);
     
@@ -29,7 +32,5 @@ private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_SyncActorToSpawnLocally(const TArray<FSpawnInfo>& spawnInfos, int16 startIndex);
     
-public:
-    ADBDClientSyncer();
 };
 

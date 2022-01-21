@@ -3,7 +3,7 @@
 #include "ObjectPlacerComponent.h"
 #include "TwinPlacerComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTwinPlacerComponent : public UObjectPlacerComponent {
     GENERATED_BODY()
 public:

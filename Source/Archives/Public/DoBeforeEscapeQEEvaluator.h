@@ -9,9 +9,9 @@ UCLASS()
 class UDoBeforeEscapeQEEvaluator : public UQuestEventEvaluatorBase {
     GENERATED_BODY()
 public:
+    UDoBeforeEscapeQEEvaluator();
     UFUNCTION()
     void OnEscaped(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-    UDoBeforeEscapeQEEvaluator();
 };
 

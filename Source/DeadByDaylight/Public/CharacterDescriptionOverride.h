@@ -3,8 +3,8 @@
 #include "DBDTableRowBase.h"
 #include "CharacterDescriptionOverride.generated.h"
 
-class UTexture2D;
 class ADBDMenuPlayer;
+class UTexture2D;
 class ADBDPlayer;
 
 USTRUCT(BlueprintType)

@@ -5,7 +5,7 @@
 
 class UMeatHookOutlineUpdateStrategy;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USaboteur : public UPerk {
     GENERATED_BODY()
 public:

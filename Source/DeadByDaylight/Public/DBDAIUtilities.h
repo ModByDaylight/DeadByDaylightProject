@@ -5,16 +5,17 @@
 #include "UObject/NoExportTypes.h"
 #include "DBDAIUtilities.generated.h"
 
-class UNavigationPath;
-class UObject;
-class UActorComponent;
-class AActor;
 class UNavigationQueryFilter;
+class UNavigationPath;
+class UActorComponent;
+class UObject;
+class AActor;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UDBDAIUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UDBDAIUtilities();
     UFUNCTION(BlueprintCallable)
     static void SetCanEverAffectNavigation(UActorComponent* component, bool affectNavigation);
     
@@ -30,6 +31,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool DrawDebugAINavigation();
     
-    UDBDAIUtilities();
 };
 

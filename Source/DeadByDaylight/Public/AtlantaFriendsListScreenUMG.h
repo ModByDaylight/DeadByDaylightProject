@@ -13,13 +13,14 @@ protected:
     UPROPERTY(Export)
     UUMGAtlantaFriendListScreen* _atlantaFriendListScreen;
     
+public:
+    UAtlantaFriendsListScreenUMG();
+protected:
     UFUNCTION()
     void HandleResearchButtonClicked(const FText& searchInput);
     
     UFUNCTION()
     void HandleClosedButtonClicked();
     
-public:
-    UAtlantaFriendsListScreenUMG();
 };
 

@@ -2,85 +2,84 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Engine/GameInstance.h"
+#include "PlayerDisconnectDelegate.h"
 #include "ForceSpawnTileData.h"
 #include "ParadiseData.h"
 #include "EDisconnectErrors.h"
 #include "EOfferingEffectType.h"
 #include "DBDGameInstance.generated.h"
 
-class ACamperPlayer;
-class UAtlantaRitualsManager;
-class UDateTimerUpdater;
-class UAtlantaFreeTicketsManager;
+class UPlayerProfileDAL;
+class UWalletHandler;
+class UBonusPointEventsManager;
 class UDBDKeyDisplayInfo;
+class UDBDDesignTunables;
+class UNewsContentManager;
+class URegionFinder;
+class UCinematicManager;
+class ULightingHelper;
+class UShopManager;
+class UGameEventTracker;
+class ULocalEventManager;
+class UDBDPartyFacade;
+class UFriendManager;
+class UContentScheduleManager;
+class AOfferingSequenceManager;
 class UCDNPatchManager;
 class UDecalSpawnerCollection;
-class UDBDDesignTunables;
-class ULightingHelper;
-class UAssetLibraryManager;
-class URegionFinder;
-class UCharacterXPManager;
-class UShopManager;
-class ADBDPlayer;
-class UGameEventTracker;
-class UFriendManager;
-class USoftBanManager;
-class UCharacterProgressionManager;
-class UPlayerProfileDAL;
-class UToastManager;
-class AOfferingSequenceManager;
-class UChunkingManager;
-class UDBDSocialNotificationFactory;
-class UNewsContentManager;
-class UContentScheduleManager;
-class UOnlineSystemHandler;
-class UFearMarketManager;
-class UPopupSequencer;
-class UBonusPointEventsManager;
-class UWalletHandler;
-class UControllerPairingManager;
-class UDBDPartyFacade;
-class UBloodwebManager;
-class UOnlineTransactionServiceComponent;
-class USharedAuthenticationComponent;
-class UDBDPersistentData;
-class UPlayerDataStorageFacade;
-class UDBDTimeTravelManager;
-class ULocalPlayer;
-class UAtlantaTooltipManager;
-class URankManager;
-class UOfferingHandler;
 class UPlayerNameRegistration;
+class UAtlantaTooltipManager;
+class UOfferingHandler;
+class UCharacterProgressionManager;
+class UMapActorDB;
+class UCharacterXPManager;
+class UControllerPairingManager;
+class UAtlantaRitualsManager;
+class UAtlantaFreeTicketsManager;
+class UDateTimerUpdater;
+class UFearMarketManager;
+class UChunkingManager;
+class UOfferingEffectCollection;
+class UPlayerDataStorageFacade;
+class UAssetLibraryManager;
+class UBloodwebManager;
+class UToastManager;
+class UOnlineTransactionServiceComponent;
+class UDBDPersistentData;
+class USharedAuthenticationComponent;
+class URankManager;
 class UDBDPlayerLevelManager;
 class USpecialEventManager;
-class UObject;
-class UPenaltyTracker;
-class UDBDTimeUtilities;
+class UDedicatedServerManager;
 class UActorKnowledgeCollection;
-class UCinematicManager;
-class UMapActorDB;
+class UDBDTimeTravelManager;
+class UDBDSocialNotificationFactory;
+class UPenaltyTracker;
 class UPopupFactory;
 class UInteractionProficiency;
 class UDBDHud;
+class UPopupSequencer;
 class UDBDAuthentication;
 class UDBDEasyAntiCheat;
-class UOfferingEffectCollection;
+class UObject;
 class UInventoryHandler;
-class ULocalEventManager;
-class APlayerController;
-class UPlayerReportManager;
-class UConsentManager;
-class UDedicatedServerManager;
 class UPrimitiveCollection;
+class UPlayerReportManager;
+class USoftBanManager;
+class UConsentManager;
+class UOnlineSystemHandler;
+class ADBDPlayer;
 class AActor;
+class UDBDTimeUtilities;
 class ADBDPlayerState;
+class APlayerController;
+class ULocalPlayer;
 class ULightingInterpolator;
 class ABaseSky;
+class ACamperPlayer;
 class ASlasherPlayer;
 class UGameEventDispatcher;
 class UWorld;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDGameInstanceOnPlayerDisconnect, ADBDPlayer*, player);
 
 UCLASS(NonTransient)
 class DEADBYDAYLIGHT_API UDBDGameInstance : public UGameInstance {
@@ -189,7 +188,7 @@ public:
     UChunkingManager* ChunkingManager;
     
     UPROPERTY(BlueprintAssignable, EditAnywhere)
-    FDBDGameInstanceOnPlayerDisconnect OnPlayerDisconnect;
+    FPlayerDisconnectDelegate OnPlayerDisconnect;
     
 private:
     UPROPERTY(Transient)
@@ -361,6 +360,7 @@ private:
     UDateTimerUpdater* _dateTimerUpdater;
     
 public:
+    UDBDGameInstance();
     UFUNCTION()
     void StartOfferingSequence();
     
@@ -616,6 +616,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddActorKnowledgeCollection(UActorKnowledgeCollection* collection);
     
-    UDBDGameInstance();
 };
 

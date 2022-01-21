@@ -3,10 +3,10 @@
 #include "Engine/EngineTypes.h"
 #include "K26SurvivorStatus.generated.h"
 
-class AActor;
 class AK26AttachedCrow;
-class ACamperPlayer;
 class UK26KillerInstinctStatusEffect;
+class ACamperPlayer;
+class AActor;
 
 USTRUCT(BlueprintType)
 struct FK26SurvivorStatus {

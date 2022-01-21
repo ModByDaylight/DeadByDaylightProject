@@ -3,7 +3,7 @@
 #include "ItemAddon.h"
 #include "TricksterChainedThrowsAddon.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UTricksterChainedThrowsAddon : public UItemAddon {
     GENERATED_BODY()
 public:

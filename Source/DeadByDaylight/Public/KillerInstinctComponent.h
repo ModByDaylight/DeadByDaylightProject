@@ -7,7 +7,7 @@
 
 class UNiagaraComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UKillerInstinctComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -28,6 +28,8 @@ private:
     UPROPERTY(Transient)
     FCustomKillerInstinctData _currentKillerInstinctData;
     
+public:
+    UKillerInstinctComponent();
 protected:
     UFUNCTION(BlueprintCallable)
     void SetParticleSystem(UNiagaraComponent* particleSystemComponent);
@@ -44,7 +46,5 @@ private:
     UFUNCTION(BlueprintCallable)
     UNiagaraComponent* GetParticleSystem();
     
-public:
-    UKillerInstinctComponent();
 };
 

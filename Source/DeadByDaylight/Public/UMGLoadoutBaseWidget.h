@@ -50,6 +50,7 @@ protected:
     bool IsSlasher;
     
 public:
+    UUMGLoadoutBaseWidget();
     UFUNCTION(BlueprintCallable)
     void SetLoadoutData(const TArray<FInventorySlotData>& loadoutData, bool NewUsingMatchRules, bool NewPerkSlotsLockedByAdmin, ELoadoutSlot loadoutSlot, bool NewIsSlasher, bool isClickable);
     
@@ -59,6 +60,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetDividerImageColor(FLinearColor color);
     
-    UUMGLoadoutBaseWidget();
 };
 

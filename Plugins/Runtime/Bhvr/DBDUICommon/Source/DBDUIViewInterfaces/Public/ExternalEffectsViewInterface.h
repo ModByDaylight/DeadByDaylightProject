@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
-#include "AddonViewData.h"
 #include "PerkViewData.h"
+#include "AddonViewData.h"
 #include "ExternalEffectsViewInterface.generated.h"
 
 UINTERFACE(Blueprintable)

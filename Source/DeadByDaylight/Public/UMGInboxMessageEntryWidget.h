@@ -15,6 +15,7 @@ public:
     UPROPERTY(BlueprintReadWrite)
     bool _isCurrentSelection;
     
+    UUMGInboxMessageEntryWidget();
 protected:
     UFUNCTION(BlueprintNativeEvent)
     void UpdateMessageData(FInboxMessageUIData messageData);
@@ -26,6 +27,5 @@ public:
     UFUNCTION(BlueprintCallable)
     FInboxMessageElapsedTime GetElapsedTime();
     
-    UUMGInboxMessageEntryWidget();
 };
 

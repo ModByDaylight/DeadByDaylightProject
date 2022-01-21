@@ -13,9 +13,9 @@ public:
     UPROPERTY(Transient)
     ECharacterMovementTypes CharacterMovementType;
     
+    UAICharacterHideInLockerBehaviourData();
     UFUNCTION(BlueprintCallable)
     void Init(ALocker* locker, ECharacterMovementTypes NewCharacterMovementType);
     
-    UAICharacterHideInLockerBehaviourData();
 };
 

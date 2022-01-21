@@ -3,7 +3,7 @@
 #include "StatusEffect.h"
 #include "SurvivorHitSprintEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API USurvivorHitSprintEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

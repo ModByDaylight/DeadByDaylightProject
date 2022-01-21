@@ -5,10 +5,10 @@
 #include "EFiniteStateMachineStatus.h"
 #include "FiniteStateMachine.generated.h"
 
-class UObject;
 class UFSM_State;
+class UObject;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class FINITESTATEMACHINE_API UFiniteStateMachine : public UActorComponent {
     GENERATED_BODY()
 public:

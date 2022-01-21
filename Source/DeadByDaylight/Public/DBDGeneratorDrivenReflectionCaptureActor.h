@@ -12,9 +12,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Export)
     UGenyReflectionCaptureComponent* genyReflectionCapture;
     
+    ADBDGeneratorDrivenReflectionCaptureActor();
     UFUNCTION(BlueprintCallable)
     void SwapToSecondState();
     
-    ADBDGeneratorDrivenReflectionCaptureActor();
 };
 

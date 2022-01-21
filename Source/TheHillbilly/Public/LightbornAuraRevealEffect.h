@@ -3,7 +3,7 @@
 #include "BaseLingeringStatusEffect.h"
 #include "LightbornAuraRevealEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEHILLBILLY_API ULightbornAuraRevealEffect : public UBaseLingeringStatusEffect {
     GENERATED_BODY()
 public:

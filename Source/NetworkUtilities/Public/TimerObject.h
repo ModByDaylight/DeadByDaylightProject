@@ -4,10 +4,10 @@
 #include "ReplicationTimerData.h"
 #include "TimerObject.generated.h"
 
-class UTimerObject;
 class AActor;
+class UTimerObject;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class NETWORKUTILITIES_API UTimerObject : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -15,6 +15,11 @@ private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_TimerDataUpdated)
     FReplicationTimerData _replicationData;
     
+public:
+    UTimerObject();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_TimerDataUpdated(FReplicationTimerData oldData);
     
@@ -61,8 +66,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void Authority_Clear();
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UTimerObject();
 };
 

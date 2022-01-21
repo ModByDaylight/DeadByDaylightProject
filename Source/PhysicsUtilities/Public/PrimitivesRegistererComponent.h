@@ -6,7 +6,7 @@
 class UPrimitiveCollection;
 class UPrimitiveComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class PHYSICSUTILITIES_API UPrimitivesRegistererComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -18,9 +18,9 @@ private:
     TWeakObjectPtr<UPrimitiveCollection> _primitiveCollection;
     
 public:
+    UPrimitivesRegistererComponent();
     UFUNCTION(BlueprintCallable)
     void SetPrimitives(const TArray<UPrimitiveComponent*>& primitives);
     
-    UPrimitivesRegistererComponent();
 };
 

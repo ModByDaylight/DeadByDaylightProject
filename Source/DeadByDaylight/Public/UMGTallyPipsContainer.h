@@ -25,9 +25,9 @@ protected:
     TArray<UUMGTallyPip*> Pips;
     
 public:
+    UUMGTallyPipsContainer();
     UFUNCTION(BlueprintCallable)
     void SetData(int32 rank, int32 pipsRequiredForNextRank, int32 filledPips);
     
-    UUMGTallyPipsContainer();
 };
 

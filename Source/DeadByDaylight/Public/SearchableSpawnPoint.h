@@ -6,7 +6,7 @@
 
 class AActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USearchableSpawnPoint : public UTileSpawnPoint {
     GENERATED_BODY()
 public:

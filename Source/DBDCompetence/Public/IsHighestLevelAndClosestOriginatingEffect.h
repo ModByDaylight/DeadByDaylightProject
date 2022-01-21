@@ -5,7 +5,7 @@
 
 class UStatusEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIsHighestLevelAndClosestOriginatingEffect : public UGameplayModifierCondition {
     GENERATED_BODY()
 public:
@@ -13,10 +13,11 @@ private:
     UPROPERTY(Export, Transient)
     TArray<UStatusEffect*> _applicableEffects;
     
+public:
+    UIsHighestLevelAndClosestOriginatingEffect();
+private:
     UFUNCTION()
     void OnStatusEffectAddedOrRemoved(UStatusEffect* effect, bool valid);
     
-public:
-    UIsHighestLevelAndClosestOriginatingEffect();
 };
 

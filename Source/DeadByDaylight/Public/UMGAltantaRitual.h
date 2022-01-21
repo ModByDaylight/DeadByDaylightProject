@@ -19,6 +19,7 @@ protected:
     FText _completedText;
     
 public:
+    UUMGAltantaRitual();
     UFUNCTION(BlueprintImplementableEvent)
     void SetData(const FAtlantaRitualUIData& ritual);
     
@@ -26,7 +27,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void BroadcastOnClaimRewardsButtonPressed(const int32 ritualId);
     
-public:
-    UUMGAltantaRitual();
 };
 

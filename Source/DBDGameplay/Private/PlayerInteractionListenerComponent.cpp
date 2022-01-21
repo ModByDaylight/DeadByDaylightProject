@@ -12,10 +12,10 @@ void UPlayerInteractionListenerComponent::UnlistenToInteractionEnd(ADBDPlayer* p
 void UPlayerInteractionListenerComponent::OnActorDestroyed(AActor* destroyedActor) {
 }
 
-void UPlayerInteractionListenerComponent::ListenToInteractionStart(ADBDPlayer* player, const FGameplayTag& interactionSemantic, const FPlayerInteractionListenerComponentInteractionDelegate& interactionDelegate) {
+void UPlayerInteractionListenerComponent::ListenToInteractionStart(ADBDPlayer* player, const FGameplayTag& interactionSemantic, const UPlayerInteractionListenerComponent::FInteractionDelegate& interactionDelegate) {
 }
 
-void UPlayerInteractionListenerComponent::ListenToInteractionEnd(ADBDPlayer* player, const FGameplayTag& interactionSemantic, const FPlayerInteractionListenerComponentInteractionDelegate& interactionDelegate) {
+void UPlayerInteractionListenerComponent::ListenToInteractionEnd(ADBDPlayer* player, const FGameplayTag& interactionSemantic, const UPlayerInteractionListenerComponent::FInteractionDelegate& interactionDelegate) {
 }
 
 UPlayerInteractionListenerComponent::UPlayerInteractionListenerComponent() {

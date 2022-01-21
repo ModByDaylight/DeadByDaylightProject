@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "TrapKillerInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UTrapKillerInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:

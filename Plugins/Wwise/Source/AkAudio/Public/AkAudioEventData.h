@@ -3,9 +3,9 @@
 #include "AkAssetDataSwitchContainer.h"
 #include "AkAudioEventData.generated.h"
 
-class UAkTrigger;
 class UAkAuxBus;
 class UAkAudioEvent;
+class UAkTrigger;
 class UAkGroupValue;
 
 UCLASS(BlueprintType)

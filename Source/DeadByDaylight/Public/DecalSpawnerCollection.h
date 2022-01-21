@@ -19,6 +19,7 @@ private:
     TMap<FName, UDecalSpawner*> _decalSpawners;
     
 public:
+    UDecalSpawnerCollection();
     UFUNCTION(BlueprintCallable)
     UDBDDecalComponent* SpawnDecalAtLocation(FName decalSpawnerName, const FVector& decalSize, const FVector& location, const FRotator& rotation, float lifeSpan, FName decalType);
     
@@ -28,6 +29,5 @@ public:
     UFUNCTION(BlueprintCallable)
     UDecalSpawner* CreateDecalSpawner(const UObject* worldContextObject, FName decalSpawnerName, UMaterialInterface* decalMaterial, int32 poolSize, ESpawnerStrategyType spawnerStrateryType);
     
-    UDecalSpawnerCollection();
 };
 

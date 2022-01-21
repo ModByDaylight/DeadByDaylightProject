@@ -6,7 +6,7 @@
 class ACamperPlayer;
 class UStatusEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UDyingLight : public UPerk {
     GENERATED_BODY()
 public:
@@ -26,10 +26,11 @@ private:
     UPROPERTY(Export, Transient)
     TArray<UStatusEffect*> _survivorDebuffs;
     
+public:
+    UDyingLight();
+private:
     UFUNCTION()
     void OnObsessionChanged(ACamperPlayer* newObsession, ACamperPlayer* previousObsession);
     
-public:
-    UDyingLight();
 };
 

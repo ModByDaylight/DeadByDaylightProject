@@ -1,11 +1,11 @@
 #include "K25Utilities.h"
 
-class AK25Gateway;
 class UObject;
 class ALamentConfiguration;
 class AK25ControlledProjectile;
 class AK25Power;
 class AK25Husk;
+class AK25Gateway;
 
 ALamentConfiguration* UK25Utilities::GetLamentConfiguration(UObject* worldContextObject) {
     return NULL;

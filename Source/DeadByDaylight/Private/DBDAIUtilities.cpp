@@ -1,11 +1,11 @@
 #include "DBDAIUtilities.h"
 #include "Templates/SubclassOf.h"
 
-class UObject;
 class UActorComponent;
+class UObject;
 class AActor;
-class UNavigationQueryFilter;
 class UNavigationPath;
+class UNavigationQueryFilter;
 
 void UDBDAIUtilities::SetCanEverAffectNavigation(UActorComponent* component, bool affectNavigation) {
 }

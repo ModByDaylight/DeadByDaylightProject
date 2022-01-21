@@ -1,34 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnFirecrackerInRangeEndEvent.h"
 #include "Components/ActorComponent.h"
 #include "FirecrackerEffectData.h"
+#include "OnFirecrackerInRangeBeginEvent.h"
+#include "OnFirecrackerInRangeUpdateEvent.h"
 #include "FirecrackerEffectHandlerComponent.generated.h"
 
-class AActor;
 class AFirecracker;
+class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFirecrackerEffectHandlerComponentOnFirecrackerInRangeEnd, const FFirecrackerEffectData&, effectData);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFirecrackerEffectHandlerComponentOnFirecrackerInRangeBegin, const FFirecrackerEffectData&, effectData);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFirecrackerEffectHandlerComponentOnFirecrackerInRangeUpdate, float, deltaTime, const FFirecrackerEffectData&, effectData);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UFirecrackerEffectHandlerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FFirecrackerEffectHandlerComponentOnFirecrackerInRangeBegin OnFirecrackerInRangeBegin;
+    FOnFirecrackerInRangeBeginEvent OnFirecrackerInRangeBegin;
     
     UPROPERTY(BlueprintAssignable)
-    FFirecrackerEffectHandlerComponentOnFirecrackerInRangeUpdate OnFirecrackerInRangeUpdate;
+    FOnFirecrackerInRangeUpdateEvent OnFirecrackerInRangeUpdate;
     
     UPROPERTY(BlueprintAssignable)
-    FFirecrackerEffectHandlerComponentOnFirecrackerInRangeEnd OnFirecrackerInRangeEnd;
+    FOnFirecrackerInRangeEndEvent OnFirecrackerInRangeEnd;
     
 private:
     UPROPERTY(Transient)
     TArray<FFirecrackerEffectData> _effectDataList;
     
 public:
+    UFirecrackerEffectHandlerComponent();
     UFUNCTION(BlueprintCallable)
     void SetFirecrackerInRange(AFirecracker* firecracker, bool inRange);
     
@@ -36,7 +36,5 @@ private:
     UFUNCTION()
     void OnFirecrackerDestroyed(AActor* DestroyedActor);
     
-public:
-    UFirecrackerEffectHandlerComponent();
 };
 

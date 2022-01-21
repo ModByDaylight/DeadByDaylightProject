@@ -12,5 +12,7 @@ public:
     FString BlockInteractionId;
     
     UAISkill_Interaction_ForThePeople();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

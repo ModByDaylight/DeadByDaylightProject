@@ -3,7 +3,7 @@
 #include "ItemAddon.h"
 #include "HoneyLocustThornsAddon.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UHoneyLocustThornsAddon : public UItemAddon {
     GENERATED_BODY()
 public:

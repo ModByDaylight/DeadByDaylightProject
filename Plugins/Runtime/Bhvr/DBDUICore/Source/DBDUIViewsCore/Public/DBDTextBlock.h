@@ -4,8 +4,8 @@
 #include "TextBlockOverrideProperties.h"
 #include "DBDTextBlock.generated.h"
 
-class USwitchDockStateManager;
 class UDBDTextManager;
+class USwitchDockStateManager;
 
 UCLASS()
 class UDBDTextBlock : public UTextBlock {
@@ -43,6 +43,7 @@ protected:
     FTextBlockOverrideProperties _undockedProperties;
     
 public:
+    UDBDTextBlock();
     UFUNCTION(BlueprintCallable)
     void SetIsUpperCase(bool isUpperCase);
     
@@ -57,6 +58,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool GetIsUpperCase() const;
     
-    UDBDTextBlock();
 };
 

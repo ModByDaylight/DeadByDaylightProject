@@ -10,6 +10,7 @@ UCLASS(BlueprintType)
 class UClosetAnalytics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UClosetAnalytics();
     UFUNCTION(BlueprintCallable)
     static void RecordClosetSearchSuccess(ASlasherPlayer* killer);
     
@@ -19,6 +20,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void IncrementClosetEnter(ACamperPlayer* survivor);
     
-    UClosetAnalytics();
 };
 

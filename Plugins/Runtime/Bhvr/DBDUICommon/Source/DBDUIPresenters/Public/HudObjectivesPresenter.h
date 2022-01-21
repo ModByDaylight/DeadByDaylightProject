@@ -6,7 +6,7 @@
 
 class UUserWidget;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class UHudObjectivesPresenter : public UHudPresenter {
     GENERATED_BODY()
 public:

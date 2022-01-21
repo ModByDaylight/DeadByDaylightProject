@@ -4,8 +4,8 @@
 #include "UMGAtlantaEventsDescription.generated.h"
 
 class UTextBlock;
-class UAtlantaEventsTemplateDataAsset;
 class UCanvasPanel;
+class UAtlantaEventsTemplateDataAsset;
 class UUMGBaseButtonWidget;
 
 UCLASS(Abstract, EditInlineNew)
@@ -40,11 +40,11 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UCanvasPanel* TimePeriodCanvas;
     
+public:
+    UUMGAtlantaEventsDescription();
 private:
     UFUNCTION()
     void HandleButtonClicked();
     
-public:
-    UUMGAtlantaEventsDescription();
 };
 

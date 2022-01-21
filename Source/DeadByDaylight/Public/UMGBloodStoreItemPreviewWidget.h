@@ -36,6 +36,7 @@ protected:
     FText _purchaseTitle;
     
 public:
+    UUMGBloodStoreItemPreviewWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void UnselectItem();
     
@@ -58,7 +59,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void BroadcastPurchasePressed();
     
-public:
-    UUMGBloodStoreItemPreviewWidget();
 };
 

@@ -5,7 +5,7 @@
 
 class UActivatableExhaustedEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USprintBurst : public UPerk {
     GENERATED_BODY()
 public:
@@ -20,10 +20,11 @@ private:
     UPROPERTY(Export, Transient)
     UActivatableExhaustedEffect* _exhaustedEffect;
     
+public:
+    USprintBurst();
+private:
     UFUNCTION()
     void Authority_OnIsRunningAndMovingChanged(const bool isRunningAndMoving);
     
-public:
-    USprintBurst();
 };
 

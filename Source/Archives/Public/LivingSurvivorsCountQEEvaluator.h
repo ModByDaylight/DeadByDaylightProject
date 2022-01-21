@@ -9,6 +9,7 @@ UCLASS()
 class ULivingSurvivorsCountQEEvaluator : public UQuestEventEvaluatorBase {
     GENERATED_BODY()
 public:
+    ULivingSurvivorsCountQEEvaluator();
 private:
     UFUNCTION()
     void OnSurvivorRemoved(ACamperPlayer* survivorRemoved);
@@ -16,7 +17,5 @@ private:
     UFUNCTION()
     void OnSurvivorAdded(ACamperPlayer* survivorAdded);
     
-public:
-    ULivingSurvivorsCountQEEvaluator();
 };
 

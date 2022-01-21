@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "DBDTunableRowHandle.h"
 #include "LacerationUIData.h"
 #include "TunableStat.h"
-#include "UObject/NoExportTypes.h"
 #include "LacerationComponent.generated.h"
 
 class UStatusEffect;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class THEK23_API ULacerationComponent : public UActorComponent, public ILacerationUIData {
     GENERATED_BODY()
 public:
@@ -59,6 +59,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _thresholdForGraceTimerScoreEvent;
     
+public:
+    ULacerationComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRepLaceration(float oldLaceration);
     
@@ -75,8 +80,7 @@ public:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnKnifeHit(float lacerationPercent, bool isDangerous, bool causedDamage, bool causedKo, const FVector& impactNormal);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    ULacerationComponent();
+    // Fix for true pure virtual functions not being implemented
 };
 

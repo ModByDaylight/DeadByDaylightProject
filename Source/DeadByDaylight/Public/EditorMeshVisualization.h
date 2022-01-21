@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/SceneComponent.h"
+#include "UObject/NoExportTypes.h"
 #include "EditorMeshVisualization.generated.h"
 
 class USkeletalMesh;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UEditorMeshVisualization : public USceneComponent {
     GENERATED_BODY()
 public:

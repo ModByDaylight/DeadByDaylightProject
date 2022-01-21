@@ -10,7 +10,7 @@
 
 class ACharacter;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GAMEPLAYUTILITIES_API UCharacterSightComponent : public UActorComponent, public IActivatable {
     GENERATED_BODY()
 public:
@@ -55,6 +55,9 @@ private:
     FActivationDefinition _activationDefinition;
     
 public:
+    UCharacterSightComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetScreenVisibilityZoneRadiusPercent(float value);
     
@@ -77,9 +80,7 @@ private:
     UFUNCTION()
     void OnRep_CanSee();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UCharacterSightComponent();
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -3,12 +3,12 @@
 #include "UMGGenericPopup.h"
 #include "UMGPerkSelectionPopup.generated.h"
 
-class URichTextBlock;
-class UPerkSelectionSlotWidget;
 class UCanvasPanel;
-class UImage;
-class UVerticalBox;
+class UPerkSelectionSlotWidget;
 class UUMGCharacterPrestigeIcon;
+class UImage;
+class URichTextBlock;
+class UVerticalBox;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGPerkSelectionPopup : public UUMGGenericPopup {
@@ -61,10 +61,11 @@ private:
     UPROPERTY(Export, Transient)
     TArray<UPerkSelectionSlotWidget*> _selectablePerk;
     
+public:
+    UUMGPerkSelectionPopup();
+private:
     UFUNCTION()
     void OnSlotSelected(const int32 index);
     
-public:
-    UUMGPerkSelectionPopup();
 };
 

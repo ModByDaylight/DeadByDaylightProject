@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EAttackType.h"
-#include "UObject/NoExportTypes.h"
 #include "Collectable.h"
 #include "DBDTunableRowHandle.h"
-#include "EContaminator.h"
 #include "TunableStat.h"
+#include "UObject/NoExportTypes.h"
+#include "EAttackType.h"
+#include "EContaminator.h"
 #include "K24Power.generated.h"
 
-class USurvivorContaminationComponent;
 class UInteractionDefinition;
+class USurvivorContaminationComponent;
 class UChargeableComponent;
 class UCurveFloat;
 class APallet;
@@ -86,6 +86,9 @@ private:
     FDBDTunableRowHandle _powerLevelPointsToLevel3;
     
 public:
+    AK24Power();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void WhipAttackStart_Cosmetic();
     
@@ -147,8 +150,5 @@ public:
     UFUNCTION()
     void Authority_OnSurvivorContaminated(const EContaminator contaminator);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    AK24Power();
 };
 

@@ -11,9 +11,9 @@
 
 class UGridPanel;
 class UCoreAddonWidget;
+class UCorePerkWidget;
 class UPerkViewInterface;
 class IPerkViewInterface;
-class UCorePerkWidget;
 class UAddonViewInterface;
 class IAddonViewInterface;
 class USpacer;
@@ -84,13 +84,16 @@ private:
     UPROPERTY(Export, Transient)
     TArray<USpacer*> _spacerPool;
     
+public:
+    UCoreExternalEffectsWidget();
+private:
     UFUNCTION()
     void HideExternalPerk(const FName& perkId);
     
     UFUNCTION()
     void HideExternalAddon(const FName& addonId);
     
-public:
-    UCoreExternalEffectsWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

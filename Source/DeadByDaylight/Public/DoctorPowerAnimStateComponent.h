@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EDoctorAbilityPhase.h"
 #include "Components/ActorComponent.h"
 #include "EDoctorAbilityType.h"
-#include "EDoctorAbilityPhase.h"
 #include "DoctorPowerAnimStateComponent.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDoctorPowerAnimStateComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -15,12 +15,12 @@ public:
     UPROPERTY(BlueprintReadOnly)
     EDoctorAbilityPhase _abilityPhase;
     
+    UDoctorPowerAnimStateComponent();
     UFUNCTION(BlueprintCallable)
     void SetCurrentAbilityType(EDoctorAbilityType abilityType);
     
     UFUNCTION(BlueprintCallable)
     void SetCurrentAbilityPhase(EDoctorAbilityPhase abilityPhase);
     
-    UDoctorPowerAnimStateComponent();
 };
 

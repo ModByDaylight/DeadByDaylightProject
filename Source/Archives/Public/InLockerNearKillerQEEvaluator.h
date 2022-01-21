@@ -9,6 +9,7 @@ UCLASS()
 class ARCHIVES_API UInLockerNearKillerQEEvaluator : public UNearKillerQEEvaluator {
     GENERATED_BODY()
 public:
+    UInLockerNearKillerQEEvaluator();
 private:
     UFUNCTION()
     void OnClosetHideExit(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
@@ -16,7 +17,5 @@ private:
     UFUNCTION()
     void OnClosetHideEnter(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-public:
-    UInLockerNearKillerQEEvaluator();
 };
 

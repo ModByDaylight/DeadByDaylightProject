@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "Styling/SlateBrush.h"
 #include "EActionButtonState.h"
+#include "Styling/SlateBrush.h"
 #include "ActionButton.generated.h"
 
 class UImage;
@@ -50,6 +50,7 @@ private:
     EActionButtonState _previousState;
     
 public:
+    UActionButton();
     UFUNCTION(BlueprintCallable)
     void SetState(EActionButtonState state);
     
@@ -67,6 +68,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void PlayBecameAvailableAnimation();
     
-    UActionButton();
 };
 

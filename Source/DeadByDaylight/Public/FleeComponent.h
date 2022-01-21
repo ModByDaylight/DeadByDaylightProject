@@ -5,7 +5,7 @@
 
 class AActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UFleeComponent : public UActorComponent {
     GENERATED_BODY()
 public:

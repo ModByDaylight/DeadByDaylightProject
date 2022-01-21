@@ -3,7 +3,7 @@
 #include "BaseLockerInteraction.h"
 #include "ReloadKnives.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UReloadKnives : public UBaseLockerInteraction {
     GENERATED_BODY()
 public:

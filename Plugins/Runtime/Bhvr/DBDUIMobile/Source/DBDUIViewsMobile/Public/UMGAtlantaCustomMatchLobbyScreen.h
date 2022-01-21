@@ -24,10 +24,11 @@ protected:
     UPROPERTY(BlueprintReadWrite, Export)
     UTextBlock* MatchRulesTitle;
     
+public:
+    UUMGAtlantaCustomMatchLobbyScreen();
+protected:
     UFUNCTION()
     void HandleEditConfigButtonClicked();
     
-public:
-    UUMGAtlantaCustomMatchLobbyScreen();
 };
 

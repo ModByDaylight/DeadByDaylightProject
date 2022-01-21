@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ItemData.h"
 #include "OfferingEffect.h"
+#include "ItemData.h"
 #include "EPerkCategory.h"
 #include "PerkLevelText.h"
 #include "EItemRarity.h"

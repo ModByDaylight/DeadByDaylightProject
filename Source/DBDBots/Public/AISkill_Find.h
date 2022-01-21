@@ -5,8 +5,8 @@
 #include "GameplayTagContainer.h"
 #include "AISkill_Find.generated.h"
 
-class UObject;
 class AActor;
+class UObject;
 
 UCLASS(EditInlineNew)
 class DBDBOTS_API UAISkill_Find : public UAISkill {

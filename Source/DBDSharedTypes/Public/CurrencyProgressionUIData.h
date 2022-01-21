@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "CurrencyProgressionUIData.generated.h"
 
-class UMaterialInterface;
 class UTexture2D;
+class UMaterialInterface;
 
 USTRUCT(BlueprintType)
 struct FCurrencyProgressionUIData {

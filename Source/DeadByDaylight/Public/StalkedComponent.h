@@ -5,14 +5,14 @@
 
 class UChargeableComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStalkedComponentOnBeingStalkedChanged, bool, isBeingStalked);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UStalkedComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnBeingStalkedChanged, bool, isBeingStalked);
+    
     UPROPERTY(BlueprintAssignable)
-    FStalkedComponentOnBeingStalkedChanged OnBeingStalkedChanged;
+    FOnBeingStalkedChanged OnBeingStalkedChanged;
     
 private:
     UPROPERTY(VisibleAnywhere, ReplicatedUsing=OnRep_MaxStalkPoints)
@@ -27,6 +27,11 @@ private:
     UPROPERTY(Export)
     UChargeableComponent* _stalkPointsChargeable;
     
+public:
+    UStalkedComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_MaxStalkPoints();
     
@@ -37,8 +42,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool HasStalkPoints() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UStalkedComponent();
 };
 

@@ -40,6 +40,7 @@ private:
     FKey InputKey4;
     
 public:
+    UCoreInteractionPromptActionWidget();
     UFUNCTION(BlueprintCallable)
     void StopIdleAnimation();
     
@@ -67,6 +68,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool HasFourthPrompt() const;
     
-    UCoreInteractionPromptActionWidget();
 };
 

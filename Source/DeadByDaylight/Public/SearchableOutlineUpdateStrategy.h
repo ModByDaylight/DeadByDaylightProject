@@ -3,7 +3,7 @@
 #include "DefaultOutlineUpdateStrategy.h"
 #include "SearchableOutlineUpdateStrategy.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API USearchableOutlineUpdateStrategy : public UDefaultOutlineUpdateStrategy {
     GENERATED_BODY()
 public:

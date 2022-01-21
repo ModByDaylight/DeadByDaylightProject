@@ -3,7 +3,7 @@
 #include "BatchMeshCommands.h"
 #include "MeshCloningFactory.generated.h"
 
-UCLASS(NotPlaceable, Transient)
+UCLASS(NotPlaceable, Transient, meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API UMeshCloningFactory : public UBatchMeshCommands {
     GENERATED_BODY()
 public:

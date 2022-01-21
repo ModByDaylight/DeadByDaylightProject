@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "Components/ActorComponent.h"
 #include "Engine/EngineTypes.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/ActorComponent.h"
 #include "EAIEvadeLoopSides.h"
 #include "DBDNavEvadeLoopComponent.generated.h"
 
 class UNavigationQueryFilter;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDNavEvadeLoopComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -52,11 +52,10 @@ public:
     UPROPERTY(EditAnywhere)
     bool DrawDebugFilter;
     
+    UDBDNavEvadeLoopComponent();
 private:
     UFUNCTION()
     void OnLevelReadyToPlay();
     
-public:
-    UDBDNavEvadeLoopComponent();
 };
 

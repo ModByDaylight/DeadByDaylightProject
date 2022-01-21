@@ -1,16 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
-#include "GameEventData.h"
 #include "ECamperDamageState.h"
+#include "Components/ActorComponent.h"
 #include "GameplayTagContainer.h"
+#include "GameEventData.h"
 #include "BloodOrbDropParams.h"
 #include "BloodOrbDropperComponent.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class THEONI_API UBloodOrbDropperComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UBloodOrbDropperComponent();
 private:
     UFUNCTION(Exec)
     void DBD_DropBloodOrbs(const int32 numOrbs) const;
@@ -35,7 +36,5 @@ private:
     UFUNCTION()
     void Authority_OnCamperCrouched(const FGameplayTag gameEvent, const FGameEventData& gameEventData);
     
-public:
-    UBloodOrbDropperComponent();
 };
 

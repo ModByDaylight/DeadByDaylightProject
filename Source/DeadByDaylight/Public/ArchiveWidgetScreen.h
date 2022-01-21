@@ -7,6 +7,7 @@ UCLASS()
 class UArchiveWidgetScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    UArchiveWidgetScreen();
 private:
     UFUNCTION()
     void OnRewardsButtonClick();
@@ -14,7 +15,5 @@ private:
     UFUNCTION()
     void OnQuestsButtonClick();
     
-public:
-    UArchiveWidgetScreen();
 };
 

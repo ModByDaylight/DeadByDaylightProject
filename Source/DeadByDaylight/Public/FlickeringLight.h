@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GeneratorDrivenActor.h"
-#include "FlickeringLightType.h"
 #include "PerPlatformProperties.h"
+#include "GeneratorDrivenActor.h"
+#include "UObject/NoExportTypes.h"
+#include "FlickeringLightType.h"
 #include "Components/SceneComponent.h"
 #include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE: Engine BHVRPerDetailModeBool
-//CROSS-MODULE INCLUDE: Engine BHVRPerDetailModeFloat
-#include "UObject/NoExportTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BHVRPerDetailModeBool -FallbackName=BHVRPerDetailModeBool
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BHVRPerDetailModeFloat -FallbackName=BHVRPerDetailModeFloat
 #include "UObject/NoExportTypes.h"
 #include "FlickeringLight.generated.h"
 
 class URectLightComponent;
-class UPointLightComponent;
-class ULocalLightComponent;
 class ULightIntensityTimelineComponent;
+class UPointLightComponent;
 class USpotLightComponent;
+class ULocalLightComponent;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AFlickeringLight : public AGeneratorDrivenActor {
@@ -31,17 +31,17 @@ private:
     UPROPERTY()
     FPerPlatformBool _castShadow;
     
-    //UPROPERTY(EditAnywhere)
-    //FBHVRPerDetailModeBool _isCastingShadow;
+    UPROPERTY(EditAnywhere)
+    FBHVRPerDetailModeBool _isCastingShadow;
     
-    //UPROPERTY(EditAnywhere)
-    //FBHVRPerDetailModeFloat _maxDrawDistance;
+    UPROPERTY(EditAnywhere)
+    FBHVRPerDetailModeFloat _maxDrawDistance;
     
-    //UPROPERTY(EditAnywhere)
-    //FBHVRPerDetailModeFloat _maxDistanceFadeRange;
+    UPROPERTY(EditAnywhere)
+    FBHVRPerDetailModeFloat _maxDistanceFadeRange;
     
-    //UPROPERTY(EditAnywhere)
-    //FBHVRPerDetailModeBool _castCinematicShadowsOnly;
+    UPROPERTY(EditAnywhere)
+    FBHVRPerDetailModeBool _castCinematicShadowsOnly;
     
     UPROPERTY(BlueprintReadOnly, EditAnywhere, meta=(AllowPrivateAccess=true))
     float _innerConneAngle;
@@ -70,8 +70,8 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float _minimumTimelimeSpeed;
     
-    //UPROPERTY(EditAnywhere)
-    //FBHVRPerDetailModeBool _secondaryLightVisibility;
+    UPROPERTY(EditAnywhere)
+    FBHVRPerDetailModeBool _secondaryLightVisibility;
     
     UPROPERTY(BlueprintReadOnly, EditAnywhere, meta=(AllowPrivateAccess=true))
     float _secondaryLightIntensity;
@@ -106,6 +106,8 @@ private:
     UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     USpotLightComponent* _spotLightComponent;
     
+public:
+    AFlickeringLight();
 protected:
     UFUNCTION(BlueprintCallable)
     void StopFlickering();
@@ -120,6 +122,5 @@ public:
     UFUNCTION(BlueprintCallable)
     ULocalLightComponent* GetActiveLightComponent();
     
-    AFlickeringLight();
 };
 

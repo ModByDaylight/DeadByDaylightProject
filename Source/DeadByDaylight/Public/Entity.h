@@ -3,9 +3,9 @@
 #include "GameFramework/Actor.h"
 #include "Entity.generated.h"
 
+class USkeletalMeshComponent;
 class UCurveFloat;
 class UMaterialHelper;
-class USkeletalMeshComponent;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AEntity : public AActor {

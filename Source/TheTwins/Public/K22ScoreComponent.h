@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "K22ScoreComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK22ScoreComponent : public UActorComponent {
     GENERATED_BODY()
 public:

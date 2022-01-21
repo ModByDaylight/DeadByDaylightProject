@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "LoudNoiseEventSystem.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ULoudNoiseEventSystem : public UActorComponent {
     GENERATED_BODY()
 public:

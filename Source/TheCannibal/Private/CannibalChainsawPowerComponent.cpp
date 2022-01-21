@@ -1,5 +1,6 @@
 #include "CannibalChainsawPowerComponent.h"
 #include "Net/UnrealNetwork.h"
+#include "PowerChargeComponent.h"
 
 void UCannibalChainsawPowerComponent::Server_OnTantrumPowerChargeFull_Implementation() {
 }
@@ -35,6 +36,9 @@ void UCannibalChainsawPowerComponent::GetLifetimeReplicatedProps(TArray<FLifetim
 }
 
 UCannibalChainsawPowerComponent::UCannibalChainsawPowerComponent() {
+    this->_chainsawPowerCharge = CreateDefaultSubobject<UPowerChargeComponent>(TEXT("ChainsawPowerCharge"));
+    this->_chainsawPowerDischarge = CreateDefaultSubobject<UPowerChargeComponent>(TEXT("ChainsawPowerDischarge"));
+    this->_tantrumPowerCharge = CreateDefaultSubobject<UPowerChargeComponent>(TEXT("TantrumPowerCharge"));
     this->_numPowerCharges = 0;
     this->_numPowerChargesConsumed = 0;
 }

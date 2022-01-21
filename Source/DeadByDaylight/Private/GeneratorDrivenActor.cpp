@@ -1,7 +1,7 @@
 #include "GeneratorDrivenActor.h"
 
-class ADBDPlayer;
 class AGenerator;
+class ADBDPlayer;
 
 void AGeneratorDrivenActor::SetSpawnedObject(AGenerator* generator, int32 generatorId) {
 }

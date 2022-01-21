@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BaseSurvivorAnimInstance.h"
-#include "K25ChainAnchorAnimationData.h"
 #include "EK25ChainAnchorPointDirection.h"
+#include "K25ChainAnchorAnimationData.h"
 #include "EK25ChainDetachmentReason.h"
 #include "K25SurvivorChainAttachmentData.h"
 #include "K25ChainLocomotionSurvivorAnimInstance.generated.h"
 
-class AK25Chain;
-class AK25SurvivorChainAttachmentAnchor;
-class UChargeableComponent;
 class UK25SurvivorChainAttachmentComponent;
+class AK25Chain;
+class UChargeableComponent;
+class AK25SurvivorChainAttachmentAnchor;
 
 UCLASS(NonTransient)
 class UK25ChainLocomotionSurvivorAnimInstance : public UBaseSurvivorAnimInstance {
@@ -74,6 +74,8 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     int32 _numberOfChainsAttached;
     
+public:
+    UK25ChainLocomotionSurvivorAnimInstance();
 private:
     UFUNCTION()
     void OnRemoveChainChargePercentageChanged(UChargeableComponent* chargeableComponent, float completionPercentage);
@@ -106,7 +108,5 @@ protected:
     UFUNCTION(BlueprintImplementableEvent)
     void BP_OnChainAttached(AK25Chain* chain, AK25SurvivorChainAttachmentAnchor* chainAttachmentAnchor);
     
-public:
-    UK25ChainLocomotionSurvivorAnimInstance();
 };
 

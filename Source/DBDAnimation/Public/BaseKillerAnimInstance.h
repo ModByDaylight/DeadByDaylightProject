@@ -16,6 +16,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool _firstPersonView;
     
+public:
+    UBaseKillerAnimInstance();
+protected:
     UFUNCTION(BlueprintPure)
     ASlasherPlayer* GetOwningKiller() const;
     
@@ -23,7 +26,5 @@ private:
     UFUNCTION(Exec)
     void DBD_ForceAnimPOV(const int32 animPOV);
     
-public:
-    UBaseKillerAnimInstance();
 };
 

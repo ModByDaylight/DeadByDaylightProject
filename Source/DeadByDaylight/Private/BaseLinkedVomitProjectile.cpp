@@ -1,4 +1,5 @@
 #include "BaseLinkedVomitProjectile.h"
+#include "PoolableProjectileComponent.h"
 
 class ACamperPlayer;
 class AInteractable;
@@ -16,6 +17,7 @@ void ABaseLinkedVomitProjectile::NativeExplode(const FImpactInfo& impactInfo) {
 ABaseLinkedVomitProjectile::ABaseLinkedVomitProjectile() {
     this->_useSplashDamage = false;
     this->_passThroughSurvivors = false;
+    this->_poolableProjectile = CreateDefaultSubobject<UPoolableProjectileComponent>(TEXT("Poolable Projectile Component"));
     this->_vomitTrail = NULL;
     this->_splineMesh = NULL;
     this->_splashDamageSphere = NULL;

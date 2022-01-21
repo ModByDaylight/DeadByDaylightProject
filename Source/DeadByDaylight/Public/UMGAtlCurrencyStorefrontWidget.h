@@ -4,13 +4,13 @@
 #include "Layout/Margin.h"
 #include "UMGAtlCurrencyStorefrontWidget.generated.h"
 
-class UImage;
-class UUMGStoreEventItemsPackButton;
 class UUniformGridPanel;
 class UCanvasPanel;
+class UImage;
 class UHorizontalBox;
 class URichTextBlock;
 class UOverlay;
+class UUMGStoreEventItemsPackButton;
 class UUMGStoreAuricCellButton;
 
 UCLASS(Abstract, EditInlineNew)
@@ -52,11 +52,11 @@ private:
     UPROPERTY(Export, Transient)
     TArray<UUMGStoreAuricCellButton*> _auricCellButtons;
     
+public:
+    UUMGAtlCurrencyStorefrontWidget();
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void UpdateFirstPurchaseForAllAuricCellsEndInUI(const FString& endInText);
     
-public:
-    UUMGAtlCurrencyStorefrontWidget();
 };
 

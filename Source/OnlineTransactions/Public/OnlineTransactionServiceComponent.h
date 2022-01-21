@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "OnlineTransactionServiceComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ONLINETRANSACTIONS_API UOnlineTransactionServiceComponent : public UActorComponent {
     GENERATED_BODY()
 public:

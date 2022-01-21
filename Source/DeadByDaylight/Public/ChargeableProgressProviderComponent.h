@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "ChargeableProgressProviderComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UChargeableProgressProviderComponent : public UActorComponent {
     GENERATED_BODY()
 public:

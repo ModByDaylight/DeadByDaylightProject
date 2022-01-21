@@ -3,8 +3,8 @@
 #include "DBDBaseHud.h"
 #include "DBDInGameHud.generated.h"
 
-class UFont;
 class UCompetenceDebugger;
+class UFont;
 
 UCLASS(NonTransient)
 class ADBDInGameHud : public ADBDBaseHud {

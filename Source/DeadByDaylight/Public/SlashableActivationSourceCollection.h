@@ -5,10 +5,11 @@
 
 class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API USlashableActivationSourceCollection : public UActorComponent {
     GENERATED_BODY()
 public:
+    USlashableActivationSourceCollection();
     UFUNCTION(BlueprintCallable)
     static void RemoveSource(UObject* source);
     
@@ -18,6 +19,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void AddSource(UObject* source);
     
-    USlashableActivationSourceCollection();
 };
 

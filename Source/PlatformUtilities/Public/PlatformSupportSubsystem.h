@@ -7,6 +7,7 @@ UCLASS()
 class PLATFORMUTILITIES_API UPlatformSupportSubsystem : public UGameInstanceSubsystem {
     GENERATED_BODY()
 public:
+    UPlatformSupportSubsystem();
     UFUNCTION(Exec)
     void DBD_StadiaShowStreamDebug(bool bEnabled);
     
@@ -16,6 +17,5 @@ public:
     UFUNCTION(Exec)
     void DBD_StadiaCharacterSelectPoll();
     
-    UPlatformSupportSubsystem();
 };
 

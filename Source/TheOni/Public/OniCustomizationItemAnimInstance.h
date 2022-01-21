@@ -11,11 +11,11 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     bool _isInDemonMode;
     
+public:
+    UOniCustomizationItemAnimInstance();
 private:
     UFUNCTION()
     void SetIsInDemonMode(const bool isInDemonMode);
     
-public:
-    UOniCustomizationItemAnimInstance();
 };
 

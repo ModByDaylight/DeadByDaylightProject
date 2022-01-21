@@ -1,17 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "CustomizedAudioChangedDelegate.h"
 #include "EAudioCustomizationCategory.h"
 #include "CustomizedAudioComponent.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCustomizedAudioComponentOnCustomizedAudioSwitchStateChanged, EAudioCustomizationCategory, category, const FString&, switchState);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCustomizedAudioComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FCustomizedAudioComponentOnCustomizedAudioSwitchStateChanged OnCustomizedAudioSwitchStateChanged;
+    FCustomizedAudioChangedDelegate OnCustomizedAudioSwitchStateChanged;
     
 private:
     UPROPERTY(EditAnywhere)
@@ -39,9 +38,9 @@ private:
     FString AudioCharacterStateDefaultSwitchState;
     
 public:
+    UCustomizedAudioComponent();
     UFUNCTION(BlueprintPure)
     FString GetAudioSwitchState(EAudioCustomizationCategory audioCustomizationCategory) const;
     
-    UCustomizedAudioComponent();
 };
 

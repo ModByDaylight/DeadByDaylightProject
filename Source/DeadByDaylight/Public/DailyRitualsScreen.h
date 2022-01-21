@@ -7,6 +7,7 @@ UCLASS()
 class UDailyRitualsScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    UDailyRitualsScreen();
 private:
     UFUNCTION()
     void OnRemoveRitual(const FString& id);
@@ -20,7 +21,5 @@ private:
     UFUNCTION()
     void OnClaimAllRituals();
     
-public:
-    UDailyRitualsScreen();
 };
 

@@ -4,9 +4,9 @@
 #include "CharacterSlotData.h"
 #include "UMGCharacterButton.generated.h"
 
-class UCanvasPanel;
 class UImage;
 class UTextBlock;
+class UCanvasPanel;
 class UUMGCharacterPrice;
 
 UCLASS(EditInlineNew)
@@ -45,6 +45,7 @@ protected:
     FCharacterSlotData CharacterSlotData;
     
 public:
+    UUMGCharacterButton();
     UFUNCTION(BlueprintCallable)
     void SetIsSelected(bool isSelected);
     
@@ -54,6 +55,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void BroadcastClickedEvent(int32 characterIndex);
     
-    UUMGCharacterButton();
 };
 

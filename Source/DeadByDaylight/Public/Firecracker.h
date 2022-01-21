@@ -4,11 +4,11 @@
 #include "GameplayTagContainer.h"
 #include "Firecracker.generated.h"
 
-class ADBDPlayer;
+class ACollectable;
+class AActor;
 class USphereComponent;
 class UGameplayModifierContainer;
-class AActor;
-class ACollectable;
+class ADBDPlayer;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AFirecracker : public AInteractable {
@@ -35,6 +35,7 @@ private:
     TArray<AActor*> _actorsInRange;
     
 public:
+    AFirecracker();
     UFUNCTION(BlueprintPure)
     bool ShouldDeafen(const ADBDPlayer* player, float& outDuration) const;
     
@@ -93,6 +94,5 @@ public:
     UFUNCTION(BlueprintPure)
     float GetBlindnessEffectDuration(const AActor* player) const;
     
-    AFirecracker();
 };
 

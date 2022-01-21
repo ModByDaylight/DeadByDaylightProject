@@ -5,7 +5,7 @@
 
 class UPerk;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDoesPerkHaveToken : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:
@@ -14,6 +14,9 @@ private:
     TWeakObjectPtr<UPerk> _perk;
     
 public:
+    UDoesPerkHaveToken();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetPerk(UPerk* perk);
     
@@ -21,9 +24,5 @@ private:
     UFUNCTION()
     void OnRep_Perk();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UDoesPerkHaveToken();
 };
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
 #include "EOfferingEffectType.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "OfferingUtilities.generated.h"
 
 class ADBDPlayer;
@@ -11,6 +11,7 @@ UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UOfferingUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UOfferingUtilities();
     UFUNCTION(BlueprintPure)
     static bool IsPlayerEquippedWithOfferingWithTag(const ADBDPlayer* player, const FName offeringTag);
     
@@ -20,6 +21,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool HasItemLossProtection(const ADBDPlayer* player);
     
-    UOfferingUtilities();
 };
 

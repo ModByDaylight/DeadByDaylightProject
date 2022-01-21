@@ -7,6 +7,7 @@ UCLASS()
 class UFriendsListScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    UFriendsListScreen();
 private:
     UFUNCTION()
     void OnViewProfile(const FString& friendId);
@@ -38,7 +39,5 @@ private:
     UFUNCTION()
     void OnAcceptFriendInvite(const FString& friendId);
     
-public:
-    UFriendsListScreen();
 };
 

@@ -3,8 +3,8 @@
 #include "StatProperty.h"
 #include "DBDAttackTargetTracker.generated.h"
 
-class ADBDPlayer;
 class ACharacter;
+class ADBDPlayer;
 
 USTRUCT(BlueprintType)
 struct DEADBYDAYLIGHT_API FDBDAttackTargetTracker {

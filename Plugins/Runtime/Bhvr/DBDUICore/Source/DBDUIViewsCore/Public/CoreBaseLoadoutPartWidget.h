@@ -22,6 +22,9 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UTextBlock* TextStackCount;
     
+public:
+    UCoreBaseLoadoutPartWidget();
+protected:
     UFUNCTION(BlueprintCallable)
     void SetLoadoutStackCount(int32 stackCount);
     
@@ -31,7 +34,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void SetLoadoutPartIcon(TSoftObjectPtr<UTexture2D> icon);
     
-public:
-    UCoreBaseLoadoutPartWidget();
 };
 

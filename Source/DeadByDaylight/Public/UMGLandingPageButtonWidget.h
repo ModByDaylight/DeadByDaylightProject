@@ -3,10 +3,10 @@
 #include "UMGBaseButtonWidget.h"
 #include "UMGLandingPageButtonWidget.generated.h"
 
-class UImage;
-class UCanvasPanel;
 class UTextBlock;
+class UCanvasPanel;
 class URichTextBlock;
+class UImage;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGLandingPageButtonWidget : public UUMGBaseButtonWidget {

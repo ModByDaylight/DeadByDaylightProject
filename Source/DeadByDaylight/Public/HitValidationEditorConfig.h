@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataTable.h"
 #include "EHitValidatorConfigName.h"
+#include "Engine/DataTable.h"
 #include "HitValidationEditorConfig.generated.h"
 
 USTRUCT(BlueprintType)

@@ -3,7 +3,7 @@
 #include "EventDrivenModifierCondition.h"
 #include "IsActivationTimerActiveAndNotPaused.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIsActivationTimerActiveAndNotPaused : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:

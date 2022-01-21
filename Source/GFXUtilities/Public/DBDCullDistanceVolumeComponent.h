@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
-#include "UObject/NoExportTypes.h"
 #include "DBDCullDistanceSizePair.h"
+#include "UObject/NoExportTypes.h"
 #include "DBDCullDistanceVolumeComponent.generated.h"
 
 class UBoxComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API UDBDCullDistanceVolumeComponent : public USceneComponent {
     GENERATED_BODY()
 public:

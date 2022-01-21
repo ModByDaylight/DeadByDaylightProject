@@ -7,7 +7,7 @@
 
 class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class URemoveTwin : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -21,10 +21,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _brotherRemoveDistanceFromSurvivor;
     
+public:
+    URemoveTwin();
+private:
     UFUNCTION()
     void OnRemoveMontageEnd(const FAnimationMontageDescriptor montage, bool interrupted, ADBDPlayer* destroyingPlayer);
     
-public:
-    URemoveTwin();
 };
 

@@ -4,8 +4,8 @@
 #include "Styling/SlateColor.h"
 #include "UMGPurchaseCurrencyWidget.generated.h"
 
-class UTextBlock;
 class UCanvasPanel;
+class UTextBlock;
 class UImage;
 class UOverlay;
 

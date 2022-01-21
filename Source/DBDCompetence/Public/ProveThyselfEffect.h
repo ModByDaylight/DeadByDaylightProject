@@ -6,7 +6,7 @@
 
 class ACamperPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UProveThyselfEffect : public URemoveOnOriginatingSurvivorGoneStatusEffect {
     GENERATED_BODY()
 public:
@@ -17,11 +17,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _speedPercentageAddedPerSurvivorRepairingInRange;
     
+public:
+    UProveThyselfEffect();
 protected:
     UFUNCTION()
     void OnInRangeOfOriginatorChanged(const bool inRange, ACamperPlayer* survivor);
     
-public:
-    UProveThyselfEffect();
 };
 

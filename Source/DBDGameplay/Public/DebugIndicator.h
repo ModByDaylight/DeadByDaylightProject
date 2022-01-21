@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
 #include "UObject/NoExportTypes.h"
+#include "GameFramework/Actor.h"
 #include "DebugIndicator.generated.h"
 
 class UStaticMeshComponent;
@@ -19,12 +19,12 @@ protected:
     UDBDOutlineComponent* _outlineComponent;
     
 public:
+    ADebugIndicator();
     UFUNCTION(BlueprintCallable)
     void SetVisible(const bool visible);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void SetColor(const FLinearColor color);
     
-    ADebugIndicator();
 };
 

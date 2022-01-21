@@ -1,15 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DBDPlayerControllerBase.h"
+#include "GamePresetData.h"
 #include "PlayerLoadoutData.h"
 #include "PlayerDataSync.h"
-#include "GamePresetData.h"
 #include "DBDPlayerController_Menu.generated.h"
 
 UCLASS()
 class DEADBYDAYLIGHT_API ADBDPlayerController_Menu : public ADBDPlayerControllerBase {
     GENERATED_BODY()
 public:
+    ADBDPlayerController_Menu();
     UFUNCTION()
     void TogglePlayerReadyState();
     
@@ -49,6 +50,5 @@ public:
     UFUNCTION()
     void Authority_SetPlayerReady(bool isReady);
     
-    ADBDPlayerController_Menu();
 };
 

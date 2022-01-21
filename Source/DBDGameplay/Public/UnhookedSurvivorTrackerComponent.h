@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "UnhookedSurvivorTrackerComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UUnhookedSurvivorTrackerComponent : public UActorComponent {
     GENERATED_BODY()
 public:

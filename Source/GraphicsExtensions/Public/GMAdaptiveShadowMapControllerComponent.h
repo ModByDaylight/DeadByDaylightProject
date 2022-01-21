@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
-//CROSS-MODULE INCLUDE: Engine BHVRPerDetailModeInt
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BHVRPerDetailModeInt -FallbackName=BHVRPerDetailModeInt
 #include "UObject/NoExportTypes.h"
 #include "GMAdaptiveShadowMapControllerComponent.generated.h"
 
-class UMaterialInterface;
-class UGMAdaptiveShadowMapSource;
 class UGMAdaptiveShadowMapAtlas;
 class UGMAdaptiveShadowMapController;
+class UMaterialInterface;
 class UGMAdaptiveShadowMapSourceComponent;
+class UGMAdaptiveShadowMapSource;
 class UMaterialInstanceDynamic;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GRAPHICSEXTENSIONS_API UGMAdaptiveShadowMapControllerComponent : public USceneComponent {
     GENERATED_BODY()
 public:
-    //UPROPERTY(EditAnywhere)
-    //FBHVRPerDetailModeInt TileSize;
+    UPROPERTY(EditAnywhere)
+    FBHVRPerDetailModeInt TileSize;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     int32 TileCountX;
@@ -31,8 +31,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     int32 GeneratedTilesPerFrame;
     
-    //UPROPERTY(EditAnywhere)
-    //FBHVRPerDetailModeInt MaxPreallocatedTilesPerFrame;
+    UPROPERTY(EditAnywhere)
+    FBHVRPerDetailModeInt MaxPreallocatedTilesPerFrame;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool bSupportsDirectionalLights;
@@ -63,6 +63,7 @@ private:
     UMaterialInstanceDynamic* _lightFunctionMaterialInstance;
     
 public:
+    UGMAdaptiveShadowMapControllerComponent();
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     void RebuildAtlas();
     
@@ -81,6 +82,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     void DumpDebugInfo();
     
-    UGMAdaptiveShadowMapControllerComponent();
 };
 

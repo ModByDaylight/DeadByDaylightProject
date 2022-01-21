@@ -1,20 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
+#include "OnLoadoutFilterClickedEvent.h"
 #include "UMGLoadoutFilterWidget.generated.h"
 
-class UTexture2D;
 class UHorizontalBox;
 class UUMGLoadoutFilterButton;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGLoadoutFilterWidgetOnLoadoutFilterClicked, FName, filterName);
+class UTexture2D;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGLoadoutFilterWidget : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FUMGLoadoutFilterWidgetOnLoadoutFilterClicked OnLoadoutFilterClicked;
+    FOnLoadoutFilterClickedEvent OnLoadoutFilterClicked;
     
 protected:
     UPROPERTY(EditAnywhere, NoClear)
@@ -33,6 +32,7 @@ protected:
     UUMGLoadoutFilterButton* SelectedFilterButton;
     
 public:
+    UUMGLoadoutFilterWidget();
     UFUNCTION()
     void OnFilterButtonClicked(FName filterName);
     
@@ -42,6 +42,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ClearSelectedFilter();
     
-    UUMGLoadoutFilterWidget();
 };
 

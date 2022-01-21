@@ -20,6 +20,7 @@ public:
     UPROPERTY(Export)
     UProgressBar* TimeToastProgression;
     
+    UUMGBaseToastWidget();
     UFUNCTION(BlueprintCallable)
     void TriggerToastInput(int32 inputCode);
     
@@ -27,7 +28,5 @@ private:
     UFUNCTION()
     void OnTimerFinished();
     
-public:
-    UUMGBaseToastWidget();
 };
 

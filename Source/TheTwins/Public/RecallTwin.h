@@ -5,15 +5,14 @@
 
 class AConjoinedTwin;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class URecallTwin : public UInteractionDefinition {
     GENERATED_BODY()
 public:
+    URecallTwin();
 private:
     UFUNCTION()
     void OnTwinSet(AConjoinedTwin* twin);
     
-public:
-    URecallTwin();
 };
 

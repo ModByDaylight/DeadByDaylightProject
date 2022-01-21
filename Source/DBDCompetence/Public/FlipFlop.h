@@ -5,7 +5,7 @@
 
 class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UFlipFlop : public UPerk {
     GENERATED_BODY()
 public:
@@ -16,11 +16,11 @@ protected:
     UPROPERTY(EditDefaultsOnly, EditFixedSize)
     float _maxWiggleProgression[3];
     
+public:
+    UFlipFlop();
 private:
     UFUNCTION()
     void Authority_OnPickedUp(ADBDPlayer* picker);
     
-public:
-    UFlipFlop();
 };
 

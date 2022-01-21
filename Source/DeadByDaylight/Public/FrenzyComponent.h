@@ -1,39 +1,38 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "GameEventData.h"
+#include "FrenzyStartDelegate.h"
+#include "FrenzyEndDelegate.h"
+#include "FrenzyEndNoCooldownDelegate.h"
+#include "StartInjuredBleedoutDuringFrenzyDelegate.h"
+#include "FrenzyReadyToStartDelegate.h"
 #include "GameplayTagContainer.h"
+#include "GameEventData.h"
 #include "EFrenzyEndReason.h"
 #include "FrenzyComponent.generated.h"
 
+class UInteractionDefinition;
 class ASlasherPlayer;
 class UGameplayTagContainerComponent;
-class UInteractionDefinition;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFrenzyComponentOnFrenzyStarted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFrenzyComponentOnFrenzyEnded, float, cooldownTime);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFrenzyComponentOnFrenzyEndedNoCooldown);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFrenzyComponentOnInjuredBleedoutStartedDuringFrenzy);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFrenzyComponentOnFrenzyReadyToStart);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UFrenzyComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FFrenzyComponentOnFrenzyStarted OnFrenzyStarted;
+    FFrenzyStartDelegate OnFrenzyStarted;
     
     UPROPERTY(BlueprintAssignable)
-    FFrenzyComponentOnFrenzyEnded OnFrenzyEnded;
+    FFrenzyEndDelegate OnFrenzyEnded;
     
     UPROPERTY(BlueprintAssignable)
-    FFrenzyComponentOnFrenzyEndedNoCooldown OnFrenzyEndedNoCooldown;
+    FFrenzyEndNoCooldownDelegate OnFrenzyEndedNoCooldown;
     
     UPROPERTY(BlueprintAssignable)
-    FFrenzyComponentOnInjuredBleedoutStartedDuringFrenzy OnInjuredBleedoutStartedDuringFrenzy;
+    FStartInjuredBleedoutDuringFrenzyDelegate OnInjuredBleedoutStartedDuringFrenzy;
     
     UPROPERTY(BlueprintAssignable)
-    FFrenzyComponentOnFrenzyReadyToStart OnFrenzyReadyToStart;
+    FFrenzyReadyToStartDelegate OnFrenzyReadyToStart;
     
 private:
     UPROPERTY(Transient)
@@ -43,6 +42,7 @@ private:
     UInteractionDefinition* _cooldownInteraction;
     
 public:
+    UFrenzyComponent();
     UFUNCTION(BlueprintCallable)
     void StartFrenzy();
     
@@ -92,6 +92,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool CanManuallyEndFrenzy() const;
     
-    UFrenzyComponent();
 };
 

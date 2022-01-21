@@ -4,9 +4,9 @@
 #include "ASValue.h"
 #include "ScaleformBlueprintLibrary.generated.h"
 
-class UObject;
 class UGFxMoviePlayer;
 class USwfMovie;
+class UObject;
 class UTextureRenderTarget2D;
 class UGFxObject;
 
@@ -14,6 +14,7 @@ UCLASS(BlueprintType)
 class SCALEFORMUI_API UScaleformBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UScaleformBlueprintLibrary();
     UFUNCTION(BlueprintCallable)
     static UGFxMoviePlayer* OpenMovie(USwfMovie* Movie, UObject* ExternalInterface, UTextureRenderTarget2D* RenderTexture, UGFxMoviePlayer* MoviePlayer, bool DisplayWithHudOff, bool StartPaused);
     
@@ -35,6 +36,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void CloseMovie(UGFxMoviePlayer* MoviePlayer);
     
-    UScaleformBlueprintLibrary();
 };
 

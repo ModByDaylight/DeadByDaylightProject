@@ -16,6 +16,7 @@ protected:
     FVector2D WidgetSize;
     
 public:
+    UUMGTallyListElementWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void OnPlayInAnimation();
     
@@ -25,6 +26,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void OnInAnimationFinished();
     
-    UUMGTallyListElementWidget();
 };
 

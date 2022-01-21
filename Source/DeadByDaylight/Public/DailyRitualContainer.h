@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "DailyRitualInstance.h"
+#include "UObject/NoExportTypes.h"
 #include "DailyRitualContainer.generated.h"
 
 USTRUCT()

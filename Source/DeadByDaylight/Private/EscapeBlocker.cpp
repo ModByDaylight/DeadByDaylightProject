@@ -1,8 +1,8 @@
 #include "EscapeBlocker.h"
 
+class AActor;
 class UBoxComponent;
 class UPrimitiveComponent;
-class AActor;
 
 void AEscapeBlocker::SetPlayerDetectionZone(UBoxComponent* playerDetectionZone) {
 }

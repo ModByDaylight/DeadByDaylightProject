@@ -6,7 +6,7 @@
 
 class UCurveLinearColor;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UTotemOutlineUpdateStrategy : public USourceBasedOutlineUpdateStrategy {
     GENERATED_BODY()
 public:
@@ -21,9 +21,9 @@ private:
     UCurveLinearColor* _revealedColorToKiller;
     
 public:
+    UTotemOutlineUpdateStrategy();
     UFUNCTION()
     FLinearColor GetRevealColorToSurvivor() const;
     
-    UTotemOutlineUpdateStrategy();
 };
 

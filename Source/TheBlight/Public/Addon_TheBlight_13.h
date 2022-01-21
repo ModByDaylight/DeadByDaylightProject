@@ -3,7 +3,7 @@
 #include "ItemAddon.h"
 #include "Addon_TheBlight_13.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAddon_TheBlight_13 : public UItemAddon {
     GENERATED_BODY()
 public:

@@ -3,8 +3,8 @@
 #include "MobileBaseUserWidget.h"
 #include "AtlantaHudDirectionalStick.generated.h"
 
-class UImage;
 class UCanvasPanel;
+class UImage;
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UAtlantaHudDirectionalStick : public UMobileBaseUserWidget {
@@ -33,9 +33,9 @@ protected:
     bool _isMovementLockAnimationActive;
     
 public:
+    UAtlantaHudDirectionalStick();
     UFUNCTION(BlueprintCallable)
     void SetMovementLockAnimationStatus(bool value);
     
-    UAtlantaHudDirectionalStick();
 };
 

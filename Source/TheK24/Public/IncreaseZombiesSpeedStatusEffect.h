@@ -3,7 +3,7 @@
 #include "StatusEffect.h"
 #include "IncreaseZombiesSpeedStatusEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIncreaseZombiesSpeedStatusEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

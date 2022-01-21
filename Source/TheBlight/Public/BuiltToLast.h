@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "BuiltToLast.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UBuiltToLast : public UPerk {
     GENERATED_BODY()
 public:
@@ -18,13 +18,13 @@ private:
     UPROPERTY(Replicated, Transient)
     uint8 _numberOfTimesPerkTriggered;
     
+public:
+    UBuiltToLast();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void OnBuiltToLastTrigger_Cosmetic();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UBuiltToLast();
 };
 

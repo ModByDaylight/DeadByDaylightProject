@@ -6,7 +6,7 @@
 class ADBDPlayer;
 class UMeshComponent;
 
-UCLASS(BlueprintType, Transient)
+UCLASS(BlueprintType, Transient, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UOutOfSightMeshRotator : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -27,11 +27,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _rotationOffset;
     
+public:
+    UOutOfSightMeshRotator();
 protected:
     UFUNCTION(BlueprintCallable)
     void SetMeshesToRotate(TArray<UMeshComponent*> meshesToRotate);
     
-public:
-    UOutOfSightMeshRotator();
 };
 

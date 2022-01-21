@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "VideoPlayer.h"
 #include "GameFramework/Actor.h"
+#include "VideoPlayer.h"
 #include "VideoThumbnailPlayer.generated.h"
 
 class UMediaSoundComponent;
@@ -31,6 +31,9 @@ private:
     UPROPERTY(Transient)
     TSoftObjectPtr<UMediaSource> _source;
     
+public:
+    AVideoThumbnailPlayer();
+private:
     UFUNCTION()
     void OnVideoAssetLoaded();
     
@@ -43,7 +46,7 @@ private:
     UFUNCTION()
     void OnEndReached();
     
-public:
-    AVideoThumbnailPlayer();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -4,10 +4,10 @@
 #include "Layout/Margin.h"
 #include "UMGMonthlyPassRewardsPopup.generated.h"
 
-class UHorizontalBox;
-class UTextBlock;
-class UImage;
 class UUMGRewardWidget;
+class UTextBlock;
+class UHorizontalBox;
+class UImage;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGMonthlyPassRewardsPopup : public UUMGGenericPopup {

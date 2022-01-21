@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
 #include "StandDisplayable.h"
-#include "CharmAttachable.h"
+#include "GameFramework/Actor.h"
 #include "CharmIdSlot.h"
+#include "CharmAttachable.h"
 #include "MenuMeatHook.generated.h"
 
 class UCharmSpawnerComponent;
@@ -17,6 +17,7 @@ private:
     UCharmSpawnerComponent* _charmSpawnerComponent;
     
 public:
+    AMenuMeatHook();
     UFUNCTION(BlueprintImplementableEvent)
     void OnCharmsUpdated(const TArray<FCharmIdSlot>& charmIDs);
     
@@ -24,7 +25,7 @@ protected:
     UFUNCTION(BlueprintNativeEvent)
     void BeginDestroySequence_Internal();
     
-public:
-    AMenuMeatHook();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

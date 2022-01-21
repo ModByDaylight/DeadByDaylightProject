@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
 #include "ChargeableInteractionDefinition.h"
+#include "GameplayTagContainer.h"
 #include "TunableStat.h"
 #include "DBDTunableRowHandle.h"
 #include "InjectSerumInteraction.generated.h"
 
-class ASlasherPlayer;
 class ACamperPlayer;
+class ASlasherPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UInjectSerumInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -23,6 +23,8 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _serumApplyHeal;
     
+public:
+    UInjectSerumInteraction();
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void OnSurvivorCured_Cosmetic();
@@ -38,7 +40,5 @@ protected:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_CureSurvivor(ACamperPlayer* camperPlayer);
     
-public:
-    UInjectSerumInteraction();
 };
 

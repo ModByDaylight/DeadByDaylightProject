@@ -2,16 +2,16 @@
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
 #include "MaterialNamedGroup.h"
+#include "UObject/NoExportTypes.h"
 #include "MaterialHelperOriginalMeshState.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "BatchMeshCommands.generated.h"
 
 class UMaterialInterface;
 class UTexture;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API UBatchMeshCommands : public USceneComponent {
     GENERATED_BODY()
 public:
@@ -27,6 +27,7 @@ private:
     FString _materialGroupName;
     
 public:
+    UBatchMeshCommands();
     UFUNCTION(BlueprintCallable)
     void UpdateMaterials();
     
@@ -87,6 +88,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void BatchSetComponentTickEnabled(bool enabled);
     
-    UBatchMeshCommands();
 };
 

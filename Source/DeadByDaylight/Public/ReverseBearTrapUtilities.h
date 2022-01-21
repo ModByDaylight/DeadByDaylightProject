@@ -10,9 +10,9 @@ UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UReverseBearTrapUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UReverseBearTrapUtilities();
     UFUNCTION(BlueprintCallable)
     static AReverseBearTrap* GetAttachedRBT(ADBDPlayer* player);
     
-    UReverseBearTrapUtilities();
 };
 

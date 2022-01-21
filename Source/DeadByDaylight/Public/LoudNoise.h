@@ -3,10 +3,10 @@
 #include "GameFramework/Actor.h"
 #include "LoudNoise.generated.h"
 
-class USceneComponent;
-class UDecalComponent;
 class UParticleSystemComponent;
 class UAkComponent;
+class UDecalComponent;
+class USceneComponent;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ALoudNoise : public AActor {

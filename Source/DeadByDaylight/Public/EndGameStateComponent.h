@@ -4,7 +4,7 @@
 #include "EEndGameScenarioTrigger.h"
 #include "EndGameStateComponent.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UEndGameStateComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -27,6 +27,11 @@ private:
     UPROPERTY(Replicated, Transient)
     EEndGameScenarioTrigger _endGameScenarioTrigger;
     
+public:
+    UEndGameStateComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_WorldTimeAtLastDilationModification();
     
@@ -55,8 +60,5 @@ public:
     UFUNCTION(BlueprintPure)
     float GetElapsedTimePercent() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UEndGameStateComponent();
 };
 

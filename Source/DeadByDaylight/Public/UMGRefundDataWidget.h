@@ -8,9 +8,9 @@ UCLASS(Abstract, EditInlineNew)
 class UUMGRefundDataWidget : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
+    UUMGRefundDataWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void SetDataAndUpdateWidget(const FRefundUIData& RefundUIData);
     
-    UUMGRefundDataWidget();
 };
 

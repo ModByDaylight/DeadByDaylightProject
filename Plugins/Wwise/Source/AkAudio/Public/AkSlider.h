@@ -1,18 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/Widget.h"
+#include "AkWwiseItemToControl.h"
+#include "Components/Widget.h"
+#include "UObject/NoExportTypes.h"
 #include "Styling/SlateTypes.h"
+#include "AkOnFloatValueChangedEvent.h"
 #include "Types/SlateEnums.h"
 #include "AkPropertyToControl.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "AkWwiseItemToControl.h"
+#include "OnItemDropDetected.h"
+#include "OnPropertyDropDetected.h"
 #include "AkSlider.generated.h"
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAkSliderOnItemDropped, FGuid, ItemDroppedID);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(float, FAkSliderValueDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAkSliderOnValueChanged, float, Value);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAkSliderOnPropertyDropped, const FString&, PropertyDropped);
 
 UCLASS(DefaultConfig, Config=Editor)
 class AKAUDIO_API UAkSlider : public UWidget {
@@ -22,7 +21,7 @@ public:
     float Value;
     
     UPROPERTY()
-    FAkSliderValueDelegate ValueDelegate;
+    UWidget::FGetFloat ValueDelegate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     FSliderStyle WidgetStyle;
@@ -55,14 +54,15 @@ public:
     FAkWwiseItemToControl ItemToControl;
     
     UPROPERTY(BlueprintAssignable)
-    FAkSliderOnValueChanged OnValueChanged;
+    FAkOnFloatValueChangedEvent OnValueChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FAkSliderOnItemDropped OnItemDropped;
+    FOnItemDropDetected OnItemDropped;
     
     UPROPERTY(BlueprintAssignable)
-    FAkSliderOnPropertyDropped OnPropertyDropped;
+    FOnPropertyDropDetected OnPropertyDropped;
     
+    UAkSlider();
     UFUNCTION(BlueprintCallable)
     void SetValue(float InValue);
     
@@ -96,6 +96,5 @@ public:
     UFUNCTION(BlueprintPure)
     FGuid GetAkSliderItemId() const;
     
-    UAkSlider();
 };
 

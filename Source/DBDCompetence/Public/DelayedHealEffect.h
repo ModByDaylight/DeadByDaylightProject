@@ -6,10 +6,11 @@
 
 class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UDelayedHealEffect : public UStatusEffect {
     GENERATED_BODY()
 public:
+    UDelayedHealEffect();
 private:
     UFUNCTION()
     void Authority_OnOwningCamperPickedUp(ADBDPlayer* picker);
@@ -20,7 +21,5 @@ private:
     UFUNCTION()
     void Authority_OnActivationTimerComplete();
     
-public:
-    UDelayedHealEffect();
 };
 

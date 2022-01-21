@@ -5,7 +5,7 @@
 
 class ASupplyCrateInteractable;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UCollectSerumInCrateInteraction : public UCollectItemInteraction {
     GENERATED_BODY()
 public:

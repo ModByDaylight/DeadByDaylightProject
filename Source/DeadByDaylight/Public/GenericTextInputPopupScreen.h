@@ -7,11 +7,10 @@ UCLASS()
 class UGenericTextInputPopupScreen : public UGenericPopupScreen {
     GENERATED_BODY()
 public:
+    UGenericTextInputPopupScreen();
 private:
     UFUNCTION()
     void OnTextInputChoiceSelected(int32 selectedButtonType, const FString& inputText);
     
-public:
-    UGenericTextInputPopupScreen();
 };
 

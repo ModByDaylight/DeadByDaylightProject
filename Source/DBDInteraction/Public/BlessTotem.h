@@ -6,7 +6,7 @@
 
 class ATotem;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UBlessTotem : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -14,10 +14,11 @@ private:
     UPROPERTY(EditDefaultsOnly, EditFixedSize)
     FDBDTunableRowHandle _blessHexTotemSpeedPenalty;
     
+public:
+    UBlessTotem();
+private:
     UFUNCTION(BlueprintPure)
     ATotem* GetTotem() const;
     
-public:
-    UBlessTotem();
 };
 

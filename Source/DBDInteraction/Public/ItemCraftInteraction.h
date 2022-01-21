@@ -6,7 +6,7 @@
 
 class ACollectable;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UItemCraftInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:

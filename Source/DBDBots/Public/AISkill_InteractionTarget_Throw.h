@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EAIThrowPredictionModes.h"
 #include "AISkill_InteractionTarget.h"
 #include "EAIThrowProjectileModes.h"
-#include "EAIThrowPredictionModes.h"
 #include "AITunableParameter.h"
 #include "AISkill_InteractionTarget_Throw.generated.h"
 

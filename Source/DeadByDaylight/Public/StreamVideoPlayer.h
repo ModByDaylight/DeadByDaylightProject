@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "VideoPlayer.h"
 #include "GameFramework/Actor.h"
+#include "VideoPlayer.h"
 #include "StreamVideoPlayer.generated.h"
 
 class UMediaSoundComponent;
@@ -31,6 +31,9 @@ private:
     UPROPERTY(Export, Transient)
     UAudioComponent* _audioComponent;
     
+public:
+    AStreamVideoPlayer();
+private:
     UFUNCTION()
     void OnVideoAssetLoaded();
     
@@ -46,7 +49,7 @@ private:
     UFUNCTION()
     void OnEndReached();
     
-public:
-    AStreamVideoPlayer();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

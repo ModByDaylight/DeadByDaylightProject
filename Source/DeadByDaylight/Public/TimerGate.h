@@ -10,6 +10,7 @@ public:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     float _currentTime;
     
+    ATimerGate();
     UFUNCTION(BlueprintCallable)
     void Update(float deltaTime);
     
@@ -28,6 +29,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddTime(float time);
     
-    ATimerGate();
 };
 

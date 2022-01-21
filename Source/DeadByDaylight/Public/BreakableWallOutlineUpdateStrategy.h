@@ -3,7 +3,7 @@
 #include "SourceBasedOutlineUpdateStrategy.h"
 #include "BreakableWallOutlineUpdateStrategy.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UBreakableWallOutlineUpdateStrategy : public USourceBasedOutlineUpdateStrategy {
     GENERATED_BODY()
 public:

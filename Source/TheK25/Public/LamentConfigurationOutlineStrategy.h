@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "LamentConfigurationOutlineStrategy.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ULamentConfigurationOutlineStrategy : public UOutlineUpdateStrategy {
     GENERATED_BODY()
 public:

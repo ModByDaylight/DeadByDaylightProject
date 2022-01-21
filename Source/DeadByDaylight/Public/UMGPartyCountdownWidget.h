@@ -3,8 +3,8 @@
 #include "UMGBaseCountdownWidget.h"
 #include "UMGPartyCountdownWidget.generated.h"
 
-class UButton;
 class UCanvasPanel;
+class UButton;
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGPartyCountdownWidget : public UUMGBaseCountdownWidget {
@@ -17,11 +17,11 @@ protected:
     UPROPERTY(Export)
     UCanvasPanel* UnreadyButtonContainer;
     
+public:
+    UUMGPartyCountdownWidget();
 private:
     UFUNCTION()
     void OnUnreadyButtonClicked();
     
-public:
-    UUMGPartyCountdownWidget();
 };
 

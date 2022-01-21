@@ -1,18 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "LightMaterialUpdate.h"
+#include "Components/ActorComponent.h"
 #include "LightUpdate.h"
 #include "Engine/Scene.h"
+#include "OnLightTimelineFinished.h"
 #include "LightIntensityTimelineComponent.generated.h"
 
 class ULightComponent;
 class UCurveFloat;
 class UMaterialHelper;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLightIntensityTimelineComponentOnTimelineFinished);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API ULightIntensityTimelineComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -47,8 +46,9 @@ public:
     ELightUnits inputLightUnit;
     
     UPROPERTY(BlueprintAssignable)
-    FLightIntensityTimelineComponentOnTimelineFinished OnTimelineFinished;
+    FOnLightTimelineFinished OnTimelineFinished;
     
+    ULightIntensityTimelineComponent();
     UFUNCTION(BlueprintCallable)
     void SetRandomizeLength(bool isRandom);
     
@@ -79,6 +79,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddLight(ULightComponent* light, float multiplier);
     
-    ULightIntensityTimelineComponent();
 };
 

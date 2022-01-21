@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UMGFriendElementWidget.h"
 #include "Styling/SlateBrush.h"
+#include "UMGFriendElementWidget.h"
 #include "UMGFriendPartyListElementWidget.generated.h"
 
-class UButton;
 class UWidgetSwitcher;
+class UButton;
 class UImage;
 
 UCLASS(Abstract, EditInlineNew)
@@ -28,10 +28,11 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     FSlateBrush IconReady;
     
+public:
+    UUMGFriendPartyListElementWidget();
+protected:
     UFUNCTION()
     void HandleCancelInviteButtonClicked();
     
-public:
-    UUMGFriendPartyListElementWidget();
 };
 

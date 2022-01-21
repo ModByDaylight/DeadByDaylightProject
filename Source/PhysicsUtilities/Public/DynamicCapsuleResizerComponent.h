@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/ActorComponent.h"
 #include "Engine/EngineTypes.h"
 #include "DynamicCapsuleResizerComponent.generated.h"
 
@@ -9,7 +9,7 @@ class UCapsuleComponent;
 class UPrimitiveComponent;
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class PHYSICSUTILITIES_API UDynamicCapsuleResizerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -39,6 +39,9 @@ private:
     bool _isShrinkingAlwaysEnabled;
     
 public:
+    UDynamicCapsuleResizerComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetShrinkingEnabled(bool enabled);
     
@@ -49,9 +52,5 @@ private:
     UFUNCTION()
     void OnHit(UPrimitiveComponent* hitComponent, AActor* otherActor, UPrimitiveComponent* otherComp, FVector normalImpulse, const FHitResult& hit);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UDynamicCapsuleResizerComponent();
 };
 

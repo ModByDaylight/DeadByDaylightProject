@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECharmCategory.h"
 #include "ScreenshotViewSetting.h"
+#include "ECharmCategory.h"
 #include "CharmCategorySetting.generated.h"
 
 USTRUCT(BlueprintType)

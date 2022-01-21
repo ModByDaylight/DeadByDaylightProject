@@ -3,7 +3,7 @@
 #include "IsOwningPlayerInRangeFromHook.h"
 #include "IsOwningPlayerInHookRangeWhenKillerCarry.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIsOwningPlayerInHookRangeWhenKillerCarry : public UIsOwningPlayerInRangeFromHook {
     GENERATED_BODY()
 public:

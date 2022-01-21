@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "FearMarketOfferingInstance.h"
 #include "UObject/Object.h"
 #include "FearMarketItemInstance.h"
+#include "FearMarketOfferingInstance.h"
 #include "FearMarketManager.generated.h"
 
 class UDBDGameInstance;
@@ -21,10 +21,11 @@ private:
     UPROPERTY(Transient)
     TWeakObjectPtr<UDBDGameInstance> _gameInstance;
     
+public:
+    UFearMarketManager();
+private:
     UFUNCTION()
     void ReceivedFearMarketData(bool success);
     
-public:
-    UFearMarketManager();
 };
 

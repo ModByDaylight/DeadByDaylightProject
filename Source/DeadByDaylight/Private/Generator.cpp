@@ -1,5 +1,6 @@
 #include "Generator.h"
 #include "Net/UnrealNetwork.h"
+#include "Perception/AIPerceptionStimuliSourceComponent.h"
 
 class ADBDPlayer;
 class UChargeableComponent;
@@ -178,6 +179,7 @@ AGenerator::AGenerator() {
     this->KillerOutlineFadeCurve = NULL;
     this->NativePercentComplete = 0.00f;
     this->FireLevelScoreEventOnFix = false;
+    this->_perceptionStimuliComponent = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("AIPerceptionStimuliSourceComponent"));
     this->_isBlocked = false;
     this->_isBlockedFromCharging = false;
     this->_generatorCharge = NULL;

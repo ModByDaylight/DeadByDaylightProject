@@ -3,9 +3,9 @@
 #include "Interactable.h"
 #include "ReverseBearTrap.generated.h"
 
+class USkeletalMeshComponent;
 class UAnimationMontageSlave;
 class ACamperPlayer;
-class USkeletalMeshComponent;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AReverseBearTrap : public AInteractable {
@@ -29,6 +29,9 @@ private:
     bool _generatorFixedAfterAttachment;
     
 public:
+    AReverseBearTrap();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void StopMontage();
     
@@ -139,8 +142,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AttachSurvivor(ACamperPlayer* survivor);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    AReverseBearTrap();
 };
 

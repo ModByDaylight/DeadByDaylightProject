@@ -3,7 +3,7 @@
 #include "RangeBasedCondition.h"
 #include "IsInAnyHookedSurvivorOriginatorAuraReadingRange.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UIsInAnyHookedSurvivorOriginatorAuraReadingRange : public URangeBasedCondition {
     GENERATED_BODY()
 public:

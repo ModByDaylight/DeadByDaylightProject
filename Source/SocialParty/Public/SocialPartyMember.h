@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPartyPostMatchmakingRole.h"
 #include "EPartyPostMatchmakingState.h"
+#include "EPartyPostMatchmakingRole.h"
 #include "SocialPartyMember.generated.h"
 
 USTRUCT()

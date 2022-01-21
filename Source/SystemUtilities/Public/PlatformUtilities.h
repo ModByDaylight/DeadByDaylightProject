@@ -7,9 +7,9 @@ UCLASS(BlueprintType)
 class SYSTEMUTILITIES_API UPlatformUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UPlatformUtilities();
     UFUNCTION(BlueprintCallable)
     static FString GetPlatform();
     
-    UPlatformUtilities();
 };
 

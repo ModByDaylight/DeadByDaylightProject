@@ -5,7 +5,7 @@
 
 class ACamperPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UYamaokaFamilyCrest : public UItemAddon {
     GENERATED_BODY()
 public:
@@ -23,6 +23,10 @@ private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_AddonActivationCount)
     uint8 _addonActivationCount;
     
+public:
+    UYamaokaFamilyCrest();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void RevealSurvivor(ACamperPlayer* survivorToReveal);
@@ -31,9 +35,5 @@ private:
     UFUNCTION()
     void OnRep_AddonActivationCount();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UYamaokaFamilyCrest();
 };
 

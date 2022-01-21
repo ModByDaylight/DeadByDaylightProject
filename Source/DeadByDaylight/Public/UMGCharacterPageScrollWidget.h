@@ -29,10 +29,11 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     FText _survivorsTitleText;
     
+public:
+    UUMGCharacterPageScrollWidget();
+protected:
     UFUNCTION()
     void HandleCharacterClicked(int32 characterIndex);
     
-public:
-    UUMGCharacterPageScrollWidget();
 };
 

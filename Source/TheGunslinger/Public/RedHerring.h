@@ -5,7 +5,7 @@
 
 class AGenerator;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class URedHerring : public UPerk {
     GENERATED_BODY()
 public:
@@ -25,6 +25,10 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     float _cooldownLevels[3];
     
+public:
+    URedHerring();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
 private:
     UFUNCTION()
     void OnRep_MarkedGenerator(AGenerator* oldMarkedGenerator);
@@ -33,9 +37,5 @@ protected:
     UFUNCTION(BlueprintImplementableEvent)
     void OnLoudNoiseTriggered();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    URedHerring();
 };
 

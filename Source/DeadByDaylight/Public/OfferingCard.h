@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "RarityTexture.h"
-#include "EOfferingAnimState.h"
 #include "OfferingTypeTexture.h"
+#include "EOfferingAnimState.h"
 #include "OfferingCard.generated.h"
 
 UCLASS()
@@ -16,9 +16,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TArray<FOfferingTypeTexture> OfferingTypeTextures;
     
+    AOfferingCard();
     UFUNCTION(BlueprintImplementableEvent)
     void PlayAnim(EOfferingAnimState state);
     
-    AOfferingCard();
 };
 

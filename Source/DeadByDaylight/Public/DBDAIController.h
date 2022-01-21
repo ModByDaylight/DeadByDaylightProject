@@ -2,9 +2,9 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "AIController.h"
-#include "EPawnInputPressTypes.h"
-#include "EAIDifficultyLevel.h"
 #include "ECharacterMovementTypes.h"
+#include "EAIDifficultyLevel.h"
+#include "EPawnInputPressTypes.h"
 #include "DBDAIController.generated.h"
 
 class APawn;
@@ -54,6 +54,7 @@ private:
     UObject* _movementLock;
     
 public:
+    ADBDAIController();
     UFUNCTION(BlueprintCallable)
     void WiggleRequest(const UObject* requester, float input);
     
@@ -125,6 +126,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ActionRequest(const UObject* requester);
     
-    ADBDAIController();
 };
 

@@ -1,33 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "LanternCollectedByPlayerDelegate.h"
 #include "Interactable.h"
+#include "LanternStateChangeDelegate.h"
 #include "ELanternState.h"
 #include "GameplayTagContainer.h"
 #include "GameEventData.h"
 #include "LanternInteractable.generated.h"
 
-class ADBDPlayer;
 class ALanternLightCollectable;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FLanternInteractableOnLanternStateChanged, ELanternState, lanternState, ELanternState, previousLanternState);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLanternInteractableOnLanternCollectedByPlayerCosmetic, ADBDPlayer*, player);
+class ADBDPlayer;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ALanternInteractable : public AInteractable {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FLanternInteractableOnLanternStateChanged OnLanternStateChanged;
+    FLanternStateChangeDelegate OnLanternStateChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FLanternInteractableOnLanternCollectedByPlayerCosmetic OnLanternCollectedByPlayerCosmetic;
+    FLanternCollectedByPlayerDelegate OnLanternCollectedByPlayerCosmetic;
     
 private:
     UPROPERTY(EditDefaultsOnly)
     TSubclassOf<ALanternLightCollectable> _collectableClass;
     
 public:
+    ALanternInteractable();
     UFUNCTION(BlueprintCallable)
     void SlasherDestroyLantern(ADBDPlayer* player);
     
@@ -60,6 +60,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool CanBeCollected() const;
     
-    ALanternInteractable();
 };
 

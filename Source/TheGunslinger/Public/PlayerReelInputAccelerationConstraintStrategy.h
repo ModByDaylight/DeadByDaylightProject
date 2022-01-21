@@ -3,7 +3,7 @@
 #include "BaseInputAccelerationConstraintStrategy.h"
 #include "PlayerReelInputAccelerationConstraintStrategy.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API UPlayerReelInputAccelerationConstraintStrategy : public UBaseInputAccelerationConstraintStrategy {
     GENERATED_BODY()
 public:

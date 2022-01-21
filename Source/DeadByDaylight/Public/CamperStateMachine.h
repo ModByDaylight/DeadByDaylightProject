@@ -3,7 +3,7 @@
 #include "PlayerStateMachine.h"
 #include "CamperStateMachine.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCamperStateMachine : public UPlayerStateMachine {
     GENERATED_BODY()
 public:

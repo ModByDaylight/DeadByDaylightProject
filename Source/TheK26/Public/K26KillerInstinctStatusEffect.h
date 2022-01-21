@@ -7,7 +7,7 @@
 
 class UInteractionDefinition;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK26KillerInstinctStatusEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

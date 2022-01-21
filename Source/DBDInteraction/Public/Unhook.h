@@ -8,7 +8,7 @@ class USceneComponent;
 class ADBDPlayer;
 class ACamperPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UUnhook : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

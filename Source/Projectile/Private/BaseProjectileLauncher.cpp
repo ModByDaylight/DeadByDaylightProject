@@ -1,10 +1,11 @@
 #include "BaseProjectileLauncher.h"
 #include "Net/UnrealNetwork.h"
+#include "BaseProjectileReplicationComponent.h"
 
 class UProjectileProvider;
 class IProjectileProvider;
-class ABaseProjectile;
 class APawn;
+class ABaseProjectile;
 
 
 void UBaseProjectileLauncher::SetProjectileProvider(TScriptInterface<IProjectileProvider> projectileProvider) {
@@ -112,5 +113,6 @@ UBaseProjectileLauncher::UBaseProjectileLauncher() {
     this->_maxAmmo = 1;
     this->_canLaunchWhileOutOfAmmo = false;
     this->_debugProjectile = NULL;
+    this->_projectileReplicationComponent = CreateDefaultSubobject<UBaseProjectileReplicationComponent>(TEXT("Projectile Replication Component"));
 }
 

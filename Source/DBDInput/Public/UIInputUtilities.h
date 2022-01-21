@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
 #include "EUIActionType.h"
 #include "InputCoreTypes.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "EControlMode.h"
 #include "UIInputUtilities.generated.h"
 
@@ -12,6 +12,7 @@ UCLASS(BlueprintType)
 class DBDINPUT_API UUIInputUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UUIInputUtilities();
     UFUNCTION(BlueprintPure)
     static bool ShouldUseAtlantaControls(const UObject* worldContextObject);
     
@@ -21,6 +22,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static FKey GetKeyFromUIAction(const EUIActionType actionType, bool isUsingGamepad);
     
-    UUIInputUtilities();
 };
 

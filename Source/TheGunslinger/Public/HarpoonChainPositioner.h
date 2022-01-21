@@ -5,13 +5,13 @@
 #include "DBDTunableRowHandle.h"
 #include "HarpoonChainPositioner.generated.h"
 
-class AHarpoonProjectile;
 class AHarpoonProp;
+class AHarpoonProjectile;
 class ADBDPlayer;
 class ARifleChain;
 class AActor;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API UHarpoonChainPositioner : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -43,6 +43,9 @@ private:
     UPROPERTY(Transient)
     ARifleChain* _chain;
     
+public:
+    UHarpoonChainPositioner();
+private:
     UFUNCTION()
     void OnOwnerCollected(ADBDPlayer* collector);
     
@@ -69,6 +72,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AttachToAnimSocket();
     
-    UHarpoonChainPositioner();
 };
 

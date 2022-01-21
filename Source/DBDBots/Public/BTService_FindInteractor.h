@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "BehaviorTree/BTService.h"
+#include "AITunableParameter.h"
 #include "AIGoalGeneratorInterface.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
-#include "AITunableParameter.h"
 #include "BTService_FindInteractor.generated.h"
 
-class ADBDAIBTController;
 class UNavigationQueryFilter;
 class UInteractor;
+class ADBDAIBTController;
 
 UCLASS(Abstract)
 class DBDBOTS_API UBTService_FindInteractor : public UBTService, public IAIGoalGeneratorInterface {
@@ -120,5 +120,7 @@ protected:
     
 public:
     UBTService_FindInteractor();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

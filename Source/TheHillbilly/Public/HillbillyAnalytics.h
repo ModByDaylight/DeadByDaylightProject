@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ChainsawAnalytics.h"
-#include "ChainsawEventWhileCamping.h"
 #include "ChainsawEvent.h"
+#include "ChainsawEventWhileCamping.h"
 #include "HillbillyAnalytics.generated.h"
 
 USTRUCT()

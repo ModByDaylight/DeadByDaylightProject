@@ -21,9 +21,9 @@ protected:
     ECharacterMovementTypes _characterMovementTypes;
     
 public:
+    UAIMoveToInteractData();
     UFUNCTION(BlueprintCallable)
     void Init(AActor* interactActor, ECharacterMovementTypes characterMovementTypes, AActor* targetPositionActor);
     
-    UAIMoveToInteractData();
 };
 

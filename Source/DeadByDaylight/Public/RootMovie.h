@@ -3,11 +3,11 @@
 #include "UObject/Object.h"
 #include "RootMovie.generated.h"
 
-class UGFxMoviePlayer;
-class UUIController;
-class UScreenController;
 class UGameInstance;
+class UGFxMoviePlayer;
+class UScreenController;
 class UDBDInputManager;
+class UUIController;
 class UGFxObject;
 
 UCLASS()
@@ -34,6 +34,7 @@ private:
     UDBDInputManager* _inputManager;
     
 public:
+    URootMovie();
     UFUNCTION()
     void SetCursorAsSticky(bool isSticky, bool lockVertical, bool lockHorizontal, float stickinessOverride);
     
@@ -70,6 +71,5 @@ public:
     UFUNCTION()
     void OnAssert(int32 type, const FString& message);
     
-    URootMovie();
 };
 

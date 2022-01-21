@@ -6,10 +6,11 @@
 
 class ABloodOrb;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class THEONI_API UBloodOrbVisibilityComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UBloodOrbVisibilityComponent();
     UFUNCTION(BlueprintCallable)
     void SetVisibilityRange(const float visibilityRange);
     
@@ -26,7 +27,5 @@ private:
     UFUNCTION()
     void OnBloodOrbSpawned(const ABloodOrb* bloodOrb) const;
     
-public:
-    UBloodOrbVisibilityComponent();
 };
 

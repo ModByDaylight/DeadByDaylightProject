@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTableRowBase.h"
 #include "EPlayerRole.h"
-#include "EEmblemEvaluation.h"
+#include "DBDTableRowBase.h"
 #include "EmblemProgressionID.h"
+#include "EEmblemEvaluation.h"
 #include "DBDEmblemDefinition.generated.h"
 
 class UDBDEmblem;

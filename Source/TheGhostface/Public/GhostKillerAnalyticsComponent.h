@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "GhostKillerAnalytics.h"
+#include "Components/ActorComponent.h"
 #include "ELeanState.h"
 #include "GameplayTagContainer.h"
 #include "GameEventData.h"
@@ -9,7 +9,7 @@
 
 class UChargeableComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UGhostKillerAnalyticsComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -17,6 +17,11 @@ private:
     UPROPERTY(Replicated)
     FGhostKillerAnalytics _ghostKillerAnalytics;
     
+public:
+    UGhostKillerAnalyticsComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void Local_OnStalkModeChanged(bool isInStalkMode);
     
@@ -32,9 +37,5 @@ private:
     UFUNCTION()
     void Authority_OnPreAttackSuccess(const FGameplayTag gameplayTag, const FGameEventData& gameEventData);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UGhostKillerAnalyticsComponent();
 };
 

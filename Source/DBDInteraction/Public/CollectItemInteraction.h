@@ -1,26 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "InteractionDefinition.h"
+#include "OnCollectUpdateStart.h"
+#include "OnCollectUpdateEnd.h"
 #include "CollectItemInteraction.generated.h"
 
 class ACollectable;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCollectItemInteractionOnCollectUpdateStart);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCollectItemInteractionOnCollectUpdateEnd);
-
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DBDINTERACTION_API UCollectItemInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FCollectItemInteractionOnCollectUpdateStart OnCollectUpdateStart;
+    FOnCollectUpdateStart OnCollectUpdateStart;
     
     UPROPERTY(BlueprintAssignable)
-    FCollectItemInteractionOnCollectUpdateEnd OnCollectUpdateEnd;
+    FOnCollectUpdateEnd OnCollectUpdateEnd;
     
+    UCollectItemInteraction();
     UFUNCTION(BlueprintPure)
     ACollectable* GetItem() const;
     
-    UCollectItemInteraction();
 };
 

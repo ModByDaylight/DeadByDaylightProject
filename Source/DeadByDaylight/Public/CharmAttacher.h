@@ -1,24 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "OnAttachedOnActor.h"
+#include "OnCharmAnimationTagsChanged.h"
 #include "CharmAttacherAnimationTweak.h"
 #include "CharmAttacher.generated.h"
 
-class USkeletalMeshComponent;
 class ACharm;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCharmAttacherOnCharmAnimationTagsChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCharmAttacherOnAttachedOnActor);
+class USkeletalMeshComponent;
 
 UCLASS()
 class ACharmAttacher : public AActor {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FCharmAttacherOnAttachedOnActor OnAttachedOnActor;
+    FOnAttachedOnActor OnAttachedOnActor;
     
     UPROPERTY(BlueprintAssignable)
-    FCharmAttacherOnCharmAnimationTagsChanged OnCharmAnimationTagsChanged;
+    FOnCharmAnimationTagsChanged OnCharmAnimationTagsChanged;
     
 private:
     UPROPERTY(Export, VisibleAnywhere)
@@ -28,6 +27,7 @@ private:
     ACharm* _attachedCharm;
     
 public:
+    ACharmAttacher();
     UFUNCTION(BlueprintPure)
     USkeletalMeshComponent* GetSkeletalMeshComponentAttachedOn();
     
@@ -47,7 +47,5 @@ private:
     UFUNCTION()
     void BindOnCharmAnimationTagsChanged();
     
-public:
-    ACharmAttacher();
 };
 

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "AkXSXAdvancedInitializationSettings.h"
 #include "UObject/Object.h"
 #include "AkCommonInitializationSettings.h"
 #include "AkXSXApuHeapInitializationSettings.h"
-#include "AkXSXAdvancedInitializationSettings.h"
 #include "AkCommunicationSettingsWithSystemInitialization.h"
 #include "AkXSXInitializationSettings.generated.h"
 
@@ -23,9 +23,9 @@ public:
     UPROPERTY(AdvancedDisplay, Config, EditAnywhere)
     FAkXSXAdvancedInitializationSettings AdvancedSettings;
     
+    UAkXSXInitializationSettings();
     UFUNCTION()
     void MigrateMultiCoreRendering(bool NewValue);
     
-    UAkXSXInitializationSettings();
 };
 

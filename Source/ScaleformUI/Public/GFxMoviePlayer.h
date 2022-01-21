@@ -1,11 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InputCoreTypes.h"
+#include "OnFocusCommandSignature.h"
 #include "UObject/Object.h"
+#include "GFxWidgetBinding.h"
 #include "ExternalTexture.h"
 #include "GFxHitTestType.h"
 #include "EGFxRenderTextureMode.h"
-#include "GFxWidgetBinding.h"
+#include "InputCoreTypes.h"
+#include "FsCommandSignature.h"
+#include "OnStartCommandSignature.h"
+#include "OnTickCommandSignature.h"
 #include "EGFxScaleMode.h"
 #include "UObject/NoExportTypes.h"
 #include "ASValue.h"
@@ -21,13 +25,6 @@ class UTextureRenderTarget2D;
 class UTexture;
 class UGFxMoviePlayer;
 class USwfMovie;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGFxMoviePlayerOnTickCommand, float, DeltaTime);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FGFxMoviePlayerOnFsCommand, const FString&, Cmd, const FString&, Arg);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGFxMoviePlayerOnFocusLostCommand, int32, LocalPlayerIndex);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGFxMoviePlayerOnStartCommand);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGFxMoviePlayerOnCloseCommand);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGFxMoviePlayerOnFocusGainedCommand, int32, LocalPlayerIndex);
 
 UCLASS(BlueprintType)
 class SCALEFORMUI_API UGFxMoviePlayer : public UObject {
@@ -133,28 +130,29 @@ public:
     int32 SplitscreenLayoutYAdjust;
     
     UPROPERTY(BlueprintAssignable)
-    FGFxMoviePlayerOnFsCommand OnFsCommand;
+    FFsCommandSignature OnFsCommand;
     
     UPROPERTY(BlueprintAssignable)
-    FGFxMoviePlayerOnStartCommand OnStartCommand;
+    FOnStartCommandSignature OnStartCommand;
     
     UPROPERTY(BlueprintAssignable)
-    FGFxMoviePlayerOnCloseCommand OnCloseCommand;
+    FOnStartCommandSignature OnCloseCommand;
     
     UPROPERTY(BlueprintAssignable)
-    FGFxMoviePlayerOnTickCommand OnTickCommand;
+    FOnTickCommandSignature OnTickCommand;
     
     UPROPERTY(BlueprintAssignable)
-    FGFxMoviePlayerOnFocusGainedCommand OnFocusGainedCommand;
+    FOnFocusCommandSignature OnFocusGainedCommand;
     
     UPROPERTY(BlueprintAssignable)
-    FGFxMoviePlayerOnFocusLostCommand OnFocusLostCommand;
+    FOnFocusCommandSignature OnFocusLostCommand;
     
 private:
     UPROPERTY()
     TArray<UGFxObject*> CachedMovieClipsArray;
     
 public:
+    UGFxMoviePlayer();
     UFUNCTION()
     bool Start(bool bRefresh);
     
@@ -293,6 +291,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void Close(bool Unload);
     
-    UGFxMoviePlayer();
 };
 

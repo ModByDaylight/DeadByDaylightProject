@@ -1,13 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CoreBaseUserWidget.h"
-#include "PendingStepData.h"
+#include "TutorialSelectedDelegate.h"
 #include "OnboardingTutorialViewInterface.h"
+#include "PendingStepData.h"
 #include "CoreOnboardingTutorialPanelWidget.generated.h"
 
 class UCoreOnboardingTutorialButtonWidget;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCoreOnboardingTutorialPanelWidgetTutorialSelectedDelegate, const FString&, stepId, const FString&, tutorialId);
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreOnboardingTutorialPanelWidget : public UCoreBaseUserWidget, public IOnboardingTutorialViewInterface {
@@ -18,12 +17,14 @@ protected:
     TArray<UCoreOnboardingTutorialButtonWidget*> TutorialButtons;
     
     UPROPERTY(BlueprintAssignable, BlueprintCallable)
-    FCoreOnboardingTutorialPanelWidgetTutorialSelectedDelegate TutorialSelectedDelegate;
+    FTutorialSelectedDelegate TutorialSelectedDelegate;
     
 private:
     UPROPERTY(Transient)
     TArray<FPendingStepData> _pendingData;
     
+public:
+    UCoreOnboardingTutorialPanelWidget();
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void SetTutorialSeparators(const FString& completedStepId);
@@ -38,7 +39,7 @@ private:
     UFUNCTION()
     void CheckNextPendingButtonUpdate();
     
-public:
-    UCoreOnboardingTutorialPanelWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -7,6 +7,7 @@ UCLASS()
 class HALLOWEEN2020_API AToxinPlantInteractable : public ASpecialBehaviourInteractable {
     GENERATED_BODY()
 public:
+    AToxinPlantInteractable();
     UFUNCTION(BlueprintCallable)
     void SetToxinPlantComplete(const bool isComplete);
     
@@ -22,6 +23,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool IsToxinPlantComplete() const;
     
-    AToxinPlantInteractable();
 };
 

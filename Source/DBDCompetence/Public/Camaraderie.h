@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "Camaraderie.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UCamaraderie : public UPerk {
     GENERATED_BODY()
 public:
@@ -17,10 +17,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     bool _needItemToTrigger;
     
+public:
+    UCamaraderie();
+private:
     UFUNCTION()
     void Authority_EnablePerk();
     
-public:
-    UCamaraderie();
 };
 

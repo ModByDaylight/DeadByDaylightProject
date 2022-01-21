@@ -16,6 +16,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float ActorCaptureRadius;
     
+    AEffectsLocator();
     UFUNCTION(BlueprintImplementableEvent)
     void OnLostActor(AActor* lostActor);
     
@@ -31,6 +32,5 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
     void OnActorTick(UMaterialInstanceDynamic* actorMaterialInstanceDynamic);
     
-    AEffectsLocator();
 };
 

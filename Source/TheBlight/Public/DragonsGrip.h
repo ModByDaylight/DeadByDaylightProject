@@ -4,10 +4,10 @@
 #include "DBDTunableRowHandle.h"
 #include "DragonsGrip.generated.h"
 
-class ADBDPlayer;
 class AGenerator;
+class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDragonsGrip : public UPerk {
     GENERATED_BODY()
 public:
@@ -30,6 +30,8 @@ private:
     UPROPERTY(EditAnywhere)
     FDBDTunableRowHandle _loudNoiseRange;
     
+public:
+    UDragonsGrip();
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void OnRevealSurvivor(ADBDPlayer* instigator);
@@ -38,7 +40,5 @@ private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_OnRevealSurvivor(ADBDPlayer* survivor);
     
-public:
-    UDragonsGrip();
 };
 

@@ -4,20 +4,20 @@
 #include "FirecrackerEffectData.h"
 #include "LightBurnable.generated.h"
 
-class UFirecrackerEffectHandlerComponent;
-class UFlashlightableComponent;
+class UFlashlightComponent;
 class AActor;
 class UChargeableComponent;
-class UFlashlightComponent;
+class UFirecrackerEffectHandlerComponent;
+class UFlashlightableComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLightBurnableOnBurnChargeCompleteEvent, const TArray<AActor*>&, instigatorsForCompletion);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API ULightBurnable : public UActorComponent {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnBurnChargeCompleteEvent, const TArray<AActor*>&, instigatorsForCompletion);
+    
     UPROPERTY(BlueprintAssignable)
-    FLightBurnableOnBurnChargeCompleteEvent OnBurnChargeCompleteEvent;
+    FOnBurnChargeCompleteEvent OnBurnChargeCompleteEvent;
     
     UPROPERTY(Transient)
     TArray<AActor*> FirecrackerLineOfSightIgnoredActors;
@@ -35,6 +35,11 @@ private:
     UPROPERTY(ReplicatedUsing=OnRep_IsBurning)
     bool _isBurning;
     
+public:
+    ULightBurnable();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_IsBurning();
     
@@ -51,9 +56,5 @@ protected:
     UFUNCTION()
     void Authority_OnFirecrackerInRangeBegin(const FFirecrackerEffectData& effectData);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ULightBurnable();
 };
 

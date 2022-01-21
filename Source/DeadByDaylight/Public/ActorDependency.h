@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "Dependency.h"
+#include "Components/ActorComponent.h"
 #include "ActorDependency.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class UActorDependency : public UActorComponent {
     GENERATED_BODY()
 public:

@@ -6,7 +6,7 @@
 
 class ACamperPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UAnySurvivorHasObjectState : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:
@@ -14,6 +14,8 @@ private:
     UPROPERTY(EditAnywhere)
     FGameplayTag _stateTag;
     
+public:
+    UAnySurvivorHasObjectState();
 protected:
     UFUNCTION()
     void OnSurvivorRemoved(ACamperPlayer* survivor);
@@ -21,7 +23,5 @@ protected:
     UFUNCTION()
     void OnSurvivorAdded(ACamperPlayer* survivor);
     
-public:
-    UAnySurvivorHasObjectState();
 };
 

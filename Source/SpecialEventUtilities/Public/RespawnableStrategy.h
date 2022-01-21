@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "RespawnableStrategy.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class SPECIALEVENTUTILITIES_API URespawnableStrategy : public UActorComponent {
     GENERATED_BODY()
 public:

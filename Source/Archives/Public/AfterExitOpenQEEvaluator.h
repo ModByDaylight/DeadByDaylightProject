@@ -9,9 +9,9 @@ UCLASS()
 class ARCHIVES_API UAfterExitOpenQEEvaluator : public UQuestEventEvaluatorBase {
     GENERATED_BODY()
 public:
+    UAfterExitOpenQEEvaluator();
     UFUNCTION()
     void OnExitGateOpened(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-    UAfterExitOpenQEEvaluator();
 };
 

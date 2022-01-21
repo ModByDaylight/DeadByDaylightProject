@@ -5,7 +5,7 @@
 
 class UCurveFloat;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UMadgrit : public UPerk {
     GENERATED_BODY()
 public:

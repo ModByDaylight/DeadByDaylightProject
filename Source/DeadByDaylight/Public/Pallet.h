@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Interactable.h"
-#include "EPalletState.h"
-#include "PalletPushSettings.h"
-#include "EPalletStunZoneSideStrategy.h"
 #include "Engine/EngineTypes.h"
+#include "Interactable.h"
+#include "PalletPushSettings.h"
+#include "EPalletState.h"
+#include "EPalletStunZoneSideStrategy.h"
 #include "UObject/NoExportTypes.h"
 #include "Pallet.generated.h"
 
+class USkeletalMeshComponent;
+class AActor;
+class UBoxComponent;
+class UInteractionDefinition;
 class UDBDNavEvadeLoopComponent;
 class ADBDPlayer;
-class UInteractionDefinition;
 class UPalletPulldownBlockerComponent;
-class USkeletalMeshComponent;
-class UBoxComponent;
-class AActor;
 class UPrimitiveComponent;
 class ACamperPlayer;
 
@@ -75,6 +75,8 @@ private:
     UPROPERTY(BlueprintReadOnly, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool _isDreamPallet;
     
+public:
+    APallet();
 protected:
     UFUNCTION(BlueprintCallable)
     void UpdateIllusionaryPallet();
@@ -167,7 +169,5 @@ private:
     UFUNCTION()
     void Authority_OnOverlapPushBox(UPrimitiveComponent* overlappedComponent, AActor* otherActor, UPrimitiveComponent* otherComp, int32 otherBodyIndex, bool bFromSweep, const FHitResult& sweepResult);
     
-public:
-    APallet();
 };
 

@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Engine/EngineTypes.h"
 #include "UObject/NoExportTypes.h"
+#include "Engine/EngineTypes.h"
 #include "GeneratorDrivenActor.generated.h"
 
-class ADBDPlayer;
 class AGenerator;
+class ADBDPlayer;
 
 UCLASS(Config=Game)
 class DEADBYDAYLIGHT_API AGeneratorDrivenActor : public AActor {
@@ -26,6 +26,7 @@ private:
     TArray<AGenerator*> _generators;
     
 public:
+    AGeneratorDrivenActor();
     UFUNCTION(BlueprintCallable)
     void SetSpawnedObject(AGenerator* generator, int32 generatorId);
     
@@ -106,6 +107,5 @@ public:
     UFUNCTION()
     void Authority_CheckActivation(bool isAutoCompleted, int32 generatorId);
     
-    AGeneratorDrivenActor();
 };
 

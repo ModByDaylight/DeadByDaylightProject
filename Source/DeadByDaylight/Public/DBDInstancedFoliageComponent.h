@@ -6,7 +6,7 @@
 
 class USceneComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDInstancedFoliageComponent : public UActorComponent {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "EventObjectComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UEventObjectComponent : public UActorComponent {
     GENERATED_BODY()
 public:

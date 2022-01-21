@@ -1,18 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
+#include "OnButtonClickEvent.h"
+#include "OnLoadoutItemButtonLongPressEvent.h"
+#include "OnTeachableTooltipLongPressEvent.h"
 #include "TeachableData.h"
-#include "InventorySlotData.h"
 #include "UObject/NoExportTypes.h"
+#include "InventorySlotData.h"
 #include "UMGCharacterInfoScreen.generated.h"
 
+class UUMGPopupButton;
 class UUMGCharacterInfoWidget;
 class UCanvasPanel;
-class UUMGPopupButton;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUMGCharacterInfoScreenOnTeachableTooltipTriggeredLongPressEvent, const FTeachableData&, teachableData, const FVector2D&, position);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUMGCharacterInfoScreenOnPowerItemTooltipTriggeredLongPressEvent, const FInventorySlotData&, itemSlotData, FVector2D, position);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGCharacterInfoScreenOnProgressionButtonClickEvent);
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGCharacterInfoScreen : public UMobileBaseUserWidget {
@@ -33,14 +32,17 @@ protected:
     
 private:
     UPROPERTY()
-    FUMGCharacterInfoScreenOnTeachableTooltipTriggeredLongPressEvent _onTeachableTooltipTriggeredLongPressEvent;
+    FOnTeachableTooltipLongPressEvent _onTeachableTooltipTriggeredLongPressEvent;
     
     UPROPERTY()
-    FUMGCharacterInfoScreenOnPowerItemTooltipTriggeredLongPressEvent _onPowerItemTooltipTriggeredLongPressEvent;
+    FOnLoadoutItemButtonLongPressEvent _onPowerItemTooltipTriggeredLongPressEvent;
     
     UPROPERTY()
-    FUMGCharacterInfoScreenOnProgressionButtonClickEvent _onProgressionButtonClickEvent;
+    FOnButtonClickEvent _onProgressionButtonClickEvent;
     
+public:
+    UUMGCharacterInfoScreen();
+private:
     UFUNCTION()
     void HandleTeachablePerkTooltipLongPressedEvent(const FTeachableData& teachableData, const FVector2D& position);
     
@@ -52,7 +54,5 @@ private:
     UFUNCTION()
     void HandlePowerItemTooltipLongPressedEvent(const FInventorySlotData& slotData, FVector2D position);
     
-public:
-    UUMGCharacterInfoScreen();
 };
 

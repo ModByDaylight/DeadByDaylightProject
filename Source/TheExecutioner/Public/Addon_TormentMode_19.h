@@ -3,7 +3,7 @@
 #include "ItemAddon.h"
 #include "Addon_TormentMode_19.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAddon_TormentMode_19 : public UItemAddon {
     GENERATED_BODY()
 public:

@@ -27,6 +27,7 @@ protected:
     float SurvivorCameraSensitivity;
     
 public:
+    UUMGSettingControlsContextWidget();
     UFUNCTION(BlueprintCallable)
     void HandleSurvivorCameraSensitivityChanged(float sliderValue);
     
@@ -45,6 +46,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void HandleAimAssistToggleClick(bool toggleValue);
     
-    UUMGSettingControlsContextWidget();
 };
 

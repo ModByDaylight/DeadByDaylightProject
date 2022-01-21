@@ -7,7 +7,7 @@ class ACamperPlayer;
 class ASlasherPlayer;
 class ADBDPlayer;
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UBreakout : public UPerk {
     GENERATED_BODY()
 public:
@@ -30,6 +30,11 @@ private:
     UPROPERTY(ReplicatedUsing=OnRep_IsPerkActive)
     bool _isPerkActive;
     
+public:
+    UBreakout();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnSlasherSet(ASlasherPlayer* slasher);
     
@@ -42,9 +47,5 @@ private:
     UFUNCTION()
     void Authority_ImposeWiggleStatusEffect(ACamperPlayer* survivor);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UBreakout();
 };
 

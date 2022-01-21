@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/RichTextBlockDecorator.h"
+#include "UObject/NoExportTypes.h"
 #include "RichTextFreeTicketImageInfo.h"
 #include "RichTextFreeTicketTextInfo.h"
 #include "UMGRichTextFreeTicketDecorator.generated.h"

@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EGameState.h"
 #include "Components/ActorComponent.h"
-#include "EEndGameReason.h"
 #include "GameplayTagContainer.h"
+#include "EGameState.h"
+#include "EEndGameReason.h"
 #include "GameEventData.h"
 #include "QuestEventsHandler.generated.h"
 
 class UQuestEventEvaluatorBase;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ARCHIVES_API UQuestEventsHandler : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -17,6 +17,9 @@ private:
     UPROPERTY(Transient)
     TArray<UQuestEventEvaluatorBase*> _evaluatorList;
     
+public:
+    UQuestEventsHandler();
+private:
     UFUNCTION()
     void OnPlayergameStateChanged(EGameState gameState);
     
@@ -33,6 +36,5 @@ public:
     UFUNCTION(Exec)
     void DBD_InGameAddProgressionToCurrentQuest(const int32 amount);
     
-    UQuestEventsHandler();
 };
 

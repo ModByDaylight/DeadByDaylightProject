@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "RewardWrapperViewData.h"
-#include "EOnboardingTutorialButtonStyle.h"
 #include "EOnboardingTutorialType.h"
+#include "EOnboardingTutorialButtonStyle.h"
 #include "OnboardingTutorialViewData.generated.h"
 
 class UTexture2D;

@@ -4,11 +4,11 @@
 #include "DBDEmblem.h"
 #include "DBDEmblem_SurvivorEvader.generated.h"
 
+class UCurveFloat;
 class ADBDPlayer;
 class UDBDRankDesignTunables;
-class UCurveFloat;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDBDEmblem_SurvivorEvader : public UDBDEmblem {
     GENERATED_BODY()
 public:
@@ -29,9 +29,9 @@ private:
     TSubclassOf<UDBDRankDesignTunables> _rankTunablesClass;
     
 public:
+    UDBDEmblem_SurvivorEvader();
     UFUNCTION()
     void OnChaseStartEvent(ADBDPlayer* chasedPlayer);
     
-    UDBDEmblem_SurvivorEvader();
 };
 

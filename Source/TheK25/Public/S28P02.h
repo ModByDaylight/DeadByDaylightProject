@@ -3,7 +3,7 @@
 #include "BoonPerk.h"
 #include "S28P02.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class US28P02 : public UBoonPerk {
     GENERATED_BODY()
 public:

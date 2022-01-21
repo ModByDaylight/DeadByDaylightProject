@@ -4,7 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "LingeringStateTagStatusEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API ULingeringStateTagStatusEffect : public UBaseLingeringStatusEffect {
     GENERATED_BODY()
 public:

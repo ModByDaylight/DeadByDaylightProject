@@ -8,7 +8,7 @@ class ACamperPlayer;
 class ASearchable;
 class AActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UHoarder : public UPerk {
     GENERATED_BODY()
 public:
@@ -28,6 +28,8 @@ private:
     UPROPERTY(EditDefaultsOnly)
     bool _showUniqueChestVisualPerState;
     
+public:
+    UHoarder();
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void Local_ThrowBubbleIndicator(const EPerkInteractionObjectType camperInteractionType, const AActor* objectActor, const ACamperPlayer* interactingCamperPlayer);
@@ -35,7 +37,5 @@ protected:
     UFUNCTION(BlueprintPure)
     float GetBubbleIndicatorLifetime() const;
     
-public:
-    UHoarder();
 };
 

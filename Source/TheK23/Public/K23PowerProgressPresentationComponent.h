@@ -3,7 +3,7 @@
 #include "PresentationItemProgressComponent.h"
 #include "K23PowerProgressPresentationComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK23PowerProgressPresentationComponent : public UPresentationItemProgressComponent {
     GENERATED_BODY()
 public:

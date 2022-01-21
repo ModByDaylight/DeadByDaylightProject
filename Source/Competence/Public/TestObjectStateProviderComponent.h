@@ -6,7 +6,7 @@
 
 class UGameplayTagContainerComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTestObjectStateProviderComponent : public UActorComponent, public IObjectStateProvider {
     GENERATED_BODY()
 public:
@@ -14,5 +14,7 @@ public:
     UGameplayTagContainerComponent* GameplayTagContainerComponent;
     
     UTestObjectStateProviderComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

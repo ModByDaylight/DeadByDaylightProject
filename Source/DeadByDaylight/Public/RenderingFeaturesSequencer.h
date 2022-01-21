@@ -3,8 +3,8 @@
 #include "UObject/Object.h"
 #include "RenderingFeaturesSequencer.generated.h"
 
-class UWorld;
 class ADBDAggregateCullDistanceVolumes;
+class UWorld;
 
 UCLASS()
 class DEADBYDAYLIGHT_API URenderingFeaturesSequencer : public UObject {

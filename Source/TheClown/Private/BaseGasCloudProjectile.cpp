@@ -1,4 +1,5 @@
 #include "BaseGasCloudProjectile.h"
+#include "PoolableProjectileComponent.h"
 
 class UPrimitiveComponent;
 class AActor;
@@ -48,6 +49,7 @@ float ABaseGasCloudProjectile::Authority_GetCumulativeLifetime() const {
 
 ABaseGasCloudProjectile::ABaseGasCloudProjectile() {
     this->_gasType = EBombType::Toxin;
+    this->_poolableProjectile = CreateDefaultSubobject<UPoolableProjectileComponent>(TEXT("Poolable Projectile Component"));
     this->_overlappingTime = 0.00f;
     this->_dissipating = false;
     this->_gasParticleSystem = NULL;

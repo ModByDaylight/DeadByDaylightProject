@@ -3,7 +3,7 @@
 #include "KillerBlindingFXComponent.h"
 #include "ZombieBlindingFXComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UZombieBlindingFXComponent : public UKillerBlindingFXComponent {
     GENERATED_BODY()
 public:

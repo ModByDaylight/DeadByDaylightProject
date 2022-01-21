@@ -3,10 +3,11 @@
 #include "Components/ActorComponent.h"
 #include "TheExecutionerCheatComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTheExecutionerCheatComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UTheExecutionerCheatComponent();
     UFUNCTION(Exec)
     void DBD_SetCanBeAgonyMoriedOnLocallyControlledPlayer(const bool value, const FString& localPlayerId);
     
@@ -22,6 +23,5 @@ public:
     UFUNCTION(Exec)
     void DBD_DeathBedPlayStruggleHitReaction();
     
-    UTheExecutionerCheatComponent();
 };
 

@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "OffTheRecord.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UOffTheRecord : public UPerk {
     GENERATED_BODY()
 public:

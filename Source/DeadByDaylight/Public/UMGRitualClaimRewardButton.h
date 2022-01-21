@@ -5,20 +5,21 @@
 
 class UCanvasPanel;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGRitualClaimRewardButtonOnPressedAnimationCompleted);
-
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGRitualClaimRewardButton : public UUMGBaseButtonWidget {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPressedAnimationCompleted);
+    
     UPROPERTY(BlueprintAssignable)
-    FUMGRitualClaimRewardButtonOnPressedAnimationCompleted OnPressedAnimationCompleted;
+    FOnPressedAnimationCompleted OnPressedAnimationCompleted;
     
 protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UCanvasPanel* ClaimFxPanel;
     
 public:
+    UUMGRitualClaimRewardButton();
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void SetClaimedButtonStatus(bool isClaimed, float percent);
     
@@ -26,7 +27,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void BroadcastOnPressedAnimationCompleted();
     
-public:
-    UUMGRitualClaimRewardButton();
 };
 

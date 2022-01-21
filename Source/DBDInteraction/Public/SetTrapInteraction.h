@@ -4,7 +4,7 @@
 #include "SocketOrBoneCache.h"
 #include "SetTrapInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DBDINTERACTION_API USetTrapInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

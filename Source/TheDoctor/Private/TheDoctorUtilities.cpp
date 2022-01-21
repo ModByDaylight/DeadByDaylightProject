@@ -1,7 +1,7 @@
 #include "TheDoctorUtilities.h"
 
-class ADBDPlayer;
 class USurvivorMadnessEffect;
+class ADBDPlayer;
 
 bool UTheDoctorUtilities::IsTotallyInsane(const ADBDPlayer* player) {
     return false;

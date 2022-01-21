@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "Rancor.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class URancor : public UPerk {
     GENERATED_BODY()
 public:
@@ -14,6 +14,8 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _killerRevealToObsessionDuration[3];
     
+public:
+    URancor();
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void SpawnBubbleAtSurvivorsLocation();
@@ -22,6 +24,5 @@ public:
     UFUNCTION(BlueprintPure)
     float GetSurvivorRevealDuration() const;
     
-    URancor();
 };
 

@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "GameFramework/Actor.h"
-#include "Engine/EngineTypes.h"
-#include "CharacterToolData.h"
 #include "NamedButton.h"
+#include "Engine/EngineTypes.h"
+#include "GameFramework/Actor.h"
+#include "CharacterToolData.h"
 #include "CharacterTool.generated.h"
 
-class ADBDMenuPlayer;
 class ATargetPoint;
-class UAnimInstance;
 class ABaseSky;
+class UAnimInstance;
+class ADBDMenuPlayer;
 
 UCLASS()
 class ACharacterTool : public AActor {

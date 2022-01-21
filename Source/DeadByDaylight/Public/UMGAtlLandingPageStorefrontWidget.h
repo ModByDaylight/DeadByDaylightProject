@@ -13,10 +13,11 @@ protected:
     UPROPERTY(Export)
     UUMGBaseButtonWidget* AtlantaRedeemCodeBtn;
     
+public:
+    UUMGAtlLandingPageStorefrontWidget();
+protected:
     UFUNCTION()
     void OnPromoCodeButtonPressed();
     
-public:
-    UUMGAtlLandingPageStorefrontWidget();
 };
 

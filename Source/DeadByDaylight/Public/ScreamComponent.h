@@ -4,11 +4,11 @@
 #include "MontagePlaybackDefinition.h"
 #include "ScreamComponent.generated.h"
 
-class UAkAudioEvent;
-class UPerkManager;
 class UMontagePlayer;
+class UPerkManager;
+class UAkAudioEvent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UScreamComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -20,6 +20,7 @@ private:
     UMontagePlayer* _montagePlayer;
     
 public:
+    UScreamComponent();
     UFUNCTION(BlueprintCallable)
     bool PlayScreamSoundAndAnimation(UAkAudioEvent* audioEvent, bool fireLoudNoiseEvent, FMontagePlaybackDefinition montageDefinition, float audibleRange);
     
@@ -29,6 +30,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool CanScream() const;
     
-    UScreamComponent();
 };
 

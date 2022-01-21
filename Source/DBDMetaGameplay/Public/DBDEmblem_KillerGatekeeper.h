@@ -3,7 +3,7 @@
 #include "DBDEmblem.h"
 #include "DBDEmblem_KillerGatekeeper.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDBDEmblem_KillerGatekeeper : public UDBDEmblem {
     GENERATED_BODY()
 public:

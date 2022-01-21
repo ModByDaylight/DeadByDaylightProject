@@ -15,6 +15,7 @@ private:
     FString _audioAgravationLevelRtpc;
     
 public:
+    ACamperExposerInstance();
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void StartSpawnSequence(bool withRandomDelay);
     
@@ -29,6 +30,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ExitSequenceComplete();
     
-    ACamperExposerInstance();
 };
 

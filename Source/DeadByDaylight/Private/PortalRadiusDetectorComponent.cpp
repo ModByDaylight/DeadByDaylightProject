@@ -7,7 +7,7 @@ void UPortalRadiusDetectorComponent::OnRep_PlayersInsideRadius() {
 void UPortalRadiusDetectorComponent::Authority_OnLevelReadyToPlay() {
 }
 
-void UPortalRadiusDetectorComponent::Authority_CallOnPortalEffectsApplied(FPortalRadiusDetectorComponentCallback callback) {
+void UPortalRadiusDetectorComponent::Authority_CallOnPortalEffectsApplied(FOnPortalEffectsApplied callback) {
 }
 
 void UPortalRadiusDetectorComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

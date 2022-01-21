@@ -6,7 +6,7 @@
 class ABearTrap;
 class ACamperPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAddon_Beartrap_DisarmRevealer : public UItemAddon {
     GENERATED_BODY()
 public:

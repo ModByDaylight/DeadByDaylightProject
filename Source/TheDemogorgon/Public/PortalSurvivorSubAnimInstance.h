@@ -2,6 +2,8 @@
 #include "CoreMinimal.h"
 #include "BaseSurvivorAnimInstance.h"
 #include "SkillCheckFailureTracker.h"
+#include "GameplayTagContainer.h"
+#include "GameEventData.h"
 #include "PortalSurvivorSubAnimInstance.generated.h"
 
 UCLASS(NonTransient)
@@ -20,5 +22,14 @@ protected:
     
 public:
     UPortalSurvivorSubAnimInstance();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    void ResetSkillCheckFailed() override PURE_VIRTUAL(ResetSkillCheckFailed,);
+    
+protected:
+    UFUNCTION()
+    void OnSkillCheckFailed(const FGameplayTag gameEventType, const FGameEventData& gameEventData) override PURE_VIRTUAL(OnSkillCheckFailed,);
+    
 };
 

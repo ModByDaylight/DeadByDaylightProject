@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InventorySlotData.h"
 #include "ETeachableStatus.h"
+#include "InventorySlotData.h"
 #include "TeachableData.generated.h"
 
 USTRUCT(BlueprintType)

@@ -4,9 +4,9 @@
 #include "BloodwebEntity.generated.h"
 
 class UDBDGameInstance;
-class UBloodwebTunables;
 class UDBDBloodwebDefinitionBase;
 class IDBDBloodwebDefinitionBase;
+class UBloodwebTunables;
 
 UCLASS()
 class UBloodwebEntity : public UObject {

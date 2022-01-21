@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
+#include "DBDTunableRowHandle.h"
 #include "SpecialBehaviourInteractable.h"
 #include "EPumpkinType.h"
-#include "DBDTunableRowHandle.h"
+#include "UObject/NoExportTypes.h"
 #include "Pumpkin.generated.h"
 
+class UDBDOutlineComponent;
+class UPumpkinInteraction;
 class UPrimitiveComponent;
 class UChargeableComponent;
-class USkeletalMeshComponent;
 class UInteractor;
-class UPumpkinInteraction;
-class UDBDOutlineComponent;
+class USkeletalMeshComponent;
 class UStatusEffect;
 class ADBDPlayer;
 
@@ -81,6 +81,10 @@ private:
     UPROPERTY(Export, Transient)
     UStatusEffect* _pumpkinStatusEffect;
     
+public:
+    APumpkin();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void OnInteractionCompleted(ADBDPlayer* interactingPlayer);
@@ -97,9 +101,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnInteractionCompleted(ADBDPlayer* interactingPlayer);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    APumpkin();
 };
 

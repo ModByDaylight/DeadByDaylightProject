@@ -1,4 +1,5 @@
 #include "StalkerComponent.h"
+#include "ChargeableComponent.h"
 
 void UStalkerComponent::OnPlayerBeingStalkedChanged(bool isBeingStalked) {
 }
@@ -34,5 +35,6 @@ bool UStalkerComponent::CanStalk() const {
 UStalkerComponent::UStalkerComponent() {
     this->_distributeStalkRate = true;
     this->_canStalkWhileInChase = true;
+    this->_stalkPointsChargeable = CreateDefaultSubobject<UChargeableComponent>(TEXT("StalkPoints"));
 }
 

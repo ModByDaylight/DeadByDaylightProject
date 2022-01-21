@@ -23,9 +23,9 @@ protected:
     float _percentComplete;
     
 public:
+    UGeneratorAnimInstance();
     UFUNCTION(BlueprintCallable)
     void SetSkillCheckSuccess(bool success);
     
-    UGeneratorAnimInstance();
 };
 

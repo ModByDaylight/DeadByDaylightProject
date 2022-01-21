@@ -4,7 +4,7 @@
 #include "SpawnerElement.h"
 #include "ActorSpawnerRandomizer.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UActorSpawnerRandomizer : public UObjectRandomizer {
     GENERATED_BODY()
 public:

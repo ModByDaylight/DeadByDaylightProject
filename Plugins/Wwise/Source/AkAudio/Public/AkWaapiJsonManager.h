@@ -1,14 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "AkWaapiFieldNames.h"
 #include "AKWaapiJsonObject.h"
+#include "AkWaapiFieldNames.h"
 #include "AkWaapiJsonManager.generated.h"
 
 UCLASS(BlueprintType)
 class AKAUDIO_API UAkWaapiJsonManager : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UAkWaapiJsonManager();
     UFUNCTION(BlueprintCallable)
     static FAKWaapiJsonObject SetStringField(const FAkWaapiFieldNames& FieldName, const FString& FieldValue, FAKWaapiJsonObject target);
     
@@ -51,6 +52,5 @@ public:
     UFUNCTION(BlueprintPure)
     static FString Conv_FAKWaapiJsonObjectToString(FAKWaapiJsonObject INAKWaapiJsonObject);
     
-    UAkWaapiJsonManager();
 };
 

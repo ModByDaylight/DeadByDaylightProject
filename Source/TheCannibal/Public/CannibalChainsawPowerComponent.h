@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "CannibalChainsawPower.h"
-#include "DBDTunableRowHandle.h"
 #include "TagStateBool.h"
 #include "TunableStat.h"
+#include "DBDTunableRowHandle.h"
 #include "CannibalChainsawPowerComponent.generated.h"
 
 class UPowerChargeComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class UCannibalChainsawPowerComponent : public UActorComponent, public ICannibalChainsawPower {
     GENERATED_BODY()
 public:
@@ -71,6 +71,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _tantrumMaxDuration;
     
+public:
+    UCannibalChainsawPowerComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_OnTantrumPowerChargeFull();
     
@@ -94,9 +99,7 @@ private:
     UFUNCTION()
     void Authority_OnChainsawPowerChargeFull();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UCannibalChainsawPowerComponent();
+    // Fix for true pure virtual functions not being implemented
 };
 

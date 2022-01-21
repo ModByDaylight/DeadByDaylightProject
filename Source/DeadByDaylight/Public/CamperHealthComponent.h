@@ -1,48 +1,46 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "CamperHealResult.h"
+#include "OnDamageStateChanged.h"
 #include "Components/ActorComponent.h"
-#include "ECamperDamageState.h"
+#include "OnHealedEvent.h"
 #include "DBDTunableRowHandle.h"
 #include "TagStateBool.h"
+#include "InjuredBleedoutDelegate.h"
 #include "DBDTimer.h"
 #include "ECamperImmobilizeState.h"
+#include "ECamperDamageState.h"
+#include "CamperHealResult.h"
 #include "CamperHealthComponent.generated.h"
 
-class UChargeableComponent;
 class UInteractionDefinition;
+class UChargeableComponent;
 class ADBDPlayer;
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCamperHealthComponentOnDamageStateChanged, ECamperDamageState, oldDamageState, ECamperDamageState, newDamageState);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCamperHealthComponentOnInjuredBleedoutStarted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCamperHealthComponentOnHealedDelegate, const FCamperHealResult&, healResult);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCamperHealthComponentOnInjuredBleedoutEnded);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCamperHealthComponentOnInjuredBleedoutKO);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCamperHealthComponentOnDamageStateChangedCosmetic);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCamperHealthComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FCamperHealthComponentOnHealedDelegate OnHealedDelegate;
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDamageStateChangedCosmetic);
     
     UPROPERTY(BlueprintAssignable)
-    FCamperHealthComponentOnInjuredBleedoutStarted OnInjuredBleedoutStarted;
+    FOnHealedEvent OnHealedDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FCamperHealthComponentOnInjuredBleedoutEnded OnInjuredBleedoutEnded;
+    FInjuredBleedoutDelegate OnInjuredBleedoutStarted;
     
     UPROPERTY(BlueprintAssignable)
-    FCamperHealthComponentOnInjuredBleedoutKO OnInjuredBleedoutKO;
+    FInjuredBleedoutDelegate OnInjuredBleedoutEnded;
     
     UPROPERTY(BlueprintAssignable)
-    FCamperHealthComponentOnDamageStateChanged OnDamageStateChanged;
+    FInjuredBleedoutDelegate OnInjuredBleedoutKO;
     
     UPROPERTY(BlueprintAssignable)
-    FCamperHealthComponentOnDamageStateChangedCosmetic OnDamageStateChangedCosmetic;
+    FOnDamageStateChanged OnDamageStateChanged;
+    
+    UPROPERTY(BlueprintAssignable)
+    FOnDamageStateChangedCosmetic OnDamageStateChangedCosmetic;
     
 private:
     UPROPERTY(EditDefaultsOnly)
@@ -82,6 +80,9 @@ private:
     ADBDPlayer* _injuredBleedoutInstigator;
     
 public:
+    UCamperHealthComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION()
     void SetCanBleedout(bool canBleedout);
     
@@ -198,8 +199,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ApplyHeal(int32 healAmount, const TArray<ADBDPlayer*>& healers);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UCamperHealthComponent();
 };
 

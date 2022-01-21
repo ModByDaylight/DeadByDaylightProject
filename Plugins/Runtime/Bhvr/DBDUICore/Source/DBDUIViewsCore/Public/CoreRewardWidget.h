@@ -14,9 +14,9 @@ protected:
     UDBDImage* RewardIcon;
     
 public:
+    UCoreRewardWidget();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ClearData();
     
-    UCoreRewardWidget();
 };
 

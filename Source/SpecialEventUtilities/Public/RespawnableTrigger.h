@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "RespawnableTrigger.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class SPECIALEVENTUTILITIES_API URespawnableTrigger : public UActorComponent {
     GENERATED_BODY()
 public:

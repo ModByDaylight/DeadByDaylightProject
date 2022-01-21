@@ -5,7 +5,7 @@
 
 class UDBDOutlineComponent;
 
-UCLASS(Abstract, BlueprintType)
+UCLASS(Abstract, BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UOutlineUpdateStrategy : public UActorComponent {
     GENERATED_BODY()
 public:

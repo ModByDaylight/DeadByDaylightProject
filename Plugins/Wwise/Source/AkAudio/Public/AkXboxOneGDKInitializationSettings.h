@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "AkCommonInitializationSettings.h"
 #include "AkXboxOneGDKApuHeapInitializationSettings.h"
+#include "AkCommonInitializationSettings.h"
 #include "AkCommunicationSettingsWithSystemInitialization.h"
 #include "AkXboxOneGDKAdvancedInitializationSettings.h"
 #include "AkXboxOneGDKInitializationSettings.generated.h"
@@ -23,9 +23,9 @@ public:
     UPROPERTY(AdvancedDisplay, Config, EditAnywhere)
     FAkXboxOneGDKAdvancedInitializationSettings AdvancedSettings;
     
+    UAkXboxOneGDKInitializationSettings();
     UFUNCTION()
     void MigrateMultiCoreRendering(bool NewValue);
     
-    UAkXboxOneGDKInitializationSettings();
 };
 

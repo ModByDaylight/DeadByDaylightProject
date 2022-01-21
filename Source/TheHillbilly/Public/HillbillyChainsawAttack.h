@@ -4,7 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "HillbillyChainsawAttack.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEHILLBILLY_API UHillbillyChainsawAttack : public UPounceAttack {
     GENERATED_BODY()
 public:

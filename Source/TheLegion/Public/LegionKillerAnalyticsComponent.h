@@ -5,13 +5,13 @@
 
 class UGameEventDispatcher;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class ULegionKillerAnalyticsComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    ULegionKillerAnalyticsComponent();
     UFUNCTION(BlueprintCallable)
     void SetGameEventDispatcher(UGameEventDispatcher* gameEventDispatcher);
     
-    ULegionKillerAnalyticsComponent();
 };
 

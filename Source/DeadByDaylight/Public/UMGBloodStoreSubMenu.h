@@ -16,6 +16,9 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UUMGBloodStoreTimer* KillerTimer;
     
+public:
+    UUMGBloodStoreSubMenu();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void SetFaction(bool isKiller);
     
@@ -25,7 +28,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void BroadcastCharacterRoleButtonClicked();
     
-public:
-    UUMGBloodStoreSubMenu();
 };
 

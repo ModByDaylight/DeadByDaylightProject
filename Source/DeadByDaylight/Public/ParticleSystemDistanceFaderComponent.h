@@ -5,7 +5,7 @@
 
 class UParticleSystemComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UParticleSystemDistanceFaderComponent : public UActorComponent {
     GENERATED_BODY()
 public:

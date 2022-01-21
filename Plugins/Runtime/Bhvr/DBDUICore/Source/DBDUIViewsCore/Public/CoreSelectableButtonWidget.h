@@ -5,19 +5,20 @@
 
 class UCoreSelectableButtonWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCoreSelectableButtonWidgetOnSelectedChangedDelegate, UCoreSelectableButtonWidget*, buttonTarget, bool, isSelected);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCoreSelectableButtonWidgetOnSelectedAgainDelegate, UCoreSelectableButtonWidget*, buttonTarget);
-
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreSelectableButtonWidget : public UCoreButtonWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FCoreSelectableButtonWidgetOnSelectedChangedDelegate OnSelectedChangedDelegate;
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnSelectedChangedDelegate, UCoreSelectableButtonWidget*, buttonTarget, bool, isSelected);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSelectedAgainDelegate, UCoreSelectableButtonWidget*, buttonTarget);
     
     UPROPERTY(BlueprintAssignable)
-    FCoreSelectableButtonWidgetOnSelectedAgainDelegate OnSelectedAgainDelegate;
+    FOnSelectedChangedDelegate OnSelectedChangedDelegate;
     
+    UPROPERTY(BlueprintAssignable)
+    FOnSelectedAgainDelegate OnSelectedAgainDelegate;
+    
+    UCoreSelectableButtonWidget();
     UFUNCTION(BlueprintCallable)
     void SetSelected(bool NewIsSelected);
     
@@ -32,6 +33,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool IsSelectable() const;
     
-    UCoreSelectableButtonWidget();
 };
 

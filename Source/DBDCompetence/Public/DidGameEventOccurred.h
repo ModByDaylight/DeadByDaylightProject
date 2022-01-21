@@ -4,7 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "DidGameEventOccurred.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDidGameEventOccurred : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:

@@ -9,5 +9,7 @@ class DBDUIVIEWSCORE_API UCoreTutorialMysteryNoteWidget : public UCoreBaseHudWid
     GENERATED_BODY()
 public:
     UCoreTutorialMysteryNoteWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

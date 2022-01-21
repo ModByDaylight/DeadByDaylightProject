@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ETutorialStep.h"
 #include "Engine/LevelScriptActor.h"
+#include "ETutorialStep.h"
 #include "TutorialLevel.generated.h"
 
 UCLASS()
@@ -13,6 +13,7 @@ private:
     bool _tutorialStarted;
     
 public:
+    ATutorialLevel();
     UFUNCTION(BlueprintCallable)
     void StartTutorial();
     
@@ -48,6 +49,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddObjective(FName objectiveId);
     
-    ATutorialLevel();
 };
 

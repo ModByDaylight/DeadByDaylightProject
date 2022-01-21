@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SnowmanSpawnLocationData.h"
+#include "EGameplayElementType.h"
+#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "DBDTunableRowHandle.h"
-#include "UObject/NoExportTypes.h"
 #include "ETileSpawnPointType.h"
-#include "EGameplayElementType.h"
+#include "SnowmanSpawnLocationData.h"
 #include "SnowmanSpawnPlacementStrategy.generated.h"
 
 class AHatch;
 class APallet;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USnowmanSpawnPlacementStrategy : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -88,10 +88,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _distanceToGroundToleranceSquared;
     
+public:
+    USnowmanSpawnPlacementStrategy();
+private:
     UFUNCTION()
     void Authority_OnIntroCompletedOrLevelReadyToPlay();
     
-public:
-    USnowmanSpawnPlacementStrategy();
 };
 

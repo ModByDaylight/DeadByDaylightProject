@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MobileBaseUserWidget.h"
 #include "PlayerReadyStatusData.h"
+#include "MobileBaseUserWidget.h"
 #include "InventorySlotData.h"
 #include "PlayerInfoData.h"
 #include "UMGLobbyJoinedWidget.generated.h"
@@ -32,6 +32,7 @@ protected:
     UHorizontalBox* CommandButtonsContainer;
     
 public:
+    UUMGLobbyJoinedWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void UpdatePlayersLatency(const TMap<int32, float>& playersLatency, bool isHost);
     
@@ -63,6 +64,5 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
     void AddPlayerInfo(int32 playerId, const FPlayerInfoData& playerInfoData, bool isPlayerReady, const TArray<FInventorySlotData>& loadoutData);
     
-    UUMGLobbyJoinedWidget();
 };
 

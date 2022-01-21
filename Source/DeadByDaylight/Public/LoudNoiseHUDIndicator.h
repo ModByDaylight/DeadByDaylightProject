@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "LoudNoiseAddedEvent.h"
 #include "Components/SceneComponent.h"
 #include "LoudNoiseIndicatorData.h"
 #include "UObject/NoExportTypes.h"
@@ -7,9 +8,7 @@
 
 class UStaticMesh;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLoudNoiseHUDIndicatorLoudNoiseAddedEvent);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API ULoudNoiseHUDIndicator : public USceneComponent {
     GENERATED_BODY()
 public:
@@ -29,16 +28,16 @@ public:
     float ScreenFadeOutDistance;
     
     UPROPERTY(BlueprintAssignable)
-    FLoudNoiseHUDIndicatorLoudNoiseAddedEvent LoudNoiseAddedEvent;
+    FLoudNoiseAddedEvent LoudNoiseAddedEvent;
     
 private:
     UPROPERTY(Transient)
     TArray<FLoudNoiseIndicatorData> _trackedNoises;
     
 public:
+    ULoudNoiseHUDIndicator();
     UFUNCTION(BlueprintCallable)
     void AddTrackedNoise(FVector location, float duration);
     
-    ULoudNoiseHUDIndicator();
 };
 

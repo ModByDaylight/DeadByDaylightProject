@@ -10,6 +10,7 @@ UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGLobbyOfferingItemWidget : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
+    UUMGLobbyOfferingItemWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void SetOfferingData(const FInventorySlotData& data);
     
@@ -20,7 +21,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     TMap<FName, TSoftObjectPtr<UTexture2D>> GetOfferingIcons();
     
-public:
-    UUMGLobbyOfferingItemWidget();
 };
 

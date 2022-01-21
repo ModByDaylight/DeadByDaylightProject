@@ -4,26 +4,26 @@
 #include "TagStateBool.h"
 #include "GhostStalkedComponent.generated.h"
 
-class ACharacter;
-class UStalkedComponent;
 class UStatusEffect;
-class UTimerObject;
 class ASlasherPlayer;
+class UTimerObject;
+class UStalkedComponent;
+class ACharacter;
 class UCharacterSightComponent;
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGhostStalkedComponentOnIsMarkedChanged, bool, isMarked);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGhostStalkedComponentOnIsSpottingKillerChanged, bool, isSpotting);
-
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UGhostStalkedComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FGhostStalkedComponentOnIsMarkedChanged OnIsMarkedChanged;
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsSpottingKiller, bool, isSpotting);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsMarkedChanged, bool, isMarked);
     
     UPROPERTY(BlueprintAssignable)
-    FGhostStalkedComponentOnIsSpottingKillerChanged OnIsSpottingKillerChanged;
+    FOnIsMarkedChanged OnIsMarkedChanged;
+    
+    UPROPERTY(BlueprintAssignable)
+    FOnIsSpottingKiller OnIsSpottingKillerChanged;
     
 private:
     UPROPERTY(Replicated, Transient)
@@ -41,6 +41,11 @@ private:
     UPROPERTY(Export, Transient)
     UStalkedComponent* _stalkedComponent;
     
+public:
+    UGhostStalkedComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnKillerStealthChanged(bool isStealth);
     
@@ -67,9 +72,5 @@ private:
     UFUNCTION()
     void Authority_OnStalkedChargeFull(bool completed, const TArray<AActor*>& instigatorsForCompletion);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UGhostStalkedComponent();
 };
 

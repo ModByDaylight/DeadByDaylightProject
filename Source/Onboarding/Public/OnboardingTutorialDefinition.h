@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EOnboardingTutorialButtonStyle.h"
-#include "EOnboardingTutorialType.h"
 #include "DBDTableRowBaseWithId.h"
+#include "EOnboardingTutorialType.h"
+#include "EOnboardingTutorialButtonStyle.h"
 #include "OnboardingTutorialDefinition.generated.h"
 
 class UTexture2D;

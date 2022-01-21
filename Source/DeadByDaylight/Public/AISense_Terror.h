@@ -5,9 +5,9 @@
 #include "UObject/NoExportTypes.h"
 #include "AISense_Terror.generated.h"
 
-class UTerrorRadiusEmitterComponent;
-class AActor;
 class UObject;
+class AActor;
+class UTerrorRadiusEmitterComponent;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UAISense_Terror : public UAISense {
@@ -18,9 +18,9 @@ protected:
     TArray<FAITerrorEvent> _events;
     
 public:
+    UAISense_Terror();
     UFUNCTION(BlueprintCallable)
     static void ReportTerrorEvent(UObject* worldContextObj, FVector location, AActor* instigator, UTerrorRadiusEmitterComponent* terrorEmitter);
     
-    UAISense_Terror();
 };
 

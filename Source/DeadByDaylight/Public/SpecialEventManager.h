@@ -16,6 +16,7 @@ private:
     USpecialEventsContainer* _specialEventsContainer;
     
 public:
+    USpecialEventManager();
     UFUNCTION(BlueprintPure)
     static ESpecialEventStatus GetStatus(const FCombinedSpecialEventData& specialEventData);
     
@@ -25,6 +26,5 @@ public:
     UFUNCTION(BlueprintPure)
     static bool GetCurrentSpecialEvent(const UObject* worldContextObject, FCombinedSpecialEventData& outSpecialEventData);
     
-    USpecialEventManager();
 };
 

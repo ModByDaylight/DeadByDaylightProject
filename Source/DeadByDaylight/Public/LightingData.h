@@ -4,8 +4,8 @@
 #include "SceneLightingDescription.h"
 #include "LightingData.generated.h"
 
-class ABaseSky;
 class AActor;
+class ABaseSky;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ULightingData : public UDataAsset {

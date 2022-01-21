@@ -4,7 +4,7 @@
 #include "PotentialRandomizableSpawnerPool.h"
 #include "NatObjectRandomizer.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UNatObjectRandomizer : public UObjectRandomizer {
     GENERATED_BODY()
 public:

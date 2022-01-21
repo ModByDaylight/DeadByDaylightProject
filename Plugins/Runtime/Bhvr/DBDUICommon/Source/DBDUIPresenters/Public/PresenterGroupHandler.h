@@ -6,7 +6,7 @@
 
 class APresenterGroup;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDUIPRESENTERS_API UPresenterGroupHandler : public UUIComponent {
     GENERATED_BODY()
 public:

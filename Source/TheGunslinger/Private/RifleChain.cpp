@@ -2,9 +2,9 @@
 
 class URiflePlayerLinker;
 class UInstancedStaticMeshComponent;
+class URifleChainTensionComponent;
 class USplineComponent;
 class UCurveFloat;
-class URifleChainTensionComponent;
 
 void ARifleChain::UpdateChainMesh(UInstancedStaticMeshComponent* mesh, USplineComponent* spline, float alpha) {
 }

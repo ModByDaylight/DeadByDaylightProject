@@ -5,7 +5,7 @@
 
 class ACamperPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UZombieCustomizationComponent : public UCustomizedSkeletalMesh {
     GENERATED_BODY()
 public:
@@ -14,9 +14,9 @@ private:
     TWeakObjectPtr<ACamperPlayer> _survivorSource;
     
 public:
+    UZombieCustomizationComponent();
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_SetZombieCustomization(ACamperPlayer* survivor);
     
-    UZombieCustomizationComponent();
 };
 

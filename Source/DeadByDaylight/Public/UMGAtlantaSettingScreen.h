@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "Components/SlateWrapperTypes.h"
 #include "EOverlayTabs.h"
+#include "Components/SlateWrapperTypes.h"
 #include "UMGAtlantaSettingScreen.generated.h"
 
-class UWidgetSwitcher;
-class UUMGSettingContextWidget;
-class UTexture2D;
-class UHorizontalBox;
 class UUMGSettingMenuButton;
+class UWidgetSwitcher;
+class UHorizontalBox;
+class UTexture2D;
+class UUMGSettingContextWidget;
 
 UCLASS(EditInlineNew)
 class UUMGAtlantaSettingScreen : public UMobileBaseUserWidget {
@@ -42,6 +42,7 @@ private:
     TMap<EOverlayTabs, UUMGSettingContextWidget*> _contextWidgetMap;
     
 public:
+    UUMGAtlantaSettingScreen();
     UFUNCTION(BlueprintImplementableEvent)
     void ShowCreditsOrConsentsPopup(const FString& title, const FString& content);
     
@@ -82,7 +83,5 @@ protected:
     UFUNCTION()
     void HandleAimAssistToggleClick(bool toggleValue);
     
-public:
-    UUMGAtlantaSettingScreen();
 };
 

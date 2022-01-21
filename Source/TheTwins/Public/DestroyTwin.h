@@ -4,7 +4,7 @@
 #include "DBDTunableRowHandle.h"
 #include "DestroyTwin.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UDestroyTwin : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

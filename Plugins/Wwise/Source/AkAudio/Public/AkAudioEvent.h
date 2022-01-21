@@ -33,6 +33,7 @@ private:
     float MaximumDuration;
     
 public:
+    UAkAudioEvent();
     UFUNCTION(BlueprintPure)
     float GetMinimumDuration() const;
     
@@ -45,6 +46,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool GetIsInfinite() const;
     
-    UAkAudioEvent();
 };
 

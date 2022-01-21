@@ -33,6 +33,7 @@ private:
     UCoreRewardWidget* _rewardWidget;
     
 public:
+    UCoreRewardWrapperWidget();
     UFUNCTION(BlueprintCallable)
     void SetData(const FRewardWrapperViewData& viewData);
     
@@ -42,6 +43,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ClearData();
     
-    UCoreRewardWrapperWidget();
 };
 

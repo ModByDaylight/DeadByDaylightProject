@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "LamentConfigurationAnalyticsComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ULamentConfigurationAnalyticsComponent : public UActorComponent {
     GENERATED_BODY()
 public:

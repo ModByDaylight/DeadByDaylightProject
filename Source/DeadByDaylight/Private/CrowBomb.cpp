@@ -1,5 +1,6 @@
 #include "CrowBomb.h"
 #include "Net/UnrealNetwork.h"
+#include "Components/SceneComponent.h"
 
 void ACrowBomb::TriggerTakeOff(FVector triggerLocation) {
 }
@@ -22,6 +23,9 @@ ACrowBomb::ACrowBomb() {
     this->_crowOuterDistance = 0;
     this->_eliminationSamples = 0;
     this->_eliminationStddev = 0.00f;
+    this->_root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+    this->_traceStart = CreateDefaultSubobject<USceneComponent>(TEXT("TraceStart"));
+    this->_traceEnd = CreateDefaultSubobject<USceneComponent>(TEXT("TraceEnd"));
     this->_landed = true;
 }
 

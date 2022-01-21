@@ -6,10 +6,11 @@
 class AConjoinedTwin;
 class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UPossessTheConjoinedTwin : public UPossessPlayer {
     GENERATED_BODY()
 public:
+    UPossessTheConjoinedTwin();
 private:
     UFUNCTION()
     void OnTwinSet(AConjoinedTwin* twin);
@@ -17,7 +18,5 @@ private:
     UFUNCTION()
     void OnPowerCollected(ADBDPlayer* collector);
     
-public:
-    UPossessTheConjoinedTwin();
 };
 

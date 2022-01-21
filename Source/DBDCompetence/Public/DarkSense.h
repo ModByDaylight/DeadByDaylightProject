@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "DarkSense.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UDarkSense : public UPerk {
     GENERATED_BODY()
 public:

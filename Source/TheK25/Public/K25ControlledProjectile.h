@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TunableStat.h"
 #include "K25Projectile.h"
-#include "SpectatingActorLinker.h"
 #include "DBDTunableRowHandle.h"
+#include "SpectatingActorLinker.h"
+#include "TunableStat.h"
 #include "Engine/NetSerialization.h"
 #include "K25ControlledProjectile.generated.h"
 
@@ -61,6 +61,9 @@ private:
     FVector_NetQuantize _lastAppliedAngularVelocity;
     
 public:
+    AK25ControlledProjectile();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(Server, Unreliable)
     void Server_ProcessYawInput(float deltaTime, float scaledInput);
     
@@ -75,9 +78,7 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnKillerPossessProjectileEffects();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    AK25ControlledProjectile();
+    // Fix for true pure virtual functions not being implemented
 };
 

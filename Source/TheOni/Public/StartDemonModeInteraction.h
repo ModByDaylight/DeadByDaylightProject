@@ -6,7 +6,7 @@
 
 class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THEONI_API UStartDemonModeInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -18,6 +18,7 @@ protected:
     FAnimationMontageDescriptor DemonModeActivationMontage;
     
 public:
+    UStartDemonModeInteraction();
     UFUNCTION(BlueprintCallable)
     void SetPlayerOwner(const ADBDPlayer* owner);
     
@@ -25,7 +26,5 @@ private:
     UFUNCTION()
     void OnLevelReadyToPlay();
     
-public:
-    UStartDemonModeInteraction();
 };
 

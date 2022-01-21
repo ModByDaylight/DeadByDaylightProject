@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "DisplayStandCurrencyRequesterComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDisplayStandCurrencyRequesterComponent : public UActorComponent {
     GENERATED_BODY()
 public:

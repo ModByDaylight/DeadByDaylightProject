@@ -1,20 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
+#include "LocalPlayerTrackerDelegate.h"
 #include "LocalPlayerTrackerComponent.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLocalPlayerTrackerComponentTrackerOnLocallyObservedChanged);
-
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API ULocalPlayerTrackerComponent : public USceneComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FLocalPlayerTrackerComponentTrackerOnLocallyObservedChanged TrackerOnLocallyObservedChanged;
+    FLocalPlayerTrackerDelegate TrackerOnLocallyObservedChanged;
     
+    ULocalPlayerTrackerComponent();
     UFUNCTION()
     void TriggerOnLocallyObservedChanged();
     
-    ULocalPlayerTrackerComponent();
 };
 

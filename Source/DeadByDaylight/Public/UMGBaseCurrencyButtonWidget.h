@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Styling/SlateColor.h"
-#include "UMGBaseButtonWidget.h"
 #include "UObject/NoExportTypes.h"
+#include "UMGBaseButtonWidget.h"
+#include "Styling/SlateColor.h"
 #include "UMGBaseCurrencyButtonWidget.generated.h"
 
 class UImage;

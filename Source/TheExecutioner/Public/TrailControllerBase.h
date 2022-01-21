@@ -6,9 +6,9 @@
 #include "TrailControllerBase.generated.h"
 
 class UTormentTrailPointCollectionComponent;
-class ABaseTormentTrailPoint;
 class USplineComponent;
 class UAuthoritativePoolableActorComponent;
+class ABaseTormentTrailPoint;
 
 UCLASS(Abstract)
 class ATrailControllerBase : public AActor {
@@ -31,6 +31,8 @@ private:
     UPROPERTY(EditDefaultsOnly)
     ETrailType _trailType;
     
+public:
+    ATrailControllerBase();
 protected:
     UFUNCTION(BlueprintCallable)
     void RemoveTormentTrailController();
@@ -45,6 +47,5 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
     void ActivateCosmetic(const bool value);
     
-    ATrailControllerBase();
 };
 

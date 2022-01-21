@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "GameFramework/Actor.h"
 #include "GeneratedLevelData.h"
+#include "GameFramework/Actor.h"
 #include "Dependency.h"
 #include "UObject/NoExportTypes.h"
 #include "ETileSpawnPointType.h"
 #include "GenerationParams.h"
 #include "ProceduralLevelBuilder.generated.h"
 
-class UObjectLibrary;
-class UProceduralGenerationData;
-class UPaperTileMap;
-class ATile;
-class UMapData;
 class UDBDDesignTunables;
 class UTileMatrix;
+class ATile;
+class UPaperTileMap;
+class UObjectLibrary;
+class UProceduralGenerationData;
+class UMapData;
 class UTileBank;
 class UActorSpawner;
 class AProceduralLevelData;
@@ -154,6 +154,11 @@ private:
     UPROPERTY(Transient)
     UEdgeObjectHandlingStrategy* _edgeObjectHandlingStrategy;
     
+public:
+    AProceduralLevelBuilder();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void SyncSeeds();
     
@@ -181,8 +186,5 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
     void ApplyMist(float modifier);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    AProceduralLevelBuilder();
 };
 

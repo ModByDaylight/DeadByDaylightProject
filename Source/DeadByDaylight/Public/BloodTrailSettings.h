@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BHVRPerDetailModeInt
 #include "Engine/DataAsset.h"
 #include "Engine/EngineTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BHVRPerDetailModeInt -FallbackName=BHVRPerDetailModeInt
 #include "BloodTrailSettings.generated.h"
 
 class UBloodDecalEffect;
@@ -32,8 +32,8 @@ public:
     UPROPERTY(EditDefaultsOnly)
     UBloodDecalEffect* _bloodDecalEffect;
     
-    //UPROPERTY(EditDefaultsOnly)
-    //FBHVRPerDetailModeInt _decalPoolSize;
+    UPROPERTY(EditDefaultsOnly)
+    FBHVRPerDetailModeInt _decalPoolSize;
     
     UPROPERTY(EditAnywhere)
     float _recycleThresholdPercentage;
@@ -41,8 +41,8 @@ public:
     UPROPERTY(EditAnywhere)
     float _recycleDistancePercentage;
     
-    //UPROPERTY(EditDefaultsOnly)
-    //FBHVRPerDetailModeInt _maxOverlapping;
+    UPROPERTY(EditDefaultsOnly)
+    FBHVRPerDetailModeInt _maxOverlapping;
     
     UBloodTrailSettings();
 };

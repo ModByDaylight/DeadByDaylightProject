@@ -8,6 +8,7 @@ UCLASS(BlueprintType)
 class UDBDAtlantaInputHandler : public UDBDBaseInputHandler {
     GENERATED_BODY()
 public:
+    UDBDAtlantaInputHandler();
     UFUNCTION(BlueprintCallable)
     void SetVirtualJoystickCenter(const int32 controlIndex, FVector2D controlCenter);
     
@@ -23,6 +24,5 @@ public:
     UFUNCTION(BlueprintPure)
     FVector2D GetVirtualJoystickNormalizedOffset(const int32 controlIndex) const;
     
-    UDBDAtlantaInputHandler();
 };
 

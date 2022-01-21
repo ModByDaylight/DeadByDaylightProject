@@ -3,11 +3,11 @@
 #include "Components/ActorComponent.h"
 #include "DemogorgonPortalEffectComponent.generated.h"
 
-class UGameplayModifierContainer;
 class UStatusEffect;
 class ADBDPlayer;
+class UGameplayModifierContainer;
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDemogorgonPortalEffectComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -28,9 +28,9 @@ private:
     TWeakObjectPtr<UGameplayModifierContainer> _originatingEffect;
     
 public:
+    UDemogorgonPortalEffectComponent();
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_Initialize(const FName statusEffect, const float& lingerDuration, ADBDPlayer* originatingPlayer, UGameplayModifierContainer* originatingEffect);
     
-    UDemogorgonPortalEffectComponent();
 };
 

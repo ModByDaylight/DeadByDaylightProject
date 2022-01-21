@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Fonts/SlateFontInfo.h"
 #include "MobileBaseUserWidget.h"
+#include "Fonts/SlateFontInfo.h"
 #include "EPartyPlayerSlotWidgetState.h"
 #include "UMGPartyPlayerSlotWidget.generated.h"
 
-class UWidget;
-class UTextBlock;
 class UCanvasPanel;
+class UTextBlock;
+class UWidget;
 class UImage;
-class UWidgetSwitcher;
 class UUMGBaseButtonWidget;
+class UWidgetSwitcher;
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGPartyPlayerSlotWidget : public UMobileBaseUserWidget {
@@ -57,6 +57,7 @@ protected:
     UImage* LeaderIcon;
     
 public:
+    UUMGPartyPlayerSlotWidget();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetVisualsFromState(EPartyPlayerSlotWidgetState widgetState);
     
@@ -64,7 +65,5 @@ private:
     UFUNCTION()
     void HandleKickPlayerButtonEvent();
     
-public:
-    UUMGPartyPlayerSlotWidget();
 };
 

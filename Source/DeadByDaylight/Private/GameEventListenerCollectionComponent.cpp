@@ -8,7 +8,7 @@ void UGameEventListenerCollectionComponent::UnlistenToGameEvent(FGameplayTag eve
 void UGameEventListenerCollectionComponent::UnlistenToAllGameEvents() {
 }
 
-void UGameEventListenerCollectionComponent::ListenToGameEvent(FGameplayTag eventType, FGameEventListenerCollectionComponentDelegateToBind delegateToBind) {
+void UGameEventListenerCollectionComponent::ListenToGameEvent(FGameplayTag eventType, FGameEventDelegate delegateToBind) {
 }
 
 void UGameEventListenerCollectionComponent::AttachGameEventDispatcher(UGameEventDispatcher* gameEventDispatcher) {

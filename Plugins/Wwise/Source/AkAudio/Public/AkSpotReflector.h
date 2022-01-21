@@ -3,8 +3,8 @@
 #include "GameFramework/Actor.h"
 #include "AkSpotReflector.generated.h"
 
-class UAkAcousticTexture;
 class UAkAuxBus;
+class UAkAcousticTexture;
 
 UCLASS()
 class AKAUDIO_API AAkSpotReflector : public AActor {

@@ -17,9 +17,9 @@ protected:
     UUMGSettingContextButton* CreditsButton;
     
 public:
+    UUMGSettingAboutContextWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void SetVersionNumber(const FString& versionNumber);
     
-    UUMGSettingAboutContextWidget();
 };
 

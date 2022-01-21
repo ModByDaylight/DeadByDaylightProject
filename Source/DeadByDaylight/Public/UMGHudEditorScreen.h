@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPlayerRole.h"
 #include "Blueprint/UserWidget.h"
+#include "EPlayerRole.h"
 #include "UMGHudEditorScreen.generated.h"
 
-class UAkAudioEvent;
 class UUMGHudEditorLayoutScreen;
+class UAkAudioEvent;
 class UUMGHudEditorLayoutWidget;
 class UUMGHudEditorVersionWidget;
 
@@ -30,6 +30,7 @@ private:
     UAkAudioEvent* _onDropOverlapSound;
     
 public:
+    UUMGHudEditorScreen();
     UFUNCTION(BlueprintCallable)
     void ShowHudLayout(EPlayerRole role);
     
@@ -48,6 +49,5 @@ public:
     UFUNCTION(BlueprintPure)
     UUMGHudEditorVersionWidget* GetVersionSwapWidget() const;
     
-    UUMGHudEditorScreen();
 };
 

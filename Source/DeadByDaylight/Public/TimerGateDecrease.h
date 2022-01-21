@@ -12,9 +12,9 @@ public:
     UPROPERTY(EditAnywhere)
     ATimerGate* TimerGate;
     
+    ATimerGateDecrease();
     UFUNCTION(BlueprintCallable)
     void Update(float deltaTime);
     
-    ATimerGateDecrease();
 };
 

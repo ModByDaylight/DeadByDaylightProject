@@ -13,6 +13,8 @@ UCLASS(NonTransient)
 class DEADBYDAYLIGHT_API ATutorialGameMode : public ADBDBaseMatchGameMode {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCanStartAtlantaTutorialChange, bool, canStartTutorial);
+    
 private:
     UPROPERTY(Transient)
     UTutorialObjectiveController* _tutorialObjectiveController;
@@ -27,6 +29,7 @@ private:
     UAtlantaTutorialPlayerHudController* _atlantaTutorialPlayerHudController;
     
 public:
+    ATutorialGameMode();
     UFUNCTION(BlueprintCallable)
     void SetEscapeGenerators(const TArray<AGenerator*>& escapeGenerators, int32 requiredActivationCount);
     
@@ -45,6 +48,5 @@ public:
     UFUNCTION(BlueprintPure)
     UAtlantaTutorialPlayerHudController* GetAtlantaTutorialPlayerHudController() const;
     
-    ATutorialGameMode();
 };
 

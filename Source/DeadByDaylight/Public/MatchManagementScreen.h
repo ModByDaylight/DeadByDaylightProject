@@ -7,6 +7,7 @@ UCLASS()
 class UMatchManagementScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    UMatchManagementScreen();
 private:
     UFUNCTION()
     void OnRemoveMap(const FString& mapId);
@@ -32,7 +33,5 @@ private:
     UFUNCTION()
     void OnAddMap(const FString& mapId);
     
-public:
-    UMatchManagementScreen();
 };
 

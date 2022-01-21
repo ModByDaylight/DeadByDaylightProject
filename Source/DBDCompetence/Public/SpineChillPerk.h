@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "SpineChillPerk.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USpineChillPerk : public UPerk {
     GENERATED_BODY()
 public:

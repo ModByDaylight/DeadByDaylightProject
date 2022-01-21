@@ -7,9 +7,9 @@ UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UVersioningUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UVersioningUtilities();
     UFUNCTION(BlueprintPure)
     static bool IsVisualRework();
     
-    UVersioningUtilities();
 };
 

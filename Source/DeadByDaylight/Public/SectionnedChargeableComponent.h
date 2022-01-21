@@ -3,7 +3,7 @@
 #include "ChargeableComponent.h"
 #include "SectionnedChargeableComponent.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API USectionnedChargeableComponent : public UChargeableComponent {
     GENERATED_BODY()
 public:
@@ -12,9 +12,9 @@ private:
     uint8 _sections;
     
 public:
+    USectionnedChargeableComponent();
     UFUNCTION(BlueprintPure)
     float GetSectionChargeRemaining() const;
     
-    USectionnedChargeableComponent();
 };
 

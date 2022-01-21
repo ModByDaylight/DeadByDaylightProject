@@ -5,10 +5,11 @@
 
 class UStalkerComponent;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UBaseStalkModeInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:
+    UBaseStalkModeInteraction();
 protected:
     UFUNCTION(BlueprintPure)
     UStalkerComponent* GetStalkerComponent() const;
@@ -16,7 +17,5 @@ protected:
     UFUNCTION(BlueprintPure)
     bool CanStalk() const;
     
-public:
-    UBaseStalkModeInteraction();
 };
 

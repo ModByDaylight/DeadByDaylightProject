@@ -8,11 +8,10 @@ UCLASS(BlueprintType)
 class UPromoPackPurchaseUIDataUtility : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UPromoPackPurchaseUIDataUtility();
 private:
     UFUNCTION(BlueprintCallable)
     static void SetRemainingTimeFromHours(UPARAM(Ref) FPromoPackPurchaseUIData& data, int32 remainHours);
     
-public:
-    UPromoPackPurchaseUIDataUtility();
 };
 

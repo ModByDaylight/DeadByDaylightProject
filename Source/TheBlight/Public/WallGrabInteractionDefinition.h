@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "InteractionDefinition.h"
 #include "DBDTunableRowHandle.h"
+#include "InteractionDefinition.h"
 #include "WallGrabInteractionDefinition.generated.h"
 
 class UBlightPowerStateComponent;
 class ABlightPowerEstimatedCollisionIndicator;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UWallGrabInteractionDefinition : public UInteractionDefinition {
     GENERATED_BODY()
 public:

@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AtlantaInstalledContent.h"
+#include "OnContentInstallSucceeded.h"
+#include "OnContentInstallFailed.h"
 #include "AtlantaPendingContent.generated.h"
-
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FAtlantaPendingContentOnFailed, FText, ErrorText, int32, ErrorCode);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE(FAtlantaPendingContentOnSucceeded);
 
 UCLASS()
 class DEADBYDAYLIGHT_API UAtlantaPendingContent : public UAtlantaInstalledContent {
     GENERATED_BODY()
 public:
+    UAtlantaPendingContent();
     UFUNCTION(BlueprintCallable)
-    void StartInstall(FAtlantaPendingContentOnSucceeded OnSucceeded, FAtlantaPendingContentOnFailed OnFailed);
+    void StartInstall(FOnContentInstallSucceeded OnSucceeded, FOnContentInstallFailed OnFailed);
     
     UFUNCTION(BlueprintPure)
     float GetTotalDownloadedSize();
@@ -34,6 +34,5 @@ public:
     UFUNCTION(BlueprintPure)
     float GetDownloadSize();
     
-    UAtlantaPendingContent();
 };
 

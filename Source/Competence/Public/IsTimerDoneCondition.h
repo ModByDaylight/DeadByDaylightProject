@@ -5,7 +5,7 @@
 
 class UTimerObject;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIsTimerDoneCondition : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:
@@ -14,6 +14,9 @@ private:
     UTimerObject* _timer;
     
 public:
+    UIsTimerDoneCondition();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetTimer(UTimerObject* timer);
     
@@ -21,9 +24,5 @@ private:
     UFUNCTION()
     void OnRep_Timer();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UIsTimerDoneCondition();
 };
 

@@ -4,7 +4,7 @@
 #include "DBDTunableRowHandle.h"
 #include "WraithBurnable.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEWRAITH_API UWraithBurnable : public UPlayerLightBurnable {
     GENERATED_BODY()
 public:

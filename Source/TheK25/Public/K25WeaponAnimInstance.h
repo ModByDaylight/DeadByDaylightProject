@@ -12,10 +12,11 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     bool _hasDownedTargetHoldingLamentConfiguration;
     
+public:
+    UK25WeaponAnimInstance();
+protected:
     UFUNCTION()
     void OnAttackStart(const EAttackType attackType);
     
-public:
-    UK25WeaponAnimInstance();
 };
 

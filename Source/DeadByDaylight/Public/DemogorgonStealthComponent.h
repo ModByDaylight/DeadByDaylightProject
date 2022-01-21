@@ -5,7 +5,7 @@
 
 class UStatusEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDemogorgonStealthComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -13,10 +13,11 @@ private:
     UPROPERTY(Export, Transient)
     TWeakObjectPtr<UStatusEffect> _stealthEffect;
     
+public:
+    UDemogorgonStealthComponent();
+private:
     UFUNCTION()
     void Authority_OnLevelReadyToPlay();
     
-public:
-    UDemogorgonStealthComponent();
 };
 

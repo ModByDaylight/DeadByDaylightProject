@@ -53,7 +53,7 @@ int32 UK26AmmoHandlerComponent::GetCurrentAmmo() const {
 
 
 
-void UK26AmmoHandlerComponent::CallOnMaxAmmoSet(FK26AmmoHandlerComponentCallback callback) {
+void UK26AmmoHandlerComponent::CallOnMaxAmmoSet(UK26AmmoHandlerComponent::FOnMaxAmmoSetDelegate callback) {
 }
 
 void UK26AmmoHandlerComponent::Authority_OnAmmoInit(AActor* initAmmo) {

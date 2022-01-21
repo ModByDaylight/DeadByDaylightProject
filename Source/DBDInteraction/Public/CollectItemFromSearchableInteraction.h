@@ -3,7 +3,7 @@
 #include "CollectItemInteraction.h"
 #include "CollectItemFromSearchableInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DBDINTERACTION_API UCollectItemFromSearchableInteraction : public UCollectItemInteraction {
     GENERATED_BODY()
 public:

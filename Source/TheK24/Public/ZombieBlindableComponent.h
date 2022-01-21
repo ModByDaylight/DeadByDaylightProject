@@ -5,7 +5,7 @@
 
 class UGameplayTagContainerComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UZombieBlindableComponent : public UBlindableBaseComponent {
     GENERATED_BODY()
 public:

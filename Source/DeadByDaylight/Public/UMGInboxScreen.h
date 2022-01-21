@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InboxMessageUIData.h"
 #include "MobileBaseUserWidget.h"
 #include "EInboxMessageUIType.h"
+#include "InboxMessageUIData.h"
 #include "EInboxScreenButton.h"
 #include "UMGInboxScreen.generated.h"
 
@@ -13,6 +13,7 @@ UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGInboxScreen : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
+    UUMGInboxScreen();
     UFUNCTION(BlueprintImplementableEvent)
     void UpdateMessagesCount(EInboxMessageUIType messageType, int32 unclaimedCount, int32 unreadCount, int32 totalCount);
     
@@ -64,7 +65,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void ButtonClickEvent(EInboxScreenButton buttonid);
     
-public:
-    UUMGInboxScreen();
 };
 

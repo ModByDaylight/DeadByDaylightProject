@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "Perception/AIPerceptionTypes.h"
 #include "Perception/AISenseConfig.h"
+#include "Perception/AIPerceptionTypes.h"
 #include "AISenseConfig_Trail.generated.h"
 
 class UAISense_Trail;

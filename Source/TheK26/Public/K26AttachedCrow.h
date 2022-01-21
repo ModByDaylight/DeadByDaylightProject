@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "K26AttachmentStatus.h"
 #include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
+#include "K26AttachmentStatus.h"
 #include "FK26AttachedCrowRemovalReason.h"
 #include "GameplayTagContainer.h"
 #include "GameEventData.h"
 #include "ECamperDamageState.h"
 #include "K26AttachedCrow.generated.h"
 
+class UK26PowerOutlineUpdateStrategy;
+class UDBDOutlineComponent;
 class UFlashlightableComponent;
 class ULightBurnable;
 class UFirecrackerEffectHandlerComponent;
-class UK26PowerOutlineUpdateStrategy;
 class UChargeableComponent;
-class UDBDOutlineComponent;
 class UStaticMeshComponent;
 class USceneComponent;
 class UK26PowerStatusHandlerComponent;
@@ -74,6 +74,11 @@ private:
     UPROPERTY(ReplicatedUsing=OnRep_AttachmentStatus)
     FK26AttachmentStatus _attachmentStatus;
     
+public:
+    AK26AttachedCrow();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_AttachmentStatus();
     
@@ -134,6 +139,9 @@ private:
     void Authority_OnOtherSurvivorDamageStateChanged(ECamperDamageState before, ECamperDamageState after);
     
     UFUNCTION()
+    void Authority_OnOtherAttachedCrowRemoved();
+    
+    UFUNCTION()
     void Authority_OnKillerSet(ASlasherPlayer* killer);
     
     UFUNCTION()
@@ -150,9 +158,5 @@ private:
     UFUNCTION()
     void Authority_ActivateInfection();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    AK26AttachedCrow();
 };
 

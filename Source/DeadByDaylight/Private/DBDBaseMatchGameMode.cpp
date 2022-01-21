@@ -7,6 +7,7 @@ UEndGameComponent* ADBDBaseMatchGameMode::GetEndGameComponent() const {
 }
 
 ADBDBaseMatchGameMode::ADBDBaseMatchGameMode() {
+    this->_endGameComponent = CreateDefaultSubobject<UEndGameComponent>(TEXT("EndGameComponent"));
     this->_escapeRequirementTracker = NULL;
     this->_theFence = NULL;
 }

@@ -3,8 +3,8 @@
 #include "UObject/Object.h"
 #include "GMAdaptiveShadowMapSource.generated.h"
 
-class ULightComponent;
 class UGMAdaptiveShadowMapAtlas;
+class ULightComponent;
 
 UCLASS(Abstract)
 class GRAPHICSEXTENSIONS_API UGMAdaptiveShadowMapSource : public UObject {

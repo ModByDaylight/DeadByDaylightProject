@@ -4,7 +4,7 @@
 #include "DBDTunableRowHandle.h"
 #include "K25ChainStrikeImmunityEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK25ChainStrikeImmunityEffect : public UActivateOnEventTimedStatusEffect {
     GENERATED_BODY()
 public:

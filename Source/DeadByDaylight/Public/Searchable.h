@@ -6,17 +6,17 @@
 #include "EItemRarity.h"
 #include "Searchable.generated.h"
 
-class ADBDPlayer;
 class USearchableSpawnPoint;
 class UPrimitiveComponent;
 class ACollectable;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSearchableOnSearchedChanged, bool, searched);
+class ADBDPlayer;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ASearchable : public AInteractable, public IAIInteractableTargetInterface, public IContainsItemInterface {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSearchedChanged, bool, searched);
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float Weight;
     
@@ -24,7 +24,7 @@ public:
     EItemRarity ItemRarity;
     
     UPROPERTY(BlueprintAssignable)
-    FSearchableOnSearchedChanged OnSearchedChanged;
+    FOnSearchedChanged OnSearchedChanged;
     
 private:
     UPROPERTY(Export)
@@ -43,6 +43,9 @@ private:
     TMap<ADBDPlayer*, uint8> _numberOfSearchesWhileOpenPerPlayer;
     
 public:
+    ASearchable();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetHasBeenSearched(bool newHasBeenSearched);
     
@@ -58,8 +61,7 @@ public:
     UFUNCTION(BlueprintCallable)
     ACollectable* Authority_SpawnObject(ADBDPlayer* player);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    ASearchable();
+    // Fix for true pure virtual functions not being implemented
 };
 

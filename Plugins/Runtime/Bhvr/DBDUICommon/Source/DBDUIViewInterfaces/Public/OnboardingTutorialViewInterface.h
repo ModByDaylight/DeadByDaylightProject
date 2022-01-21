@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnboardingStepViewData.h"
 #include "UObject/Interface.h"
+#include "OnboardingStepViewData.h"
 #include "RewardWrapperViewData.h"
 #include "OnboardingTutorialViewInterface.generated.h"
 

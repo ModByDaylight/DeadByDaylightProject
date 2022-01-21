@@ -3,7 +3,7 @@
 #include "EndGameComponent.h"
 #include "TutorialEndGameComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UTutorialEndGameComponent : public UEndGameComponent {
     GENERATED_BODY()
 public:
@@ -12,9 +12,9 @@ private:
     float _timerMaxCompletionPercentage;
     
 public:
+    UTutorialEndGameComponent();
     UFUNCTION(BlueprintCallable)
     void SetTimerMaxCompletionPercentage(const float& percentage);
     
-    UTutorialEndGameComponent();
 };
 

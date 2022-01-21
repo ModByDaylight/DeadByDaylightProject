@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPlayerRole.h"
 #include "NavLinkProxy_Base.h"
+#include "EPlayerRole.h"
 #include "NavLinkInteractPlayerSetup.h"
 #include "NavLinkProxy_Interaction.generated.h"
 

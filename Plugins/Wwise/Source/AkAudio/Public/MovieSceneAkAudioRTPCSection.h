@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneSection.h"
-#include "MovieSceneFloatChannelSerializationHelper.h"
 #include "Curves/RichCurve.h"
+#include "MovieSceneFloatChannelSerializationHelper.h"
 #include "Channels/MovieSceneFloatChannel.h"
 #include "MovieSceneAkAudioRTPCSection.generated.h"
 

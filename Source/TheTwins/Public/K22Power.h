@@ -5,8 +5,8 @@
 #include "DBDTunableRowHandle.h"
 #include "K22Power.generated.h"
 
-class AConjoinedTwin;
 class UChargeableComponent;
+class AConjoinedTwin;
 class UPowerChargeComponent;
 class UK22PowerChargePresentationItemProgressComponent;
 
@@ -49,6 +49,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _timeBeforeRecallAvailable;
     
+public:
+    AK22Power();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_ConjoinedTwin();
     
@@ -69,9 +74,5 @@ private:
     UFUNCTION()
     void Authority_OnDestroyTwinChargePercentChanged(UChargeableComponent* chargeableComponent, float percentCompletionChange, float totalPercentComplete);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    AK22Power();
 };
 

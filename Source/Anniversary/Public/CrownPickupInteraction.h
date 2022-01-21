@@ -3,7 +3,7 @@
 #include "ChargeableInteractionDefinition.h"
 #include "CrownPickupInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class ANNIVERSARY_API UCrownPickupInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

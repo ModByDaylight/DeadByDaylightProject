@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InboxMessageUIData.h"
 #include "ScreenBase.h"
+#include "InboxMessageUIData.h"
 #include "InboxScreen.generated.h"
 
 class UUMGInboxScreen;

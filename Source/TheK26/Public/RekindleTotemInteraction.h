@@ -6,7 +6,7 @@
 
 class ARekindledTotem;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THEK26_API URekindleTotemInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:

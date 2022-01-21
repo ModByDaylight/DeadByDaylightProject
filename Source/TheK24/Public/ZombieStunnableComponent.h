@@ -3,7 +3,7 @@
 #include "StunnableComponent.h"
 #include "ZombieStunnableComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UZombieStunnableComponent : public UStunnableComponent {
     GENERATED_BODY()
 public:

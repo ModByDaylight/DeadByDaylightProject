@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SearchChestInteractionBase.h"
 #include "GameplayTagContainer.h"
+#include "SearchChestInteractionBase.h"
 #include "OpenChestInteraction.generated.h"
 
 class UAnimSequence;
 class ACollectable;
 class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DBDINTERACTION_API UOpenChestInteraction : public USearchChestInteractionBase {
     GENERATED_BODY()
 public:
@@ -22,10 +22,11 @@ private:
     UPROPERTY(Transient)
     float _startTime;
     
+public:
+    UOpenChestInteraction();
+private:
     UFUNCTION(BlueprintCallable)
     void CollectItemIfEmptyHanded(ACollectable* collectable, const ADBDPlayer* player);
     
-public:
-    UOpenChestInteraction();
 };
 

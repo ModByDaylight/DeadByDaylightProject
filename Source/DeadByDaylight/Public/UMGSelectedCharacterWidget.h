@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnButtonClickEvent.h"
 #include "MobileBaseUserWidget.h"
 #include "UMGSelectedCharacterWidget.generated.h"
 
@@ -7,8 +8,6 @@ class UVerticalBox;
 class UUMGCharacterPrestigeButton;
 class UTextBlock;
 class UImage;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGSelectedCharacterWidgetOnCancelPartyButtonClick);
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGSelectedCharacterWidget : public UMobileBaseUserWidget {
@@ -31,9 +30,10 @@ protected:
     UImage* LeaderIcon;
     
     UPROPERTY(BlueprintAssignable, BlueprintCallable)
-    FUMGSelectedCharacterWidgetOnCancelPartyButtonClick _onCancelPartyButtonClick;
+    FOnButtonClickEvent _onCancelPartyButtonClick;
     
 public:
+    UUMGSelectedCharacterWidget();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetVisualsForReadyState(const bool isPlayerReady);
     
@@ -44,7 +44,5 @@ protected:
     UFUNCTION()
     void OnPrestigeButtonClicked();
     
-public:
-    UUMGSelectedCharacterWidget();
 };
 

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DBDTableRowBase.h"
-#include "GameplayTagContainer.h"
-#include "DailyRitualPossibleCharacters.h"
 #include "EDBDScoreTypes.h"
+#include "DailyRitualPossibleCharacters.h"
+#include "GameplayTagContainer.h"
 #include "DailyRitualLevel.h"
 #include "DailyRitualDefinition.generated.h"
 

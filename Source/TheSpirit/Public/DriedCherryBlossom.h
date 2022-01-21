@@ -3,7 +3,7 @@
 #include "SimpleSpawnEffectsOnAllSurvivorsAddon.h"
 #include "DriedCherryBlossom.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDriedCherryBlossom : public USimpleSpawnEffectsOnAllSurvivorsAddon {
     GENERATED_BODY()
 public:

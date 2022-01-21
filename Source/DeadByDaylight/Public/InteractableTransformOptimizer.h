@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "InteractableTransformOptimizer.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UInteractableTransformOptimizer : public UActorComponent {
     GENERATED_BODY()
 public:

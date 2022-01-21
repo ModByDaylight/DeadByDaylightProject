@@ -1,18 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "TierChangeDelegate.h"
 #include "Components/ActorComponent.h"
 #include "EvilWithinComponent.generated.h"
 
 class ADBDPlayer;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FEvilWithinComponentOnTierChange, int32, previousTier, int32, currentTier, bool, isFirstTime);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UEvilWithinComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FEvilWithinComponentOnTierChange OnTierChange;
+    FTierChangeDelegate OnTierChange;
     
 private:
     UPROPERTY(ReplicatedUsing=OnRep_CurrentTier)
@@ -24,6 +23,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     TArray<FString> _allowedSurvivorInteractionsForKill;
     
+public:
+    UEvilWithinComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_CurrentTier(int32 previousTier);
     
@@ -63,8 +67,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_NotifyKill(ADBDPlayer* killedPlayer);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UEvilWithinComponent();
 };
 

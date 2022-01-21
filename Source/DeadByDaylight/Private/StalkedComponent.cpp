@@ -1,5 +1,6 @@
 #include "StalkedComponent.h"
 #include "Net/UnrealNetwork.h"
+#include "ChargeableComponent.h"
 
 void UStalkedComponent::OnRep_MaxStalkPoints() {
 }
@@ -22,5 +23,6 @@ UStalkedComponent::UStalkedComponent() {
     this->_maxStalkPoints = 0.00f;
     this->_stalkableWhileSightingStalker = false;
     this->_isBeingStalked = false;
+    this->_stalkPointsChargeable = CreateDefaultSubobject<UChargeableComponent>(TEXT("StalkPoints"));
 }
 

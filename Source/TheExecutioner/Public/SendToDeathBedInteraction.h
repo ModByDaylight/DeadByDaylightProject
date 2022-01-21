@@ -3,10 +3,10 @@
 #include "ChargeableInteractionDefinition.h"
 #include "SendToDeathBedInteraction.generated.h"
 
-class ADeathBedInteractable;
 class ACamperPlayer;
+class ADeathBedInteractable;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class USendToDeathBedInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -14,6 +14,9 @@ private:
     UPROPERTY(Transient)
     ADeathBedInteractable* _deathBed;
     
+public:
+    USendToDeathBedInteraction();
+private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_SendCamperToDeathBed(ADeathBedInteractable* deathBed);
     
@@ -27,6 +30,5 @@ public:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void FX_InteractionCancel();
     
-    USendToDeathBedInteraction();
 };
 

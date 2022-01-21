@@ -6,7 +6,7 @@
 
 class AGenerator;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDiscordancePerk : public UPerk {
     GENERATED_BODY()
 public:
@@ -29,15 +29,16 @@ private:
     UPROPERTY(Transient)
     AGenerator* _genratorToCheckNextFrame;
     
+public:
+    UDiscordancePerk();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_AddLingeringGeneratorAura(AGenerator* generator);
     
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_AddGeneratorAura(AGenerator* generator);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UDiscordancePerk();
 };
 

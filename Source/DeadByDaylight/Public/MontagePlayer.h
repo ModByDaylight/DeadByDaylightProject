@@ -1,28 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
-#include "MontageInstanceInfo.h"
 #include "Components/ActorComponent.h"
+#include "MontageStartedDelegate.h"
+#include "MontageEndedDelegate.h"
+#include "MontageInstanceInfo.h"
 #include "AnimationMontageDescriptor.h"
+#include "UObject/NoExportTypes.h"
 #include "MontagePlayer.generated.h"
 
 class UAnimMontage;
-class UAnimInstance;
-class USkeletalMeshComponent;
 class UDataTable;
+class USkeletalMeshComponent;
+class UAnimInstance;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMontagePlayerOnMontageStarted, const FAnimationMontageDescriptor, animMontageID, const float, PlayRate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMontagePlayerOnMontageEnded, const FAnimationMontageDescriptor, animMontageID, bool, interrupted);
-
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UMontagePlayer : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FMontagePlayerOnMontageStarted OnMontageStarted;
+    FMontageStartedDelegate OnMontageStarted;
     
     UPROPERTY(BlueprintAssignable)
-    FMontagePlayerOnMontageEnded OnMontageEnded;
+    FMontageEndedDelegate OnMontageEnded;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
@@ -51,6 +50,7 @@ private:
     TMap<UAnimMontage*, FName> _montageToNameMap;
     
 public:
+    UMontagePlayer();
     UFUNCTION(BlueprintCallable)
     void Stop(float blendOutTime);
     
@@ -94,6 +94,5 @@ public:
     UFUNCTION(BlueprintPure)
     UAnimInstance* GetAnimInstance() const;
     
-    UMontagePlayer();
 };
 

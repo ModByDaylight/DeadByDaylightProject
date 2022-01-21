@@ -25,6 +25,7 @@ protected:
     int32 _k25CharacterOverrideID;
     
 public:
+    AK25Husk();
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_StartDisappearing();
     
@@ -34,6 +35,5 @@ public:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_HideHusk();
     
-    AK25Husk();
 };
 

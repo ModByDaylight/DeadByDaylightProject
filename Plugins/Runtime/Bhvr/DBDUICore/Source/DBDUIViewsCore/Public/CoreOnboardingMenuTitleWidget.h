@@ -7,6 +7,7 @@ UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreOnboardingMenuTitleWidget : public UCoreBaseUserWidget {
     GENERATED_BODY()
 public:
+    UCoreOnboardingMenuTitleWidget();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetOnboardingMenuTitle(const FText& menuTitle);
     
@@ -19,6 +20,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ResetOnboardingMenuSubtitle();
     
-    UCoreOnboardingMenuTitleWidget();
 };
 

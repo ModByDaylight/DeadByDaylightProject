@@ -21,9 +21,9 @@ protected:
     UTextBlock* CategoryAndRarityText;
     
 public:
+    UUMGCustomizationTooltipHeaderWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void SetOutfitComposition(const bool isUnbreakable, const TArray<ECustomizationCategory>& composition);
     
-    UUMGCustomizationTooltipHeaderWidget();
 };
 

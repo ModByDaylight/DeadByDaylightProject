@@ -30,10 +30,11 @@ protected:
     UPROPERTY(EditAnywhere)
     UAkAudioEvent* TransitionOutAnimationSound;
     
+public:
+    UUMGBaseFriendListContextualMenuWidget();
+protected:
     UFUNCTION(BlueprintCallable)
     void HandleActionTriggered(EActionOnFriendType actionType);
     
-public:
-    UUMGBaseFriendListContextualMenuWidget();
 };
 

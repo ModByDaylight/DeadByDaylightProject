@@ -6,7 +6,7 @@
 class ACamperPlayer;
 class UK25SurvivorChainAttachmentComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK25SurvivorChainRotationStrategy : public UBaseCharacterRotationStrategy {
     GENERATED_BODY()
 public:

@@ -5,7 +5,7 @@
 
 class UActivatableExhaustedEffect;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THENURSE_API UBalancedLanding : public UPerk {
     GENERATED_BODY()
 public:
@@ -19,13 +19,14 @@ private:
     UPROPERTY(Export, Transient)
     UActivatableExhaustedEffect* _exhaustedEffect;
     
+public:
+    UBalancedLanding();
+private:
     UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_WarnBalancedLandingPredicted();
     
     UFUNCTION(Client, Reliable)
     void Client_UnvalidateBalanceLanding();
     
-public:
-    UBalancedLanding();
 };
 

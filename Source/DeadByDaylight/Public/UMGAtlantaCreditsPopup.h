@@ -20,12 +20,12 @@ protected:
     FString _titleDefaultStyle;
     
 public:
+    UUMGAtlantaCreditsPopup();
     UFUNCTION(BlueprintCallable)
     void SetCreditTitle(const FString& title);
     
     UFUNCTION(BlueprintCallable)
     void SetCreditContent(const FString& content);
     
-    UUMGAtlantaCreditsPopup();
 };
 

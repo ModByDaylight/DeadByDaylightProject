@@ -13,10 +13,11 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UImage* Filling;
     
+public:
+    UUMGTallyPip();
+protected:
     UFUNCTION()
     void HideFilling();
     
-public:
-    UUMGTallyPip();
 };
 

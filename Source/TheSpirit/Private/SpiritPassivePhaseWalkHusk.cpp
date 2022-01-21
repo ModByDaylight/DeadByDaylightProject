@@ -1,4 +1,5 @@
 #include "SpiritPassivePhaseWalkHusk.h"
+#include "Components/SkeletalMeshComponent.h"
 
 class UCustomizedSkeletalMesh;
 
@@ -17,5 +18,7 @@ void ASpiritPassivePhaseWalkHusk::CaptureSpiritPose() {
 }
 
 ASpiritPassivePhaseWalkHusk::ASpiritPassivePhaseWalkHusk() {
+    this->_huskMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("HuskMesh"));
+    this->_huskCustomizedSkeletalMesh = CreateDefaultSubobject<UCustomizedSkeletalMesh>(TEXT("CustomizedSkeletalMesh"));
 }
 

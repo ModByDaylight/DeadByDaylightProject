@@ -6,21 +6,21 @@
 #include "UObject/NoExportTypes.h"
 #include "EscapeDoor.generated.h"
 
-class UAIPerceptionStimuliSourceComponent;
-class UEscapeDoorAnimInstance;
-class UAkComponent;
-class UObject;
-class UChargeableComponent;
-class USceneComponent;
-class AEscapeBlocker;
-class USpotLightComponent;
-class ACamperPlayer;
 class UBlockableComponent;
+class UChargeableComponent;
+class UAIPerceptionStimuliSourceComponent;
+class ACamperPlayer;
+class UEscapeDoorAnimInstance;
+class UObject;
+class UAkComponent;
+class AEscapeBlocker;
+class USceneComponent;
+class USpotLightComponent;
 class ADBDPlayer;
+class USkeletalMeshComponent;
 class AActor;
 class UChargeableInteractionDefinition;
 class UBoxComponent;
-class USkeletalMeshComponent;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AEscapeDoor : public AInteractable, public IAIPointOfInterestTargetInterface, public INoiseIndicatorEmitterInterface {
@@ -68,6 +68,9 @@ private:
     UBlockableComponent* _doorSwitchBlockableComponent;
     
 public:
+    AEscapeDoor();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void StartAtlantaDoorOpeningSound();
     
@@ -163,9 +166,7 @@ private:
     UFUNCTION()
     void Authority_SetEscapeBlocker();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    AEscapeDoor();
+    // Fix for true pure virtual functions not being implemented
 };
 

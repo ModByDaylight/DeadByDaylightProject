@@ -4,8 +4,8 @@
 #include "UMGTallyRankBanner.generated.h"
 
 class UUMGTallyPipsContainer;
-class UUMGRankBanner;
 class UImage;
+class UUMGRankBanner;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGTallyRankBanner : public UMobileBaseUserWidget {
@@ -22,9 +22,9 @@ protected:
     UImage* SmokeBackground;
     
 public:
+    UUMGTallyRankBanner();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetAsLocked(bool locked);
     
-    UUMGTallyRankBanner();
 };
 

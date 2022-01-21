@@ -5,8 +5,8 @@
 #include "CamperLoadout.h"
 #include "DBDDebugGameMode.generated.h"
 
-class ADBDPlayer;
 class ADBDPlayerController;
+class ADBDPlayer;
 
 UCLASS(NonTransient)
 class DEADBYDAYLIGHT_API ADBDDebugGameMode : public ADBDGameMode {

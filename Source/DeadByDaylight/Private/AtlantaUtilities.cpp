@@ -1,12 +1,12 @@
 #include "AtlantaUtilities.h"
 
+class UInteractionDefinition;
+class UPaperSprite;
 class UImage;
 class UButton;
 class UTexture2D;
-class UPaperSprite;
 class ADBDPlayer;
 class AActor;
-class UInteractionDefinition;
 
 bool UAtlantaUtilities::ShouldUseQuickRoleSwitch() {
     return false;

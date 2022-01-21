@@ -3,12 +3,12 @@
 #include "Components/ActorComponent.h"
 #include "CharacterCollection.generated.h"
 
-class ACharacter;
 class ASlasherPlayer;
 class ACamperPlayer;
 class ADBDPlayer;
+class ACharacter;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCharacterCollection : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -32,6 +32,7 @@ private:
     TSet<ACharacter*> _allCharacters;
     
 public:
+    UCharacterCollection();
     UFUNCTION(BlueprintPure)
     TSet<ACamperPlayer*> GetSurvivors() const;
     
@@ -44,6 +45,5 @@ public:
     UFUNCTION(BlueprintPure)
     TArray<ADBDPlayer*> GetAllDBDPlayers() const;
     
-    UCharacterCollection();
 };
 

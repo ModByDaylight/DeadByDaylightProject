@@ -7,10 +7,11 @@
 
 class UGameEventDispatcher;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class ULegionSurvivorAnalyticsComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    ULegionSurvivorAnalyticsComponent();
     UFUNCTION(BlueprintCallable)
     void SetGameEventDispatcher(UGameEventDispatcher* gameEventDispatcher);
     
@@ -18,7 +19,5 @@ private:
     UFUNCTION()
     void OnGameEventDispatched(FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-public:
-    ULegionSurvivorAnalyticsComponent();
 };
 

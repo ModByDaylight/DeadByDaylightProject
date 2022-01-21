@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EmblemProgressionDetailsAnalytics.h"
 #include "UniquelyIdentifiedAnalytic.h"
+#include "EmblemProgressionDetailsAnalytics.h"
 #include "EmblemProgressionAnalytics.generated.h"
 
 USTRUCT()

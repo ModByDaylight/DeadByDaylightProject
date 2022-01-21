@@ -9,5 +9,7 @@ class DBDUIVIEWSCORE_API UCoreMatchResultWidget : public UCoreBaseHudWidget, pub
     GENERATED_BODY()
 public:
     UCoreMatchResultWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -1,28 +1,31 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "K26ProjectileStateDetails.h"
 #include "PoolableActor.h"
-#include "PotentialAttack.h"
+#include "OnCrowProjectileStateChanged.h"
+#include "K26ProjectileStateDetails.h"
 #include "EK26ProjectileState.h"
+#include "PotentialAttack.h"
+#include "OnIsBeingFlashlightedChanged.h"
 #include "UObject/NoExportTypes.h"
 #include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
+#include "K26ProjectileStateChangeDelegate.h"
+#include "OnAcquiredChanged.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
 #include "K26CrowProjectile.generated.h"
 
-class AK26CrowProjectile;
-class UCurveFloat;
-class UK26PowerOutlineUpdateStrategy;
-class UDBDOutlineComponent;
-class USplineComponent;
-class UStaticMeshComponent;
 class USkeletalMeshComponent;
-class USceneComponent;
 class UFirecrackerEffectHandlerComponent;
 class ULightBurnable;
 class UFlashlightableComponent;
+class UDBDOutlineComponent;
+class UCurveFloat;
+class UK26PowerOutlineUpdateStrategy;
+class USplineComponent;
+class UStaticMeshComponent;
+class USceneComponent;
 class UDBDNavModifierComponent;
 class UK26PowerStatusHandlerComponent;
 class UK26AmmoHandlerComponent;
@@ -31,20 +34,15 @@ class UChargeableComponent;
 class ACamperPlayer;
 class UPrimitiveComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FK26CrowProjectileOnCrowProjectileStateChanged, AK26CrowProjectile*, crowProjectile);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FK26CrowProjectileOnIsBeingFlashlightedChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FK26CrowProjectileK26ProjectileStateChangeDelegate, EK26ProjectileState, newState, FK26ProjectileStateDetails, newDetails);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FK26CrowProjectileOnAcquiredChanged, const bool, acquired);
-
 UCLASS()
 class AK26CrowProjectile : public AActor, public IPoolableActor, public IPotentialAttack {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FK26CrowProjectileOnCrowProjectileStateChanged OnCrowProjectileStateChanged;
+    FOnCrowProjectileStateChanged OnCrowProjectileStateChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FK26CrowProjectileOnIsBeingFlashlightedChanged OnIsBeingFlashlightedChanged;
+    FOnIsBeingFlashlightedChanged OnIsBeingFlashlightedChanged;
     
 protected:
     UPROPERTY(Transient)
@@ -162,10 +160,10 @@ protected:
     USceneComponent* flashlightPointWest;
     
     UPROPERTY(BlueprintAssignable)
-    FK26CrowProjectileK26ProjectileStateChangeDelegate _k26ProjectileStateChangeDelegate;
+    FK26ProjectileStateChangeDelegate _k26ProjectileStateChangeDelegate;
     
     UPROPERTY(BlueprintAssignable)
-    FK26CrowProjectileOnAcquiredChanged OnAcquiredChanged;
+    FOnAcquiredChanged OnAcquiredChanged;
     
 private:
     UPROPERTY(Replicated, Transient)
@@ -201,6 +199,11 @@ private:
     UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UChargeableComponent* _flashlightDestroyChargeable;
     
+public:
+    AK26CrowProjectile();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION(Reliable, Server)
     void Server_OnSurvivorHit(const EK26ProjectileState stateOnHit, ACamperPlayer* hitSurvivor);
     
@@ -289,9 +292,7 @@ private:
     UFUNCTION()
     void Authority_OnCollisionOverlapBegin(UPrimitiveComponent* overlappedComp, AActor* otherActor, UPrimitiveComponent* otherComp, int32 otherBodyIndex, bool fromSweep, const FHitResult& sweepResult);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    AK26CrowProjectile();
+    // Fix for true pure virtual functions not being implemented
 };
 

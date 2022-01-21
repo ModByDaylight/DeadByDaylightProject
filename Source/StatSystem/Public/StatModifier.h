@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EModifierCompoundStrategy.h"
 #include "EModifierOperationStrategy.h"
 #include "GameplayTagContainer.h"
+#include "EModifierCompoundStrategy.h"
 #include "StatModifier.generated.h"
 
 USTRUCT(BlueprintType)

@@ -3,7 +3,7 @@
 #include "PossessionComponent.h"
 #include "TwinPossessionComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTwinPossessionComponent : public UPossessionComponent {
     GENERATED_BODY()
 public:

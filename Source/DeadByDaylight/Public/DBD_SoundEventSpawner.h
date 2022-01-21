@@ -20,13 +20,14 @@ protected:
     UPROPERTY(Transient)
     TArray<TSubclassOf<AActor>> _loadedSoundAssets;
     
+public:
+    ADBD_SoundEventSpawner();
+protected:
     UFUNCTION()
     void OnLoudNoiseTriggered(AActor* originator, AActor* instigatingActor, FVector location, bool shouldTrack, float& audibleRange, bool isQuickAction);
     
     UFUNCTION()
     void AssetsLoaded();
     
-public:
-    ADBD_SoundEventSpawner();
 };
 

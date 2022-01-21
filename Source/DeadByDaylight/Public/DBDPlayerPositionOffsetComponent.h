@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PerPlatformProperties.h"
 #include "Components/ActorComponent.h"
+#include "PerPlatformProperties.h"
 #include "DBDPlayerPositionOffsetComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDPlayerPositionOffsetComponent : public UActorComponent {
     GENERATED_BODY()
 public:

@@ -1,18 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Styling/SlateTypes.h"
-#include "Components/ContentWidget.h"
-#include "Types/SlateEnums.h"
-#include "Styling/SlateTypes.h"
 #include "AkBoolPropertyToControl.h"
-#include "UObject/NoExportTypes.h"
+#include "Components/ContentWidget.h"
+#include "Styling/SlateTypes.h"
+#include "Styling/SlateTypes.h"
+#include "Types/SlateEnums.h"
+#include "Components/Widget.h"
 #include "AkWwiseItemToControl.h"
+#include "AkOnCheckBoxComponentStateChanged.h"
+#include "OnWwiseItemDropDetected.h"
+#include "OnBoolPropertyDropDetected.h"
+#include "UObject/NoExportTypes.h"
 #include "AkCheckBox.generated.h"
-
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(ECheckBoxState, FAkCheckBoxCheckedStateDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAkCheckBoxAkOnCheckStateChanged, bool, bIsChecked);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAkCheckBoxOnItemDropped, FGuid, ItemDroppedID);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAkCheckBoxOnPropertyDropped, const FString&, PropertyDropped);
 
 UCLASS(DefaultConfig, Config=Editor)
 class AKAUDIO_API UAkCheckBox : public UContentWidget {
@@ -22,7 +21,7 @@ public:
     ECheckBoxState CheckedState;
     
     UPROPERTY()
-    FAkCheckBoxCheckedStateDelegate CheckedStateDelegate;
+    UWidget::FGetCheckBoxState CheckedStateDelegate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     FCheckBoxStyle WidgetStyle;
@@ -40,14 +39,15 @@ public:
     FAkWwiseItemToControl ItemToControl;
     
     UPROPERTY(BlueprintAssignable)
-    FAkCheckBoxAkOnCheckStateChanged AkOnCheckStateChanged;
+    FAkOnCheckBoxComponentStateChanged AkOnCheckStateChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FAkCheckBoxOnItemDropped OnItemDropped;
+    FOnWwiseItemDropDetected OnItemDropped;
     
     UPROPERTY(BlueprintAssignable)
-    FAkCheckBoxOnPropertyDropped OnPropertyDropped;
+    FOnBoolPropertyDropDetected OnPropertyDropped;
     
+    UAkCheckBox();
     UFUNCTION(BlueprintCallable)
     void SetIsChecked(bool InIsChecked);
     
@@ -75,6 +75,5 @@ public:
     UFUNCTION(BlueprintPure)
     FGuid GetAkItemId() const;
     
-    UAkCheckBox();
 };
 

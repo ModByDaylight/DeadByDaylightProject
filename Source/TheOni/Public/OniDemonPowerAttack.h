@@ -3,7 +3,7 @@
 #include "PounceAttack.h"
 #include "OniDemonPowerAttack.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEONI_API UOniDemonPowerAttack : public UPounceAttack {
     GENERATED_BODY()
 public:

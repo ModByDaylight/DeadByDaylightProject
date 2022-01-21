@@ -11,12 +11,12 @@ UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UDBDGameFlowUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UDBDGameFlowUtilities();
     UFUNCTION(BlueprintCallable)
     static void TriggerWorldFlowEvent(UObject* worldContextObject, EWorldFlowEvent worldFlowEvent);
     
     UFUNCTION(BlueprintCallable)
     static void TriggerUIFlowEvent(UObject* worldContextObject, EUIFlowEvent uiFlowEvent);
     
-    UDBDGameFlowUtilities();
 };
 

@@ -24,6 +24,8 @@ private:
     UPROPERTY(Export)
     TMap<uint32, UUMGBaseToastWidget*> _toastsDisplayedOnScreen;
     
+public:
+    UUMGToastNotificationScreen();
 protected:
     UFUNCTION()
     void HandleOnPromptSelected(int32 notificationId);
@@ -34,7 +36,5 @@ protected:
     UFUNCTION()
     void HandleOnButtonSelected(int32 buttonId, int32 notificationId);
     
-public:
-    UUMGToastNotificationScreen();
 };
 

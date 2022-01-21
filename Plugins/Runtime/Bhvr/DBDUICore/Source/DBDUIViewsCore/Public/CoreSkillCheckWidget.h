@@ -9,5 +9,7 @@ class DBDUIVIEWSCORE_API UCoreSkillCheckWidget : public UCoreBaseHudWidget, publ
     GENERATED_BODY()
 public:
     UCoreSkillCheckWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

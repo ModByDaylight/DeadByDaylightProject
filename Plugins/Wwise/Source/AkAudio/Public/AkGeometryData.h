@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "AkTriangle.h"
 #include "UObject/NoExportTypes.h"
 #include "AkAcousticSurface.h"
-#include "AkTriangle.h"
 #include "AkGeometryData.generated.h"
 
 class UPhysicalMaterial;

@@ -3,8 +3,8 @@
 #include "AkAssetDataWithMedia.h"
 #include "AkAssetDataSwitchContainer.generated.h"
 
-class UAkGroupValue;
 class UAkAssetDataSwitchContainerData;
+class UAkGroupValue;
 
 UCLASS()
 class AKAUDIO_API UAkAssetDataSwitchContainer : public UAkAssetDataWithMedia {

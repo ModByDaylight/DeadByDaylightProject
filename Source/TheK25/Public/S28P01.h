@@ -6,7 +6,7 @@
 class UChargeableComponent;
 class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class US28P01 : public UPerk {
     GENERATED_BODY()
 public:
@@ -30,6 +30,11 @@ private:
     UPROPERTY(Transient)
     ADBDPlayer* _playerOwner;
     
+public:
+    US28P01();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_S28P01ChargeableComponent();
     
@@ -39,9 +44,5 @@ private:
     UFUNCTION()
     void OnRep_IsInteractionOngoing();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    US28P01();
 };
 

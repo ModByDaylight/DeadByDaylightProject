@@ -3,7 +3,7 @@
 #include "EventDrivenModifierCondition.h"
 #include "IsOnHitSprintEffectActive.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIsOnHitSprintEffectActive : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:

@@ -7,12 +7,12 @@ UCLASS()
 class DEADBYDAYLIGHT_API AStartScreenBase : public ALevelScriptActor {
     GENERATED_BODY()
 public:
+    AStartScreenBase();
     UFUNCTION(BlueprintCallable)
     void TravelToMenu();
     
     UFUNCTION(BlueprintImplementableEvent)
     void BeginDestroyTravelSequence();
     
-    AStartScreenBase();
 };
 

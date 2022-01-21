@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EItemRarity.h"
 #include "DBDTableRowBase.h"
 #include "ELoadoutItemType.h"
+#include "EItemRarity.h"
 #include "SecretBotMatchLoadoutDefinition.generated.h"
 
 USTRUCT(BlueprintType)

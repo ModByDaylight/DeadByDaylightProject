@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EControlMode.h"
 #include "Components/ScrollBox.h"
 #include "EShowScrollDisplayPrompt.h"
+#include "EControlMode.h"
 #include "DBDScrollBox.generated.h"
 
 class UCoreInputPromptTextWidget;
@@ -30,6 +30,9 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditInstanceOnly, NoClear)
     EShowScrollDisplayPrompt _showDisplayPrompt;
     
+public:
+    UDBDScrollBox();
+protected:
     UFUNCTION(BlueprintCallable)
     void UpdateDisplayPrompt();
     
@@ -44,7 +47,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void HandleControllerInput(float analogValue);
     
-public:
-    UDBDScrollBox();
 };
 

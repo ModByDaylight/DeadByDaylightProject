@@ -3,8 +3,8 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGCustomizationItemWidget.generated.h"
 
-class UCanvasPanel;
 class UImage;
+class UCanvasPanel;
 class UVerticalBox;
 class UUMGCustomizationItemPriceWidget;
 
@@ -50,11 +50,11 @@ private:
     UPROPERTY(Transient)
     FName _itemId;
     
+public:
+    UUMGCustomizationItemWidget();
 protected:
     UFUNCTION(BlueprintCallable)
     void BroadcastAvailableItemSelected();
     
-public:
-    UUMGCustomizationItemWidget();
 };
 

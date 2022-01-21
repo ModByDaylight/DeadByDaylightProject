@@ -6,12 +6,12 @@
 #include "TagStateBool.h"
 #include "ChainLinkableComponent.generated.h"
 
+class UPlayerReelInputAccelerationConstraintStrategy;
+class UBaseCameraTargetingStrategy;
 class URiflePlayerLinker;
 class UChainPlayerMovementStatusEffect;
-class UBaseCameraTargetingStrategy;
-class UPlayerReelInputAccelerationConstraintStrategy;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API UChainLinkableComponent : public UActorComponent, public IChainLinkable {
     GENERATED_BODY()
 public:
@@ -42,8 +42,10 @@ private:
     UBaseCameraTargetingStrategy* _cameraStrategy;
     
 public:
+    UChainLinkableComponent();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UChainLinkableComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

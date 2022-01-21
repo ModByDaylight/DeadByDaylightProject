@@ -5,7 +5,7 @@
 
 class UAnimMontage;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class USlashedOutOfBearTrapInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:

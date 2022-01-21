@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MobileBaseUserWidget.h"
 #include "EEmblemQuality.h"
+#include "MobileBaseUserWidget.h"
 #include "UMGTallyEmblemWidget.generated.h"
 
 class UTexture2D;
@@ -22,9 +22,9 @@ protected:
     UImage* IconImage;
     
 public:
+    UUMGTallyEmblemWidget();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void PlayFadeInAnimation();
     
-    UUMGTallyEmblemWidget();
 };
 

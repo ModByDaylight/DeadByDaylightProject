@@ -6,12 +6,12 @@
 #include "UObject/NoExportTypes.h"
 #include "GeneratorTeleportInteraction.generated.h"
 
-class ADBDPlayer;
-class AGenerator;
-class UTimerObject;
 class ASlasherPlayer;
+class UTimerObject;
+class AGenerator;
+class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THENIGHTMARE_API UGeneratorTeleportInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -57,6 +57,10 @@ private:
     
     UPROPERTY(EditDefaultsOnly)
     float _downRaycastLength;
+    
+public:
+    UGeneratorTeleportInteraction();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
     UFUNCTION(BlueprintCallable)
@@ -129,9 +133,5 @@ protected:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_StartTeleportCooldown(bool teleported);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UGeneratorTeleportInteraction();
 };
 

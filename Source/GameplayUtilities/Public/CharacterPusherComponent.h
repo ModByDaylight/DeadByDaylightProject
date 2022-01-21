@@ -4,12 +4,12 @@
 #include "CharacterPusherComponent.generated.h"
 
 class ACharacter;
-class UBasePushStrategyComponent;
 class UCapsuleComponent;
+class UBasePushStrategyComponent;
 class UPrimitiveComponent;
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GAMEPLAYUTILITIES_API UCharacterPusherComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -34,6 +34,7 @@ private:
     TArray<ACharacter*> _ignoredByPushedCharacters;
     
 public:
+    UCharacterPusherComponent();
     UFUNCTION(BlueprintCallable)
     void SetIgnoredCharacter(ACharacter* character, const bool ignore);
     
@@ -45,6 +46,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void Construct(UCapsuleComponent* characterDetector, UCapsuleComponent* characterCollision, UBasePushStrategyComponent* pushStrategy);
     
-    UCharacterPusherComponent();
 };
 

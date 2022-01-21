@@ -4,13 +4,13 @@
 #include "AIInteractableTargetInterface.h"
 #include "CamperInteractable.generated.h"
 
-class USphereComponent;
 class UActivatorComponent;
+class USceneComponent;
 class UInteractor;
 class UChargeableInteractionDefinition;
 class UChargeableComponent;
+class USphereComponent;
 class UBoxComponent;
-class USceneComponent;
 class UInteractionDefinition;
 class ACamperPlayer;
 
@@ -62,6 +62,9 @@ private:
     UPROPERTY(Export, Transient)
     USceneComponent* _rootComponent;
     
+public:
+    ACamperInteractable();
+private:
     UFUNCTION()
     void UpdateTargetHPSlot();
     
@@ -81,6 +84,7 @@ public:
     UFUNCTION(BlueprintPure)
     ACamperPlayer* GetOwningSurvivor() const;
     
-    ACamperInteractable();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

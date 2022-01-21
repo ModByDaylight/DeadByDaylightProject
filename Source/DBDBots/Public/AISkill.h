@@ -5,9 +5,9 @@
 #include "GameplayTagContainer.h"
 #include "AISkill.generated.h"
 
-class UBehaviorTree;
 class UNavigationQueryFilter;
 class UAISenseConfig;
+class UBehaviorTree;
 class ADBDAIBTController;
 
 UCLASS(Abstract, EditInlineNew)

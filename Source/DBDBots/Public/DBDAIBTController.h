@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDAIController.h"
 #include "AISkillPerk.h"
-#include "Engine/EngineTypes.h"
+#include "DBDAIController.h"
 #include "GameplayTagContainer.h"
 #include "UObject/NoExportTypes.h"
+#include "Engine/EngineTypes.h"
 #include "DBDAIBTController.generated.h"
 
+class UDBDBehaviorTreeComponent;
 class UBehaviorTree;
-class UDBDAIStateComponent;
 class UAISkill;
 class UDBDAIPerceptionComponent;
 class UDBDPathFollowingComponent;
 class UDBDBlackboardComponent;
-class UDBDBehaviorTreeComponent;
 class UDBDNavMeshExplorerComponent;
+class UDBDAIStateComponent;
 class UDBDAIGoalComponent;
 class AActor;
 
@@ -65,13 +65,14 @@ private:
     UPROPERTY(Transient)
     TArray<UAISkill*> _aiSkills;
     
+public:
+    ADBDAIBTController();
+private:
     UFUNCTION()
     void OnPawnBump(AActor* selfActor, AActor* otherActor, FVector normalImpulse, const FHitResult& hit);
     
     UFUNCTION()
     void Authority_FinishedPlaying();
     
-public:
-    ADBDAIBTController();
 };
 

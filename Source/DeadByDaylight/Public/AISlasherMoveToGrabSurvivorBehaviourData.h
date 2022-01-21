@@ -14,9 +14,9 @@ private:
     ACamperPlayer* _targetSurvivor;
     
 public:
+    UAISlasherMoveToGrabSurvivorBehaviourData();
     UFUNCTION(BlueprintCallable)
     void Init(ACamperPlayer* targetSurvivor);
     
-    UAISlasherMoveToGrabSurvivorBehaviourData();
 };
 

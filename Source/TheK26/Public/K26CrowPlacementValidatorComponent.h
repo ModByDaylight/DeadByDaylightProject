@@ -5,7 +5,7 @@
 
 class UObjectPlacementValidationWithRestrictionStrategy;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK26CrowPlacementValidatorComponent : public UActorComponent {
     GENERATED_BODY()
 public:

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UMGGridPageScrollWidget.h"
 #include "StoreItemSlotData.h"
+#include "UMGGridPageScrollWidget.h"
 #include "UMGCustomizationPageScrollWidget.generated.h"
 
 class UUMGCustomizationItemWidget;
@@ -20,11 +20,11 @@ protected:
     UPROPERTY(Export, Transient)
     TArray<UUMGCustomizationItemWidget*> _itemWidgets;
     
+public:
+    UUMGCustomizationPageScrollWidget();
 private:
     UFUNCTION()
     void OnAvailableItemSelectedCallback(int32 itemIndex);
     
-public:
-    UUMGCustomizationPageScrollWidget();
 };
 

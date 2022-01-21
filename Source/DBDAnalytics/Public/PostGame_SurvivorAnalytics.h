@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECamperDamageState.h"
 #include "PostGameAnalyticsBase.h"
+#include "ECamperDamageState.h"
 #include "PostGame_SurvivorAnalytics.generated.h"
 
 USTRUCT()

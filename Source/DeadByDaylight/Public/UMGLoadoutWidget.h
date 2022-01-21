@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EInventoryGridFormat.h"
 #include "UMGLoadoutBaseWidget.h"
+#include "EInventoryGridFormat.h"
 #include "InventorySlotData.h"
 #include "UMGLoadoutWidget.generated.h"
 
@@ -28,9 +28,9 @@ protected:
     FText InventoryPanelTitleText;
     
 public:
+    UUMGLoadoutWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void SetInventoryData(EInventoryGridFormat gridFormat, const TArray<FInventorySlotData>& inventoryData, const TArray<int32>& selectedItemsIndexes, const FString& trackingItemName, const FString& subtitle);
     
-    UUMGLoadoutWidget();
 };
 

@@ -1,25 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "OnFadePercentChangedDelegate.h"
 #include "FadeComponent.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFadeComponentOnFadePercentChanged, float, fadePercent);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UFadeComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FFadeComponentOnFadePercentChanged OnFadePercentChanged;
+    FOnFadePercentChangedDelegate OnFadePercentChanged;
     
 protected:
     UPROPERTY(EditDefaultsOnly)
     float _fadeDuration;
     
 public:
+    UFadeComponent();
     UFUNCTION(BlueprintPure)
     float GetFadePercent() const;
     
-    UFadeComponent();
 };
 

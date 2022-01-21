@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "LamentConfigurationSpawnInfo.h"
 #include "Components/ActorComponent.h"
 #include "ETileSpawnPointType.h"
-#include "LamentConfigurationSpawnInfo.h"
 #include "LamentConfigurationSpawnStrategy.generated.h"
 
 class AHatch;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ULamentConfigurationSpawnStrategy : public UActorComponent {
     GENERATED_BODY()
 public:

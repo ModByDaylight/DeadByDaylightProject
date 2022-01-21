@@ -3,11 +3,11 @@
 #include "Components/ActorComponent.h"
 #include "BaseModifierCondition.generated.h"
 
-class AActor;
 class UBaseModifierContainer;
 class UModifierSubjectProvider;
+class AActor;
 
-UCLASS(Abstract, Blueprintable)
+UCLASS(Abstract, Blueprintable, meta=(BlueprintSpawnableComponent))
 class COMPETENCE_API UBaseModifierCondition : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -22,6 +22,9 @@ private:
     UClass* _subjectProviderClass;
     
 public:
+    UBaseModifierCondition();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetSubjectProviderClass(UClass* subjectProviderClass);
     
@@ -40,8 +43,5 @@ public:
     UFUNCTION(BlueprintPure)
     AActor* GetOwningActor() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UBaseModifierCondition();
 };
 

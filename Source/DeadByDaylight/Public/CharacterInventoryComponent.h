@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "Components/ActorComponent.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/ActorComponent.h"
 #include "EInventoryType.h"
 #include "UObject/NoExportTypes.h"
 #include "CharacterInventoryComponent.generated.h"
@@ -10,7 +10,7 @@
 class UItemAddon;
 class ACollectable;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCharacterInventoryComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -28,6 +28,9 @@ private:
     TArray<UItemAddon*> _allAddons;
     
 public:
+    UCharacterInventoryComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void StoreItem();
     
@@ -114,8 +117,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void AddToInventory(ACollectable* item, EInventoryType inventoryType);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UCharacterInventoryComponent();
 };
 

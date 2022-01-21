@@ -7,6 +7,7 @@ UCLASS()
 class UArchiveBaseScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    UArchiveBaseScreen();
 private:
     UFUNCTION()
     void OnTabSelected(int32 index);
@@ -14,7 +15,5 @@ private:
     UFUNCTION()
     void OnSelectHelpButton() const;
     
-public:
-    UArchiveBaseScreen();
 };
 

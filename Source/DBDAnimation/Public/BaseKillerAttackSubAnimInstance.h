@@ -13,10 +13,11 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     ASlasherPlayer* _owningKiller;
     
+public:
+    UBaseKillerAttackSubAnimInstance();
+protected:
     UFUNCTION(BlueprintPure)
     ASlasherPlayer* GetOwningKiller() const;
     
-public:
-    UBaseKillerAttackSubAnimInstance();
 };
 

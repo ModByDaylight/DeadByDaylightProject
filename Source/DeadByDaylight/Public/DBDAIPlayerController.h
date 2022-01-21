@@ -16,6 +16,7 @@ private:
     TArray<UAICharacterBehaviour*> _currentBehaviours;
     
 public:
+    ADBDAIPlayerController();
     UFUNCTION(BlueprintCallable)
     void StopCharacterBehaviour(const UClass* behaviourClass);
     
@@ -39,6 +40,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void MovePlayerToActor(AActor* goal, float acceptanceRadius);
     
-    ADBDAIPlayerController();
 };
 

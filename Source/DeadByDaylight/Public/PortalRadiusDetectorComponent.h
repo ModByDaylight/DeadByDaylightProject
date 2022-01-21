@@ -1,17 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "OnPortalEffectsApplied.h"
 #include "PortalRadiusDetectorComponent.generated.h"
 
 class ADemogorgonPortal;
 class ADBDPlayer;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE(FPortalRadiusDetectorComponentCallback);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UPortalRadiusDetectorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPortalEffectsAppliedMultiDelegate);
+    
 private:
     UPROPERTY(Transient)
     TArray<ADemogorgonPortal*> Portals;
@@ -19,6 +20,11 @@ private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_PlayersInsideRadius)
     TArray<ADBDPlayer*> _playersInsideRadius;
     
+public:
+    UPortalRadiusDetectorComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_PlayersInsideRadius();
     
@@ -27,10 +33,7 @@ private:
     
 public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
-    void Authority_CallOnPortalEffectsApplied(FPortalRadiusDetectorComponentCallback callback);
+    void Authority_CallOnPortalEffectsApplied(FOnPortalEffectsApplied callback);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UPortalRadiusDetectorComponent();
 };
 

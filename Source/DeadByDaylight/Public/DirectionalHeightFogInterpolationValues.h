@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine HeightFogGradientEntry
 #include "UObject/NoExportTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HeightFogGradientEntry -FallbackName=HeightFogGradientEntry
 #include "DirectionalHeightFogInterpolationValues.generated.h"
 
 USTRUCT()
@@ -32,8 +32,8 @@ public:
     UPROPERTY()
     float StartDistance;
     
-    //UPROPERTY()
-    //TArray<FHeightFogGradientEntry> FogGradient;
+    UPROPERTY()
+    TArray<FHeightFogGradientEntry> FogGradient;
     
     UPROPERTY()
     float DistanceUntilFlatFog;

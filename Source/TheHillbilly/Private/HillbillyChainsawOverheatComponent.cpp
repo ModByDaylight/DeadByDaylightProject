@@ -1,5 +1,6 @@
 #include "HillbillyChainsawOverheatComponent.h"
 #include "Net/UnrealNetwork.h"
+#include "PowerChargeComponent.h"
 
 void UHillbillyChainsawOverheatComponent::OnRep_IsChainsawOverheating() {
 }
@@ -27,5 +28,6 @@ void UHillbillyChainsawOverheatComponent::GetLifetimeReplicatedProps(TArray<FLif
 }
 
 UHillbillyChainsawOverheatComponent::UHillbillyChainsawOverheatComponent() {
+    this->_chainsawHeatCharge = CreateDefaultSubobject<UPowerChargeComponent>(TEXT("ChainsawOverheatCharge"));
 }
 

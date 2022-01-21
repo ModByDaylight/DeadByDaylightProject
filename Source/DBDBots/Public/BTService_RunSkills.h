@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTService.h"
-#include "BehaviorTree/BehaviorTreeTypes.h"
 #include "GameplayTagContainer.h"
 #include "BehaviorTree/Blackboard/BlackboardKeyType.h"
+#include "BehaviorTree/BehaviorTreeTypes.h"
 #include "BTService_RunSkills.generated.h"
 
 UCLASS()

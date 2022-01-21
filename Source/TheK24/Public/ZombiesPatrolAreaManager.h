@@ -5,7 +5,7 @@
 
 class AMeatHook;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UZombiesPatrolAreaManager : public UActorComponent {
     GENERATED_BODY()
 public:

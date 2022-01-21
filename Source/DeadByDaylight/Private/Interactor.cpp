@@ -1,10 +1,10 @@
 #include "Interactor.h"
 #include "Net/UnrealNetwork.h"
 
-class AInteractable;
 class ADBDPlayer;
 class UInteractionDefinition;
 class UInterruptionDefinition;
+class AInteractable;
 
 void UInteractor::SetIsUsable(bool isUsableParam) {
 }

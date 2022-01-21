@@ -13,10 +13,11 @@ private:
     UPROPERTY(Export, Transient)
     UUMGAtlantaLegalMenuScreen* _atlLegalMenuScreen;
     
+public:
+    ULegalMenuScreenUMG();
+private:
     UFUNCTION()
     void OnLegalMenuButtonClick(bool isAccept);
     
-public:
-    ULegalMenuScreenUMG();
 };
 

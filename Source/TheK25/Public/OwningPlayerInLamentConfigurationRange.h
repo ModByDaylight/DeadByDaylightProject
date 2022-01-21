@@ -3,7 +3,7 @@
 #include "AnyActorPairQueryRangeIsTrue.h"
 #include "OwningPlayerInLamentConfigurationRange.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UOwningPlayerInLamentConfigurationRange : public UAnyActorPairQueryRangeIsTrue {
     GENERATED_BODY()
 public:

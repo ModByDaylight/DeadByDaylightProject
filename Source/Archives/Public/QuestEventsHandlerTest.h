@@ -5,7 +5,7 @@
 
 class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ARCHIVES_API UQuestEventsHandlerTest : public UQuestEventsHandler {
     GENERATED_BODY()
 public:

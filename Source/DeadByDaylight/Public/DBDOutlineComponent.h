@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDOutlineRenderStrategySelector.h"
 #include "BatchMeshCommands.h"
+#include "DBDOutlineRenderStrategySelector.h"
 #include "UObject/NoExportTypes.h"
 #include "DBDOutlineComponent.generated.h"
 
@@ -9,7 +9,7 @@ class UBaseOutlineRenderStrategy;
 class UMaterialInterface;
 class UTexture;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDOutlineComponent : public UBatchMeshCommands {
     GENERATED_BODY()
 public:
@@ -49,6 +49,7 @@ private:
     UBaseOutlineRenderStrategy* _renderingStrategy;
     
 public:
+    UDBDOutlineComponent();
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     void SetTargetColor(FLinearColor color);
     
@@ -83,7 +84,5 @@ private:
     UFUNCTION()
     void InitBatcher();
     
-public:
-    UDBDOutlineComponent();
 };
 

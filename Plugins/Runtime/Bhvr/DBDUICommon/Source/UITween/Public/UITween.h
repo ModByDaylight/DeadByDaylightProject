@@ -14,12 +14,12 @@ public:
     UPROPERTY(Transient)
     TArray<UUITweenInstance*> ActiveInstances;
     
+    UUITween();
     UFUNCTION(BlueprintCallable)
     static UUITweenInstance* Create(UWidget* targetWidget, float duration, float delay, EEasingType easing);
     
     UFUNCTION(BlueprintCallable)
     static void Clear(UWidget* targetWidget);
     
-    UUITween();
 };
 

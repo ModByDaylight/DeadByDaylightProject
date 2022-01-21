@@ -22,9 +22,9 @@ private:
     TArray<UUMGTallyEmblemWidget*> _emblems;
     
 public:
+    UUMGTallyEmblemsWidget();
     UFUNCTION(BlueprintPure)
     TArray<UUMGTallyEmblemWidget*> GetEmblems() const;
     
-    UUMGTallyEmblemsWidget();
 };
 

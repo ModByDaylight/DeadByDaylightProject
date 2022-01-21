@@ -1,26 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/ActorComponent.h"
+#include "Triggered.h"
 #include "Engine/EngineTypes.h"
+#include "TriggerReset.h"
 #include "TriggerableWorldObjectComponent.generated.h"
 
-class AActor;
 class UPrimitiveComponent;
 class ADBDPlayer;
+class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FTriggerableWorldObjectComponentOnTriggered, AActor*, Instigator, FVector, Location);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTriggerableWorldObjectComponentOnTriggerReset);
-
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UTriggerableWorldObjectComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FTriggerableWorldObjectComponentOnTriggered OnTriggered;
+    FTriggered OnTriggered;
     
     UPROPERTY(BlueprintAssignable)
-    FTriggerableWorldObjectComponentOnTriggerReset OnTriggerReset;
+    FTriggerReset OnTriggerReset;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
@@ -43,6 +42,7 @@ private:
     TWeakObjectPtr<UPrimitiveComponent> _guaranteedTriggerVolume;
     
 public:
+    UTriggerableWorldObjectComponent();
     UFUNCTION(BlueprintCallable)
     void SetGuaranteedTriggerVolume(UPrimitiveComponent* volume);
     
@@ -82,7 +82,5 @@ protected:
     UFUNCTION()
     void Authority_ConditionalVolumeBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* other, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& HitResult);
     
-public:
-    UTriggerableWorldObjectComponent();
 };
 

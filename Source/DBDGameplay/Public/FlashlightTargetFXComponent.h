@@ -5,7 +5,7 @@
 
 class UFlashlightableComponent;
 
-UCLASS(Abstract, BlueprintType)
+UCLASS(Abstract, BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UFlashlightTargetFXComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -17,10 +17,11 @@ private:
     UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     UFlashlightableComponent* _flashlightable;
     
+public:
+    UFlashlightTargetFXComponent();
+private:
     UFUNCTION()
     void OnIsLitChanged(bool isLit);
     
-public:
-    UFlashlightTargetFXComponent();
 };
 

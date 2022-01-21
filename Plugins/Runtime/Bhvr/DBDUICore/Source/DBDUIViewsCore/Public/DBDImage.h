@@ -12,12 +12,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     UTexture2D* DefaultImage;
     
+    UDBDImage();
     UFUNCTION(BlueprintCallable)
     void SetBrushFromTextureWithDefault(UTexture2D* texture, bool matchSize);
     
     UFUNCTION(BlueprintCallable)
     void SetBrushFromSoftTextureWithDefault(TSoftObjectPtr<UTexture2D> softTexture, bool matchSize);
     
-    UDBDImage();
 };
 

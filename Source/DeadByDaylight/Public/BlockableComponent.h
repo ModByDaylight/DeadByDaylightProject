@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "BlockableReplicatedDatum.h"
+#include "Components/ActorComponent.h"
 #include "BlockableComponent.generated.h"
 
-class UObject;
 class UBlockElement;
+class UObject;
 class ADBDPlayer;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UBlockableComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -19,6 +19,11 @@ private:
     UPROPERTY(Transient)
     TSet<UBlockElement*> _blockElements;
     
+public:
+    UBlockableComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_ReplicatedDatum();
     
@@ -32,8 +37,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void Authority_AddBlock(const UObject* source, const TSet<ADBDPlayer*>& affectedPlayers);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UBlockableComponent();
 };
 

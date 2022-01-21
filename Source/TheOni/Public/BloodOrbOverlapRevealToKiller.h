@@ -5,7 +5,7 @@
 
 class UTimerObject;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEONI_API UBloodOrbOverlapRevealToKiller : public UStatusEffect {
     GENERATED_BODY()
 public:
@@ -14,9 +14,9 @@ private:
     UTimerObject* _revealTimer;
     
 public:
+    UBloodOrbOverlapRevealToKiller();
     UFUNCTION(BlueprintPure)
     UTimerObject* GetRevealTimer() const;
     
-    UBloodOrbOverlapRevealToKiller();
 };
 

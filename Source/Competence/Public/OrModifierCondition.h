@@ -3,7 +3,7 @@
 #include "CompositeModifierCondition.h"
 #include "OrModifierCondition.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class COMPETENCE_API UOrModifierCondition : public UCompositeModifierCondition {
     GENERATED_BODY()
 public:

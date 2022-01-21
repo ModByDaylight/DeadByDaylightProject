@@ -2,9 +2,9 @@
 #include "Net/UnrealNetwork.h"
 
 class UChargeableComponent;
+class AActor;
 class UBlindingEffectorInterface;
 class IBlindingEffectorInterface;
-class AActor;
 
 void UBlindableBaseComponent::SetChargeable(UChargeableComponent* value) {
 }

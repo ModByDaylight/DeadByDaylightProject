@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EInputInteractionType.h"
 #include "InteractionPlayerProperties.h"
+#include "EInputInteractionType.h"
 #include "StoredInteraction.generated.h"
 
 class UInteractionDefinition;

@@ -6,7 +6,7 @@
 class UAkAudioEvent;
 class ASlasherPlayer;
 
-UCLASS(Abstract, EditInlineNew)
+UCLASS(Abstract, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THEHILLBILLY_API UChainsawRevInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -23,11 +23,11 @@ protected:
     UPROPERTY(Transient)
     ASlasherPlayer* _owningSlasher;
     
+public:
+    UChainsawRevInteraction();
 private:
     UFUNCTION()
     void OnLevelReadyToPlay();
     
-public:
-    UChainsawRevInteraction();
 };
 

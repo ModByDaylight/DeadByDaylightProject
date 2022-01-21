@@ -5,7 +5,7 @@
 
 class AZombieCharacter;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UZombieOutlineUpdateStrategy : public USourceBasedOutlineUpdateStrategy {
     GENERATED_BODY()
 public:

@@ -6,7 +6,7 @@
 
 class AActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDSpringArmComponent : public USpringArmComponent {
     GENERATED_BODY()
 public:
@@ -33,12 +33,12 @@ protected:
     TArray<TWeakObjectPtr<AActor>> IgnoreActors;
     
 public:
+    UDBDSpringArmComponent();
     UFUNCTION(BlueprintCallable)
     void IgnoreActor(AActor* Actor, bool bShouldIgnore);
     
     UFUNCTION(BlueprintCallable)
     void ClearIgnoreActors();
     
-    UDBDSpringArmComponent();
 };
 

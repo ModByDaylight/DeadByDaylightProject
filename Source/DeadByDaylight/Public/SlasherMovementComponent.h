@@ -3,7 +3,7 @@
 #include "DBDCharacterMovementComponent.h"
 #include "SlasherMovementComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USlasherMovementComponent : public UDBDCharacterMovementComponent {
     GENERATED_BODY()
 public:

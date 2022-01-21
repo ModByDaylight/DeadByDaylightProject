@@ -3,7 +3,7 @@
 #include "PossessPlayer.h"
 #include "PossessTheKiller.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UPossessTheKiller : public UPossessPlayer {
     GENERATED_BODY()
 public:

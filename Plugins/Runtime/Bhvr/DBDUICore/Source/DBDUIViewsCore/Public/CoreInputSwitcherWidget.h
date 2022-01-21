@@ -1,14 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CoreBaseUserWidget.h"
 #include "EInputSwitcherDisplayRule.h"
+#include "CoreBaseUserWidget.h"
 #include "EUIActionType.h"
+#include "InputSwitcherTriggeredDelegate.h"
 #include "CoreInputSwitcherWidget.generated.h"
 
 class UCoreKeyListenerInputPromptWidget;
 class UCoreButtonWidget;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCoreInputSwitcherWidgetOnInputSwitcherTriggeredDelegate);
 
 UCLASS(EditInlineNew)
 class UCoreInputSwitcherWidget : public UCoreBaseUserWidget {
@@ -29,9 +28,10 @@ protected:
     
 private:
     UPROPERTY(BlueprintAssignable, BlueprintCallable)
-    FCoreInputSwitcherWidgetOnInputSwitcherTriggeredDelegate _onInputSwitcherTriggeredDelegate;
+    FInputSwitcherTriggeredDelegate _onInputSwitcherTriggeredDelegate;
     
 public:
+    UCoreInputSwitcherWidget();
     UFUNCTION(BlueprintCallable)
     void SetUIAction(const EUIActionType actionType);
     
@@ -55,6 +55,5 @@ public:
     UFUNCTION(BlueprintCallable)
     UCoreButtonWidget* GetButton();
     
-    UCoreInputSwitcherWidget();
 };
 

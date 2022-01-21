@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "WeightedWishedObjectMapContainer.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "AIDisplayDebugInterface.h"
-#include "MindFocusObjectEntry.h"
 #include "GameplayTagContainer.h"
-#include "WeightedWishedObjectMapContainer.h"
+#include "MindFocusObjectEntry.h"
 #include "UObject/NoExportTypes.h"
 #include "DBDBlackboardComponent.generated.h"
 
 class UObject;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDBOTS_API UDBDBlackboardComponent : public UBlackboardComponent, public IAIDisplayDebugInterface {
     GENERATED_BODY()
 public:
@@ -38,5 +38,7 @@ private:
     
 public:
     UDBDBlackboardComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

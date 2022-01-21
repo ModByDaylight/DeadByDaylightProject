@@ -1,23 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CoreButtonWidget.h"
+#include "OnSetDataAnimationCompleteDelegate.h"
 #include "OnboardingTutorialButtonViewData.h"
 #include "CoreOnboardingTutorialButtonWidget.generated.h"
 
+class UCoreRewardWrapperWidget;
+class UDBDTextBlock;
 class UDBDImage;
 class UAkAudioEvent;
-class UCoreRewardWrapperWidget;
 class UWidgetSwitcher;
-class UDBDTextBlock;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCoreOnboardingTutorialButtonWidgetOnSetDataAnimationCompleteDelegate);
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreOnboardingTutorialButtonWidget : public UCoreButtonWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintCallable)
-    FCoreOnboardingTutorialButtonWidgetOnSetDataAnimationCompleteDelegate OnSetDataAnimationCompleteDelegate;
+    FOnSetDataAnimationCompleteDelegate OnSetDataAnimationCompleteDelegate;
     
     UPROPERTY(EditAnywhere)
     FString UnavailablePressedSfxName;
@@ -53,6 +52,9 @@ protected:
     UPROPERTY(BlueprintReadWrite)
     FOnboardingTutorialButtonViewData ViewData;
     
+public:
+    UCoreOnboardingTutorialButtonWidget();
+protected:
     UFUNCTION(BlueprintCallable)
     void SetVisual();
     
@@ -77,6 +79,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool IsInUnavailableStep() const;
     
-    UCoreOnboardingTutorialButtonWidget();
 };
 

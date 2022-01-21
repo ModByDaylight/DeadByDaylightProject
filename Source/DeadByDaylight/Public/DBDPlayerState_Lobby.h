@@ -10,8 +10,8 @@ public:
     UPROPERTY(Replicated, Transient)
     bool IsOwnershipValidated;
     
+    ADBDPlayerState_Lobby();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    ADBDPlayerState_Lobby();
 };
 

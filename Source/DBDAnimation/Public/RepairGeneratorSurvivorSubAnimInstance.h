@@ -1,9 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BaseSurvivorAnimInstance.h"
-#include "AnimInstanceLeader.h"
-#include "SkillCheckFailureTracker.h"
 #include "UObject/NoExportTypes.h"
+#include "BaseSurvivorAnimInstance.h"
+#include "SkillCheckFailureTracker.h"
+#include "AnimInstanceLeader.h"
+#include "GameplayTagContainer.h"
+#include "GameEventData.h"
 #include "RepairGeneratorSurvivorSubAnimInstance.generated.h"
 
 UCLASS(NonTransient)
@@ -37,5 +39,14 @@ protected:
     
 public:
     URepairGeneratorSurvivorSubAnimInstance();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    void ResetSkillCheckFailed() override PURE_VIRTUAL(ResetSkillCheckFailed,);
+    
+protected:
+    UFUNCTION()
+    void OnSkillCheckFailed(const FGameplayTag gameEventType, const FGameEventData& gameEventData) override PURE_VIRTUAL(OnSkillCheckFailed,);
+    
 };
 

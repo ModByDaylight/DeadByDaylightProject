@@ -1,10 +1,11 @@
 #include "GhostStalkedComponent.h"
 #include "Net/UnrealNetwork.h"
+#include "TimerObject.h"
 
-class ACharacter;
-class AActor;
 class UCharacterSightComponent;
+class ACharacter;
 class ASlasherPlayer;
+class AActor;
 
 void UGhostStalkedComponent::OnKillerStealthChanged(bool isStealth) {
 }
@@ -35,6 +36,7 @@ void UGhostStalkedComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
 
 UGhostStalkedComponent::UGhostStalkedComponent() {
     this->_ghostKillerInstinctEffect = NULL;
+    this->_markTimer = CreateDefaultSubobject<UTimerObject>(TEXT("MarkTimer"));
     this->_killer = NULL;
     this->_stalkedComponent = NULL;
 }

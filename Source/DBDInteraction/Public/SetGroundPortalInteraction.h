@@ -8,7 +8,7 @@ class UPortalPlacerStateComponent;
 class UObjectPlacerComponent;
 class ADemogorgonPortal;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class USetGroundPortalInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

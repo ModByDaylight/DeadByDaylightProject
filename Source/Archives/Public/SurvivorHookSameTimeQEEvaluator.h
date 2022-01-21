@@ -9,6 +9,7 @@ UCLASS()
 class ARCHIVES_API USurvivorHookSameTimeQEEvaluator : public UQuestEventEvaluatorBase {
     GENERATED_BODY()
 public:
+    USurvivorHookSameTimeQEEvaluator();
 protected:
     UFUNCTION()
     void OnSurvivorUnhooked(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
@@ -16,7 +17,5 @@ protected:
     UFUNCTION()
     void OnSurvivorHooked(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-public:
-    USurvivorHookSameTimeQEEvaluator();
 };
 

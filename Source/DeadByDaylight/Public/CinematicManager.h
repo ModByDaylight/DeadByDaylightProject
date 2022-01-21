@@ -13,6 +13,7 @@ private:
     TArray<FCinematic> _cinematicQueue;
     
 public:
+    UCinematicManager();
     UFUNCTION(BlueprintCallable)
     void PlaySingle(const FCinematic& cinematic);
     
@@ -28,6 +29,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void CancelAllCinematicToPlay();
     
-    UCinematicManager();
 };
 

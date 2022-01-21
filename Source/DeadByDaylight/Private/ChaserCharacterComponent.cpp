@@ -1,5 +1,6 @@
 #include "ChaserCharacterComponent.h"
 #include "Net/UnrealNetwork.h"
+#include "DBDPawnSensingComponent.h"
 
 class ACamperPlayer;
 class APawn;
@@ -26,5 +27,6 @@ void UChaserCharacterComponent::GetLifetimeReplicatedProps(TArray<FLifetimePrope
 }
 
 UChaserCharacterComponent::UChaserCharacterComponent() {
+    this->_camperSensor = CreateDefaultSubobject<UDBDPawnSensingComponent>(TEXT("CamperSensor"));
 }
 

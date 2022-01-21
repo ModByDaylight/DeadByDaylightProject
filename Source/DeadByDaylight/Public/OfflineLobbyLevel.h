@@ -5,12 +5,12 @@
 #include "EOfflineLobbyState.h"
 #include "OfflineLobbyLevel.generated.h"
 
-class ATargetPoint;
 class APlayerStart;
 class ADisplayStand;
-class ACharm;
 class ADBDMenuSilhouette;
+class ACharm;
 class AMenuMeatHook;
+class ATargetPoint;
 class ADBDMenuPlayer;
 class AActor;
 
@@ -71,6 +71,7 @@ private:
     TArray<ADBDMenuPlayer*> _destroyingPawns;
     
 public:
+    AOfflineLobbyLevel();
     UFUNCTION(BlueprintImplementableEvent)
     void OnStateChanged(EOfflineLobbyState lobbyState);
     
@@ -78,7 +79,5 @@ protected:
     UFUNCTION()
     void CheckDestroyingPawns(AActor* DestroyedActor);
     
-public:
-    AOfflineLobbyLevel();
 };
 

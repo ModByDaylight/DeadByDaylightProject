@@ -2,17 +2,15 @@
 #include "CoreMinimal.h"
 #include "CoreBaseUserWidget.h"
 #include "OnboardingMenuViewInterface.h"
-#include "EOnboardingMenuState.h"
+#include "BackActionDelegate.h"
+#include "MenuTabSelectedDelegate.h"
+#include "MenuTabSelectedAgainDelegate.h"
 #include "CoreOnboardingMenuWidget.generated.h"
 
 class UCoreButtonPromptWidget;
-class UCoreSelectableButtonWidget;
 class UCoreTabContainerWidget;
 class UCoreOnboardingMenuTitleWidget;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCoreOnboardingMenuWidgetMenuTabSelectedAgainDelegate, EOnboardingMenuState, selectedTabIndex);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCoreOnboardingMenuWidgetMenuTabSelectedDelegate, EOnboardingMenuState, selectedTabIndex);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCoreOnboardingMenuWidgetBackActionDelegate);
+class UCoreSelectableButtonWidget;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreOnboardingMenuWidget : public UCoreBaseUserWidget, public IOnboardingMenuViewInterface {
@@ -30,14 +28,17 @@ protected:
     
 private:
     UPROPERTY(BlueprintCallable)
-    FCoreOnboardingMenuWidgetBackActionDelegate BackActionDelegate;
+    FBackActionDelegate BackActionDelegate;
     
     UPROPERTY(BlueprintCallable)
-    FCoreOnboardingMenuWidgetMenuTabSelectedDelegate MenuTabSelectedDelegate;
+    FMenuTabSelectedDelegate MenuTabSelectedDelegate;
     
     UPROPERTY(BlueprintCallable)
-    FCoreOnboardingMenuWidgetMenuTabSelectedAgainDelegate MenuTabSelectedAgainDelegate;
+    FMenuTabSelectedAgainDelegate MenuTabSelectedAgainDelegate;
     
+public:
+    UCoreOnboardingMenuWidget();
+private:
     UFUNCTION(BlueprintCallable)
     void SetTitleText(const bool isInTutorial);
     
@@ -50,7 +51,7 @@ private:
     UFUNCTION()
     void OnMenuTabSelected(UCoreSelectableButtonWidget* selectedButton);
     
-public:
-    UCoreOnboardingMenuWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

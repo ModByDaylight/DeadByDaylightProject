@@ -19,6 +19,8 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     int32 _tutorialNumberOfLoops;
     
+public:
+    UMobileBaseUserWidget();
 private:
     UFUNCTION()
     void TutorialAnimationFinished();
@@ -43,6 +45,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void FinishTutorialVisuals();
     
-    UMobileBaseUserWidget();
 };
 

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "GameEventDispatcherHandleBP.h"
-#include "GameplayTagContainer.h"
 #include "GameEventData.h"
 #include "GameEventDispatcher.generated.h"
 
@@ -16,6 +16,9 @@ private:
     UPROPERTY(Transient)
     TArray<UOngoingGameEvent*> _ongoingEvents;
     
+public:
+    UGameEventDispatcher();
+private:
     UFUNCTION(BlueprintCallable)
     void UnregisterListener(const FGameEventDispatcherHandleBP& gameEventDispatcherHandle);
     
@@ -37,6 +40,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void Authority_AccumulateOngoingGameEvent(const FGameplayTag gameEventType, const FGameEventData& gameEventData, float ongoingWaitTime);
     
-    UGameEventDispatcher();
 };
 

@@ -3,7 +3,7 @@
 
 UUMGLoadoutWidget::UUMGLoadoutWidget() {
     this->PageScrollWidget = NULL;
-    this->LoadoutTitleText = INVTEXT("LOADOUT");
-    this->InventoryPanelTitleText = INVTEXT("INVENTORY");
+    this->LoadoutTitleText = FText::FromString(TEXT("LOADOUT"));
+    this->InventoryPanelTitleText = FText::FromString(TEXT("INVENTORY"));
 }
 

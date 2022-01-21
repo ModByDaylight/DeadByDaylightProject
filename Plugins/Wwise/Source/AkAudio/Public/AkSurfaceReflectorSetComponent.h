@@ -6,7 +6,7 @@
 
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class AKAUDIO_API UAkSurfaceReflectorSetComponent : public USceneComponent {
     GENERATED_BODY()
 public:
@@ -25,6 +25,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     AActor* AssociatedRoom;
     
+    UAkSurfaceReflectorSetComponent();
     UFUNCTION(BlueprintCallable)
     void UpdateSurfaceReflectorSet();
     
@@ -34,6 +35,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void RemoveSurfaceReflectorSet();
     
-    UAkSurfaceReflectorSetComponent();
 };
 

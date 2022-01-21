@@ -9,5 +9,7 @@ class UNITTESTUTILITIES_API ATestActorImplementingTestInterface : public AActor,
     GENERATED_BODY()
 public:
     ATestActorImplementingTestInterface();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

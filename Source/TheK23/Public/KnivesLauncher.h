@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TunableStat.h"
 #include "KillerProjectileLauncher.h"
 #include "DBDTunableRowHandle.h"
+#include "TunableStat.h"
 #include "KnivesLauncher.generated.h"
 
 class AThrowingKnives;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UKnivesLauncher : public UKillerProjectileLauncher {
     GENERATED_BODY()
 public:
@@ -28,14 +28,14 @@ private:
     bool _isInSuperModeThrow;
     
 public:
+    UKnivesLauncher();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintPure)
     AThrowingKnives* GetPower() const;
     
     UFUNCTION(BlueprintPure)
     int32 GetLocallyPredictedAmmo() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UKnivesLauncher();
 };
 

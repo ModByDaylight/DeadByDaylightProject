@@ -5,8 +5,8 @@
 #include "KillerAtlantaTutorialLevel.generated.h"
 
 class ASlasherPlayer;
-class ACamperPlayer;
 class AGenerator;
+class ACamperPlayer;
 class AWindow;
 class AEscapeDoor;
 class AHatch;
@@ -36,6 +36,7 @@ public:
     UPROPERTY(BlueprintReadOnly)
     TWeakObjectPtr<AHatch> Hatch;
     
+    AKillerAtlantaTutorialLevel();
     UFUNCTION(BlueprintImplementableEvent)
     void TriggerExitGameSetup();
     
@@ -69,6 +70,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void CompleteEscapeRequirements();
     
-    AKillerAtlantaTutorialLevel();
 };
 

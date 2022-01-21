@@ -10,6 +10,7 @@ UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGInventoryItemButton : public UUMGLoadoutItemButton {
     GENERATED_BODY()
 public:
+    UUMGInventoryItemButton();
 private:
     UFUNCTION(BlueprintCallable)
     void UpdateItemButtonProgressBar(ACollectable* item, UProgressBar* itemProgressBar);
@@ -17,7 +18,5 @@ private:
     UFUNCTION(BlueprintCallable)
     void UpdateItemButton(ACollectable* item);
     
-public:
-    UUMGInventoryItemButton();
 };
 

@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Components/SceneComponent.h"
-#include "WeightedElement.h"
 #include "SpawnElement.h"
+#include "WeightedElement.h"
 #include "ETileSpawnPointType.h"
 #include "TileSpawnPoint.generated.h"
 
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UTileSpawnPoint : public USceneComponent, public IWeightedElement, public ISpawnElement {
     GENERATED_BODY()
 public:
@@ -43,6 +43,9 @@ private:
     bool _activated;
     
 public:
+    UTileSpawnPoint();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetActivated(bool activated);
     
@@ -57,8 +60,7 @@ public:
     UFUNCTION(BlueprintPure)
     AActor* GetSpawnedObject() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UTileSpawnPoint();
+    // Fix for true pure virtual functions not being implemented
 };
 

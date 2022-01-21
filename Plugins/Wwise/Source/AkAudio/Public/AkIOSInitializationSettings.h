@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AkCommonInitializationSettingsWithSampleRate.h"
 #include "UObject/Object.h"
 #include "AkAudioSession.h"
+#include "AkCommonInitializationSettingsWithSampleRate.h"
 #include "AkCommunicationSettingsWithSystemInitialization.h"
 #include "AkAdvancedInitializationSettings.h"
 #include "AkIOSInitializationSettings.generated.h"

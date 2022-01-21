@@ -3,7 +3,7 @@
 #include "OnEventBaseAddon.h"
 #include "ShopLubricantAddon.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UShopLubricantAddon : public UOnEventBaseAddon {
     GENERATED_BODY()
 public:

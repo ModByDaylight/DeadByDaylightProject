@@ -3,7 +3,7 @@
 #include "HexPerk.h"
 #include "HexBloodFavor.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UHexBloodFavor : public UHexPerk {
     GENERATED_BODY()
 public:

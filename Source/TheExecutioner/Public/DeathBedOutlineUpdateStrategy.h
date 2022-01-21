@@ -3,7 +3,7 @@
 #include "SourceBasedOutlineUpdateStrategy.h"
 #include "DeathBedOutlineUpdateStrategy.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UDeathBedOutlineUpdateStrategy : public USourceBasedOutlineUpdateStrategy {
     GENERATED_BODY()
 public:

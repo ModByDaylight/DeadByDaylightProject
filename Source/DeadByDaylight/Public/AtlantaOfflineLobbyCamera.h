@@ -17,12 +17,12 @@ private:
     float _kDefaultAspectRatio;
     
 public:
+    AAtlantaOfflineLobbyCamera();
     UFUNCTION(BlueprintImplementableEvent)
     void SetCameraRotation(FRotator rotationVector);
     
     UFUNCTION(BlueprintImplementableEvent)
     void SetCameraPosition(FVector positionVector);
     
-    AAtlantaOfflineLobbyCamera();
 };
 

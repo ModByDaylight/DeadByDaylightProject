@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EHitValidatorConfigName.h"
 #include "PhysicsBasedProjectile.h"
+#include "EHitValidatorConfigName.h"
 #include "GameplayTagContainer.h"
 #include "KillerProjectile.generated.h"
 
-class ASlasherPlayer;
 class UHitValidatorConfigurator;
+class ASlasherPlayer;
 class UHitValidatorComponent;
 class UPrimitiveComponent;
 
@@ -29,6 +29,7 @@ private:
     EHitValidatorConfigName _hitValidationConfigName;
     
 public:
+    AKillerProjectile();
     UFUNCTION(BlueprintCallable)
     void SetActiveSlashable(bool active);
     
@@ -40,6 +41,5 @@ public:
     UFUNCTION(BlueprintPure)
     ASlasherPlayer* GetLaunchingKiller() const;
     
-    AKillerProjectile();
 };
 

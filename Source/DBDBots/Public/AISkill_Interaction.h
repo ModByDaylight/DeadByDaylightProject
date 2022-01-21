@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EInteractionCancelInputModes.h"
-#include "EInteractionSkillInputModes.h"
 #include "AISkill.h"
 #include "EPawnInputPressTypes.h"
+#include "EInteractionSkillInputModes.h"
+#include "EInteractionCancelInputModes.h"
 #include "AIRoll.h"
 #include "AISkill_Interaction.generated.h"
 

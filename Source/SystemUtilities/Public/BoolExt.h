@@ -7,9 +7,9 @@ UCLASS(BlueprintType)
 class SYSTEMUTILITIES_API UBoolExt : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UBoolExt();
     UFUNCTION(BlueprintCallable)
     static FString ToString(const bool boolToConvert);
     
-    UBoolExt();
 };
 

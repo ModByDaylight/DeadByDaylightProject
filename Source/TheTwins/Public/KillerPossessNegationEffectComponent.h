@@ -5,15 +5,14 @@
 
 class AConjoinedTwin;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UKillerPossessNegationEffectComponent : public UPossessNegationEffectComponent {
     GENERATED_BODY()
 public:
+    UKillerPossessNegationEffectComponent();
 private:
     UFUNCTION()
     void OnTwinSet(AConjoinedTwin* twin);
     
-public:
-    UKillerPossessNegationEffectComponent();
 };
 

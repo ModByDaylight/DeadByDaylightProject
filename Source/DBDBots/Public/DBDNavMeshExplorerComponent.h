@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AITunableParameter.h"
 #include "Components/ActorComponent.h"
+#include "AITunableParameter.h"
 #include "DBDNavMeshExplorerComponent.generated.h"
 
 class UDBDPathFollowingComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDBOTS_API UDBDNavMeshExplorerComponent : public UActorComponent {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 #include "AuthoritativeActorPoolComponent.h"
 #include "MockAuthoritativeActorPoolComponent.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class GAMEPLAYUTILITIES_API UMockAuthoritativeActorPoolComponent : public UAuthoritativeActorPoolComponent {
     GENERATED_BODY()
 public:

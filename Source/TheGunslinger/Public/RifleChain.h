@@ -6,29 +6,29 @@
 #include "Engine/EngineTypes.h"
 #include "RifleChain.generated.h"
 
-class UInstancedStaticMeshComponent;
-class USplineComponent;
-class UAkComponent;
 class UAkAudioEvent;
+class UAkComponent;
 class UGunslingerHarpoon;
 class IGunslingerHarpoon;
+class UInstancedStaticMeshComponent;
+class USplineComponent;
 class UCurveFloat;
 class ADBDPlayer;
 class URiflePlayerLinker;
 class URifleChainTensionComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRifleChainOnProjectileSet, AActor*, projectile);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRifleChainOnIsCollidingChanged, bool, isColliding);
-
 UCLASS()
 class THEGUNSLINGER_API ARifleChain : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FRifleChainOnProjectileSet OnProjectileSet;
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnProjectileSet, AActor*, projectile);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsCollidingChanged, bool, isColliding);
     
     UPROPERTY(BlueprintAssignable)
-    FRifleChainOnIsCollidingChanged OnIsCollidingChanged;
+    FOnProjectileSet OnProjectileSet;
+    
+    UPROPERTY(BlueprintAssignable)
+    FOnIsCollidingChanged OnIsCollidingChanged;
     
 protected:
     UPROPERTY(BlueprintReadWrite, Export)
@@ -54,6 +54,7 @@ private:
     TScriptInterface<IGunslingerHarpoon> _harpoon;
     
 public:
+    ARifleChain();
     UFUNCTION(BlueprintCallable)
     void UpdateChainMesh(UInstancedStaticMeshComponent* mesh, USplineComponent* spline, float alpha);
     
@@ -93,6 +94,5 @@ public:
     UFUNCTION(BlueprintPure)
     FVector GetChainEnd() const;
     
-    ARifleChain();
 };
 

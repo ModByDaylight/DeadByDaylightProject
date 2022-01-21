@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "OnAtlantaRequestContentSucceeded.h"
+#include "OnAtlantaRequestContentFailed.h"
 #include "AtlantaPatchingLibrary.generated.h"
 
-class UAtlantaPendingContent;
 class UAtlantaInstalledContent;
-
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FAtlantaPatchingLibraryOnFailed, FText, ErrorText, int32, ErrorCode);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FAtlantaPatchingLibraryOnSucceeded, UAtlantaPendingContent*, MobilePendingContent);
+class UAtlantaPendingContent;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UAtlantaPatchingLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UAtlantaPatchingLibrary();
     UFUNCTION(BlueprintCallable)
-    static void RequestContent(const FString& RemoteManifestURL, const FString& CloudURL, const FString& InstallDirectory, FAtlantaPatchingLibraryOnSucceeded OnSucceeded, FAtlantaPatchingLibraryOnFailed OnFailed, UAtlantaPendingContent* MobilePendingContent);
+    static void RequestContent(const FString& RemoteManifestURL, const FString& CloudURL, const FString& InstallDirectory, FOnAtlantaRequestContentSucceeded OnSucceeded, FOnAtlantaRequestContentFailed OnFailed, UAtlantaPendingContent* MobilePendingContent);
     
     UFUNCTION()
     static void PrintPakLocations();
@@ -31,6 +31,5 @@ public:
     UFUNCTION(BlueprintPure)
     static FString GetActiveDeviceProfileName();
     
-    UAtlantaPatchingLibrary();
 };
 

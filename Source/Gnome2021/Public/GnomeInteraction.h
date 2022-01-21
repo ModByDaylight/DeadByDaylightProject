@@ -3,7 +3,7 @@
 #include "ChargeableInteractionDefinition.h"
 #include "GnomeInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UGnomeInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

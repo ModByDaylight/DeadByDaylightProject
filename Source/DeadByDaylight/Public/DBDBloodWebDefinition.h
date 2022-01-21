@@ -9,5 +9,7 @@ class DEADBYDAYLIGHT_API UDBDBloodWebDefinition : public UObject, public IDBDBlo
     GENERATED_BODY()
 public:
     UDBDBloodWebDefinition();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

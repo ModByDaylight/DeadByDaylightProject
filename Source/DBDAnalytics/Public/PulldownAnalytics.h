@@ -11,6 +11,7 @@ UCLASS(BlueprintType)
 class UPulldownAnalytics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UPulldownAnalytics();
     UFUNCTION(BlueprintCallable)
     static void IncrementPalletStun(ACamperPlayer* survivor);
     
@@ -23,6 +24,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void IncrementPalletDestroy(ASlasherPlayer* killer);
     
-    UPulldownAnalytics();
 };
 

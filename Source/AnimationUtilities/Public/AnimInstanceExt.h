@@ -3,15 +3,16 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "AnimInstanceExt.generated.h"
 
-class USkeletalMeshComponent;
 class UAnimInstance;
-class ACharacter;
 class AActor;
+class USkeletalMeshComponent;
+class ACharacter;
 
 UCLASS(BlueprintType)
 class ANIMATIONUTILITIES_API UAnimInstanceExt : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UAnimInstanceExt();
     UFUNCTION(BlueprintPure)
     static UAnimInstance* GetSubAnimInstance(const UAnimInstance* root, UClass* type);
     
@@ -27,6 +28,5 @@ public:
     UFUNCTION(BlueprintPure)
     static AActor* GetOwningActor(const UAnimInstance* animInstance);
     
-    UAnimInstanceExt();
 };
 

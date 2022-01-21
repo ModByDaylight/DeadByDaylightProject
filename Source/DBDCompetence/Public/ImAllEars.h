@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Perk.h"
 #include "GameplayTagContainer.h"
+#include "Perk.h"
 #include "GameEventData.h"
 #include "ImAllEars.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UImAllEars : public UPerk {
     GENERATED_BODY()
 public:
@@ -22,10 +22,11 @@ private:
     UPROPERTY(EditAnywhere, EditFixedSize)
     float _triggerOutsideRadius;
     
+public:
+    UImAllEars();
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_OnCamperLoudNoise(const FGameplayTag gameplayTag, const FGameEventData& gameEventData);
     
-public:
-    UImAllEars();
 };
 

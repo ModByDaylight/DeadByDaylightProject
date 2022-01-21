@@ -1,27 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Interactable.h"
+#include "InteractionEndedEvent.h"
+#include "IsInteractingChangedEvent.h"
 #include "RespawnableInteractable.generated.h"
-
-class ARespawnableInteractable;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRespawnableInteractableOnInteractionEnded, ARespawnableInteractable*, respawnableInteractable);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FRespawnableInteractableOnIsInteractingChanged, ARespawnableInteractable*, respawnableInteractable, bool, isInteracting);
 
 UCLASS()
 class SPECIALEVENTUTILITIES_API ARespawnableInteractable : public AInteractable {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FRespawnableInteractableOnInteractionEnded OnInteractionEnded;
+    FInteractionEndedEvent OnInteractionEnded;
     
     UPROPERTY(BlueprintAssignable)
-    FRespawnableInteractableOnIsInteractingChanged OnIsInteractingChanged;
+    FIsInteractingChangedEvent OnIsInteractingChanged;
     
 protected:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_IsHidden)
     bool _isHidden;
     
+public:
+    ARespawnableInteractable();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void OnUnhidden();
     
@@ -37,9 +39,5 @@ private:
     UFUNCTION(BlueprintPure)
     bool IsHidden() const;
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ARespawnableInteractable();
 };
 

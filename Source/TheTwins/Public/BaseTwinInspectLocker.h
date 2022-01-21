@@ -4,7 +4,7 @@
 #include "DBDTunableRowHandle.h"
 #include "BaseTwinInspectLocker.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UBaseTwinInspectLocker : public UBaseLockerInteraction {
     GENERATED_BODY()
 public:

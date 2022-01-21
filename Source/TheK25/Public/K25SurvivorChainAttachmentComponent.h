@@ -7,13 +7,13 @@
 #include "K25SurvivorChainAttachmentComponent.generated.h"
 
 class UChargeableComponent;
-class UInteractionDefinition;
 class AK25SurvivorChainAttachmentAnchor;
 class UK25SurvivorChainRotationStrategy;
+class UInteractionDefinition;
 class AK25Chain;
 class UK25ChainAttachmentReplicationComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class THEK25_API UK25SurvivorChainAttachmentComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -49,6 +49,11 @@ private:
     UPROPERTY(Export, Transient)
     UK25ChainAttachmentReplicationComponent* _chainAttachmentReplicationComponent;
     
+public:
+    UK25SurvivorChainAttachmentComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_RemoveChainChargeableComponent();
     
@@ -56,8 +61,5 @@ public:
     UFUNCTION(BlueprintPure)
     AK25Chain* GetFirstChainToRelease() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UK25SurvivorChainAttachmentComponent();
 };
 

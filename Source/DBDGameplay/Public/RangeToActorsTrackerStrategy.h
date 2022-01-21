@@ -12,11 +12,11 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _range;
     
+public:
+    URangeToActorsTrackerStrategy();
 private:
     UFUNCTION()
     void OnInRangeToTrackedActorsChanged(const bool inRange);
     
-public:
-    URangeToActorsTrackerStrategy();
 };
 

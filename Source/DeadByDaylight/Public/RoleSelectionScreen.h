@@ -7,6 +7,7 @@ UCLASS()
 class DEADBYDAYLIGHT_API URoleSelectionScreen : public UScreenBase {
     GENERATED_BODY()
 public:
+    URoleSelectionScreen();
 private:
     UFUNCTION()
     void OnChangeUserButtonClick();
@@ -14,7 +15,5 @@ private:
     UFUNCTION()
     void OnButtonSelected(int32 buttonId);
     
-public:
-    URoleSelectionScreen();
 };
 

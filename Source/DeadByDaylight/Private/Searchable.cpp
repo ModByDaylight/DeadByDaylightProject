@@ -1,5 +1,6 @@
 #include "Searchable.h"
 #include "Net/UnrealNetwork.h"
+#include "SearchableSpawnPoint.h"
 
 class UPrimitiveComponent;
 class ADBDPlayer;
@@ -33,6 +34,7 @@ void ASearchable::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifet
 ASearchable::ASearchable() {
     this->Weight = 1.00f;
     this->ItemRarity = EItemRarity::Common;
+    this->_searchableSpawnPoint = CreateDefaultSubobject<USearchableSpawnPoint>(TEXT("SearchableSpawnPoint"));
     this->_hasBeenSearched = false;
     this->_itemInsideSearchable = NULL;
 }

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PossessionComponent.h"
 #include "DBDTunableRowHandle.h"
+#include "PossessionComponent.h"
 #include "KillerPossessionComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UKillerPossessionComponent : public UPossessionComponent {
     GENERATED_BODY()
 public:
@@ -15,12 +15,13 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _timeBeforeCollisionsDeactivation;
     
+public:
+    UKillerPossessionComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_ShouldDeactivateCollisionsWithSurvivors();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UKillerPossessionComponent();
 };
 

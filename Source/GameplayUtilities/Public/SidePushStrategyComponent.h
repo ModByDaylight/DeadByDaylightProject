@@ -3,7 +3,7 @@
 #include "BasePushStrategyComponent.h"
 #include "SidePushStrategyComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class GAMEPLAYUTILITIES_API USidePushStrategyComponent : public UBasePushStrategyComponent {
     GENERATED_BODY()
 public:

@@ -9,9 +9,9 @@ UCLASS(BlueprintType)
 class GFXUTILITIES_API UGFXUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UGFXUtilities();
     UFUNCTION(BlueprintCallable)
     static void ActivateVFX(USkeletalMeshComponent* skeletalMeshComponent, bool active);
     
-    UGFXUtilities();
 };
 

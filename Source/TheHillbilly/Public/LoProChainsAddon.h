@@ -4,7 +4,7 @@
 #include "AnimationMontageDescriptor.h"
 #include "LoProChainsAddon.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ULoProChainsAddon : public UItemAddon {
     GENERATED_BODY()
 public:

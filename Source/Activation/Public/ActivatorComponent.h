@@ -5,7 +5,7 @@
 
 class UGameplayTagContainerComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class ACTIVATION_API UActivatorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -14,9 +14,9 @@ protected:
     bool _searchForActivatableSubAnimInstances;
     
 public:
+    UActivatorComponent();
     UFUNCTION(BlueprintCallable)
     void SetObjectState(UGameplayTagContainerComponent* objectState);
     
-    UActivatorComponent();
 };
 

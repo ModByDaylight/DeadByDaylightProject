@@ -3,56 +3,56 @@
 #include "Templates/SubclassOf.h"
 #include "KillerControls.h"
 #include "DBDPlayer.h"
-#include "EAttackType.h"
+#include "OffensiveActionDelegate.h"
 #include "UObject/NoExportTypes.h"
-#include "EKillerAbilities.h"
 #include "EKillerMoodInfluence.h"
-#include "TargetFocusTimer.h"
 #include "GameplayTagContainer.h"
+#include "EKillerAbilities.h"
+#include "TargetFocusTimer.h"
+#include "ESlasherGuidedAction.h"
 #include "DBDTimer.h"
 #include "AnimationMontageDescriptor.h"
-#include "ESlasherGuidedAction.h"
+#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "TagStateBool.h"
 #include "GameplayTagContainer.h"
+#include "EAttackType.h"
 #include "EAttackZoneSet.h"
-#include "UObject/NoExportTypes.h"
 #include "EStunType.h"
 #include "SlasherPlayer.generated.h"
 
 class ACamperExposerInstance;
-class UHitValidatorComponent;
-class USceneComponent;
+class UStillnessTrackerComponent;
 class UKillerSoundCuesComponent;
 class UAkComponent;
-class USlasherStunnableComponent;
 class UDBDNavModifierComponent;
-class AActor;
-class UStillnessTrackerComponent;
+class UKillerRedStainUpdateStrategy;
 class UAimAssistComponent;
+class UMoriComponent;
 class USlasherTREmitterComponent;
 class ULoudNoiseHUDIndicator;
 class USlasherHitsWhileCarryingTrackerComponent;
-class UDBDAttackerComponent;
+class USlasherStunnableComponent;
 class ACamperPlayer;
-class UMoriComponent;
+class UKillerBlindingFXComponent;
+class UHitValidatorComponent;
 class UHitValidatorConfigurator;
+class UDBDAttackerComponent;
 class UArmIKSensorComponent;
 class UFirstPersonViewComponent;
 class UKillerIntroComponent;
-class UKillerBlindingFXComponent;
-class UKillerRedStainUpdateStrategy;
+class USceneComponent;
+class AActor;
 class UChaserCharacterComponent;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSlasherPlayerOnOffensiveAction);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSlasherPlayerOnStalkModeChangedEvent, bool, isInStalkMode);
 
 UCLASS()
 class DEADBYDAYLIGHT_API ASlasherPlayer : public ADBDPlayer, public IKillerControls {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStalkModeChangedEvent, bool, isInStalkMode);
+    
     UPROPERTY(BlueprintAssignable)
-    FSlasherPlayerOnOffensiveAction OnOffensiveAction;
+    FOffensiveActionDelegate OnOffensiveAction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     FVector PutDownTraceLocation;
@@ -88,7 +88,7 @@ public:
     bool HasDamagedGeneratorSinceHook;
     
     UPROPERTY(BlueprintAssignable)
-    FSlasherPlayerOnStalkModeChangedEvent OnStalkModeChangedEvent;
+    FOnStalkModeChangedEvent OnStalkModeChangedEvent;
     
 protected:
     UPROPERTY(BlueprintReadWrite, Export)
@@ -228,6 +228,9 @@ private:
     float _turnInPlaceThresholdAngle;
     
 public:
+    ASlasherPlayer();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintPure)
     bool WasRecentlyCloaked() const;
     
@@ -593,8 +596,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void ActionKillerPressed();
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    ASlasherPlayer();
+    // Fix for true pure virtual functions not being implemented
 };
 

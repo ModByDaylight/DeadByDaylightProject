@@ -4,9 +4,9 @@
 #include "UMGSettingSubscriptionStatus.generated.h"
 
 class UWidgetSwitcher;
-class UTextBlock;
 class UHorizontalBox;
 class UOverlay;
+class UTextBlock;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGSettingSubscriptionStatus : public UUserWidget {

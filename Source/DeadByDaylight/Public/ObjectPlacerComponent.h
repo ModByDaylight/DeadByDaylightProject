@@ -5,11 +5,11 @@
 #include "UObject/NoExportTypes.h"
 #include "ObjectPlacerComponent.generated.h"
 
-class UObjectPlacementUpdateStrategy;
 class UStaticMeshComponent;
+class UObjectPlacementUpdateStrategy;
 class UObjectPlacementValidationStrategy;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UObjectPlacerComponent : public USceneComponent {
     GENERATED_BODY()
 public:
@@ -41,6 +41,9 @@ private:
     UPROPERTY(EditDefaultsOnly, Instanced, NoClear)
     UObjectPlacementValidationStrategy* _objectPlacementValidationStrategy;
     
+public:
+    UObjectPlacerComponent();
+private:
     UFUNCTION(BlueprintCallable)
     void SetObjectMesh(UStaticMeshComponent* objectMesh);
     
@@ -63,6 +66,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ActivateObjectPlacement(bool active);
     
-    UObjectPlacerComponent();
 };
 

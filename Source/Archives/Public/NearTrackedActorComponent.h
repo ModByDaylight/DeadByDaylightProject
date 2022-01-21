@@ -5,20 +5,21 @@
 
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FNearTrackedActorComponentIsWithinRangeDelegate, bool, isWithinRange, const AActor*, trackedActor);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class ARCHIVES_API UNearTrackedActorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnIsWithinRangeChanged, bool, isWithinRange, const AActor*, trackedActor);
+    
     UPROPERTY(BlueprintAssignable)
-    FNearTrackedActorComponentIsWithinRangeDelegate IsWithinRangeDelegate;
+    FOnIsWithinRangeChanged IsWithinRangeDelegate;
     
 private:
     UPROPERTY(EditDefaultsOnly)
     float _distanceThreshold;
     
 public:
+    UNearTrackedActorComponent();
     UFUNCTION(BlueprintCallable)
     void StopTrackingActor(const AActor* actor);
     
@@ -31,6 +32,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool IsActorWithinRange(const AActor* actor) const;
     
-    UNearTrackedActorComponent();
 };
 

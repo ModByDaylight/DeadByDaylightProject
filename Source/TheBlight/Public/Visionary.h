@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "Visionary.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UVisionary : public UPerk {
     GENERATED_BODY()
 public:

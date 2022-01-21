@@ -41,11 +41,13 @@ private:
     UPROPERTY(BlueprintReadOnly, Export, Transient, meta=(AllowPrivateAccess=true))
     TMap<FName, UCoreStatusEffectIcon*> _statusEffectMap;
     
+public:
+    UCoreStatusEffectWidget();
 protected:
     UFUNCTION(BlueprintPure)
     TMap<FName, UCoreStatusEffectIcon*> GetStatusEffectMap() const;
     
-public:
-    UCoreStatusEffectWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

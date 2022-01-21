@@ -1,38 +1,37 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnTallyLeft.h"
 #include "MobileBaseUserWidget.h"
+#include "OnTallySpectateClicked.h"
+#include "OnTallyScoreboardAddFriendEvent.h"
+#include "OnTallyScoreboardReportEvent.h"
 #include "EPlayerRole.h"
 #include "EGameType.h"
 #include "Layout/Geometry.h"
 #include "UMGAtlantaTallyScreen.generated.h"
 
-class UUMGTallyCharacterProgressionWidget;
 class UUMGTallyListWidget;
-class UUMGTallyPlayerLevelWidget;
 class UUMGTallyBloodpointsWidget;
 class UUMGTallyScoreboardWidget;
 class UUMGTallyRankWidget;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGAtlantaTallyScreenOnTallyLeft);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUMGAtlantaTallyScreenOnTallySpectateClicked);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGAtlantaTallyScreenOnTallyAddFriendEvent, const FString&, playerID);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGAtlantaTallyScreenOnTallyReportEvent, const FString&, playerID);
+class UUMGTallyPlayerLevelWidget;
+class UUMGTallyCharacterProgressionWidget;
 
 UCLASS(EditInlineNew)
 class UUMGAtlantaTallyScreen : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FUMGAtlantaTallyScreenOnTallyLeft OnTallyLeft;
+    FOnTallyLeft OnTallyLeft;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGAtlantaTallyScreenOnTallySpectateClicked OnTallySpectateClicked;
+    FOnTallySpectateClicked OnTallySpectateClicked;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGAtlantaTallyScreenOnTallyAddFriendEvent OnTallyAddFriendEvent;
+    FOnTallyScoreboardAddFriendEvent OnTallyAddFriendEvent;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGAtlantaTallyScreenOnTallyReportEvent OnTallyReportEvent;
+    FOnTallyScoreboardReportEvent OnTallyReportEvent;
     
 protected:
     UPROPERTY(BlueprintReadOnly, Export)
@@ -88,6 +87,7 @@ private:
     UUMGTallyCharacterProgressionWidget* _characterLevelWidget;
     
 public:
+    UUMGAtlantaTallyScreen();
     UFUNCTION(BlueprintImplementableEvent)
     void ShowSpectateButton(bool show);
     
@@ -107,7 +107,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void HandleAddFriendEvent(const FString& playerID);
     
-public:
-    UUMGAtlantaTallyScreen();
 };
 

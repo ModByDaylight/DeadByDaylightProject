@@ -3,18 +3,19 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "ActorComponentExt.generated.h"
 
-class ACharacter;
-class UActorComponent;
 class APawn;
+class UActorComponent;
 class AActor;
 class ACamperPlayer;
 class ADBDPlayer;
 class ASlasherPlayer;
+class ACharacter;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UActorComponentExt : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UActorComponentExt();
     UFUNCTION(BlueprintPure)
     static bool IsLocallyObserved(const UActorComponent* actorComponent, bool recursiveSearch);
     
@@ -57,6 +58,5 @@ public:
     UFUNCTION(BlueprintPure)
     static ACharacter* GetOwningCharacter(const UActorComponent* actorComponent, bool recursiveSearch);
     
-    UActorComponentExt();
 };
 

@@ -1,22 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UMGTallyListElementWidget.h"
+#include "OnTallyScoreboardAddFriendEvent.h"
+#include "OnTallyScoreboardReportEvent.h"
 #include "UMGTallyScoreboardWidget.generated.h"
 
 class UUMGTallyScoreboardPlayerInfoWidget;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGTallyScoreboardWidgetOnTallyScoreboardAddFriendEvent, const FString&, playerID);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUMGTallyScoreboardWidgetOnTallyScoreboardReportEvent, const FString&, playerID);
 
 UCLASS(EditInlineNew)
 class UUMGTallyScoreboardWidget : public UUMGTallyListElementWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FUMGTallyScoreboardWidgetOnTallyScoreboardAddFriendEvent OnTallyScoreboardAddFriendEvent;
+    FOnTallyScoreboardAddFriendEvent OnTallyScoreboardAddFriendEvent;
     
     UPROPERTY(BlueprintAssignable)
-    FUMGTallyScoreboardWidgetOnTallyScoreboardReportEvent OnTallyScoreboardReportEvent;
+    FOnTallyScoreboardReportEvent OnTallyScoreboardReportEvent;
     
 protected:
     UPROPERTY(BlueprintReadOnly, Transient)
@@ -47,6 +46,8 @@ private:
     UPROPERTY(Export, Transient)
     TArray<UUMGTallyScoreboardPlayerInfoWidget*> SurvivorWidgets;
     
+public:
+    UUMGTallyScoreboardWidget();
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void SetFadeOut();
@@ -58,6 +59,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void HandleAddFriendEvent(const FString& playerID);
     
-    UUMGTallyScoreboardWidget();
 };
 

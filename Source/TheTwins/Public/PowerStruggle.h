@@ -3,7 +3,7 @@
 #include "Perk.h"
 #include "PowerStruggle.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UPowerStruggle : public UPerk {
     GENERATED_BODY()
 public:

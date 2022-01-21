@@ -5,7 +5,7 @@
 
 class ABloodOrb;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEONI_API UBloodOrbCollection : public UActorComponent {
     GENERATED_BODY()
 public:

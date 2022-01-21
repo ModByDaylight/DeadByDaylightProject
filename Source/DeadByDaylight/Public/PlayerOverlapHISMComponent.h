@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine HISMMaterialHelperComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HISMMaterialHelperComponent -FallbackName=HISMMaterialHelperComponent
 #include "PlayerOverlapHISMComponent.generated.h"
 
 class UMaterialInterface;
 
-UCLASS(EditInlineNew)
-class DEADBYDAYLIGHT_API UPlayerOverlapHISMComponent : public UActorComponent {
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
+class DEADBYDAYLIGHT_API UPlayerOverlapHISMComponent : public UHISMMaterialHelperComponent {
     GENERATED_BODY()
 public:
 protected:

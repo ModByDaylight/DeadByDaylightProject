@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Engine/EngineTypes.h"
 #include "Interactable.h"
 #include "EDemogorgonPortalState.h"
-#include "Engine/EngineTypes.h"
 #include "DemogorgonPortal.generated.h"
 
-class ADBDPlayer;
-class UPrimitiveComponent;
 class UChargeableComponent;
-class UAkAudioEvent;
+class UPrimitiveComponent;
 class UParticleSystem;
+class ADBDPlayer;
+class UAkAudioEvent;
 class AActor;
 
 UCLASS()
@@ -45,6 +45,7 @@ protected:
     float _destroyDuration;
     
 public:
+    ADemogorgonPortal();
     UFUNCTION(BlueprintImplementableEvent)
     void TriggerDirtExplosion();
     
@@ -107,6 +108,5 @@ public:
     UFUNCTION()
     void Authority_OnDestroyChargePercentChanged(UChargeableComponent* chargeableComponent, float percentCompletionChange, float totalPercentComplete);
     
-    ADemogorgonPortal();
 };
 

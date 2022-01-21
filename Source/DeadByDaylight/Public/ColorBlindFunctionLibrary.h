@@ -9,11 +9,10 @@ UCLASS(BlueprintType)
 class UColorBlindFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UColorBlindFunctionLibrary();
 private:
     UFUNCTION(BlueprintCallable)
     static void CallOnColorBlindSettingsChange(AActor* callingActor);
     
-public:
-    UColorBlindFunctionLibrary();
 };
 

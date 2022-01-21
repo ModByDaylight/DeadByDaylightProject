@@ -14,12 +14,12 @@ private:
     TArray<ADBDPlayer*> _coopRepairerHistory;
     
 public:
+    UCoopRepairTracker();
     UFUNCTION(BlueprintCallable)
     void SetHasEverCoopRepaired(const ADBDPlayer* player);
     
     UFUNCTION(BlueprintPure)
     bool HasEverCoopRepaired(const ADBDPlayer* player) const;
     
-    UCoopRepairTracker();
 };
 

@@ -2,19 +2,18 @@
 #include "CoreMinimal.h"
 #include "K25Projectile.h"
 #include "PoolableActor.h"
+#include "OnAcquiredChanged.h"
 #include "DBDTunableRowHandle.h"
 #include "K25UncontrolledProjectile.generated.h"
 
 class ACamperPlayer;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FK25UncontrolledProjectileOnAcquiredChanged, const bool, acquired);
 
 UCLASS()
 class AK25UncontrolledProjectile : public AK25Projectile, public IPoolableActor {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FK25UncontrolledProjectileOnAcquiredChanged OnAcquiredChanged;
+    FOnAcquiredChanged OnAcquiredChanged;
     
     UPROPERTY(EditAnywhere)
     FDBDTunableRowHandle _minimumTimeBeforeProjectileLaunch;
@@ -35,6 +34,11 @@ private:
     UPROPERTY(ReplicatedUsing=OnRep_TargetSurvivor)
     ACamperPlayer* _targetSurvivor;
     
+public:
+    AK25UncontrolledProjectile();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_TargetSurvivor();
     
@@ -42,9 +46,7 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_TriggerUncontrolledProjectileSpawnSFX();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    AK25UncontrolledProjectile();
+    // Fix for true pure virtual functions not being implemented
 };
 

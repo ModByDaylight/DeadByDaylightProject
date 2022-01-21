@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DisplayStand.h"
 #include "EAtlantaDisplayStandPosition.h"
+#include "DisplayStand.h"
 #include "AtlantaDisplayStand.generated.h"
 
 class USceneComponent;

@@ -3,13 +3,13 @@
 #include "Collectable.h"
 #include "BaseCamperCollectable.generated.h"
 
-class UDBDOutlineComponent;
-class USpherePlayerOverlapComponent;
 class USphereComponent;
-class UDropItemInteraction;
+class USpherePlayerOverlapComponent;
 class UInteractor;
-class UCollectItemInteraction;
+class UDropItemInteraction;
 class UMaterialHelper;
+class UDBDOutlineComponent;
+class UCollectItemInteraction;
 class USurvivorCollectableOutlineUpdateStrategy;
 
 UCLASS()

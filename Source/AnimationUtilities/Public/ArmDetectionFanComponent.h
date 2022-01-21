@@ -3,7 +3,7 @@
 #include "DetectionFanComponent.h"
 #include "ArmDetectionFanComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ANIMATIONUTILITIES_API UArmDetectionFanComponent : public UDetectionFanComponent {
     GENERATED_BODY()
 public:

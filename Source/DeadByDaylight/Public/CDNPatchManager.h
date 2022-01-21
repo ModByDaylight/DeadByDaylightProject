@@ -3,8 +3,8 @@
 #include "UObject/Object.h"
 #include "CDNPatchManager.generated.h"
 
-class UAtlantaPendingContent;
 class UGameInstance;
+class UAtlantaPendingContent;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UCDNPatchManager : public UObject {
@@ -35,6 +35,9 @@ private:
     UPROPERTY(Transient)
     UAtlantaPendingContent* _MobilePendingContent;
     
+public:
+    UCDNPatchManager();
+private:
     UFUNCTION()
     void OnRequestSucceeded(UAtlantaPendingContent* pendingContent);
     
@@ -47,7 +50,5 @@ private:
     UFUNCTION()
     void OnInstallFailed(FText errorText, int32 errorCode);
     
-public:
-    UCDNPatchManager();
 };
 

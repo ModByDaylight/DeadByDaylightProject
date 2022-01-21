@@ -6,7 +6,7 @@
 class UAnimSequence;
 class ASupplyCrateInteractable;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UOpenSupplyCrateInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

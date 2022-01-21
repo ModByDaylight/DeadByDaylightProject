@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "ChargeableInteractionDefinition.h"
 #include "DBDTunableRowHandle.h"
-#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "K25TeleportInteraction.generated.h"
 
 class ASlasherPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK25TeleportInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -23,6 +23,9 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _slowdownAfterTeleportDuration;
     
+public:
+    UK25TeleportInteraction();
+private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_TeleportKillerToTargetPosition(ASlasherPlayer* killer, FVector location, FRotator rotation);
     
@@ -39,7 +42,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_TeleportAbortedEffects(ASlasherPlayer* killer);
     
-public:
-    UK25TeleportInteraction();
 };
 

@@ -2,21 +2,21 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Components/ActorComponent.h"
-#include "EAttackType.h"
-#include "EAttackSubstate.h"
-#include "AttackSubstateRequestResult.h"
 #include "StatProperty.h"
-#include "EDetectionZone.h"
+#include "EAttackType.h"
 #include "DBDAttackTargetTracker.h"
+#include "EDetectionZone.h"
+#include "EAttackSubstate.h"
 #include "EHitValidatorConfigName.h"
+#include "AttackSubstateRequestResult.h"
 #include "DBDAttack.generated.h"
 
-class ACharacter;
 class UDBDAttackSubstate;
+class ACharacter;
 class ADBDPlayer;
 class UAttackableComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDAttack : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -61,6 +61,9 @@ private:
     UPROPERTY(EditAnywhere)
     EHitValidatorConfigName _hitValidationConfigName;
     
+public:
+    UDBDAttack();
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_RequestStateChange(const EAttackSubstate state);
     
@@ -96,7 +99,5 @@ private:
     UFUNCTION(Client, Reliable)
     void Client_ReceiveAttackSubstateRequestResult(const FAttackSubstateRequestResult result);
     
-public:
-    UDBDAttack();
 };
 

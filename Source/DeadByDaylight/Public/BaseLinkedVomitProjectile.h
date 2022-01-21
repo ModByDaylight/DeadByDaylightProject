@@ -7,21 +7,21 @@
 
 class UPoolableProjectileComponent;
 class USphereComponent;
-class UAkAudioEvent;
 class UParticleSystemComponent;
-class USplineMeshComponent;
 class UAkComponent;
+class USplineMeshComponent;
 class UParticleSystem;
+class UAkAudioEvent;
 class ACamperPlayer;
 class AInteractable;
 class USceneComponent;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBaseLinkedVomitProjectileOnDeactivateOrLaunch);
 
 UCLASS()
 class DEADBYDAYLIGHT_API ABaseLinkedVomitProjectile : public AKillerProjectile {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLinkedVomitProjectileDeactivate);
+    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool _useSplashDamage;
@@ -33,7 +33,7 @@ protected:
     UPoolableProjectileComponent* _poolableProjectile;
     
     UPROPERTY(BlueprintAssignable)
-    FBaseLinkedVomitProjectileOnDeactivateOrLaunch OnDeactivateOrLaunch;
+    FOnLinkedVomitProjectileDeactivate OnDeactivateOrLaunch;
     
 private:
     UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
@@ -66,6 +66,8 @@ private:
     UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool _isSuperVomit;
     
+public:
+    ABaseLinkedVomitProjectile();
 protected:
     UFUNCTION(BlueprintNativeEvent)
     void OnAffectSurvivor(ACamperPlayer* camperPlayer);
@@ -76,7 +78,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void NativeExplode(const FImpactInfo& impactInfo);
     
-public:
-    ABaseLinkedVomitProjectile();
 };
 

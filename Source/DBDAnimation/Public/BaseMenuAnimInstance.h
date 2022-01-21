@@ -9,9 +9,9 @@ UCLASS(NonTransient)
 class UBaseMenuAnimInstance : public UAnimInstance {
     GENERATED_BODY()
 public:
+    UBaseMenuAnimInstance();
     UFUNCTION(BlueprintPure)
     ADBDMenuPlayer* GetOwningMenuPlayer() const;
     
-    UBaseMenuAnimInstance();
 };
 

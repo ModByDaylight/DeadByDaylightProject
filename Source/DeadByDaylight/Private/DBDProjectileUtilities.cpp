@@ -1,8 +1,8 @@
 #include "DBDProjectileUtilities.h"
 
-class UObject;
-class UAuthoritativeActorPoolComponent;
 class UAuthoritativePoolProjectileProviderAdapter;
+class UAuthoritativeActorPoolComponent;
+class UObject;
 
 UAuthoritativePoolProjectileProviderAdapter* UDBDProjectileUtilities::CreateProjectilePoolAdapter(UObject* outer, UAuthoritativeActorPoolComponent* pool) {
     return NULL;

@@ -5,7 +5,7 @@
 
 class AGenerator;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API USurge : public UPerk {
     GENERATED_BODY()
 public:
@@ -25,10 +25,11 @@ private:
     UPROPERTY(EditAnywhere)
     bool _useTerrorRadiusInsteadOfFixedDistance;
     
+public:
+    USurge();
+private:
     UFUNCTION(Client, Unreliable)
     void Client_TriggerEffects(const TArray<AGenerator*>& generators);
     
-public:
-    USurge();
 };
 

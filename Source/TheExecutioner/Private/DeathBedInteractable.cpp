@@ -1,10 +1,17 @@
 #include "DeathBedInteractable.h"
+#include "Perception/AIPerceptionStimuliSourceComponent.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "Components/SceneComponent.h"
+#include "ChargeableComponent.h"
+#include "Components/BoxComponent.h"
+#include "AnimationMontageSlave.h"
+#include "DeathBedAntiCampComponent.h"
 
+class ADeathBedInteractable;
 class ACamperPlayer;
 class UPrimitiveComponent;
-class UMontagePlayer;
 class AActor;
-class ADeathBedInteractable;
+class UMontagePlayer;
 
 void ADeathBedInteractable::TeleportCamperToDeathBed() {
 }
@@ -54,7 +61,17 @@ void ADeathBedInteractable::ActivateDeathBed(const bool value) {
 }
 
 ADeathBedInteractable::ADeathBedInteractable() {
+    this->_root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
     this->_inDeathBedCamper = NULL;
+    this->_rescueChargeableComponent = CreateDefaultSubobject<UChargeableComponent>(TEXT("RescueChargeableComponent"));
+    this->_deathBedSkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("DeathBedSkeletalMesh"));
+    this->_interactionZone = CreateDefaultSubobject<UBoxComponent>(TEXT("InteractorZone"));
+    this->_playerOverlapZone = CreateDefaultSubobject<UBoxComponent>(TEXT("playerOverlapZone"));
+    this->_montagePlayer = CreateDefaultSubobject<UMontagePlayer>(TEXT("MontagePlayer"));
+    this->_deathBedCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("DeathBedCollision"));
+    this->_animationMontageSlave = CreateDefaultSubobject<UAnimationMontageSlave>(TEXT("MontageSlave"));
     this->_montageToPlay = NULL;
+    this->_deathBedAnticampComponent = CreateDefaultSubobject<UDeathBedAntiCampComponent>(TEXT("deathBedAnticampComponent"));
+    this->_perceptionStimuliComponent = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("AIPerceptionStimuliSourceComponent"));
 }
 

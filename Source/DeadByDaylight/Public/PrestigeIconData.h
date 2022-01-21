@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTableRowBase.h"
 #include "EPlayerRole.h"
+#include "DBDTableRowBase.h"
 #include "PrestigeIconData.generated.h"
 
 class UTexture2D;

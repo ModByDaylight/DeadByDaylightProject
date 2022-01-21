@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/LevelScriptActor.h"
 #include "EWorldFlowEvent.h"
+#include "Engine/LevelScriptActor.h"
 #include "LobbyLevel.generated.h"
 
 class ADisplayStand;
@@ -17,13 +17,14 @@ private:
     UPROPERTY(EditAnywhere)
     EWorldFlowEvent LobbyLoadedEvent;
     
+public:
+    ALobbyLevel();
+private:
     UFUNCTION()
     void OnShopSubLevelLoaded();
     
     UFUNCTION()
     void OnLobbySubLevelLoaded();
     
-public:
-    ALobbyLevel();
 };
 

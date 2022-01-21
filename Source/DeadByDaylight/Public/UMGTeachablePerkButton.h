@@ -1,15 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "TeachableData.h"
 #include "InventorySlotData.h"
+#include "TeachableData.h"
+#include "OnTeachableTooltipLongPressEvent.h"
 #include "UObject/NoExportTypes.h"
 #include "UMGTeachablePerkButton.generated.h"
 
 class UPerkActionButton;
 class UImage;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUMGTeachablePerkButtonOnTeachablePerkTooltipLongPressEvent, const FTeachableData&, teachableData, const FVector2D&, position);
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGTeachablePerkButton : public UMobileBaseUserWidget {
@@ -27,12 +26,13 @@ protected:
     
 private:
     UPROPERTY()
-    FUMGTeachablePerkButtonOnTeachablePerkTooltipLongPressEvent _onTeachablePerkTooltipLongPressEvent;
-    
-    UFUNCTION()
-    void HandleTooltipLongPressedEvent(const FInventorySlotData& itemData, FVector2D position);
+    FOnTeachableTooltipLongPressEvent _onTeachablePerkTooltipLongPressEvent;
     
 public:
     UUMGTeachablePerkButton();
+private:
+    UFUNCTION()
+    void HandleTooltipLongPressedEvent(const FInventorySlotData& itemData, FVector2D position);
+    
 };
 

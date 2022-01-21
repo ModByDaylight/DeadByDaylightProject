@@ -3,13 +3,13 @@
 #include "BloodTrailComponent.h"
 #include "PurpleGlyphBloodTrailComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UPurpleGlyphBloodTrailComponent : public UBloodTrailComponent {
     GENERATED_BODY()
 public:
+    UPurpleGlyphBloodTrailComponent();
     UFUNCTION(BlueprintCallable)
     void DeactivateGlyphBloodTrail();
     
-    UPurpleGlyphBloodTrailComponent();
 };
 

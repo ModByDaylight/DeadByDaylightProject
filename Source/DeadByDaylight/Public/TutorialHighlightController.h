@@ -8,9 +8,9 @@ UCLASS(BlueprintType)
 class UTutorialHighlightController : public UObject {
     GENERATED_BODY()
 public:
+    UTutorialHighlightController();
     UFUNCTION(BlueprintCallable)
     void SetHudComponentHighlight(EHudComponent hudComponent, bool show);
     
-    UTutorialHighlightController();
 };
 

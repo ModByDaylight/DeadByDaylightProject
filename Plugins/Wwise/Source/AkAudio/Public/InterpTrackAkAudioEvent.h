@@ -13,12 +13,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     uint8 bContinueEventOnMatineeEnd: 1;
-
-    virtual const FString GetEdHelperClassName() const override;
-    virtual const FString GetSlateHelperClassName() const override;
-#if WITH_EDITORONLY_DATA
-    virtual UTexture2D* GetTrackIcon() const override;
-#endif
     
     UInterpTrackAkAudioEvent();
 };

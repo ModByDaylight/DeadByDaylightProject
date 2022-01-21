@@ -3,7 +3,7 @@
 #include "PounceAttack.h"
 #include "PigAmbushAttack.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEPIG_API UPigAmbushAttack : public UPounceAttack {
     GENERATED_BODY()
 public:

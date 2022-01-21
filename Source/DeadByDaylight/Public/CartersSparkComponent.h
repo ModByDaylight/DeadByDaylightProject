@@ -6,7 +6,7 @@
 class ADBDPlayer;
 class UInteractionDefinition;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCartersSparkComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -21,6 +21,7 @@ private:
     ADBDPlayer* _owningPlayer;
     
 public:
+    UCartersSparkComponent();
     UFUNCTION(BlueprintCallable)
     void TriggerStaticBlastCooldown();
     
@@ -52,6 +53,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void Authority_AddTotallyInsaneSurvivor(ADBDPlayer* insaneSurvivor);
     
-    UCartersSparkComponent();
 };
 

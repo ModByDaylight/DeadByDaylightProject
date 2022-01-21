@@ -5,10 +5,11 @@
 
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UKillerSoundCuesComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UKillerSoundCuesComponent();
     UFUNCTION(BlueprintCallable)
     void StopTrackingActor(AActor* actorToStopTracking);
     
@@ -18,6 +19,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void StartTrackingActor(AActor* actorToStartTracking, FName distanceDataID);
     
-    UKillerSoundCuesComponent();
 };
 

@@ -29,9 +29,9 @@ public:
     UPROPERTY(EditInstanceOnly, NoClear)
     UTexture2D* BackgroundTexture;
     
+    UCoreGameManualCategoryButton();
     UFUNCTION(BlueprintCallable)
     void SetText(const FText NewTitle, const FText NewDescription);
     
-    UCoreGameManualCategoryButton();
 };
 

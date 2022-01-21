@@ -6,7 +6,7 @@
 class UStatusEffect;
 class UManualIconStrategy;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UDeception : public UPerk {
     GENERATED_BODY()
 public:
@@ -23,11 +23,11 @@ private:
     UPROPERTY(Transient)
     UManualIconStrategy* _iconStrategy;
     
+public:
+    UDeception();
 protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void OnOwningPlayerFakedEnteringLockerCosmetic();
     
-public:
-    UDeception();
 };
 

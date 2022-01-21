@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
 #include "GeneratedLevelData.h"
+#include "GameFramework/Actor.h"
 #include "EKillerMoodInfluence.h"
 #include "ProceduralLevelData.generated.h"
 

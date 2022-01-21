@@ -14,8 +14,8 @@ private:
     TWeakObjectPtr<ADBDPlayerState> _specialBehaviourOwner;
     
 public:
+    ASpecialBehaviourInteractable();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    ASpecialBehaviourInteractable();
 };
 

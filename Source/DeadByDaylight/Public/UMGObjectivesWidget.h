@@ -21,13 +21,14 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     ESlateVisibility PanelHatchVisibility;
     
+public:
+    UUMGObjectivesWidget();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void UpdateTextMessage(const FText& textFind, const FText& textExit, const FText& textOr);
     
     UFUNCTION(BlueprintImplementableEvent)
     void UpdateGeneratorCount(int32 count);
     
-public:
-    UUMGObjectivesWidget();
 };
 

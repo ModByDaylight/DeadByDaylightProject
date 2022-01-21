@@ -5,8 +5,8 @@
 #include "AnimSequenceSelector.h"
 #include "AnimCollection.generated.h"
 
-class UBlendSpaceBase;
 class UAnimSequence;
+class UBlendSpaceBase;
 class UAnimCollection;
 
 UCLASS(BlueprintType)

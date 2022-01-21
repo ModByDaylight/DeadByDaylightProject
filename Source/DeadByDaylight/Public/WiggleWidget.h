@@ -17,13 +17,14 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UMobileBaseUserWidget* WiggleButtonRight;
     
+public:
+    UWiggleWidget();
+protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BecomeUnavailable();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BecomeAvailable();
     
-public:
-    UWiggleWidget();
 };
 

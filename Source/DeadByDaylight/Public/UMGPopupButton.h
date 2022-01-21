@@ -26,6 +26,7 @@ protected:
     UImage* FXSmoke;
     
 public:
+    UUMGPopupButton();
     UFUNCTION()
     void OnButtonReleased();
     
@@ -35,6 +36,5 @@ public:
     UFUNCTION()
     void OnButtonClicked();
     
-    UUMGPopupButton();
 };
 

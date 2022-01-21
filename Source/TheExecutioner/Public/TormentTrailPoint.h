@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BaseTormentTrailPoint.h"
-#include "UObject/NoExportTypes.h"
 #include "ETrailPointRefreshReason.h"
+#include "UObject/NoExportTypes.h"
 #include "TormentTrailPoint.generated.h"
 
 class UAuthoritativePoolableActorComponent;
@@ -19,6 +19,9 @@ private:
     UPROPERTY(EditDefaultsOnly)
     float _splineMeshOverlapDistance;
     
+public:
+    ATormentTrailPoint();
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_RemoveTrailPoint();
     
@@ -43,6 +46,5 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
     void ActivateCosmetic(const bool value);
     
-    ATormentTrailPoint();
 };
 

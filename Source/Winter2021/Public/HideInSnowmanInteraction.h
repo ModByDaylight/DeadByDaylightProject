@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InteractionDefinition.h"
 #include "DBDTunableRowHandle.h"
+#include "InteractionDefinition.h"
 #include "HideInSnowmanInteraction.generated.h"
 
 class ACamperPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UHideInSnowmanInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -32,6 +32,11 @@ private:
     UPROPERTY(EditAnywhere)
     FDBDTunableRowHandle _timeToZoomExit;
     
+public:
+    UHideInSnowmanInteraction();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_StopControllingSnowman(ACamperPlayer* survivor);
     
@@ -41,9 +46,5 @@ private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_OnAbleToRunAndExitSnowmanStart();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UHideInSnowmanInteraction();
 };
 

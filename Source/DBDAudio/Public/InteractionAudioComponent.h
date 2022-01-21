@@ -7,7 +7,7 @@
 class UAkComponent;
 class UAkAudioEvent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDAUDIO_API UInteractionAudioComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -20,9 +20,9 @@ private:
     FNonTunableStat _audioRadius;
     
 public:
+    UInteractionAudioComponent();
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     bool PostAkEvent(UAkAudioEvent* akEvent);
     
-    UInteractionAudioComponent();
 };
 

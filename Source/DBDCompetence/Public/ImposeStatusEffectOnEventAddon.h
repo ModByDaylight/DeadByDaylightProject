@@ -4,7 +4,7 @@
 #include "EImposeEffectTo.h"
 #include "ImposeStatusEffectOnEventAddon.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UImposeStatusEffectOnEventAddon : public UOnEventBaseAddon {
     GENERATED_BODY()
 public:

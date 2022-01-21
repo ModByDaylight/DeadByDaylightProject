@@ -4,11 +4,11 @@
 #include "AssetLibraryLoader.h"
 #include "AssetLibraryManager.generated.h"
 
-class UGameAssetLibrary;
-class UCharacterItemsAssetLibrary;
-class UTutorialAssetLibrary;
-class UIniAssetLibrary;
 class UMenuAssetLibrary;
+class UTutorialAssetLibrary;
+class UCharacterItemsAssetLibrary;
+class UGameAssetLibrary;
+class UIniAssetLibrary;
 class UShopManager;
 
 UCLASS(Config=Game)

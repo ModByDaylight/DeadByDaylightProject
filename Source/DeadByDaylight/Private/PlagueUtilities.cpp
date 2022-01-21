@@ -1,7 +1,7 @@
 #include "PlagueUtilities.h"
 
-class ADBDPlayer;
 class USurvivorPlagueEffect;
+class ADBDPlayer;
 
 bool UPlagueUtilities::IsPlagueDebugModeActive() {
     return false;

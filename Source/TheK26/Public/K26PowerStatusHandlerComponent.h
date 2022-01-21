@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "K26SurvivorStatus.h"
 #include "Components/ActorComponent.h"
 #include "DBDTunableRowHandle.h"
+#include "K26SurvivorStatus.h"
 #include "K26PowerStatusHandlerComponent.generated.h"
 
 class UInteractionDefinition;
@@ -11,7 +11,7 @@ class AActor;
 class ACamperPlayer;
 class ASlasherPlayer;
 
-UCLASS(Blueprintable, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK26PowerStatusHandlerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -38,6 +38,11 @@ private:
     UPROPERTY(Replicated)
     TArray<FK26SurvivorStatus> _survivorStatusList;
     
+public:
+    UK26PowerStatusHandlerComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_OnStopRemovingCrow(const ACamperPlayer* survivor);
     
@@ -73,9 +78,5 @@ private:
     UFUNCTION()
     void Authority_OnIntroCompleted();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UK26PowerStatusHandlerComponent();
 };
 

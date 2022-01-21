@@ -5,12 +5,12 @@
 #include "ERadialProgressBarType.h"
 #include "PowerButton.generated.h"
 
-class UTextBlock;
-class UActionButton;
-class UCanvasPanel;
 class UImage;
-class UProgressBar;
+class UActionButton;
+class UTextBlock;
+class UCanvasPanel;
 class UUMGInventoryItemButton;
+class UProgressBar;
 
 UCLASS(EditInlineNew)
 class UPowerButton : public UMobileBaseUserWidget {
@@ -60,6 +60,7 @@ protected:
     int32 _itemCount;
     
 public:
+    UPowerButton();
     UFUNCTION(BlueprintCallable)
     void SetSwitchIconActive(bool active);
     
@@ -87,6 +88,5 @@ public:
     UFUNCTION(BlueprintCallable)
     UActionButton* GetActionButton();
     
-    UPowerButton();
 };
 

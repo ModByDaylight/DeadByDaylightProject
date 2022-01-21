@@ -1,31 +1,32 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
 #include "Styling/SlateBrush.h"
 #include "EPlayerRole.h"
-#include "ECurrencyType.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "UObject/NoExportTypes.h"
 #include "EItemRarity.h"
 #include "EOfferingCategory.h"
 #include "EItemAvailability.h"
 #include "EEmblemQuality.h"
-#include "EInputInteractionType.h"
 #include "EAIDifficultyLevel.h"
+#include "EInputInteractionType.h"
+#include "ECurrencyType.h"
 #include "Styling/SlateColor.h"
 #include "AtlantaUtilities.generated.h"
 
+class UInteractionDefinition;
 class UPaperSprite;
 class UImage;
 class UButton;
 class UTexture2D;
 class ADBDPlayer;
 class AActor;
-class UInteractionDefinition;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UAtlantaUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UAtlantaUtilities();
     UFUNCTION(BlueprintPure)
     static bool ShouldUseQuickRoleSwitch();
     
@@ -236,6 +237,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static FText GetAlantaInteractionDescriptionText(UInteractionDefinition* interaction);
     
-    UAtlantaUtilities();
 };
 

@@ -7,10 +7,10 @@
 #include "LaunchInfo.h"
 #include "KnifeProjectile.generated.h"
 
-class AActor;
 class UPrimitiveComponent;
-class UPoolableProjectileComponent;
 class ADBDPlayer;
+class UPoolableProjectileComponent;
+class AActor;
 
 UCLASS()
 class AKnifeProjectile : public AKillerProjectile {
@@ -40,6 +40,7 @@ private:
     FDBDTunableRowHandle _numberOfAddonBounces;
     
 public:
+    AKnifeProjectile();
     UFUNCTION(BlueprintPure)
     bool WasLaunchedDuringSuperMode() const;
     
@@ -74,7 +75,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void BP_CosmeticOnAddonExplosion(const FVector& location, const FVector& normal);
     
-public:
-    AKnifeProjectile();
 };
 

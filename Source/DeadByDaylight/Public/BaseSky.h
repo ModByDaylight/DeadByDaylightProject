@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
 #include "Fadeable.h"
-#include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE: Engine BHVRPerDetailModeFloat
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BHVRPerDetailModeFloat -FallbackName=BHVRPerDetailModeFloat
 #include "BaseSky.generated.h"
 
+class UStaticMeshComponent;
 class UExponentialHeightFogComponent;
 class USkyLightComponent;
-class UDirectionalLightComponent;
 class UPostProcessComponent;
-class UStaticMeshComponent;
+class UDirectionalLightComponent;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ABaseSky : public AActor, public IFadeable {
@@ -32,13 +32,14 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     float ProbesSaturationValue;
     
-    //UPROPERTY(AdvancedDisplay, EditAnywhere)
-    //FBHVRPerDetailModeFloat ASMDepthBias;
+    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    FBHVRPerDetailModeFloat ASMDepthBias;
     
-    //UPROPERTY(AdvancedDisplay, EditAnywhere)
-    //FBHVRPerDetailModeFloat ASMDepthAttenuation;
+    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    FBHVRPerDetailModeFloat ASMDepthAttenuation;
     
 public:
+    ABaseSky();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ToggleDreamworldLighting(bool toggleOn);
     
@@ -65,6 +66,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void CopyComponentsSettingsFromSource(UStaticMeshComponent* moonMesh, UDirectionalLightComponent* shadowLight, UDirectionalLightComponent* godRayLight, USkyLightComponent* skylight, UExponentialHeightFogComponent* heightFog, UPostProcessComponent* postProcess, UClass* sourceBaseSkyClass);
     
-    ABaseSky();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

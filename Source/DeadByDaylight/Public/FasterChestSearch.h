@@ -3,7 +3,7 @@
 #include "StatusEffect.h"
 #include "FasterChestSearch.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UFasterChestSearch : public UStatusEffect {
     GENERATED_BODY()
 public:

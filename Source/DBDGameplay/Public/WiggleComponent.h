@@ -5,13 +5,13 @@
 #include "ESkillCheckCustomType.h"
 #include "WiggleComponent.generated.h"
 
-class UInputComponent;
 class UChargeableComponent;
 class ASlasherPlayer;
-class AActor;
+class UInputComponent;
 class ADBDPlayer;
+class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UWiggleComponent : public UActorComponent, public IChargeableProgressSource {
     GENERATED_BODY()
 public:
@@ -25,6 +25,9 @@ private:
     UPROPERTY(Export, Transient)
     UInputComponent* _inputComponent;
     
+public:
+    UWiggleComponent();
+private:
     UFUNCTION(Reliable, Server)
     void Server_OnWiggleEnd();
     
@@ -62,6 +65,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void Authority_AddWiggleCharge(float chargeAmount);
     
-    UWiggleComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

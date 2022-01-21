@@ -6,10 +6,12 @@
 class UStalkedComponent;
 class UChargeableComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UStalkerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStalkPointsAdded, float, stalkPoints);
+    
 private:
     UPROPERTY(EditAnywhere)
     bool _distributeStalkRate;
@@ -23,6 +25,9 @@ private:
     UPROPERTY(Export)
     UChargeableComponent* _stalkPointsChargeable;
     
+public:
+    UStalkerComponent();
+private:
     UFUNCTION()
     void OnPlayerBeingStalkedChanged(bool isBeingStalked);
     
@@ -48,6 +53,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool CanStalk() const;
     
-    UStalkerComponent();
 };
 

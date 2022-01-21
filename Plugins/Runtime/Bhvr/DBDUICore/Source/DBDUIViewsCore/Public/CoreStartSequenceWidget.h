@@ -2,16 +2,15 @@
 #include "CoreMinimal.h"
 #include "CoreBaseHudWidget.h"
 #include "StartSequenceViewInterface.h"
+#include "StartSequenceFadeOutCompleted.h"
 #include "EEasingType.h"
-#include "EThemeColorId.h"
 #include "UObject/NoExportTypes.h"
+#include "EThemeColorId.h"
 #include "CoreStartSequenceWidget.generated.h"
 
-class UUITweenInstance;
 class UDBDTextBlock;
 class UImage;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCoreStartSequenceWidgetStartSequenceFadeOutDelegate);
+class UUITweenInstance;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreStartSequenceWidget : public UCoreBaseHudWidget, public IStartSequenceViewInterface {
@@ -47,12 +46,15 @@ protected:
     
 private:
     UPROPERTY(BlueprintCallable)
-    FCoreStartSequenceWidgetStartSequenceFadeOutDelegate StartSequenceFadeOutDelegate;
-    
-    UFUNCTION()
-    void OnHideStartSequenceComplete(UUITweenInstance* tween);
+    FStartSequenceFadeOutCompleted StartSequenceFadeOutDelegate;
     
 public:
     UCoreStartSequenceWidget();
+private:
+    UFUNCTION()
+    void OnHideStartSequenceComplete(UUITweenInstance* tween);
+    
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

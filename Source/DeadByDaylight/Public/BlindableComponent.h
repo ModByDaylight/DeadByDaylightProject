@@ -3,7 +3,7 @@
 #include "BlindableBaseComponent.h"
 #include "BlindableComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UBlindableComponent : public UBlindableBaseComponent {
     GENERATED_BODY()
 public:

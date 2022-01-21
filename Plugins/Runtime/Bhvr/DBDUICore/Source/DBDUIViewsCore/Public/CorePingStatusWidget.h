@@ -9,5 +9,7 @@ class DBDUIVIEWSCORE_API UCorePingStatusWidget : public UCoreBaseHudWidget, publ
     GENERATED_BODY()
 public:
     UCorePingStatusWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

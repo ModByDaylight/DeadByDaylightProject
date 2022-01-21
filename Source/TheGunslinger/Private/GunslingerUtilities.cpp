@@ -1,7 +1,7 @@
 #include "GunslingerUtilities.h"
 
-class AHarpoonRifle;
 class ADBDPlayer;
+class AHarpoonRifle;
 
 AHarpoonRifle* UGunslingerUtilities::GetHarpoonRifle(ADBDPlayer* player) {
     return NULL;

@@ -1,11 +1,14 @@
 #include "Window.h"
 #include "Net/UnrealNetwork.h"
+#include "DBDNavEvadeLoopComponent.h"
+#include "LocalPlayerTrackerComponent.h"
+#include "BlockableComponent.h"
 
 class UChildActorComponent;
 class ADBDPlayer;
+class UAkComponent;
 class UMaterialHelper;
 class UInteractionDefinition;
-class UAkComponent;
 
 void AWindow::OnRep_blockedByLevel() {
 }
@@ -63,5 +66,8 @@ AWindow::AWindow() {
     this->_akAudioWindow = NULL;
     this->akAudioEventWindowsBlocStart = NULL;
     this->akAudioEventWindowsBlocStop = NULL;
+    this->_localPlayerTracker = CreateDefaultSubobject<ULocalPlayerTrackerComponent>(TEXT("LocalPlayerTracker"));
+    this->_blockableComponent = CreateDefaultSubobject<UBlockableComponent>(TEXT("BlockableComponent"));
+    this->_navEvadeLoopComponent = CreateDefaultSubobject<UDBDNavEvadeLoopComponent>(TEXT("NavEvadeLoopComponent"));
 }
 

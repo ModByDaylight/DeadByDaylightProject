@@ -5,15 +5,14 @@
 
 class UGhostStealthComponent;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UGhostChargeStalkModeInteraction : public UBaseStalkModeInteraction {
     GENERATED_BODY()
 public:
+    UGhostChargeStalkModeInteraction();
 protected:
     UFUNCTION(BlueprintPure)
     UGhostStealthComponent* GetStealthComponent() const;
     
-public:
-    UGhostChargeStalkModeInteraction();
 };
 

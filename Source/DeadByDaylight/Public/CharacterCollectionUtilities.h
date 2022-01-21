@@ -4,16 +4,17 @@
 #include "EPlayerTeam.h"
 #include "CharacterCollectionUtilities.generated.h"
 
-class ACharacter;
+class ACamperPlayer;
 class UObject;
 class ASlasherPlayer;
-class ACamperPlayer;
 class ADBDPlayer;
+class ACharacter;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UCharacterCollectionUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UCharacterCollectionUtilities();
     UFUNCTION(BlueprintPure)
     static int32 GetNumberOfInjuredHookedOrDyingSurvivors(const UObject* worldContextObject);
     
@@ -41,6 +42,5 @@ public:
     UFUNCTION(BlueprintPure)
     static TSet<ACharacter*> GetAllCharacters(const UObject* worldContextObject);
     
-    UCharacterCollectionUtilities();
 };
 

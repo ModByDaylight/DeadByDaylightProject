@@ -9,5 +9,7 @@ class DBDUIVIEWSCORE_API UCoreHookCountWidget : public UCoreBaseHudWidget, publi
     GENERATED_BODY()
 public:
     UCoreHookCountWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

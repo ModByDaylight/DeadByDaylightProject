@@ -14,12 +14,12 @@ protected:
     TWeakObjectPtr<USkeletalMeshComponent> _masterMesh;
     
 public:
+    USlaveAnimInstance();
     UFUNCTION(BlueprintCallable)
     void SetMasterMesh(USkeletalMeshComponent* masterMesh);
     
     UFUNCTION(BlueprintPure)
     USkeletalMeshComponent* GetMasterMesh() const;
     
-    USlaveAnimInstance();
 };
 

@@ -1,22 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "CameraSocketChanged.h"
 #include "EDBDCameraSocketID.h"
 #include "CameraHandlerComponent.generated.h"
 
-class USceneComponent;
+class UParticleSystemComponent;
 class AActor;
 class UCurveFloat;
-class UParticleSystemComponent;
+class USceneComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCameraHandlerComponentOnSocketChanged, EDBDCameraSocketID, SocketId);
-
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCameraHandlerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FCameraHandlerComponentOnSocketChanged OnSocketChanged;
+    FCameraSocketChanged OnSocketChanged;
     
 private:
     UPROPERTY(Transient)
@@ -44,6 +43,9 @@ private:
     bool _isFOVSystemActive;
     
 public:
+    UCameraHandlerComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetSocketID(EDBDCameraSocketID mode);
     
@@ -62,8 +64,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddCameraToSocket(EDBDCameraSocketID mode, AActor* camera);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UCameraHandlerComponent();
 };
 

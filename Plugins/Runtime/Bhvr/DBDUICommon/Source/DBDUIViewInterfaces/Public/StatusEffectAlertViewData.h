@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AddonViewData.h"
-#include "PerkViewData.h"
 #include "EStatusEffectType.h"
-#include "ItemViewData.h"
 #include "EHudStatusEffectAlertViewType.h"
+#include "PerkViewData.h"
+#include "ItemViewData.h"
 #include "StatusEffectAlertViewData.generated.h"
 
 class UTexture2D;

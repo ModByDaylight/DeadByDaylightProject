@@ -3,7 +3,7 @@
 #include "EventDrivenModifierCondition.h"
 #include "IsBoonBlessed.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIsBoonBlessed : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:

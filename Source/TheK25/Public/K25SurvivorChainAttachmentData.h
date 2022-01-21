@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EK25ChainAttachmentLimbType.h"
 #include "EK25ChainAnchorPointDirection.h"
 #include "UObject/NoExportTypes.h"
-#include "EK25ChainAttachmentLimbType.h"
 #include "K25SurvivorChainAttachmentData.generated.h"
 
 class ACamperPlayer;

@@ -5,7 +5,7 @@
 
 class UK26AmmoHandlerComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class UK26PowerChargePresentationPowerFadeComponent : public UPresentationPowerFadeComponent {
     GENERATED_BODY()
 public:
@@ -14,9 +14,9 @@ private:
     UK26AmmoHandlerComponent* _ammoHandler;
     
 public:
+    UK26PowerChargePresentationPowerFadeComponent();
     UFUNCTION(BlueprintCallable)
     void SetDependencies(UK26AmmoHandlerComponent* ammoHandler);
     
-    UK26PowerChargePresentationPowerFadeComponent();
 };
 

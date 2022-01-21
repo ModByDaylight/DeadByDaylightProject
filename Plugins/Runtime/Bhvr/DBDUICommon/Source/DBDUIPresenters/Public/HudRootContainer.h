@@ -3,7 +3,7 @@
 #include "UIComponent.h"
 #include "HudRootContainer.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDUIPRESENTERS_API UHudRootContainer : public UUIComponent {
     GENERATED_BODY()
 public:

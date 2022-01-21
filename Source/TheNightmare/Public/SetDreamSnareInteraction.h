@@ -3,7 +3,7 @@
 #include "ChargeableInteractionDefinition.h"
 #include "SetDreamSnareInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class USetDreamSnareInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -18,12 +18,12 @@ private:
     float MaxPlacementDistance;
     
 public:
+    USetDreamSnareInteraction();
     UFUNCTION(BlueprintPure)
     bool HasCancelledDreamSnare() const;
     
     UFUNCTION(BlueprintPure)
     float GetTrapDistanceFromControlRotation() const;
     
-    USetDreamSnareInteraction();
 };
 

@@ -1,6 +1,6 @@
 #include "AtlantaPendingContent.h"
 
-void UAtlantaPendingContent::StartInstall(FAtlantaPendingContentOnSucceeded OnSucceeded, FAtlantaPendingContentOnFailed OnFailed) {
+void UAtlantaPendingContent::StartInstall(FOnContentInstallSucceeded OnSucceeded, FOnContentInstallFailed OnFailed) {
 }
 
 float UAtlantaPendingContent::GetTotalDownloadedSize() {

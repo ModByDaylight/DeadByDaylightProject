@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MobileBaseUserWidget.h"
 #include "EEmblemQuality.h"
+#include "MobileBaseUserWidget.h"
 #include "EmblemQualityImages.h"
 #include "UMGTallyEmblemMarker.generated.h"
 

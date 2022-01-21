@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EItemRarity.h"
 #include "DBDTableRowBase.h"
 #include "EBloodchestType.h"
+#include "EItemRarity.h"
 #include "BloodwebChest.generated.h"
 
 USTRUCT(BlueprintType)

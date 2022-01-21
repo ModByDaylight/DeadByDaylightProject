@@ -3,8 +3,8 @@
 class ACharacter;
 class UPrimitiveComponent;
 class AActor;
-class UBasePushStrategyComponent;
 class UCapsuleComponent;
+class UBasePushStrategyComponent;
 
 void UCharacterPusherComponent::SetIgnoredCharacter(ACharacter* character, const bool ignore) {
 }

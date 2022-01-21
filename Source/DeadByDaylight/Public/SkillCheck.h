@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SkillCheckDefinition.h"
-#include "SkillCheckResponse.h"
 #include "Components/ActorComponent.h"
+#include "SkillCheckDefinition.h"
 #include "ESkillCheckCustomType.h"
+#include "SkillCheckResponse.h"
 #include "SkillCheck.generated.h"
 
-class ADBDPlayer;
 class UChargeableInteractionDefinition;
+class ADBDPlayer;
 class UInteractionDefinition;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API USkillCheck : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -22,6 +22,7 @@ private:
     UChargeableInteractionDefinition* _currentInteraction;
     
 public:
+    USkillCheck();
     UFUNCTION(BlueprintCallable)
     bool ShouldShowWarning();
     
@@ -80,6 +81,5 @@ public:
     UFUNCTION(BlueprintPure)
     static bool CanSkillCheckTypeGrantScore(ESkillCheckCustomType type);
     
-    USkillCheck();
 };
 

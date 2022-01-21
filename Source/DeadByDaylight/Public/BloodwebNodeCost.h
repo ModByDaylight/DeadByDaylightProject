@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EItemRarity.h"
 #include "DBDTableRowBase.h"
+#include "EItemRarity.h"
 #include "BloodwebNodeCost.generated.h"
 
 USTRUCT(BlueprintType)

@@ -5,13 +5,13 @@
 
 class ACollectable;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DBDINTERACTION_API UDropItemInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:
+    UDropItemInteraction();
     UFUNCTION(BlueprintPure)
     ACollectable* GetItem() const;
     
-    UDropItemInteraction();
 };
 

@@ -15,9 +15,9 @@ protected:
     UImage* CheckIcon;
     
 public:
+    UUMGRewardWidget();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetData(const FRewardItemData& RewardData);
     
-    UUMGRewardWidget();
 };
 

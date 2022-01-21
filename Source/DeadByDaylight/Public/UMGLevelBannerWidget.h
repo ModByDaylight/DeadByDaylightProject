@@ -4,12 +4,12 @@
 #include "Highlightable.h"
 #include "UMGLevelBannerWidget.generated.h"
 
-class UAkAudioEvent;
-class UHorizontalBox;
 class UTextBlock;
 class UButton;
 class UProgressBar;
 class UImage;
+class UHorizontalBox;
+class UAkAudioEvent;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGLevelBannerWidget : public UMobileBaseUserWidget, public IHighlightable {
@@ -44,6 +44,7 @@ protected:
     UImage* TooltipHighlightPicture;
     
 public:
+    UUMGLevelBannerWidget();
     UFUNCTION(BlueprintCallable)
     void StopHighlight();
     
@@ -68,7 +69,7 @@ protected:
     UFUNCTION()
     void OnTooltipButtonLongPressEvent();
     
-public:
-    UUMGLevelBannerWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

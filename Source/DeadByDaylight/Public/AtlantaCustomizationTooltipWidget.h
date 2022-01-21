@@ -3,9 +3,9 @@
 #include "BaseTooltipWidget.h"
 #include "AtlantaCustomizationTooltipWidget.generated.h"
 
-class UUMGCustomizationTooltipContentWidget;
-class UImage;
 class UUMGCustomizationTooltipHeaderWidget;
+class UImage;
+class UUMGCustomizationTooltipContentWidget;
 
 UCLASS(Abstract, EditInlineNew)
 class UAtlantaCustomizationTooltipWidget : public UBaseTooltipWidget {

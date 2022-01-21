@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
 #include "ChargeableInteractionDefinition.h"
 #include "DBDTunableRowHandle.h"
+#include "GameplayTagContainer.h"
 #include "TunableStat.h"
 #include "GameEventData.h"
 #include "ReleaseConjoinedTwin.generated.h"
@@ -10,7 +10,7 @@
 class AConjoinedTwin;
 class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UReleaseConjoinedTwin : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -24,6 +24,11 @@ private:
     UPROPERTY(ReplicatedUsing=OnRep_ReleaseAnimationWentToTheEnd)
     bool _releaseAnimationWentToTheEnd;
     
+public:
+    UReleaseConjoinedTwin();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnTwinSet(AConjoinedTwin* twin);
     
@@ -49,9 +54,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnReleaseCancelled(ADBDPlayer* sister, AConjoinedTwin* brother);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UReleaseConjoinedTwin();
 };
 

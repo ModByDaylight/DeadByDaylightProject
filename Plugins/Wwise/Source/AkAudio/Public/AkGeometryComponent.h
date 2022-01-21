@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AkGeometrySurfaceOverride.h"
 #include "Components/SceneComponent.h"
+#include "AkGeometrySurfaceOverride.h"
 #include "AkMeshType.h"
 #include "AkGeometryData.h"
 #include "AkGeometryComponent.generated.h"
 
-class AActor;
 class UMaterialInterface;
+class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class AKAUDIO_API UAkGeometryComponent : public USceneComponent {
     GENERATED_BODY()
 public:
@@ -39,6 +39,7 @@ private:
     FAkGeometryData GeometryData;
     
 public:
+    UAkGeometryComponent();
     UFUNCTION(BlueprintCallable)
     void UpdateGeometry();
     
@@ -48,6 +49,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ConvertMesh();
     
-    UAkGeometryComponent();
 };
 

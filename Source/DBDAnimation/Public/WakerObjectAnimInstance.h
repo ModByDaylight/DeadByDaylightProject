@@ -40,6 +40,8 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient)
     bool _cancelEnd;
     
+public:
+    UWakerObjectAnimInstance();
 private:
     UFUNCTION(BlueprintCallable)
     void ResetReappearTimer();
@@ -61,7 +63,5 @@ private:
     UFUNCTION(BlueprintPure)
     AWakerObject* GetWakerObject() const;
     
-public:
-    UWakerObjectAnimInstance();
 };
 

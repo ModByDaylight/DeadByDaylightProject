@@ -2,11 +2,10 @@
 #include "CoreMinimal.h"
 #include "TutorialPopupViewInterface.h"
 #include "CoreBaseHudWidget.h"
+#include "NotifTutoConfirmButtonClickDelegate.h"
 #include "CoreTutorialPopupWidget.generated.h"
 
 class UAkAudioEvent;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCoreTutorialPopupWidgetNotifTutoConfirmButtonClickDelegate);
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreTutorialPopupWidget : public UCoreBaseHudWidget, public ITutorialPopupViewInterface {
@@ -18,9 +17,11 @@ protected:
     
 private:
     UPROPERTY(BlueprintCallable)
-    FCoreTutorialPopupWidgetNotifTutoConfirmButtonClickDelegate _notifTutoConfirmButtonClickDelegate;
+    FNotifTutoConfirmButtonClickDelegate _notifTutoConfirmButtonClickDelegate;
     
 public:
     UCoreTutorialPopupWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

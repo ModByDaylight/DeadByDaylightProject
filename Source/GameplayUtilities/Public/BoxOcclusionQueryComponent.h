@@ -3,13 +3,14 @@
 #include "Components/BoxComponent.h"
 #include "BoxOcclusionQueryComponent.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class GAMEPLAYUTILITIES_API UBoxOcclusionQueryComponent : public UBoxComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float TimeUntilOccluded;
     
+    UBoxOcclusionQueryComponent();
     UFUNCTION(BlueprintPure)
     float GetVisiblePercentOfScreen() const;
     
@@ -19,6 +20,5 @@ public:
     UFUNCTION(BlueprintPure)
     float GetEstimatedRenderedPixelCount() const;
     
-    UBoxOcclusionQueryComponent();
 };
 

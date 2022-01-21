@@ -3,7 +3,7 @@
 #include "LightBurnable.h"
 #include "PhantomTrapBurnable.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEHAG_API UPhantomTrapBurnable : public ULightBurnable {
     GENERATED_BODY()
 public:

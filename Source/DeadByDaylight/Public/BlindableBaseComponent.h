@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EBlindType.h"
 #include "Components/ActorComponent.h"
 #include "TagStateBool.h"
-#include "EBlindType.h"
 #include "BlindableBaseComponent.generated.h"
 
 class UChargeableComponent;
-class AActor;
 class UBlindingEffectorInterface;
 class IBlindingEffectorInterface;
+class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UBlindableBaseComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -29,6 +29,9 @@ private:
     TMap<AActor*, TScriptInterface<IBlindingEffectorInterface>> _blindingEffectors;
     
 public:
+    UBlindableBaseComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetChargeable(UChargeableComponent* value);
     
@@ -52,8 +55,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_AddBlindingEffector(TScriptInterface<IBlindingEffectorInterface> effector);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UBlindableBaseComponent();
 };
 

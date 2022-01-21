@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTunableRowHandle.h"
 #include "StatusEffect.h"
+#include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
 #include "TwinLullabyRangeAdditiveEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UTwinLullabyRangeAdditiveEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

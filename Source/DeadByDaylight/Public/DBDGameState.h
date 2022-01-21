@@ -1,93 +1,96 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BuiltLevelData.h"
+#include "OnKillerIntroCompletePercentChanged.h"
+#include "OfferingData.h"
+#include "LevelReadyToPlayEvent.h"
 #include "GameFramework/GameState.h"
 #include "GameflowEventsNotifier.h"
-#include "OfferingData.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
+#include "EscapeDoorActivatedEvent.h"
+#include "IntroCompletedEvent.h"
+#include "LightingGeneratedEvent.h"
+#include "AllPlayerLoadedEvent.h"
+#include "ActivatedGeneratorCountChangedDynamicEvent.h"
 #include "GamePresetData.h"
-#include "EEndGameReason.h"
+#include "SlasherSetEvent.h"
+#include "BuiltLevelData.h"
+#include "ObsessionChangedDynamicDelegate.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "Dependency.h"
 #include "SelectedOffering.h"
+#include "UObject/NoExportTypes.h"
+#include "EEndGameReason.h"
+#include "OnSlasherSetDelegate.h"
 #include "DBDGameState.generated.h"
 
-class USpecialEventGameplaySpawnerComponent;
-class URenderingFeaturesSequencer;
-class ACamperPlayer;
-class ASlasherPlayer;
-class AClipManager;
-class AMeatHook;
-class UCharacterCollection;
-class ALocker;
-class ASearchable;
-class ADBDPlayer;
-class UScourgeHookManagerComponent;
-class ABaseTrap;
-class AGenerator;
-class AEscapeDoor;
-class AHatch;
-class UEndGameStateComponent;
-class AReverseBearTrapRemover;
 class UServerTimeProviderComponent;
 class APallet;
+class AMeatHook;
+class ASlasherPlayer;
+class AEscapeDoor;
+class USpecialEventGameplaySpawnerComponent;
+class ACamperPlayer;
+class URenderingFeaturesSequencer;
+class AClipManager;
+class ALocker;
+class ASearchable;
+class ABaseTrap;
+class AGenerator;
+class AHatch;
+class AReverseBearTrapRemover;
 class AWindow;
 class ADBDPlayerState;
-class UActorPairQueryEvaluatorComponent;
 class ABreakableBase;
+class UCharacterCollection;
 class ATotem;
 class AInteractable;
-class UAkAudioBank;
+class UActorPairQueryEvaluatorComponent;
+class APawn;
+class UEndGameStateComponent;
+class UScourgeHookManagerComponent;
 class UCollectableCollection;
 class UInGameAssetPreloaderComponent;
+class UAkAudioBank;
 class ADBDPlayerState_Menu;
-class APawn;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDBDGameStateOnEscapeDoorActivated);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDGameStateOnActivatedGeneratorCountChangedDynamic, int32, _activatedGeneratorCount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDBDGameStateOnLevelReadyToPlay);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDGameStateOnKillerIntroCompletePercentChanged, float, killerIntroCompletePercentChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDBDGameStateOnIntroCompleted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDBDGameStateOnLightingGenerated);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDBDGameStateAuthorityOnAllPlayerLoaded);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDBDGameStateOnSlasherSet);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FDBDGameStateOnObsessionChanged, ACamperPlayer*, newObsession, ACamperPlayer*, previousObsession);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FDBDGameStateCallback, ASlasherPlayer*, slasher);
+class ADBDPlayer;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ADBDGameState : public AGameState, public IGameflowEventsNotifier {
     GENERATED_BODY()
 public:
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSlasherSetMultiDelegate, ASlasherPlayer*, SlasherPlayer);
+    UDELEGATE() DECLARE_DYNAMIC_DELEGATE(FOnLevelReadyToPlayDelegate);
+    UDELEGATE() DECLARE_DYNAMIC_DELEGATE(FOnIntroCompleteDelegate);
+    
     UPROPERTY(BlueprintAssignable, Transient)
-    FDBDGameStateOnEscapeDoorActivated OnEscapeDoorActivated;
+    FEscapeDoorActivatedEvent OnEscapeDoorActivated;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDGameStateOnLevelReadyToPlay OnLevelReadyToPlay;
+    FLevelReadyToPlayEvent OnLevelReadyToPlay;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDGameStateOnIntroCompleted OnIntroCompleted;
+    FIntroCompletedEvent OnIntroCompleted;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDGameStateOnKillerIntroCompletePercentChanged OnKillerIntroCompletePercentChanged;
+    FOnKillerIntroCompletePercentChanged OnKillerIntroCompletePercentChanged;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDGameStateOnLightingGenerated OnLightingGenerated;
+    FLightingGeneratedEvent OnLightingGenerated;
     
     UPROPERTY(BlueprintReadWrite, Export, Transient)
     USpecialEventGameplaySpawnerComponent* _specialEventGameplaySpawnerComponent;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDGameStateAuthorityOnAllPlayerLoaded AuthorityOnAllPlayerLoaded;
+    FAllPlayerLoadedEvent AuthorityOnAllPlayerLoaded;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDGameStateOnActivatedGeneratorCountChangedDynamic OnActivatedGeneratorCountChangedDynamic;
+    FActivatedGeneratorCountChangedDynamicEvent OnActivatedGeneratorCountChangedDynamic;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDGameStateOnSlasherSet OnSlasherSet;
+    FSlasherSetEvent OnSlasherSet;
     
     UPROPERTY(BlueprintAssignable)
-    FDBDGameStateOnObsessionChanged OnObsessionChanged;
+    FObsessionChangedDynamicDelegate OnObsessionChanged;
     
     UPROPERTY(Replicated, Transient)
     int32 CamperDeadCount;
@@ -266,6 +269,9 @@ private:
     FString _serverBuildVersion;
     
 public:
+    ADBDGameState();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION()
     void SortOfferings();
     
@@ -523,13 +529,13 @@ public:
     UCharacterCollection* GetCharacterCollection() const;
     
     UFUNCTION(BlueprintCallable)
-    void CallOnSlasherSet(FDBDGameStateCallback callback);
+    void CallOnSlasherSet(FOnSlasherSetDelegate callback);
     
     UFUNCTION(BlueprintCallable)
-    void CallOnLevelReadyToPlay(FDBDGameStateCallback callback);
+    void CallOnLevelReadyToPlay(ADBDGameState::FOnLevelReadyToPlayDelegate callback);
     
     UFUNCTION(BlueprintCallable)
-    void CallOnIntroComplete(FDBDGameStateCallback callback);
+    void CallOnIntroComplete(ADBDGameState::FOnIntroCompleteDelegate callback);
     
     UFUNCTION()
     void BroadcastOnSetBuildLevelData();
@@ -576,8 +582,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddTrap(AInteractable* toAdd);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    ADBDGameState();
+    // Fix for true pure virtual functions not being implemented
 };
 

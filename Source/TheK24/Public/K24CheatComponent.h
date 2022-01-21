@@ -6,7 +6,7 @@
 
 class AZombiesManagement;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK24CheatComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -18,6 +18,7 @@ private:
     AZombiesManagement* _zombiesManagement;
     
 public:
+    UK24CheatComponent();
     UFUNCTION(Exec)
     void DBD_TeleportZombiesTo(float x, float y, float z);
     
@@ -42,6 +43,5 @@ public:
     UFUNCTION(Exec)
     void DBD_K24ComeToMeMyZombies();
     
-    UK24CheatComponent();
 };
 

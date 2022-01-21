@@ -5,7 +5,7 @@
 #include "GameplayTagContainer.h"
 #include "Addon_TheBlight_SoulChemical.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UAddon_TheBlight_SoulChemical : public UItemAddon {
     GENERATED_BODY()
 public:

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "UObject/NoExportTypes.h"
+#include "ASColorTransform.h"
 #include "ASValue.h"
 #include "ASDisplayInfo.h"
-#include "ASColorTransform.h"
+#include "UObject/NoExportTypes.h"
 #include "GFxObject.generated.h"
 
 class UGFxMoviePlayer;
@@ -13,6 +13,7 @@ UCLASS(BlueprintType, Transient)
 class SCALEFORMUI_API UGFxObject : public UObject {
     GENERATED_BODY()
 public:
+    UGFxObject();
     UFUNCTION(BlueprintCallable)
     void SetVisible(bool bVisible);
     
@@ -76,6 +77,5 @@ public:
     UFUNCTION(BlueprintCallable)
     FASColorTransform GetColorTransform();
     
-    UGFxObject();
 };
 

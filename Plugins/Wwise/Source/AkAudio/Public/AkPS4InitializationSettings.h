@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "AkPS4AdvancedInitializationSettings.h"
 #include "AkCommonInitializationSettings.h"
 #include "AkCommunicationSettingsWithSystemInitialization.h"
+#include "AkPS4AdvancedInitializationSettings.h"
 #include "AkPS4InitializationSettings.generated.h"
 
 UCLASS(DefaultConfig, Config=Game)
@@ -19,9 +19,9 @@ public:
     UPROPERTY(AdvancedDisplay, Config, EditAnywhere)
     FAkPS4AdvancedInitializationSettings AdvancedSettings;
     
+    UAkPS4InitializationSettings();
     UFUNCTION()
     void MigrateMultiCoreRendering(bool NewValue);
     
-    UAkPS4InitializationSettings();
 };
 

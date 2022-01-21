@@ -5,7 +5,7 @@
 
 class UTriggerableWorldObjectComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UTriggerableActivatorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -16,10 +16,11 @@ private:
     UPROPERTY(Export, Transient)
     TArray<UTriggerableWorldObjectComponent*> _triggerables;
     
+public:
+    UTriggerableActivatorComponent();
+private:
     UFUNCTION()
     void Authority_OnLevelReadyToPlay();
     
-public:
-    UTriggerableActivatorComponent();
 };
 

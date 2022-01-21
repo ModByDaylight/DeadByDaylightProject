@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "LaunchInfo.h"
 #include "ImpactInfo.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "BaseProjectileLauncher.generated.h"
 
 class ABaseProjectile;
+class APawn;
 class UBaseProjectileReplicationComponent;
 class UProjectileProvider;
 class IProjectileProvider;
-class APawn;
 
-UCLASS(Blueprintable, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class PROJECTILE_API UBaseProjectileLauncher : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -45,6 +45,9 @@ private:
     UBaseProjectileReplicationComponent* _projectileReplicationComponent;
     
 public:
+    UBaseProjectileLauncher();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintImplementableEvent)
     void SetProjectileVar(FName varName, float value);
     
@@ -136,8 +139,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_AddMaxAmmo(int32 ammoToAdd);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UBaseProjectileLauncher();
 };
 

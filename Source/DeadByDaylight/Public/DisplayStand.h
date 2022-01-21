@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
+#include "UObject/NoExportTypes.h"
 #include "CharacterDropdown.h"
 #include "DisplayStand.generated.h"
 
@@ -40,10 +40,11 @@ private:
     UPROPERTY(EditAnywhere)
     FCharacterDropdown _characterDropdown;
     
+public:
+    ADisplayStand();
+private:
     UFUNCTION()
     void OnCurrentActorDestroyed(AActor* destroyedActor);
     
-public:
-    ADisplayStand();
 };
 

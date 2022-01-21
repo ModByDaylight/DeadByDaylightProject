@@ -1,24 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "EAttackType.h"
+#include "Components/ActorComponent.h"
 #include "AttackDelegatePair.h"
 #include "DBDAttackerComponent.generated.h"
 
 class UDBDAttack;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDAttackerComponentOnAttackStartDelegate, const EAttackType, attackType);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDBDAttackerComponentOnAttackFinishDelegate, const EAttackType, attackType);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDAttackerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable, Transient)
-    FDBDAttackerComponentOnAttackStartDelegate OnAttackStartDelegate;
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAttackPhaseChangedDelegate, const EAttackType, attackType);
     
     UPROPERTY(BlueprintAssignable, Transient)
-    FDBDAttackerComponentOnAttackFinishDelegate OnAttackFinishDelegate;
+    FOnAttackPhaseChangedDelegate OnAttackStartDelegate;
+    
+    UPROPERTY(BlueprintAssignable, Transient)
+    FOnAttackPhaseChangedDelegate OnAttackFinishDelegate;
     
 private:
     UPROPERTY(Export, Transient)
@@ -33,6 +32,9 @@ private:
     UPROPERTY(Transient)
     TArray<FAttackDelegatePair> _attackHitDelegates;
     
+public:
+    UDBDAttackerComponent();
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_StoreAttack(const EAttackType attackType);
     
@@ -52,6 +54,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool IsAnyAttackTransitionRequested() const;
     
-    UDBDAttackerComponent();
 };
 

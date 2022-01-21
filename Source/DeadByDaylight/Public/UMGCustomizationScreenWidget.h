@@ -8,10 +8,10 @@
 class UUMGCustomizationPageScrollWidget;
 class UVerticalBox;
 class UUMGCustomizationCategoriesBar;
-class UTextBlock;
 class UUMGCustomizationItemBuyButton;
 class UUMGCustomizationItemWidget;
 class UCanvasPanel;
+class UTextBlock;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGCustomizationScreenWidget : public UMobileBaseUserWidget {
@@ -49,6 +49,8 @@ private:
     UPROPERTY(Transient)
     FName _currentSelectedItem;
     
+public:
+    UUMGCustomizationScreenWidget();
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void SetCategoryLabel(const ECustomizationCategory category);
@@ -63,7 +65,5 @@ private:
     UFUNCTION()
     void BroadcastAvailableItemSelectedEvent(int32 itemIndex, const FStoreItemSlotData& selectedItem, const FStoreItemSlotData& parentItem);
     
-public:
-    UUMGCustomizationScreenWidget();
 };
 

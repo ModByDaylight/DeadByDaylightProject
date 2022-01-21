@@ -6,7 +6,7 @@
 
 class AGenerator;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UCorruptIntervention : public UPerk {
     GENERATED_BODY()
 public:
@@ -24,6 +24,11 @@ private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_BlockedGenerators)
     TArray<AGenerator*> _blockedGenerators;
     
+public:
+    UCorruptIntervention();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION(Reliable, Server, WithValidation)
     void Server_ActivatePerk();
     
@@ -33,9 +38,5 @@ private:
     UFUNCTION()
     void Local_OnIntroCompleted();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UCorruptIntervention();
 };
 

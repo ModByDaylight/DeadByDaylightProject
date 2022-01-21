@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTunableRowHandle.h"
 #include "StatusEffect.h"
+#include "DBDTunableRowHandle.h"
 #include "K25LamentConfigurationPossessionChainAttacksEffect.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK25LamentConfigurationPossessionChainAttacksEffect : public UStatusEffect {
     GENERATED_BODY()
 public:

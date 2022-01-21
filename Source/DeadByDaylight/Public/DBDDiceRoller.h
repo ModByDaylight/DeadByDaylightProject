@@ -4,14 +4,15 @@
 #include "EDiceRollType.h"
 #include "DBDDiceRoller.generated.h"
 
-class UInteractionDefinition;
 class AActor;
 class ADBDPlayer;
+class UInteractionDefinition;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UDBDDiceRoller : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UDBDDiceRoller();
     UFUNCTION(BlueprintCallable)
     static bool GetRollResultByTunableValue(const AActor* RollingActor, FName TunableValueName, float MultiplicativeModifier, float AdditiveModifier);
     
@@ -30,6 +31,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool CalculateOverTimeRollResult(const AActor* RollingActor, float BaseProbability, float DeltaTime, float ExpectedTime, float MultiplicativeModifier, float AdditiveModifier);
     
-    UDBDDiceRoller();
 };
 

@@ -3,7 +3,7 @@
 #include "FirstPersonViewComponent.h"
 #include "TwinFirstPersonViewComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THETWINS_API UTwinFirstPersonViewComponent : public UFirstPersonViewComponent {
     GENERATED_BODY()
 public:

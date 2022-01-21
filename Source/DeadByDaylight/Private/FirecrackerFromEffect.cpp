@@ -1,7 +1,7 @@
 #include "FirecrackerFromEffect.h"
 
-class AGenerator;
 class ADBDPlayer;
+class AGenerator;
 
 void AFirecrackerFromEffect::Multicast_InitFromEffect_Implementation(ADBDPlayer* player, AGenerator* trapedGenerator) {
 }

@@ -1,30 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BaseTrap.h"
+#include "OnIsTrapSetChanged.h"
 #include "Engine/EngineTypes.h"
 #include "BearTrap.generated.h"
 
-class UCapsulePlayerOverlapComponent;
-class ADBDPlayer;
-class UBearTrapOutlineUpdateStrategy;
+class UMapActorComponent;
 class UBoxPlayerOverlapComponent;
+class UCapsulePlayerOverlapComponent;
+class AActor;
+class USphereComponent;
 class UBoxComponent;
 class UDBDOutlineComponent;
-class UMapActorComponent;
-class USphereComponent;
-class AActor;
+class UPrimitiveComponent;
+class UBearTrapOutlineUpdateStrategy;
 class UMontagePlayer;
+class ADBDPlayer;
 class UDBDNavModifierComponent;
 class UInteractor;
 class UInteractionDefinition;
 class UAnimationMontageSlave;
-class UAkComponent;
 class UAnimMontage;
-class UPrimitiveComponent;
 class ASlasherPlayer;
 class UBearTrapAnimInstance;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBearTrapOnIsTrapSetChanged);
+class UAkComponent;
 
 UCLASS()
 class ABearTrap : public ABaseTrap {
@@ -59,7 +58,7 @@ protected:
     UMontagePlayer* _montagePlayer;
     
     UPROPERTY(BlueprintAssignable)
-    FBearTrapOnIsTrapSetChanged _onIsTrapSetChanged;
+    FOnIsTrapSetChanged _onIsTrapSetChanged;
     
     UPROPERTY(BlueprintReadOnly, Transient)
     ADBDPlayer* _ownerPlayer;
@@ -93,6 +92,9 @@ private:
     UAnimationMontageSlave* _animationMontageSlave;
     
 public:
+    ABearTrap();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void TrySetTrappedPlayer(ADBDPlayer* player);
     
@@ -166,9 +168,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnPlayerTrapped(ADBDPlayer* trappedPlayer);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ABearTrap();
 };
 

@@ -1,5 +1,6 @@
 #include "PalletTracker.h"
 #include "Net/UnrealNetwork.h"
+#include "Components/SceneComponent.h"
 
 class ASlasherPlayer;
 
@@ -22,5 +23,6 @@ void APalletTracker::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
 APalletTracker::APalletTracker() {
     this->_procedurallySpawnedPallet = NULL;
     this->_dreamPallet = NULL;
+    this->_indicatorLocation = CreateDefaultSubobject<USceneComponent>(TEXT("IndicatorLocation"));
 }
 

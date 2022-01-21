@@ -6,7 +6,7 @@
 
 class AGenerator;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UGearhead : public UPerk {
     GENERATED_BODY()
 public:
@@ -41,12 +41,13 @@ private:
     UPROPERTY()
     TArray<AGenerator*> _local_revealedGenerators;
     
+public:
+    UGearhead();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_RevealedGenerators();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UGearhead();
 };
 

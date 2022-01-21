@@ -18,6 +18,8 @@ private:
     UPROPERTY(Export)
     UBoxComponent* _playerDetectionZone;
     
+public:
+    AEscapeBlocker();
 protected:
     UFUNCTION(BlueprintCallable)
     void SetPlayerDetectionZone(UBoxComponent* playerDetectionZone);
@@ -39,7 +41,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void ActivatePlayerBlockerFX();
     
-public:
-    AEscapeBlocker();
 };
 

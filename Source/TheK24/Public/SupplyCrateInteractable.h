@@ -45,15 +45,18 @@ private:
     UPROPERTY(EditAnywhere)
     FDBDTunableRowHandle _crateAutoCloseAnimationTime;
     
+public:
+    ASupplyCrateInteractable();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_IsOpen();
     
     UFUNCTION()
     void OnRep_IsAutoClosing();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    ASupplyCrateInteractable();
+    // Fix for true pure virtual functions not being implemented
 };
 

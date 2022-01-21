@@ -8,7 +8,7 @@ class AActor;
 class UObject;
 class ADBDPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API USourceBasedOutlineUpdateStrategy : public UOutlineUpdateStrategy {
     GENERATED_BODY()
 public:
@@ -20,6 +20,7 @@ private:
     FLinearColor _defaultColorForSlasher;
     
 public:
+    USourceBasedOutlineUpdateStrategy();
     UFUNCTION(BlueprintCallable)
     void ResetReveal();
     
@@ -44,6 +45,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddRangedReveal(const UObject* source, const AActor* sourceActor, const FLinearColor highlightColor, int32 priority, const TArray<ADBDPlayer*>& affectedCharacters, float range);
     
-    USourceBasedOutlineUpdateStrategy();
 };
 

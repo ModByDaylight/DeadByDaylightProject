@@ -3,7 +3,7 @@
 #include "StateMachine.h"
 #include "FirecrackerStateMachine.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UFirecrackerStateMachine : public UStateMachine {
     GENERATED_BODY()
 public:

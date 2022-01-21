@@ -1,7 +1,9 @@
 #include "DBDMenuPlayer.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "MaterialHelper.h"
 
-class UCharmSpawnerComponent;
 class AActor;
+class UCharmSpawnerComponent;
 
 void ADBDMenuPlayer::WrappedOnDestroyed(AActor* DestroyedActor) {
 }
@@ -33,5 +35,7 @@ ADBDMenuPlayer::ADBDMenuPlayer() {
     this->RoleSelected = false;
     this->IsOnline = false;
     this->_handPosition = EItemHandPosition::None;
+    this->ItemMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("ItemMesh"));
+    this->MaterialHelper = CreateDefaultSubobject<UMaterialHelper>(TEXT("MaterialHelper"));
 }
 

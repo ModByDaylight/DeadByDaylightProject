@@ -13,10 +13,11 @@ private:
     UPROPERTY(EditInstanceOnly)
     float _genRepairingHearingRange;
     
+public:
+    UZombieAttractedByGeneratorBTService();
+private:
     UFUNCTION()
     void OnInRangeChanged(const bool inRange, AGenerator* generator);
     
-public:
-    UZombieAttractedByGeneratorBTService();
 };
 

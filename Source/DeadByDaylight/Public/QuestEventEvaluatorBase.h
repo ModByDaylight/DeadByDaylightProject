@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "UObject/Object.h"
 #include "GameplayTagContainer.h"
+#include "UObject/Object.h"
 #include "GameEventData.h"
 #include "QuestEventEvaluatorBase.generated.h"
 
-class UEvaluatorCondition;
 class ADBDPlayer;
+class UEvaluatorCondition;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UQuestEventEvaluatorBase : public UObject {
@@ -24,11 +24,11 @@ private:
     UPROPERTY(Transient)
     TArray<UEvaluatorCondition*> _evaluatorConditions;
     
+public:
+    UQuestEventEvaluatorBase();
 protected:
     UFUNCTION()
     void OnGameEvent(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-public:
-    UQuestEventEvaluatorBase();
 };
 

@@ -5,15 +5,16 @@
 
 class AK25Husk;
 class ALamentConfiguration;
-class AK25Gateway;
 class UObject;
 class AK25ControlledProjectile;
 class AK25Power;
+class AK25Gateway;
 
 UCLASS(BlueprintType)
 class UK25Utilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UK25Utilities();
     UFUNCTION(BlueprintPure)
     static ALamentConfiguration* GetLamentConfiguration(UObject* worldContextObject);
     
@@ -29,6 +30,5 @@ public:
     UFUNCTION(BlueprintPure)
     static AK25ControlledProjectile* GetK25ControlledProjectile(UObject* worldContextObject);
     
-    UK25Utilities();
 };
 

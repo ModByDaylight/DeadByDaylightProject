@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "RewardLayoutWidgetToGenerate.generated.h"
 
-class UUMGRewardSlotTutorialPopupRewardWidget;
 class UUserWidget;
+class UUMGRewardSlotTutorialPopupRewardWidget;
 
 USTRUCT(BlueprintType)
 struct FRewardLayoutWidgetToGenerate {

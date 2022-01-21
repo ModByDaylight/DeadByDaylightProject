@@ -6,7 +6,7 @@
 
 class UFlashlightTargetFXComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UKillerFlashlightSFXComponent : public UActorComponent {
     GENERATED_BODY()
 public:

@@ -1,23 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
-#include "UMGBaseButtonWidget.h"
 #include "EUMGDailyRewardWidgetState.h"
+#include "UMGBaseButtonWidget.h"
+#include "OnIntegerIntegerGenericEvent.h"
+#include "UObject/NoExportTypes.h"
 #include "UMGDailyRewardWidget.generated.h"
 
 class UWidgetSwitcher;
+class UCanvasPanel;
 class UTextBlock;
 class UImage;
-class UCanvasPanel;
-
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUMGDailyRewardWidgetOnDailyRewardStateChanged, int32, param1, int32, param2);
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGDailyRewardWidget : public UUMGBaseButtonWidget {
     GENERATED_BODY()
 public:
     UPROPERTY()
-    FUMGDailyRewardWidgetOnDailyRewardStateChanged OnDailyRewardStateChanged;
+    FOnIntegerIntegerGenericEvent OnDailyRewardStateChanged;
     
 protected:
     UPROPERTY(BlueprintReadOnly)
@@ -74,6 +73,9 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UCanvasPanel* ParentItemPanel;
     
+public:
+    UUMGDailyRewardWidget();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void StopIdleAnimationForState(const EUMGDailyRewardWidgetState inState);
     
@@ -107,7 +109,5 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void CollectReward();
     
-public:
-    UUMGDailyRewardWidget();
 };
 

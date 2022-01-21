@@ -9,9 +9,9 @@ UCLASS()
 class ARCHIVES_API UEarnEmblemQualityQEEvaluator : public UQuestEventEvaluatorBase {
     GENERATED_BODY()
 public:
+    UEarnEmblemQualityQEEvaluator();
     UFUNCTION()
     void OnFinishedPlaying(const FGameplayTag gameEventType, const FGameEventData& gameEventData);
     
-    UEarnEmblemQualityQEEvaluator();
 };
 

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "ECharacterDifficulty.h"
 #include "CoreBaseUserWidget.h"
 #include "CharacterTooltipViewData.h"
-#include "ECharacterDifficulty.h"
 #include "CharacterTooltipWidget.generated.h"
 
 class UDBDTextBlock;
@@ -26,6 +26,7 @@ protected:
     UDBDRichTextBlock* DifficultyRTB;
     
 public:
+    UCharacterTooltipWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void SetTooltipData(const FCharacterTooltipViewData& characterViewData);
     
@@ -36,7 +37,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void SetDifficulty(ECharacterDifficulty difficulty);
     
-public:
-    UCharacterTooltipWidget();
 };
 

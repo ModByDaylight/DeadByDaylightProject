@@ -4,7 +4,7 @@
 #include "ESecondWindState.h"
 #include "SecondWind.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API USecondWind : public UPerk {
     GENERATED_BODY()
 public:
@@ -25,8 +25,8 @@ private:
     bool _applyBrokenEffect;
     
 public:
+    USecondWind();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    USecondWind();
 };
 

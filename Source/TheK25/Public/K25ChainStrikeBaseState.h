@@ -3,9 +3,9 @@
 #include "FSM_State.h"
 #include "K25ChainStrikeBaseState.generated.h"
 
-class AK25Gateway;
 class ADBDPlayer;
 class AK25Power;
+class AK25Gateway;
 
 UCLASS(Abstract, BlueprintType)
 class UK25ChainStrikeBaseState : public UFSM_State {
@@ -15,6 +15,9 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     TSet<FName> _secondaryInteractionIDs;
     
+public:
+    UK25ChainStrikeBaseState();
+protected:
     UFUNCTION(BlueprintPure)
     ADBDPlayer* GetPlayerOwner() const;
     
@@ -24,7 +27,5 @@ protected:
     UFUNCTION(BlueprintPure)
     AK25Gateway* GetK25Gateway() const;
     
-public:
-    UK25ChainStrikeBaseState();
 };
 

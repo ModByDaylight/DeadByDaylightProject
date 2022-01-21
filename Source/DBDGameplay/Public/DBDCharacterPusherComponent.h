@@ -3,7 +3,7 @@
 #include "CharacterPusherComponent.h"
 #include "DBDCharacterPusherComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UDBDCharacterPusherComponent : public UCharacterPusherComponent {
     GENERATED_BODY()
 public:

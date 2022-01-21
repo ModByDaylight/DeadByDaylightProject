@@ -11,7 +11,7 @@ class AActor;
 class UK26CrowPlacementValidatorComponent;
 class UK26AmmoHandlerComponent;
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK26PathHandlerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -53,6 +53,9 @@ private:
     TArray<FK26Path> _availablePaths;
     
 public:
+    UK26PathHandlerComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetDependencies(UK26AmmoHandlerComponent* ammoHandler, UK26CrowPlacementValidatorComponent* placementValidator);
     
@@ -69,9 +72,5 @@ private:
     UFUNCTION()
     void Authority_OnMaxAmmoSet(const int32 maxAmmo);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UK26PathHandlerComponent();
 };
 

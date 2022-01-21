@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECamperGuidedAction.h"
 #include "Animation/AnimInstance.h"
 #include "UObject/NoExportTypes.h"
+#include "ECamperGuidedAction.h"
 #include "UObject/NoExportTypes.h"
 #include "EInteractionAnimation.h"
 #include "CamperAnimInstance.generated.h"
 
-class USurvivorPlagueEffect;
 class ACamperPlayer;
 class UAnimMontage;
 class UAnimCompositeBase;
+class USurvivorPlagueEffect;
 
 UCLASS(NonTransient)
 class DEADBYDAYLIGHT_API UCamperAnimInstance : public UAnimInstance {
@@ -253,6 +253,7 @@ private:
     USurvivorPlagueEffect* _cachedSurvivorPlagueEffect;
     
 public:
+    UCamperAnimInstance();
     UFUNCTION(BlueprintCallable)
     void SetIsSacrificeStruggling(bool value);
     
@@ -273,6 +274,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void AddAudioRepairRateRadius(int32 distance);
     
-    UCamperAnimInstance();
 };
 

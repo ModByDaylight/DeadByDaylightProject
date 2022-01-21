@@ -6,7 +6,7 @@
 
 class UInteractionDefinition;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UMoriComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -15,6 +15,7 @@ private:
     TArray<TSubclassOf<UInteractionDefinition>> _moriInteractionClasses;
     
 public:
+    UMoriComponent();
     UFUNCTION(BlueprintCallable)
     void OnMoriUpdateStart();
     
@@ -24,6 +25,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void OnMoriChargeCompleted();
     
-    UMoriComponent();
 };
 

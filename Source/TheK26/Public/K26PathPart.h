@@ -3,11 +3,11 @@
 #include "GameFramework/Actor.h"
 #include "K26PathPart.generated.h"
 
-class USceneComponent;
-class UNiagaraComponent;
 class UStaticMeshComponent;
-class UDBDOutlineComponent;
 class UK26PowerOutlineUpdateStrategy;
+class UDBDOutlineComponent;
+class UNiagaraComponent;
+class USceneComponent;
 
 UCLASS()
 class AK26PathPart : public AActor {

@@ -5,16 +5,16 @@
 
 class UMeshComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API UMaterialHelper : public UBatchMeshCommands {
     GENERATED_BODY()
 public:
+    UMaterialHelper();
     UFUNCTION(BlueprintCallable)
     void RefreshMeshes();
     
     UFUNCTION(BlueprintCallable)
     void RefreshMesh(UMeshComponent* mc);
     
-    UMaterialHelper();
 };
 

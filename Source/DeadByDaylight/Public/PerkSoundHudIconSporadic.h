@@ -30,9 +30,9 @@ protected:
     bool DisplayIcon;
     
 public:
+    UPerkSoundHudIconSporadic();
     UFUNCTION()
     void NativeTick(const FGeometry& MyGeometry, float DeltaTime);
     
-    UPerkSoundHudIconSporadic();
 };
 

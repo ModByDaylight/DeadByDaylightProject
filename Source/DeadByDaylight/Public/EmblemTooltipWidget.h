@@ -3,11 +3,11 @@
 #include "BaseTooltipWidget.h"
 #include "EmblemTooltipWidget.generated.h"
 
-class UUMGTallyEmblemProgressionWidget;
 class UImage;
-class UUMGTallyEmblemProgressBar;
 class UTextBlock;
+class UUMGTallyEmblemProgressBar;
 class UVerticalBox;
+class UUMGTallyEmblemProgressionWidget;
 
 UCLASS(Abstract, EditInlineNew)
 class UEmblemTooltipWidget : public UBaseTooltipWidget {

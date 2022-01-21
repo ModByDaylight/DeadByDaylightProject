@@ -14,9 +14,9 @@ private:
     UDBDGameInstance* _gameInstance;
     
 public:
+    AChatManager();
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_DisplayMessage(const FString& chatIdentifier, int32 playerIndex, const FString& playerName, const FString& mirrorsId, const FString& msg);
     
-    AChatManager();
 };
 

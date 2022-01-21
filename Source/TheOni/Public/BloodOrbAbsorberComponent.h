@@ -1,24 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/ActorComponent.h"
+#include "BloodOrbAbsorbedDelegate.h"
+#include "BloodOrbIsAbsorbingChangedDelegate.h"
 #include "BloodOrbAbsorberComponent.generated.h"
 
-class ABloodOrb;
 class UBloodOrbDropperComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBloodOrbAbsorberComponentAuthority_OnBloodOrbAbsorbed, ABloodOrb*, bloodOrb);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBloodOrbAbsorberComponentOnIsAbsorbingChanged, bool, isAbsorbing);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class THEONI_API UBloodOrbAbsorberComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FBloodOrbAbsorberComponentAuthority_OnBloodOrbAbsorbed Authority_OnBloodOrbAbsorbed;
+    FBloodOrbAbsorbedDelegate Authority_OnBloodOrbAbsorbed;
     
     UPROPERTY(BlueprintAssignable)
-    FBloodOrbAbsorberComponentOnIsAbsorbingChanged OnIsAbsorbingChanged;
+    FBloodOrbIsAbsorbingChangedDelegate OnIsAbsorbingChanged;
     
 protected:
     UPROPERTY(EditDefaultsOnly)
@@ -29,12 +27,12 @@ private:
     TArray<UBloodOrbDropperComponent*> _camperBloodOrbDropperComponents;
     
 public:
+    UBloodOrbAbsorberComponent();
     UFUNCTION(BlueprintCallable)
     void SetInAbsorbMode(const bool inAbsorptionMode);
     
     UFUNCTION(BlueprintPure)
     bool IsInAbsorbMode() const;
     
-    UBloodOrbAbsorberComponent();
 };
 

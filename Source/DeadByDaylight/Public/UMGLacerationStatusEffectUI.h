@@ -4,8 +4,8 @@
 #include "UObject/NoExportTypes.h"
 #include "UMGLacerationStatusEffectUI.generated.h"
 
-class UImage;
 class UPaperSprite;
+class UImage;
 class UTexture2D;
 
 UCLASS(Abstract, EditInlineNew)
@@ -37,11 +37,11 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     FName _glassShatterDisintigrateAnimationName;
     
+public:
+    UUMGLacerationStatusEffectUI();
 private:
     UFUNCTION()
     void OnFinishedBoomAnimation();
     
-public:
-    UUMGLacerationStatusEffectUI();
 };
 

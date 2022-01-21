@@ -3,10 +3,11 @@
 #include "GameplayModifierCondition.h"
 #include "PlayerIsInExitArea.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UPlayerIsInExitArea : public UGameplayModifierCondition {
     GENERATED_BODY()
 public:
+    UPlayerIsInExitArea();
 private:
     UFUNCTION()
     void PlayerExitExitArea();
@@ -14,7 +15,5 @@ private:
     UFUNCTION()
     void PlayerEnterExitArea();
     
-public:
-    UPlayerIsInExitArea();
 };
 

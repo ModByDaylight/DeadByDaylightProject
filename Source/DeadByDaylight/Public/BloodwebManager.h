@@ -4,14 +4,14 @@
 #include "UObject/Object.h"
 #include "BloodwebManager.generated.h"
 
-class UBloodwebGenerator;
-class UBloodwebEntity;
+class UBloodwebHandler;
 class UDBDGameInstance;
 class UDBDDesignTunables;
-class UBloodwebTunables;
+class UBloodwebGenerator;
 class UDBDBloodwebDefinitionBase;
 class IDBDBloodwebDefinitionBase;
-class UBloodwebHandler;
+class UBloodwebTunables;
+class UBloodwebEntity;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UBloodwebManager : public UObject {
@@ -43,9 +43,9 @@ private:
     UBloodwebHandler* _bloodwebHandler;
     
 public:
+    UBloodwebManager();
     UFUNCTION()
     void Init(UDBDGameInstance* gameInstance, UDBDDesignTunables* tunables);
     
-    UBloodwebManager();
 };
 

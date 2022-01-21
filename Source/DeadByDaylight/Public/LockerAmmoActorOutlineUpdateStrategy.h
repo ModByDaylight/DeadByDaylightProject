@@ -3,7 +3,7 @@
 #include "DefaultOutlineUpdateStrategy.h"
 #include "LockerAmmoActorOutlineUpdateStrategy.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API ULockerAmmoActorOutlineUpdateStrategy : public UDefaultOutlineUpdateStrategy {
     GENERATED_BODY()
 public:

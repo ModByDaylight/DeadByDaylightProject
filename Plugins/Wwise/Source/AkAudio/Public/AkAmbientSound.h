@@ -22,12 +22,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SimpleDisplay)
     bool AutoPost;
     
+    AAkAmbientSound();
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     void StopAmbientSound();
     
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     void StartAmbientSound();
     
-    AAkAmbientSound();
 };
 

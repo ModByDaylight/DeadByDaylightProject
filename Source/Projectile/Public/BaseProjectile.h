@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "GameplayTagContainer.h"
-#include "LaunchInfo.h"
-#include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
+#include "GameplayTagContainer.h"
+#include "UObject/NoExportTypes.h"
+#include "LaunchInfo.h"
 #include "ImpactInfo.h"
 #include "UObject/NoExportTypes.h"
 #include "BaseProjectile.generated.h"
 
 class USphereComponent;
-class UBaseProjectileLauncher;
 class UBaseProjectileReplicationComponent;
+class UBaseProjectileLauncher;
 class UPrimitiveComponent;
 
 UCLASS()
@@ -38,6 +38,8 @@ private:
     UPROPERTY(Export, Transient)
     UBaseProjectileReplicationComponent* _replicationComponent;
     
+public:
+    ABaseProjectile();
 protected:
     UFUNCTION(BlueprintPure)
     bool SphereTraceSingle(FVector start, FVector end, USphereComponent* sphere, FHitResult& outHitResult) const;
@@ -87,6 +89,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     bool Authority_TryDetectCollision(FImpactInfo impactInfo, bool force);
     
-    ABaseProjectile();
 };
 

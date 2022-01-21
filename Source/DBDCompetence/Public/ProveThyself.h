@@ -4,7 +4,7 @@
 #include "DBDTunableRowHandle.h"
 #include "ProveThyself.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UProveThyself : public UPerk {
     GENERATED_BODY()
 public:
@@ -12,10 +12,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     FDBDTunableRowHandle _proveThyselfRange;
     
+public:
+    UProveThyself();
+private:
     UFUNCTION()
     void OnSurvivorInOwnerRangeChanged(const bool inRange);
     
-public:
-    UProveThyself();
 };
 

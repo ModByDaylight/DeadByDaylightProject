@@ -5,7 +5,7 @@
 #include "ELoadoutItemType.h"
 #include "IsPlayerPerfInteractionWithNoItem.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UIsPlayerPerfInteractionWithNoItem : public UBaseIsPlayerPerformingInteraction {
     GENERATED_BODY()
 public:
@@ -16,10 +16,11 @@ private:
     UPROPERTY(EditDefaultsOnly)
     ELoadoutItemType _itemType;
     
+public:
+    UIsPlayerPerfInteractionWithNoItem();
+private:
     UFUNCTION()
     void OnCollectableChargeStateChange(bool empty);
     
-public:
-    UIsPlayerPerfInteractionWithNoItem();
 };
 

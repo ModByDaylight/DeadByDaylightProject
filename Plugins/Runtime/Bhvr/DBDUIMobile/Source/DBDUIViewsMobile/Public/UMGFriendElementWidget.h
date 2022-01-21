@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UMGBaseFriendListElement.h"
 #include "Styling/SlateBrush.h"
+#include "UMGBaseFriendListElement.h"
 #include "UMGFriendElementWidget.generated.h"
 
-class UButton;
 class UImage;
+class UButton;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGFriendElementWidget : public UUMGBaseFriendListElement {
@@ -36,13 +36,14 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     FSlateBrush MutedBrush;
     
+public:
+    UUMGFriendElementWidget();
+protected:
     UFUNCTION()
     void HandleSelectionButton();
     
     UFUNCTION(BlueprintCallable)
     void HandleFavoriteButtonClicked();
     
-public:
-    UUMGFriendElementWidget();
 };
 

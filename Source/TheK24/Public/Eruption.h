@@ -3,10 +3,10 @@
 #include "Perk.h"
 #include "Eruption.generated.h"
 
-class ADBDPlayer;
 class AGenerator;
+class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UEruption : public UPerk {
     GENERATED_BODY()
 public:
@@ -29,6 +29,11 @@ private:
     UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     float _screamRevealLocationDuration;
     
+public:
+    UEruption();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_IsPerkEnabled();
     
@@ -51,9 +56,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnGeneratorHighlightEnd(AGenerator* highlightedGenerator);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UEruption();
 };
 

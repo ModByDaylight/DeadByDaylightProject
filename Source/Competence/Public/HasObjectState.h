@@ -4,7 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "HasObjectState.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class COMPETENCE_API UHasObjectState : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:
@@ -13,9 +13,9 @@ private:
     FGameplayTag _state;
     
 public:
+    UHasObjectState();
     UFUNCTION(BlueprintCallable)
     void SetState(FGameplayTag state);
     
-    UHasObjectState();
 };
 

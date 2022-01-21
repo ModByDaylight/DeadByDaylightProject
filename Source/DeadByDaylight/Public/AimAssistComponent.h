@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "AimAssistComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UAimAssistComponent : public UActorComponent {
     GENERATED_BODY()
 public:

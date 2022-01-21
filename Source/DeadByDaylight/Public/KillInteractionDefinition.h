@@ -4,10 +4,10 @@
 #include "AnimationMontageDescriptor.h"
 #include "KillInteractionDefinition.generated.h"
 
-class ACamperPlayer;
 class ADBDPlayer;
+class ACamperPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UKillInteractionDefinition : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -31,6 +31,8 @@ private:
     UPROPERTY(EditAnywhere)
     FAnimationMontageDescriptor _exitMontage;
     
+public:
+    UKillInteractionDefinition();
 protected:
     UFUNCTION(BlueprintImplementableEvent)
     void OnMoriCancelled();
@@ -47,7 +49,5 @@ protected:
     UFUNCTION(BlueprintPure)
     bool GetChargeCompleted() const;
     
-public:
-    UKillInteractionDefinition();
 };
 

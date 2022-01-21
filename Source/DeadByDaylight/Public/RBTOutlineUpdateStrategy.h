@@ -5,15 +5,14 @@
 
 class ADBDPlayer;
 
-UCLASS(Blueprintable, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API URBTOutlineUpdateStrategy : public UDefaultOutlineUpdateStrategy {
     GENERATED_BODY()
 public:
+    URBTOutlineUpdateStrategy();
 protected:
     UFUNCTION(BlueprintNativeEvent, BlueprintPure)
     bool IsRevealedToLocalPlayer_BP(const ADBDPlayer* player) const;
     
-public:
-    URBTOutlineUpdateStrategy();
 };
 

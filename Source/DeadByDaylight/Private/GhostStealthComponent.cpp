@@ -1,8 +1,9 @@
 #include "GhostStealthComponent.h"
 #include "Net/UnrealNetwork.h"
+#include "TimerObject.h"
 
-class ACharacter;
 class ADBDPlayer;
+class ACharacter;
 
 void UGhostStealthComponent::SetRedStainVisibility(const bool visible) {
 }
@@ -46,6 +47,7 @@ void UGhostStealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
 
 UGhostStealthComponent::UGhostStealthComponent() {
     this->_stealthState = EGhostStealthState::AWAITING_ACTIVATION;
+    this->_cooldownTimer = CreateDefaultSubobject<UTimerObject>(TEXT("StealthCooldownTimer"));
     this->_markerMaxAngleOffset = 0.00f;
     this->_useKillerInstinctWhenSpotted = true;
     this->_sightableComponent = NULL;

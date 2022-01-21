@@ -6,7 +6,7 @@
 class ADemogorgonPortal;
 class UPortalPlacerStateComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UPortalTargetingComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -18,6 +18,7 @@ private:
     UPortalPlacerStateComponent* _portalPlacerState;
     
 public:
+    UPortalTargetingComponent();
     UFUNCTION(BlueprintCallable)
     void SetIsPorting(bool isPorting);
     
@@ -32,6 +33,5 @@ public:
     UFUNCTION(BlueprintCallable)
     ADemogorgonPortal* GetTargetedPortal();
     
-    UPortalTargetingComponent();
 };
 

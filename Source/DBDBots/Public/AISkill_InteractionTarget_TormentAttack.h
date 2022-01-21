@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AIRoll.h"
 #include "AISkill_InteractionTarget.h"
+#include "AIRoll.h"
 #include "AISkill_InteractionTarget_TormentAttack.generated.h"
 
 UCLASS(EditInlineNew)

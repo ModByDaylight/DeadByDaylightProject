@@ -1,8 +1,8 @@
 #include "DecoySlasherComponent.h"
 
+class UTerrorRadiusEmitterComponent;
 class ASlasherPlayer;
 class AActor;
-class UTerrorRadiusEmitterComponent;
 
 void UDecoySlasherComponent::SetDecoyIsActive(bool isActive, const FVector& location, const FRotator& rotation, bool visibleRedGlow) {
 }
@@ -36,6 +36,7 @@ UDecoySlasherComponent::UDecoySlasherComponent() {
     this->HasRedGlow = true;
     this->_isActive = false;
     this->_initialized = false;
+    this->_terrorRadiusEmitter = CreateDefaultSubobject<UTerrorRadiusEmitterComponent>(TEXT("Terror Radius Component"));
     this->_redStainComponent = NULL;
 }
 

@@ -13,6 +13,9 @@ protected:
     UPROPERTY()
     UFont* _debugFont;
     
+public:
+    ADBDBaseHud();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void ShowAnimHudBP();
     
@@ -22,7 +25,5 @@ protected:
     UFUNCTION(Exec)
     void DBD_ShowAnimHud(bool show);
     
-public:
-    ADBDBaseHud();
 };
 

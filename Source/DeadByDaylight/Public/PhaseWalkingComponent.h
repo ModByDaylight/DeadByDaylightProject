@@ -2,42 +2,41 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Components/ActorComponent.h"
+#include "OnPhaseWalkInfoReceived.h"
+#include "OnGameEndedVFX.h"
+#include "TriggerSurvivorVisibilityVFX.h"
+#include "TriggerKillerVisibilityVFX.h"
+#include "OnMaxActivePhaseWalkCharges.h"
+#include "TagStateBool.h"
+#include "DBDBidirectionalTimer.h"
+#include "TunableStat.h"
 #include "DBDTunableRowHandle.h"
 #include "PhaseWalkInfo.h"
 #include "UObject/NoExportTypes.h"
-#include "TagStateBool.h"
-#include "TunableStat.h"
-#include "DBDBidirectionalTimer.h"
 #include "DBDTimer.h"
 #include "PhaseWalkingComponent.generated.h"
 
 class AActor;
 class UDecoySlasherComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPhaseWalkingComponentOnMaxActivePhaseWalkCharges);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPhaseWalkingComponentTriggerSurvivorVisibilityVFX, bool, visible);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPhaseWalkingComponentOnPhaseWalkInfoReceived, const FPhaseWalkInfo&, phaseWalkInfo);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPhaseWalkingComponentOnGameEndedVFX);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FPhaseWalkingComponentTriggerKillerVisibilityVFX, bool, wasPassivePhaseWalking, bool, wasActivePhaseWalking, const FPhaseWalkInfo&, phaseWalkInfo);
-
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UPhaseWalkingComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FPhaseWalkingComponentOnPhaseWalkInfoReceived OnPhaseWalkInfoReceived;
+    FOnPhaseWalkInfoReceived OnPhaseWalkInfoReceived;
     
     UPROPERTY(BlueprintAssignable)
-    FPhaseWalkingComponentOnGameEndedVFX OnGameEndedVFX;
+    FOnGameEndedVFX OnGameEndedVFX;
     
     UPROPERTY(BlueprintAssignable)
-    FPhaseWalkingComponentTriggerSurvivorVisibilityVFX TriggerSurvivorVisibilityVFX;
+    FTriggerSurvivorVisibilityVFX TriggerSurvivorVisibilityVFX;
     
     UPROPERTY(BlueprintAssignable)
-    FPhaseWalkingComponentTriggerKillerVisibilityVFX TriggerKillerVisibilityVFX;
+    FTriggerKillerVisibilityVFX TriggerKillerVisibilityVFX;
     
     UPROPERTY(BlueprintAssignable)
-    FPhaseWalkingComponentOnMaxActivePhaseWalkCharges OnMaxActivePhaseWalkCharges;
+    FOnMaxActivePhaseWalkCharges OnMaxActivePhaseWalkCharges;
     
 private:
     UPROPERTY(EditAnywhere)
@@ -89,6 +88,9 @@ private:
     FDBDTunableRowHandle _defaultMaxAcceleration;
     
 public:
+    UPhaseWalkingComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void UpdateSurvivorVisibility(bool visible);
     
@@ -164,8 +166,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool CanStartActivePhaseWalk() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UPhaseWalkingComponent();
 };
 

@@ -3,13 +3,13 @@
 #include "Components/ActorComponent.h"
 #include "InfectedInteractableComponent.generated.h"
 
-class ADBDPlayer;
-class AInteractable;
+class ACamperPlayer;
 class UCurveFloat;
 class UTimelineComponent;
-class ACamperPlayer;
+class AInteractable;
+class ADBDPlayer;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UInfectedInteractableComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -24,6 +24,8 @@ private:
     UPROPERTY(Export, Transient)
     UTimelineComponent* _vomitAlphaTimeline;
     
+public:
+    UInfectedInteractableComponent();
 protected:
     UFUNCTION(BlueprintCallable)
     void SetInteractableMeshAlpha(float alpha);
@@ -61,6 +63,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintPure)
     ACamperPlayer* Authority_GetEquippingPlayer() const;
     
-    UInfectedInteractableComponent();
 };
 

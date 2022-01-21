@@ -14,6 +14,7 @@ private:
     UIdentityValidation* _identityValidation;
     
 public:
+    ADBDGame_Lobby();
     UFUNCTION(Exec)
     void DBD_RemoveBotByIndex(int32 botIndex);
     
@@ -35,6 +36,5 @@ public:
     UFUNCTION(Exec)
     void DBD_AddBotToLobby(int32 selectedCharacter, const FString& item, const FString& addon1, const FString& addon2, const FString& offering, const FString& perk1, const FString& perk2, const FString& perk3, const FString& perk4, int32 rank);
     
-    ADBDGame_Lobby();
 };
 

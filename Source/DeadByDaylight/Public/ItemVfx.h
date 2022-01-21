@@ -15,6 +15,7 @@ private:
     TArray<UParticleSystemComponent*> _particleSystems;
     
 public:
+    AItemVfx();
     UFUNCTION(BlueprintImplementableEvent)
     void OnAttackEnd();
     
@@ -31,7 +32,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void AddParticleSystemComponent(UParticleSystemComponent* particleSystemComponent);
     
-public:
-    AItemVfx();
 };
 

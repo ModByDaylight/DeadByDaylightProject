@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPerkCategory.h"
 #include "EPlayerRole.h"
+#include "EPerkCategory.h"
 #include "CharacterSlideData.generated.h"
 
 USTRUCT(BlueprintType)

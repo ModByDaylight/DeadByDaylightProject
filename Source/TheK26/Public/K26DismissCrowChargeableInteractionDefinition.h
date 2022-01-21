@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "ECamperDamageState.h"
 #include "ChargeableInteractionDefinition.h"
 #include "TunableStat.h"
-#include "ECamperDamageState.h"
 #include "K26DismissCrowChargeableInteractionDefinition.generated.h"
 
+class UChargeableComponent;
 class UK26PowerStatusHandlerComponent;
 class ASlasherPlayer;
-class UChargeableComponent;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK26DismissCrowChargeableInteractionDefinition : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -24,6 +24,8 @@ private:
     UPROPERTY(Transient)
     bool _isLevelReadyToPlay;
     
+public:
+    UK26DismissCrowChargeableInteractionDefinition();
 protected:
     UFUNCTION()
     void OnLevelReadyToPlay();
@@ -36,7 +38,5 @@ protected:
     UFUNCTION()
     void OnDamageStateChanged(ECamperDamageState oldDamageState, ECamperDamageState currentDamageState);
     
-public:
-    UK26DismissCrowChargeableInteractionDefinition();
 };
 

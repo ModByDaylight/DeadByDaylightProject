@@ -1,23 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CharacterDreamworldComponent.h"
-#include "SurvivorSleepiness.h"
 #include "FastTimer.h"
+#include "SurvivorSleepiness.h"
+#include "OnCamperTriggeredDreamTrap.h"
 #include "CamperDreamworldComponent.generated.h"
 
 class ADBDPlayer;
 class AWakerObject;
-class AActor;
 class ASlasherPlayer;
+class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCamperDreamworldComponentOnCamperTriggeredDreamTrap, ADBDPlayer*, camper, AActor*, triggeredDreamTrap);
-
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCamperDreamworldComponent : public UCharacterDreamworldComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FCamperDreamworldComponentOnCamperTriggeredDreamTrap OnCamperTriggeredDreamTrap;
+    FOnCamperTriggeredDreamTrap OnCamperTriggeredDreamTrap;
     
 private:
     UPROPERTY(BlueprintReadOnly, Replicated, Transient, meta=(AllowPrivateAccess=true))
@@ -72,6 +71,9 @@ private:
     bool _showKillerInstantly;
     
 public:
+    UCamperDreamworldComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintPure)
     bool ShouldLookSleepyToLocalPlayer() const;
     
@@ -136,8 +138,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintPure)
     int32 Authority_GetFellAsleepCount() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UCamperDreamworldComponent();
 };
 

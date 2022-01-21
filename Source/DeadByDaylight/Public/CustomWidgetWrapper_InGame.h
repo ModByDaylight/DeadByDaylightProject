@@ -10,9 +10,9 @@ public:
     UPROPERTY(EditAnywhere)
     int32 VirtualJoystickIndex;
     
+    UCustomWidgetWrapper_InGame();
     UFUNCTION()
     void UpdateSettings();
     
-    UCustomWidgetWrapper_InGame();
 };
 

@@ -9,9 +9,9 @@ UCLASS(Blueprintable)
 class ANIMATIONUTILITIES_API UAnimEffectHandler : public UObject {
     GENERATED_BODY()
 public:
+    UAnimEffectHandler();
     UFUNCTION(BlueprintNativeEvent)
     bool HandleAnimNotify(ACharacter* player, const FName& notifyName) const;
     
-    UAnimEffectHandler();
 };
 

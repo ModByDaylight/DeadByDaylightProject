@@ -3,7 +3,7 @@
 #include "EventDrivenModifierCondition.h"
 #include "BaseLacerationLevelCondition.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class THEK23_API UBaseLacerationLevelCondition : public UEventDrivenModifierCondition {
     GENERATED_BODY()
 public:

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Interface.h"
 #include "InteractionPromptViewData.h"
+#include "UObject/Interface.h"
 #include "InteractionPromptsContainerViewInterface.generated.h"
 
 UINTERFACE(Blueprintable)

@@ -3,8 +3,8 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGStalkingStatusEffectUI.generated.h"
 
-class UImage;
 class UCanvasPanel;
+class UImage;
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGStalkingStatusEffectUI : public UMobileBaseUserWidget {

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BTService_OnRelevantBase.h"
-#include "GameplayTagContainer.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
+#include "GameplayTagContainer.h"
 #include "BTService_GetPinLocation.generated.h"
 
 UCLASS()

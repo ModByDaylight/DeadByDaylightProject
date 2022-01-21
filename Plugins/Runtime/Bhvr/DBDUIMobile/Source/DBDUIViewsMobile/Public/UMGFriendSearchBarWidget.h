@@ -17,6 +17,8 @@ protected:
     UPROPERTY(Export)
     UUMGBaseButtonWidget* SearchButton;
     
+public:
+    UUMGFriendSearchBarWidget();
 private:
     UFUNCTION()
     void HandleTextInputChanged(const FText& textInput);
@@ -24,7 +26,5 @@ private:
     UFUNCTION()
     void HandleSearchButtonClicked();
     
-public:
-    UUMGFriendSearchBarWidget();
 };
 

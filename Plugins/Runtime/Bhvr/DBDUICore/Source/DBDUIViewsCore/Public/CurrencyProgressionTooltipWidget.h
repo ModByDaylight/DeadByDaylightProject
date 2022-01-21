@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CoreBaseUserWidget.h"
 #include "CurrencyProgressionTooltipViewData.h"
+#include "CoreBaseUserWidget.h"
 #include "CurrencyProgressionTooltipWidget.generated.h"
 
+class UDBDImage;
 class UDBDTextBlock;
 class UDBDRichTextBlock;
-class UDBDImage;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCurrencyProgressionTooltipWidget : public UCoreBaseUserWidget {
@@ -24,9 +24,9 @@ public:
     UPROPERTY(BlueprintReadOnly, Export)
     UDBDImage* TitleBgIMG;
     
+    UCurrencyProgressionTooltipWidget();
     UFUNCTION(BlueprintCallable)
     void SetTooltipData(const FCurrencyProgressionTooltipViewData& currencyViewData);
     
-    UCurrencyProgressionTooltipWidget();
 };
 

@@ -6,12 +6,15 @@
 
 class ACollectable;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UItemModifier : public UGameplayModifierContainer {
     GENERATED_BODY()
 public:
     UPROPERTY(EditAnywhere, ReplicatedUsing=OnRep_ModifierData)
     FGameplayModifierData ModifierData;
+    
+    UItemModifier();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 private:
     UFUNCTION()
@@ -48,8 +51,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void AuthoritySetItemCount(int32 itemCount);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UItemModifier();
 };
 

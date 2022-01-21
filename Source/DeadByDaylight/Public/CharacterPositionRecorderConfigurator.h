@@ -3,7 +3,7 @@
 #include "BaseHitValidationConfigurator.h"
 #include "CharacterPositionRecorderConfigurator.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UCharacterPositionRecorderConfigurator : public UBaseHitValidationConfigurator {
     GENERATED_BODY()
 public:

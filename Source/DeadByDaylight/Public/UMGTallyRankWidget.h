@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UMGTallyListElementWidget.h"
-#include "TallyScorePipsData.h"
 #include "Layout/Margin.h"
+#include "TallyScorePipsData.h"
 #include "UMGTallyRankWidget.generated.h"
 
+class UUMGTallyRankBanner;
+class UHorizontalBox;
 class UUMGTallyEmblemWidget;
 class UTextBlock;
-class UHorizontalBox;
 class UUMGTallyProgressBar;
-class UUMGTallyRankBanner;
 
 UCLASS(EditInlineNew)
 class UUMGTallyRankWidget : public UUMGTallyListElementWidget {
@@ -42,12 +42,12 @@ private:
     FTallyScorePipsData _scoreData;
     
 public:
+    UUMGTallyRankWidget();
     UFUNCTION(BlueprintPure)
     FTallyScorePipsData GetScoreData() const;
     
     UFUNCTION(BlueprintPure)
     TArray<UUMGTallyEmblemWidget*> GetEmblems() const;
     
-    UUMGTallyRankWidget();
 };
 

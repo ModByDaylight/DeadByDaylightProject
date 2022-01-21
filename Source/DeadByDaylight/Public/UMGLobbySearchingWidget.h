@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TooltipPressedData.h"
 #include "UMGLoadoutBaseWidget.h"
+#include "TooltipPressedData.h"
 #include "ECurrencyType.h"
 #include "UMGLobbySearchingWidget.generated.h"
 
-class UUMGPartySlotsWidget;
-class UUMGBankAndPlayerInfoWidget;
 class UButton;
+class UUMGBankAndPlayerInfoWidget;
+class UUMGPartySlotsWidget;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGLobbySearchingWidget : public UUMGLoadoutBaseWidget {
@@ -42,6 +42,7 @@ protected:
     UUMGPartySlotsWidget* PartySlots;
     
 public:
+    UUMGLobbySearchingWidget();
     UFUNCTION(BlueprintImplementableEvent)
     void SetWaitingTimer(int32 seconds);
     
@@ -61,7 +62,5 @@ protected:
     UFUNCTION()
     void HandleLeaveButtonClicked();
     
-public:
-    UUMGLobbySearchingWidget();
 };
 

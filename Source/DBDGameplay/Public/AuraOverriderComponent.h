@@ -6,16 +6,16 @@
 
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UAuraOverriderComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UAuraOverriderComponent();
     UFUNCTION(BlueprintCallable)
     void ResetAura(const AActor* actor);
     
     UFUNCTION(BlueprintCallable)
     void ForceShowAura(const AActor* actor, const FLinearColor& color, bool isAlwaysVisible, const float minimumOutlineDistance);
     
-    UAuraOverriderComponent();
 };
 

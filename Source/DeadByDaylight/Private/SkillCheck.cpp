@@ -1,7 +1,7 @@
 #include "SkillCheck.h"
 
-class UChargeableInteractionDefinition;
 class UInteractionDefinition;
+class UChargeableInteractionDefinition;
 class ADBDPlayer;
 
 bool USkillCheck::ShouldShowWarning() {

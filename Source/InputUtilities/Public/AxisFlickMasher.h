@@ -6,7 +6,7 @@
 class UInputComponent;
 class UAxisFlick;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class INPUTUTILITIES_API UAxisFlickMasher : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -20,13 +20,14 @@ private:
     UPROPERTY()
     UAxisFlick* _axisFlick2;
     
+public:
+    UAxisFlickMasher();
+private:
     UFUNCTION()
     void OnAxisFlicked2();
     
     UFUNCTION()
     void OnAxisFlicked1();
     
-public:
-    UAxisFlickMasher();
 };
 

@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "Perk.h"
 #include "ESkillCheckCustomType.h"
-#include "GameplayTagContainer.h"
 #include "DecisiveStrike.generated.h"
 
 class ADBDPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UDecisiveStrike : public UPerk {
     GENERATED_BODY()
 public:
@@ -31,6 +31,11 @@ private:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_HasBeenAttempted)
     bool _hasBeenAttempted;
     
+public:
+    UDecisiveStrike();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnUnhookedTimerEnded();
     
@@ -46,9 +51,5 @@ private:
     UFUNCTION()
     void OnOwnerPickedUp(ADBDPlayer* picker);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UDecisiveStrike();
 };
 

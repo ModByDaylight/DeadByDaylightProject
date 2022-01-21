@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EBlinkerState.h"
-#include "Components/ActorComponent.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/ActorComponent.h"
+#include "EBlinkerState.h"
 #include "BlinkerComponent.generated.h"
 
 class ADBDPlayer;
 class UDBDTimerComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UBlinkerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -33,6 +33,7 @@ private:
     UDBDTimerComponent* _blinkChainTimer;
     
 public:
+    UBlinkerComponent();
     UFUNCTION(BlueprintCallable)
     FVector UpdateTargetLocation(ADBDPlayer* player, float blinkDistance, const TArray<float>& scanPercentLocations);
     
@@ -72,6 +73,5 @@ public:
     UFUNCTION(BlueprintPure)
     float GetAutomaticBlinkDelay(int32 chainBlinkCount) const;
     
-    UBlinkerComponent();
 };
 

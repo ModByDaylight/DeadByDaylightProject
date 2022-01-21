@@ -6,22 +6,21 @@
 class UFlashlightComponent;
 class UFlashlightableLightingStrategy;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFlashlightableComponentOnFlashlightAddedEvent, const UFlashlightComponent*, flashlight);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFlashlightableComponentOnFlashlightRemovedEvent, const UFlashlightComponent*, flashlight);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFlashlightableComponentOnFlashlightLitChangedEvent, bool, isLit);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UFlashlightableComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FFlashlightableComponentOnFlashlightAddedEvent OnFlashlightAddedEvent;
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFlashlightLitChangedEvent, bool, isLit);
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFlashlightAddedRemovedEvent, const UFlashlightComponent*, flashlight);
     
     UPROPERTY(BlueprintAssignable)
-    FFlashlightableComponentOnFlashlightRemovedEvent OnFlashlightRemovedEvent;
+    FOnFlashlightAddedRemovedEvent OnFlashlightAddedEvent;
     
     UPROPERTY(BlueprintAssignable)
-    FFlashlightableComponentOnFlashlightLitChangedEvent OnFlashlightLitChangedEvent;
+    FOnFlashlightAddedRemovedEvent OnFlashlightRemovedEvent;
+    
+    UPROPERTY(BlueprintAssignable)
+    FOnFlashlightLitChangedEvent OnFlashlightLitChangedEvent;
     
 private:
     UPROPERTY(EditAnywhere, Instanced)
@@ -31,9 +30,9 @@ private:
     TSet<UFlashlightComponent*> _flashlights;
     
 public:
+    UFlashlightableComponent();
     UFUNCTION(BlueprintPure)
     bool IsLit() const;
     
-    UFlashlightableComponent();
 };
 

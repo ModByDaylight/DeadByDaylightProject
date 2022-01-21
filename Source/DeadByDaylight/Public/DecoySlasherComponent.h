@@ -1,27 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "UObject/NoExportTypes.h"
+#include "TriggerDecoyVisibilityVFX.h"
+#include "Components/ActorComponent.h"
+#include "OnPalletStunned_Authority.h"
 #include "UObject/NoExportTypes.h"
 #include "DecoySlasherComponent.generated.h"
 
 class UTerrorRadiusEmitterComponent;
-class AActor;
-class ASlasherPlayer;
 class URedStainComponent;
+class ASlasherPlayer;
+class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDecoySlasherComponentOnPalletStunned_Authority, AActor*, instigator);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FDecoySlasherComponentTriggerDecoyVisibilityVFX, bool, visible, const FVector&, location, const FRotator&, rotation);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDecoySlasherComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable)
-    FDecoySlasherComponentOnPalletStunned_Authority OnPalletStunned_Authority;
+    FOnPalletStunned_Authority OnPalletStunned_Authority;
     
     UPROPERTY(BlueprintAssignable)
-    FDecoySlasherComponentTriggerDecoyVisibilityVFX TriggerDecoyVisibilityVFX;
+    FTriggerDecoyVisibilityVFX TriggerDecoyVisibilityVFX;
     
 protected:
     UPROPERTY(EditAnywhere)
@@ -44,6 +43,7 @@ private:
     URedStainComponent* _redStainComponent;
     
 public:
+    UDecoySlasherComponent();
     UFUNCTION(BlueprintCallable)
     void SetDecoyIsActive(bool isActive, const FVector& location, const FRotator& rotation, bool visibleRedGlow);
     
@@ -72,6 +72,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Authority_PalletStun(AActor* instigator);
     
-    UDecoySlasherComponent();
 };
 

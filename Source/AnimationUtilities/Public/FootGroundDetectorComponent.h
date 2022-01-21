@@ -6,7 +6,7 @@
 
 class UCharacterMovementComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class ANIMATIONUTILITIES_API UFootGroundDetectorComponent : public UBaseGroundDetectorComponent {
     GENERATED_BODY()
 public:

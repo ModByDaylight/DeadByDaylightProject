@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Perception/AIPerceptionComponent.h"
-#include "AIDetectedStimulus.h"
 #include "AIDisplayDebugInterface.h"
+#include "AIDetectedStimulus.h"
 #include "AITunableParameter.h"
 #include "DBDAIPerceptionComponent.generated.h"
 
 class UObject;
 class UAISenseConfig;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDBOTS_API UDBDAIPerceptionComponent : public UAIPerceptionComponent, public IAIDisplayDebugInterface {
     GENERATED_BODY()
 public:
@@ -43,5 +43,7 @@ private:
     
 public:
     UDBDAIPerceptionComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

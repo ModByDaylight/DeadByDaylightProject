@@ -5,19 +5,18 @@
 #include "UObject/NoExportTypes.h"
 #include "BubbleIndicatorNotifier.generated.h"
 
-class UObject;
-class ABubbleIndicator;
 class UStaticMesh;
+class ABubbleIndicator;
+class UObject;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UBubbleIndicatorNotifier : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UBubbleIndicatorNotifier();
 private:
     UFUNCTION(BlueprintCallable)
     static void SpawnBubbleIndicator(UObject* worldContextObject, TSubclassOf<ABubbleIndicator> bubbleIndicatorBP, FTransform transform, bool triggerLoudNoise, bool spawnOnKillerSideOnly, float lifetime, UStaticMesh* silhouetteStaticMesh, float audibleRange);
     
-public:
-    UBubbleIndicatorNotifier();
 };
 

@@ -28,6 +28,7 @@ protected:
     bool _hasProjectileFired;
     
 public:
+    UK26AbilitySubAnimInstance();
     UFUNCTION()
     void OnHasProjectileFired();
     
@@ -40,6 +41,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ConsumeHasProjectileBeenSummoned();
     
-    UK26AbilitySubAnimInstance();
 };
 

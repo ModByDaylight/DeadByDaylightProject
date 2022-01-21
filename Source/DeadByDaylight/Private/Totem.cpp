@@ -1,5 +1,11 @@
 #include "Totem.h"
 #include "Net/UnrealNetwork.h"
+#include "ActivatorComponent.h"
+#include "LocalPlayerTrackerComponent.h"
+#include "Perception/AIPerceptionStimuliSourceComponent.h"
+#include "BlockableComponent.h"
+#include "GameplayTagContainerComponent.h"
+#include "TotemOutlineUpdateStrategy.h"
 
 class ADBDPlayer;
 
@@ -52,7 +58,13 @@ void ATotem::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimePr
 
 ATotem::ATotem() {
     this->_totemState = ETotemState::Dull;
+    this->_perceptionStimuliComponent = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("AIPerceptionStimuliSourceComponent"));
+    this->_totemBlockableComponent = CreateDefaultSubobject<UBlockableComponent>(TEXT("TotemBlockableComponent"));
+    this->_localPlayerTracker = CreateDefaultSubobject<ULocalPlayerTrackerComponent>(TEXT("LocalPlayerTracker"));
+    this->_activatorComponent = CreateDefaultSubobject<UActivatorComponent>(TEXT("Activator Component"));
+    this->_objectState = CreateDefaultSubobject<UGameplayTagContainerComponent>(TEXT("Object State"));
     this->_interactionsAttachPoint = NULL;
+    this->_totemOutlineUpdateStrategy = CreateDefaultSubobject<UTotemOutlineUpdateStrategy>(TEXT("Totem Outline Strategy"));
     this->_canBeBoundToBoonPerk = true;
 }
 

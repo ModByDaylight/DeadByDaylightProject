@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "KillerProjectile.h"
 #include "EK25ProjectileDeactivateReason.h"
+#include "KillerProjectile.h"
 #include "LaunchInfo.h"
 #include "K25ProjectileDeactivationData.h"
 #include "Engine/EngineTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "K25Projectile.generated.h"
 
-class UKillerProjectileDodgeComponent;
-class UStaticMeshComponent;
 class UPrimitiveComponent;
+class UStaticMeshComponent;
+class UKillerProjectileDodgeComponent;
 class AK25Chain;
 class UDBDProjectileMovementComponent;
 
@@ -48,6 +48,9 @@ private:
     FK25ProjectileDeactivationData _lastDeactivationData;
     
 public:
+    AK25Projectile();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(Reliable, Server)
     void Server_RequestDisableProjectile(EK25ProjectileDeactivateReason deactivateReason);
     
@@ -69,9 +72,5 @@ protected:
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
     void Cosmetic_OnProjectileActivated();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    AK25Projectile();
 };
 

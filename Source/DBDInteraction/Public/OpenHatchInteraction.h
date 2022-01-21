@@ -4,7 +4,7 @@
 #include "AnimationMontageDescriptor.h"
 #include "OpenHatchInteraction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UOpenHatchInteraction : public UChargeableInteractionDefinition {
     GENERATED_BODY()
 public:

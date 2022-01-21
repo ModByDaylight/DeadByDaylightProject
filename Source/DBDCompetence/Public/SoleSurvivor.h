@@ -5,7 +5,7 @@
 
 class ACamperPlayer;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USoleSurvivor : public UPerk {
     GENERATED_BODY()
 public:
@@ -17,10 +17,11 @@ private:
     UPROPERTY(Transient)
     TArray<ACamperPlayer*> _otherSurvivors;
     
+public:
+    USoleSurvivor();
+private:
     UFUNCTION()
     void Authority_OnSurvivorAdded(const ACamperPlayer* survivor);
     
-public:
-    USoleSurvivor();
 };
 

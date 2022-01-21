@@ -26,12 +26,12 @@ private:
     FText Text;
     
 public:
+    UCoreInputPromptTextWidget();
     UFUNCTION(BlueprintCallable)
     void SetText(const FText& NewText);
     
     UFUNCTION(BlueprintCallable)
     void SetInputKey(const FKey& NewInputKey);
     
-    UCoreInputPromptTextWidget();
 };
 

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "AITunableParameter.h"
 #include "BTService_StimuliMonitor.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
-#include "AITunableParameter.h"
 #include "BTService_StimuliMonitor_Slasher.generated.h"
 
 UCLASS()

@@ -4,11 +4,11 @@
 #include "AimableInterface.h"
 #include "AimableComponent.generated.h"
 
+class UAimPointProcessor;
 class AActor;
 class UAimDirectionProvider;
-class UAimPointProcessor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UAimableComponent : public UActorComponent, public IAimableInterface {
     GENERATED_BODY()
 public:
@@ -32,6 +32,7 @@ protected:
     TArray<UAimPointProcessor*> _preOcclusionAimPointProcessors;
     
 public:
+    UAimableComponent();
     UFUNCTION(BlueprintCallable)
     void SetProcessors(TArray<UAimPointProcessor*> processors);
     
@@ -41,6 +42,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetMaxAimDistance(float maxAimDistance);
     
-    UAimableComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

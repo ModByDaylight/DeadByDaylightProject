@@ -37,6 +37,7 @@ private:
     USceneComponent* _runnerComponent;
     
 public:
+    ALevelParadise();
     UFUNCTION(BlueprintCallable)
     void ParadiseEntered(const FParadiseData& playerData);
     
@@ -48,6 +49,5 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
     void EnterParadise(const FParadiseData& playerData);
     
-    ALevelParadise();
 };
 

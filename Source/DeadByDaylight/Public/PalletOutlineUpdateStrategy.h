@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "PalletOutlineUpdateStrategy.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UPalletOutlineUpdateStrategy : public UVaultableOutlineUpdateStrategy {
     GENERATED_BODY()
 public:

@@ -3,6 +3,6 @@
 
 UUMGBloodStoreMysteryBoxPopup::UUMGBloodStoreMysteryBoxPopup() {
     this->MysteryItem = NULL;
-    this->_addedToInventory = INVTEXT("ADDED TO INVENTORY");
+    this->_addedToInventory = FText::FromString(TEXT("ADDED TO INVENTORY"));
 }
 

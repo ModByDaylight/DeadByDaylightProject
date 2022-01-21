@@ -7,9 +7,9 @@ UCLASS()
 class DEADBYDAYLIGHT_API UStreamVideoManager : public UObject {
     GENERATED_BODY()
 public:
+    UStreamVideoManager();
     UFUNCTION()
     void OnStreamVideoDone();
     
-    UStreamVideoManager();
 };
 

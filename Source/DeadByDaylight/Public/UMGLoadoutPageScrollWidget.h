@@ -30,6 +30,9 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     FString _subtitle;
     
+public:
+    UUMGLoadoutPageScrollWidget();
+protected:
     UFUNCTION(BlueprintImplementableEvent)
     void SetItemWidgetClass();
     
@@ -44,7 +47,5 @@ protected:
     UFUNCTION()
     void HandleItemClicked(FName itemID);
     
-public:
-    UUMGLoadoutPageScrollWidget();
 };
 

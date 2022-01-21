@@ -20,10 +20,11 @@ private:
     UPROPERTY(EditAnywhere)
     FString CommandName;
     
+public:
+    UUMGCommandDebugButton();
+private:
     UFUNCTION()
     void TriggerCommand();
     
-public:
-    UUMGCommandDebugButton();
 };
 

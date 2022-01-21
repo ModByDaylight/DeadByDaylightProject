@@ -8,6 +8,7 @@ UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UDBDUtilTimer : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UDBDUtilTimer();
     UFUNCTION(BlueprintCallable)
     static void Update(UPARAM(Ref) FDBDTimer& Timer, float deltaTime);
     
@@ -38,6 +39,5 @@ public:
     UFUNCTION(BlueprintPure)
     static float GetPercentTimeElapsed(const FDBDTimer& Timer);
     
-    UDBDUtilTimer();
 };
 

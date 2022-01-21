@@ -6,7 +6,7 @@
 class APalletTracker;
 class ASlasherPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UPlaceDreamPalletInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:
@@ -19,6 +19,9 @@ private:
     APalletTracker* _closestTracker;
     
 public:
+    UPlaceDreamPalletInteraction();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintImplementableEvent)
     void SpawnDreamPallet(APalletTracker* trackerAtLocation);
     
@@ -33,8 +36,5 @@ public:
     UFUNCTION(BlueprintPure)
     bool CanSpawnDreamPalletAtTracker(APalletTracker* tracker) const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UPlaceDreamPalletInteraction();
 };
 

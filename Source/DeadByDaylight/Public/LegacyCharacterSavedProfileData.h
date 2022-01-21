@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "LegacySavedPlayerLoadoutData.h"
 #include "UObject/NoExportTypes.h"
-#include "LegacySavedBloodWebPersistentData.h"
 #include "LegacyCharacterSavedInventoryData.h"
+#include "LegacySavedBloodWebPersistentData.h"
+#include "LegacySavedPlayerLoadoutData.h"
 #include "LegacyCharacterSavedProfileData.generated.h"
 
 USTRUCT(BlueprintType)

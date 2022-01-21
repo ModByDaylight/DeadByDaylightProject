@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "BTService_FindInteractor.h"
-#include "BehaviorTree/BehaviorTreeTypes.h"
 #include "EFindInteractablePalletIntentions.h"
+#include "BehaviorTree/BehaviorTreeTypes.h"
 #include "AITunableParameter.h"
 #include "BTService_FindInteractor_Pallet.generated.h"
 

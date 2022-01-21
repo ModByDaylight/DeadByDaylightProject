@@ -3,7 +3,7 @@
 #include "OnEventBaseAddon.h"
 #include "OnEventSetTimerAddon.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UOnEventSetTimerAddon : public UOnEventBaseAddon {
     GENERATED_BODY()
 public:

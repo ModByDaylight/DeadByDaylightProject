@@ -3,15 +3,14 @@
 #include "StateMachine.h"
 #include "AtlantaTutorialStateMachine.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UAtlantaTutorialStateMachine : public UStateMachine {
     GENERATED_BODY()
 public:
+    UAtlantaTutorialStateMachine();
 private:
     UFUNCTION()
     void OnBlockingNotificationDismissed(FName blockingNotificationID);
     
-public:
-    UAtlantaTutorialStateMachine();
 };
 

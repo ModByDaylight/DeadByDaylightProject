@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "BuckleUp.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UBuckleUp : public UPerk {
     GENERATED_BODY()
 public:

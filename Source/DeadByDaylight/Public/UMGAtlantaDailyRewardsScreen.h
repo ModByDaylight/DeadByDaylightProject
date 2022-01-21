@@ -6,8 +6,8 @@
 
 class UUMGPopupButton;
 class UUMGAtlantaDailyRewardsGrid;
-class UCanvasPanel;
 class UTextBlock;
+class UCanvasPanel;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlantaDailyRewardsScreen : public UMobileBaseUserWidget {
@@ -32,13 +32,14 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     FSlateColor WarningColor;
     
+public:
+    UUMGAtlantaDailyRewardsScreen();
+protected:
     UFUNCTION(BlueprintCallable)
     void HandleCurrentActiveDailyRewardStateChanged(int32 dailyRewardIndex, int32 dailyRewardNewState);
     
     UFUNCTION(BlueprintCallable)
     void HandleContinueButtonClick();
     
-public:
-    UUMGAtlantaDailyRewardsScreen();
 };
 

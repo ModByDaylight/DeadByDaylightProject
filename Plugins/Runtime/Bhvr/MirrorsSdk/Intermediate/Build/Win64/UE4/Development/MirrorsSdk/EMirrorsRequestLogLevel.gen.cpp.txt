@@ -1,5 +1,0 @@
-C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\MirrorsSdk\Intermediate\Build\Win64\UE4\Development\MirrorsSdk\Definitions.MirrorsSdk.h
-C:\Data\UnrealEngine\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-C:\Data\UnrealEngine\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\MirrorsSdk\Source\MirrorsSdk/Public/EMirrorsRequestLogLevel.h
-C:\Data\Projects\DeadByDaylight\Plugins\Runtime\Bhvr\MirrorsSdk\Intermediate\Build\Win64\UE4\Inc\MirrorsSdk\EMirrorsRequestLogLevel.generated.h

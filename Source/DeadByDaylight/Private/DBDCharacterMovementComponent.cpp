@@ -1,7 +1,7 @@
 #include "DBDCharacterMovementComponent.h"
 
-class UAnimMontage;
 class UCurveFloat;
+class UAnimMontage;
 
 void UDBDCharacterMovementComponent::SetRandomInputAmplitude(float value) {
 }

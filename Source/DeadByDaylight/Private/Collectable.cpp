@@ -1,5 +1,9 @@
 #include "Collectable.h"
 #include "Net/UnrealNetwork.h"
+#include "Components/SceneComponent.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "ItemModifier.h"
+#include "GameplayTagContainerComponent.h"
 
 class UInteractor;
 class ADBDPlayer;
@@ -188,7 +192,7 @@ bool ACollectable::CanBeCollected_Implementation(const ADBDPlayer* collector) co
     return false;
 }
 
-void ACollectable::CallOnCollectablePickedUpBP(FCollectableCallback callback) {
+void ACollectable::CallOnCollectablePickedUpBP(ACollectable::FOnCollectablePickedUpBPDelegate callback) {
 }
 
 
@@ -234,12 +238,18 @@ ACollectable::ACollectable() {
     this->Category = ECollectableCategory::Common;
     this->IsInUse = false;
     this->FromPlayerSpawn = false;
+    this->BaseItemModifier = CreateDefaultSubobject<UItemModifier>(TEXT("ItemModifier"));
+    this->ItemModifier1 = CreateDefaultSubobject<UItemModifier>(TEXT("ItemModifier1"));
+    this->ItemModifier2 = CreateDefaultSubobject<UItemModifier>(TEXT("ItemModifier2"));
     this->ShouldRegisterToOnSurvivorAdded = false;
     this->BeingCollected = false;
     this->BeingDropped = false;
     this->_beingConsumedByEntity = false;
     this->_itemInteractor = NULL;
+    this->_mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("ItemMesh"));
     this->_displayedInputType = EInputInteractionType::VE_ItemUse;
+    this->_objectState = CreateDefaultSubobject<UGameplayTagContainerComponent>(TEXT("ObjectState"));
+    this->_placementOrigin = CreateDefaultSubobject<USceneComponent>(TEXT("PlacementOrigin"));
     this->_collector = NULL;
     this->_firstCollector = NULL;
     this->_state = ECollectableState::OnGround;

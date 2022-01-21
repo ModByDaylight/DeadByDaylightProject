@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "InFrustumComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API UInFrustumComponent : public UActorComponent {
     GENERATED_BODY()
 public:

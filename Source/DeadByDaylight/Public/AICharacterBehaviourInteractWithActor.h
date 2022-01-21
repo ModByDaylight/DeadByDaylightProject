@@ -5,8 +5,8 @@
 #include "Navigation/PathFollowingComponent.h"
 #include "AICharacterBehaviourInteractWithActor.generated.h"
 
-class ADBDAIPlayerController;
 class ADBDPlayer;
+class ADBDAIPlayerController;
 class UAICharacterBehaviourInteractWithActorData;
 
 UCLASS()
@@ -23,11 +23,11 @@ protected:
     UPROPERTY()
     UAICharacterBehaviourInteractWithActorData* _behaviourData;
     
+public:
+    UAICharacterBehaviourInteractWithActor();
 private:
     UFUNCTION()
     void OnMovementFinished(FAIRequestID RequestID, TEnumAsByte<EPathFollowingResult::Type> Result);
     
-public:
-    UAICharacterBehaviourInteractWithActor();
 };
 

@@ -3,9 +3,9 @@
 #include "GameFramework/Actor.h"
 #include "SplineAudioEmitterActor.generated.h"
 
+class USplineComponent;
 class USceneComponent;
 class UAkComponent;
-class USplineComponent;
 
 UCLASS()
 class AUDIOUTILITIES_API ASplineAudioEmitterActor : public AActor {

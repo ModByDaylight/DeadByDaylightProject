@@ -3,12 +3,12 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGPromoPackSelectedItemWidget.generated.h"
 
+class UScrollBox;
 class UNamedSlot;
 class UUMGHtmlRichText;
-class UUMGPromoPackItemWidget;
 class UImage;
 class UTextBlock;
-class UScrollBox;
+class UUMGPromoPackItemWidget;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGPromoPackSelectedItemWidget : public UMobileBaseUserWidget {

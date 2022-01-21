@@ -8,7 +8,7 @@
 class AActor;
 class UPrimitiveComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class THEONI_API UBloodOrbOverlapComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -16,6 +16,11 @@ private:
     UPROPERTY(ReplicatedUsing=OnRep_CurrentOverlappingOrbs)
     int32 _currentOverlappingOrbs;
     
+public:
+    UBloodOrbOverlapComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_CurrentOverlappingOrbs(int32 previousOverlappingOrbs);
     
@@ -31,9 +36,5 @@ private:
     UFUNCTION()
     void Authority_OnBloodOrbBeginOverlap(UPrimitiveComponent* hitComponent, AActor* otherActor, UPrimitiveComponent* otherComp, int32 otherBodyIndex, bool bFromSweep, const FHitResult& sweepResult);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UBloodOrbOverlapComponent();
 };
 

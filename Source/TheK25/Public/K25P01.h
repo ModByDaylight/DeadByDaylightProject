@@ -7,7 +7,7 @@
 
 class AGenerator;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UK25P01 : public UPerk {
     GENERATED_BODY()
 public:
@@ -34,15 +34,16 @@ private:
     UPROPERTY(Transient)
     TArray<AGenerator*> _local_generatorsBlocked;
     
+public:
+    UK25P01();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+private:
     UFUNCTION()
     void OnRep_GeneratorsBlocked();
     
     UFUNCTION()
     void Authority_OnBlockTimerDone(AGenerator* generator);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UK25P01();
 };
 

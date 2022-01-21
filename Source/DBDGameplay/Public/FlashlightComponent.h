@@ -7,22 +7,20 @@
 
 class UFlashlightableComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFlashlightComponentOnFlashlightTurnedOn);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFlashlightComponentOnFlashlightTurnedOff);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFlashlightComponentOnFlashlightablesUpdated);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UFlashlightComponent : public UActorComponent, public IBlindingEffectorInterface {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FFlashlightComponentOnFlashlightTurnedOn OnFlashlightTurnedOn;
+    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFlashlightEvent);
     
     UPROPERTY(BlueprintAssignable)
-    FFlashlightComponentOnFlashlightTurnedOff OnFlashlightTurnedOff;
+    FOnFlashlightEvent OnFlashlightTurnedOn;
     
     UPROPERTY(BlueprintAssignable)
-    FFlashlightComponentOnFlashlightablesUpdated OnFlashlightablesUpdated;
+    FOnFlashlightEvent OnFlashlightTurnedOff;
+    
+    UPROPERTY(BlueprintAssignable)
+    FOnFlashlightEvent OnFlashlightablesUpdated;
     
 private:
     UPROPERTY(EditAnywhere)
@@ -47,6 +45,9 @@ private:
     bool _isOwnerLagging;
     
 public:
+    UFlashlightComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void TurnOn();
     
@@ -73,8 +74,7 @@ public:
     UFUNCTION(BlueprintPure)
     float GetEffectiveBlindnessDuration() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UFlashlightComponent();
+    // Fix for true pure virtual functions not being implemented
 };
 

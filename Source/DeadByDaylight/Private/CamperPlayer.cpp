@@ -1,26 +1,38 @@
 #include "CamperPlayer.h"
 #include "Net/UnrealNetwork.h"
+#include "KillerInstinctComponent.h"
+#include "ProtectionHitComponent.h"
+#include "ChargeableComponent.h"
+#include "CharacterPositionRecorderComponent.h"
+#include "CamperSlashableComponent.h"
+#include "StalkedComponent.h"
+#include "SpherePlayerOverlapComponent.h"
+#include "Components/CapsuleComponent.h"
+#include "DBDPawnSensingComponent.h"
+#include "SurviveTimerScoreEventComponent.h"
+#include "CharmSpawnerComponent.h"
+#include "CamperEndGameComponent.h"
 
 class ACamperPlayer;
+class UCamperBloodTrailComponent;
+class AActor;
+class UCamperHealthComponent;
+class UTerrorRadiusReceiverComponent;
+class UPrimitiveComponent;
 class ADBDPlayer;
 class APawn;
-class AActor;
-class UPrimitiveComponent;
-class UCamperAnimInstance;
-class UTerrorRadiusReceiverComponent;
 class UScreamComponent;
 class AReverseBearTrap;
 class UAkComponent;
 class UAnimationMontageSlave;
-class UCamperHealthComponent;
 class UMoveComponentToComponent;
 class UHookableComponent;
 class UDBDClipRegionComponent;
 class UChaseeCharacterComponent;
 class UCamperStillnessTrackerComponent;
 class UDBDCamperData;
+class UCamperAnimInstance;
 class UCameraAttachmentComponent;
-class UCamperBloodTrailComponent;
 class UInteractionDefinition;
 
 void ACamperPlayer::UpdateKillerDistanceEvent(float deltaSeconds) {
@@ -556,6 +568,7 @@ ACamperPlayer::ACamperPlayer() {
     this->InputMashDecayTime = 1.00f;
     this->isBeingDissolved = false;
     this->FootprintAudibleRange = 1200.00f;
+    this->StalkedComponent = CreateDefaultSubobject<UStalkedComponent>(TEXT("StalkedComponent"));
     this->CameraResetToleranceYaw = 2.00f;
     this->CameraResetTolerancePitch = 2.00f;
     this->CameraRecenterOffsetYaw = 90.00f;
@@ -567,20 +580,42 @@ ACamperPlayer::ACamperPlayer() {
     this->TimeforDeathWhileHooked = 60.00f;
     this->SecondsUntilFootprintTrigger = 0.10f;
     this->TriggerAfflictionHUDIntro = false;
+    this->_stillnessTracker = CreateDefaultSubobject<UCamperStillnessTrackerComponent>(TEXT("StillnessTracker"));
     this->PartiallyHiddenStillnessThreshold = 0.00f;
     this->_escape = NULL;
     this->_overlappingEscape = NULL;
+    this->ProximityZone = CreateDefaultSubobject<USpherePlayerOverlapComponent>(TEXT("ProximityZone"));
+    this->SlashableZone = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Slashable"));
+    this->HookSlashableZone = CreateDefaultSubobject<UCapsuleComponent>(TEXT("HookSlashable"));
+    this->_camperSlashable = CreateDefaultSubobject<UCamperSlashableComponent>(TEXT("CamperSlashable"));
+    this->_terrorRadiusReceiverComponent = CreateDefaultSubobject<UTerrorRadiusReceiverComponent>(TEXT("TerrorRadiusReceiverComponent"));
     this->CrouchCapsuleHalfHeight = 0.00f;
     this->IKOffsetRightFoot = 0.00f;
     this->IKOffsetLeftFoot = 0.00f;
+    this->_camperSensor = CreateDefaultSubobject<UDBDPawnSensingComponent>(TEXT("CamperSensor"));
+    this->_surviveTimerScoreComponent = CreateDefaultSubobject<USurviveTimerScoreEventComponent>(TEXT("SurviveTimerScoreComponent"));
+    this->_healthComponent = CreateDefaultSubobject<UCamperHealthComponent>(TEXT("CamperHealthComponent"));
+    this->_hpSlot01 = CreateDefaultSubobject<UChargeableComponent>(TEXT("HPSlot01"));
+    this->_hpSlot02 = CreateDefaultSubobject<UChargeableComponent>(TEXT("HPSlot02"));
+    this->_mendChargeable = CreateDefaultSubobject<UChargeableComponent>(TEXT("MendChargeable"));
     this->_bloodTrailSettings = NULL;
+    this->_bloodTrailComponent = CreateDefaultSubobject<UCamperBloodTrailComponent>(TEXT("CamperBloodTrailComponent"));
+    this->_killerInstinctComponent = CreateDefaultSubobject<UKillerInstinctComponent>(TEXT("KillerInstinctComponent"));
+    this->_cameraAttachment = CreateDefaultSubobject<UCameraAttachmentComponent>(TEXT("CameraAttachmentComponent"));
+    this->_charmSpawnerComponent = CreateDefaultSubobject<UCharmSpawnerComponent>(TEXT("CharmSpawnerComponent"));
+    this->_hookableComponent = CreateDefaultSubobject<UHookableComponent>(TEXT("HookableComponent"));
+    this->_protectionHitComponent = CreateDefaultSubobject<UProtectionHitComponent>(TEXT("ProtectionHitComponent"));
+    this->_screamComponent = CreateDefaultSubobject<UScreamComponent>(TEXT("ScreamComponent"));
+    this->_positionRecorder = CreateDefaultSubobject<UCharacterPositionRecorderComponent>(TEXT("Position Recorder"));
     this->_runInputPressed = false;
     this->_trapIndicatorActive = false;
+    this->_camperEndGameComponent = CreateDefaultSubobject<UCamperEndGameComponent>(TEXT("CamperEndGameComponent"));
     this->_noOcclusionAkComponent = NULL;
     this->_isHealingKOCamper = false;
     this->_isSkillCheckFailed = false;
     this->_isBeingSacrificed = false;
     this->_isWiggleProgressionAllowed = true;
+    this->_meshMover = CreateDefaultSubobject<UMoveComponentToComponent>(TEXT("MeshMover"));
     this->_sprintEffect = NULL;
 }
 

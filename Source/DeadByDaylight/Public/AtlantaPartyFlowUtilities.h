@@ -7,12 +7,12 @@ UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UAtlantaPartyFlowUtilities : public UObject {
     GENERATED_BODY()
 public:
+    UAtlantaPartyFlowUtilities();
     UFUNCTION(BlueprintCallable)
     static bool IsCurrentPlayerInParty();
     
     UFUNCTION(BlueprintCallable)
     static bool IsCurrentPlayerAloneInParty();
     
-    UAtlantaPartyFlowUtilities();
 };
 

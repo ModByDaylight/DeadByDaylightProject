@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "MoveActorToComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class GAMEPLAYUTILITIES_API UMoveActorToComponent : public UActorComponent {
     GENERATED_BODY()
 public:

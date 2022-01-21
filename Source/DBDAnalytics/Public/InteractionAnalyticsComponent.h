@@ -3,7 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "InteractionAnalyticsComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UInteractionAnalyticsComponent : public UActorComponent {
     GENERATED_BODY()
 public:

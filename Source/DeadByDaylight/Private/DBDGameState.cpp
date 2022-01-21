@@ -1,26 +1,31 @@
 #include "DBDGameState.h"
 #include "Net/UnrealNetwork.h"
+#include "ActorPairQueryEvaluatorComponent.h"
+#include "ServerTimeProviderComponent.h"
+#include "RenderingFeaturesSequencer.h"
+#include "ScourgeHookManagerComponent.h"
+#include "InGameAssetPreloaderComponent.h"
 
-class ADBDPlayerState_Menu;
-class UAkAudioBank;
 class AInteractable;
-class ACamperPlayer;
+class UAkAudioBank;
+class UCharacterCollection;
 class ATotem;
+class AHatch;
+class ACamperPlayer;
+class ADBDPlayerState_Menu;
 class USpecialEventGameplaySpawnerComponent;
 class ADBDPlayerState;
-class ABaseTrap;
-class AGenerator;
 class ADBDPlayer;
+class UEndGameStateComponent;
 class APawn;
+class AMeatHook;
 class ASlasherPlayer;
 class AWindow;
-class UCharacterCollection;
 class ASearchable;
-class UEndGameStateComponent;
 class AReverseBearTrapRemover;
 class APallet;
-class AMeatHook;
-class AHatch;
+class ABaseTrap;
+class AGenerator;
 class AEscapeDoor;
 class UCollectableCollection;
 
@@ -325,13 +330,13 @@ UCharacterCollection* ADBDGameState::GetCharacterCollection() const {
     return NULL;
 }
 
-void ADBDGameState::CallOnSlasherSet(FDBDGameStateCallback callback) {
+void ADBDGameState::CallOnSlasherSet(FOnSlasherSetDelegate callback) {
 }
 
-void ADBDGameState::CallOnLevelReadyToPlay(FDBDGameStateCallback callback) {
+void ADBDGameState::CallOnLevelReadyToPlay(ADBDGameState::FOnLevelReadyToPlayDelegate callback) {
 }
 
-void ADBDGameState::CallOnIntroComplete(FDBDGameStateCallback callback) {
+void ADBDGameState::CallOnIntroComplete(ADBDGameState::FOnIntroCompleteDelegate callback) {
 }
 
 void ADBDGameState::BroadcastOnSetBuildLevelData() {
@@ -413,6 +418,7 @@ void ADBDGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 }
 
 ADBDGameState::ADBDGameState() {
+    this->_specialEventGameplaySpawnerComponent = CreateDefaultSubobject<USpecialEventGameplaySpawnerComponent>(TEXT("SpecialEventSpawnerComponent"));
     this->CamperDeadCount = 0;
     this->CamperInMeatLockerCount = 0;
     this->CamperEscaped = 0;
@@ -421,6 +427,7 @@ ADBDGameState::ADBDGameState() {
     this->LeaveSpectateRequested = false;
     this->SecondsLeftInLobby = -1;
     this->Slasher = NULL;
+    this->_renderingSequencer = CreateDefaultSubobject<URenderingFeaturesSequencer>(TEXT("RenderingSequencer"));
     this->_camperHookedInBasementCount = 0;
     this->_playersReadyToStart = false;
     this->_clipManager = NULL;
@@ -440,6 +447,13 @@ ADBDGameState::ADBDGameState() {
     this->_gameLevelCreated = false;
     this->_gameLevelEnded = false;
     this->_gameEndedReason = EEndGameReason::None;
+    this->_endGameState = CreateDefaultSubobject<UEndGameStateComponent>(TEXT("EndGameState"));
+    this->_scourgeHookManager = CreateDefaultSubobject<UScourgeHookManagerComponent>(TEXT("ScourgeHookManager"));
+    this->_actorPairQueryEvaluatorComponent = CreateDefaultSubobject<UActorPairQueryEvaluatorComponent>(TEXT("distanceTracker"));
+    this->_characterCollection = CreateDefaultSubobject<UCharacterCollection>(TEXT("CharacterCollection"));
+    this->_collectableCollection = CreateDefaultSubobject<UCollectableCollection>(TEXT("CollectableCollection"));
+    this->_serverTimeProvider = CreateDefaultSubobject<UServerTimeProviderComponent>(TEXT("ServerTimerProvider"));
+    this->_inGameAssetPreloaderComponent = CreateDefaultSubobject<UInGameAssetPreloaderComponent>(TEXT("In Game Asset Pre Loader"));
     this->_isServerDedicated = false;
     this->_maxSurvivorCount = 4;
 }
