@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTableRowBase.h"
 #include "UObject/NoExportTypes.h"
+#include "DBDTableRowBase.h"
 #include "MenuCharacterUIData.generated.h"
 
 USTRUCT(BlueprintType)

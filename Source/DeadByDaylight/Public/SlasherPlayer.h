@@ -1,47 +1,48 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "KillerControls.h"
 #include "DBDPlayer.h"
-#include "OffensiveActionDelegate.h"
-#include "UObject/NoExportTypes.h"
 #include "EKillerMoodInfluence.h"
-#include "GameplayTagContainer.h"
+#include "KillerControls.h"
+#include "EAttackZoneSet.h"
+#include "OffensiveActionDelegateDelegate.h"
+#include "UObject/NoExportTypes.h"
 #include "EKillerAbilities.h"
 #include "TargetFocusTimer.h"
-#include "ESlasherGuidedAction.h"
+#include "GameplayTagContainer.h"
 #include "DBDTimer.h"
 #include "AnimationMontageDescriptor.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
+#include "EStunType.h"
 #include "TagStateBool.h"
+#include "UObject/NoExportTypes.h"
 #include "GameplayTagContainer.h"
 #include "EAttackType.h"
-#include "EAttackZoneSet.h"
-#include "EStunType.h"
+#include "ESlasherGuidedAction.h"
+#include "UObject/NoExportTypes.h"
 #include "SlasherPlayer.generated.h"
 
 class ACamperExposerInstance;
-class UStillnessTrackerComponent;
 class UKillerSoundCuesComponent;
 class UAkComponent;
 class UDBDNavModifierComponent;
-class UKillerRedStainUpdateStrategy;
+class UKillerBloodFXComponent;
+class UStillnessTrackerComponent;
 class UAimAssistComponent;
-class UMoriComponent;
+class UFirstPersonViewComponent;
 class USlasherTREmitterComponent;
 class ULoudNoiseHUDIndicator;
 class USlasherHitsWhileCarryingTrackerComponent;
-class USlasherStunnableComponent;
+class UKillerRedStainUpdateStrategy;
 class ACamperPlayer;
-class UKillerBlindingFXComponent;
+class UMoriComponent;
 class UHitValidatorComponent;
 class UHitValidatorConfigurator;
 class UDBDAttackerComponent;
-class UArmIKSensorComponent;
-class UFirstPersonViewComponent;
 class UKillerIntroComponent;
+class UArmIKSensorComponent;
+class UKillerBlindingFXComponent;
 class USceneComponent;
+class USlasherStunnableComponent;
 class AActor;
 class UChaserCharacterComponent;
 
@@ -49,7 +50,7 @@ UCLASS()
 class DEADBYDAYLIGHT_API ASlasherPlayer : public ADBDPlayer, public IKillerControls {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStalkModeChangedEvent, bool, isInStalkMode);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStalkModeChangedEvent, bool, isInStalkMode);
     
     UPROPERTY(BlueprintAssignable)
     FOffensiveActionDelegate OnOffensiveAction;
@@ -96,6 +97,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere)
     UDBDNavModifierComponent* _terrorNavModifierComponent;
+    
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere)
+    UKillerBloodFXComponent* _bloodFXComponent;
     
     UPROPERTY(Transient)
     float _slasherLightIntensity;
@@ -353,7 +357,7 @@ public:
     void OnDropCamperEnd(ADBDPlayer* camper);
     
     UFUNCTION(BlueprintImplementableEvent)
-    void OnCamperHitFX(ACamperPlayer* camper, bool showBloodSpatter) const;
+    void OnCamperHit(ACamperPlayer* camper);
     
 private:
     UFUNCTION()
@@ -396,9 +400,6 @@ public:
     UFUNCTION(BlueprintPure)
     bool IsInterruptBlocked() const;
     
-    UFUNCTION(BlueprintPure)
-    bool IsInBlinkCooldown() const;
-    
     UFUNCTION(BlueprintNativeEvent, BlueprintPure)
     bool IsImmuneToObservingPlayerDetection(const ADBDPlayer* observingPlayer) const;
     
@@ -415,13 +416,7 @@ public:
     bool IsCloaking() const;
     
     UFUNCTION(BlueprintPure)
-    bool IsChargingBlink() const;
-    
-    UFUNCTION(BlueprintPure)
     bool IsChainsawSprinting() const;
-    
-    UFUNCTION(BlueprintPure)
-    bool IsChainBlinking() const;
     
     UFUNCTION(BlueprintPure)
     bool IsCarrying() const;

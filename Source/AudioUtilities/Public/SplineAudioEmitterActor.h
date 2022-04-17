@@ -3,8 +3,8 @@
 #include "GameFramework/Actor.h"
 #include "SplineAudioEmitterActor.generated.h"
 
-class USplineComponent;
 class USceneComponent;
+class USplineComponent;
 class UAkComponent;
 
 UCLASS()

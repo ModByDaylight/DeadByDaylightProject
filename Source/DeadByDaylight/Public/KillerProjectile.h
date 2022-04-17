@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "PhysicsBasedProjectile.h"
-#include "EHitValidatorConfigName.h"
 #include "GameplayTagContainer.h"
+#include "EHitValidatorConfigName.h"
 #include "KillerProjectile.generated.h"
 
-class UHitValidatorConfigurator;
-class ASlasherPlayer;
 class UHitValidatorComponent;
+class UHitValidatorConfigurator;
 class UPrimitiveComponent;
+class ASlasherPlayer;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AKillerProjectile : public APhysicsBasedProjectile {
@@ -29,7 +29,8 @@ private:
     EHitValidatorConfigName _hitValidationConfigName;
     
 public:
-    AKillerProjectile();
+    AKillerProjectile(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
+    
     UFUNCTION(BlueprintCallable)
     void SetActiveSlashable(bool active);
     

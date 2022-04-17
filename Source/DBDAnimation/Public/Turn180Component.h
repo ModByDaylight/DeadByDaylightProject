@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Turn180Settings.h"
 #include "Components/ActorComponent.h"
-#include "Turn180.h"
 #include "MovementSettings.h"
+#include "Turn180.h"
+#include "Turn180Settings.h"
 #include "Turn180Component.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

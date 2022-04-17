@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataAsset.h"
 #include "ECustomMatchTab.h"
+#include "Engine/DataAsset.h"
 #include "MatchConfigTabData.h"
 #include "MatchConfigTabsDataAsset.generated.h"
 

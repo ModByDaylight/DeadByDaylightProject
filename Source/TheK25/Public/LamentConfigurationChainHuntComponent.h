@@ -3,13 +3,13 @@
 #include "Templates/SubclassOf.h"
 #include "Components/ActorComponent.h"
 #include "TunableStat.h"
-#include "EChainHuntState.h"
 #include "ChainHuntStateData.h"
+#include "EChainHuntState.h"
 #include "LamentConfigurationChainHuntComponent.generated.h"
 
-class UK25SurvivorChainHuntEffectsComponent;
-class UCurveFloat;
 class UK25KillerChainHuntEffectsComponent;
+class UCurveFloat;
+class UK25SurvivorChainHuntEffectsComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class ULamentConfigurationChainHuntComponent : public UActorComponent {

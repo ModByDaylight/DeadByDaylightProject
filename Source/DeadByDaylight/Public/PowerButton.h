@@ -5,12 +5,12 @@
 #include "ERadialProgressBarType.h"
 #include "PowerButton.generated.h"
 
-class UImage;
-class UActionButton;
-class UTextBlock;
-class UCanvasPanel;
 class UUMGInventoryItemButton;
+class UActionButton;
+class UCanvasPanel;
+class UTextBlock;
 class UProgressBar;
+class UImage;
 
 UCLASS(EditInlineNew)
 class UPowerButton : public UMobileBaseUserWidget {

@@ -44,6 +44,7 @@ USurvivorAnimInstance::USurvivorAnimInstance() {
     this->IsHoldingVaccine = false;
     this->IsHoldingAnyItem = false;
     this->IsHoldingLamentConfiguration = false;
+    this->IsHoldingFragileObject = false;
     this->IsArmOverrideDisabled = false;
     this->InAir = false;
     this->_walkAnimSpeed = 0.00f;

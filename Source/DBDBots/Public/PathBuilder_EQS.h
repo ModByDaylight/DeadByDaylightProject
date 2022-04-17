@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PathBuilder.h"
 #include "EnvironmentQuery/EnvQueryTypes.h"
+#include "PathBuilder.h"
 #include "PathBuilder_EQS.generated.h"
 
 class UPathBuilder_EQS;

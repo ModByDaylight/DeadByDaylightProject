@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ChargeableInteractionDefinition.h"
-#include "DBDTunableRowHandle.h"
 #include "GameplayTagContainer.h"
+#include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
 #include "GameEventData.h"
 #include "ReleaseConjoinedTwin.generated.h"

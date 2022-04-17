@@ -99,6 +99,9 @@ private:
     void DBD_TeleportToTile(uint32 x, uint32 y);
     
     UFUNCTION(Exec)
+    void DBD_TeleportToObject(const FString& objectId, int32 index, bool useNavMesh, bool ignoreCheck);
+    
+    UFUNCTION(Exec)
     void DBD_Teleport(float x, float y, float z);
     
     UFUNCTION(Exec)
@@ -172,9 +175,6 @@ private:
     
     UFUNCTION(Exec)
     void DBD_ShowStoreUI(const FString& productId);
-    
-    UFUNCTION(Exec)
-    void DBD_ShowRewardedVideoAds(const FString& placementId);
     
     UFUNCTION(Exec)
     void DBD_ShowLoadout();
@@ -710,13 +710,13 @@ private:
     void DBD_MirrorsPurchaseOutfit(FName outfitId, const FString& currencyId);
     
     UFUNCTION(Exec)
-    void DBD_MirrorsPurchaseNonPremiumItem(FName objectId, double toPurchaseQuantity, const FString& currencyId);
+    void DBD_MirrorsPurchaseNonPremiumItem(FName objectId, int64 toPurchaseQuantity, const FString& currencyId);
     
     UFUNCTION(Exec)
     void DBD_MirrorsPurchaseCharacter(FName characterCatalogId, const FString& currencyId);
     
     UFUNCTION(Exec)
-    void DBD_MirrorsPurchaseBundle(FName objectId, double toPurchaseQuantity, const FString& currencyId, bool isPremium);
+    void DBD_MirrorsPurchaseBundle(FName objectId, int64 toPurchaseQuantity, const FString& currencyId, bool isPremium);
     
     UFUNCTION(Exec)
     void DBD_MirrorsPurchaseAllOutfits();
@@ -1083,6 +1083,9 @@ private:
     
     UFUNCTION(Exec)
     void DBD_DebugCompetence(int32 on);
+    
+    UFUNCTION(Exec)
+    void DBD_CycleSpectate();
     
     UFUNCTION(Exec)
     void DBD_CyclePlayerSpawnPoints(int32 cycleDelay);

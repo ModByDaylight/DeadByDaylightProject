@@ -1,10 +1,10 @@
 #include "K25Power.h"
 #include "Net/UnrealNetwork.h"
-#include "AuthoritativeActorPoolComponent.h"
-#include "K25PowerChargePresentationItemProgressComponent.h"
 #include "ChargeableComponent.h"
+#include "AuthoritativeActorPoolComponent.h"
 #include "K25ProjectileLauncher.h"
 #include "PowerChargeComponent.h"
+#include "K25PowerChargePresentationItemProgressComponent.h"
 #include "K25ChainAttachmentReplicationComponent.h"
 
 class ACamperPlayer;
@@ -24,6 +24,8 @@ void AK25Power::OnRep_K25ControlledProjectile() {
 
 void AK25Power::OnKillerAdded(ASlasherPlayer* killer) {
 }
+
+
 
 void AK25Power::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);

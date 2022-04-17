@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnFirecrackerInRangeEndEvent.h"
 #include "Components/ActorComponent.h"
+#include "OnFirecrackerInRangeEndEventDelegate.h"
+#include "OnFirecrackerInRangeBeginEventDelegate.h"
+#include "OnFirecrackerInRangeUpdateEventDelegate.h"
 #include "FirecrackerEffectData.h"
-#include "OnFirecrackerInRangeBeginEvent.h"
-#include "OnFirecrackerInRangeUpdateEvent.h"
 #include "FirecrackerEffectHandlerComponent.generated.h"
 
-class AFirecracker;
 class AActor;
+class AFirecracker;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UFirecrackerEffectHandlerComponent : public UActorComponent {

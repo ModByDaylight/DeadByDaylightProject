@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnPowerLevelChangedFX.h"
+#include "OnKillerHitZombieDelegate.h"
 #include "Components/ActorComponent.h"
-#include "OnKillerHitZombie.h"
-#include "OnKillerContaminatedSurvivor.h"
+#include "OnPowerLevelChangedFXDelegate.h"
+#include "OnKillerContaminatedSurvivorDelegate.h"
 #include "K24CharacterFXComponent.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

@@ -4,8 +4,8 @@
 #include "InputCoreTypes.h"
 #include "CoreInputPromptTextWidget.generated.h"
 
-class UCoreInputPromptWidget;
 class UTextBlock;
+class UCoreInputPromptWidget;
 
 UCLASS(EditInlineNew)
 class UCoreInputPromptTextWidget : public UCoreBaseUserWidget {

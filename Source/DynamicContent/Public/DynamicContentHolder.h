@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "LRUTextureCache.h"
 #include "Subsystems/GameInstanceSubsystem.h"
+#include "LRUTextureCache.h"
 #include "TaskContainer.h"
 #include "DynamicContentHolder.generated.h"
 
-class ULoadingImagesDataProvider;
-class ULoopBannerProvider;
 class UDownloadMultiTextureTask;
+class ULoopBannerProvider;
+class ULoadingImagesDataProvider;
 
 UCLASS()
 class DYNAMICCONTENT_API UDynamicContentHolder : public UGameInstanceSubsystem {

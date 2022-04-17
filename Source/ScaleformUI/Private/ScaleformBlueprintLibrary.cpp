@@ -1,8 +1,8 @@
 #include "ScaleformBlueprintLibrary.h"
 
+class UTextureRenderTarget2D;
 class USwfMovie;
 class UObject;
-class UTextureRenderTarget2D;
 class UGFxMoviePlayer;
 class UGFxObject;
 

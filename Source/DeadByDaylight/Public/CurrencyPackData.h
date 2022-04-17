@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ItemData.h"
 #include "ECurrencyType.h"
+#include "ItemData.h"
 #include "CurrencyPackData.generated.h"
 
 USTRUCT(BlueprintType)

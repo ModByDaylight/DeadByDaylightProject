@@ -3,10 +3,10 @@
 #include "MobileBaseUserWidget.h"
 #include "PerkSelectionSlotWidget.generated.h"
 
+class UUMGHtmlRichText;
 class UPerkActionButton;
 class UTextBlock;
 class UImage;
-class UUMGHtmlRichText;
 
 UCLASS(Abstract, EditInlineNew)
 class UPerkSelectionSlotWidget : public UMobileBaseUserWidget {

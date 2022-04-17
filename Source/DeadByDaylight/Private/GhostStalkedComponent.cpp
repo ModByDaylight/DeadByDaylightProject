@@ -2,10 +2,10 @@
 #include "Net/UnrealNetwork.h"
 #include "TimerObject.h"
 
-class UCharacterSightComponent;
-class ACharacter;
-class ASlasherPlayer;
 class AActor;
+class ACharacter;
+class UCharacterSightComponent;
+class ASlasherPlayer;
 
 void UGhostStalkedComponent::OnKillerStealthChanged(bool isStealth) {
 }

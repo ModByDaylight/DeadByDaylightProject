@@ -2,12 +2,12 @@
 #include "CoreMinimal.h"
 #include "DBDTableRowBase.h"
 #include "ECurrencyType.h"
-#include "SpecialEventEntryPopupData.h"
-#include "UObject/NoExportTypes.h"
-#include "SpecialEventCinematicData.h"
 #include "SpecialEventObjectiveData.h"
-#include "ESpecialEventGameMode.h"
+#include "SpecialEventCinematicData.h"
+#include "UObject/NoExportTypes.h"
 #include "ESpecialEventDependency.h"
+#include "SpecialEventEntryPopupData.h"
+#include "ESpecialEventGameMode.h"
 #include "SpecialEventData.generated.h"
 
 class UActorComponent;

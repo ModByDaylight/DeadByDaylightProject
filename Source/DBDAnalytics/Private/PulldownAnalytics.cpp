@@ -1,7 +1,7 @@
 #include "PulldownAnalytics.h"
 
-class ACamperPlayer;
 class AActor;
+class ACamperPlayer;
 class ASlasherPlayer;
 
 void UPulldownAnalytics::IncrementPalletStun(ACamperPlayer* survivor) {

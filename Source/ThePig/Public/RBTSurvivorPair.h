@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "RBTSurvivorPair.generated.h"
 
-class ACamperPlayer;
 class AReverseBearTrap;
+class ACamperPlayer;
 
 USTRUCT(BlueprintType)
 struct FRBTSurvivorPair {

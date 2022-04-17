@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DBDTableRowBase.h"
-#include "EKillerAbilities.h"
 #include "EPreLevelGenerationModifierType.h"
+#include "EKillerAbilities.h"
 #include "PreLevelGenerationModifierProperties.generated.h"
 
 USTRUCT()

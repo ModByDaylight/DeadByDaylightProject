@@ -5,9 +5,9 @@
 #include "ESharedAuthenticationProvider.h"
 #include "SharedAuthenticationComponent.generated.h"
 
-class UUserWidget;
 class UUMGAutheticationProviderSelection;
 class UUMGAuthenticationProviderSelection;
+class UUserWidget;
 class USharedAuthenticationMigrateComponent;
 
 UCLASS()

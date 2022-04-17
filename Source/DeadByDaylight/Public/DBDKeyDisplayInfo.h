@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EPlayerRole.h"
 #include "UObject/Object.h"
 #include "KeyDisplayInfo.h"
-#include "EInputInteractionType.h"
-#include "EPlayerRole.h"
 #include "InputCoreTypes.h"
+#include "EInputInteractionType.h"
 #include "DBDKeyDisplayInfo.generated.h"
 
 class UPlayerInput;
@@ -13,12 +13,6 @@ UCLASS()
 class DEADBYDAYLIGHT_API UDBDKeyDisplayInfo : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY()
-    FString PendingResetKeyBindingsData;
-    
-    UPROPERTY()
-    bool PendingResetMustBeGamepadKey;
-    
 private:
     UPROPERTY()
     TMap<FName, FKeyDisplayInfo> _keyDisplayInfoMap;

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Animation/AnimInstance.h"
 #include "EAttackSubstate.h"
+#include "Animation/AnimInstance.h"
 #include "AnimSequenceSelector.h"
 #include "BaseKillerWeaponAnimInstance.generated.h"
 

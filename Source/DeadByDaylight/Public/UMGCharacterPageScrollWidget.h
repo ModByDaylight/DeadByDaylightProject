@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CharacterSlotData.h"
 #include "UMGGridPageScrollWidget.h"
+#include "CharacterSlotData.h"
 #include "UMGCharacterPageScrollWidget.generated.h"
 
 class UUMGCharacterButton;

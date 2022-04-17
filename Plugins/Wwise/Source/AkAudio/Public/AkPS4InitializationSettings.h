@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "AkPS4AdvancedInitializationSettings.h"
 #include "UObject/Object.h"
 #include "AkCommonInitializationSettings.h"
 #include "AkCommunicationSettingsWithSystemInitialization.h"
-#include "AkPS4AdvancedInitializationSettings.h"
 #include "AkPS4InitializationSettings.generated.h"
 
 UCLASS(DefaultConfig, Config=Game)

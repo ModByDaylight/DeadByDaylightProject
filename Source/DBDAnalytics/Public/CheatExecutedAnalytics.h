@@ -8,6 +8,9 @@ struct FCheatExecutedAnalytics : public FUniquelyIdentifiedAnalytic {
     GENERATED_BODY()
 public:
     UPROPERTY()
+    FString Location;
+    
+    UPROPERTY()
     FString NetMode;
     
     UPROPERTY()

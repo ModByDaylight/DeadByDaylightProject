@@ -5,9 +5,9 @@
 #include "UMGDragWidget_HudEditor.generated.h"
 
 class UCustomWidgetWrapper_HudEditor;
-class UUserWidget;
-class UUMGHudEditorDragConstraintWidget;
 class UUMGDragWidget_HudEditor;
+class UUMGHudEditorDragConstraintWidget;
+class UUserWidget;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGDragWidget_HudEditor : public UUMGDragWidget {

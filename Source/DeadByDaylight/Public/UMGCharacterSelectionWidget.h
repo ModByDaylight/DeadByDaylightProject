@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "OnCharacterSelectedEvent.h"
-#include "OnCharacterRoleButtonClickedEvent.h"
-#include "OnCharacterInfoButtonClickedEvent.h"
+#include "OnCharacterSelectedEventDelegate.h"
+#include "OnCharacterRoleButtonClickedEventDelegate.h"
+#include "OnCharacterInfoButtonClickedEventDelegate.h"
 #include "UMGCharacterSelectionWidget.generated.h"
 
 class UUMGCharacterSelectSubmenu;

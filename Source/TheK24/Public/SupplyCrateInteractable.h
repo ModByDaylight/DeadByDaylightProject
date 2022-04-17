@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Interactable.h"
-#include "DBDTunableRowHandle.h"
 #include "ContainsItemInterface.h"
+#include "DBDTunableRowHandle.h"
 #include "SupplyCrateInteractable.generated.h"
 
 class UChargeableComponent;

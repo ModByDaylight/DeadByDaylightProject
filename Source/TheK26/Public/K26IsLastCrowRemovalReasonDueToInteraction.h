@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "FK26AttachedCrowRemovalReason.h"
 #include "EventDrivenModifierCondition.h"
+#include "FK26AttachedCrowRemovalReason.h"
 #include "K26IsLastCrowRemovalReasonDueToInteraction.generated.h"
 
 class AK26AttachedCrow;

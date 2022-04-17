@@ -4,10 +4,10 @@
 #include "Engine/EngineTypes.h"
 #include "InteractionDetectorComponent.generated.h"
 
+class ADBDPlayer;
 class UPrimitiveComponent;
 class AInteractable;
 class AActor;
-class ADBDPlayer;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UInteractionDetectorComponent : public UActorComponent {

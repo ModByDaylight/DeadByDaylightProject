@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "DBDTunableRowHandle.h"
-#include "K25SurvivorChainAttachmentData.h"
 #include "UObject/NoExportTypes.h"
+#include "K25SurvivorChainAttachmentData.h"
 #include "K25SurvivorChainAttachmentAnchor.generated.h"
 
 class AK25Chain;

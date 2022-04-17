@@ -3,11 +3,11 @@
 #include "Animation/AnimInstance.h"
 #include "DemogorgonHuskAnimInstance.generated.h"
 
-class UAnimSequence;
 class APawn;
+class UAnimSequence;
+class ASlasherPlayer;
 class UAnimMontage;
 class UPortalPlacerStateComponent;
-class ASlasherPlayer;
 
 UCLASS(NonTransient)
 class UDemogorgonHuskAnimInstance : public UAnimInstance {

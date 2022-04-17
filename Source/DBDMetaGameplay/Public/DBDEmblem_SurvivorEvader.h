@@ -5,8 +5,8 @@
 #include "DBDEmblem_SurvivorEvader.generated.h"
 
 class UCurveFloat;
-class ADBDPlayer;
 class UDBDRankDesignTunables;
+class ADBDPlayer;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UDBDEmblem_SurvivorEvader : public UDBDEmblem {

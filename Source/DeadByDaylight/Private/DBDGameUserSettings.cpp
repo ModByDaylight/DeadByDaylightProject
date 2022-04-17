@@ -56,7 +56,7 @@ UDBDGameUserSettings::UDBDGameUserSettings() {
     this->HUDKillerHookCountVisibility = true;
     this->HUDScoreEventsVisibility = true;
     this->FPSLimit = 30;
-    this->MainVolume = 40;
+    this->MainVolume = 20;
     this->MainVolumeOn = true;
     this->MenuMusicVolume = 40;
     this->MenuMusicVolumeOn = true;
@@ -72,9 +72,12 @@ UDBDGameUserSettings::UDBDGameUserSettings() {
     this->ControlType = 1;
     this->InvertY = false;
     this->SurvivorInvertY = false;
+    this->KillerToggleInteractions = false;
+    this->SurvivorToggleInteractions = false;
+    this->SprintToCancel = false;
     this->Language = TEXT("en");
     this->LanguageIsDefinedByPlayer = false;
-    this->HighestWeightSeenNews = 3058;
+    this->HighestWeightSeenNews = 30397;
     this->LastPanelContextId = 0;
     this->ArchivesAutoPlayVoiceOver = true;
     this->HasAcceptedCrossplayPopup = true;

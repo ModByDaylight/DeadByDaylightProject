@@ -1,11 +1,11 @@
 #include "TormentMode.h"
 #include "ChargeableComponent.h"
 #include "PowerChargeComponent.h"
-#include "PowerChargePresentationItemProgressComponent.h"
 #include "PowerToggleComponent.h"
+#include "PowerChargePresentationItemProgressComponent.h"
+#include "AuthoritativeActorPoolComponent.h"
 #include "TormentTrailSpawnerComponent.h"
 #include "TormentTrailPointCollectionComponent.h"
-#include "AuthoritativeActorPoolComponent.h"
 
 void ATormentMode::Server_RequestMoreActorInAttackPool_Implementation() {
 }

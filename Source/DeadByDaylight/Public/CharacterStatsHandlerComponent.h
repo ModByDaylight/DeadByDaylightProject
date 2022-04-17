@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EDBDScoreTypes.h"
 #include "Components/ActorComponent.h"
+#include "EDBDScoreTypes.h"
 #include "GameplayTagContainer.h"
 #include "GameEventData.h"
 #include "CharacterStatsHandlerComponent.generated.h"

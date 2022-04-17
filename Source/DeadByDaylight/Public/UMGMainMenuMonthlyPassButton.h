@@ -4,8 +4,8 @@
 #include "UMGMainMenuMonthlyPassButton.generated.h"
 
 class UWidgetSwitcher;
-class UButton;
 class UAkAudioEvent;
+class UButton;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGMainMenuMonthlyPassButton : public UMobileBaseUserWidget {

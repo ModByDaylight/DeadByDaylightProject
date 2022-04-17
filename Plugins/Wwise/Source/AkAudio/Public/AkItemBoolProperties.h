@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnItemBoolPropertySelectionChangedDelegate.h"
 #include "Components/Widget.h"
-#include "OnItemBoolPropertySelectionChanged.h"
-#include "OnItemBoolPropertyDragDetected.h"
+#include "OnItemBoolPropertyDragDetectedDelegate.h"
 #include "AkItemBoolProperties.generated.h"
 
 UCLASS(DefaultConfig, Config=Editor)

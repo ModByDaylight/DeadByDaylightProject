@@ -9,6 +9,7 @@ enum class EContextualType : uint8 {
     BlueGlyph,
     YellowGlyph,
     PurpleGlyph,
+    IceBlueGlyph,
     GlyphUpperBound,
     ToxinPlantHalloween2020,
     PumpkinHalloween2021,

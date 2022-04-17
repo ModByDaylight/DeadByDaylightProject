@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BlightPowerStateDash.h"
 #include "SecondaryInteractionProperties.h"
+#include "BlightPowerStateDash.h"
 #include "BlightPowerStateLethalDash.generated.h"
 
 UCLASS()

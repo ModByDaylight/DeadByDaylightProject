@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "Layout/Margin.h"
 #include "EBloodStoreRowStyle.h"
+#include "Layout/Margin.h"
 #include "UMGBloodStoreRowWidget.generated.h"
 
 class UHorizontalBox;
-class UCanvasPanel;
 class UUMGBloodStoreItemWidget;
+class UCanvasPanel;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGBloodStoreRowWidget : public UMobileBaseUserWidget {

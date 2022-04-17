@@ -2,15 +2,15 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "ChargeableInteractionDefinition.h"
+#include "GameplayTagContainer.h"
+#include "DBDTunableRowHandle.h"
 #include "EChainStrikeEndReason.h"
 #include "EChainStrikeCameraViewTarget.h"
-#include "DBDTunableRowHandle.h"
-#include "GameplayTagContainer.h"
 #include "K25ChainStrikeInteraction.generated.h"
 
-class UFiniteStateMachine;
 class UCurveFloat;
 class ASlasherPlayer;
+class UFiniteStateMachine;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK25ChainStrikeInteraction : public UChargeableInteractionDefinition {

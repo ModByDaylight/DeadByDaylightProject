@@ -6,9 +6,9 @@
 #include "AIMoveToInteract.generated.h"
 
 class UAIMoveToInteractData;
-class UAICharacterBehaviourData;
-class ADBDAIPlayerController;
 class ADBDPlayer;
+class ADBDAIPlayerController;
+class UAICharacterBehaviourData;
 
 UCLASS()
 class UAIMoveToInteract : public UAICharacterBehaviour {

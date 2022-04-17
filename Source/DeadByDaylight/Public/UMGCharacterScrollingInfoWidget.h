@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MobileBaseUserWidget.h"
-#include "OnLoadoutItemButtonLongPressEvent.h"
-#include "OnTeachableTooltipLongPressEvent.h"
-#include "InventorySlotData.h"
 #include "UObject/NoExportTypes.h"
+#include "MobileBaseUserWidget.h"
+#include "OnLoadoutItemButtonLongPressEventDelegate.h"
+#include "InventorySlotData.h"
+#include "OnTeachableTooltipLongPressEventDelegate.h"
 #include "TeachableData.h"
 #include "UMGCharacterScrollingInfoWidget.generated.h"
 
+class UUMGHtmlRichText;
 class UUMGTeachablePerkButton;
-class UTextBlock;
 class UCanvasPanel;
 class UUMGInventoryItemButton;
-class UUMGHtmlRichText;
+class UTextBlock;
 
 UCLASS(EditInlineNew)
 class UUMGCharacterScrollingInfoWidget : public UMobileBaseUserWidget {

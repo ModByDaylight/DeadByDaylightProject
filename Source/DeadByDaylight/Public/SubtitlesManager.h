@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
-#include "OnAkPostEventCallback.h"
 #include "AkEventWithSubtitle.h"
 #include "AkExternalSourceInfo.h"
+#include "OnAkPostEventCallbackDelegate.h"
 #include "SubtitlesManager.generated.h"
 
 class UAkGameObject;

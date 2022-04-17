@@ -5,8 +5,8 @@
 #include "UObject/NoExportTypes.h"
 #include "TwinJumpAttackOpenSubstate.generated.h"
 
-class AActor;
 class UPrimitiveComponent;
+class AActor;
 
 UCLASS()
 class UTwinJumpAttackOpenSubstate : public UPounceAttackOpenSubstate {

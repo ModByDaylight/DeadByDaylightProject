@@ -3,8 +3,8 @@
 #include "UMGBaseCurrencyButtonWidget.h"
 #include "UMGPromoPackPurchaseCurrencyButtonWidget.generated.h"
 
-class UCanvasPanel;
 class UTextBlock;
+class UCanvasPanel;
 class UOverlay;
 
 UCLASS(Abstract, EditInlineNew)

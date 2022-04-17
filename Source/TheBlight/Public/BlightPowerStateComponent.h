@@ -2,16 +2,16 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Components/ActorComponent.h"
+#include "BlightPowerCollisionDelegateDelegate.h"
 #include "BlightPowerStateInterface.h"
-#include "BlightPowerCollisionDelegate.h"
 #include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
 #include "EWallGrabState.h"
 #include "BlightPowerStateComponent.generated.h"
 
 class UBlightPowerState;
-class UInteractionDefinition;
 class UTimerObject;
+class UInteractionDefinition;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class UBlightPowerStateComponent : public UActorComponent, public IBlightPowerStateInterface {

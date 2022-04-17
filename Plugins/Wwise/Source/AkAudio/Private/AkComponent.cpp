@@ -1,10 +1,10 @@
 #include "AkComponent.h"
 
 class UAkAuxBus;
-class UAkAudioEvent;
 class UAkSwitchValue;
-class UAkRtpc;
 class UAkComponent;
+class UAkRtpc;
+class UAkAudioEvent;
 class UAkTrigger;
 
 void UAkComponent::UseReverbVolumes(bool inUseReverbVolumes) {

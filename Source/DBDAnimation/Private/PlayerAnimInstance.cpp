@@ -26,5 +26,6 @@ UPlayerAnimInstance::UPlayerAnimInstance() {
     this->_isInParadise = false;
     this->_isIntroCompleted = false;
     this->_isLevelReadyToPlay = false;
+    this->_interactionDuration = 0.00f;
 }
 

@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "FrenzyEndNoCooldownDelegateDelegate.h"
 #include "Components/ActorComponent.h"
-#include "FrenzyStartDelegate.h"
-#include "FrenzyEndDelegate.h"
-#include "FrenzyEndNoCooldownDelegate.h"
-#include "StartInjuredBleedoutDuringFrenzyDelegate.h"
-#include "FrenzyReadyToStartDelegate.h"
+#include "FrenzyStartDelegateDelegate.h"
+#include "FrenzyEndDelegateDelegate.h"
+#include "StartInjuredBleedoutDuringFrenzyDelegateDelegate.h"
+#include "FrenzyReadyToStartDelegateDelegate.h"
 #include "GameplayTagContainer.h"
 #include "GameEventData.h"
 #include "EFrenzyEndReason.h"
 #include "FrenzyComponent.generated.h"
 
-class UInteractionDefinition;
 class ASlasherPlayer;
+class UInteractionDefinition;
 class UGameplayTagContainerComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))

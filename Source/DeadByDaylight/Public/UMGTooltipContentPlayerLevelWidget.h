@@ -4,8 +4,8 @@
 #include "UMGTooltipContentPlayerLevelWidget.generated.h"
 
 class UUMGLevelBannerWidget;
-class URichTextBlock;
 class UTextBlock;
+class URichTextBlock;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGTooltipContentPlayerLevelWidget : public UMobileBaseUserWidget {

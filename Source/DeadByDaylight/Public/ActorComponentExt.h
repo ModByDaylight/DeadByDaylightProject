@@ -3,13 +3,13 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "ActorComponentExt.generated.h"
 
-class APawn;
-class UActorComponent;
-class AActor;
-class ACamperPlayer;
-class ADBDPlayer;
 class ASlasherPlayer;
+class ADBDPlayer;
+class UActorComponent;
 class ACharacter;
+class ACamperPlayer;
+class AActor;
+class APawn;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UActorComponentExt : public UBlueprintFunctionLibrary {

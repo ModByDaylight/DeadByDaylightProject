@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MobileBaseUserWidget.h"
-#include "EBloodwebNodeContentType.h"
 #include "UObject/NoExportTypes.h"
+#include "EBloodwebNodeContentType.h"
+#include "MobileBaseUserWidget.h"
 #include "UMGBloodStoreItemWidget.generated.h"
 
 class UImage;

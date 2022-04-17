@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTableRowBase.h"
 #include "ETutorialObjectivePlayerActionMapping.h"
+#include "DBDTableRowBase.h"
 #include "EInteractionPromptType.h"
 #include "TutorialObjective.generated.h"
 

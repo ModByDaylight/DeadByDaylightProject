@@ -5,9 +5,9 @@
 #include "UMGCharacterButton.generated.h"
 
 class UImage;
-class UTextBlock;
-class UCanvasPanel;
 class UUMGCharacterPrice;
+class UCanvasPanel;
+class UTextBlock;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGCharacterButton : public UMobileBaseUserWidget {

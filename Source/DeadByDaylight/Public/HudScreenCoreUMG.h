@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "HudScreen.h"
 #include "InteractionProgressViewData.h"
-#include "ItemBundleViewData.h"
+#include "HudScreen.h"
 #include "PowerBundleViewData.h"
+#include "ItemBundleViewData.h"
 #include "PlayerStatusViewData.h"
 #include "HudScreenCoreUMG.generated.h"
 
+class UCoreHudRootWidget;
 class ATutorialsUtilities;
 class UPlayerStatusViewInterface;
 class IPlayerStatusViewInterface;
-class UCoreHudRootWidget;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UHudScreenCoreUMG : public UHudScreen {

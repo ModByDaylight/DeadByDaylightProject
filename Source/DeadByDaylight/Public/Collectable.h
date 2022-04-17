@@ -1,37 +1,37 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EItemHandPosition.h"
 #include "Interactable.h"
-#include "Engine/EngineTypes.h"
 #include "ECollectableCategory.h"
 #include "EAtlantaItemProgressionBarEnum.h"
+#include "EItemHandPosition.h"
 #include "ELoadoutItemType.h"
 #include "EInputInteractionType.h"
 #include "ECollectableState.h"
+#include "GameplayTagContainer.h"
 #include "UObject/NoExportTypes.h"
 #include "EAttachToSocketNameEnum.h"
 #include "EInventoryType.h"
-#include "GameplayTagContainer.h"
+#include "Engine/EngineTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "Collectable.generated.h"
 
-class ADBDPlayer;
-class UItemAddon;
-class UItemModifier;
 class UInteractor;
-class AActor;
+class ADBDPlayer;
+class UItemModifier;
 class USkeletalMeshComponent;
-class USceneComponent;
 class UGameplayTagContainerComponent;
+class USceneComponent;
+class UItemAddon;
+class AActor;
 class ACamperPlayer;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ACollectable : public AInteractable {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FOnCollectablePickedUpBPDelegate, ADBDPlayer*, player);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCollectablePickedUpBP, ADBDPlayer*, player);
+    DECLARE_DYNAMIC_DELEGATE_OneParam(FOnCollectablePickedUpBPDelegate, ADBDPlayer*, player);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCollectablePickedUpBP, ADBDPlayer*, player);
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool DisplayUsePercent;
@@ -114,6 +114,9 @@ protected:
     
     UPROPERTY(Export)
     UGameplayTagContainerComponent* _objectState;
+    
+    UPROPERTY(EditDefaultsOnly)
+    bool _isBoundToFirstCollector;
     
 private:
     UPROPERTY(Export, VisibleDefaultsOnly)

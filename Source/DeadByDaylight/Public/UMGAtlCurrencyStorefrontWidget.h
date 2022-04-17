@@ -4,14 +4,14 @@
 #include "Layout/Margin.h"
 #include "UMGAtlCurrencyStorefrontWidget.generated.h"
 
-class UUniformGridPanel;
 class UCanvasPanel;
-class UImage;
+class UUniformGridPanel;
 class UHorizontalBox;
 class URichTextBlock;
 class UOverlay;
-class UUMGStoreEventItemsPackButton;
 class UUMGStoreAuricCellButton;
+class UImage;
+class UUMGStoreEventItemsPackButton;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlCurrencyStorefrontWidget : public UUMGBaseCurrencyStorefrontWidget {

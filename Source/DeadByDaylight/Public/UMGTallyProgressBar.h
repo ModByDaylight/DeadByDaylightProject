@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MobileBaseUserWidget.h"
 #include "UObject/NoExportTypes.h"
+#include "MobileBaseUserWidget.h"
 #include "UMGTallyProgressBar.generated.h"
 
 class UProgressBar;

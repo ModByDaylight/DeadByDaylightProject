@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BTDecorator_TickableBase.h"
 #include "BehaviorTree/Blackboard/BlackboardKeyType.h"
+#include "BTDecorator_TickableBase.h"
 #include "BTDecorator_IsGameState.generated.h"
 
 UCLASS()

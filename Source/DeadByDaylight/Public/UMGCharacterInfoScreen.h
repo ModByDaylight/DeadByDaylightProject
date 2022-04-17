@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MobileBaseUserWidget.h"
-#include "OnButtonClickEvent.h"
-#include "OnLoadoutItemButtonLongPressEvent.h"
-#include "OnTeachableTooltipLongPressEvent.h"
-#include "TeachableData.h"
+#include "OnButtonClickEventDelegate.h"
 #include "UObject/NoExportTypes.h"
+#include "MobileBaseUserWidget.h"
 #include "InventorySlotData.h"
+#include "OnTeachableTooltipLongPressEventDelegate.h"
+#include "TeachableData.h"
+#include "OnLoadoutItemButtonLongPressEventDelegate.h"
 #include "UMGCharacterInfoScreen.generated.h"
 
 class UUMGPopupButton;
-class UUMGCharacterInfoWidget;
 class UCanvasPanel;
+class UUMGCharacterInfoWidget;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGCharacterInfoScreen : public UMobileBaseUserWidget {

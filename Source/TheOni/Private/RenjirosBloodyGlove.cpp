@@ -1,7 +1,7 @@
 #include "RenjirosBloodyGlove.h"
 
-class ABloodOrb;
 class AActor;
+class ABloodOrb;
 
 void URenjirosBloodyGlove::Authority_OnBloodOrbOverlapBegin(const AActor* overlappingActor, const ABloodOrb* bloodOrb) {
 }

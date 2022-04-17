@@ -4,10 +4,10 @@
 #include "EOnboardingMenuState.h"
 #include "OnboardingMenuViewInterface.generated.h"
 
-class UOnboardingTutorialViewInterface;
-class IOnboardingTutorialViewInterface;
 class UGameManualViewInterface;
 class IGameManualViewInterface;
+class UOnboardingTutorialViewInterface;
+class IOnboardingTutorialViewInterface;
 
 UINTERFACE(Blueprintable)
 class DBDUIVIEWINTERFACES_API UOnboardingMenuViewInterface : public UInterface {

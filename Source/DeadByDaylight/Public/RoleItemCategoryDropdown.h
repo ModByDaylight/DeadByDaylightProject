@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CharacterDropdown.h"
 #include "ECustomizationCategory.h"
+#include "CharacterDropdown.h"
 #include "RoleItemCategoryDropdown.generated.h"
 
 USTRUCT()

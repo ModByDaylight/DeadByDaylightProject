@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AISkill.h"
-#include "EPawnInputPressTypes.h"
-#include "EInteractionSkillInputModes.h"
-#include "EInteractionCancelInputModes.h"
 #include "AIRoll.h"
+#include "EPawnInputPressTypes.h"
+#include "EInteractionCancelInputModes.h"
+#include "EInteractionSkillInputModes.h"
 #include "AISkill_Interaction.generated.h"
 
 UCLASS(EditInlineNew)

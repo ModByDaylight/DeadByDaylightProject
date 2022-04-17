@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "UObject/NoExportTypes.h"
 #include "Collectable.h"
 #include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
-#include "UObject/NoExportTypes.h"
 #include "EAttackType.h"
 #include "EContaminator.h"
 #include "K24Power.generated.h"
 
 class UInteractionDefinition;
-class USurvivorContaminationComponent;
 class UChargeableComponent;
 class UCurveFloat;
+class USurvivorContaminationComponent;
 class APallet;
 class ABreakableBase;
 class AZombieCharacter;

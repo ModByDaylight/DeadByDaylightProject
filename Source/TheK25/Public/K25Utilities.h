@@ -3,11 +3,11 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "K25Utilities.generated.h"
 
-class AK25Husk;
 class ALamentConfiguration;
-class UObject;
 class AK25ControlledProjectile;
 class AK25Power;
+class UObject;
+class AK25Husk;
 class AK25Gateway;
 
 UCLASS(BlueprintType)

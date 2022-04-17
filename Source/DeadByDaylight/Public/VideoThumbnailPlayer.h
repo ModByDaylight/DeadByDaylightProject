@@ -4,11 +4,11 @@
 #include "VideoPlayer.h"
 #include "VideoThumbnailPlayer.generated.h"
 
-class UMediaSoundComponent;
+class UAudioComponent;
 class UMediaPlayer;
 class UMediaSource;
+class UMediaSoundComponent;
 class UUserWidget;
-class UAudioComponent;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AVideoThumbnailPlayer : public AActor, public IVideoPlayer {

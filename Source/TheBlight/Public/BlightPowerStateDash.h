@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BlightPowerState.h"
 #include "ViewRotationStrategy.h"
+#include "BlightPowerState.h"
 #include "TunableStat.h"
 #include "BlightPowerStateDash.generated.h"
 

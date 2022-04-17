@@ -1,7 +1,7 @@
 #include "GameEventTracker.h"
 
-class ADBDPlayerState;
 class AActor;
+class ADBDPlayerState;
 
 void UGameEventTracker::FireGameflowEvent(EDBDScoreTypes eventType, float amount, const ADBDPlayerState* instigator, FName data) {
 }

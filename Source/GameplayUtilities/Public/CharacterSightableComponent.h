@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESightStatus.h"
 #include "Components/ActorComponent.h"
 #include "DelegateHandleWrapper.h"
+#include "ESightStatus.h"
 #include "CharacterSightableComponent.generated.h"
 
 class ACharacter;
@@ -11,7 +11,7 @@ UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GAMEPLAYUTILITIES_API UCharacterSightableComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHighestSightStatusChangedBP, ESightStatus, status);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHighestSightStatusChangedBP, ESightStatus, status);
     
     UPROPERTY(BlueprintAssignable)
     FOnHighestSightStatusChangedBP OnHighestSightStatusChangedBP;

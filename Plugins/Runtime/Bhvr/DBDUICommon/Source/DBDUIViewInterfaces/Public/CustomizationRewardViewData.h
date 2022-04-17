@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CustomizationTooltipViewData.h"
 #include "RewardViewData.h"
 #include "EItemRarity.h"
+#include "CustomizationTooltipViewData.h"
 #include "CustomizationRewardViewData.generated.h"
 
 class UTexture2D;

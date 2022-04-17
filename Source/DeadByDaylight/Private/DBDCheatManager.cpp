@@ -73,6 +73,9 @@ void UDBDCheatManager::DBD_TeleportWithClothHandling(float x, float y, float z) 
 void UDBDCheatManager::DBD_TeleportToTile(uint32 x, uint32 y) {
 }
 
+void UDBDCheatManager::DBD_TeleportToObject(const FString& objectId, int32 index, bool useNavMesh, bool ignoreCheck) {
+}
+
 void UDBDCheatManager::DBD_Teleport(float x, float y, float z) {
 }
 
@@ -146,9 +149,6 @@ void UDBDCheatManager::DBD_ShowSubtitleLocalized(const FString& subtitleLocKey) 
 }
 
 void UDBDCheatManager::DBD_ShowStoreUI(const FString& productId) {
-}
-
-void UDBDCheatManager::DBD_ShowRewardedVideoAds(const FString& placementId) {
 }
 
 void UDBDCheatManager::DBD_ShowLoadout() {
@@ -682,13 +682,13 @@ void UDBDCheatManager::DBD_MirrorsRefreshWallet() {
 void UDBDCheatManager::DBD_MirrorsPurchaseOutfit(FName outfitId, const FString& currencyId) {
 }
 
-void UDBDCheatManager::DBD_MirrorsPurchaseNonPremiumItem(FName objectId, double toPurchaseQuantity, const FString& currencyId) {
+void UDBDCheatManager::DBD_MirrorsPurchaseNonPremiumItem(FName objectId, int64 toPurchaseQuantity, const FString& currencyId) {
 }
 
 void UDBDCheatManager::DBD_MirrorsPurchaseCharacter(FName characterCatalogId, const FString& currencyId) {
 }
 
-void UDBDCheatManager::DBD_MirrorsPurchaseBundle(FName objectId, double toPurchaseQuantity, const FString& currencyId, bool isPremium) {
+void UDBDCheatManager::DBD_MirrorsPurchaseBundle(FName objectId, int64 toPurchaseQuantity, const FString& currencyId, bool isPremium) {
 }
 
 void UDBDCheatManager::DBD_MirrorsPurchaseAllOutfits() {
@@ -1055,6 +1055,9 @@ void UDBDCheatManager::DBD_DebugGhost(bool debug) const {
 }
 
 void UDBDCheatManager::DBD_DebugCompetence(int32 on) {
+}
+
+void UDBDCheatManager::DBD_CycleSpectate() {
 }
 
 void UDBDCheatManager::DBD_CyclePlayerSpawnPoints(int32 cycleDelay) {

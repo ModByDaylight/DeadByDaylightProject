@@ -4,8 +4,8 @@
 #include "AISlasherMoveToGrabSurvivorBehaviour.generated.h"
 
 class UAISlasherMoveToGrabSurvivorBehaviourData;
-class ASlasherPlayer;
 class ADBDAIPlayerController;
+class ASlasherPlayer;
 
 UCLASS()
 class UAISlasherMoveToGrabSurvivorBehaviour : public UAICharacterBehaviour {

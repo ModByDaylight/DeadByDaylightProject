@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AIController.h"
-#include "UObject/NoExportTypes.h"
-#include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
+#include "DBDTunableRowHandle.h"
+#include "UObject/NoExportTypes.h"
 #include "Perception/AIPerceptionTypes.h"
 #include "ZombieAIController.generated.h"
 

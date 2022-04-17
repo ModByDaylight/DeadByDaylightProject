@@ -5,9 +5,9 @@
 #include "UObject/NoExportTypes.h"
 #include "ObjectPlacerComponent.generated.h"
 
-class UStaticMeshComponent;
-class UObjectPlacementUpdateStrategy;
 class UObjectPlacementValidationStrategy;
+class UObjectPlacementUpdateStrategy;
+class UStaticMeshComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UObjectPlacerComponent : public USceneComponent {
@@ -35,6 +35,9 @@ private:
     UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool _stayActiveWhileItemInUse;
     
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    bool _hideIndicatorDuringAttack;
+    
     UPROPERTY(EditDefaultsOnly, Instanced, NoClear)
     UObjectPlacementUpdateStrategy* _objectPlacementUpdateStrategy;
     
@@ -53,6 +56,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetIndicatorOffsetX(float x);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetHideIndicatorDuringAttack(bool enable);
     
     UFUNCTION(BlueprintPure)
     bool IsPlacementValid() const;

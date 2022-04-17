@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
 #include "DBDTunableRowHandle.h"
+#include "UObject/Object.h"
 #include "RangeToActorsTrackerStrategy.generated.h"
 
 UCLASS(Abstract, EditInlineNew)

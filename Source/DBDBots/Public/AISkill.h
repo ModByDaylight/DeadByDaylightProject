@@ -7,8 +7,8 @@
 
 class UNavigationQueryFilter;
 class UAISenseConfig;
-class UBehaviorTree;
 class ADBDAIBTController;
+class UBehaviorTree;
 
 UCLASS(Abstract, EditInlineNew)
 class DBDBOTS_API UAISkill : public UObject {

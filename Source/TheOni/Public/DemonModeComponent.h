@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DemonModeReadyDelegate.h"
+#include "DemonModeInterruptedDuringEndingDelegateDelegate.h"
 #include "Components/ActorComponent.h"
-#include "DemonModeStartedDelegate.h"
-#include "DemonModeEndedDelegate.h"
-#include "DemonModeInterruptedDuringStartupDelegate.h"
-#include "DemonModeInterruptedDuringEndingDelegate.h"
-#include "DemonModeChargeGainedAfterAttackDelegate.h"
-#include "DemonModeChargeGainedAfterLockerGrabDelegate.h"
+#include "DemonModeReadyDelegateDelegate.h"
+#include "DemonModeStartedDelegateDelegate.h"
+#include "DemonModeEndedDelegateDelegate.h"
+#include "DemonModeInterruptedDuringStartupDelegateDelegate.h"
+#include "DemonModeChargeGainedAfterAttackDelegateDelegate.h"
+#include "DemonModeChargeGainedAfterLockerGrabDelegateDelegate.h"
 #include "EDemonModeState.h"
 #include "AnimationMontageDescriptor.h"
 #include "DemonModeComponent.generated.h"
 
+class UInteractionStarterComponent;
 class UPowerChargeComponent;
 class UPowerToggleComponent;
-class UInteractionStarterComponent;
 class UInteractionDefinition;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))

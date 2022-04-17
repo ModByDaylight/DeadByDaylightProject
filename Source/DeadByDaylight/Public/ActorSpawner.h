@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
-#include "SpawnElement.h"
+#include "ActorSpawnedDelegateDelegate.h"
 #include "WeightedElement.h"
-#include "ActorSpawnedDelegate.h"
+#include "SpawnElement.h"
 #include "EGameplayElementType.h"
 #include "ActorSpawnerProperties.h"
 #include "ActorSpawner.generated.h"

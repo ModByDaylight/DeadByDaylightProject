@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MobileBaseUserWidget.h"
-#include "InventorySlotData.h"
-#include "TeachableData.h"
-#include "OnTeachableTooltipLongPressEvent.h"
 #include "UObject/NoExportTypes.h"
+#include "MobileBaseUserWidget.h"
+#include "TeachableData.h"
+#include "InventorySlotData.h"
+#include "OnTeachableTooltipLongPressEventDelegate.h"
 #include "UMGTeachablePerkButton.generated.h"
 
 class UPerkActionButton;

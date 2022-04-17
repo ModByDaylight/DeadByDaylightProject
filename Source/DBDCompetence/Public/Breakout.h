@@ -3,9 +3,9 @@
 #include "Perk.h"
 #include "Breakout.generated.h"
 
-class ACamperPlayer;
-class ASlasherPlayer;
 class ADBDPlayer;
+class ASlasherPlayer;
+class ACamperPlayer;
 
 UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UBreakout : public UPerk {

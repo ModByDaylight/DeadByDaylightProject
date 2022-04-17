@@ -4,8 +4,8 @@
 #include "UMGTallyRankBanner.generated.h"
 
 class UUMGTallyPipsContainer;
-class UImage;
 class UUMGRankBanner;
+class UImage;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGTallyRankBanner : public UMobileBaseUserWidget {

@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SavedStatsData.h"
-#include "UObject/NoExportTypes.h"
-#include "CharacterSavedInventoryData.h"
-#include "BloodWebPersistentData.h"
-#include "PlayerLoadoutData.h"
 #include "CharmIdSlot.h"
+#include "UObject/NoExportTypes.h"
 #include "SavedCharacterLevelData.h"
+#include "PlayerLoadoutData.h"
+#include "BloodWebPersistentData.h"
+#include "CharacterSavedInventoryData.h"
+#include "SavedStatsData.h"
 #include "CharacterSavedProfileData.generated.h"
 
 USTRUCT()

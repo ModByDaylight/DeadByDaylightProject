@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
-#include "Triggered.h"
+#include "TriggeredDelegate.h"
+#include "TriggerResetDelegate.h"
 #include "Engine/EngineTypes.h"
-#include "TriggerReset.h"
+#include "UObject/NoExportTypes.h"
 #include "TriggerableWorldObjectComponent.generated.h"
 
-class UPrimitiveComponent;
 class ADBDPlayer;
+class UPrimitiveComponent;
 class AActor;
 
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))

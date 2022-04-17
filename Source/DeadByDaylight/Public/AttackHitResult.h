@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "AttackHitResult.generated.h"
 
-class UDBDAttack;
 class ADBDPlayer;
+class UDBDAttack;
 
 USTRUCT()
 struct DEADBYDAYLIGHT_API FAttackHitResult {

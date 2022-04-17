@@ -1,8 +1,8 @@
 #include "K25Chain.h"
 
+class UInstancedStaticMeshComponent;
 class USplineComponent;
 class AK25SurvivorChainAttachmentAnchor;
-class UInstancedStaticMeshComponent;
 
 void AK25Chain::SetSplineComponent(USplineComponent* component) {
 }

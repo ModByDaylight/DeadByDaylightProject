@@ -3,8 +3,8 @@
 #include "ItemAddon.h"
 #include "Addon_ThePig_JigsawSketch.generated.h"
 
-class AGenerator;
 class ACamperPlayer;
+class AGenerator;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UAddon_ThePig_JigsawSketch : public UItemAddon {

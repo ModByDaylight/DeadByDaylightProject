@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "StartupInitializer.h"
 #include "DedicatedServerStartupInitializerInterface.h"
+#include "StartupInitializer.h"
 #include "DedicatedServerStartupInitializer.generated.h"
 
 class UDBDTimeUtilities;

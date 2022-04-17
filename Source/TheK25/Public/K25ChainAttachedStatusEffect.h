@@ -3,8 +3,8 @@
 #include "StatusEffect.h"
 #include "K25ChainAttachedStatusEffect.generated.h"
 
-class UCurveFloat;
 class UK25SurvivorChainAttachmentComponent;
+class UCurveFloat;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UK25ChainAttachedStatusEffect : public UStatusEffect {

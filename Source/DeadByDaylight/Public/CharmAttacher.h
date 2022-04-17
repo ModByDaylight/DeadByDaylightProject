@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnCharmAnimationTagsChangedDelegate.h"
 #include "GameFramework/Actor.h"
-#include "OnAttachedOnActor.h"
-#include "OnCharmAnimationTagsChanged.h"
+#include "OnAttachedOnActorDelegate.h"
 #include "CharmAttacherAnimationTweak.h"
 #include "CharmAttacher.generated.h"
 
-class ACharm;
 class USkeletalMeshComponent;
+class ACharm;
 
 UCLASS()
 class ACharmAttacher : public AActor {

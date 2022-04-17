@@ -3,12 +3,12 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "TutorialFunctionLibrary.generated.h"
 
-class UTutorialNotificationController;
-class ATutorialGameMode;
-class UObject;
-class UTutorialObjectiveController;
 class UTutorialHighlightController;
+class UTutorialObjectiveController;
+class UObject;
+class UTutorialNotificationController;
 class ATutorialGameState;
+class ATutorialGameMode;
 
 UCLASS(BlueprintType)
 class UTutorialFunctionLibrary : public UBlueprintFunctionLibrary {

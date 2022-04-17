@@ -6,10 +6,10 @@
 #include "K26SurvivorStatus.h"
 #include "K26PowerStatusHandlerComponent.generated.h"
 
-class UInteractionDefinition;
-class AActor;
-class ACamperPlayer;
 class ASlasherPlayer;
+class UInteractionDefinition;
+class ACamperPlayer;
+class AActor;
 
 UCLASS(Blueprintable, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK26PowerStatusHandlerComponent : public UActorComponent {

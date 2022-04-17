@@ -1,12 +1,12 @@
 #include "BaseCamperCollectable.h"
+#include "MaterialHelper.h"
 #include "SpherePlayerOverlapComponent.h"
+#include "SurvivorCollectableOutlineUpdateStrategy.h"
 #include "Interactor.h"
 #include "DropItemInteraction.h"
-#include "MaterialHelper.h"
-#include "DBDOutlineComponent.h"
 #include "CollectItemInteraction.h"
+#include "DBDOutlineComponent.h"
 #include "Components/SphereComponent.h"
-#include "SurvivorCollectableOutlineUpdateStrategy.h"
 
 ABaseCamperCollectable::ABaseCamperCollectable() {
     this->_interactable = CreateDefaultSubobject<USpherePlayerOverlapComponent>(TEXT("InteractableZone"));

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "DBDPerPlatformInt.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "DBDPerPlatformFloat.h"
-#include "DBDPerPlatformInt.h"
 #include "BlueprintPlatformUtilities.generated.h"
 
 class UObject;

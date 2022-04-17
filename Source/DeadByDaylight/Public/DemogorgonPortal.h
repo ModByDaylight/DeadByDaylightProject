@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
 #include "Interactable.h"
+#include "Engine/EngineTypes.h"
 #include "EDemogorgonPortalState.h"
 #include "DemogorgonPortal.generated.h"
 
-class UChargeableComponent;
-class UPrimitiveComponent;
 class UParticleSystem;
-class ADBDPlayer;
-class UAkAudioEvent;
+class UPrimitiveComponent;
 class AActor;
+class UChargeableComponent;
+class UAkAudioEvent;
+class ADBDPlayer;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ADemogorgonPortal : public AInteractable {

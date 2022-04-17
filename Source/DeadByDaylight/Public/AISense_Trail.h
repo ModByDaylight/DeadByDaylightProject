@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "Perception/AISense.h"
 #include "AITrailEvent.h"
 #include "GameplayTagContainer.h"
-#include "UObject/NoExportTypes.h"
 #include "AISense_Trail.generated.h"
 
-class AActor;
 class UObject;
+class AActor;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UAISense_Trail : public UAISense {

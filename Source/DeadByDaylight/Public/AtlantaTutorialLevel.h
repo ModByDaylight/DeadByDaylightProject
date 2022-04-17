@@ -3,10 +3,10 @@
 #include "TutorialLevel.h"
 #include "AtlantaTutorialLevel.generated.h"
 
-class AActor;
-class ADBDPlayer;
 class APlayerController;
+class AActor;
 class ADBDAIPlayerController;
+class ADBDPlayer;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AAtlantaTutorialLevel : public ATutorialLevel {

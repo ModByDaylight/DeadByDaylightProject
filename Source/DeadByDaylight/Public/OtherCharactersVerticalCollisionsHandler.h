@@ -5,8 +5,8 @@
 #include "OtherCharactersVerticalCollisionsHandler.generated.h"
 
 class AActor;
-class UCapsuleComponent;
 class UPrimitiveComponent;
+class UCapsuleComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UOtherCharactersVerticalCollisionsHandler : public UActorComponent {

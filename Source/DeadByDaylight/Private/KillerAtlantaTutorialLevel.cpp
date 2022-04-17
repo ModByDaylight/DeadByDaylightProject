@@ -1,9 +1,9 @@
 #include "KillerAtlantaTutorialLevel.h"
 
-class AWindow;
 class AHatch;
-class ACamperPlayer;
+class AWindow;
 class AGenerator;
+class ACamperPlayer;
 class AEscapeDoor;
 class ASlasherPlayer;
 

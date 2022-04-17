@@ -4,10 +4,10 @@
 #include "BloodOrbInfo.h"
 #include "MobileBloodOrbRenderer.generated.h"
 
-class UBloodOrbVisibilityComponent;
-class ABloodOrb;
 class UMaterialInstance;
 class UInstancedStaticMeshComponent;
+class UBloodOrbVisibilityComponent;
+class ABloodOrb;
 class UMaterialInstanceDynamic;
 
 UCLASS()

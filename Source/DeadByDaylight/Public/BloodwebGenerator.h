@@ -5,11 +5,11 @@
 #include "BloodwebGenerator.generated.h"
 
 class UBloodwebDistribution;
-class UBloodwebTunables;
 class UDBDBloodwebDefinitionBase;
 class IDBDBloodwebDefinitionBase;
-class UDBDDesignTunables;
 class UBloodwebSettings;
+class UDBDDesignTunables;
+class UBloodwebTunables;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UBloodwebGenerator : public UObject {

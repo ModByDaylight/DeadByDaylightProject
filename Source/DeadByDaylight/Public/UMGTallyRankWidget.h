@@ -5,11 +5,11 @@
 #include "TallyScorePipsData.h"
 #include "UMGTallyRankWidget.generated.h"
 
-class UUMGTallyRankBanner;
-class UHorizontalBox;
-class UUMGTallyEmblemWidget;
-class UTextBlock;
 class UUMGTallyProgressBar;
+class UUMGTallyEmblemWidget;
+class UHorizontalBox;
+class UTextBlock;
+class UUMGTallyRankBanner;
 
 UCLASS(EditInlineNew)
 class UUMGTallyRankWidget : public UUMGTallyListElementWidget {

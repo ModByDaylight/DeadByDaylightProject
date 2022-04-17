@@ -1,18 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BaseTrap.h"
-#include "OnIsTrapSetChanged.h"
+#include "OnIsTrapSetChangedDelegate.h"
 #include "Engine/EngineTypes.h"
 #include "BearTrap.generated.h"
 
-class UMapActorComponent;
-class UBoxPlayerOverlapComponent;
 class UCapsulePlayerOverlapComponent;
-class AActor;
-class USphereComponent;
+class UBoxPlayerOverlapComponent;
 class UBoxComponent;
+class UAnimMontage;
 class UDBDOutlineComponent;
-class UPrimitiveComponent;
+class USphereComponent;
+class UMapActorComponent;
 class UBearTrapOutlineUpdateStrategy;
 class UMontagePlayer;
 class ADBDPlayer;
@@ -20,7 +19,8 @@ class UDBDNavModifierComponent;
 class UInteractor;
 class UInteractionDefinition;
 class UAnimationMontageSlave;
-class UAnimMontage;
+class UPrimitiveComponent;
+class AActor;
 class ASlasherPlayer;
 class UBearTrapAnimInstance;
 class UAkComponent;

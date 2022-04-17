@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPlayerRole.h"
 #include "DBDTableRowBase.h"
+#include "EPlayerRole.h"
 #include "Styling/SlateColor.h"
 #include "RankUIData.generated.h"
 

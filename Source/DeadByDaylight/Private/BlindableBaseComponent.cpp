@@ -1,8 +1,8 @@
 #include "BlindableBaseComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class UChargeableComponent;
 class AActor;
+class UChargeableComponent;
 class UBlindingEffectorInterface;
 class IBlindingEffectorInterface;
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
 #include "TunableStat.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "StatsSystemUtilities.generated.h"
 
 class UModifierProvider;

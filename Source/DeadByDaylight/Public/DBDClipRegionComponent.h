@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDLocatorComponent.h"
 #include "AffectedMaterialAndVariant.h"
+#include "DBDLocatorComponent.h"
 #include "DBDClipRegionComponent.generated.h"
 
+class UDBDClipRegionComponent;
 class UMeshComponent;
 class UMaterialInstanceDynamic;
-class UDBDClipRegionComponent;
 
 UCLASS(Abstract, Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDClipRegionComponent : public UDBDLocatorComponent {

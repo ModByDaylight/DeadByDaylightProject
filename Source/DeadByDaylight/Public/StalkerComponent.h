@@ -3,14 +3,14 @@
 #include "Components/ActorComponent.h"
 #include "StalkerComponent.generated.h"
 
-class UStalkedComponent;
 class UChargeableComponent;
+class UStalkedComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UStalkerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStalkPointsAdded, float, stalkPoints);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStalkPointsAdded, float, stalkPoints);
     
 private:
     UPROPERTY(EditAnywhere)

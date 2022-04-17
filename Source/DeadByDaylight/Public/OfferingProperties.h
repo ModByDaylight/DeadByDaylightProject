@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OfferingEffect.h"
 #include "ItemData.h"
 #include "EOfferingType.h"
+#include "OfferingEffect.h"
 #include "OfferingProperties.generated.h"
 
 USTRUCT(BlueprintType)

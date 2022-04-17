@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "PlayerStatusViewData.h"
 #include "CoreBaseHudWidget.h"
 #include "PlayerStatusViewInterface.h"
 #include "EPlayerStatus.h"
 #include "PlayerStatusAssets.h"
 #include "GameplayTagContainer.h"
+#include "PlayerStatusViewData.h"
 #include "ESleepingUIState.h"
 #include "EObsessionUIState.h"
 #include "EPlayerStateChangeType.h"
 #include "CorePlayerStatusWidget.generated.h"
 
-class UDBDTextBlock;
-class UOverlay;
 class UAkAudioEvent;
+class UOverlay;
+class UDBDTextBlock;
 class UCorePlayerStatusKillerEffectWidget;
 
 UCLASS(EditInlineNew)

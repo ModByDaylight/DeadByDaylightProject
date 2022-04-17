@@ -1,7 +1,7 @@
 #include "UMGHudEditorLayoutWidget.h"
 
-class UUMGDragWidget_HudEditor;
 class UAkAudioEvent;
+class UUMGDragWidget_HudEditor;
 class UUMGHudEditorScreen;
 class UCustomWidgetWrapper_HudEditor;
 

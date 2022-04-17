@@ -1,8 +1,8 @@
 #include "K26PathHandlerComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class UK26CrowPlacementValidatorComponent;
 class UK26AmmoHandlerComponent;
+class UK26CrowPlacementValidatorComponent;
 
 void UK26PathHandlerComponent::SetDependencies(UK26AmmoHandlerComponent* ammoHandler, UK26CrowPlacementValidatorComponent* placementValidator) {
 }

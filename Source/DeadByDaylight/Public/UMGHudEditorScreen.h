@@ -4,10 +4,10 @@
 #include "EPlayerRole.h"
 #include "UMGHudEditorScreen.generated.h"
 
-class UUMGHudEditorLayoutScreen;
 class UAkAudioEvent;
 class UUMGHudEditorLayoutWidget;
 class UUMGHudEditorVersionWidget;
+class UUMGHudEditorLayoutScreen;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGHudEditorScreen : public UUserWidget {

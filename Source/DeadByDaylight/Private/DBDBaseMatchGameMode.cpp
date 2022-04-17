@@ -1,6 +1,5 @@
 #include "DBDBaseMatchGameMode.h"
-
-class UEndGameComponent;
+#include "EndGameComponent.h"
 
 UEndGameComponent* ADBDBaseMatchGameMode::GetEndGameComponent() const {
     return NULL;

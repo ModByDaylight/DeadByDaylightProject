@@ -2,18 +2,19 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Components/ActorComponent.h"
-#include "StatProperty.h"
+#include "ActionPredictionKey.h"
 #include "EAttackType.h"
-#include "DBDAttackTargetTracker.h"
 #include "EDetectionZone.h"
+#include "StatProperty.h"
+#include "DBDAttackTargetTracker.h"
 #include "EAttackSubstate.h"
-#include "EHitValidatorConfigName.h"
 #include "AttackSubstateRequestResult.h"
+#include "EHitValidatorConfigName.h"
 #include "DBDAttack.generated.h"
 
-class UDBDAttackSubstate;
-class ACharacter;
 class ADBDPlayer;
+class ACharacter;
+class UDBDAttackSubstate;
 class UAttackableComponent;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
@@ -69,7 +70,7 @@ private:
     
 protected:
     UFUNCTION(Reliable, Server, WithValidation)
-    void Server_HitTarget(ADBDPlayer* target, const float targetLocationTimestamp);
+    void Server_HitTarget(ADBDPlayer* target, const float targetLocationTimestamp, FActionPredictionKey predictionKey);
     
 public:
     UFUNCTION(Reliable, Server, WithValidation)
@@ -94,7 +95,7 @@ private:
     void Multicast_ClearTargets();
     
     UFUNCTION(Client, Reliable)
-    void Client_ReceiveHitResult(ADBDPlayer* target, bool isValid);
+    void Client_ReceiveHitResult(ADBDPlayer* target, bool isValid, FActionPredictionKey predictionKey);
     
     UFUNCTION(Client, Reliable)
     void Client_ReceiveAttackSubstateRequestResult(const FAttackSubstateRequestResult result);

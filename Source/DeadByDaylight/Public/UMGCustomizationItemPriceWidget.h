@@ -5,9 +5,9 @@
 #include "Styling/SlateColor.h"
 #include "UMGCustomizationItemPriceWidget.generated.h"
 
-class UTexture2D;
 class UTextBlock;
 class UImage;
+class UTexture2D;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGCustomizationItemPriceWidget : public UMobileBaseUserWidget {

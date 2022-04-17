@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AnimationMontageDescriptor.h"
 #include "GameFramework/Actor.h"
+#include "AnimationMontageDescriptor.h"
 #include "K25AnimationFollowerActor.generated.h"
 
+class UMontagePlayer;
 class USkeletalMeshComponent;
 class UAnimationMontageSlave;
-class UMontagePlayer;
 
 UCLASS()
 class AK25AnimationFollowerActor : public AActor {

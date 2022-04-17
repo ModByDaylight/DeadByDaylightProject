@@ -5,8 +5,8 @@
 #include "Navigation/PathFollowingComponent.h"
 #include "AICharacterBehaviourInteractWithActor.generated.h"
 
-class ADBDPlayer;
 class ADBDAIPlayerController;
+class ADBDPlayer;
 class UAICharacterBehaviourInteractWithActorData;
 
 UCLASS()

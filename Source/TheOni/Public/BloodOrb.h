@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
 #include "EBloodOrbState.h"
+#include "GameFramework/Actor.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "BloodOrb.generated.h"
 
-class UBloodOrbFadeComponent;
-class USceneComponent;
-class UDBDOutlineComponent;
 class ADBDPlayer;
+class UDBDOutlineComponent;
+class USceneComponent;
+class UBloodOrbFadeComponent;
 
 UCLASS()
 class THEONI_API ABloodOrb : public AActor {

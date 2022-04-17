@@ -16,8 +16,8 @@ UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GRAPHICSEXTENSIONS_API UGMAdaptiveShadowMapControllerComponent : public USceneComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
-    FBHVRPerDetailModeInt TileSize;
+    //UPROPERTY(EditAnywhere)
+    //FBHVRPerDetailModeInt TileSize;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     int32 TileCountX;
@@ -31,8 +31,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     int32 GeneratedTilesPerFrame;
     
-    UPROPERTY(EditAnywhere)
-    FBHVRPerDetailModeInt MaxPreallocatedTilesPerFrame;
+    //UPROPERTY(EditAnywhere)
+    //FBHVRPerDetailModeInt MaxPreallocatedTilesPerFrame;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool bSupportsDirectionalLights;

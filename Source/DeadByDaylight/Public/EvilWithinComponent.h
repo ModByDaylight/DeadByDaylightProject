@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TierChangeDelegate.h"
 #include "Components/ActorComponent.h"
+#include "TierChangeDelegateDelegate.h"
 #include "EvilWithinComponent.generated.h"
 
 class ADBDPlayer;

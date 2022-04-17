@@ -4,10 +4,10 @@
 #include "PerMeshInstancingData.h"
 #include "BatchDrawing.generated.h"
 
-class UStaticMesh;
 class UMaterialPerThemeSettings;
 class AActor;
 class UHISMMaterialHelperSettings;
+class UStaticMesh;
 
 UCLASS()
 class UBatchDrawing : public UObject {

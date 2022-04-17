@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
+#include "UObject/NoExportTypes.h"
 #include "AtlantaCamperInitializer.generated.h"
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))

@@ -4,8 +4,8 @@
 #include "PresenterGroup.generated.h"
 
 class UContextObserver;
-class UPawnObserver;
 class UFocusHandler;
+class UPawnObserver;
 class URootContainer;
 
 UCLASS(Abstract)

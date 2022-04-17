@@ -5,11 +5,11 @@
 
 class UWidgetSwitcher;
 class UUMGBaseButtonWidget;
-class UHorizontalBox;
 class UImage;
+class UUMGPurchaseSticker;
 class UTextBlock;
 class UUMGPurchaseBuyButton;
-class UUMGPurchaseSticker;
+class UHorizontalBox;
 class UUMGPurchaseItemsInfo;
 
 UCLASS(Abstract, EditInlineNew)

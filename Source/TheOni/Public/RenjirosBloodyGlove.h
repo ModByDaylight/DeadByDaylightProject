@@ -3,10 +3,10 @@
 #include "ItemAddon.h"
 #include "RenjirosBloodyGlove.generated.h"
 
-class UBloodOrbOverlapRevealToKiller;
-class ACamperPlayer;
 class ABloodOrb;
 class AActor;
+class ACamperPlayer;
+class UBloodOrbOverlapRevealToKiller;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class URenjirosBloodyGlove : public UItemAddon {

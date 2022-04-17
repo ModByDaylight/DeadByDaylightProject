@@ -5,9 +5,9 @@
 #include "ScaleformBlueprintLibrary.generated.h"
 
 class UGFxMoviePlayer;
+class UTextureRenderTarget2D;
 class USwfMovie;
 class UObject;
-class UTextureRenderTarget2D;
 class UGFxObject;
 
 UCLASS(BlueprintType)

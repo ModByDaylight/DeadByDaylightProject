@@ -1,0 +1,5 @@
+#include "AlwaysVisibleToGlyphQuestHolderOutlineUpdateStrategy.h"
+
+UAlwaysVisibleToGlyphQuestHolderOutlineUpdateStrategy::UAlwaysVisibleToGlyphQuestHolderOutlineUpdateStrategy() {
+}
+

@@ -1,7 +1,7 @@
 #include "PerkManager.h"
 
-class UPerk;
 class UStatusEffect;
+class UPerk;
 class UGameplayModifierContainer;
 class ADBDPlayer;
 

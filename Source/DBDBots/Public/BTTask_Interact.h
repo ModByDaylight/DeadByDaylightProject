@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTTaskNode.h"
-#include "EPawnInputPressTypes.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
+#include "EPawnInputPressTypes.h"
 #include "BTTask_Interact.generated.h"
 
 UCLASS()

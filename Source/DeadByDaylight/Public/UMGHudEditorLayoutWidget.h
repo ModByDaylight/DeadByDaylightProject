@@ -3,10 +3,10 @@
 #include "UMGDragWidget.h"
 #include "UMGHudEditorLayoutWidget.generated.h"
 
-class UUMGHudEditorScreen;
-class UAkAudioEvent;
-class UUMGDragWidget_HudEditor;
 class UCustomWidgetWrapper_HudEditor;
+class UUMGHudEditorScreen;
+class UUMGDragWidget_HudEditor;
+class UAkAudioEvent;
 class UUMGHudEditorLayoutScreen;
 
 UCLASS(EditInlineNew)

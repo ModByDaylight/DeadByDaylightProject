@@ -3,8 +3,8 @@
 #include "BaseModifierCondition.h"
 #include "GameplayModifierCondition.generated.h"
 
-class UGameplayModifierContainer;
 class ADBDPlayer;
+class UGameplayModifierContainer;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UGameplayModifierCondition : public UBaseModifierCondition {

@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "LightMaterialUpdate.h"
 #include "Components/ActorComponent.h"
 #include "LightUpdate.h"
+#include "LightMaterialUpdate.h"
 #include "Engine/Scene.h"
-#include "OnLightTimelineFinished.h"
+#include "OnLightTimelineFinishedDelegate.h"
 #include "LightIntensityTimelineComponent.generated.h"
 
-class ULightComponent;
 class UCurveFloat;
+class ULightComponent;
 class UMaterialHelper;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))

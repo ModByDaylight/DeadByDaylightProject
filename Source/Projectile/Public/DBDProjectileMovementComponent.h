@@ -6,14 +6,14 @@
 #include "UObject/NoExportTypes.h"
 #include "DBDProjectileMovementComponent.generated.h"
 
-class USceneComponent;
 class UPrimitiveComponent;
+class USceneComponent;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class PROJECTILE_API UDBDProjectileMovementComponent : public UProjectileMovementComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnComponentToSweepCollisionBP, UPrimitiveComponent*, primitiveComponent, const FHitResult&, hitResult);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnComponentToSweepCollisionBP, UPrimitiveComponent*, primitiveComponent, const FHitResult&, hitResult);
     
     UPROPERTY(BlueprintAssignable)
     FOnComponentToSweepCollisionBP OnComponentToSweepCollisionBP;

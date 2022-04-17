@@ -17,6 +17,9 @@ public:
     UPROPERTY(Transient)
     bool BypassSkillCheckFail;
     
+    UPROPERTY(Transient)
+    bool IsOneTimeIncrease;
+    
     DEADBYDAYLIGHT_API FChargeData();
 };
 

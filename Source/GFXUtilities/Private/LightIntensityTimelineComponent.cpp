@@ -1,8 +1,8 @@
 #include "LightIntensityTimelineComponent.h"
 
 class UCurveFloat;
-class UMaterialHelper;
 class ULightComponent;
+class UMaterialHelper;
 
 void ULightIntensityTimelineComponent::SetRandomizeLength(bool isRandom) {
 }

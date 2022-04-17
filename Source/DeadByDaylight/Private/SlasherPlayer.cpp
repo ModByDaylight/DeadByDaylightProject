@@ -1,25 +1,26 @@
 #include "SlasherPlayer.h"
 #include "Net/UnrealNetwork.h"
-#include "SlasherStunnableComponent.h"
+#include "KillerRedStainUpdateStrategy.h"
+#include "SlasherTREmitterComponent.h"
 #include "StillnessTrackerComponent.h"
 #include "KillerSoundCuesComponent.h"
 #include "DBDNavModifierComponent.h"
+#include "KillerBloodFXComponent.h"
 #include "SlasherHitsWhileCarryingTrackerComponent.h"
 #include "MoriComponent.h"
-#include "KillerBlindingFXComponent.h"
 #include "HitValidatorComponent.h"
 #include "HitValidatorConfigurator.h"
 #include "DBDAttackerComponent.h"
+#include "KillerIntroComponent.h"
 #include "ArmIKSensorComponent.h"
 #include "FirstPersonViewComponent.h"
-#include "KillerIntroComponent.h"
-#include "KillerRedStainUpdateStrategy.h"
+#include "KillerBlindingFXComponent.h"
+#include "SlasherStunnableComponent.h"
 
+class AActor;
 class ACamperPlayer;
 class USceneComponent;
-class AActor;
 class ADBDPlayer;
-class USlasherTREmitterComponent;
 class UChaserCharacterComponent;
 
 bool ASlasherPlayer::WasRecentlyCloaked() const {
@@ -170,10 +171,6 @@ bool ASlasherPlayer::IsInterruptBlocked() const {
     return false;
 }
 
-bool ASlasherPlayer::IsInBlinkCooldown() const {
-    return false;
-}
-
 bool ASlasherPlayer::IsImmuneToObservingPlayerDetection_Implementation(const ADBDPlayer* observingPlayer) const {
     return false;
 }
@@ -194,15 +191,7 @@ bool ASlasherPlayer::IsCloaking_Implementation() const {
     return false;
 }
 
-bool ASlasherPlayer::IsChargingBlink() const {
-    return false;
-}
-
 bool ASlasherPlayer::IsChainsawSprinting() const {
-    return false;
-}
-
-bool ASlasherPlayer::IsChainBlinking() const {
     return false;
 }
 
@@ -425,6 +414,7 @@ ASlasherPlayer::ASlasherPlayer() {
     this->ShowKillerPowerDebugInfo = false;
     this->HasDamagedGeneratorSinceHook = false;
     this->_terrorNavModifierComponent = CreateDefaultSubobject<UDBDNavModifierComponent>(TEXT("TerrorNavModifierComponent"));
+    this->_bloodFXComponent = CreateDefaultSubobject<UKillerBloodFXComponent>(TEXT("Killer Blood VFX Component"));
     this->_slasherLightIntensity = 1.00f;
     this->_defaultAmountToSquish = 1.00f;
     this->_stillnessTracker = CreateDefaultSubobject<UStillnessTrackerComponent>(TEXT("StillnessTracker"));

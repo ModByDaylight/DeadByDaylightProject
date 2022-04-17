@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EStatusEffectType.h"
 #include "ItemData.h"
 #include "EExternalEffectSource.h"
+#include "EStatusEffectType.h"
 #include "StatusEffectProperties.generated.h"
 
 class UStatusEffect;

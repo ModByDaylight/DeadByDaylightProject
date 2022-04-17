@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BaseTooltipData.h"
-#include "EPlayerRole.h"
 #include "PlayerRoleRankData.h"
+#include "EPlayerRole.h"
 #include "RankTooltipData.generated.h"
 
 USTRUCT()

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EndpointLatencyData.h"
 #include "UniquelyIdentifiedAnalytic.h"
+#include "EndpointLatencyData.h"
 #include "EndpointLatencyAnalytics.generated.h"
 
 USTRUCT()

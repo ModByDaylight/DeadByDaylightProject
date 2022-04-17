@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "AkAdvancedInitializationSettingsWithMultiCoreRendering.h"
 #include "UObject/Object.h"
 #include "AkCommonInitializationSettingsWithSampleRate.h"
 #include "AkCommunicationSettingsWithSystemInitialization.h"
-#include "AkAdvancedInitializationSettingsWithMultiCoreRendering.h"
 #include "AkMacInitializationSettings.generated.h"
 
 UCLASS(DefaultConfig, Config=Game)

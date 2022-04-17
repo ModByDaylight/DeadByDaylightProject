@@ -3,11 +3,11 @@
 #include "MobileBaseUserWidget.h"
 #include "BaseTooltipWidget.generated.h"
 
+class UUMGHtmlRichText;
+class UTextBlock;
+class UAkAudioEvent;
 class UButton;
 class UCanvasPanel;
-class UTextBlock;
-class UUMGHtmlRichText;
-class UAkAudioEvent;
 
 UCLASS(Abstract, EditInlineNew)
 class UBaseTooltipWidget : public UMobileBaseUserWidget {

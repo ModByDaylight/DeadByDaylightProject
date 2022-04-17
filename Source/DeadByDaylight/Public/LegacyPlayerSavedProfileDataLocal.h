@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "LegacyCharacterSavedProfileData.h"
-#include "LegacySavedDailyRitualContainer.h"
 #include "LegacySavedFearMarketOfferingInstance.h"
+#include "LegacySavedDailyRitualContainer.h"
 #include "LegacySavedPlayerLoadoutData.h"
+#include "UObject/NoExportTypes.h"
 #include "LegacyPlayerSavedProfileDataLocal.generated.h"
 
 USTRUCT(BlueprintType)

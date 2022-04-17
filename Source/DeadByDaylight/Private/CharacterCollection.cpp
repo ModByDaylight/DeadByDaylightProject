@@ -1,8 +1,8 @@
 #include "CharacterCollection.h"
 
 class ACamperPlayer;
-class ADBDPlayer;
 class ASlasherPlayer;
+class ADBDPlayer;
 
 TSet<ACamperPlayer*> UCharacterCollection::GetSurvivors() const {
     return TSet<ACamperPlayer*>();

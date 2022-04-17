@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "UObject/NoExportTypes.h"
 #include "ETileSpawnPointType.h"
+#include "UObject/NoExportTypes.h"
 #include "Dependency.generated.h"
 
 class AActor;

@@ -1,7 +1,7 @@
 #include "ReverseBearTrapRemover.h"
 #include "Net/UnrealNetwork.h"
+#include "MapActorComponent.h"
 
-class UMapActorComponent;
 class UPrimitiveComponent;
 class AActor;
 class AReverseBearTrap;

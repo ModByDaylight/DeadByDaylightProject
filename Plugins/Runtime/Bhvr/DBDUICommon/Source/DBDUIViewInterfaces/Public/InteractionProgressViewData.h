@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "StatusEffectViewData.h"
 #include "EBarColor.h"
+#include "StatusEffectViewData.h"
 #include "InteractionProgressViewData.generated.h"
 
 class UTexture2D;

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "NavLinkCustomComponent.h"
-#include "Engine/EngineTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "AI/Navigation/NavLinkDefinition.h"
+#include "Engine/EngineTypes.h"
 #include "DBDNavLinkCustomComponent.generated.h"
 
 class ANavLinkProxy;

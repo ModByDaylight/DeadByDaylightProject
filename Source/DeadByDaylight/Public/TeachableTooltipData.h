@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ETeachableStatus.h"
 #include "BaseTooltipData.h"
 #include "EItemRarity.h"
 #include "EInventoryItemType.h"
+#include "ETeachableStatus.h"
 #include "TeachableTooltipData.generated.h"
 
 USTRUCT()

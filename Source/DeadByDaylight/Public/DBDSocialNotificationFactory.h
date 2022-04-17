@@ -3,11 +3,11 @@
 #include "UObject/Object.h"
 #include "DBDSocialNotificationFactory.generated.h"
 
-class UFriendManager;
-class UDBDPartyFacade;
 class UDBDGameInstance;
-class UDataTable;
 class UToastManager;
+class UDBDPartyFacade;
+class UFriendManager;
+class UDataTable;
 
 UCLASS()
 class UDBDSocialNotificationFactory : public UObject {

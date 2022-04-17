@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FCustomSoundFXData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadOnly, EditAnywhere)
     EAudioCustomizationCategory AudioCategory;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadOnly, EditAnywhere)
     FString SwitchState;
     
     DEADBYDAYLIGHT_API FCustomSoundFXData();

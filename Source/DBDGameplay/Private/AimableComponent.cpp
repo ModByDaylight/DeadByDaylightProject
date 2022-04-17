@@ -1,7 +1,7 @@
 #include "AimableComponent.h"
 
-class UAimPointProcessor;
 class AActor;
+class UAimPointProcessor;
 
 void UAimableComponent::SetProcessors(TArray<UAimPointProcessor*> processors) {
 }

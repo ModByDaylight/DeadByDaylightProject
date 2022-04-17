@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "OnLoadoutWidgetSlotClickedEvent.h"
-#include "OnLoadoutWidgetInventoryItemSelectedEvent.h"
-#include "OnLoadoutWidgetInventoryItemUnselectedEvent.h"
+#include "OnLoadoutWidgetSlotClickedEventDelegate.h"
+#include "OnLoadoutWidgetInventoryItemSelectedEventDelegate.h"
+#include "OnLoadoutWidgetInventoryItemUnselectedEventDelegate.h"
 #include "UMGSwitcherScreen.generated.h"
 
-class UUMGCharacterSelectionWidget;
 class UUMGBloodStoreWidget;
+class UUMGCharacterSelectionWidget;
 class UUMGLoadoutWidget;
 class UWidgetSwitcher;
 

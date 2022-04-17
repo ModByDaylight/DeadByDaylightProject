@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EEmblemQuality.h"
 #include "MobileBaseUserWidget.h"
+#include "EEmblemQuality.h"
 #include "UMGTallyEmblemWidget.generated.h"
 
 class UTexture2D;

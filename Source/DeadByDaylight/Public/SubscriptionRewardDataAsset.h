@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SubscriptionRewardTypeData.h"
 #include "Engine/DataAsset.h"
 #include "ESubscriptionRewardType.h"
+#include "SubscriptionRewardTypeData.h"
 #include "SubscriptionRewardDataAsset.generated.h"
 
 UCLASS()

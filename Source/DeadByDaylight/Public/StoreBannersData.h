@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DBDTableRowBase.h"
-#include "EStoreBannerLocation.h"
 #include "StoreFeaturedBannerData.h"
+#include "EStoreBannerLocation.h"
 #include "StoreBannersData.generated.h"
 
 USTRUCT(BlueprintType)

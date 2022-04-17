@@ -1,14 +1,14 @@
 #include "ThrowingKnives.h"
 #include "Net/UnrealNetwork.h"
+#include "PowerChargeComponent.h"
 #include "FlurryComboScoreComponent.h"
-#include "LacerationComponent.h"
+#include "ReloadKnives.h"
 #include "TricksterSuperModeComponent.h"
 #include "K23PowerProgressPresentationComponent.h"
-#include "PowerChargeComponent.h"
-#include "ReloadKnives.h"
+#include "LacerationComponent.h"
 
-class UKnivesLauncher;
 class ASlasherPlayer;
+class UKnivesLauncher;
 
 void AThrowingKnives::OnItemUsedStateChanged(bool pressed) {
 }

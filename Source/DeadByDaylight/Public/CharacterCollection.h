@@ -3,10 +3,10 @@
 #include "Components/ActorComponent.h"
 #include "CharacterCollection.generated.h"
 
-class ASlasherPlayer;
-class ACamperPlayer;
 class ADBDPlayer;
+class ASlasherPlayer;
 class ACharacter;
+class ACamperPlayer;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCharacterCollection : public UActorComponent {

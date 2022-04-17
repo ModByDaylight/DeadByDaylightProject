@@ -1,34 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Interactable.h"
 #include "AIInteractableTargetInterface.h"
-#include "AnimationMontageDescriptor.h"
-#include "AIPointOfInterestTargetInterface.h"
-#include "NoiseIndicatorEmitterInterface.h"
-#include "CharmAttachable.h"
-#include "UObject/NoExportTypes.h"
+#include "Interactable.h"
 #include "GameplayTagContainer.h"
+#include "AIPointOfInterestTargetInterface.h"
+#include "CharmAttachable.h"
+#include "NoiseIndicatorEmitterInterface.h"
+#include "UObject/NoExportTypes.h"
 #include "DBDTimer.h"
+#include "AnimationMontageDescriptor.h"
 #include "MeatHook.generated.h"
 
-class USceneComponent;
 class UDBDClipRegionComponent;
-class UMontagePlayer;
-class UCharacterPusherComponent;
 class AEntity;
+class UCharacterPusherComponent;
 class UCapsuleComponent;
 class UPollableEventListener;
-class UAIPerceptionStimuliSourceComponent;
 class ACamperPlayer;
 class ADBDPlayer;
 class UInteractor;
-class UMapActorComponent;
+class USceneComponent;
+class UPrimitiveComponent;
 class UChargeableInteractionDefinition;
+class UAIPerceptionStimuliSourceComponent;
+class UMapActorComponent;
 class ACharacter;
+class UMontagePlayer;
 class UAkComponent;
 class USphereComponent;
 class UBoxComponent;
-class UPrimitiveComponent;
 class UHookableComponent;
 
 UCLASS()

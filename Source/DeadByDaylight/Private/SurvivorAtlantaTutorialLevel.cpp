@@ -1,7 +1,7 @@
 #include "SurvivorAtlantaTutorialLevel.h"
 
-class ASlasherPlayer;
 class ADBDAIPlayerController;
+class ASlasherPlayer;
 class ACamperPlayer;
 
 void ASurvivorAtlantaTutorialLevel::SetSlasherPlayer(ASlasherPlayer* slasherPlayer) {

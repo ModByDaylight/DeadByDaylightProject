@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnButtonClickEvent.h"
+#include "OnButtonClickEventDelegate.h"
 #include "MobileBaseUserWidget.h"
 #include "UMGSelectedCharacterWidget.generated.h"
 
-class UVerticalBox;
 class UUMGCharacterPrestigeButton;
 class UTextBlock;
+class UVerticalBox;
 class UImage;
 
 UCLASS(Abstract, EditInlineNew)

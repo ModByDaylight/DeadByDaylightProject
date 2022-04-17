@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EEmblemQuality.h"
-#include "MobileBaseUserWidget.h"
-#include "UObject/NoExportTypes.h"
 #include "Styling/SlateBrush.h"
+#include "UObject/NoExportTypes.h"
+#include "MobileBaseUserWidget.h"
+#include "EEmblemQuality.h"
 #include "UMGTallyEmblemProgressBar.generated.h"
 
 class UProgressBar;

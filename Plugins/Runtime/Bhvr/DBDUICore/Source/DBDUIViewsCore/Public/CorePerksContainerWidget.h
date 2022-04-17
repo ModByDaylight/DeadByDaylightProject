@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PerksContainerViewInterface.h"
 #include "CoreBaseHudWidget.h"
+#include "PerksContainerViewInterface.h"
 #include "CorePerksContainerWidget.generated.h"
 
 class UCorePerkWidget;

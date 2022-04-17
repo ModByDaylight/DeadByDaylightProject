@@ -3,9 +3,9 @@
 #include "CoreButtonWidget.h"
 #include "CoreGameManualCategoryButton.generated.h"
 
+class UTexture2D;
 class UDBDTextBlock;
 class UDBDImage;
-class UTexture2D;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreGameManualCategoryButton : public UCoreButtonWidget {

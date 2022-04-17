@@ -9,7 +9,7 @@ UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UStalkedComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnBeingStalkedChanged, bool, isBeingStalked);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnBeingStalkedChanged, bool, isBeingStalked);
     
     UPROPERTY(BlueprintAssignable)
     FOnBeingStalkedChanged OnBeingStalkedChanged;

@@ -4,8 +4,8 @@
 #include "KillerProjectileDodgeComponent.generated.h"
 
 class AKillerProjectile;
-class ACamperPlayer;
 class AActor;
+class ACamperPlayer;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UKillerProjectileDodgeComponent : public UActorComponent {

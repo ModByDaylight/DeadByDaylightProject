@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ItemAddon.h"
-#include "ESkillCheckCustomType.h"
 #include "GameplayTagContainer.h"
+#include "ESkillCheckCustomType.h"
 #include "Addon_TheBlight_SoulChemical.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

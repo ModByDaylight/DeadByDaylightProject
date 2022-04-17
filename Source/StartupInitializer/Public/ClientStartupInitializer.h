@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "StartupInitializer.h"
-#include "UObject/NoExportTypes.h"
 #include "ClientStartupInitializerInterface.h"
+#include "UObject/NoExportTypes.h"
 #include "ClientStartupInitializer.generated.h"
 
 UCLASS()

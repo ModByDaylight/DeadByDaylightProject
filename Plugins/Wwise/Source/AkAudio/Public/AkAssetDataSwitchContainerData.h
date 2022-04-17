@@ -4,8 +4,8 @@
 #include "AkAssetDataSwitchContainerData.generated.h"
 
 class UAkGroupValue;
-class UAkMediaAsset;
 class UAkAssetDataSwitchContainerData;
+class UAkMediaAsset;
 
 UCLASS(EditInlineNew)
 class AKAUDIO_API UAkAssetDataSwitchContainerData : public UObject {

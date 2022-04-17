@@ -5,16 +5,16 @@
 #include "VaultData.h"
 #include "Window.generated.h"
 
-class UAkAudioEvent;
 class UChildActorComponent;
-class UAkComponent;
-class UInteractionDefinition;
+class ADBDPlayer;
+class UAkAudioEvent;
 class UMaterialHelper;
+class UAkComponent;
 class ACamperPlayer;
 class ULocalPlayerTrackerComponent;
 class UBlockableComponent;
-class ADBDPlayer;
 class UDBDNavEvadeLoopComponent;
+class UInteractionDefinition;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AWindow : public AInteractable {

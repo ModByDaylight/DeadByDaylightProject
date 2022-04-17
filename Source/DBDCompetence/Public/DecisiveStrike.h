@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
-#include "Perk.h"
 #include "ESkillCheckCustomType.h"
+#include "Perk.h"
+#include "GameplayTagContainer.h"
 #include "DecisiveStrike.generated.h"
 
 class ADBDPlayer;

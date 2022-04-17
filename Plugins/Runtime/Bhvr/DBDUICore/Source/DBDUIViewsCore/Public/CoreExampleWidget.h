@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CoreBaseHudWidget.h"
-#include "ExampleButtonClickDelegate.h"
 #include "ExampleViewInterface.h"
+#include "ExampleButtonClickDelegateDelegate.h"
 #include "CoreExampleWidget.generated.h"
 
 UCLASS(EditInlineNew)

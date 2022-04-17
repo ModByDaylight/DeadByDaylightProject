@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
 #include "Perk.h"
+#include "GameplayTagContainer.h"
 #include "GameEventData.h"
 #include "K25P03.generated.h"
 

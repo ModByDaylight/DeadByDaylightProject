@@ -75,7 +75,7 @@ void ADBDAIController::AttackRequest(const UObject* requester) {
 void ADBDAIController::ActionRequest(const UObject* requester) {
 }
 
-ADBDAIController::ADBDAIController() {
+ADBDAIController::ADBDAIController(const FObjectInitializer& Initializer) : Super(Initializer) {
     this->DefaultSightRange = 5000.00f;
     this->CloakedTargetSightRange = 1600.00f;
     this->RotateCameraOnStationaryWaitTime = 0.00f;

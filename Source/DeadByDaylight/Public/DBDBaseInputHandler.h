@@ -3,8 +3,8 @@
 #include "UObject/Object.h"
 #include "DBDBaseInputHandler.generated.h"
 
-class APawn;
 class USpringArmComponent;
+class APawn;
 
 UCLASS()
 class UDBDBaseInputHandler : public UObject {

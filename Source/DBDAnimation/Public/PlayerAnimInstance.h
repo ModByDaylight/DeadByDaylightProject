@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "GameplayTagContainer.h"
 #include "Animation/AnimInstance.h"
 #include "Activatable.h"
 #include "TaggedAnimCollection.h"
+#include "GameplayTagContainer.h"
 #include "AnimSequenceSelector.h"
 #include "ActivationDefinition.h"
 #include "PlayerAnimInstance.generated.h"
 
 class ADBDPlayer;
 class UAnimEffectBlackBoard;
-class UAnimSequence;
 class UAnimEffectHandler;
+class UAnimSequence;
 class UBlendSpace;
 class UAimOffsetBlendSpace;
 class UBlendSpace1D;
@@ -73,6 +73,9 @@ protected:
     
     UPROPERTY(EditDefaultsOnly)
     FActivationDefinition _activationDefinition;
+    
+    UPROPERTY(BlueprintReadOnly)
+    float _interactionDuration;
     
 public:
     UPlayerAnimInstance();

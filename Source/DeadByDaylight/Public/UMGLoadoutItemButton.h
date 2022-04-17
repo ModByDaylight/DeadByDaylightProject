@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
+#include "OnLoadoutItemButtonClickedEventDelegate.h"
+#include "OnLoadoutItemButtonLongPressEventDelegate.h"
 #include "Components/SlateWrapperTypes.h"
-#include "OnLoadoutItemButtonClickedEvent.h"
-#include "OnLoadoutItemButtonLongPressEvent.h"
 #include "Styling/SlateBrush.h"
 #include "InventorySlotData.h"
 #include "EInventoryButtonState.h"
@@ -11,9 +11,9 @@
 #include "EStatusEffectType.h"
 #include "UMGLoadoutItemButton.generated.h"
 
-class UButton;
-class UCanvasPanel;
 class UTextBlock;
+class UCanvasPanel;
+class UButton;
 class UImage;
 class UVerticalBox;
 

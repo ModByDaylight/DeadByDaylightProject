@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PlayerStatusViewData.h"
 #include "CoreBaseHudWidget.h"
+#include "PlayerStatusViewData.h"
 #include "CorePlayerStatusKillerEffectWidget.generated.h"
 
 UCLASS(EditInlineNew)

@@ -3,8 +3,8 @@
 #include "Animation/AnimInstance.h"
 #include "TwinHuskAnimInstance.generated.h"
 
-class UTwinHuskStateComponent;
 class APawn;
+class UTwinHuskStateComponent;
 
 UCLASS(NonTransient)
 class UTwinHuskAnimInstance : public UAnimInstance {

@@ -3,8 +3,8 @@
 #include "RespawnableTrigger.h"
 #include "InteractionRespawnableTrigger.generated.h"
 
-class URespawningEventComponent;
 class ARespawnableInteractable;
+class URespawningEventComponent;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class SPECIALEVENTUTILITIES_API UInteractionRespawnableTrigger : public URespawnableTrigger {

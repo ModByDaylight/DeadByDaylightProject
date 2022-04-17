@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPlayerRole.h"
-#include "DBDTableRowBase.h"
 #include "ECharacterDifficulty.h"
+#include "DBDTableRowBase.h"
+#include "EPlayerRole.h"
 #include "CustomizedMeshPart.h"
 #include "EGender.h"
 #include "EKillerAbilities.h"
@@ -11,8 +11,8 @@
 #include "SlideShowDescription.h"
 #include "CharacterDescription.generated.h"
 
-class APawn;
 class UTexture2D;
+class APawn;
 
 USTRUCT(BlueprintType)
 struct DEADBYDAYLIGHT_API FCharacterDescription : public FDBDTableRowBase {

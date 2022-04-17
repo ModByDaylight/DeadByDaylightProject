@@ -5,7 +5,7 @@ class UDBDDecalComponent;
 class UObject;
 class UDecalSpawner;
 
-UDBDDecalComponent* UDecalSpawnerCollection::SpawnDecalAtLocation(FName decalSpawnerName, const FVector& decalSize, const FVector& location, const FRotator& rotation, float lifeSpan, FName decalType) {
+UDBDDecalComponent* UDecalSpawnerCollection::SpawnDecalAtLocation(FName decalSpawnerName, const FVector& decalSize, const FVector& location, const FRotator& rotation, float lifeSpan, FName decalType, const int32 sortOrder) {
     return NULL;
 }
 

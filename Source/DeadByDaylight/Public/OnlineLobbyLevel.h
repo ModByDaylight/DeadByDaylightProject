@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "LobbyLevel.h"
+#include "UObject/NoExportTypes.h"
 #include "OnlineLobbyLevel.generated.h"
 
 class UProceduralGenerationData;

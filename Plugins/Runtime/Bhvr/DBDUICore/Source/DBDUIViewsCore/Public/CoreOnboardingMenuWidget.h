@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CoreBaseUserWidget.h"
+#include "BackActionDelegateDelegate.h"
 #include "OnboardingMenuViewInterface.h"
-#include "BackActionDelegate.h"
-#include "MenuTabSelectedDelegate.h"
-#include "MenuTabSelectedAgainDelegate.h"
+#include "MenuTabSelectedAgainDelegateDelegate.h"
+#include "MenuTabSelectedDelegateDelegate.h"
 #include "CoreOnboardingMenuWidget.generated.h"
 
-class UCoreButtonPromptWidget;
+class UCoreInputSwitcherWidget;
 class UCoreTabContainerWidget;
 class UCoreOnboardingMenuTitleWidget;
 class UCoreSelectableButtonWidget;
@@ -24,7 +24,7 @@ protected:
     UCoreOnboardingMenuTitleWidget* MenuTitle;
     
     UPROPERTY(BlueprintReadOnly, Export)
-    UCoreButtonPromptWidget* BackButton;
+    UCoreInputSwitcherWidget* BackInputSwitcher;
     
 private:
     UPROPERTY(BlueprintCallable)

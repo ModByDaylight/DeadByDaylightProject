@@ -1,7 +1,7 @@
 #include "LoudNoise.h"
-#include "AkComponent.h"
 #include "Components/DecalComponent.h"
 #include "Particles/ParticleSystemComponent.h"
+#include "AkComponent.h"
 #include "Components/SceneComponent.h"
 
 ALoudNoise::ALoudNoise() {

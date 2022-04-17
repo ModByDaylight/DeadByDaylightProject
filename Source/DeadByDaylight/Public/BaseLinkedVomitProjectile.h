@@ -5,11 +5,11 @@
 #include "ImpactInfo.h"
 #include "BaseLinkedVomitProjectile.generated.h"
 
-class UPoolableProjectileComponent;
-class USphereComponent;
-class UParticleSystemComponent;
-class UAkComponent;
 class USplineMeshComponent;
+class UPoolableProjectileComponent;
+class UParticleSystemComponent;
+class USphereComponent;
+class UAkComponent;
 class UParticleSystem;
 class UAkAudioEvent;
 class ACamperPlayer;
@@ -20,7 +20,7 @@ UCLASS()
 class DEADBYDAYLIGHT_API ABaseLinkedVomitProjectile : public AKillerProjectile {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLinkedVomitProjectileDeactivate);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLinkedVomitProjectileDeactivate);
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)

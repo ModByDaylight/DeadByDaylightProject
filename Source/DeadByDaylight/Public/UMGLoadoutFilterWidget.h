@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "OnLoadoutFilterClickedEvent.h"
+#include "OnLoadoutFilterClickedEventDelegate.h"
 #include "UMGLoadoutFilterWidget.generated.h"
 
-class UHorizontalBox;
 class UUMGLoadoutFilterButton;
+class UHorizontalBox;
 class UTexture2D;
 
 UCLASS(EditInlineNew)

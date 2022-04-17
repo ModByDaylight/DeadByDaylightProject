@@ -5,10 +5,10 @@
 #include "DBDTunableRowHandle.h"
 #include "K22Power.generated.h"
 
+class UK22PowerChargePresentationItemProgressComponent;
 class UChargeableComponent;
 class AConjoinedTwin;
 class UPowerChargeComponent;
-class UK22PowerChargePresentationItemProgressComponent;
 
 UCLASS()
 class AK22Power : public ACollectable {

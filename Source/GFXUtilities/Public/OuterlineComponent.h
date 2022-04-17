@@ -3,9 +3,9 @@
 #include "Components/SceneComponent.h"
 #include "OuterlineComponent.generated.h"
 
+class USkeletalMeshComponent;
 class UMaterialInterface;
 class UMaterialInstanceDynamic;
-class USkeletalMeshComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API UOuterlineComponent : public USceneComponent {

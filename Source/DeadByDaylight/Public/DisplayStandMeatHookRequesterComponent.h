@@ -5,8 +5,8 @@
 #include "CharmIdSlot.h"
 #include "DisplayStandMeatHookRequesterComponent.generated.h"
 
-class AActor;
 class AMenuMeatHook;
+class AActor;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDisplayStandMeatHookRequesterComponent : public UActorComponent {

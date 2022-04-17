@@ -3,8 +3,8 @@
 #include "DBDBasePlayer.h"
 #include "K25Husk.generated.h"
 
-class UCustomizedSkeletalMesh;
 class UAnimationMontageSlave;
+class UCustomizedSkeletalMesh;
 class UMontagePlayer;
 
 UCLASS()

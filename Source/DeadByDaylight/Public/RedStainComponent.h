@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/SpotLightComponent.h"
+#include "UObject/NoExportTypes.h"
 #include "RedStainComponent.generated.h"
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))

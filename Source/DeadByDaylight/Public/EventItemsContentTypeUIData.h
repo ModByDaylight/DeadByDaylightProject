@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Styling/SlateColor.h"
 #include "EEventItemContentType.h"
+#include "Styling/SlateColor.h"
 #include "EventItemsContentTypeUIData.generated.h"
 
 class UTexture2D;

@@ -65,6 +65,9 @@ FPerformanceAnalytics::FPerformanceAnalytics() {
     this->HitchesPerMinute6400ms = 0.00f;
     this->HitchesPerMinute12800ms = 0.00f;
     this->MaxMemoryUsedKilobytes = 0;
+    this->DynamicResolutionScreenPercentageAvg = 0;
+    this->DynamicResolutionScreenPercentageMax = 0;
+    this->DynamicResolutionScreenPercentageMin = 0;
     this->MatchCount = 0;
     this->TotalFrames = 0;
     this->ResolutionQuality = 0.00f;

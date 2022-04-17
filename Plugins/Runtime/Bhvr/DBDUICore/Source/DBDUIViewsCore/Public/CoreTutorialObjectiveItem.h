@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CoreBaseUserWidget.h"
-#include "TutorialObjectiveCompleted.h"
+#include "TutorialObjectiveCompletedDelegate.h"
 #include "TutorialObjectivesViewData.h"
 #include "CoreTutorialObjectiveItem.generated.h"
 

@@ -3,8 +3,8 @@
 #include "UObject/Object.h"
 #include "DBDServerInstance.generated.h"
 
-class UDBDGameInstance;
 class UDBDHostSettingsParamsBase;
+class UDBDGameInstance;
 
 UCLASS(Transient)
 class DEADBYDAYLIGHT_API UDBDServerInstance : public UObject {

@@ -1,7 +1,6 @@
 #include "SpiritPassivePhaseWalkHusk.h"
+#include "CustomizedSkeletalMesh.h"
 #include "Components/SkeletalMeshComponent.h"
-
-class UCustomizedSkeletalMesh;
 
 void ASpiritPassivePhaseWalkHusk::SetScalarParameterOnAllChildrenMeshes(FName parameterName, float value) {
 }

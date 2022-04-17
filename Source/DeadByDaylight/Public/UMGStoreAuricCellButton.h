@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "UMGBaseButtonWidget.h"
 #include "CurrencyPurchaseData.h"
+#include "UObject/NoExportTypes.h"
 #include "UMGStoreAuricCellButton.generated.h"
 
 class UTextBlock;

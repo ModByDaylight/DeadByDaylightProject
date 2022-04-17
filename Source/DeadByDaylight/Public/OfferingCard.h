@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OfferingTypeTexture.h"
 #include "GameFramework/Actor.h"
 #include "RarityTexture.h"
-#include "OfferingTypeTexture.h"
 #include "EOfferingAnimState.h"
 #include "OfferingCard.generated.h"
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Interface.h"
 #include "StatusEffectViewData.h"
+#include "UObject/Interface.h"
 #include "StatusEffectViewInterface.generated.h"
 
 UINTERFACE(Blueprintable)

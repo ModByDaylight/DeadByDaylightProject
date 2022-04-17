@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
-#include "BloodOrbAbsorbedDelegate.h"
-#include "BloodOrbIsAbsorbingChangedDelegate.h"
+#include "BloodOrbAbsorbedDelegateDelegate.h"
+#include "BloodOrbIsAbsorbingChangedDelegateDelegate.h"
+#include "UObject/NoExportTypes.h"
 #include "BloodOrbAbsorberComponent.generated.h"
 
 class UBloodOrbDropperComponent;

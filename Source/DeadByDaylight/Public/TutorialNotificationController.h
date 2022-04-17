@@ -7,7 +7,7 @@ UCLASS(BlueprintType)
 class UTutorialNotificationController : public UObject {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnBlockingNotificationDismissedEvent, FName, tutorialNotificationId);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnBlockingNotificationDismissedEvent, FName, tutorialNotificationId);
     
     UPROPERTY(BlueprintAssignable, Transient)
     FOnBlockingNotificationDismissedEvent OnBlockingNotificationDismissedEvent;

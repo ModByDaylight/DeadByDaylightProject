@@ -4,13 +4,13 @@
 #include "UObject/Object.h"
 #include "BloodwebManager.generated.h"
 
-class UBloodwebHandler;
+class UBloodwebGenerator;
+class UBloodwebTunables;
 class UDBDGameInstance;
 class UDBDDesignTunables;
-class UBloodwebGenerator;
+class UBloodwebHandler;
 class UDBDBloodwebDefinitionBase;
 class IDBDBloodwebDefinitionBase;
-class UBloodwebTunables;
 class UBloodwebEntity;
 
 UCLASS()

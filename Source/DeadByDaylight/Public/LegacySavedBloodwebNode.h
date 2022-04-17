@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "LegacySavedBloodwebNodeProperties.h"
-#include "LegacySavedBloodwebNodeGate.h"
 #include "EBloodwebNodeState.h"
+#include "LegacySavedBloodwebNodeGate.h"
 #include "LegacySavedBloodwebChest.h"
 #include "LegacySavedBloodwebNode.generated.h"
 

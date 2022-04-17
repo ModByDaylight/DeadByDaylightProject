@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TunableStat.h"
-#include "UObject/Object.h"
 #include "DBDTunableRowHandle.h"
+#include "UObject/Object.h"
+#include "TunableStat.h"
 #include "BlightPowerState.generated.h"
 
 class UCurveFloat;

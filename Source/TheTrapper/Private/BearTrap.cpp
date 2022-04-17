@@ -1,21 +1,21 @@
 #include "BearTrap.h"
 #include "Net/UnrealNetwork.h"
-#include "BearTrapOutlineUpdateStrategy.h"
 #include "Components/SphereComponent.h"
+#include "DBDOutlineComponent.h"
 #include "BoxPlayerOverlapComponent.h"
 #include "CapsulePlayerOverlapComponent.h"
 #include "Components/BoxComponent.h"
-#include "DBDOutlineComponent.h"
+#include "BearTrapOutlineUpdateStrategy.h"
 #include "MapActorComponent.h"
 #include "MontagePlayer.h"
 #include "DBDNavModifierComponent.h"
 #include "AnimationMontageSlave.h"
 
-class ADBDPlayer;
+class ASlasherPlayer;
 class UAnimMontage;
+class ADBDPlayer;
 class UPrimitiveComponent;
 class AActor;
-class ASlasherPlayer;
 class UInteractionDefinition;
 class UInteractor;
 class UBearTrapAnimInstance;

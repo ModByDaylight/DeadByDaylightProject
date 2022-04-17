@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "YawAndPitchRotator_NetQuantize16.h"
 #include "Components/ActorComponent.h"
+#include "YawAndPitchRotator_NetQuantize16.h"
 #include "UObject/NoExportTypes.h"
 #include "DBDPlayerData.generated.h"
 
@@ -9,7 +9,7 @@ UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDPlayerData : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnItemUseButtonStateChanged, bool, isPressed);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnItemUseButtonStateChanged, bool, isPressed);
     
     UPROPERTY(BlueprintAssignable)
     FOnItemUseButtonStateChanged OnItemUseButtonStateChanged;

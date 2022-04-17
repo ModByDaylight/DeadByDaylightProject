@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AddonViewData.h"
+#include "PerkViewData.h"
 #include "EStatusEffectType.h"
 #include "EHudStatusEffectAlertViewType.h"
-#include "PerkViewData.h"
+#include "AddonViewData.h"
 #include "ItemViewData.h"
 #include "StatusEffectAlertViewData.generated.h"
 

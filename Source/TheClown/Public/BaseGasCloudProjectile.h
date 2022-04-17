@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTunableRowHandle.h"
 #include "PhysicsBasedProjectile.h"
 #include "EBombType.h"
+#include "DBDTunableRowHandle.h"
 #include "GameplayTagContainer.h"
 #include "Engine/EngineTypes.h"
 #include "BaseGasCloudProjectile.generated.h"
 
+class UParticleSystemComponent;
 class UActiveGasCloudTrackerComponent;
 class UPoolableProjectileComponent;
 class ACamperPlayer;
-class AActor;
 class USphereComponent;
-class UParticleSystemComponent;
 class USpherePlayerOverlapComponent;
 class UPrimitiveComponent;
+class AActor;
 
 UCLASS()
 class ABaseGasCloudProjectile : public APhysicsBasedProjectile {

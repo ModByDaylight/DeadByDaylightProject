@@ -19,6 +19,9 @@ FConsoleUserSettings::FConsoleUserSettings() {
     this->SurvivorControllerSensitivity = 0;
     this->InvertY = false;
     this->SurvivorInvertY = false;
+    this->KillerToggleInteractions = false;
+    this->SurvivorToggleInteractions = false;
+    this->SprintToCancel = false;
     this->HighestWeightSeenNews = 0;
     this->UseAtlantaCustomizedHuds = false;
     this->UseAtlantaSurvivorQuickTurn = false;

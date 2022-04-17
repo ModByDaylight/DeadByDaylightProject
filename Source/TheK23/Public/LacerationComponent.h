@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
-#include "DBDTunableRowHandle.h"
-#include "LacerationUIData.h"
 #include "TunableStat.h"
+#include "LacerationUIData.h"
+#include "DBDTunableRowHandle.h"
+#include "UObject/NoExportTypes.h"
 #include "LacerationComponent.generated.h"
 
 class UStatusEffect;

@@ -4,8 +4,8 @@
 #include "ECurrencyType.h"
 #include "UMGRitualRefreshButton.generated.h"
 
-class UWidgetSwitcher;
 class UCanvasPanel;
+class UWidgetSwitcher;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGRitualRefreshButton : public UUMGBaseButtonWidget {

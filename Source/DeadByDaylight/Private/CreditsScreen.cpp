@@ -1,4 +1,4 @@
-#include "CreditsScreen.h"
+#include "DeadByDaylight/Public/CreditsScreen.h"
 
 void UCreditsScreen::SetCreditsHtml(const FString& creditsHtml) const {
 }

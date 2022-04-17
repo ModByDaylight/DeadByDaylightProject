@@ -9,8 +9,8 @@ UCLASS(meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API UGunslingerEffectsComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayOutOfAmmoSound);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsAimingChanged, bool, isAiming);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayOutOfAmmoSound);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsAimingChanged, bool, isAiming);
     
     UPROPERTY(BlueprintAssignable)
     FOnIsAimingChanged OnIsAimingChanged;

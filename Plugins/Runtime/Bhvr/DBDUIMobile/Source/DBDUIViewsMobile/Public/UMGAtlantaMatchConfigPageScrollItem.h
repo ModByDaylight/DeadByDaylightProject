@@ -3,8 +3,8 @@
 #include "UMGBaseButtonWidget.h"
 #include "UMGAtlantaMatchConfigPageScrollItem.generated.h"
 
-class UCanvasPanel;
 class UImage;
+class UCanvasPanel;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlantaMatchConfigPageScrollItem : public UUMGBaseButtonWidget {

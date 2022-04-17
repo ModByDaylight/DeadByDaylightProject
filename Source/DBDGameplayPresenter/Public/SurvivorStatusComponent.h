@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECamperDamageState.h"
 #include "Components/ActorComponent.h"
+#include "ECamperDamageState.h"
 #include "ECamperImmobilizeState.h"
 #include "SurvivorStatusComponent.generated.h"
 

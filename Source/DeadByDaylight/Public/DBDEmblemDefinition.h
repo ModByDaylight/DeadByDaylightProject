@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPlayerRole.h"
 #include "DBDTableRowBase.h"
 #include "EmblemProgressionID.h"
+#include "EPlayerRole.h"
 #include "EEmblemEvaluation.h"
 #include "DBDEmblemDefinition.generated.h"
 

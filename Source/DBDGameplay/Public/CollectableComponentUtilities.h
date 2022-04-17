@@ -3,8 +3,8 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "CollectableComponentUtilities.generated.h"
 
-class ADBDPlayer;
 class UActorComponent;
+class ADBDPlayer;
 
 UCLASS(BlueprintType)
 class DBDGAMEPLAY_API UCollectableComponentUtilities : public UBlueprintFunctionLibrary {

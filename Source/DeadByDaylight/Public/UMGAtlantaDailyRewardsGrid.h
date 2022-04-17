@@ -3,9 +3,9 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGAtlantaDailyRewardsGrid.generated.h"
 
+class UUniformGridPanel;
 class UUMGDailyRewardWidget;
 class UCanvasPanel;
-class UUniformGridPanel;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlantaDailyRewardsGrid : public UMobileBaseUserWidget {

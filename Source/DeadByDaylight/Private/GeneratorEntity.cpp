@@ -1,7 +1,7 @@
 #include "GeneratorEntity.h"
+#include "MontagePlayer.h"
 
 class AGenerator;
-class UMontagePlayer;
 
 void AGeneratorEntity::SetSkeletalMeshActive(bool active) {
 }

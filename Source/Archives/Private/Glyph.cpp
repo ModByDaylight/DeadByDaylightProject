@@ -1,11 +1,11 @@
 #include "Glyph.h"
 #include "Net/UnrealNetwork.h"
-#include "Components/StaticMeshComponent.h"
-#include "Components/BoxComponent.h"
-#include "GlyphInteraction.h"
-#include "ChargeableComponent.h"
-#include "Interactor.h"
 #include "DBDOutlineComponent.h"
+#include "ChargeableComponent.h"
+#include "GlyphInteraction.h"
+#include "Interactor.h"
+#include "Components/BoxComponent.h"
+#include "Components/StaticMeshComponent.h"
 #include "NearTrackedActorComponent.h"
 
 class ADBDPlayer;
@@ -36,11 +36,14 @@ void AGlyph::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimePr
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
     DOREPLIFETIME(AGlyph, _playersWithVisibility);
+    DOREPLIFETIME(AGlyph, _isGlyphActivatedForPlayer);
     DOREPLIFETIME(AGlyph, _playersThatInteractedWithGlyph);
 }
 
 AGlyph::AGlyph() {
     this->_allowedPlayerType = EAllowedPlayerType::All;
+    this->_grantChallengeProgress = true;
+    this->_isAlwaysActivated = true;
     this->_glyphInteraction = CreateDefaultSubobject<UGlyphInteraction>(TEXT("GlyphInteraction"));
     this->_glyphInteractionKiller = CreateDefaultSubobject<UGlyphInteraction>(TEXT("GlyphInteractionKiller"));
     this->_glyphInteractionChargeable = CreateDefaultSubobject<UChargeableComponent>(TEXT("GlyphInteractionChargeable"));

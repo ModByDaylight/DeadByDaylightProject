@@ -3,9 +3,9 @@
 #include "DBDTableRowBase.h"
 #include "CharacterDescriptionOverride.generated.h"
 
-class ADBDMenuPlayer;
 class UTexture2D;
 class ADBDPlayer;
+class ADBDMenuPlayer;
 
 USTRUCT(BlueprintType)
 struct DEADBYDAYLIGHT_API FCharacterDescriptionOverride : public FDBDTableRowBase {

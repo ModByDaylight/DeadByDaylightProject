@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "HexPerk.h"
-#include "GameEventData.h"
 #include "GameplayTagContainer.h"
+#include "GameEventData.h"
 #include "HexUndying.generated.h"
 
-class UGameplayModifierContainer;
 class ACamperPlayer;
+class UGameplayModifierContainer;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UHexUndying : public UHexPerk {

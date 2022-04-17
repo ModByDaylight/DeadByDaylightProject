@@ -4,8 +4,8 @@
 #include "ECurrencyType.h"
 #include "UMGAtlantaStoreScreen.generated.h"
 
-class UScaleBox;
 class UUniformGridPanel;
+class UScaleBox;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlantaStoreScreen : public UMobileBaseUserWidget {

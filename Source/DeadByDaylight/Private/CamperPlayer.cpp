@@ -1,38 +1,38 @@
 #include "CamperPlayer.h"
 #include "Net/UnrealNetwork.h"
-#include "KillerInstinctComponent.h"
-#include "ProtectionHitComponent.h"
-#include "ChargeableComponent.h"
 #include "CharacterPositionRecorderComponent.h"
-#include "CamperSlashableComponent.h"
 #include "StalkedComponent.h"
-#include "SpherePlayerOverlapComponent.h"
+#include "TerrorRadiusReceiverComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "CamperBloodTrailComponent.h"
+#include "ScreamComponent.h"
+#include "SpherePlayerOverlapComponent.h"
+#include "MoveComponentToComponent.h"
+#include "CamperSlashableComponent.h"
+#include "HookableComponent.h"
+#include "CamperHealthComponent.h"
+#include "CamperStillnessTrackerComponent.h"
+#include "CameraAttachmentComponent.h"
 #include "DBDPawnSensingComponent.h"
 #include "SurviveTimerScoreEventComponent.h"
+#include "ChargeableComponent.h"
+#include "KillerInstinctComponent.h"
 #include "CharmSpawnerComponent.h"
+#include "ProtectionHitComponent.h"
 #include "CamperEndGameComponent.h"
 
-class ACamperPlayer;
-class UCamperBloodTrailComponent;
+class UDBDCamperData;
 class AActor;
-class UCamperHealthComponent;
-class UTerrorRadiusReceiverComponent;
-class UPrimitiveComponent;
+class ACamperPlayer;
+class UCamperAnimInstance;
 class ADBDPlayer;
-class APawn;
-class UScreamComponent;
-class AReverseBearTrap;
 class UAkComponent;
+class APawn;
+class UPrimitiveComponent;
+class AReverseBearTrap;
 class UAnimationMontageSlave;
-class UMoveComponentToComponent;
-class UHookableComponent;
 class UDBDClipRegionComponent;
 class UChaseeCharacterComponent;
-class UCamperStillnessTrackerComponent;
-class UDBDCamperData;
-class UCamperAnimInstance;
-class UCameraAttachmentComponent;
 class UInteractionDefinition;
 
 void ACamperPlayer::UpdateKillerDistanceEvent(float deltaSeconds) {
@@ -150,9 +150,6 @@ void ACamperPlayer::OnHpSlotSkillCheckResponseAesthetic(bool success, bool bonus
 void ACamperPlayer::OnHooked() {
 }
 
-void ACamperPlayer::OnHealthStateChanged(ECamperDamageState oldDamageState, ECamperDamageState currentDamageState) {
-}
-
 void ACamperPlayer::OnFinishedPlaying() {
 }
 
@@ -161,7 +158,6 @@ void ACamperPlayer::OnDroppedStart() {
 
 void ACamperPlayer::OnDroppedEnd(bool clearLeader) {
 }
-
 
 
 void ACamperPlayer::Multicast_SetOverlappingEscape_Implementation(AActor* NewEscape) {

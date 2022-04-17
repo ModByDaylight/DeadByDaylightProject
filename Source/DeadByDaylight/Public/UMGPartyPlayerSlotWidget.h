@@ -5,11 +5,11 @@
 #include "EPartyPlayerSlotWidgetState.h"
 #include "UMGPartyPlayerSlotWidget.generated.h"
 
-class UCanvasPanel;
 class UTextBlock;
-class UWidget;
-class UImage;
 class UUMGBaseButtonWidget;
+class UImage;
+class UCanvasPanel;
+class UWidget;
 class UWidgetSwitcher;
 
 UCLASS(Abstract, EditInlineNew)

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "StatusEffect.h"
 #include "TunableStat.h"
+#include "StatusEffect.h"
 #include "UObject/NoExportTypes.h"
 #include "SurvivorPlagueEffect.generated.h"
 

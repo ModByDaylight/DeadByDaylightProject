@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EDBDScoreTypes.h"
 #include "UObject/NoExportTypes.h"
+#include "EDBDScoreTypes.h"
 #include "DBDRecentGameplayEvents.generated.h"
 
 USTRUCT(BlueprintType)

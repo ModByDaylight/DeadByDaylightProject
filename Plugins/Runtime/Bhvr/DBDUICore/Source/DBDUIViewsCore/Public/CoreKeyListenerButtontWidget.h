@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EUIActionType.h"
 #include "CoreButtonWidget.h"
+#include "EUIActionType.h"
 #include "CoreKeyListenerButtontWidget.generated.h"
 
 class UDBDTextBlock;

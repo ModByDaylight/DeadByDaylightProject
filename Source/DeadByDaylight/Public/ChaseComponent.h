@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AllChasesEndedDelegate.h"
 #include "Components/ActorComponent.h"
-#include "ChaseStartDelegate.h"
+#include "ChaseStartDelegateDelegate.h"
 #include "TagStateBool.h"
-#include "ChaseEndDelegate.h"
-#include "OnIsInChaseChanged.h"
+#include "OnIsInChaseChangedDelegate.h"
+#include "ChaseEndDelegateDelegate.h"
+#include "AllChasesEndedDelegateDelegate.h"
 #include "ChaseComponent.generated.h"
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))

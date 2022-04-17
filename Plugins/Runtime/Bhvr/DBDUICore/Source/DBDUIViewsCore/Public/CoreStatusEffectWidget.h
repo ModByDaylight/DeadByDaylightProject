@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "CoreBaseHudWidget.h"
 #include "StatusEffectViewInterface.h"
+#include "CoreBaseHudWidget.h"
 #include "CoreStatusEffectWidget.generated.h"
 
-class UGridPanel;
 class UCoreStatusEffectIcon;
+class UGridPanel;
 
 UCLASS(EditInlineNew)
 class UCoreStatusEffectWidget : public UCoreBaseHudWidget, public IStatusEffectViewInterface {

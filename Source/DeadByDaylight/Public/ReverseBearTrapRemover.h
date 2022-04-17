@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Interactable.h"
 #include "AIInteractableTargetInterface.h"
+#include "Interactable.h"
 #include "ReverseBearTrapRemover.generated.h"
 
 class UMapActorComponent;

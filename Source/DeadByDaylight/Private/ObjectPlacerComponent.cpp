@@ -11,6 +11,9 @@ void UObjectPlacerComponent::SetIndicatorOffsetY(float y) {
 void UObjectPlacerComponent::SetIndicatorOffsetX(float x) {
 }
 
+void UObjectPlacerComponent::SetHideIndicatorDuringAttack(bool enable) {
+}
+
 bool UObjectPlacerComponent::IsPlacementValid() const {
     return false;
 }
@@ -33,6 +36,7 @@ UObjectPlacerComponent::UObjectPlacerComponent() {
     this->_indicatorOffsetX = 0.00f;
     this->_showIndicator = true;
     this->_stayActiveWhileItemInUse = false;
+    this->_hideIndicatorDuringAttack = true;
     this->_objectPlacementUpdateStrategy = NULL;
     this->_objectPlacementValidationStrategy = NULL;
 }

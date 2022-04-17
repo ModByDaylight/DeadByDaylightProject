@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPlayerRole.h"
 #include "BaseItemData.h"
-#include "ItemAvailability.h"
 #include "EItemHandPosition.h"
-#include "EItemRarity.h"
-#include "EKillerAbilities.h"
 #include "ELoadoutItemType.h"
+#include "EPlayerRole.h"
+#include "ItemAvailability.h"
+#include "EKillerAbilities.h"
+#include "EItemRarity.h"
 #include "ItemData.generated.h"
 
 class USkeletalMesh;

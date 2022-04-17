@@ -3,8 +3,8 @@
 #include "UObject/Object.h"
 #include "DownloadingTextureTask.generated.h"
 
-class UTexture2DDynamic;
 class UAsyncTaskDownloadCacheImage;
+class UTexture2DDynamic;
 
 UCLASS()
 class DYNAMICCONTENT_API UDownloadingTextureTask : public UObject {

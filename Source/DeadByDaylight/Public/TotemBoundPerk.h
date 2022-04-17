@@ -48,7 +48,7 @@ public:
     UFUNCTION(BlueprintPure)
     TArray<ATotem*> GetBoundTotems() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void Authority_UnbindFromTotem(ATotem* aTotemActor);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)

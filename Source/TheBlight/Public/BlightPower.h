@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Collectable.h"
-#include "EWallGrabState.h"
 #include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
+#include "EWallGrabState.h"
 #include "BlightPower.generated.h"
 
+class UBlightPowerStateComponent;
 class UPowerChargeComponent;
 class UPowerToggleComponent;
 class UChargeableComponent;
-class UBlightPowerStateComponent;
 
 UCLASS()
 class ABlightPower : public ACollectable {

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "LevelReadyToPlayRequirements.h"
+#include "Components/ActorComponent.h"
 #include "LevelReadyToPlayPlayerComponent.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

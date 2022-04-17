@@ -5,11 +5,11 @@
 #include "RewardWrapperViewData.h"
 #include "CoreRewardWrapperWidget.generated.h"
 
-class UCoreCustomizationRewardWidget;
 class UCoreCharacterRewardWidget;
 class UCoreCurrencyProgressionRewardWidget;
-class UPanelWidget;
+class UCoreCustomizationRewardWidget;
 class UCoreRewardWidget;
+class UPanelWidget;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreRewardWrapperWidget : public UUserWidget {

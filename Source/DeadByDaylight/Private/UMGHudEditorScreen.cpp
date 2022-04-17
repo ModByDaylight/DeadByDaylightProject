@@ -1,9 +1,9 @@
 #include "UMGHudEditorScreen.h"
 
-class UAkAudioEvent;
+class UUMGHudEditorLayoutScreen;
 class UUMGHudEditorLayoutWidget;
 class UUMGHudEditorVersionWidget;
-class UUMGHudEditorLayoutScreen;
+class UAkAudioEvent;
 
 void UUMGHudEditorScreen::ShowHudLayout(EPlayerRole role) {
 }

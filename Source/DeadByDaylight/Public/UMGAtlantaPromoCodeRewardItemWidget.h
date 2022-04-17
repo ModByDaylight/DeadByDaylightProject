@@ -3,9 +3,9 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGAtlantaPromoCodeRewardItemWidget.generated.h"
 
+class UWidgetAnimation;
 class UPanelWidget;
 class UImage;
-class UWidgetAnimation;
 class UTextBlock;
 
 UCLASS(Abstract, EditInlineNew)

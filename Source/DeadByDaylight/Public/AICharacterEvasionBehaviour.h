@@ -5,10 +5,10 @@
 #include "Navigation/PathFollowingComponent.h"
 #include "AICharacterEvasionBehaviour.generated.h"
 
-class ADBDPlayer;
-class UCharacterEvasionBehaviourData;
 class ADBDAIPlayerController;
+class ADBDPlayer;
 class AActor;
+class UCharacterEvasionBehaviourData;
 
 UCLASS()
 class UAICharacterEvasionBehaviour : public UAICharacterBehaviour {

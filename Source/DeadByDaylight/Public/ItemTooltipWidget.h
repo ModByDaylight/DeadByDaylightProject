@@ -3,9 +3,9 @@
 #include "BaseTooltipWidget.h"
 #include "ItemTooltipWidget.generated.h"
 
+class UImage;
 class UTextBlock;
 class UUMGHtmlRichText;
-class UImage;
 
 UCLASS(Abstract, EditInlineNew)
 class UItemTooltipWidget : public UBaseTooltipWidget {

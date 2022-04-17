@@ -3,9 +3,9 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "DBDProjectileUtilities.generated.h"
 
-class UAuthoritativeActorPoolComponent;
-class UObject;
 class UAuthoritativePoolProjectileProviderAdapter;
+class UObject;
+class UAuthoritativeActorPoolComponent;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UDBDProjectileUtilities : public UBlueprintFunctionLibrary {

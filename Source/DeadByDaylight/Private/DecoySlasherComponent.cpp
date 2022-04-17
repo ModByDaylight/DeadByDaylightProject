@@ -1,6 +1,6 @@
 #include "DecoySlasherComponent.h"
+#include "TerrorRadiusEmitterComponent.h"
 
-class UTerrorRadiusEmitterComponent;
 class ASlasherPlayer;
 class AActor;
 

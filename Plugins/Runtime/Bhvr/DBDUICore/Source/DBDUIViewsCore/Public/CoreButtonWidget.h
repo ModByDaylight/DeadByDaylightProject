@@ -14,11 +14,11 @@ UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreButtonWidget : public UCoreBaseUserWidget {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUnhoveredDelegate, UCoreButtonWidget*, buttonTarget);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnReleasedDelegate, UCoreButtonWidget*, buttonTarget);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPressedDelegate, UCoreButtonWidget*, buttonTarget);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHoveredDelegate, UCoreButtonWidget*, buttonTarget);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnClickedDelegate, UCoreButtonWidget*, buttonTarget);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUnhoveredDelegate, UCoreButtonWidget*, buttonTarget);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnReleasedDelegate, UCoreButtonWidget*, buttonTarget);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPressedDelegate, UCoreButtonWidget*, buttonTarget);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHoveredDelegate, UCoreButtonWidget*, buttonTarget);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnClickedDelegate, UCoreButtonWidget*, buttonTarget);
     
     UPROPERTY(BlueprintAssignable)
     FOnHoveredDelegate OnHoveredDelegate;

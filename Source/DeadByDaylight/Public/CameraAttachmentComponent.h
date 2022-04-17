@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "CameraAttachment.h"
+#include "Components/ActorComponent.h"
 #include "CameraAttachmentComponent.generated.h"
 
 class USceneComponent;

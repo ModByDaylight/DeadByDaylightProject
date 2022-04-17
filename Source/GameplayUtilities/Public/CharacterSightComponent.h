@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "ActivationDefinition.h"
-#include "Components/ActorComponent.h"
 #include "Activatable.h"
-#include "AuthorityDiscernedCharacter.h"
+#include "Components/ActorComponent.h"
 #include "DiscernibleCharacter.h"
+#include "AuthorityDiscernedCharacter.h"
+#include "ActivationDefinition.h"
 #include "CharacterSightComponent.generated.h"
 
 class ACharacter;

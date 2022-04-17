@@ -24,6 +24,6 @@ FKey UCoreInputPromptWidget::GetInputKey() {
 
 
 UCoreInputPromptWidget::UCoreInputPromptWidget() {
-    this->_isEnabled = false;
+    this->_isEnabled = true;
 }
 

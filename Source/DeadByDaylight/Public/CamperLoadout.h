@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CharacterCustomizationDropdown.h"
-#include "CharmDropdown.h"
 #include "DataTableDropdown.h"
+#include "CharmDropdown.h"
 #include "DebugLoadoutAddon.h"
 #include "DebugLoadoutPerk.h"
 #include "CamperLoadout.generated.h"

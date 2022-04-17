@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "LanternCollectedByPlayerDelegate.h"
 #include "Interactable.h"
-#include "LanternStateChangeDelegate.h"
-#include "ELanternState.h"
-#include "GameplayTagContainer.h"
+#include "LanternStateChangeDelegateDelegate.h"
 #include "GameEventData.h"
+#include "LanternCollectedByPlayerDelegateDelegate.h"
+#include "GameplayTagContainer.h"
+#include "ELanternState.h"
 #include "LanternInteractable.generated.h"
 
-class ALanternLightCollectable;
 class ADBDPlayer;
+class ALanternLightCollectable;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ALanternInteractable : public AInteractable {

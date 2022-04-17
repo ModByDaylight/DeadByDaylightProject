@@ -9,5 +9,11 @@ FDirectionalHeightFogInterpolationValues::FDirectionalHeightFogInterpolationValu
     this->StartDistance = 0.00f;
     this->DistanceUntilFlatFog = 0.00f;
     this->DistanceUntilNoFog = 0.00f;
+    this->bEnableVolumetricFog = false;
+    this->VolumetricFogScatteringDistribution = 0.00f;
+    this->VolumetricFogExtinctionScale = 0.00f;
+    this->VolumetricFogDistance = 0.00f;
+    this->VolumetricFogStaticLightingScatteringIntensity = 0.00f;
+    this->bOverrideLightColorsWithFogInscatteringColors = false;
 }
 

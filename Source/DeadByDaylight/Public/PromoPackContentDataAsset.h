@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataAsset.h"
 #include "EPromoPackContentType.h"
+#include "Engine/DataAsset.h"
 #include "PromoPackContentTypeData.h"
 #include "PromoPackContentDataAsset.generated.h"
 

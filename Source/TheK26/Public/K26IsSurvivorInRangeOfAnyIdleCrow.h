@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EventDrivenModifierCondition.h"
-#include "OnIsTrueChanged.h"
+#include "OnIsTrueChangedDelegate.h"
 #include "K26IsSurvivorInRangeOfAnyIdleCrow.generated.h"
 
 class UAuthoritativeActorPoolComponent;
+class AActor;
 class ACamperPlayer;
 class AK26CrowProjectile;
-class AActor;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UK26IsSurvivorInRangeOfAnyIdleCrow : public UEventDrivenModifierCondition {

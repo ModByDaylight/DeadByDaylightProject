@@ -3,10 +3,10 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGLoadingScreenWidget.generated.h"
 
-class UPanelWidget;
 class UTextBlock;
-class UImage;
 class UProgressBar;
+class UImage;
+class UPanelWidget;
 
 UCLASS(EditInlineNew)
 class UUMGLoadingScreenWidget : public UMobileBaseUserWidget {

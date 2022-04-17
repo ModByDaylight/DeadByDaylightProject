@@ -2,9 +2,9 @@
 #include "GnomeInteraction.h"
 #include "ChargeableComponent.h"
 #include "Interactor.h"
-#include "Components/SkeletalMeshComponent.h"
 #include "Components/BoxComponent.h"
 #include "DBDOutlineComponent.h"
+#include "Components/SkeletalMeshComponent.h"
 
 
 

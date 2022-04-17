@@ -19,9 +19,6 @@ public:
     UPROPERTY()
     TArray<int32> EquipedPerkLevels;
     
-    UPROPERTY()
-    bool IsLeavingMatch;
-    
 private:
     UPROPERTY()
     EGameState _playerGameState;

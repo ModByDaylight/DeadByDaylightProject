@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "PathStrategy_Flee.h"
-#include "EAIDifficultyLevel.h"
-#include "EAIFleeLoopStrategy.h"
-#include "GameStateEvadeLoopStrategyMapContainer.h"
 #include "AIRoll.h"
+#include "EAIFleeLoopStrategy.h"
+#include "EAIDifficultyLevel.h"
+#include "GameStateEvadeLoopStrategyMapContainer.h"
 #include "PathStrategy_FleeLoop.generated.h"
 
 class UPathBuilder_EvadeLoop;

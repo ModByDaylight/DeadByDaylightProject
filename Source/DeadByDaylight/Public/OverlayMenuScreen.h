@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EGameType.h"
 #include "ScreenBase.h"
+#include "EGameType.h"
 #include "OverlayMenuScreen.generated.h"
 
 UCLASS()
@@ -31,10 +31,10 @@ public:
     void OnResetDefaultSettings();
     
     UFUNCTION()
-    void OnResetDefaultKeybindings(const FString& keyBindingsData, bool mustBeGamepadKey);
+    void OnResetDefaultKeybindings();
     
     UFUNCTION()
-    void OnRequestKeyInput(const FString& name, bool isAxis, float scale, const FString& key);
+    void OnRequestKeyBindingInput(int32 id, const FString& key);
     
     UFUNCTION()
     void OnQuitButtonClick();

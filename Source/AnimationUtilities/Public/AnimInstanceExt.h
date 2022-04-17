@@ -4,8 +4,8 @@
 #include "AnimInstanceExt.generated.h"
 
 class UAnimInstance;
-class AActor;
 class USkeletalMeshComponent;
+class AActor;
 class ACharacter;
 
 UCLASS(BlueprintType)

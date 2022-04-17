@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InteractionDefinition.h"
 #include "EGestureID.h"
+#include "InteractionDefinition.h"
 #include "GestureInteractionDefinition.generated.h"
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))

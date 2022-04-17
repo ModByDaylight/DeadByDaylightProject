@@ -3,10 +3,10 @@
 #include "UMGBaseButtonWidget.h"
 #include "UMGBaseTabButtonWidget.generated.h"
 
+class UImage;
+class UTextBlock;
 class URichTextBlock;
 class UCanvasPanel;
-class UTextBlock;
-class UImage;
 
 UCLASS(Abstract, EditInlineNew)
 class DBDUIVIEWSMOBILE_API UUMGBaseTabButtonWidget : public UUMGBaseButtonWidget {

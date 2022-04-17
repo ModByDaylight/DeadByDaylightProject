@@ -3,16 +3,16 @@
 #include "HudScreen.h"
 #include "HudScreenUMG.generated.h"
 
-class UKillerNoiseIndicatorWidget;
-class UHookedIndicatorWidget;
+class UNoiseIndicatorWidget;
 class UUmgPlayerHud;
 class USafeZoneManagerWidget;
 class UExitOpenedIndicatorWidget;
+class UAtlantaTutorialObjectiveManager;
 class UGeneratorIndicatorWidget;
-class UNoiseIndicatorWidget;
+class UHookedIndicatorWidget;
+class UKillerNoiseIndicatorWidget;
 class UBaseIndicatorWidget;
 class UPromptManager;
-class UAtlantaTutorialObjectiveManager;
 class UAtlantaObjectiveWidget;
 
 UCLASS()

@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CurrencyProgressionTooltipViewData.h"
 #include "CoreBaseUserWidget.h"
+#include "CurrencyProgressionTooltipViewData.h"
 #include "CurrencyProgressionTooltipWidget.generated.h"
 
-class UDBDImage;
-class UDBDTextBlock;
 class UDBDRichTextBlock;
+class UDBDTextBlock;
+class UDBDImage;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCurrencyProgressionTooltipWidget : public UCoreBaseUserWidget {

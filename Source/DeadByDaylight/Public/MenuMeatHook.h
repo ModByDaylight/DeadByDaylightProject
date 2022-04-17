@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "StandDisplayable.h"
-#include "GameFramework/Actor.h"
 #include "CharmIdSlot.h"
 #include "CharmAttachable.h"
+#include "GameFramework/Actor.h"
+#include "StandDisplayable.h"
 #include "MenuMeatHook.generated.h"
 
 class UCharmSpawnerComponent;

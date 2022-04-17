@@ -1,9 +1,9 @@
 #include "CharacterPusherComponent.h"
 
-class ACharacter;
-class UPrimitiveComponent;
 class AActor;
+class ACharacter;
 class UCapsuleComponent;
+class UPrimitiveComponent;
 class UBasePushStrategyComponent;
 
 void UCharacterPusherComponent::SetIgnoredCharacter(ACharacter* character, const bool ignore) {

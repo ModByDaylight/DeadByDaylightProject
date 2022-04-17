@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EDBDScoreTypes.h"
 #include "Components/ActorComponent.h"
-#include "GameplayTagContainer.h"
 #include "GameEventData.h"
+#include "EDBDScoreTypes.h"
+#include "GameplayTagContainer.h"
 #include "AchievementHandlerComponent.generated.h"
 
-class AActor;
 class UGeneratorRepairWithGenericPerksEscapeAchievement;
 class UCamperKONextToRaisedPalletAchievement;
+class AActor;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UAchievementHandlerComponent : public UActorComponent {

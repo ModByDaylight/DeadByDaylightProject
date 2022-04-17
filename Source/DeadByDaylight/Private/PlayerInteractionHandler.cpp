@@ -1,7 +1,7 @@
 #include "PlayerInteractionHandler.h"
 
-class ADBDPlayer;
 class UInterruptionDefinition;
+class ADBDPlayer;
 class UInteractionDefinition;
 class USkillCheck;
 class AActor;
@@ -10,9 +10,6 @@ void UPlayerInteractionHandler::UnPauseSkillCheckTimer() {
 }
 
 void UPlayerInteractionHandler::StartCustomSkillCheck(ESkillCheckCustomType type, float warningSoundDelay) {
-}
-
-void UPlayerInteractionHandler::SetSkillCheckTimer(float delay) {
 }
 
 void UPlayerInteractionHandler::SetScanForInteractionsEnabled(bool enabled) {

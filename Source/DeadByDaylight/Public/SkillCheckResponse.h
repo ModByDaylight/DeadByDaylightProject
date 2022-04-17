@@ -36,6 +36,9 @@ public:
     UPROPERTY(Export, Transient)
     UChargeableInteractionDefinition* Interaction;
     
+    UPROPERTY(Transient)
+    uint32 VerificationKey;
+    
     DEADBYDAYLIGHT_API FSkillCheckResponse();
 };
 

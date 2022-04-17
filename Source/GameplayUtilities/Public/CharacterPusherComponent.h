@@ -3,11 +3,11 @@
 #include "Components/ActorComponent.h"
 #include "CharacterPusherComponent.generated.h"
 
+class AActor;
 class ACharacter;
+class UPrimitiveComponent;
 class UCapsuleComponent;
 class UBasePushStrategyComponent;
-class UPrimitiveComponent;
-class AActor;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GAMEPLAYUTILITIES_API UCharacterPusherComponent : public UActorComponent {

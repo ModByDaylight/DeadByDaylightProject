@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EUIActionType.h"
-#include "InputCoreTypes.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "InputCoreTypes.h"
 #include "EControlMode.h"
+#include "EUIActionType.h"
 #include "UIInputUtilities.generated.h"
 
 class UObject;

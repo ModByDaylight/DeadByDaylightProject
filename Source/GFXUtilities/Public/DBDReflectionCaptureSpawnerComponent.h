@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
-#include "Components/ReflectionCaptureComponent.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/ReflectionCaptureComponent.h"
 #include "DBDReflectionCaptureSpawnerComponent.generated.h"
 
 class UTextureCube;
-class UReflectionCaptureComponent;
 class AReflectionCapture;
+class UReflectionCaptureComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API UDBDReflectionCaptureSpawnerComponent : public USceneComponent {

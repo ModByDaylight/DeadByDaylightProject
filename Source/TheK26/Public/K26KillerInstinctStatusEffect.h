@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "StatusEffect.h"
 #include "TunableStat.h"
+#include "StatusEffect.h"
 #include "K26KillerInstinctStatusEffect.generated.h"
 
 class UInteractionDefinition;

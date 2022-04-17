@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTunableRowHandle.h"
 #include "PossessionComponent.h"
+#include "DBDTunableRowHandle.h"
 #include "KillerPossessionComponent.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/Widget.h"
-#include "OnItemPropertySelectionChanged.h"
-#include "OnItemPropertyDragDetected.h"
+#include "OnItemPropertySelectionChangedDelegate.h"
+#include "OnItemPropertyDragDetectedDelegate.h"
 #include "AkItemProperties.generated.h"
 
 UCLASS(DefaultConfig, Config=Editor)

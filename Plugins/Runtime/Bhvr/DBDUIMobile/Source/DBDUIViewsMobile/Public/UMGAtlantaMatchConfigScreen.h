@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MobileBaseUserWidget.h"
 #include "Styling/SlateBrush.h"
+#include "MobileBaseUserWidget.h"
 #include "UMGAtlantaMatchConfigScreen.generated.h"
 
-class UTextBlock;
-class UUMGAtlantaMatchConfigPageScroll;
 class UHorizontalBox;
+class UUMGAtlantaMatchConfigPageScroll;
 class UVerticalBox;
 class UUMGBaseButtonWidget;
+class UTextBlock;
 class UMatchConfigTabsDataAsset;
 
 UCLASS(Abstract, EditInlineNew)

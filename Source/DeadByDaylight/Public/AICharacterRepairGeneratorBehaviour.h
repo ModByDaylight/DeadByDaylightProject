@@ -5,10 +5,10 @@
 #include "Navigation/PathFollowingComponent.h"
 #include "AICharacterRepairGeneratorBehaviour.generated.h"
 
-class ADBDPlayer;
-class ADBDAIPlayerController;
-class UInteractor;
 class UAICharacterRepairGeneratorBehaviourData;
+class ADBDAIPlayerController;
+class ADBDPlayer;
+class UInteractor;
 
 UCLASS()
 class UAICharacterRepairGeneratorBehaviour : public UAICharacterBehaviour {

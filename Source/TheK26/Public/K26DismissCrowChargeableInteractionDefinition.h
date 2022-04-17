@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECamperDamageState.h"
 #include "ChargeableInteractionDefinition.h"
 #include "TunableStat.h"
+#include "ECamperDamageState.h"
 #include "K26DismissCrowChargeableInteractionDefinition.generated.h"
 
-class UChargeableComponent;
 class UK26PowerStatusHandlerComponent;
 class ASlasherPlayer;
+class UChargeableComponent;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK26DismissCrowChargeableInteractionDefinition : public UChargeableInteractionDefinition {

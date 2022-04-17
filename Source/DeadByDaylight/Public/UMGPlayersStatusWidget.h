@@ -5,8 +5,8 @@
 #include "CustomizedHudPlayerWrapperIdMapContainer.h"
 #include "UMGPlayersStatusWidget.generated.h"
 
-class UUMGPlayerStatusIcon;
 class UHorizontalBox;
+class UUMGPlayerStatusIcon;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGPlayersStatusWidget : public UMobileBaseUserWidget {

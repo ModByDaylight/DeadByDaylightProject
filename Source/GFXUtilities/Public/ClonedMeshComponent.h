@@ -3,8 +3,8 @@
 #include "BatchMeshCommands.h"
 #include "ClonedMeshComponent.generated.h"
 
-class USceneComponent;
 class UMeshComponent;
+class USceneComponent;
 
 UCLASS(Transient, meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API UClonedMeshComponent : public UBatchMeshCommands {

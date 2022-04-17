@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AISkill_Interaction.h"
 #include "DBDTunableRowHandle.h"
+#include "AISkill_Interaction.h"
 #include "AISkill_Interaction_RemoveTwin.generated.h"
 
 UCLASS(EditInlineNew)

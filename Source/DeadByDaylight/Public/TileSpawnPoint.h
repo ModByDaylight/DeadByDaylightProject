@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Components/SceneComponent.h"
-#include "SpawnElement.h"
 #include "WeightedElement.h"
+#include "SpawnElement.h"
 #include "ETileSpawnPointType.h"
 #include "TileSpawnPoint.generated.h"
 

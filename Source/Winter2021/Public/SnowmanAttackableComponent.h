@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
 #include "AttackableComponent.h"
+#include "GameplayTagContainer.h"
 #include "SnowmanAttackableComponent.generated.h"
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))

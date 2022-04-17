@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "DBDTableRowBase.h"
 #include "ETooltipType.h"
+#include "DBDTableRowBase.h"
 #include "TooltipWidgetData.generated.h"
 
 class UUserWidget;

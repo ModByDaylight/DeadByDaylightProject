@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "OutlineUpdateStrategy.h"
-#include "OnRevealedDelegate.h"
+#include "OnRevealedDelegateDelegate.h"
 #include "UObject/NoExportTypes.h"
 #include "SlasherOutlineUpdateStrategy.generated.h"
 

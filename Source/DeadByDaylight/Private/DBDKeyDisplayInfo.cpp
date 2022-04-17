@@ -23,6 +23,5 @@ FName UDBDKeyDisplayInfo::GetActionForInteractionType(EPlayerRole playerRole, EI
 }
 
 UDBDKeyDisplayInfo::UDBDKeyDisplayInfo() {
-    this->PendingResetMustBeGamepadKey = false;
 }
 

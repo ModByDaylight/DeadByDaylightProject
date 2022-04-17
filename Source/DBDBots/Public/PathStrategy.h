@@ -5,8 +5,8 @@
 #include "AIPathValidatorInterface.h"
 #include "PathStrategy.generated.h"
 
-class ADBDAIBTController;
 class UPathBuilder;
+class ADBDAIBTController;
 
 UCLASS(EditInlineNew)
 class DBDBOTS_API UPathStrategy : public UObject, public IAIDisplayDebugInterface, public IAIPathValidatorInterface {

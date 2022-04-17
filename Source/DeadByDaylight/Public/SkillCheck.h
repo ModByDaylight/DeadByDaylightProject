@@ -6,8 +6,8 @@
 #include "SkillCheckResponse.h"
 #include "SkillCheck.generated.h"
 
-class UChargeableInteractionDefinition;
 class ADBDPlayer;
+class UChargeableInteractionDefinition;
 class UInteractionDefinition;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
@@ -48,6 +48,9 @@ private:
     void Multicast_SkillCheckResponse(FSkillCheckResponse skillCheckResponse);
     
     UFUNCTION(NetMulticast, Reliable)
+    void Multicast_OnTriggerSkillCheck(UChargeableInteractionDefinition* currentInteraction, ESkillCheckCustomType skillCheckCustomType, const FString& id, const FString& salt);
+    
+    UFUNCTION(NetMulticast, Reliable)
     void Multicast_DeactivateSkillCheck();
     
     UFUNCTION(NetMulticast, Reliable)
@@ -80,6 +83,9 @@ public:
     
     UFUNCTION(BlueprintPure)
     static bool CanSkillCheckTypeGrantScore(ESkillCheckCustomType type);
+    
+    UFUNCTION()
+    void Authority_OnSkillCheckTimeout();
     
 };
 

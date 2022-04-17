@@ -2,13 +2,13 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "BehaviorTree/BTService.h"
-#include "AITunableParameter.h"
 #include "AIGoalGeneratorInterface.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
+#include "AITunableParameter.h"
 #include "BTService_FindInteractor.generated.h"
 
-class UNavigationQueryFilter;
 class UInteractor;
+class UNavigationQueryFilter;
 class ADBDAIBTController;
 
 UCLASS(Abstract)

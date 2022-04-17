@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Blueprint/UserWidget.h"
-#include "HUDWidgetsFadeOutCompleted.h"
+#include "HUDWidgetsFadeOutCompletedDelegate.h"
 #include "CoreHudRootWidget.generated.h"
 
-class UCurveFloat;
+class UOverlay;
+class UScaleBox;
 class UCoreBaseViewInterface;
 class ICoreBaseViewInterface;
-class UScaleBox;
-class UOverlay;
+class UCurveFloat;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UCoreHudRootWidget : public UUserWidget {
@@ -125,6 +125,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void FadeInWidgets();
+    
+    UFUNCTION(BlueprintImplementableEvent)
+    void ApplyConstrainedAspectRatio(bool isConstrained, float aspectRatio);
     
 };
 

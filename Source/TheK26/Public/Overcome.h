@@ -14,6 +14,9 @@ protected:
     float _exhaustionDuration[3];
     
 private:
+    UPROPERTY(EditDefaultsOnly)
+    float _damageStateChangedTimeLimit;
+    
     UPROPERTY(Export, Transient)
     UActivatableExhaustedEffect* _exhaustedEffect;
     

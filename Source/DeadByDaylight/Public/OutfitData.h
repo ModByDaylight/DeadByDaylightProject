@@ -28,6 +28,9 @@ public:
     FText CollectionDescription;
     
     UPROPERTY(EditAnywhere)
+    FString InclusionVersion;
+    
+    UPROPERTY(EditAnywhere)
     bool IsAvailableInAtlantaBuild;
     
     FOutfitData();

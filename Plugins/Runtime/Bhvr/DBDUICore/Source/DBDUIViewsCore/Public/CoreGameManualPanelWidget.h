@@ -4,14 +4,14 @@
 #include "GameManualViewInterface.h"
 #include "EGameManualMenuState.h"
 #include "EHelpType.h"
-#include "OnSetOnboardingMenuSubtitleDelegate.h"
-#include "OnResetOnboardingMenuSubtitleDelegate.h"
+#include "OnSetOnboardingMenuSubtitleDelegateDelegate.h"
+#include "OnResetOnboardingMenuSubtitleDelegateDelegate.h"
 #include "CoreGameManualPanelWidget.generated.h"
 
 class UCoreGameManualCategoryButton;
-class UDBDTextBlock;
 class UPanelWidget;
 class UCoreTabContainerWidget;
+class UDBDTextBlock;
 class UDBDRichTextBlock;
 class UCoreSelectableButtonWidget;
 

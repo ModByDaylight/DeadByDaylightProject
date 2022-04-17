@@ -1,8 +1,8 @@
 #include "K25Projectile.h"
 #include "Net/UnrealNetwork.h"
-#include "KillerProjectileDodgeComponent.h"
-#include "Components/BoxComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "Components/BoxComponent.h"
+#include "KillerProjectileDodgeComponent.h"
 
 class UDBDProjectileMovementComponent;
 
@@ -28,7 +28,7 @@ void AK25Projectile::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
     DOREPLIFETIME(AK25Projectile, _attachedChain);
 }
 
-AK25Projectile::AK25Projectile() {
+AK25Projectile::AK25Projectile(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->_staticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Static Mesh"));
     this->_characterCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Target Detector"));
     this->_environmentCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Environment Collider"));

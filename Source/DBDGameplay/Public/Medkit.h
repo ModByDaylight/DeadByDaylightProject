@@ -3,12 +3,12 @@
 #include "BaseCamperCollectable.h"
 #include "Medkit.generated.h"
 
+class UAkAudioBank;
 class UAkComponent;
-class ADBDPlayer;
-class UAkAudioEvent;
 class UChargerComponent;
 class UParticleSystem;
-class UAkAudioBank;
+class ADBDPlayer;
+class UAkAudioEvent;
 
 UCLASS()
 class DBDGAMEPLAY_API AMedkit : public ABaseCamperCollectable {

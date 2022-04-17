@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UMGLoadoutBaseWidget.h"
-#include "TooltipPressedData.h"
 #include "ECurrencyType.h"
+#include "TooltipPressedData.h"
 #include "UMGLobbySearchingWidget.generated.h"
 
-class UButton;
 class UUMGBankAndPlayerInfoWidget;
 class UUMGPartySlotsWidget;
+class UButton;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGLobbySearchingWidget : public UUMGLoadoutBaseWidget {

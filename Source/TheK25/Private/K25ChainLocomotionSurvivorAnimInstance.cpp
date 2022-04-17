@@ -1,8 +1,8 @@
 #include "K25ChainLocomotionSurvivorAnimInstance.h"
 
-class AK25SurvivorChainAttachmentAnchor;
-class UChargeableComponent;
 class AK25Chain;
+class UChargeableComponent;
+class AK25SurvivorChainAttachmentAnchor;
 class UK25SurvivorChainAttachmentComponent;
 
 void UK25ChainLocomotionSurvivorAnimInstance::OnRemoveChainChargePercentageChanged(UChargeableComponent* chargeableComponent, float completionPercentage) {

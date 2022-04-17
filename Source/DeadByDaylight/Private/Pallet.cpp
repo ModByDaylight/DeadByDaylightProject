@@ -3,9 +3,9 @@
 #include "PalletPulldownBlockerComponent.h"
 
 class USkeletalMeshComponent;
-class AActor;
 class ADBDPlayer;
 class UPrimitiveComponent;
+class AActor;
 class ACamperPlayer;
 
 void APallet::UpdateIllusionaryPallet() {

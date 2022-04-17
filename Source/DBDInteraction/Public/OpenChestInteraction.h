@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
 #include "SearchChestInteractionBase.h"
+#include "GameplayTagContainer.h"
 #include "OpenChestInteraction.generated.h"
 
 class UAnimSequence;

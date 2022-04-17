@@ -1,28 +1,28 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "OnDamageStateChanged.h"
 #include "Components/ActorComponent.h"
-#include "OnHealedEvent.h"
-#include "DBDTunableRowHandle.h"
 #include "TagStateBool.h"
-#include "InjuredBleedoutDelegate.h"
+#include "OnHealedEventDelegate.h"
+#include "InjuredBleedoutDelegateDelegate.h"
+#include "OnDamageStateChangedDelegate.h"
+#include "DBDTunableRowHandle.h"
 #include "DBDTimer.h"
+#include "CamperHealResult.h"
 #include "ECamperImmobilizeState.h"
 #include "ECamperDamageState.h"
-#include "CamperHealResult.h"
 #include "CamperHealthComponent.generated.h"
 
-class UInteractionDefinition;
-class UChargeableComponent;
 class ADBDPlayer;
 class AActor;
+class UInteractionDefinition;
+class UChargeableComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCamperHealthComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDamageStateChangedCosmetic);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDamageStateChangedCosmetic);
     
     UPROPERTY(BlueprintAssignable)
     FOnHealedEvent OnHealedDelegate;

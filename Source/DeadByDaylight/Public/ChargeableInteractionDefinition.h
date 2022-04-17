@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ChargeableDefSkillCheckResponse.h"
 #include "InteractionDefinition.h"
-#include "GameplayTagContainer.h"
+#include "ChargeableDefSkillCheckResponseDelegate.h"
 #include "EChargeableInteractionBarType.h"
 #include "ESkillCheckCustomType.h"
+#include "GameplayTagContainer.h"
 #include "ChargeableInteractionDefinition.generated.h"
 
-class UChargeableComponent;
 class ADBDPlayer;
+class UChargeableComponent;
 class ACollectable;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))

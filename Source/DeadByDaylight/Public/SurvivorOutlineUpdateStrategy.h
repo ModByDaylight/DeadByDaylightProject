@@ -4,10 +4,10 @@
 #include "UObject/NoExportTypes.h"
 #include "SurvivorOutlineUpdateStrategy.generated.h"
 
-class ACamperPlayer;
+class UGameplayModifierContainer;
 class UTexture;
 class ASlasherPlayer;
-class UGameplayModifierContainer;
+class ACamperPlayer;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API USurvivorOutlineUpdateStrategy : public UOutlineUpdateStrategy {

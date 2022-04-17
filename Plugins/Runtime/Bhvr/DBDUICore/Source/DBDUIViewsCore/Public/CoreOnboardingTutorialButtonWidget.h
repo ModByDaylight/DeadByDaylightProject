@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CoreButtonWidget.h"
-#include "OnSetDataAnimationCompleteDelegate.h"
+#include "OnSetDataAnimationCompleteDelegateDelegate.h"
 #include "OnboardingTutorialButtonViewData.h"
 #include "CoreOnboardingTutorialButtonWidget.generated.h"
 
+class UAkAudioEvent;
 class UCoreRewardWrapperWidget;
 class UDBDTextBlock;
 class UDBDImage;
-class UAkAudioEvent;
 class UWidgetSwitcher;
 
 UCLASS(EditInlineNew)

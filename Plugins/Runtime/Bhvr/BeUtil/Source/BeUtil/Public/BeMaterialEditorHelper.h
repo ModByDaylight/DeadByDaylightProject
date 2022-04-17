@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "BeMaterialTexture.h"
 #include "BeMaterialScalar.h"
+#include "BeMaterialTexture.h"
 #include "BeMaterialVector.h"
 #include "BeMaterialEditorHelper.generated.h"
 

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "PlayerRankData.h"
 #include "EPlayerRole.h"
 #include "EAIDifficultyLevel.h"
-#include "PlayerRankData.h"
 #include "PlayerRoundStartEventData.generated.h"
 
 USTRUCT()

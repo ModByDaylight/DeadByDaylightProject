@@ -6,8 +6,8 @@
 #include "BubbleIndicatorNotifier.generated.h"
 
 class UStaticMesh;
-class ABubbleIndicator;
 class UObject;
+class ABubbleIndicator;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UBubbleIndicatorNotifier : public UBlueprintFunctionLibrary {

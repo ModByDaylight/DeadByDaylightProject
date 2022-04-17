@@ -4,9 +4,9 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGAtlantaEventsScreen.generated.h"
 
+class UUMGAtlantaEventsDescription;
 class UTextBlock;
 class UWrapBox;
-class UUMGAtlantaEventsDescription;
 class UUMGAtlantaEventsTab;
 
 UCLASS(Abstract, EditInlineNew)

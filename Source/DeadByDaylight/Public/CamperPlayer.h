@@ -1,63 +1,62 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnHPSlotChangedDelegate.h"
 #include "DBDPlayer.h"
-#include "UObject/NoExportTypes.h"
-#include "OnHPSlotChanged.h"
-#include "NoiseIndicatorEmitterInterface.h"
 #include "CharmAttachable.h"
-#include "OnHookStateChanged.h"
-#include "OnGuidedStateChanged.h"
-#include "OnPickedUpEvent.h"
-#include "OnImmobilizeStateChanged.h"
-#include "OnHookEscapeFailedCosmetic.h"
+#include "NoiseIndicatorEmitterInterface.h"
+#include "OnHookStateChangedDelegate.h"
+#include "OnGuidedStateChangedDelegate.h"
+#include "OnPickedUpEventDelegate.h"
+#include "OnImmobilizeStateChangedDelegate.h"
+#include "OnHookEscapeFailedCosmeticDelegate.h"
 #include "EGender.h"
 #include "DBDTimer.h"
+#include "UObject/NoExportTypes.h"
 #include "ECamperImmobilizeState.h"
-#include "ESkillCheckCustomType.h"
-#include "EEscapeType.h"
 #include "ECamperGuidedAction.h"
 #include "Engine/EngineTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "ECamperDamageState.h"
+#include "ESkillCheckCustomType.h"
 #include "EAuthoritativeMovementFlag.h"
+#include "UObject/NoExportTypes.h"
+#include "EEscapeType.h"
 #include "CamperPlayer.generated.h"
 
-class UChargeableComponent;
-class UCamperStillnessTrackerComponent;
-class UStalkedComponent;
-class UInteractionDefinition;
-class AReverseBearTrap;
-class UCurveFloat;
-class UCamperBloodTrailComponent;
-class AActor;
-class USpherePlayerOverlapComponent;
-class UMoveComponentToComponent;
-class UCapsuleComponent;
+class USurvivorHitSprintEffect;
+class UCharmSpawnerComponent;
+class UAkAudioEvent;
 class UDBDClipRegionComponent;
+class UMoveComponentToComponent;
+class UInteractionDefinition;
+class UDBDCamperData;
+class UCharacterPositionRecorderComponent;
+class AActor;
+class UStalkedComponent;
+class UScreamComponent;
+class UCamperBloodTrailComponent;
+class UCurveFloat;
+class UCamperStillnessTrackerComponent;
+class AReverseBearTrap;
+class USpherePlayerOverlapComponent;
+class UCapsuleComponent;
+class UHookableComponent;
 class UCamperSlashableComponent;
-class UCamperHealthComponent;
+class APawn;
+class UAkComponent;
 class UTerrorRadiusReceiverComponent;
 class UDBDPawnSensingComponent;
 class USurviveTimerScoreEventComponent;
+class UCamperHealthComponent;
+class UChargeableComponent;
 class UBloodTrailSettings;
-class ACamperPlayer;
 class UKillerInstinctComponent;
 class UCameraAttachmentComponent;
-class UCharmSpawnerComponent;
-class UHookableComponent;
 class UProtectionHitComponent;
-class UScreamComponent;
-class UAkComponent;
-class UCharacterPositionRecorderComponent;
+class ACamperPlayer;
 class UCamperEndGameComponent;
-class USurvivorHitSprintEffect;
+class UCamperAnimInstance;
 class UPrimitiveComponent;
 class UAnimationMontageSlave;
-class UAkAudioEvent;
-class APawn;
 class UChaseeCharacterComponent;
-class UDBDCamperData;
-class UCamperAnimInstance;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ACamperPlayer : public ADBDPlayer, public ICharmAttachable, public INoiseIndicatorEmitterInterface {
@@ -389,11 +388,6 @@ public:
     UFUNCTION(BlueprintCallable)
     void OnHooked();
     
-private:
-    UFUNCTION()
-    void OnHealthStateChanged(ECamperDamageState oldDamageState, ECamperDamageState currentDamageState);
-    
-public:
     UFUNCTION(BlueprintCallable)
     void OnFinishedPlaying();
     
@@ -408,9 +402,6 @@ protected:
     void OnDroppedByBearTrap();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
-    void OnDamageHit(bool causedKO, bool isWeaponHit);
-    
     UFUNCTION(NetMulticast, Reliable)
     void Multicast_SetOverlappingEscape(AActor* NewEscape);
     

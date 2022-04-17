@@ -4,9 +4,9 @@
 #include "TileProperties.h"
 #include "MapData.generated.h"
 
-class UProceduralGenerationData;
 class UAkAudioBank;
 class UBlackboardData;
+class UProceduralGenerationData;
 
 UCLASS()
 class UMapData : public UDataAsset {

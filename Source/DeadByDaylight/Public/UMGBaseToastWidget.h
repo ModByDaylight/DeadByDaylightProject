@@ -3,9 +3,9 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGBaseToastWidget.generated.h"
 
+class UProgressBar;
 class UImage;
 class UTextBlock;
-class UProgressBar;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGBaseToastWidget : public UMobileBaseUserWidget {

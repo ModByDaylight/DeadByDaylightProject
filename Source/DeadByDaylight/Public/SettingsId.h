@@ -33,6 +33,9 @@ enum class SettingsId {
     SurvivorControllerSensitivity,
     KillerMouseSensitivity,
     KillerControllerSensitivity,
+    SurvivorToggleInteractions,
+    KillerToggleInteractions,
+    SprintToCancel,
     ColorBarPalette,
     ColorBlindMode,
     ColorBlindModeIntensity,
@@ -53,5 +56,6 @@ enum class SettingsId {
     CustomizedControls,
     DynamicResolution,
     InvertYAxisSurvivor,
+    BetaWiggleSkillCheck,
 };
 

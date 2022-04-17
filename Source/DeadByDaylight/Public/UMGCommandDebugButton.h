@@ -3,8 +3,8 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGCommandDebugButton.generated.h"
 
-class UButton;
 class UTextBlock;
+class UButton;
 
 UCLASS(EditInlineNew)
 class UUMGCommandDebugButton : public UMobileBaseUserWidget {

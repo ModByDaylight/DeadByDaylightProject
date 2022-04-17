@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ChargeableInteractionDefinition.h"
-#include "GameplayTagContainer.h"
 #include "TunableStat.h"
 #include "DBDTunableRowHandle.h"
+#include "GameplayTagContainer.h"
 #include "InjectSerumInteraction.generated.h"
 
-class ACamperPlayer;
 class ASlasherPlayer;
+class ACamperPlayer;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UInjectSerumInteraction : public UChargeableInteractionDefinition {

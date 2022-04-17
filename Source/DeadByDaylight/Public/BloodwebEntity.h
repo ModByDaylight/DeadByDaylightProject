@@ -3,10 +3,10 @@
 #include "UObject/Object.h"
 #include "BloodwebEntity.generated.h"
 
+class UBloodwebTunables;
 class UDBDGameInstance;
 class UDBDBloodwebDefinitionBase;
 class IDBDBloodwebDefinitionBase;
-class UBloodwebTunables;
 
 UCLASS()
 class UBloodwebEntity : public UObject {

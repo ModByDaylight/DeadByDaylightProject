@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Components/ActorComponent.h"
-#include "AnimationMontageDescriptor.h"
 #include "UObject/NoExportTypes.h"
+#include "AnimationMontageDescriptor.h"
 #include "TwinDestructionComponent.generated.h"
 
 class AActor;

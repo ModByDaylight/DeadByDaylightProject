@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ERichPresenceStatus.h"
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "ERichPresenceUserType.h"
+#include "ERichPresenceStatus.h"
 #include "DBDRichPresenceSubsystem.generated.h"
 
 UCLASS()

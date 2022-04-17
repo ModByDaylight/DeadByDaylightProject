@@ -3,8 +3,8 @@
 #include "ChargeableInteractionDefinition.h"
 #include "ChainsawRevInteraction.generated.h"
 
-class UAkAudioEvent;
 class ASlasherPlayer;
+class UAkAudioEvent;
 
 UCLASS(Abstract, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THEHILLBILLY_API UChainsawRevInteraction : public UChargeableInteractionDefinition {

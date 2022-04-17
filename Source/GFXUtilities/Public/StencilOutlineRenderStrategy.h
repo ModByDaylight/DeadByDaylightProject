@@ -3,8 +3,8 @@
 #include "BaseOutlineRenderStrategy.h"
 #include "StencilOutlineRenderStrategy.generated.h"
 
-class UMaterialInterface;
 class UBatchMeshCommands;
+class UMaterialInterface;
 
 UCLASS()
 class GFXUTILITIES_API UStencilOutlineRenderStrategy : public UBaseOutlineRenderStrategy {

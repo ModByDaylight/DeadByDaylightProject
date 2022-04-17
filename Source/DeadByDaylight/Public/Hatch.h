@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Interactable.h"
+#include "GameEventData.h"
 #include "NoiseIndicatorEmitterInterface.h"
 #include "EHatchState.h"
-#include "DBDTunableRowHandle.h"
 #include "GameplayTagContainer.h"
-#include "GameEventData.h"
+#include "DBDTunableRowHandle.h"
 #include "Hatch.generated.h"
 
-class UPrimitiveComponent;
 class USceneComponent;
+class UPrimitiveComponent;
 class UAnimationMontageSlave;
 
 UCLASS()

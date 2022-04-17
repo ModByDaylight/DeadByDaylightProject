@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "PounceAttack.h"
 #include "DBDTunableRowHandle.h"
+#include "UObject/NoExportTypes.h"
 #include "TwinJumpAttack.generated.h"
 
 class UCurveFloat;
-class UPhysicalMaterial;
 class ADBDPlayer;
+class UPhysicalMaterial;
 class AConjoinedTwin;
 
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))

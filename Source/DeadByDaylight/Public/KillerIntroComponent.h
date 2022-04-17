@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "EFPVTransitionStrategy.h"
+#include "Components/ActorComponent.h"
 #include "KillerIntroComponent.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

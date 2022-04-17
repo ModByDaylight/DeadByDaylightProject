@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "StandDisplayable.h"
 #include "GameFramework/Actor.h"
 #include "ECurrencyType.h"
+#include "StandDisplayable.h"
 #include "CurrencyDisplayable.generated.h"
 
 class USkeletalMeshComponent;

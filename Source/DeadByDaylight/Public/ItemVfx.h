@@ -3,8 +3,8 @@
 #include "BaseVFX.h"
 #include "ItemVfx.generated.h"
 
-class USkeletalMeshComponent;
 class UParticleSystemComponent;
+class USkeletalMeshComponent;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AItemVfx : public ABaseVFX {

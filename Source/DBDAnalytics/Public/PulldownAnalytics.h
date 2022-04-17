@@ -3,8 +3,8 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "PulldownAnalytics.generated.h"
 
-class ACamperPlayer;
 class AActor;
+class ACamperPlayer;
 class ASlasherPlayer;
 
 UCLASS(BlueprintType)

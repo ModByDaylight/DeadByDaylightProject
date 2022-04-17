@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "RespawnableInteractable.h"
 #include "DBDTunableRowHandle.h"
+#include "RespawnableInteractable.h"
 #include "UObject/NoExportTypes.h"
 #include "Gnome.generated.h"
 
 class USkeletalMeshComponent;
 class UGnomeInteraction;
-class UPrimitiveComponent;
 class UChargeableComponent;
 class UInteractor;
+class UPrimitiveComponent;
 class UDBDOutlineComponent;
 class ADBDPlayer;
 

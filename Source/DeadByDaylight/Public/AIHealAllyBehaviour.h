@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AICharacterBehaviour.h"
-#include "AITypes.h"
 #include "Navigation/PathFollowingComponent.h"
+#include "AITypes.h"
 #include "AIHealAllyBehaviour.generated.h"
 
 class UAIHealAllyBehaviourData;
-class UAICharacterBehaviourData;
-class ADBDAIPlayerController;
 class ADBDPlayer;
+class ADBDAIPlayerController;
+class UAICharacterBehaviourData;
 
 UCLASS()
 class UAIHealAllyBehaviour : public UAICharacterBehaviour {

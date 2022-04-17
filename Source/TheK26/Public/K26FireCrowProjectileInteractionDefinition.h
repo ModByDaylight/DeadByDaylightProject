@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnProjectileFired.h"
 #include "InteractionDefinition.h"
+#include "OnProjectileFiredDelegate.h"
 #include "K26FireCrowProjectileInteractionDefinition.generated.h"
 
-class UK26CooldownInteractionDefinition;
-class ASlasherPlayer;
 class UK26AmmoHandlerComponent;
+class UK26CooldownInteractionDefinition;
 class UK26PathHandlerComponent;
+class ASlasherPlayer;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK26FireCrowProjectileInteractionDefinition : public UInteractionDefinition {

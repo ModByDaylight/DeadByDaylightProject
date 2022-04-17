@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EventDrivenModifierCondition.h"
 #include "GameplayTagContainer.h"
+#include "EventDrivenModifierCondition.h"
 #include "HasObjectState.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

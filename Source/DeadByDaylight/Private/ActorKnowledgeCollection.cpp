@@ -1,8 +1,8 @@
 #include "ActorKnowledgeCollection.h"
 #include "Net/UnrealNetwork.h"
 
-class ACharacter;
 class AActor;
+class ACharacter;
 
 void UActorKnowledgeCollection::Local_SetAvailable(bool value) {
 }

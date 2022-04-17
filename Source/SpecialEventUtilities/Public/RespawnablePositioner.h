@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "IsInteractingWithAnyRespawnableInteractableChangedEvent.h"
+#include "IsInteractingWithAnyRespawnableInteractableChangedEventDelegate.h"
 #include "RespawnablePositioner.generated.h"
 
 class ARespawnableInteractable;

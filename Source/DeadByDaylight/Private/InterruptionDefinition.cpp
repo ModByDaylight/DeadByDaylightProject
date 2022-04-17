@@ -1,8 +1,8 @@
 #include "InterruptionDefinition.h"
 
-class AInteractable;
 class ADBDPlayer;
 class UInteractionDefinition;
+class AInteractable;
 
 void UInterruptionDefinition::SetInterruptorSnapPoint(const FTransform& Point) {
 }

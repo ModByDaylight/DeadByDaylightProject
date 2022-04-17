@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MobileBaseUserWidget.h"
-#include "OnTeachableTooltipLongPressEvent.h"
-#include "Styling/SlateColor.h"
-#include "OnLoadoutItemButtonLongPressEvent.h"
-#include "TeachableData.h"
 #include "UObject/NoExportTypes.h"
+#include "MobileBaseUserWidget.h"
+#include "Styling/SlateColor.h"
 #include "InventorySlotData.h"
+#include "OnTeachableTooltipLongPressEventDelegate.h"
+#include "OnLoadoutItemButtonLongPressEventDelegate.h"
+#include "TeachableData.h"
 #include "UMGCharacterInfoWidget.generated.h"
 
 class UScrollBox;
 class UUMGCharacterScrollingInfoWidget;
-class UTextBlock;
 class UCanvasPanel;
 class UImage;
+class UTextBlock;
 
 UCLASS(EditInlineNew)
 class UUMGCharacterInfoWidget : public UMobileBaseUserWidget {

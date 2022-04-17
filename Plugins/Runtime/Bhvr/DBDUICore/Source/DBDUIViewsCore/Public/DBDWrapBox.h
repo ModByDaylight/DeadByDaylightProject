@@ -5,8 +5,8 @@
 #include "UObject/NoExportTypes.h"
 #include "DBDWrapBox.generated.h"
 
-class UDBDWrapBoxSlot;
 class UWidget;
+class UDBDWrapBoxSlot;
 
 UCLASS()
 class DBDUIVIEWSCORE_API UDBDWrapBox : public UPanelWidget {

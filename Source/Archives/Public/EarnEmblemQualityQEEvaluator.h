@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GameEventData.h"
 #include "QuestEventEvaluatorBase.h"
 #include "GameplayTagContainer.h"
-#include "GameEventData.h"
 #include "EarnEmblemQualityQEEvaluator.generated.h"
 
 UCLASS()

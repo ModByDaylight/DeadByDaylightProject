@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CoreBaseUserWidget.h"
-#include "UObject/NoExportTypes.h"
 #include "ScreenIndicatorViewData.h"
+#include "UObject/NoExportTypes.h"
 #include "CoreScreenIndicatorWidget.generated.h"
 
 UCLASS(EditInlineNew)

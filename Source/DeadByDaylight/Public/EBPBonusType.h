@@ -7,5 +7,6 @@ enum class EBPBonusType {
     None,
     Event,
     Offerings,
+    Others,
 };
 

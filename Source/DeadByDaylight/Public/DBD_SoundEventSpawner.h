@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "GameFramework/Actor.h"
 #include "DBD_SoundSpawnerData.h"
+#include "GameFramework/Actor.h"
 #include "UObject/NoExportTypes.h"
 #include "DBD_SoundEventSpawner.generated.h"
 

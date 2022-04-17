@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ItemAddon.h"
 #include "DBDTunableRowHandle.h"
+#include "ItemAddon.h"
 #include "PrisonChainAddon.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

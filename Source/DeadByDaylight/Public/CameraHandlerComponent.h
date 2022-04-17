@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "CameraSocketChanged.h"
+#include "CameraSocketChangedDelegate.h"
 #include "EDBDCameraSocketID.h"
 #include "CameraHandlerComponent.generated.h"
 
-class UParticleSystemComponent;
+class USceneComponent;
 class AActor;
 class UCurveFloat;
-class USceneComponent;
+class UParticleSystemComponent;
 
 UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCameraHandlerComponent : public UActorComponent {

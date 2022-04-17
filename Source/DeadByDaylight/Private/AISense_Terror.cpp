@@ -1,8 +1,8 @@
 #include "AISense_Terror.h"
 
 class UObject;
-class AActor;
 class UTerrorRadiusEmitterComponent;
+class AActor;
 
 void UAISense_Terror::ReportTerrorEvent(UObject* worldContextObj, FVector location, AActor* instigator, UTerrorRadiusEmitterComponent* terrorEmitter) {
 }

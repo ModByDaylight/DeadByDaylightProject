@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BaseLoadoutPartViewData.h"
 #include "EItemAvailability.h"
+#include "BaseLoadoutPartViewData.h"
 #include "OfferingViewData.generated.h"
 
 USTRUCT(BlueprintType)

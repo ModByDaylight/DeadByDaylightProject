@@ -3,8 +3,8 @@
 #include "Subsystems/LocalPlayerSubsystem.h"
 #include "ButtonPressTracker.generated.h"
 
-class UInputComponent;
 class UPlayerInput;
+class UInputComponent;
 
 UCLASS()
 class UButtonPressTracker : public ULocalPlayerSubsystem {

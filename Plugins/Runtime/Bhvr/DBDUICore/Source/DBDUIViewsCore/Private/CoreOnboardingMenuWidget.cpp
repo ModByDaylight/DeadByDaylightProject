@@ -17,6 +17,6 @@ void UCoreOnboardingMenuWidget::OnMenuTabSelected(UCoreSelectableButtonWidget* s
 UCoreOnboardingMenuWidget::UCoreOnboardingMenuWidget() {
     this->OnboardingMenuTabs = NULL;
     this->MenuTitle = NULL;
-    this->BackButton = NULL;
+    this->BackInputSwitcher = NULL;
 }
 

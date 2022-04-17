@@ -3,8 +3,8 @@
 #include "Components/ActorComponent.h"
 #include "AxisFlickMasher.generated.h"
 
-class UInputComponent;
 class UAxisFlick;
+class UInputComponent;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class INPUTUTILITIES_API UAxisFlickMasher : public UActorComponent {

@@ -1,7 +1,7 @@
 #include "AtlantaPatchingLibrary.h"
 
-class UAtlantaInstalledContent;
 class UAtlantaPendingContent;
+class UAtlantaInstalledContent;
 
 void UAtlantaPatchingLibrary::RequestContent(const FString& RemoteManifestURL, const FString& CloudURL, const FString& InstallDirectory, FOnAtlantaRequestContentSucceeded OnSucceeded, FOnAtlantaRequestContentFailed OnFailed, UAtlantaPendingContent* MobilePendingContent) {
 }

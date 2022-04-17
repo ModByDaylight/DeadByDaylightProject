@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "GeneratorDrivenActor.generated.h"
 
-class AGenerator;
 class ADBDPlayer;
+class AGenerator;
 
 UCLASS(Config=Game)
 class DEADBYDAYLIGHT_API AGeneratorDrivenActor : public AActor {

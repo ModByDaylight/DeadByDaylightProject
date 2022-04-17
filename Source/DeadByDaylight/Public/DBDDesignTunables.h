@@ -5,9 +5,9 @@
 #include "PerkLevelDefinition.h"
 #include "DBDDesignTunables.generated.h"
 
-class UDBDCoreUMGDesignTunables;
-class UDBDTextDesignTunables;
 class UDBDAtlantaDesignTunables;
+class UDBDTextDesignTunables;
+class UDBDCoreUMGDesignTunables;
 
 UCLASS(BlueprintType, Transient, Config=Design)
 class DEADBYDAYLIGHT_API UDBDDesignTunables : public UObject {

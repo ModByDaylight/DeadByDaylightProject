@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "LamentConfigurationSpawnInfo.h"
 #include "Components/ActorComponent.h"
 #include "ETileSpawnPointType.h"
+#include "LamentConfigurationSpawnInfo.h"
 #include "LamentConfigurationSpawnStrategy.generated.h"
 
 class AHatch;

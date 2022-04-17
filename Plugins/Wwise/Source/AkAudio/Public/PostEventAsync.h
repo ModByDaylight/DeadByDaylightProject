@@ -2,13 +2,13 @@
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintAsyncActionBase.h"
 #include "AkExternalSourceInfo.h"
-#include "PostEventAsyncOutputPin.h"
-#include "OnAkPostEventCallback.h"
+#include "OnAkPostEventCallbackDelegate.h"
+#include "PostEventAsyncOutputPinDelegate.h"
 #include "PostEventAsync.generated.h"
 
+class UAkAudioEvent;
 class UPostEventAsync;
 class UObject;
-class UAkAudioEvent;
 class AActor;
 
 UCLASS()

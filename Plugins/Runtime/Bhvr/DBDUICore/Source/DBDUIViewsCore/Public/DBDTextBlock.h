@@ -11,6 +11,9 @@ UCLASS()
 class UDBDTextBlock : public UTextBlock {
     GENERATED_BODY()
 public:
+    UPROPERTY(EditInstanceOnly)
+    FString TextStyle;
+    
 protected:
     UPROPERTY(EditAnywhere)
     bool _debugPreviewLargeTextState;

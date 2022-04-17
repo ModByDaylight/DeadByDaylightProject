@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CharacterSavedProfileData.h"
 #include "DailyRitualContainer.h"
 #include "FearMarketOfferingInstance.h"
 #include "BloodWebPersistentData.h"
 #include "PlayerLoadoutData.h"
+#include "CharacterSavedProfileData.h"
+#include "SpecialEventSavedData.h"
+#include "UObject/NoExportTypes.h"
 #include "SavedStatsData.h"
 #include "PlayerSavedProfileCumulativeData.h"
-#include "UObject/NoExportTypes.h"
-#include "SpecialEventSavedData.h"
 #include "PlayerSavedProfileDataLocal.generated.h"
 
 USTRUCT(BlueprintType)

@@ -3,8 +3,8 @@
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "SoundBankLoader.generated.h"
 
-class UAkAudioBank;
 class ULoadAsyncBankData;
+class UAkAudioBank;
 
 UCLASS()
 class DBDAUDIO_API USoundBankLoader : public UGameInstanceSubsystem {

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "StatusEffect.h"
-#include "GameplayTagContainer.h"
 #include "DBDTunableRowHandle.h"
+#include "GameplayTagContainer.h"
 #include "K26OnCrowAttachLingeringStatusEffectBase.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

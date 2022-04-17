@@ -3,12 +3,12 @@
 #include "GameFramework/Actor.h"
 #include "OfferingSequenceManager.generated.h"
 
-class AOfferingSequenceAssets;
-class UDBDGameInstance;
-class ACameraActor;
-class ADBDLobbyHud;
 class UOfferingHandler;
+class UDBDGameInstance;
+class ADBDLobbyHud;
 class APlayerController;
+class AOfferingSequenceAssets;
+class ACameraActor;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AOfferingSequenceManager : public AActor {

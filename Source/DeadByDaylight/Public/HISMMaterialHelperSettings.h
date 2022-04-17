@@ -3,7 +3,6 @@
 #include "Engine/DataAsset.h"
 #include "HISMMaterialHelperSettings.generated.h"
 
-class UHISMMaterialHelperComponent;
 class UStaticMesh;
 
 UCLASS()
@@ -12,7 +11,7 @@ class UHISMMaterialHelperSettings : public UDataAsset {
 public:
 private:
     UPROPERTY(EditDefaultsOnly)
-    TMap<UStaticMesh*, TSoftClassPtr<UHISMMaterialHelperComponent>> _meshMaterialOverride;
+    TMap<UStaticMesh*, TSoftClassPtr<UActorComponent>> _meshMaterialOverride;
     
 public:
     UHISMMaterialHelperSettings();

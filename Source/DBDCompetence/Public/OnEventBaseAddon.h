@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ItemAddon.h"
 #include "GameplayTagContainer.h"
+#include "ItemAddon.h"
 #include "GameEventData.h"
 #include "OnEventBaseAddon.generated.h"
 

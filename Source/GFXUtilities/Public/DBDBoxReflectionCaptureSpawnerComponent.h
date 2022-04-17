@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDReflectionCaptureSpawnerComponent.h"
 #include "UObject/NoExportTypes.h"
+#include "DBDReflectionCaptureSpawnerComponent.h"
 #include "DBDBoxReflectionCaptureSpawnerComponent.generated.h"
 
 class UBoxComponent;

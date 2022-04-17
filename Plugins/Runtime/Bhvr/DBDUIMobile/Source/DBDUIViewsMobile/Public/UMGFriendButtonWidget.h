@@ -5,9 +5,9 @@
 #include "Styling/SlateBrush.h"
 #include "UMGFriendButtonWidget.generated.h"
 
-class UTextBlock;
-class UCanvasPanel;
 class UImage;
+class UCanvasPanel;
+class UTextBlock;
 
 UCLASS(Abstract, EditInlineNew)
 class DBDUIVIEWSMOBILE_API UUMGFriendButtonWidget : public UUMGBaseButtonWidget {

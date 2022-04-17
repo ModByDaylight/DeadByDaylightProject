@@ -1,10 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Perk.h"
-#include "FastTimer.h"
+#include "ESkillCheckType.h"
 #include "Gearhead.generated.h"
-
-class AGenerator;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UGearhead : public UPerk {
@@ -15,39 +13,12 @@ private:
     float _perkActivationDuration[3];
     
     UPROPERTY(EditDefaultsOnly)
-    bool _greatSkillCheck;
+    ESkillCheckType _skillCheckType;
     
     UPROPERTY(EditDefaultsOnly)
     bool _basicAttack;
     
-    UPROPERTY(EditDefaultsOnly)
-    float _minimumAuraRevealDuration;
-    
-    UPROPERTY(EditDefaultsOnly)
-    int32 _attacksNeededToActivate;
-    
-    UPROPERTY(Replicated)
-    int32 _numAttacksBeforeActivation;
-    
-    UPROPERTY()
-    TMap<AGenerator*, FFastTimer> _timersBeforeUnreveal;
-    
-    UPROPERTY()
-    TArray<AGenerator*> _markedGenerators;
-    
-    UPROPERTY(ReplicatedUsing=OnRep_RevealedGenerators)
-    TArray<AGenerator*> _revealedGenerators;
-    
-    UPROPERTY()
-    TArray<AGenerator*> _local_revealedGenerators;
-    
 public:
     UGearhead();
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-private:
-    UFUNCTION()
-    void OnRep_RevealedGenerators();
-    
 };
 

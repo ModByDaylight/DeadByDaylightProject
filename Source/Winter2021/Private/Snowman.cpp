@@ -1,11 +1,11 @@
 #include "Snowman.h"
 #include "Net/UnrealNetwork.h"
 #include "Components/SphereComponent.h"
-#include "Components/SkeletalMeshComponent.h"
 #include "DBDOutlineComponent.h"
-#include "Components/CapsuleComponent.h"
-#include "HideInSnowmanInteraction.h"
 #include "Interactor.h"
+#include "HideInSnowmanInteraction.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "SnowmanAttackableComponent.h"
 
 class ACamperPlayer;

@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "AISkill_Interaction.h"
-#include "EInteractionTargetRequirements.h"
 #include "EInteractionTargetInSightModes.h"
-#include "AIDetectedStimulus.h"
+#include "EInteractionTargetRequirements.h"
+#include "AISkill_Interaction.h"
 #include "TargetMoveAwayToFastInfo.h"
+#include "AIDetectedStimulus.h"
 #include "AISkill_InteractionTarget.generated.h"
 
-class AActor;
 class UNavigationQueryFilter;
+class AActor;
 
 UCLASS(EditInlineNew)
 class DBDBOTS_API UAISkill_InteractionTarget : public UAISkill_Interaction {

@@ -5,9 +5,9 @@
 #include "AnimSequenceSelector.h"
 #include "AnimCollection.generated.h"
 
+class UAnimCollection;
 class UAnimSequence;
 class UBlendSpaceBase;
-class UAnimCollection;
 
 UCLASS(BlueprintType)
 class ANIMATIONUTILITIES_API UAnimCollection : public UDataAsset {

@@ -1,7 +1,7 @@
 #include "UITweenInstance.h"
 
-class UUITweenInstance;
 class UMaterialInstanceDynamic;
+class UUITweenInstance;
 class UWidget;
 
 UUITweenInstance* UUITweenInstance::ToTranslation(FVector2D targetValue) {

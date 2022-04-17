@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "AIController.h"
-#include "ECharacterMovementTypes.h"
-#include "EAIDifficultyLevel.h"
 #include "EPawnInputPressTypes.h"
+#include "EAIDifficultyLevel.h"
+#include "ECharacterMovementTypes.h"
 #include "DBDAIController.generated.h"
 
 class APawn;
-class UObject;
 class UNavigationQueryFilter;
+class UObject;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ADBDAIController : public AAIController {
@@ -54,7 +54,7 @@ private:
     UObject* _movementLock;
     
 public:
-    ADBDAIController();
+    ADBDAIController(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
     UFUNCTION(BlueprintCallable)
     void WiggleRequest(const UObject* requester, float input);
     

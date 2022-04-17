@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "ECurrencyType.h"
 #include "TooltipPressedData.h"
+#include "ECurrencyType.h"
 #include "UMGBankWidget.generated.h"
 
 class UUMGCurrencyWidget;

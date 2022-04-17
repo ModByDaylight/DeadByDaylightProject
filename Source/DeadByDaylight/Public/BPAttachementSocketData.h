@@ -4,8 +4,8 @@
 #include "ConditionalMaterialReplacer.h"
 #include "BPAttachementSocketData.generated.h"
 
-class USkeletalMesh;
 class AItemBlueprint;
+class USkeletalMesh;
 
 USTRUCT(BlueprintType)
 struct FBPAttachementSocketData {

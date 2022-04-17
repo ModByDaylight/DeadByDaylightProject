@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
-#include "OnAkPostEventCallback.h"
 #include "AkExternalSourceInfo.h"
+#include "OnAkPostEventCallbackDelegate.h"
 #include "Engine/LatentActionManager.h"
 #include "AkGameObject.generated.h"
 
-class UAkAudioEvent;
 class UObject;
+class UAkAudioEvent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class AKAUDIO_API UAkGameObject : public USceneComponent {

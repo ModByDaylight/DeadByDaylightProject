@@ -5,8 +5,8 @@
 #include "AnimationMontageDescriptor.h"
 #include "TwinLockerBlockerComponent.generated.h"
 
-class UInteractionDefinition;
 class ADBDPlayer;
+class UInteractionDefinition;
 
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UTwinLockerBlockerComponent : public UActorComponent {

@@ -1,7 +1,7 @@
 #include "OtherCharactersVerticalCollisionsHandler.h"
 
-class UCapsuleComponent;
 class UPrimitiveComponent;
+class UCapsuleComponent;
 class AActor;
 
 void UOtherCharactersVerticalCollisionsHandler::SetPawnDetector(UCapsuleComponent* pawnDetector) {

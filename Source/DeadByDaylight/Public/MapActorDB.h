@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
 #include "EMapActorCategory.h"
+#include "UObject/Object.h"
 #include "MapActorDB.generated.h"
 
 class AActor;

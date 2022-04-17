@@ -8,8 +8,8 @@
 
 class UPlayerReelInputAccelerationConstraintStrategy;
 class UBaseCameraTargetingStrategy;
-class URiflePlayerLinker;
 class UChainPlayerMovementStatusEffect;
+class URiflePlayerLinker;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API UChainLinkableComponent : public UActorComponent, public IChainLinkable {

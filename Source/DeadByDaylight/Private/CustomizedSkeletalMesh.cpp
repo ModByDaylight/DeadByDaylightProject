@@ -1,7 +1,7 @@
 #include "CustomizedSkeletalMesh.h"
 
-class USkinnedMeshComponent;
 class USkeletalMeshComponent;
+class USkinnedMeshComponent;
 class UCustomizedSkeletalMesh;
 
 void UCustomizedSkeletalMesh::SetVfxsVisibility(ECustomizationCategory category, bool visible) {

@@ -5,13 +5,13 @@
 #include "StoreItemSlotData.h"
 #include "UMGCustomizationScreenWidget.generated.h"
 
-class UUMGCustomizationPageScrollWidget;
-class UVerticalBox;
 class UUMGCustomizationCategoriesBar;
+class UVerticalBox;
+class UUMGCustomizationPageScrollWidget;
 class UUMGCustomizationItemBuyButton;
-class UUMGCustomizationItemWidget;
-class UCanvasPanel;
 class UTextBlock;
+class UCanvasPanel;
+class UUMGCustomizationItemWidget;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGCustomizationScreenWidget : public UMobileBaseUserWidget {

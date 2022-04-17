@@ -4,8 +4,8 @@
 #include "Components/ActorComponent.h"
 #include "CustomizedAnimationComponent.generated.h"
 
-class UCustomizedSkeletalMesh;
 class ADBDBasePlayer;
+class UCustomizedSkeletalMesh;
 class UAnimInstance;
 
 UCLASS(meta=(BlueprintSpawnableComponent))

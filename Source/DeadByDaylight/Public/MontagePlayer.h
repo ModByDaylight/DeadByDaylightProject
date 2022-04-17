@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "MontageEndedDelegateDelegate.h"
 #include "Components/ActorComponent.h"
-#include "MontageStartedDelegate.h"
-#include "MontageEndedDelegate.h"
-#include "MontageInstanceInfo.h"
 #include "AnimationMontageDescriptor.h"
+#include "MontageStartedDelegateDelegate.h"
+#include "MontageInstanceInfo.h"
 #include "UObject/NoExportTypes.h"
 #include "MontagePlayer.generated.h"
 

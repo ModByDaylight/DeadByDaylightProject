@@ -2,83 +2,82 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Engine/GameInstance.h"
-#include "PlayerDisconnectDelegate.h"
 #include "ForceSpawnTileData.h"
 #include "ParadiseData.h"
+#include "PlayerDisconnectDelegateDelegate.h"
 #include "EDisconnectErrors.h"
 #include "EOfferingEffectType.h"
 #include "DBDGameInstance.generated.h"
 
+class URankManager;
 class UPlayerProfileDAL;
-class UWalletHandler;
-class UBonusPointEventsManager;
+class UPlayerNameRegistration;
+class UBloodwebManager;
 class UDBDKeyDisplayInfo;
+class USpecialEventManager;
 class UDBDDesignTunables;
-class UNewsContentManager;
+class UContentScheduleManager;
 class URegionFinder;
-class UCinematicManager;
-class ULightingHelper;
+class UOfferingEffectCollection;
+class UObject;
 class UShopManager;
 class UGameEventTracker;
-class ULocalEventManager;
-class UDBDPartyFacade;
+class UConsentManager;
 class UFriendManager;
-class UContentScheduleManager;
-class AOfferingSequenceManager;
-class UCDNPatchManager;
-class UDecalSpawnerCollection;
-class UPlayerNameRegistration;
-class UAtlantaTooltipManager;
-class UOfferingHandler;
-class UCharacterProgressionManager;
-class UMapActorDB;
-class UCharacterXPManager;
-class UControllerPairingManager;
-class UAtlantaRitualsManager;
-class UAtlantaFreeTicketsManager;
-class UDateTimerUpdater;
-class UFearMarketManager;
-class UChunkingManager;
-class UOfferingEffectCollection;
 class UPlayerDataStorageFacade;
-class UAssetLibraryManager;
-class UBloodwebManager;
-class UToastManager;
-class UOnlineTransactionServiceComponent;
-class UDBDPersistentData;
+class UCinematicManager;
+class UAtlantaTooltipManager;
+class UCDNPatchManager;
+class UDateTimerUpdater;
+class AOfferingSequenceManager;
+class UNewsContentManager;
+class UCharacterProgressionManager;
+class UAtlantaRitualsManager;
+class UDecalSpawnerCollection;
+class UCharacterXPManager;
+class UFearMarketManager;
 class USharedAuthenticationComponent;
-class URankManager;
-class UDBDPlayerLevelManager;
-class USpecialEventManager;
-class UDedicatedServerManager;
-class UActorKnowledgeCollection;
-class UDBDTimeTravelManager;
-class UDBDSocialNotificationFactory;
-class UPenaltyTracker;
+class UWalletHandler;
+class UControllerPairingManager;
+class ADBDPlayer;
+class UChunkingManager;
+class UDBDEasyAntiCheat;
 class UPopupFactory;
+class UOnlineTransactionServiceComponent;
+class UAssetLibraryManager;
+class UDBDPersistentData;
+class UPrimitiveCollection;
+class UPlayerReportManager;
+class UDBDPlayerLevelManager;
+class UOnlineSystemHandler;
+class UBonusPointEventsManager;
+class UDBDTimeTravelManager;
+class ULocalPlayer;
+class UToastManager;
+class UDBDSocialNotificationFactory;
+class USoftBanManager;
+class UDBDPartyFacade;
+class UDBDAuthentication;
+class UPenaltyTracker;
+class UGameEventDispatcher;
+class ULightingHelper;
+class UDedicatedServerManager;
+class UOfferingHandler;
+class UActorKnowledgeCollection;
+class UMapActorDB;
+class ULocalEventManager;
 class UInteractionProficiency;
 class UDBDHud;
 class UPopupSequencer;
-class UDBDAuthentication;
-class UDBDEasyAntiCheat;
-class UObject;
+class ACamperPlayer;
 class UInventoryHandler;
-class UPrimitiveCollection;
-class UPlayerReportManager;
-class USoftBanManager;
-class UConsentManager;
-class UOnlineSystemHandler;
-class ADBDPlayer;
 class AActor;
 class UDBDTimeUtilities;
 class ADBDPlayerState;
 class APlayerController;
-class ULocalPlayer;
 class ULightingInterpolator;
 class ABaseSky;
-class ACamperPlayer;
 class ASlasherPlayer;
-class UGameEventDispatcher;
 class UWorld;
 
 UCLASS(NonTransient)
@@ -153,9 +152,6 @@ public:
     
     UPROPERTY(Transient)
     UAtlantaRitualsManager* AtlRitualsManager;
-    
-    UPROPERTY(Transient)
-    UAtlantaFreeTicketsManager* FreeTicketsManager;
     
     UPROPERTY(Transient)
     FString AuthOrEACErrorAdditionalInfo;
@@ -482,25 +478,13 @@ public:
     void EndLoadingScreen(UWorld* loadedWorld);
     
     UFUNCTION(BlueprintCallable, Exec)
-    void DBDToggleLightingLoaded();
-    
-    UFUNCTION(BlueprintCallable, Exec)
-    void DBDResetSaveData();
-    
-    UFUNCTION(BlueprintCallable, Exec)
-    void DBDForceSave();
-    
-    UFUNCTION(BlueprintCallable, Exec)
-    void DBDForceLoad();
-    
-    UFUNCTION(BlueprintCallable, Exec)
-    void DBDDeleteLocalSaveFile();
-    
-    UFUNCTION(BlueprintCallable, Exec)
     void DBD_UpdateSteamInventory();
     
     UFUNCTION(BlueprintCallable, Exec)
     void DBD_ToggleOnlineRole();
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void DBD_ToggleLightingLoaded();
     
     UFUNCTION(BlueprintCallable, Exec)
     void DBD_TestTickedDiceRoll(float BaseProbability, float ticks, float MultiplicativeModifier, float AdditiveModifier);
@@ -521,10 +505,10 @@ public:
     void DBD_SetFearMarketDate(const FString& dateString);
     
     UFUNCTION(BlueprintCallable, Exec)
-    void DBD_SendFriendInvite();
+    void DBD_ResetSaveGameInventory();
     
     UFUNCTION(BlueprintCallable, Exec)
-    void DBD_ResetSaveGameInventory();
+    void DBD_ResetSaveData();
     
     UFUNCTION(BlueprintCallable, Exec)
     void DBD_ResetCurrentAchievementStats(bool andUpload, bool andUpdateData);
@@ -563,6 +547,12 @@ public:
     void DBD_GenerateBloodWeb(int32 level);
     
     UFUNCTION(BlueprintCallable, Exec)
+    void DBD_ForceSave();
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void DBD_ForceLoad();
+    
+    UFUNCTION(BlueprintCallable, Exec)
     void DBD_DumpSessions();
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -570,6 +560,9 @@ public:
     
     UFUNCTION(Exec)
     void DBD_DestroySteamInventory();
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void DBD_DeleteLocalSaveFile();
     
     UFUNCTION(BlueprintCallable, Exec)
     void DBD_ClaimRitualRewardAtIndex(int32 index);
@@ -591,12 +584,6 @@ public:
     
     UFUNCTION(BlueprintCallable, Exec)
     void DBD_ApplyMist(const float fogModifier);
-    
-    UFUNCTION(BlueprintCallable, Exec)
-    void DBD_AnalyticsTest();
-    
-    UFUNCTION(BlueprintCallable, Exec)
-    void DBD_AnalyticsReset();
     
     UFUNCTION(BlueprintCallable, Exec)
     void DBD_AddToRitual(int32 index, float value);

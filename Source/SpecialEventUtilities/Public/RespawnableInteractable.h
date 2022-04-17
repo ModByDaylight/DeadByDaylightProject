@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Interactable.h"
-#include "InteractionEndedEvent.h"
-#include "IsInteractingChangedEvent.h"
+#include "InteractionEndedEventDelegate.h"
+#include "IsInteractingChangedEventDelegate.h"
 #include "RespawnableInteractable.generated.h"
 
 UCLASS()

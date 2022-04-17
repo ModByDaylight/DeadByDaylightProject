@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BaseCharacterVelocityAdditiveStrategy.h"
-#include "TunableStat.h"
 #include "TagStateBool.h"
+#include "TunableStat.h"
 #include "SurvivorReelVelocityAdditiveStrategy.generated.h"
 
 class ASlasherPlayer;

@@ -4,14 +4,14 @@
 #include "PortalRestrictedLocation.h"
 #include "PortalPlacerStateComponent.generated.h"
 
-class ADemogorgonPortal;
 class ASlasherPlayer;
+class ADemogorgonPortal;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UPortalPlacerStateComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDemogorgonTeleportCooldownComplete);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDemogorgonTeleportCooldownComplete);
     
     UPROPERTY(BlueprintAssignable)
     FOnDemogorgonTeleportCooldownComplete OnTeleportCooldownComplete;

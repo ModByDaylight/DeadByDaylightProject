@@ -4,12 +4,12 @@
 #include "Highlightable.h"
 #include "UMGLevelBannerWidget.generated.h"
 
-class UTextBlock;
-class UButton;
-class UProgressBar;
-class UImage;
-class UHorizontalBox;
 class UAkAudioEvent;
+class UButton;
+class UTextBlock;
+class UImage;
+class UProgressBar;
+class UHorizontalBox;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGLevelBannerWidget : public UMobileBaseUserWidget, public IHighlightable {

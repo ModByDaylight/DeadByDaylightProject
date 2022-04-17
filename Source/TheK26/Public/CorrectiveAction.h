@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Perk.h"
 #include "GameplayTagContainer.h"
+#include "Perk.h"
 #include "CorrectiveAction.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

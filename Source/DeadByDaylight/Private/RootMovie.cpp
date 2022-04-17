@@ -5,6 +5,9 @@ class UGFxObject;
 void URootMovie::SetCursorAsSticky(bool isSticky, bool lockVertical, bool lockHorizontal, float stickinessOverride) {
 }
 
+void URootMovie::RemoveCursorBlockingWidget(const FString& id) {
+}
+
 void URootMovie::RegisterView(const FString& screenId, UGFxObject* screenObject) {
 }
 
@@ -36,6 +39,9 @@ void URootMovie::OnFlashReady() {
 }
 
 void URootMovie::OnAssert(int32 type, const FString& message) {
+}
+
+void URootMovie::AddCursorBlockingWidget(const FString& id, float x, float y, float width, float height) {
 }
 
 URootMovie::URootMovie() {

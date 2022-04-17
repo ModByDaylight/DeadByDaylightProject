@@ -1,7 +1,7 @@
 #include "LightingInterpolator.h"
 
-class ULightComponent;
 class USkyLightComponent;
+class ULightComponent;
 class UExponentialHeightFogComponent;
 
 void ULightingInterpolator::LerpSkylight(USkyLightComponent* Target, USkyLightComponent* A, USkyLightComponent* B, float alpha) {

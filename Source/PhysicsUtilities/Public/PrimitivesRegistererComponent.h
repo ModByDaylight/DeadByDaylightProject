@@ -3,8 +3,8 @@
 #include "Components/ActorComponent.h"
 #include "PrimitivesRegistererComponent.generated.h"
 
-class UPrimitiveCollection;
 class UPrimitiveComponent;
+class UPrimitiveCollection;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class PHYSICSUTILITIES_API UPrimitivesRegistererComponent : public UActorComponent {

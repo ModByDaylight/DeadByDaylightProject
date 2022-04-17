@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ESurvivorGrouping.h"
-#include "ForceSpawnTileData.h"
 #include "Dependency.h"
 #include "ArrayOfSceneComponent.h"
+#include "ForceSpawnTileData.h"
 #include "ManagedGameplayElementData.h"
 #include "GeneratedLevelData.generated.h"
 
@@ -79,6 +79,9 @@ public:
     
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     TArray<FDependency> LevelDependencies;
+    
+    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    TArray<FDependency> LateLevelDependencies;
     
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     TArray<AActor*> FixedMapTileIds;

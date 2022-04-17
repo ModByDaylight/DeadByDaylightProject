@@ -5,12 +5,12 @@
 #include "EOfflineLobbyState.h"
 #include "OfflineLobbyLevel.generated.h"
 
+class ADBDMenuSilhouette;
 class APlayerStart;
 class ADisplayStand;
-class ADBDMenuSilhouette;
-class ACharm;
 class AMenuMeatHook;
 class ATargetPoint;
+class ACharm;
 class ADBDMenuPlayer;
 class AActor;
 

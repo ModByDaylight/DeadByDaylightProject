@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayEventDynamicDelegate.h"
 #include "UObject/Object.h"
-#include "GameflowEventDynamicDelegate.h"
+#include "GameplayEventDynamicDelegateDelegate.h"
+#include "GameflowEventDynamicDelegateDelegate.h"
 #include "EDBDScoreTypes.h"
 #include "GameEventTracker.generated.h"
 

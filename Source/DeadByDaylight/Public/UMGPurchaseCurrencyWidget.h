@@ -4,10 +4,10 @@
 #include "Styling/SlateColor.h"
 #include "UMGPurchaseCurrencyWidget.generated.h"
 
-class UCanvasPanel;
 class UTextBlock;
 class UImage;
 class UOverlay;
+class UCanvasPanel;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGPurchaseCurrencyWidget : public UMobileBaseUserWidget {

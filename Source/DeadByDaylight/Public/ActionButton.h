@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Styling/SlateBrush.h"
 #include "MobileBaseUserWidget.h"
 #include "EActionButtonState.h"
-#include "Styling/SlateBrush.h"
 #include "ActionButton.generated.h"
 
 class UImage;

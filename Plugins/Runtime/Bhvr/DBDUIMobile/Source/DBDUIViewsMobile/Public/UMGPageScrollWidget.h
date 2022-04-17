@@ -3,10 +3,10 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGPageScrollWidget.generated.h"
 
-class UAkAudioEvent;
 class UCanvasPanel;
-class UUMGScrollListPageButton;
+class UAkAudioEvent;
 class UHorizontalBox;
+class UUMGScrollListPageButton;
 
 UCLASS(Abstract, EditInlineNew)
 class DBDUIVIEWSMOBILE_API UUMGPageScrollWidget : public UMobileBaseUserWidget {

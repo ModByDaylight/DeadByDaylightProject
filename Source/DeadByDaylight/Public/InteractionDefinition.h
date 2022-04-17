@@ -1,38 +1,38 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
-#include "ESnapBackPositionType.h"
-#include "EInputInteractionType.h"
 #include "Components/SceneComponent.h"
-#include "Interaction.h"
 #include "Activatable.h"
-#include "InteractionAnimNotify.h"
+#include "UObject/NoExportTypes.h"
+#include "Interaction.h"
+#include "ActivationDefinition.h"
 #include "EInteractionAnimation.h"
 #include "UObject/NoExportTypes.h"
-#include "MontagePlaybackDefinition.h"
 #include "ESnapBackType.h"
+#include "UObject/NoExportTypes.h"
+#include "ESnapBackPositionType.h"
 #include "EPowerProgressBar.h"
-#include "EInteractionOwnership.h"
 #include "GameplayTagContainer.h"
+#include "EInputInteractionType.h"
+#include "InteractionAnimNotifyDelegate.h"
+#include "EInteractionOwnership.h"
 #include "EButtonType.h"
 #include "AnimationMontageDescriptor.h"
 #include "GameplayTagContainer.h"
-#include "UObject/NoExportTypes.h"
 #include "SecondaryInteractionProperties.h"
-#include "ActivationDefinition.h"
+#include "MontagePlaybackDefinition.h"
 #include "EInteractionComparisonPriority.h"
 #include "InteractionDefinition.generated.h"
 
+class AActor;
+class UInterruptionDefinition;
 class AInteractable;
 class UCurveFloat;
-class UInterruptionDefinition;
 class UInteractor;
-class UInteractionDefinition;
-class UPrimitiveComponent;
-class UPlayerInteractionHandler;
-class ADBDPlayer;
 class UObject;
-class AActor;
+class UInteractionDefinition;
+class UPlayerInteractionHandler;
+class UPrimitiveComponent;
+class ADBDPlayer;
 
 UCLASS(Blueprintable, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UInteractionDefinition : public USceneComponent, public IActivatable, public IInteraction {
@@ -157,9 +157,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool CanInteractWhileCloaked;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
-    bool CanInteractWhileChainBlinking;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool CanInteractWhileAttacking;
@@ -324,6 +321,15 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     FText InteractionDescriptionText;
     
+    UPROPERTY(EditDefaultsOnly)
+    bool InteractionCanBeToggled;
+    
+    UPROPERTY(EditDefaultsOnly)
+    bool IgnoreSprintToCancelSetting;
+    
+    UPROPERTY(EditDefaultsOnly)
+    bool ForceWithSprintToCancelSetting;
+    
     UPROPERTY(BlueprintReadOnly)
     EButtonType AtlantaLastButtonPressed;
     
@@ -369,7 +375,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     FGameplayTag _objectStateTag;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TMap<FName, FSecondaryInteractionProperties> _secondaryInteractions;
     
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
@@ -657,10 +663,10 @@ public:
     void CompleteCharge(ADBDPlayer* character);
     
     UFUNCTION(BlueprintNativeEvent)
-    EInteractionComparisonPriority ComparePriorityToInteraction(UInteractionDefinition* interaction) const;
+    EInteractionComparisonPriority ComparePriorityToInteraction(const UInteractionDefinition* interaction) const;
     
     UFUNCTION(BlueprintNativeEvent, BlueprintPure)
-    bool CanOverrideInteraction(UInteractionDefinition* interaction) const;
+    bool CanOverrideInteraction(const UInteractionDefinition* interaction) const;
     
     UFUNCTION(BlueprintPure)
     float CalculateSnapTimeForConstantSpeed(const ADBDPlayer* player, const float speed) const;

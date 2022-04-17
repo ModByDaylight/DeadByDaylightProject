@@ -3,8 +3,8 @@
 #include "UMGBaseButtonWidget.h"
 #include "UMGPromoPackSuggestionButton.generated.h"
 
-class URichTextBlock;
 class UImage;
+class URichTextBlock;
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGPromoPackSuggestionButton : public UUMGBaseButtonWidget {

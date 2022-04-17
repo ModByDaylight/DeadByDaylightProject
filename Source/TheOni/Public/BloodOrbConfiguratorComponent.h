@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "GameEventBloodOrbDropParams.h"
 #include "Components/ActorComponent.h"
+#include "GameEventBloodOrbDropParams.h"
 #include "UObject/NoExportTypes.h"
 #include "BloodOrbConfiguratorComponent.generated.h"
 
+class ADBDPlayer;
 class UBloodOrbVisibilityComponent;
 class ABloodOrb;
 class AMobileBloodOrbRenderer;
-class ADBDPlayer;
 class UBloodOrbAbsorberComponent;
 
 UCLASS(meta=(BlueprintSpawnableComponent))

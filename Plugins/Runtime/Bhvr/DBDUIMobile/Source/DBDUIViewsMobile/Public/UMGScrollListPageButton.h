@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "OnScrollListPageButtonClicked.h"
+#include "OnScrollListPageButtonClickedDelegate.h"
 #include "UMGScrollListPageButton.generated.h"
 
 class UButton;

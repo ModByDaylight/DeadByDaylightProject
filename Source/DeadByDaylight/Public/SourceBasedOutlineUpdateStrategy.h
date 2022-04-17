@@ -4,9 +4,9 @@
 #include "UObject/NoExportTypes.h"
 #include "SourceBasedOutlineUpdateStrategy.generated.h"
 
-class AActor;
 class UObject;
 class ADBDPlayer;
+class AActor;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API USourceBasedOutlineUpdateStrategy : public UOutlineUpdateStrategy {

@@ -4,8 +4,8 @@
 #include "EKnowledgeSharingType.h"
 #include "ActorKnowledgeCollection.generated.h"
 
-class AActor;
 class ACharacter;
+class AActor;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UActorKnowledgeCollection : public UActorComponent {

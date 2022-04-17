@@ -1,33 +1,33 @@
 #include "DBDGameState.h"
 #include "Net/UnrealNetwork.h"
 #include "ActorPairQueryEvaluatorComponent.h"
-#include "ServerTimeProviderComponent.h"
-#include "RenderingFeaturesSequencer.h"
+#include "SpecialEventGameplaySpawnerComponent.h"
+#include "CharacterCollection.h"
+#include "EndGameStateComponent.h"
+#include "CollectableCollection.h"
 #include "ScourgeHookManagerComponent.h"
+#include "RenderingFeaturesSequencer.h"
+#include "ServerTimeProviderComponent.h"
 #include "InGameAssetPreloaderComponent.h"
 
-class AInteractable;
 class UAkAudioBank;
-class UCharacterCollection;
-class ATotem;
-class AHatch;
-class ACamperPlayer;
 class ADBDPlayerState_Menu;
-class USpecialEventGameplaySpawnerComponent;
+class ATotem;
+class AInteractable;
+class ACamperPlayer;
+class APallet;
 class ADBDPlayerState;
 class ADBDPlayer;
-class UEndGameStateComponent;
 class APawn;
-class AMeatHook;
 class ASlasherPlayer;
 class AWindow;
 class ASearchable;
 class AReverseBearTrapRemover;
-class APallet;
-class ABaseTrap;
+class AMeatHook;
+class AHatch;
 class AGenerator;
 class AEscapeDoor;
-class UCollectableCollection;
+class ABaseTrap;
 
 void ADBDGameState::SortOfferings() {
 }

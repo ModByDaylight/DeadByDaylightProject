@@ -4,9 +4,9 @@
 #include "Engine/EngineTypes.h"
 #include "UMGAtlantaTutorialGenericPopup.generated.h"
 
-class UUMGScrollListPageButton;
 class UHorizontalBox;
 class UImage;
+class UUMGScrollListPageButton;
 class UVerticalBox;
 
 UCLASS(Abstract, EditInlineNew)

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnLeaveSpectateClicked.h"
+#include "OnSpectatePlayerDelegate.h"
 #include "UmgPlayerHud.h"
-#include "OnSpectatePlayer.h"
+#include "OnLeaveSpectateClickedDelegate.h"
 #include "UmgSpectatorHud.generated.h"
 
 UCLASS(Abstract, EditInlineNew)

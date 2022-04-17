@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "SpeedBasedNetSyncedValue.h"
-#include "PowerChargeChangedDelegate.h"
+#include "PowerChargeChangedDelegateDelegate.h"
 #include "PowerChargeComponent.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

@@ -4,9 +4,9 @@
 #include "MontagePlaybackDefinition.h"
 #include "ScreamComponent.generated.h"
 
-class UMontagePlayer;
-class UPerkManager;
 class UAkAudioEvent;
+class UPerkManager;
+class UMontagePlayer;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UScreamComponent : public UActorComponent {

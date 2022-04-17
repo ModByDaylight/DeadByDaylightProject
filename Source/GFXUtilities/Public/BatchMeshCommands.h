@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/SceneComponent.h"
 #include "MaterialNamedGroup.h"
-#include "UObject/NoExportTypes.h"
+#include "Components/SceneComponent.h"
 #include "MaterialHelperOriginalMeshState.h"
+#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
 #include "BatchMeshCommands.generated.h"
 
-class UMaterialInterface;
 class UTexture;
+class UMaterialInterface;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GFXUTILITIES_API UBatchMeshCommands : public USceneComponent {

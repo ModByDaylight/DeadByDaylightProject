@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GunslingerHarpoon.h"
 #include "KillerProjectile.h"
+#include "GunslingerHarpoon.h"
 #include "DBDTunableRowHandle.h"
 #include "Engine/EngineTypes.h"
 #include "HarpoonProjectile.generated.h"
 
-class UPrimitiveComponent;
 class UHarpoonProjectileMovementComponent;
 class USkeletalMeshComponent;
+class UPrimitiveComponent;
 class UPoolableActorComponent;
 
 UCLASS()

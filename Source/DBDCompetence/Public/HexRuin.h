@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "FastTimer.h"
 #include "HexPerk.h"
+#include "FastTimer.h"
 #include "HexRuin.generated.h"
 
 class AGenerator;

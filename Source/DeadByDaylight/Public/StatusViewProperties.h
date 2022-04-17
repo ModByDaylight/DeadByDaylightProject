@@ -4,8 +4,8 @@
 #include "EStatusEffectType.h"
 #include "StatusViewProperties.generated.h"
 
-class AStatusView;
 class UTexture2D;
+class AStatusView;
 
 USTRUCT(BlueprintType)
 struct FStatusViewProperties : public FDBDTableRowBase {

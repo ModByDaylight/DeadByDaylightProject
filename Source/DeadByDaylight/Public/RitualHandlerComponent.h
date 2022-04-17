@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EDBDScoreTypes.h"
 #include "Components/ActorComponent.h"
+#include "EDBDScoreTypes.h"
 #include "GameplayTagContainer.h"
 #include "GameEventData.h"
 #include "RitualHandlerComponent.generated.h"
 
-class URitualEvaluatorBase;
 class AActor;
+class URitualEvaluatorBase;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API URitualHandlerComponent : public UActorComponent {

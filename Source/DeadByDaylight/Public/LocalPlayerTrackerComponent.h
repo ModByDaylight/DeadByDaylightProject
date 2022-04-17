@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
-#include "LocalPlayerTrackerDelegate.h"
+#include "LocalPlayerTrackerDelegateDelegate.h"
 #include "LocalPlayerTrackerComponent.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

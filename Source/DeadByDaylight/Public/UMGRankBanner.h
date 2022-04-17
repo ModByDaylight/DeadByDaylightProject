@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
 #include "Highlightable.h"
-#include "OnTooltipTriggeredEvent.h"
 #include "EPlayerRole.h"
+#include "OnTooltipTriggeredEventDelegate.h"
 #include "UMGRankBanner.generated.h"
 
-class UUMGTallyRankFrame;
-class UButton;
-class UImage;
 class UAkAudioEvent;
+class UButton;
+class UUMGTallyRankFrame;
+class UImage;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGRankBanner : public UMobileBaseUserWidget, public IHighlightable {

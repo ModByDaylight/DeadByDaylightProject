@@ -4,8 +4,8 @@
 #include "DBDInputManager.generated.h"
 
 class UControlModeManager;
-class UVirtualKeyboardManager;
 class USwitchDockStateManager;
+class UVirtualKeyboardManager;
 class UDataTable;
 
 UCLASS()

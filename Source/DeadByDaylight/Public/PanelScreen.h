@@ -4,7 +4,7 @@
 #include "PanelScreen.generated.h"
 
 UCLASS()
-class UPanelScreen : public UScreenBase {
+class DEADBYDAYLIGHT_API UPanelScreen : public UScreenBase {
     GENERATED_BODY()
 public:
     UPanelScreen();

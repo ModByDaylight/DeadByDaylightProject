@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "WeightedWishedObjectMapContainer.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "AIDisplayDebugInterface.h"
 #include "GameplayTagContainer.h"
 #include "MindFocusObjectEntry.h"
+#include "WeightedWishedObjectMapContainer.h"
 #include "UObject/NoExportTypes.h"
 #include "DBDBlackboardComponent.generated.h"
 

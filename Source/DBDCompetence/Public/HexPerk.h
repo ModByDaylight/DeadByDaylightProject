@@ -5,8 +5,8 @@
 #include "HexPerk.generated.h"
 
 class ADBDPlayer;
-class ATotem;
 class AActor;
+class ATotem;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UHexPerk : public UTotemBoundPerk {

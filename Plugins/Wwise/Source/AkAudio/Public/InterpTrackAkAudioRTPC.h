@@ -17,5 +17,11 @@ public:
     uint8 bContinueRTPCOnMatineeEnd: 1;
     
     UInterpTrackAkAudioRTPC();
+
+    virtual const FString	GetEdHelperClassName() const;
+    virtual const FString	GetSlateHelperClassName() const;
+#if WITH_EDITORONLY_DATA
+    virtual UTexture2D* GetTrackIcon() const;
+#endif
 };
 

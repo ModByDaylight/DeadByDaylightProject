@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EPlayerRole.h"
-#include "CustomTransformation.h"
 #include "ECustomizationCategory.h"
 #include "EItemRarity.h"
 #include "SpecialEventUIInfo.h"
 #include "PurchaseCurrencyData.h"
 #include "UObject/NoExportTypes.h"
+#include "CustomTransformation.h"
 #include "StoreItemSlotData.generated.h"
 
 USTRUCT(BlueprintType)

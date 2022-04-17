@@ -4,8 +4,8 @@
 #include "ClippedActor.h"
 #include "ActorClipperComponent.generated.h"
 
-class AActor;
 class USphereComponent;
+class AActor;
 class UPrimitiveCollection;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))

@@ -5,9 +5,9 @@
 #include "UObject/NoExportTypes.h"
 #include "DBDMaterialBlueprintLibrary.generated.h"
 
-class UMeshComponent;
 class UParticleSystemComponent;
 class UMaterialInstanceDynamic;
+class UMeshComponent;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UDBDMaterialBlueprintLibrary : public UBlueprintFunctionLibrary {

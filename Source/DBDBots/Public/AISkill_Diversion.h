@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "UObject/NoExportTypes.h"
 #include "AISkill.h"
 #include "EAIDifficultyLevel.h"
-#include "UObject/NoExportTypes.h"
 #include "AISkill_Diversion.generated.h"
 
 class AActor;

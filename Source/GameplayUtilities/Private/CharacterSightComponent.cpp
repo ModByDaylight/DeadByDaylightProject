@@ -1,7 +1,6 @@
 #include "CharacterSightComponent.h"
 #include "Net/UnrealNetwork.h"
-
-class ACharacter;
+#include "GameFramework/Character.h"
 
 void UCharacterSightComponent::SetScreenVisibilityZoneRadiusPercent(float value) {
 }

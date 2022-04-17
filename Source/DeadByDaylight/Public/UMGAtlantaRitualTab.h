@@ -3,8 +3,8 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGAtlantaRitualTab.generated.h"
 
-class UUMGAltantaRitual;
 class UVerticalBox;
+class UUMGAltantaRitual;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlantaRitualTab : public UMobileBaseUserWidget {

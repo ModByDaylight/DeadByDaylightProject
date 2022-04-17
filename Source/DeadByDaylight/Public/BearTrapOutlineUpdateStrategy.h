@@ -4,8 +4,8 @@
 #include "UObject/NoExportTypes.h"
 #include "BearTrapOutlineUpdateStrategy.generated.h"
 
-class UMapActorComponent;
 class UCurveLinearColor;
+class UMapActorComponent;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UBearTrapOutlineUpdateStrategy : public UOutlineUpdateStrategy {

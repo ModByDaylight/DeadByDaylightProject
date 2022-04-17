@@ -2,47 +2,47 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "PerkManagerOwnerInterface.h"
-#include "OnForwardInputLockedChanged.h"
+#include "EPlayerTeam.h"
 #include "DBDBasePlayer.h"
-#include "Perception/AISightTargetInterface.h"
 #include "PerkOwnerInterface.h"
+#include "AnimNotifyDelegate_PickupDelegate.h"
 #include "AnimTagProvider.h"
 #include "ObjectStateProvider.h"
 #include "GenericTeamAgentInterface.h"
-#include "PushableInterface.h"
+#include "Perception/AISightTargetInterface.h"
+#include "OnAttackedEventDelegate.h"
 #include "DynamicGrassEffectorInterface.h"
-#include "AnimNotifyDelegate_Pickup.h"
+#include "PushableInterface.h"
 #include "UObject/NoExportTypes.h"
-#include "OnAttackedEvent.h"
-#include "DamageTargetDelegate.h"
-#include "OnSensedDelegate.h"
-#include "AnimNotifyDelegate_Release.h"
-#include "SecondaryActionInputDelegate.h"
-#include "OnFirstPersonModeChanged.h"
-#include "OnDreamworldComponentSet.h"
+#include "DamageTargetDelegateDelegate.h"
+#include "OnSensedDelegateDelegate.h"
+#include "AnimNotifyDelegate_ReleaseDelegate.h"
+#include "SecondaryActionInputDelegateDelegate.h"
+#include "OnFirstPersonModeChangedDelegate.h"
+#include "OnDreamworldComponentSetDelegate.h"
+#include "OnForwardInputLockedChangedDelegate.h"
 #include "UObject/NoExportTypes.h"
-#include "OnRunningAndMovingChanged.h"
-#include "OnLocallyObservedChangedForPlayer.h"
-#include "EffectCameraTypeSettings.h"
+#include "OnRunningAndMovingChangedDelegate.h"
+#include "OnLocallyObservedChangedForPlayerDelegate.h"
 #include "ECamperState.h"
 #include "EAttackSubstate.h"
+#include "EffectCameraTypeSettings.h"
+#include "ScoreEventData.h"
 #include "EDetectionZone.h"
 #include "EInputInteractionType.h"
 #include "EDBDScoreTypes.h"
 #include "EAnimNotifyType.h"
 #include "UObject/NoExportTypes.h"
-#include "EPawnType.h"
 #include "Engine/EngineTypes.h"
 #include "EInteractionAnimation.h"
 #include "EAuthoritativeMovementFlag.h"
 #include "CharmIdSlot.h"
 #include "GameplayTagContainer.h"
-#include "ScoreEventData.h"
 #include "AnimationMontageDescriptor.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
-#include "EPlayerTeam.h"
 #include "EPlayerRole.h"
+#include "EPawnType.h"
 #include "MontagePlaybackDefinition.h"
 #include "InteractionPlayerProperties.h"
 #include "Components/SkinnedMeshComponent.h"
@@ -50,64 +50,65 @@
 #include "EStunType.h"
 #include "DBDPlayer.generated.h"
 
-class ADBDPlayer;
-class UActivatorComponent;
-class UDBDPlayerData;
-class UAIPerceptionStimuliSourceComponent;
-class UMontagePlayer;
-class UStatusEffect;
-class UInteractionDetectorComponent;
-class UBoxOcclusionQueryComponent;
-class UGameplayTagContainerComponent;
-class UPollableEventListener;
-class UCameraHandlerComponent;
-class UCharacterSightComponent;
-class USpringArmComponent;
-class UAxisFlickMasher;
-class UCurveFloat;
 class UStateMachine;
-class UPrimitiveComponent;
-class UZoneDetectorComponent;
-class UCameraComponent;
-class UInteractionDefinition;
-class UMaterialHelper;
-class APlayerInteractable;
-class UCharacterInventoryComponent;
-class USoundCue;
 class UBoxComponent;
-class UPerkManager;
-class UPlayerInteractionHandler;
-class UCharacterChaseVisualComponent;
-class UCharacterDreamworldComponent;
-class UDynamicCapsuleResizerComponent;
-class USceneComponent;
+class UCharacterSightableComponent;
+class ADBDPlayer;
+class UMaterialHelper;
+class UAnimInstance;
+class UGameplayTagContainerComponent;
+class UAxisFlickMasher;
+class UDBDPlayerData;
+class UCurveFloat;
+class USpringArmComponent;
 class AActor;
+class UCharacterChaseVisualComponent;
+class AInteractable;
+class UCameraComponent;
+class APlayerInteractable;
 class UChargeableComponent;
+class UCharacterInventoryComponent;
+class UBoxOcclusionQueryComponent;
+class UInteractionDefinition;
+class UActivatorComponent;
+class UPlayerPerspectiveComponent;
+class USoundCue;
+class UPrimitiveComponent;
+class UPlayerInteractionHandler;
+class UAudioFXComponent;
+class UMontagePlayer;
+class UPerkManager;
+class UAIPerceptionStimuliSourceComponent;
+class UCharacterDreamworldComponent;
+class UCameraHandlerComponent;
+class UReversibleActionSystemComponent;
+class UZoneDetectorComponent;
+class USceneComponent;
 class UBlindableComponent;
+class UPollableEventListener;
+class UCharacterSightComponent;
 class UChaseComponent;
 class UAuthoritativeMovementComponent;
-class UAudioFXComponent;
-class UPlayerPerspectiveComponent;
-class UCharacterSightableComponent;
+class UInteractionDetectorComponent;
 class UPrimitivesRegistererComponent;
 class UClippableProviderComponent;
+class UDynamicCapsuleResizerComponent;
 class UPlayerGameRelevancyComponent;
 class UContextualQuestComponent;
 class UActorComponent;
 class UChargeableProgressProviderComponent;
 class ADBDPlayerState;
 class UOtherCharactersVerticalCollisionsHandler;
-class UAnimMontage;
 class ACollectable;
+class UStatusEffect;
+class UAnimMontage;
 class AController;
-class AInteractable;
 class ADBDPlayerController;
 class UItemModifier;
 class UItemAddon;
 class UCustomizedSkeletalMesh;
 class ADBDPlayerCameraManager;
 class APlayerState;
-class UAnimInstance;
 class ACharacter;
 class UGameplayModifierContainer;
 class UInteractor;
@@ -116,7 +117,7 @@ UCLASS(Abstract)
 class DEADBYDAYLIGHT_API ADBDPlayer : public ADBDBasePlayer, public IPerkOwnerInterface, public IPerkManagerOwnerInterface, public IAnimTagProvider, public IObjectStateProvider, public IGenericTeamAgentInterface, public IAISightTargetInterface, public IPushableInterface, public IDynamicGrassEffectorInterface {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsCrouchedChanged, bool, isCrouched);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsCrouchedChanged, bool, isCrouched);
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool AllowInterrupting;
@@ -207,15 +208,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float CameraResetSpeed;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
-    UCurveFloat* BlinkFOVCurve;
-    
-    UPROPERTY(BlueprintReadWrite, Transient)
-    float CurrentBlinkDistance;
-    
-    UPROPERTY(BlueprintReadWrite, Transient)
-    float CurrentBlinkChargePercent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float AverageSpeedBufferTime;
@@ -367,6 +359,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, Export, Transient, VisibleAnywhere)
     UCameraHandlerComponent* _cameraHandlerComponent;
+    
+    UPROPERTY(Export, VisibleAnywhere)
+    UReversibleActionSystemComponent* _reversibleActionSystemComponent;
     
     UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere)
     USceneComponent* _itemDropOffPosition;
@@ -814,9 +809,6 @@ protected:
     void Multicast_ConfirmItemDrop(bool pressed);
     
 public:
-    UFUNCTION(BlueprintCallable)
-    void Local_RequestBlink(FTransform destination);
-    
     UFUNCTION(BlueprintNativeEvent)
     void Local_NotifyMatchEnded();
     
@@ -1149,9 +1141,6 @@ public:
     FVector GetBoneLocation(FName name, TEnumAsByte<EBoneSpaces::Type> space) const;
     
     UFUNCTION(BlueprintPure)
-    float GetBlinkTime() const;
-    
-    UFUNCTION(BlueprintPure)
     UBlindableComponent* GetBlindableComponent() const;
     
     UFUNCTION(BlueprintPure)
@@ -1283,12 +1272,6 @@ protected:
     
     UFUNCTION(NetMulticast, Reliable, WithValidation)
     void Broadcast_PlayMontage_Multicast(FAnimationMontageDescriptor animMontageID, float playRate);
-    
-    UFUNCTION(NetMulticast, Reliable, WithValidation)
-    void Broadcast_Multicast_BlinkDestination(FVector position, FRotator rotation);
-    
-    UFUNCTION(Reliable, Server, WithValidation)
-    void Broadcast_BlinkDestination(FVector position, FRotator rotation);
     
 public:
     UFUNCTION(BlueprintCallable)

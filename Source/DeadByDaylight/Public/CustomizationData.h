@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPlayerRole.h"
 #include "DBDTableRowBase.h"
+#include "EPlayerRole.h"
+#include "ItemAvailability.h"
 #include "EItemRarity.h"
 #include "ItemUIData.h"
-#include "ItemAvailability.h"
 #include "CustomizationData.generated.h"
 
 USTRUCT()
@@ -28,6 +28,9 @@ public:
     
     UPROPERTY(EditAnywhere)
     FItemAvailability Availability;
+    
+    UPROPERTY(EditAnywhere)
+    FString InclusionVersion;
     
     DEADBYDAYLIGHT_API FCustomizationData();
 };

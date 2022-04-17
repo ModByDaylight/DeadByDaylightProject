@@ -3,8 +3,8 @@
 #include "UObject/Object.h"
 #include "DBDHud.generated.h"
 
-class AStatusView;
 class AActor;
+class AStatusView;
 
 UCLASS()
 class UDBDHud : public UObject {

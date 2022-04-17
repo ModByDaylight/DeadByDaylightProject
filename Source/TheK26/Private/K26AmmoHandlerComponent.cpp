@@ -3,8 +3,8 @@
 
 class UK26PathHandlerComponent;
 class UK26PowerStatusHandlerComponent;
-class UAuthoritativeActorPoolComponent;
 class ASlasherPlayer;
+class UAuthoritativeActorPoolComponent;
 class AActor;
 
 void UK26AmmoHandlerComponent::SetDependencies(UK26PathHandlerComponent* pathHandler, UK26PowerStatusHandlerComponent* statusHandler, UAuthoritativeActorPoolComponent* authoritativeActorPoolComponent) {

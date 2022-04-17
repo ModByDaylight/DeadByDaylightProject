@@ -3,8 +3,8 @@
 #include "UObject/Object.h"
 #include "CDNPatchManager.generated.h"
 
-class UGameInstance;
 class UAtlantaPendingContent;
+class UGameInstance;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UCDNPatchManager : public UObject {

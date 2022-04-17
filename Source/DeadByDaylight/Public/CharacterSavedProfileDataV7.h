@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "SavedCharmSlotData.h"
 #include "LegacySavedBloodWebPersistentData.h"
 #include "LegacySavedPlayerLoadoutData.h"
 #include "CharacterSavedInventoryDataV7.h"
 #include "SavedCharacterLevelDataV7.h"
 #include "SavedStatsDataV7.h"
-#include "SavedCharmSlotData.h"
 #include "CharacterSavedProfileDataV7.generated.h"
 
 USTRUCT(BlueprintType)

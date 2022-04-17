@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "ETileSpawnPointType.h"
 #include "ElementSubstitutions.h"
 #include "SubstitutionElements.h"
-#include "ETileSpawnPointType.h"
 #include "DependencyElementSubstitutions.generated.h"
 
 USTRUCT(BlueprintType)

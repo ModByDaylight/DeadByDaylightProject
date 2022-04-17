@@ -5,10 +5,10 @@
 #include "UObject/NoExportTypes.h"
 #include "ClipManager.generated.h"
 
+class UMaterialInterface;
+class UMeshComponent;
 class UDBDClipRegionComponent;
 class UDataTable;
-class UMeshComponent;
-class UMaterialInterface;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AClipManager : public AActor {

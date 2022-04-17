@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "ECurrencyType.h"
 #include "UMGCustomizationItemPriceWidget.h"
+#include "ECurrencyType.h"
 #include "UObject/NoExportTypes.h"
 #include "UMGCustomizationItemBuyButton.generated.h"
 

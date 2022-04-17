@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "K25Projectile.h"
-#include "DBDTunableRowHandle.h"
 #include "SpectatingActorLinker.h"
 #include "TunableStat.h"
+#include "DBDTunableRowHandle.h"
 #include "Engine/NetSerialization.h"
 #include "K25ControlledProjectile.generated.h"
 
-class UStaticMeshComponent;
 class USpringArmComponent;
+class UStaticMeshComponent;
 class UCameraComponent;
 class UK25ControlledProjectileMovementComponent;
 

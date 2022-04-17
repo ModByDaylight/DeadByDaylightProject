@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameEventData.h"
-#include "RespawningEventComponent.h"
 #include "GameplayTagContainer.h"
+#include "RespawningEventComponent.h"
+#include "GameEventData.h"
 #include "GnomeEventComponent.generated.h"
 
 class UInteractionRespawnableTrigger;

@@ -1,48 +1,48 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPlayerRole.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "UObject/NoExportTypes.h"
+#include "Engine/EngineTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "Engine/EngineTypes.h"
+#include "EPlayerRole.h"
+#include "Engine/EngineTypes.h"
 #include "EShadowSystem.h"
-#include "Engine/EngineTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Kismet/KismetSystemLibrary.h"
-#include "Engine/EngineTypes.h"
-#include "Engine/EngineTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "DBDUtilities.generated.h"
 
-class UPrimitiveComponent;
-class AProceduralLevelBuilder;
-class UMaterialInterface;
-class USkeletalMeshComponent;
+class UDBDGameInstance;
+class UAnimMontage;
 class USphereComponent;
+class UPrimitiveComponent;
 class AActor;
-class ADBDPlayerControllerBase;
+class UAnimSequence;
 class ADBDPlayerState;
-class UAnimInstance;
 class UObject;
-class UBoxComponent;
 class UMeshComponent;
-class ADBDPlayerCameraManager;
+class ADBDPlayerControllerBase;
+class UAnimInstance;
 class UTileSpawnPoint;
 class AGenerator;
 class ASlasherPlayer;
-class UActorComponent;
-class UWorld;
-class UAnimMontage;
-class ADBDGameMode;
+class UBoxComponent;
 class ADBDBasePlayer;
+class USkeletalMeshComponent;
 class ACamperPlayer;
-class UMaterialHelper;
-class UActorSpawner;
-class ADBDPlayer;
+class UWorld;
 class ADBDGameState;
-class UDBDGameInstance;
+class UMaterialHelper;
+class UActorComponent;
+class ADBDPlayer;
+class UMaterialInterface;
+class ADBDPlayerCameraManager;
+class UActorSpawner;
+class ADBDGameMode;
 class ADBDAIPlayerController;
-class UAnimSequence;
+class AProceduralLevelBuilder;
 class UAkAudioBank;
 
 UCLASS(BlueprintType)
@@ -270,7 +270,7 @@ public:
     static AProceduralLevelBuilder* GetBuilder(const UObject* WorldContextObject);
     
     UFUNCTION(BlueprintPure)
-    static float GetAnimSequenceLength(UAnimSequence* sequence);
+    static float GetAnimSequenceLength(const UAnimSequence* sequence);
     
     UFUNCTION(BlueprintPure)
     static void GetActorSpawners(TArray<UActorSpawner*>& actorSpawners);

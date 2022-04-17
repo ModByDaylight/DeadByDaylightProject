@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "CoreBaseHudWidget.h"
-#include "ExternalEffectsViewInterface.h"
-#include "UObject/NoExportTypes.h"
 #include "PerkViewData.h"
+#include "ExternalEffectsViewInterface.h"
+#include "CoreBaseHudWidget.h"
+#include "UObject/NoExportTypes.h"
 #include "AddonViewData.h"
 #include "Engine/EngineTypes.h"
 #include "CoreExternalEffectsWidget.generated.h"
 
 class UGridPanel;
-class UCoreAddonWidget;
 class UCorePerkWidget;
 class UPerkViewInterface;
 class IPerkViewInterface;
+class UCoreAddonWidget;
 class UAddonViewInterface;
 class IAddonViewInterface;
 class USpacer;

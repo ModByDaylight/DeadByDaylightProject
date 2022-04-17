@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Perk.h"
-#include "SecondaryInteractionProperties.h"
 #include "UObject/NoExportTypes.h"
+#include "SecondaryInteractionProperties.h"
 #include "BlastMine.generated.h"
 
 class AGenerator;
+class AActor;
 class UInteractionDefinition;
 class ASlasherPlayer;
 class UChargeableInteractionDefinition;
-class AActor;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UBlastMine : public UPerk {

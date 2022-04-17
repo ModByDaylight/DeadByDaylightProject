@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PlayerReadyStatusData.h"
 #include "MobileBaseUserWidget.h"
-#include "InventorySlotData.h"
+#include "PlayerReadyStatusData.h"
 #include "PlayerInfoData.h"
+#include "InventorySlotData.h"
 #include "UMGLobbyJoinedWidget.generated.h"
 
 class UHorizontalBox;

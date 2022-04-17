@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
 #include "ExhaustedEffect.h"
+#include "GameplayTagContainer.h"
 #include "GameEventData.h"
 #include "ActivatableExhaustedEffect.generated.h"
 

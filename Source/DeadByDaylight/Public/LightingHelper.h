@@ -3,11 +3,11 @@
 #include "UObject/Object.h"
 #include "LightingHelper.generated.h"
 
-class ABaseSky;
 class AActor;
-class ULightingInterpolator;
+class ABaseSky;
 class UPostProcessComponent;
 class ULightingFactory;
+class ULightingInterpolator;
 class UTextureCube;
 
 UCLASS(BlueprintType)

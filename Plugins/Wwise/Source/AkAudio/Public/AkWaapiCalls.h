@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnWaapiProjectLoaded.h"
+#include "OnWaapiProjectLoadedDelegate.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "AkWaapiUri.h"
+#include "OnWaapiConnectionLostDelegate.h"
 #include "AKWaapiJsonObject.h"
-#include "OnEventCallback.h"
 #include "AkWaapiSubscriptionId.h"
-#include "OnWaapiConnectionLost.h"
+#include "AkWaapiUri.h"
+#include "OnEventCallbackDelegate.h"
 #include "AkWaapiCalls.generated.h"
 
 UCLASS(BlueprintType, DefaultConfig, Within=World)

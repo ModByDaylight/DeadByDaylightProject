@@ -1,8 +1,8 @@
 #include "DemogorgonPortal.h"
 
 class ADBDPlayer;
-class UChargeableComponent;
 class UPrimitiveComponent;
+class UChargeableComponent;
 class AActor;
 
 

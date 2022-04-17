@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Interactable.h"
 #include "AIInteractableTargetInterface.h"
+#include "Interactable.h"
 #include "ContainsItemInterface.h"
 #include "EItemRarity.h"
 #include "Searchable.generated.h"
 
-class USearchableSpawnPoint;
 class UPrimitiveComponent;
+class USearchableSpawnPoint;
 class ACollectable;
 class ADBDPlayer;
 
@@ -15,7 +15,7 @@ UCLASS()
 class DEADBYDAYLIGHT_API ASearchable : public AInteractable, public IAIInteractableTargetInterface, public IContainsItemInterface {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSearchedChanged, bool, searched);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSearchedChanged, bool, searched);
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float Weight;

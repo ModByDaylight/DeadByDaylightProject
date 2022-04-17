@@ -1,9 +1,9 @@
 #include "Firecracker.h"
 
 class ADBDPlayer;
-class AActor;
-class ACollectable;
 class UGameplayModifierContainer;
+class ACollectable;
+class AActor;
 
 bool AFirecracker::ShouldDeafen(const ADBDPlayer* player, float& outDuration) const {
     return false;

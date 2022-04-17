@@ -4,12 +4,12 @@
 #include "ChargeableInteractionDefinition.h"
 #include "TeleportToDemogorgonPortalInteraction.generated.h"
 
-class AActor;
 class UPortalTargetingComponent;
 class UPortalPlacerStateComponent;
 class ADemogorgonPortal;
-class ADBDPlayer;
 class ASlasherPlayer;
+class ADBDPlayer;
+class AActor;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DBDINTERACTION_API UTeleportToDemogorgonPortalInteraction : public UChargeableInteractionDefinition {

@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
-#include "ActorComponentChaseStartSignature.h"
-#include "ActorComponentChaseEndSignature.h"
+#include "ActorComponentChaseStartSignatureDelegate.h"
+#include "ActorComponentChaseEndSignatureDelegate.h"
+#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "CharacterChaseVisualComponent.generated.h"
 
-class UMaterialHelperUnaffectedStaticMeshComp;
 class ADBDPlayer;
+class UMaterialHelperUnaffectedStaticMeshComp;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCharacterChaseVisualComponent : public UActorComponent {

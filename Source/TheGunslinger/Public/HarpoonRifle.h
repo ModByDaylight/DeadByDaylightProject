@@ -5,12 +5,12 @@
 #include "DBDTunableRowHandle.h"
 #include "HarpoonRifle.generated.h"
 
-class ARifleChain;
-class UChainLinkableComponent;
-class UChargeableComponent;
 class UHarpoonProviderComponent;
-class UHarpoonLauncher;
+class UChainLinkableComponent;
+class ARifleChain;
 class URifleChainTensionComponent;
+class UHarpoonLauncher;
+class UChargeableComponent;
 class URiflePlayerLinker;
 class UHarpoonChainPositioner;
 class UFireHarpoonRifleInteraction;

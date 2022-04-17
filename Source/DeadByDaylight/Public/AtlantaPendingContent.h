@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AtlantaInstalledContent.h"
-#include "OnContentInstallSucceeded.h"
-#include "OnContentInstallFailed.h"
+#include "OnContentInstallSucceededDelegate.h"
+#include "OnContentInstallFailedDelegate.h"
 #include "AtlantaPendingContent.generated.h"
 
 UCLASS()

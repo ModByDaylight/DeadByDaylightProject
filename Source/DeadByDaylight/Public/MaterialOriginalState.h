@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "MaterialOriginalState.generated.h"
 
-class UMeshComponent;
 class UMaterialInterface;
+class UMeshComponent;
 
 USTRUCT(BlueprintType)
 struct FMaterialOriginalState {

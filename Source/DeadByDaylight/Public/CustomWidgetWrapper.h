@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/CanvasPanel.h"
-#include "OnVersionDelegate.h"
 #include "GameplayTagContainer.h"
+#include "OnVersionDelegateDelegate.h"
 #include "CustomWidgetWrapper.generated.h"
 
 class UCustomWidgetWrapper;

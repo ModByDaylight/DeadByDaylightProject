@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnBloodStoreRegenerateEvent.h"
 #include "MobileBaseUserWidget.h"
-#include "OnBloodNodeSelectedEvent.h"
-#include "OnBloodNodePurchaseEvent.h"
-#include "OnCharacterRoleButtonClickedEvent.h"
+#include "OnBloodNodeSelectedEventDelegate.h"
+#include "OnBloodNodePurchaseEventDelegate.h"
+#include "OnBloodStoreRegenerateEventDelegate.h"
+#include "OnCharacterRoleButtonClickedEventDelegate.h"
 #include "UMGBloodStoreWidget.generated.h"
 
-class UUMGBloodStoreItemPreviewWidget;
 class UUMGBloodStoreSubMenu;
 class UUMGBloodStoreArrayWidget;
+class UUMGBloodStoreItemPreviewWidget;
 
 UCLASS(EditInlineNew)
 class UUMGBloodStoreWidget : public UMobileBaseUserWidget {

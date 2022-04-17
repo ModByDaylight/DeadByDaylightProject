@@ -64,5 +64,6 @@ AProceduralLevelBuilder::AProceduralLevelBuilder() {
     this->_syncer = NULL;
     this->_blackboardComp = NULL;
     this->_edgeObjectHandlingStrategy = NULL;
+    this->_backupKillerLairTile = NULL;
 }
 

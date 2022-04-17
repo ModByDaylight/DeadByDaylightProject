@@ -4,12 +4,12 @@
 #include "UMGBaseButtonWidget.h"
 #include "UMGSubscriptionPackButtonWidget.generated.h"
 
-class USubscriptionRewardDataAsset;
-class UButton;
-class UUniformGridPanel;
-class UTextBlock;
-class UCanvasPanel;
 class UImage;
+class UButton;
+class UCanvasPanel;
+class USubscriptionRewardDataAsset;
+class UTextBlock;
+class UUniformGridPanel;
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGSubscriptionPackButtonWidget : public UUMGBaseButtonWidget {

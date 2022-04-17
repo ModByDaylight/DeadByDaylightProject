@@ -11,6 +11,14 @@ void AFlickeringLight::StartFlickering() {
 void AFlickeringLight::Init() {
 }
 
+bool AFlickeringLight::GetSecondaryLightVisibilty() {
+    return false;
+}
+
+ULocalLightComponent* AFlickeringLight::GetSecondaryLightComponent() {
+    return NULL;
+}
+
 ULocalLightComponent* AFlickeringLight::GetActiveLightComponent() {
     return NULL;
 }
@@ -30,6 +38,7 @@ AFlickeringLight::AFlickeringLight() {
     this->_secondaryLightIntensity = 250.00f;
     this->_secondaryLightAttenuationRadius = 1000.00f;
     this->_secondaryLightSpecularScale = 100.00f;
+    this->_isAlwaysCapturedAsON = false;
     this->_lightIntensityTimeline = NULL;
     this->_pointLightComponent = NULL;
     this->_secondaryPointLightComponent = NULL;

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "InteractionArray.h"
 #include "EInputInteractionType.h"
+#include "InteractionArray.h"
 #include "UObject/NoExportTypes.h"
 #include "Interactable.generated.h"
 

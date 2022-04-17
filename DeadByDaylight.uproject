@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{079B8BF0-41DA-35F9-B754-E8AD33F1E63B}",
+	"EngineAssociation": "4.25",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -339,26 +339,6 @@
 			"LoadingPhase": "Default"
 		},
 		{
-			"Name": "AtlantaBloodMarket",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "AtlantaBundleFilterRules",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "AtlantaCharacterLicenseExpOverride",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "AtlantaFreeTickets",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
 			"Name": "CampaignEvents",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
@@ -390,6 +370,11 @@
 		},
 		{
 			"Name": "DynamicContent",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "ExperimentalFeatures",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		},
@@ -430,6 +415,11 @@
 		},
 		{
 			"Name": "Interaction",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "Lunar2022",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		},
@@ -505,6 +495,11 @@
 		},
 		{
 			"Name": "RetentionRewardsUtilities",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "ReversibleActionSystem",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		},
@@ -585,6 +580,10 @@
 		}
 	],
 	"Plugins": [
+		{
+			"Name": "ChaosEditor",
+			"Enabled": false
+		},
 		{
 			"Name": "MirrorsSdk",
 			"Enabled": true

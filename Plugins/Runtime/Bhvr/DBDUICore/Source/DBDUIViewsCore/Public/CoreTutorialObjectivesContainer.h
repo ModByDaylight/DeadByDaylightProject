@@ -5,8 +5,8 @@
 #include "TutorialObjectivesViewInterface.h"
 #include "CoreTutorialObjectivesContainer.generated.h"
 
-class UCoreTutorialObjectiveItem;
 class UGridPanel;
+class UCoreTutorialObjectiveItem;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreTutorialObjectivesContainer : public UCoreBaseHudWidget, public ITutorialObjectivesViewInterface {

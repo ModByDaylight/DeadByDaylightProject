@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ItemRarityQEEvaluator.h"
 #include "GameplayTagContainer.h"
+#include "ItemRarityQEEvaluator.h"
 #include "GameEventData.h"
 #include "SearchItemRarityQEEvaluator.generated.h"
 

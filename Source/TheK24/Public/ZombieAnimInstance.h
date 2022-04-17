@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Animation/AnimInstance.h"
 #include "EZombieGender.h"
+#include "Animation/AnimInstance.h"
 #include "EZombieState.h"
 #include "ZombieAnimInstance.generated.h"
 

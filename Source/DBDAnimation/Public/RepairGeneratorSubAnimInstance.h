@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
 #include "Animation/AnimInstance.h"
+#include "GameplayTagContainer.h"
 #include "RepairGeneratorSubAnimInstance.generated.h"
 
-class ACamperPlayer;
 class AGenerator;
+class ACamperPlayer;
 class UAnimSequence;
 
 UCLASS(NonTransient)

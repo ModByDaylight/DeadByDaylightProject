@@ -1,7 +1,7 @@
 #include "DBDBasePlayer.h"
 
-class UCustomizedAudioComponent;
 class UAkComponent;
+class UCustomizedAudioComponent;
 
 bool ADBDBasePlayer::TeleportWithClothHandling(const FVector& location, const FRotator& rotation, bool checkCollisions) {
     return false;

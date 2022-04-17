@@ -11,7 +11,7 @@ UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UFlashlightComponent : public UActorComponent, public IBlindingEffectorInterface {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFlashlightEvent);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFlashlightEvent);
     
     UPROPERTY(BlueprintAssignable)
     FOnFlashlightEvent OnFlashlightTurnedOn;

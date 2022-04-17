@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Blueprint/DragDropOperation.h"
 #include "UObject/NoExportTypes.h"
-#include "Layout/Margin.h"
+#include "Blueprint/DragDropOperation.h"
 #include "Widgets/Layout/Anchors.h"
+#include "Layout/Margin.h"
 #include "DragDropOperation_Widget.generated.h"
 
-class UUMGDragWidget;
 class UPanelWidget;
+class UUMGDragWidget;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UDragDropOperation_Widget : public UDragDropOperation {

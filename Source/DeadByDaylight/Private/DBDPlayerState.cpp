@@ -1,10 +1,10 @@
 #include "DBDPlayerState.h"
 #include "Net/UnrealNetwork.h"
+#include "GameplayNotificationManager.h"
 #include "RitualHandlerComponent.h"
 #include "AchievementHandlerComponent.h"
 #include "CharacterStatsHandlerComponent.h"
 
-class UGameplayNotificationManager;
 class AActor;
 
 void ADBDPlayerState::UpdateOngoingScores() {

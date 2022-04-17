@@ -8,8 +8,8 @@
 #include "BTService_Flee.generated.h"
 
 class UPathStrategySelector;
-class UNavMovePath;
 class UObject;
+class UNavMovePath;
 
 UCLASS()
 class DBDBOTS_API UBTService_Flee : public UBTService, public IAIDisplayDebugInterface {

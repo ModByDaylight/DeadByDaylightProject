@@ -3,8 +3,8 @@
 #include "Animation/AnimInstance.h"
 #include "UObject/NoExportTypes.h"
 #include "ECamperGuidedAction.h"
-#include "UObject/NoExportTypes.h"
 #include "EInteractionAnimation.h"
+#include "UObject/NoExportTypes.h"
 #include "CamperAnimInstance.generated.h"
 
 class ACamperPlayer;

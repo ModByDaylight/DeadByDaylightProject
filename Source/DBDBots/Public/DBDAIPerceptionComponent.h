@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "AITunableParameter.h"
 #include "Perception/AIPerceptionComponent.h"
 #include "AIDisplayDebugInterface.h"
 #include "AIDetectedStimulus.h"
-#include "AITunableParameter.h"
 #include "DBDAIPerceptionComponent.generated.h"
 
 class UObject;

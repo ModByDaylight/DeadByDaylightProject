@@ -4,8 +4,8 @@
 #include "EPerkInteractionObjectType.h"
 #include "Hoarder.generated.h"
 
-class ACamperPlayer;
 class ASearchable;
+class ACamperPlayer;
 class AActor;
 
 UCLASS(meta=(BlueprintSpawnableComponent))

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UMGLoadoutBaseWidget.h"
-#include "OnTallyScoreboardAddFriendEvent.h"
 #include "TallyPlayerResultData.h"
-#include "OnTallyScoreboardReportEvent.h"
+#include "OnTallyScoreboardAddFriendEventDelegate.h"
+#include "OnTallyScoreboardReportEventDelegate.h"
 #include "UMGTallyScoreboardPlayerInfoWidget.generated.h"
 
 class UImage;

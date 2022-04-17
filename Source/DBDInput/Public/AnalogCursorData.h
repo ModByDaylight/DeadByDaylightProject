@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTableRowBase.h"
 #include "EAnalogCursorDataType.h"
+#include "DBDTableRowBase.h"
 #include "AnalogCursorData.generated.h"
 
 USTRUCT(BlueprintType)

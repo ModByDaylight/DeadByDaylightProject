@@ -9,9 +9,9 @@ bool UDBDAttack::Server_RequestStateChange_Validate(const EAttackSubstate state)
     return true;
 }
 
-void UDBDAttack::Server_HitTarget_Implementation(ADBDPlayer* target, const float targetLocationTimestamp) {
+void UDBDAttack::Server_HitTarget_Implementation(ADBDPlayer* target, const float targetLocationTimestamp, FActionPredictionKey predictionKey) {
 }
-bool UDBDAttack::Server_HitTarget_Validate(ADBDPlayer* target, const float targetLocationTimestamp) {
+bool UDBDAttack::Server_HitTarget_Validate(ADBDPlayer* target, const float targetLocationTimestamp, FActionPredictionKey predictionKey) {
     return true;
 }
 
@@ -42,7 +42,7 @@ bool UDBDAttack::Multicast_HitAttackableComponent_Validate(UAttackableComponent*
 void UDBDAttack::Multicast_ClearTargets_Implementation() {
 }
 
-void UDBDAttack::Client_ReceiveHitResult_Implementation(ADBDPlayer* target, bool isValid) {
+void UDBDAttack::Client_ReceiveHitResult_Implementation(ADBDPlayer* target, bool isValid, FActionPredictionKey predictionKey) {
 }
 
 void UDBDAttack::Client_ReceiveAttackSubstateRequestResult_Implementation(const FAttackSubstateRequestResult result) {

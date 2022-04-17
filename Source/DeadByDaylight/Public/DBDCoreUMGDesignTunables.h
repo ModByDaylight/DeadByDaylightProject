@@ -3,8 +3,8 @@
 #include "UObject/Object.h"
 #include "DBDCoreUMGDesignTunables.generated.h"
 
-class UCoreHudRootWidget;
 class ADBDPlayerController;
+class UCoreHudRootWidget;
 
 UCLASS(Transient, Config=Design)
 class DEADBYDAYLIGHT_API UDBDCoreUMGDesignTunables : public UObject {

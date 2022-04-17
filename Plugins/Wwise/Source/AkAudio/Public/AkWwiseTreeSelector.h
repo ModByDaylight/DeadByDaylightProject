@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/Widget.h"
-#include "OnItemSelectionChanged.h"
-#include "OnItemDragDetected.h"
+#include "OnItemSelectionChangedDelegate.h"
+#include "OnItemDragDetectedDelegate.h"
 #include "AkWwiseTreeSelector.generated.h"
 
 UCLASS(DefaultConfig, Config=Editor)

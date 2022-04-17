@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EAITerrorLevel.h"
 #include "UObject/Object.h"
+#include "EAITerrorLevel.h"
 #include "AIDisplayDebugInterface.h"
 #include "PathBuilder.generated.h"
 

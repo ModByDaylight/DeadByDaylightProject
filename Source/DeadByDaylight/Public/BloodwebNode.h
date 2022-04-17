@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "BloodwebNodeProperties.h"
 #include "BloodwebNodeGate.h"
-#include "EBloodwebNodeState.h"
 #include "BloodwebChest.h"
+#include "EBloodwebNodeState.h"
 #include "BloodwebNode.generated.h"
 
 USTRUCT()

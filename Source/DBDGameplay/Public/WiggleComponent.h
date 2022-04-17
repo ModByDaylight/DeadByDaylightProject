@@ -5,11 +5,10 @@
 #include "ESkillCheckCustomType.h"
 #include "WiggleComponent.generated.h"
 
-class UChargeableComponent;
-class ASlasherPlayer;
-class UInputComponent;
 class ADBDPlayer;
-class AActor;
+class ASlasherPlayer;
+class UChargeableComponent;
+class UInputComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UWiggleComponent : public UActorComponent, public IChargeableProgressSource {
@@ -25,9 +24,15 @@ private:
     UPROPERTY(Export, Transient)
     UInputComponent* _inputComponent;
     
+    UPROPERTY(EditDefaultsOnly)
+    float _wiggleInputLockTime;
+    
 public:
     UWiggleComponent();
 private:
+    UFUNCTION(Reliable, Server)
+    void Server_SetPlayerWiggleSkillCheckEnabled(const bool enabled);
+    
     UFUNCTION(Reliable, Server)
     void Server_OnWiggleEnd();
     
@@ -56,7 +61,7 @@ private:
     void OnHideWiggleSkillCheck(ESkillCheckCustomType type);
     
     UFUNCTION()
-    void OnChargeableCompleteEvent(bool completed, const TArray<AActor*>& instigatorsForCompletion);
+    void Local_OnLevelReadyToPlay();
     
 public:
     UFUNCTION(BlueprintPure)

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "EClaimType.h"
 #include "RetentionReward.h"
+#include "EClaimType.h"
 #include "RetentionCalendar.generated.h"
 
 USTRUCT()

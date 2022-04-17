@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ChaseComponent.h"
 #include "GameplayTagContainer.h"
 #include "ChaseUpdateInfo.h"
+#include "ChaseComponent.h"
 #include "ChaserCharacterComponent.generated.h"
 
-class APawn;
 class UDBDPawnSensingComponent;
 class ADBDPlayer;
 class ACamperPlayer;
+class APawn;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UChaserCharacterComponent : public UChaseComponent {

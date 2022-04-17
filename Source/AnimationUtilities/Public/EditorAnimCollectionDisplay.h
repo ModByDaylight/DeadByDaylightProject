@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
 #include "EditorCollectionMetadata.h"
+#include "GameplayTagContainer.h"
 #include "EditorAnimCollectionDisplay.generated.h"
 
 USTRUCT(BlueprintType)

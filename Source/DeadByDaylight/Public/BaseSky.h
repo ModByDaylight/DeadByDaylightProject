@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
-#include "GameFramework/Actor.h"
 #include "Fadeable.h"
+#include "GameFramework/Actor.h"
+#include "UObject/NoExportTypes.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BHVRPerDetailModeFloat -FallbackName=BHVRPerDetailModeFloat
 #include "BaseSky.generated.h"
 
-class UStaticMeshComponent;
-class UExponentialHeightFogComponent;
 class USkyLightComponent;
 class UPostProcessComponent;
+class UStaticMeshComponent;
 class UDirectionalLightComponent;
+class UExponentialHeightFogComponent;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ABaseSky : public AActor, public IFadeable {
@@ -32,11 +32,11 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     float ProbesSaturationValue;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
-    FBHVRPerDetailModeFloat ASMDepthBias;
+    //UPROPERTY(AdvancedDisplay, EditAnywhere)
+    //FBHVRPerDetailModeFloat ASMDepthBias;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
-    FBHVRPerDetailModeFloat ASMDepthAttenuation;
+    //UPROPERTY(AdvancedDisplay, EditAnywhere)
+    //FBHVRPerDetailModeFloat ASMDepthAttenuation;
     
 public:
     ABaseSky();

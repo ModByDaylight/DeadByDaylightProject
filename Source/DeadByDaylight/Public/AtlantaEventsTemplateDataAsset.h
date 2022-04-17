@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "Engine/DataAsset.h"
 #include "EEventsType.h"
+#include "Engine/DataAsset.h"
 #include "AtlantaEventsTemplateDataAsset.generated.h"
 
 class UUMGAtlantaBaseEventsTemplate;

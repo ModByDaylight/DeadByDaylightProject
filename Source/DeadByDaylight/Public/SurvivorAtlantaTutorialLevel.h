@@ -3,8 +3,8 @@
 #include "AtlantaTutorialLevel.h"
 #include "SurvivorAtlantaTutorialLevel.generated.h"
 
-class ASlasherPlayer;
 class ADBDAIPlayerController;
+class ASlasherPlayer;
 class ACamperPlayer;
 
 UCLASS()

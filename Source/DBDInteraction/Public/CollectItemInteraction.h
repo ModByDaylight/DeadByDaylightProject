@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "InteractionDefinition.h"
-#include "OnCollectUpdateStart.h"
-#include "OnCollectUpdateEnd.h"
+#include "OnCollectUpdateStartDelegate.h"
+#include "OnCollectUpdateEndDelegate.h"
 #include "CollectItemInteraction.generated.h"
 
 class ACollectable;

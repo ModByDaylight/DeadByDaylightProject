@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "K25Projectile.h"
 #include "PoolableActor.h"
-#include "OnAcquiredChanged.h"
+#include "K25Projectile.h"
+#include "OnAcquiredChangedDelegate.h"
 #include "DBDTunableRowHandle.h"
 #include "K25UncontrolledProjectile.generated.h"
 

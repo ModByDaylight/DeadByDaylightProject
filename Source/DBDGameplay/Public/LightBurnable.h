@@ -4,17 +4,17 @@
 #include "FirecrackerEffectData.h"
 #include "LightBurnable.generated.h"
 
-class UFlashlightComponent;
-class AActor;
-class UChargeableComponent;
 class UFirecrackerEffectHandlerComponent;
+class UChargeableComponent;
+class AActor;
 class UFlashlightableComponent;
+class UFlashlightComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API ULightBurnable : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnBurnChargeCompleteEvent, const TArray<AActor*>&, instigatorsForCompletion);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnBurnChargeCompleteEvent, const TArray<AActor*>&, instigatorsForCompletion);
     
     UPROPERTY(BlueprintAssignable)
     FOnBurnChargeCompleteEvent OnBurnChargeCompleteEvent;

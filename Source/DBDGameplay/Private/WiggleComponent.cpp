@@ -1,8 +1,10 @@
 #include "WiggleComponent.h"
+#include "ChargeableComponent.h"
 
 class ADBDPlayer;
-class AActor;
-class UChargeableComponent;
+
+void UWiggleComponent::Server_SetPlayerWiggleSkillCheckEnabled_Implementation(const bool enabled) {
+}
 
 void UWiggleComponent::Server_OnWiggleEnd_Implementation() {
 }
@@ -31,7 +33,7 @@ void UWiggleComponent::OnKeyBindingsChanged() {
 void UWiggleComponent::OnHideWiggleSkillCheck(ESkillCheckCustomType type) {
 }
 
-void UWiggleComponent::OnChargeableCompleteEvent(bool completed, const TArray<AActor*>& instigatorsForCompletion) {
+void UWiggleComponent::Local_OnLevelReadyToPlay() {
 }
 
 UChargeableComponent* UWiggleComponent::GetWiggleChargeable() const {
@@ -45,5 +47,6 @@ UWiggleComponent::UWiggleComponent() {
     this->_wiggleProgress = CreateDefaultSubobject<UChargeableComponent>(TEXT("WiggleChargeable"));
     this->_killerWigglingFrom = NULL;
     this->_inputComponent = NULL;
+    this->_wiggleInputLockTime = 0.02f;
 }
 

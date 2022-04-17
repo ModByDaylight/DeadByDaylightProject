@@ -1,16 +1,16 @@
 #include "AkGameplayStatics.h"
 
-class UAkAuxBus;
 class AActor;
+class UAkAuxBus;
 class UAkAudioBank;
-class UAkMediaAsset;
-class UAkAudioEvent;
 class UObject;
-class UAkStateValue;
+class UAkAudioEvent;
 class UAkComponent;
 class UAkSwitchValue;
+class UAkStateValue;
 class UAkRtpc;
 class UAkTrigger;
+class UAkMediaAsset;
 class USceneComponent;
 class UAkAudioType;
 

@@ -2,16 +2,16 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Components/ActorComponent.h"
-#include "AITypes.h"
 #include "DBDTunableRowHandle.h"
+#include "AITypes.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "PurpleGlyphComponent.generated.h"
 
+class ADBDPlayer;
 class UNavigationQueryFilter;
 class UTileSpawnPoint;
 class UBloodTrailSettings;
-class ADBDPlayer;
 class AGlyph;
 
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))

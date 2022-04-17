@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MobileBaseUserWidget.h"
 #include "EInboxMessageUIType.h"
+#include "MobileBaseUserWidget.h"
 #include "InboxMessageUIData.h"
 #include "EInboxScreenButton.h"
 #include "UMGInboxScreen.generated.h"

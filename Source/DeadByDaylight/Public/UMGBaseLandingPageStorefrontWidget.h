@@ -5,9 +5,9 @@
 #include "UObject/NoExportTypes.h"
 #include "UMGBaseLandingPageStorefrontWidget.generated.h"
 
-class UUMGLandingPageButtonWidget;
-class UHorizontalBox;
 class UVerticalBox;
+class UHorizontalBox;
+class UUMGLandingPageButtonWidget;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGBaseLandingPageStorefrontWidget : public UUMGBaseStorefrontWidget {

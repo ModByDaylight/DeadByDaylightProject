@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EDBDScoreTypes.h"
 #include "Components/ActorComponent.h"
 #include "AtlantaRitualSet.h"
+#include "EDBDScoreTypes.h"
 #include "GameplayTagContainer.h"
 #include "GameEventData.h"
 #include "DedicatedServerHandlerComponent.generated.h"

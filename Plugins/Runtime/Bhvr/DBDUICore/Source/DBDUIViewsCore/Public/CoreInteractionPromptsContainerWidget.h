@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "Layout/Margin.h"
 #include "CoreBaseHudWidget.h"
 #include "InteractionPromptsContainerViewInterface.h"
 #include "TutorialHighlightViewInterface.h"
-#include "Layout/Margin.h"
 #include "CoreInteractionPromptsContainerWidget.generated.h"
 
 class UCoreInteractionPromptWidget;

@@ -3,8 +3,8 @@
 #include "ChargeableComponent.h"
 
 class APallet;
-class AZombieCharacter;
 class ABreakableBase;
+class AZombieCharacter;
 
 
 

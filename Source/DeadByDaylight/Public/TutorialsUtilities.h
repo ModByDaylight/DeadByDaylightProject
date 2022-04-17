@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "TutorialUIReadyEventDynamicDelegate.h"
+#include "TutorialUIReadyEventDynamicDelegateDelegate.h"
 #include "TutorialsUtilities.generated.h"
 
+class ATutorialsUtilities;
 class UObject;
 class AAIController;
-class ATutorialsUtilities;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ATutorialsUtilities : public AActor {

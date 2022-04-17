@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EquippedPowerViewInterface.h"
 #include "CoreBaseHudWidget.h"
+#include "EquippedPowerViewInterface.h"
 #include "CoreEquippedPowerWidget.generated.h"
 
 UCLASS(EditInlineNew)

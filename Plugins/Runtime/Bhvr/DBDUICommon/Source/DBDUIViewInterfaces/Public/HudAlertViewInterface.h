@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
-#include "StatusEffectAlertViewData.h"
 #include "ScoreAlertViewData.h"
+#include "StatusEffectAlertViewData.h"
 #include "HudAlertViewInterface.generated.h"
 
 UINTERFACE(Blueprintable)

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PhysicsBasedProjectileMovementComponent.h"
 #include "DBDTunableRowHandle.h"
+#include "PhysicsBasedProjectileMovementComponent.h"
 #include "TunableStat.h"
 #include "K25ControlledProjectileMovementComponent.generated.h"
 

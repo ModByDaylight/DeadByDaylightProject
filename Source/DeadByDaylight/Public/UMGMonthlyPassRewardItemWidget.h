@@ -4,9 +4,9 @@
 #include "UObject/NoExportTypes.h"
 #include "UMGMonthlyPassRewardItemWidget.generated.h"
 
-class UCanvasPanel;
 class UTextBlock;
 class UImage;
+class UCanvasPanel;
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGMonthlyPassRewardItemWidget : public UMobileBaseUserWidget {

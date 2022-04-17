@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Animation/AnimInstance.h"
-#include "OnDynamicEvent.h"
 #include "UObject/NoExportTypes.h"
+#include "OnDynamicEventDelegate.h"
 #include "UObject/NoExportTypes.h"
 #include "EOniAttackType.h"
 #include "TagStateBool.h"
@@ -15,9 +15,9 @@ class UAnimMontage;
 class UPortalPlacerStateComponent;
 class UChargedAttackStateComponent;
 class UOniDemonModeAttackStateComponent;
+class UArmIKSensorComponent;
 class UEvilWithinComponent;
 class UFrenzyComponent;
-class UArmIKSensorComponent;
 class UPhaseWalkingComponent;
 
 UCLASS(NonTransient)

@@ -3,8 +3,8 @@
 #include "ChargeableInteractionDefinition.h"
 #include "OpenSupplyCrateInteraction.generated.h"
 
-class UAnimSequence;
 class ASupplyCrateInteractable;
+class UAnimSequence;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UOpenSupplyCrateInteraction : public UChargeableInteractionDefinition {

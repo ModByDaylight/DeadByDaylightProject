@@ -3,9 +3,9 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGAtlantaEventsDescription.generated.h"
 
-class UTextBlock;
 class UCanvasPanel;
 class UAtlantaEventsTemplateDataAsset;
+class UTextBlock;
 class UUMGBaseButtonWidget;
 
 UCLASS(Abstract, EditInlineNew)

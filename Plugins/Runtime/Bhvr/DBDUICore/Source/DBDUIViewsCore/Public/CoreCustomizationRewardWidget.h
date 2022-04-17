@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CustomizationRewardViewData.h"
 #include "CoreRewardWidget.h"
+#include "CustomizationRewardViewData.h"
 #include "CoreCustomizationRewardWidget.generated.h"
 
 UCLASS(EditInlineNew)

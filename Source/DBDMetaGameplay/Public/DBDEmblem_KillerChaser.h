@@ -6,8 +6,8 @@
 
 class ACamperPlayer;
 class UCurveFloat;
-class ADBDPlayer;
 class UDBDRankDesignTunables;
+class ADBDPlayer;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UDBDEmblem_KillerChaser : public UDBDEmblem {

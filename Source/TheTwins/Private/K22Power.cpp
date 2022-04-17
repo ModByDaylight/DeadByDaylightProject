@@ -1,10 +1,10 @@
 #include "K22Power.h"
 #include "Net/UnrealNetwork.h"
+#include "ChargeableComponent.h"
 #include "PowerChargeComponent.h"
 #include "K22PowerChargePresentationItemProgressComponent.h"
 
 class AConjoinedTwin;
-class UChargeableComponent;
 
 void AK22Power::OnRep_ConjoinedTwin() {
 }

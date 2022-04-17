@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CharacterDreamworldComponent.h"
-#include "FastTimer.h"
+#include "OnCamperTriggeredDreamTrapDelegate.h"
 #include "SurvivorSleepiness.h"
-#include "OnCamperTriggeredDreamTrap.h"
+#include "FastTimer.h"
 #include "CamperDreamworldComponent.generated.h"
 
-class ADBDPlayer;
-class AWakerObject;
-class ASlasherPlayer;
 class AActor;
+class AWakerObject;
+class ADBDPlayer;
+class ASlasherPlayer;
 
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCamperDreamworldComponent : public UCharacterDreamworldComponent {

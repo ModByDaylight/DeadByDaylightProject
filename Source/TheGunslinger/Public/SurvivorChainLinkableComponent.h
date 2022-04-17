@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "GameplayTagContainer.h"
 #include "ChainLinkableComponent.h"
 #include "DBDTunableRowHandle.h"
+#include "GameplayTagContainer.h"
 #include "Engine/NetSerialization.h"
 #include "SurvivorChainLinkableComponent.generated.h"
 
-class USurvivorReelVelocityAdditiveStrategy;
 class UStatusEffect;
+class USurvivorReelVelocityAdditiveStrategy;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API USurvivorChainLinkableComponent : public UChainLinkableComponent {

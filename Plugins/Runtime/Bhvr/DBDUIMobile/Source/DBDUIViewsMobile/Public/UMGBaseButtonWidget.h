@@ -5,18 +5,18 @@
 #include "UMGBaseButtonWidget.generated.h"
 
 class UImage;
-class UTextBlock;
 class UButton;
+class UTextBlock;
 class UAkAudioEvent;
 
 UCLASS(Abstract, EditInlineNew)
 class DBDUIVIEWSMOBILE_API UUMGBaseButtonWidget : public UMobileBaseUserWidget {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBaseButtonReleased);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBaseButtonPressed);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBaseButtonLongPress);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBaseButtonClicked);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBaseButtonReleased);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBaseButtonPressed);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBaseButtonLongPress);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBaseButtonClicked);
     
     UPROPERTY(BlueprintAssignable)
     FOnBaseButtonClicked OnBaseButtonClickedEvent;

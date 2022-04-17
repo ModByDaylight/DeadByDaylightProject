@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MatchResultViewInterface.h"
 #include "CoreBaseHudWidget.h"
+#include "MatchResultViewInterface.h"
 #include "CoreMatchResultWidget.generated.h"
 
 UCLASS(EditInlineNew)

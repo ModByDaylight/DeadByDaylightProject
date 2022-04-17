@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AtlantaSubRitualUIData.h"
 #include "EAltantaRitualUIType.h"
 #include "AtlantaRitualRewardUIData.h"
+#include "AtlantaSubRitualUIData.h"
 #include "AtlantaRitualUIData.generated.h"
 
 USTRUCT(BlueprintType)

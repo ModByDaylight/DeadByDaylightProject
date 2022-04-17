@@ -3,8 +3,8 @@
 #include "ChargeableInteractionDefinition.h"
 #include "HealInteraction.generated.h"
 
-class ACamperPlayer;
 class AActor;
+class ACamperPlayer;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DBDINTERACTION_API UHealInteraction : public UChargeableInteractionDefinition {

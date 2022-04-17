@@ -1,8 +1,8 @@
 #include "K26PathPart.h"
 #include "Components/StaticMeshComponent.h"
-#include "K26PowerOutlineUpdateStrategy.h"
 #include "DBDOutlineComponent.h"
 #include "NiagaraComponent.h"
+#include "K26PowerOutlineUpdateStrategy.h"
 #include "Components/SceneComponent.h"
 
 AK26PathPart::AK26PathPart() {

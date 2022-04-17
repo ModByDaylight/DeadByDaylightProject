@@ -6,10 +6,10 @@
 #include "Engine/EngineTypes.h"
 #include "RekindledTotem.generated.h"
 
-class AActor;
-class USourceBasedOutlineUpdateStrategy;
 class UDBDOutlineComponent;
 class ATotem;
+class USourceBasedOutlineUpdateStrategy;
+class AActor;
 
 UCLASS()
 class THEK26_API ARekindledTotem : public AStaticMeshActor {

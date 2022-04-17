@@ -2,21 +2,21 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "ChargeableProgressSource.h"
-#include "NonTunableStat.h"
 #include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
 #include "EProgressModifier.h"
+#include "NonTunableStat.h"
 #include "RifleChainTensionComponent.generated.h"
 
 class USurvivorChainLinkableComponent;
-class AActor;
 class ARifleChain;
+class AActor;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API URifleChainTensionComponent : public UActorComponent, public IChargeableProgressSource {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsBuildingTensionChanged, bool, isBuildingTension);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsBuildingTensionChanged, bool, isBuildingTension);
     
     UPROPERTY(BlueprintAssignable)
     FOnIsBuildingTensionChanged OnIsBuildingTensionChanged;

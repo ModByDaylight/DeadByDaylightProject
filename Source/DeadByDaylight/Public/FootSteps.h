@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "FootStep.h"
 #include "GameFramework/Actor.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BHVRPerDetailModeFloat -FallbackName=BHVRPerDetailModeFloat
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BHVRPerDetailModeInt -FallbackName=BHVRPerDetailModeInt
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BHVRPerDetailModeFloat -FallbackName=BHVRPerDetailModeFloat
+#include "FootStep.h"
 #include "UObject/NoExportTypes.h"
 #include "FootSteps.generated.h"
 
+class UDBDDecalComponent;
 class UMaterial;
 class UCurveFloat;
-class UDBDDecalComponent;
 class UDecalSpawner;
 
 UCLASS()
@@ -47,17 +47,17 @@ private:
     UPROPERTY(EditDefaultsOnly)
     UCurveFloat* _veinsCurve;
     
-    UPROPERTY(EditDefaultsOnly)
-    FBHVRPerDetailModeInt _decalPoolSize;
+    //UPROPERTY(EditDefaultsOnly)
+    //FBHVRPerDetailModeInt _decalPoolSize;
     
-    UPROPERTY(EditDefaultsOnly)
-    FBHVRPerDetailModeFloat _recycleThresholdPercentage;
+    //UPROPERTY(EditDefaultsOnly)
+    //FBHVRPerDetailModeFloat _recycleThresholdPercentage;
     
-    UPROPERTY(EditDefaultsOnly)
-    FBHVRPerDetailModeFloat _recycleDistancePercentage;
+    //UPROPERTY(EditDefaultsOnly)
+    //FBHVRPerDetailModeFloat _recycleDistancePercentage;
     
-    UPROPERTY(EditDefaultsOnly)
-    FBHVRPerDetailModeInt _maxOverlapping;
+    //UPROPERTY(EditDefaultsOnly)
+    //FBHVRPerDetailModeInt _maxOverlapping;
     
     UPROPERTY(Transient)
     TMap<UDBDDecalComponent*, FFootStep> _footSteps;

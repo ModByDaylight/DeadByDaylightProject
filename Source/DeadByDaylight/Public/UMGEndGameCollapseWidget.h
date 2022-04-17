@@ -3,8 +3,8 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGEndGameCollapseWidget.generated.h"
 
-class UUMGEndGameCollapseProgressWidget;
 class UCanvasPanel;
+class UUMGEndGameCollapseProgressWidget;
 
 UCLASS(EditInlineNew)
 class UUMGEndGameCollapseWidget : public UMobileBaseUserWidget {

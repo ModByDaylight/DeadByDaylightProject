@@ -3,8 +3,8 @@
 #include "Components/ActorComponent.h"
 #include "DemogorgonPortalEffectComponent.generated.h"
 
-class UStatusEffect;
 class ADBDPlayer;
+class UStatusEffect;
 class UGameplayModifierContainer;
 
 UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))

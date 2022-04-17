@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "OnSettingMenuButtonClickEvent.h"
+#include "OnSettingMenuButtonClickEventDelegate.h"
 #include "UMGSettingContextButton.generated.h"
 
 UCLASS(Abstract, EditInlineNew)

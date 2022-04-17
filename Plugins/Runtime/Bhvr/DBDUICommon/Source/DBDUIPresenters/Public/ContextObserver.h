@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UIComponent.h"
 #include "EContextSection.h"
+#include "UIComponent.h"
 #include "ContextObserver.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

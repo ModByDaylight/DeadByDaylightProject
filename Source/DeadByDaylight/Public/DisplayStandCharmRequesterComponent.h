@@ -4,8 +4,8 @@
 #include "Components/ActorComponent.h"
 #include "DisplayStandCharmRequesterComponent.generated.h"
 
-class AActor;
 class ACharm;
+class AActor;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDisplayStandCharmRequesterComponent : public UActorComponent {

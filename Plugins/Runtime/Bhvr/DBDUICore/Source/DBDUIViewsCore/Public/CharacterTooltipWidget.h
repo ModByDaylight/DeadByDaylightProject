@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECharacterDifficulty.h"
-#include "CoreBaseUserWidget.h"
 #include "CharacterTooltipViewData.h"
+#include "CoreBaseUserWidget.h"
+#include "ECharacterDifficulty.h"
 #include "CharacterTooltipWidget.generated.h"
 
-class UDBDTextBlock;
 class UDBDRichTextBlock;
+class UDBDTextBlock;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCharacterTooltipWidget : public UCoreBaseUserWidget {

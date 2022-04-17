@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NavLinkProxy_Base.h"
 #include "UObject/NoExportTypes.h"
+#include "NavLinkProxy_Base.h"
 #include "NavLinkProxy_DirectMove.generated.h"
 
-class UNavMovePath;
 class ADBDPlayer;
+class UNavMovePath;
 
 UCLASS()
 class DBDBOTS_API ANavLinkProxy_DirectMove : public ANavLinkProxy_Base {

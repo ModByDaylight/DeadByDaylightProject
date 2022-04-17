@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AITunableParameter.h"
 #include "AISkill_FindInteractable.h"
 #include "DBDTunableRowHandle.h"
+#include "AITunableParameter.h"
 #include "AISkill_FindInteractable_CrushTwin.generated.h"
 
 UCLASS(EditInlineNew)

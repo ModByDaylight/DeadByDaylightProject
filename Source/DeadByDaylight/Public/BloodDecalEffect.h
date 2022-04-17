@@ -3,10 +3,10 @@
 #include "Engine/DataAsset.h"
 #include "BloodDecalEffect.generated.h"
 
+class UTexture2D;
 class UBloodDecalEffectIntensity;
 class UCurveFloat;
 class UMaterialInterface;
-class UTexture2D;
 
 UCLASS()
 class UBloodDecalEffect : public UDataAsset {

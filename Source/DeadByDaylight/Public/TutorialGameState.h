@@ -8,7 +8,7 @@ UCLASS()
 class DEADBYDAYLIGHT_API ATutorialGameState : public ADBDGameState {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCurrentTutorialStepChanged, ETutorialStep, step);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCurrentTutorialStepChanged, ETutorialStep, step);
     
     UPROPERTY(BlueprintAssignable)
     FOnCurrentTutorialStepChanged OnCurrentTutorialStepChanged;

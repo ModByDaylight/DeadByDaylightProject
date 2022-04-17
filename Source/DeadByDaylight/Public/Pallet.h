@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
 #include "Interactable.h"
-#include "PalletPushSettings.h"
 #include "EPalletState.h"
+#include "PalletPushSettings.h"
 #include "EPalletStunZoneSideStrategy.h"
+#include "Engine/EngineTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "Pallet.generated.h"
 
-class USkeletalMeshComponent;
-class AActor;
 class UBoxComponent;
 class UInteractionDefinition;
-class UDBDNavEvadeLoopComponent;
+class USkeletalMeshComponent;
+class AActor;
 class ADBDPlayer;
+class UDBDNavEvadeLoopComponent;
 class UPalletPulldownBlockerComponent;
 class UPrimitiveComponent;
 class ACamperPlayer;

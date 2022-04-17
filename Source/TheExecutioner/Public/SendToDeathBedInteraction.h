@@ -3,8 +3,8 @@
 #include "ChargeableInteractionDefinition.h"
 #include "SendToDeathBedInteraction.generated.h"
 
-class ACamperPlayer;
 class ADeathBedInteractable;
+class ACamperPlayer;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class USendToDeathBedInteraction : public UChargeableInteractionDefinition {

@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "Components/SceneComponent.h"
 #include "UObject/NoExportTypes.h"
-#include "AnimationMontageDescriptor.h"
-#include "GameplayTagContainer.h"
 #include "UObject/NoExportTypes.h"
+#include "AnimationMontageDescriptor.h"
 #include "UObject/NoExportTypes.h"
 #include "InterruptionDefinition.generated.h"
 
-class ADBDPlayer;
 class UInteractionDefinition;
+class ADBDPlayer;
 class AInteractable;
 
 UCLASS(Blueprintable, EditInlineNew, meta=(BlueprintSpawnableComponent))

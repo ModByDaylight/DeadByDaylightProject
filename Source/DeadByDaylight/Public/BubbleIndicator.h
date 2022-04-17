@@ -16,6 +16,9 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     bool _displayToLocallyObserved;
     
+    UPROPERTY(BlueprintReadOnly)
+    bool _isInRange;
+    
 public:
     ABubbleIndicator();
     UFUNCTION(BlueprintImplementableEvent)

@@ -5,10 +5,10 @@
 #include "EPlayerRole.h"
 #include "UMGPlayerRankInfo.generated.h"
 
+class UCanvasPanel;
 class UUMGTallyPipsContainer;
 class UUMGTallyRankFrame;
 class UImage;
-class UCanvasPanel;
 class UTextBlock;
 
 UCLASS(Abstract, EditInlineNew)

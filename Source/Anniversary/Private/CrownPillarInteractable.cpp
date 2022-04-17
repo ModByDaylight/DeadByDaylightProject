@@ -1,12 +1,12 @@
 #include "CrownPillarInteractable.h"
-#include "NearTrackedActorComponent.h"
-#include "CrownPickupInteraction.h"
 #include "ChargeableComponent.h"
-#include "CrownPillarOutlineUpdateStrategy.h"
+#include "CrownPickupInteraction.h"
 #include "Interactor.h"
-#include "Components/StaticMeshComponent.h"
 #include "Components/BoxComponent.h"
+#include "Components/StaticMeshComponent.h"
 #include "DBDOutlineComponent.h"
+#include "NearTrackedActorComponent.h"
+#include "CrownPillarOutlineUpdateStrategy.h"
 
 void ACrownPillarInteractable::Local_OnIntroCompleted() {
 }

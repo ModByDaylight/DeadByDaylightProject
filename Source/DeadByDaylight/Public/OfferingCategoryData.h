@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPlayerRole.h"
-#include "DBDTableRowBase.h"
 #include "EOfferingCategory.h"
+#include "DBDTableRowBase.h"
+#include "EPlayerRole.h"
 #include "ItemUIData.h"
 #include "OfferingCategoryData.generated.h"
 

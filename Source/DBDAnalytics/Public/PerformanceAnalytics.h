@@ -203,6 +203,15 @@ public:
     int32 MaxMemoryUsedKilobytes;
     
     UPROPERTY()
+    int32 DynamicResolutionScreenPercentageAvg;
+    
+    UPROPERTY()
+    int32 DynamicResolutionScreenPercentageMax;
+    
+    UPROPERTY()
+    int32 DynamicResolutionScreenPercentageMin;
+    
+    UPROPERTY()
     int32 MatchCount;
     
     UPROPERTY()

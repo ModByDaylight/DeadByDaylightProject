@@ -3,8 +3,8 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "PlagueUtilities.generated.h"
 
-class USurvivorPlagueEffect;
 class ADBDPlayer;
+class USurvivorPlagueEffect;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UPlagueUtilities : public UBlueprintFunctionLibrary {

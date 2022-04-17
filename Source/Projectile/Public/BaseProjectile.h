@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Engine/EngineTypes.h"
-#include "GameplayTagContainer.h"
-#include "UObject/NoExportTypes.h"
 #include "LaunchInfo.h"
+#include "UObject/NoExportTypes.h"
+#include "GameplayTagContainer.h"
+#include "Engine/EngineTypes.h"
 #include "ImpactInfo.h"
 #include "UObject/NoExportTypes.h"
 #include "BaseProjectile.generated.h"
 
 class USphereComponent;
 class UBaseProjectileReplicationComponent;
-class UBaseProjectileLauncher;
 class UPrimitiveComponent;
+class UBaseProjectileLauncher;
 
 UCLASS()
 class PROJECTILE_API ABaseProjectile : public AActor {

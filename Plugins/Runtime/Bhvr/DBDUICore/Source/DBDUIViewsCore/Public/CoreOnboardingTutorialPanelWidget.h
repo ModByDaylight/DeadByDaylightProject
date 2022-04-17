@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CoreBaseUserWidget.h"
-#include "TutorialSelectedDelegate.h"
 #include "OnboardingTutorialViewInterface.h"
+#include "TutorialSelectedDelegateDelegate.h"
 #include "PendingStepData.h"
 #include "CoreOnboardingTutorialPanelWidget.generated.h"
 

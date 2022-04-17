@@ -3,9 +3,9 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGStreamVideoWidget.generated.h"
 
+class UUMGBaseButtonWidget;
 class UImage;
 class UButton;
-class UUMGBaseButtonWidget;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGStreamVideoWidget : public UMobileBaseUserWidget {

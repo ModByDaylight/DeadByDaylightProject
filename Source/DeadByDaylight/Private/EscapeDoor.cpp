@@ -1,16 +1,16 @@
 #include "EscapeDoor.h"
 #include "Net/UnrealNetwork.h"
-#include "Components/SceneComponent.h"
-#include "Perception/AIPerceptionStimuliSourceComponent.h"
-#include "BlockableComponent.h"
 #include "ChargeableComponent.h"
 #include "AkComponent.h"
+#include "BlockableComponent.h"
+#include "Components/SceneComponent.h"
+#include "Perception/AIPerceptionStimuliSourceComponent.h"
 
 class AEscapeBlocker;
 class ADBDPlayer;
+class ACamperPlayer;
 class AActor;
 class USkeletalMeshComponent;
-class ACamperPlayer;
 
 void AEscapeDoor::StartAtlantaDoorOpeningSound() {
 }

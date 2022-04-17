@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BatchMeshCommands.h"
-#include "DBDOutlineRenderStrategySelector.h"
 #include "UObject/NoExportTypes.h"
+#include "DBDOutlineRenderStrategySelector.h"
 #include "DBDOutlineComponent.generated.h"
 
-class UBaseOutlineRenderStrategy;
 class UMaterialInterface;
+class UBaseOutlineRenderStrategy;
 class UTexture;
 
 UCLASS(meta=(BlueprintSpawnableComponent))

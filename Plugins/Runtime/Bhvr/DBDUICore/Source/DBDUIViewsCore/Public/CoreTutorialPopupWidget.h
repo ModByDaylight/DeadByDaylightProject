@@ -1,10 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TutorialPopupViewInterface.h"
+#include "NotifTutoConfirmButtonClickDelegateDelegate.h"
 #include "CoreBaseHudWidget.h"
-#include "NotifTutoConfirmButtonClickDelegate.h"
+#include "TutorialPopupViewInterface.h"
 #include "CoreTutorialPopupWidget.generated.h"
 
+class UCoreInputSwitcherWidget;
 class UAkAudioEvent;
 
 UCLASS(EditInlineNew)
@@ -12,6 +13,9 @@ class DBDUIVIEWSCORE_API UCoreTutorialPopupWidget : public UCoreBaseHudWidget, p
     GENERATED_BODY()
 public:
 protected:
+    UPROPERTY(BlueprintReadOnly, Export)
+    UCoreInputSwitcherWidget* ProgressionInputSwitcher;
+    
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     UAkAudioEvent* ClosePopupSfx;
     

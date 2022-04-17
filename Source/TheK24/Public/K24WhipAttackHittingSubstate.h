@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTunableRowHandle.h"
 #include "PounceAttackHittingSubstate.h"
+#include "DBDTunableRowHandle.h"
 #include "UObject/NoExportTypes.h"
 #include "K24WhipAttackHittingSubstate.generated.h"
 

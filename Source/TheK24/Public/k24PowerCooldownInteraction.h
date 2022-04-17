@@ -4,8 +4,8 @@
 #include "InteractionDefinition.h"
 #include "k24PowerCooldownInteraction.generated.h"
 
-class UCurveFloat;
 class AK24Power;
+class UCurveFloat;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class Uk24PowerCooldownInteraction : public UInteractionDefinition {

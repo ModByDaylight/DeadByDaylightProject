@@ -9,9 +9,9 @@ UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreButtonSelector : public UCoreBaseUserWidget {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUnselectedDelegate, UCoreSelectableButtonWidget*, unselectedButton);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSelectedDelegate, UCoreSelectableButtonWidget*, selectedButton);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSelectedAgainDelegate, UCoreSelectableButtonWidget*, selectedButton);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUnselectedDelegate, UCoreSelectableButtonWidget*, unselectedButton);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSelectedDelegate, UCoreSelectableButtonWidget*, selectedButton);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSelectedAgainDelegate, UCoreSelectableButtonWidget*, selectedButton);
     
     UPROPERTY(BlueprintAssignable)
     FOnSelectedDelegate OnSelectedDelegate;

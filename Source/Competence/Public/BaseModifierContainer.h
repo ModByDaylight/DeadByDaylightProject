@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "ConditionReceiver.h"
 #include "Components/ActorComponent.h"
+#include "ConditionReceiver.h"
 #include "ModifierReplicatedEventConditionData.h"
 #include "BaseModifierContainer.generated.h"
 

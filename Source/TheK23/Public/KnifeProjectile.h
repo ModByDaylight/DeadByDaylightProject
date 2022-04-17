@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "KillerProjectile.h"
 #include "Engine/EngineTypes.h"
 #include "DBDTunableRowHandle.h"
-#include "UObject/NoExportTypes.h"
 #include "LaunchInfo.h"
 #include "KnifeProjectile.generated.h"
 

@@ -4,8 +4,8 @@
 #include "UMGRewardSlotTutorialPopupRewardWidget.generated.h"
 
 class UTextBlock;
-class UWidget;
 class UImage;
+class UWidget;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGRewardSlotTutorialPopupRewardWidget : public UMobileBaseUserWidget {

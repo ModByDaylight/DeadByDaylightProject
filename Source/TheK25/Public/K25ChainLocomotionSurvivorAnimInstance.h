@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BaseSurvivorAnimInstance.h"
-#include "EK25ChainAnchorPointDirection.h"
-#include "K25ChainAnchorAnimationData.h"
 #include "EK25ChainDetachmentReason.h"
+#include "K25ChainAnchorAnimationData.h"
+#include "EK25ChainAnchorPointDirection.h"
 #include "K25SurvivorChainAttachmentData.h"
 #include "K25ChainLocomotionSurvivorAnimInstance.generated.h"
 
-class UK25SurvivorChainAttachmentComponent;
 class AK25Chain;
 class UChargeableComponent;
 class AK25SurvivorChainAttachmentAnchor;
+class UK25SurvivorChainAttachmentComponent;
 
 UCLASS(NonTransient)
 class UK25ChainLocomotionSurvivorAnimInstance : public UBaseSurvivorAnimInstance {

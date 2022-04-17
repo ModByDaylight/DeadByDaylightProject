@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AttackableComponent.h"
+#include "PlayerHitCosmeticParams.h"
 #include "EAttackType.h"
 #include "SurvivorAttackableComponent.generated.h"
 
-class ADBDPlayer;
 class AActor;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
@@ -14,10 +14,10 @@ public:
     USurvivorAttackableComponent();
 private:
     UFUNCTION(NetMulticast, Reliable)
-    void Multicast_HitCosmetic_NonLocal(const ADBDPlayer* attacker, EAttackType attackType, bool causedKO, bool isWeaponHit);
+    void Multicast_HitCosmetic_NonLocal(FPlayerHitCosmeticParams params);
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
-    void Multicast_HitCosmetic(const AActor* attacker, EAttackType attackType, bool causedKO, bool isWeaponHit);
+    void Multicast_HitCosmetic(FPlayerHitCosmeticParams params);
     
 public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)

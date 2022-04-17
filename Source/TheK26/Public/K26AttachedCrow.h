@@ -10,12 +10,12 @@
 #include "ECamperDamageState.h"
 #include "K26AttachedCrow.generated.h"
 
-class UK26PowerOutlineUpdateStrategy;
-class UDBDOutlineComponent;
-class UFlashlightableComponent;
+class UChargeableComponent;
 class ULightBurnable;
 class UFirecrackerEffectHandlerComponent;
-class UChargeableComponent;
+class UFlashlightableComponent;
+class UK26PowerOutlineUpdateStrategy;
+class UDBDOutlineComponent;
 class UStaticMeshComponent;
 class USceneComponent;
 class UK26PowerStatusHandlerComponent;

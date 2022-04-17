@@ -3,8 +3,8 @@
 #include "Components/ActorComponent.h"
 #include "BlindingFXComponent.generated.h"
 
-class UPostProcessComponent;
 class UCurveFloat;
+class UPostProcessComponent;
 class UMaterialInstanceDynamic;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))

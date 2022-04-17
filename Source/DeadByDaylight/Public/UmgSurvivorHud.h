@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UmgPlayableHud.h"
-#include "Styling/SlateBrush.h"
 #include "UObject/NoExportTypes.h"
+#include "Styling/SlateBrush.h"
 #include "UmgSurvivorHud.generated.h"
 
-class UActionButton;
 class UCanvasPanel;
-class UWiggleWidget;
+class UActionButton;
 class UAtlantaHudLookBackJoystick;
+class UWiggleWidget;
 class ACamperPlayer;
 class UTexture2D;
 

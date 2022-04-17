@@ -3,9 +3,9 @@
 #include "Perk.h"
 #include "Deathbound.generated.h"
 
-class ACamperPlayer;
 class UStatusEffect;
 class ADBDPlayer;
+class ACamperPlayer;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UDeathbound : public UPerk {

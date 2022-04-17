@@ -3,12 +3,12 @@
 #include "HudEditorDragFromParentAxisLimit.h"
 #include "CustomWidgetWrapper.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "GameplayTagContainer.h"
+#include "UObject/NoExportTypes.h"
 #include "CustomWidgetWrapper_HudEditor.generated.h"
 
-class UWidget;
 class UCustomWidgetWrapper_HudEditor;
+class UWidget;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UCustomWidgetWrapper_HudEditor : public UCustomWidgetWrapper {

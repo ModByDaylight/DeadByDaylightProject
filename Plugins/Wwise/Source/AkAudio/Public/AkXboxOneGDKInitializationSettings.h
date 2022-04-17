@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
 #include "AkXboxOneGDKApuHeapInitializationSettings.h"
+#include "UObject/Object.h"
 #include "AkCommonInitializationSettings.h"
 #include "AkCommunicationSettingsWithSystemInitialization.h"
 #include "AkXboxOneGDKAdvancedInitializationSettings.h"

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "InboxMessageUIData.h"
 #include "InboxMessageElapsedTime.h"
+#include "InboxMessageUIData.h"
 #include "UMGInboxMessageEntryWidget.generated.h"
 
 UCLASS(EditInlineNew)

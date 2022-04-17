@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "OnPortalEffectsApplied.h"
+#include "OnPortalEffectsAppliedDelegate.h"
 #include "PortalRadiusDetectorComponent.generated.h"
 
-class ADemogorgonPortal;
 class ADBDPlayer;
+class ADemogorgonPortal;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UPortalRadiusDetectorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPortalEffectsAppliedMultiDelegate);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPortalEffectsAppliedMultiDelegate);
     
 private:
     UPROPERTY(Transient)

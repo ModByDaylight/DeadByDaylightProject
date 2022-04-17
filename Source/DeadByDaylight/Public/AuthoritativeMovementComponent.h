@@ -4,10 +4,10 @@
 #include "Engine/EngineTypes.h"
 #include "AuthoritativeMovementComponent.generated.h"
 
-class ACharacter;
-class UCapsuleComponent;
-class UPrimitiveComponent;
 class AActor;
+class ACharacter;
+class UPrimitiveComponent;
+class UCapsuleComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UAuthoritativeMovementComponent : public UActorComponent {

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BHVRPerDetailModeFloat -FallbackName=BHVRPerDetailModeFloat
+#include "Components/ActorComponent.h"
 #include "DistanceBasedTickDisabler.generated.h"
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
@@ -15,8 +15,8 @@ private:
     UPROPERTY(EditAnywhere)
     bool _autoRegisterTimelines;
     
-    UPROPERTY(EditAnywhere)
-    FBHVRPerDetailModeFloat _tickDisableDistance;
+    //UPROPERTY(EditAnywhere)
+    //FBHVRPerDetailModeFloat _tickDisableDistance;
     
     UPROPERTY(EditAnywhere)
     bool _insignificantWhenBehindTheCamera;

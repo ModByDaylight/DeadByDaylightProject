@@ -6,18 +6,18 @@
 #include "TunableStat.h"
 #include "TormentMode.generated.h"
 
-class UTormentTrailPointCollectionComponent;
+class UTormentTrailDetectorComponent;
 class UChargeableComponent;
 class UPowerChargeComponent;
-class UPowerChargePresentationItemProgressComponent;
 class UPowerToggleComponent;
-class UTormentTrailSpawnerComponent;
+class AMobileTormentTrailRenderer;
+class UPowerChargePresentationItemProgressComponent;
 class UAuthoritativeActorPoolComponent;
+class UTormentTrailSpawnerComponent;
+class UTormentTrailPointCollectionComponent;
 class UAgonyComponent;
 class UTormentModeCooldownInteraction;
-class UTormentTrailDetectorComponent;
 class UCurveFloat;
-class AMobileTormentTrailRenderer;
 
 UCLASS()
 class THEEXECUTIONER_API ATormentMode : public ACollectable {

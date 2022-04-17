@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/Widget.h"
 #include "AkWwiseItemToControl.h"
+#include "Components/Widget.h"
 #include "Components/Widget.h"
 #include "UObject/NoExportTypes.h"
 #include "Styling/SlateTypes.h"
-#include "AkOnFloatValueChangedEvent.h"
 #include "Types/SlateEnums.h"
 #include "AkPropertyToControl.h"
+#include "AkOnFloatValueChangedEventDelegate.h"
+#include "OnItemDropDetectedDelegate.h"
+#include "OnPropertyDropDetectedDelegate.h"
 #include "UObject/NoExportTypes.h"
-#include "OnItemDropDetected.h"
-#include "OnPropertyDropDetected.h"
 #include "AkSlider.generated.h"
 
 UCLASS(DefaultConfig, Config=Editor)

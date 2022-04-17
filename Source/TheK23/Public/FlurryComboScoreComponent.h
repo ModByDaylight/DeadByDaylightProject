@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "DBDTunableRowHandle.h"
 #include "GameplayTagContainer.h"
+#include "DBDTunableRowHandle.h"
 #include "FlurryComboScoreComponent.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

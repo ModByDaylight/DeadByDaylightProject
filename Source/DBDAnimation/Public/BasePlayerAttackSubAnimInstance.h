@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AnimSequenceSelector.h"
 #include "PlayerAnimInstance.h"
 #include "EAttackSubstate.h"
+#include "AnimSequenceSelector.h"
 #include "BasePlayerAttackSubAnimInstance.generated.h"
 
 UCLASS(NonTransient)

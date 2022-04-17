@@ -1,9 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EInputSwitcherDisplayRule.h"
+#include "InputSwitcherTriggeredDelegateDelegate.h"
 #include "CoreBaseUserWidget.h"
+#include "EInputSwitcherDisplayRule.h"
 #include "EUIActionType.h"
-#include "InputSwitcherTriggeredDelegate.h"
+#include "Framework/Text/TextLayout.h"
 #include "CoreInputSwitcherWidget.generated.h"
 
 class UCoreKeyListenerInputPromptWidget;
@@ -19,12 +20,18 @@ public:
     UPROPERTY(EditDefaultsOnly)
     EInputSwitcherDisplayRule InputPromptDisplayRule;
     
+    UPROPERTY(EditInstanceOnly)
+    TEnumAsByte<ETextJustify::Type> Alignment;
+    
 protected:
     UPROPERTY(BlueprintReadOnly, Export)
     UCoreKeyListenerInputPromptWidget* InputPrompt;
     
     UPROPERTY(BlueprintReadOnly, Export)
     UCoreButtonWidget* Button;
+    
+    UPROPERTY(EditInstanceOnly)
+    bool _shouldRegisterForInputInConstruct;
     
 private:
     UPROPERTY(BlueprintAssignable, BlueprintCallable)
@@ -47,6 +54,10 @@ private:
     
     UFUNCTION()
     void OnButtonClicked(UCoreButtonWidget* target);
+    
+protected:
+    UFUNCTION(BlueprintImplementableEvent)
+    void OnAlignmentChanged(ETextJustify::Type newAlignment);
     
 public:
     UFUNCTION(BlueprintCallable)

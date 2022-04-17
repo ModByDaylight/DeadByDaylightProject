@@ -2,10 +2,10 @@
 #include "Templates/SubclassOf.h"
 
 class UActorComponent;
-class UObject;
-class AActor;
-class UNavigationPath;
 class UNavigationQueryFilter;
+class UObject;
+class UNavigationPath;
+class AActor;
 
 void UDBDAIUtilities::SetCanEverAffectNavigation(UActorComponent* component, bool affectNavigation) {
 }

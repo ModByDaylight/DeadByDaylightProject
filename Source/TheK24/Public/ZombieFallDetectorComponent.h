@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Engine/EngineTypes.h"
 #include "Components/ActorComponent.h"
 #include "DBDTunableRowHandle.h"
-#include "Engine/EngineTypes.h"
 #include "ZombieFallDetectorComponent.generated.h"
 
 class ACharacter;

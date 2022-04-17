@@ -4,8 +4,8 @@
 #include "ESnowmanDestructionType.h"
 #include "SnowmanAnimInstance.generated.h"
 
-class ACamperPlayer;
 class ASnowman;
+class ACamperPlayer;
 
 UCLASS(NonTransient)
 class USnowmanAnimInstance : public UAnimInstance {

@@ -1,38 +1,38 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
-#include "PoolableActor.h"
-#include "OnCrowProjectileStateChanged.h"
-#include "K26ProjectileStateDetails.h"
-#include "EK26ProjectileState.h"
+#include "OnAcquiredChangedDelegate.h"
 #include "PotentialAttack.h"
-#include "OnIsBeingFlashlightedChanged.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "OnCrowProjectileStateChangedDelegate.h"
+#include "PoolableActor.h"
+#include "OnIsBeingFlashlightedChangedDelegate.h"
 #include "UObject/NoExportTypes.h"
 #include "DBDTunableRowHandle.h"
+#include "EK26ProjectileState.h"
+#include "K26ProjectileStateDetails.h"
 #include "TunableStat.h"
-#include "K26ProjectileStateChangeDelegate.h"
-#include "OnAcquiredChanged.h"
+#include "K26ProjectileStateChangeDelegateDelegate.h"
 #include "UObject/NoExportTypes.h"
-#include "Engine/EngineTypes.h"
 #include "K26CrowProjectile.generated.h"
 
-class USkeletalMeshComponent;
-class UFirecrackerEffectHandlerComponent;
-class ULightBurnable;
-class UFlashlightableComponent;
-class UDBDOutlineComponent;
+class UPrimitiveComponent;
+class UK26AmmoHandlerComponent;
+class UStaticMeshComponent;
 class UCurveFloat;
 class UK26PowerOutlineUpdateStrategy;
+class UDBDOutlineComponent;
 class USplineComponent;
-class UStaticMeshComponent;
+class USkeletalMeshComponent;
 class USceneComponent;
+class UFirecrackerEffectHandlerComponent;
+class UFlashlightableComponent;
+class ULightBurnable;
 class UDBDNavModifierComponent;
 class UK26PowerStatusHandlerComponent;
-class UK26AmmoHandlerComponent;
 class UK26PathHandlerComponent;
 class UChargeableComponent;
 class ACamperPlayer;
-class UPrimitiveComponent;
 
 UCLASS()
 class AK26CrowProjectile : public AActor, public IPoolableActor, public IPotentialAttack {

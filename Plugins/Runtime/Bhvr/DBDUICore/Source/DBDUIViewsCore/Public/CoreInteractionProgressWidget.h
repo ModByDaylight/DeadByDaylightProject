@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "StatusEffectViewData.h"
-#include "CoreBaseHudWidget.h"
 #include "InteractionProgressViewInterface.h"
+#include "CoreBaseHudWidget.h"
 #include "TutorialHighlightViewInterface.h"
+#include "StatusEffectViewData.h"
 #include "CoreInteractionProgressWidget.generated.h"
 
 class UCoreStatusEffectIcon;

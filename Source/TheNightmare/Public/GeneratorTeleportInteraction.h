@@ -6,10 +6,10 @@
 #include "UObject/NoExportTypes.h"
 #include "GeneratorTeleportInteraction.generated.h"
 
-class ASlasherPlayer;
 class UTimerObject;
 class AGenerator;
 class ADBDPlayer;
+class ASlasherPlayer;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THENIGHTMARE_API UGeneratorTeleportInteraction : public UChargeableInteractionDefinition {

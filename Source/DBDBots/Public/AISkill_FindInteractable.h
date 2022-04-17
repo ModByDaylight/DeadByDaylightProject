@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EInputInteractionType.h"
 #include "AISkill_Find.h"
+#include "EInputInteractionType.h"
 #include "AISkill_FindInteractable.generated.h"
 
 UCLASS(EditInlineNew)

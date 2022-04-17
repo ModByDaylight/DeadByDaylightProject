@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
+#include "UObject/NoExportTypes.h"
 #include "ESkillCheckCustomType.h"
 #include "YellowGlyphComponent.generated.h"
 
-class AGlyph;
 class ADBDPlayer;
 class UTileSpawnPoint;
+class AGlyph;
 
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UYellowGlyphComponent : public UActorComponent {

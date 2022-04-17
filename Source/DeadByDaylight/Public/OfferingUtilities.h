@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EOfferingEffectType.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "EOfferingEffectType.h"
 #include "OfferingUtilities.generated.h"
 
 class ADBDPlayer;

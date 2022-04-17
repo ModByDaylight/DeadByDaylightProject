@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
 #include "Perk.h"
+#include "GameplayTagContainer.h"
 #include "BloodEcho.generated.h"
 
 UCLASS(Abstract, meta=(BlueprintSpawnableComponent))

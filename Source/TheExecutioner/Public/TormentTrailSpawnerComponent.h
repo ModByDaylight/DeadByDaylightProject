@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
-#include "Components/ActorComponent.h"
-#include "DBDTunableRowHandle.h"
-#include "Engine/NetSerialization.h"
-#include "UObject/NoExportTypes.h"
 #include "ETrailType.h"
+#include "Components/ActorComponent.h"
+#include "Engine/NetSerialization.h"
+#include "DBDTunableRowHandle.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "TormentTrailSpawnerComponent.generated.h"
 
+class UAuthoritativeActorPoolComponent;
 class ATormentTrailController;
 class AActor;
 class UTormentTrailPointCollectionComponent;
-class UAuthoritativeActorPoolComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class THEEXECUTIONER_API UTormentTrailSpawnerComponent : public UActorComponent {

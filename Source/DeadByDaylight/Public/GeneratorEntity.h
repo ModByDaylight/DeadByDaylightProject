@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AnimationMontageDescriptor.h"
 #include "GameFramework/Actor.h"
+#include "AnimationMontageDescriptor.h"
 #include "GeneratorEntity.generated.h"
 
-class AGenerator;
 class UMontagePlayer;
+class AGenerator;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AGeneratorEntity : public AActor {

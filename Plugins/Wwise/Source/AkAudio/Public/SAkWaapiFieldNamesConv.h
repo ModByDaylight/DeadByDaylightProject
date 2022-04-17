@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
 #include "AkWaapiFieldNames.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "SAkWaapiFieldNamesConv.generated.h"
 
 UCLASS(BlueprintType)

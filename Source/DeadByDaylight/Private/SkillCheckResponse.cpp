@@ -10,5 +10,6 @@ FSkillCheckResponse::FSkillCheckResponse() {
     this->FailedCountedAsGood = false;
     this->Type = ESkillCheckCustomType::VE_None;
     this->Interaction = NULL;
+    this->VerificationKey = 0;
 }
 

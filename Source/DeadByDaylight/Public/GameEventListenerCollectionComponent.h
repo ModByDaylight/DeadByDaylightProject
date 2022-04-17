@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "GameEventDelegate.h"
 #include "GameplayTagContainer.h"
+#include "GameEventDelegateDelegate.h"
 #include "GameEventListenerCollectionComponent.generated.h"
 
 class UGameEventDispatcher;

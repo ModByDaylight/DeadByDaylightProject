@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "OnIsInTerrorRadiusChanged.h"
+#include "OnIsInTerrorRadiusChangedDelegate.h"
 #include "TerrorRadiusReceiverComponent.generated.h"
 
 class UCurveFloat;

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EWorldFlowEvent.h"
 #include "Engine/LevelScriptActor.h"
+#include "EWorldFlowEvent.h"
 #include "LobbyLevel.generated.h"
 
 class ADisplayStand;

@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintAsyncActionBase.h"
-#include "PostEventAtLocationAsyncOutputPin.h"
 #include "UObject/NoExportTypes.h"
+#include "Kismet/BlueprintAsyncActionBase.h"
+#include "PostEventAtLocationAsyncOutputPinDelegate.h"
 #include "UObject/NoExportTypes.h"
 #include "PostEventAtLocationAsync.generated.h"
 
-class UObject;
-class UPostEventAtLocationAsync;
 class UAkAudioEvent;
+class UPostEventAtLocationAsync;
+class UObject;
 
 UCLASS()
 class AKAUDIO_API UPostEventAtLocationAsync : public UBlueprintAsyncActionBase {

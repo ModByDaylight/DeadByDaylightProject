@@ -5,8 +5,8 @@
 
 class UHorizontalBox;
 class UUMGTallyRankBanner;
-class UUMGRewardWidget;
 class UCanvasPanel;
+class UUMGRewardWidget;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlantaRankUpPopup : public UUMGGenericPopup {

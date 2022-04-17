@@ -4,22 +4,22 @@
 #include "EGhostStealthState.h"
 #include "GhostStealthComponent.generated.h"
 
+class UCharacterSightableComponent;
 class ADBDPlayer;
+class AScreenIndicatorWorldMarker;
 class UTimerObject;
 class ACharacter;
-class AScreenIndicatorWorldMarker;
-class UCharacterSightableComponent;
 class UStalkerComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UGhostStealthComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSuccessfulAttackInStealth, ADBDPlayer*, target);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStealthStateChanged, EGhostStealthState, stealthState);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStealthCancelledByPlayer, ADBDPlayer*, player);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsStealthChanged, bool, isStealth);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsBeingSpotChanged, bool, isBeingSpot);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSuccessfulAttackInStealth, ADBDPlayer*, target);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStealthStateChanged, EGhostStealthState, stealthState);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStealthCancelledByPlayer, ADBDPlayer*, player);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsStealthChanged, bool, isStealth);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsBeingSpotChanged, bool, isBeingSpot);
     
     UPROPERTY(BlueprintAssignable)
     FOnSuccessfulAttackInStealth OnSuccessfulAttackInStealth;

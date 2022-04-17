@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "UObject/Interface.h"
+#include "UObject/NoExportTypes.h"
 #include "Tormentor.generated.h"
 
 UINTERFACE(Blueprintable, MinimalAPI)

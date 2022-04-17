@@ -7,8 +7,8 @@
 #include "LegIKSurvivorSubAnimInstance.generated.h"
 
 class ULocomotionPredictor;
-class UAnimCollection;
 class UBaseGroundDetectorComponent;
+class UAnimCollection;
 
 UCLASS(NonTransient)
 class DBDANIMATION_API ULegIKSurvivorSubAnimInstance : public UBaseSurvivorAnimInstance {

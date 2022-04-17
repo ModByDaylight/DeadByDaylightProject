@@ -4,10 +4,10 @@
 #include "GameplayTagContainer.h"
 #include "DBDConditionFactory.generated.h"
 
-class UPerk;
 class UIsPlayerPerformingInteraction;
 class UConditionReceiver;
 class IConditionReceiver;
+class UPerk;
 class UDoesPerkHaveToken;
 
 UCLASS(BlueprintType)

@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DBDPlayerControllerBase.h"
-#include "OnPawnLeavingGameDelegate.h"
+#include "OnPawnLeavingGameDelegateDelegate.h"
 #include "EPlayerRole.h"
-#include "OnLocallyObservedChangedDelegate.h"
+#include "OnLocallyObservedChangedDelegateDelegate.h"
 #include "DBDPlayerController.generated.h"
 
-class ADBDPlayerState;
+class APawn;
 class ANetworkFenceActor;
 class UDBDBaseInputHandler;
-class APawn;
+class ADBDPlayerState;
 class ADBDPlayer;
 
 UCLASS()

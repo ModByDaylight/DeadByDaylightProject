@@ -5,9 +5,9 @@
 #include "DBDTunableRowHandle.h"
 #include "ActivePhaseWalkInteraction.generated.h"
 
-class UAnimMontage;
 class UCurveFloat;
 class ADBDPlayer;
+class UAnimMontage;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UActivePhaseWalkInteraction : public UChargeableInteractionDefinition {

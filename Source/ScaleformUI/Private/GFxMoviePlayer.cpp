@@ -1,9 +1,9 @@
 #include "GFxMoviePlayer.h"
 
 class UTexture;
+class UTextureRenderTarget2D;
 class USwfMovie;
 class UObject;
-class UTextureRenderTarget2D;
 class UGFxMoviePlayer;
 class UGFxObject;
 

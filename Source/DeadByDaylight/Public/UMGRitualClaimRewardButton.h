@@ -9,7 +9,7 @@ UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGRitualClaimRewardButton : public UUMGBaseButtonWidget {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPressedAnimationCompleted);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPressedAnimationCompleted);
     
     UPROPERTY(BlueprintAssignable)
     FOnPressedAnimationCompleted OnPressedAnimationCompleted;

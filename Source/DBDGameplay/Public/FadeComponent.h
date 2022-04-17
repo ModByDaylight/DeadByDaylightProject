@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnFadePercentChangedDelegateDelegate.h"
 #include "Components/ActorComponent.h"
-#include "OnFadePercentChangedDelegate.h"
 #include "FadeComponent.generated.h"
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))

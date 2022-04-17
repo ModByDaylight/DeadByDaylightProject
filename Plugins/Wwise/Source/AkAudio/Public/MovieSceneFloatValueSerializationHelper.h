@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneTangentDataSerializationHelper.h"
-#include "Curves/RichCurve.h"
 #include "Curves/RealCurve.h"
+#include "Curves/RichCurve.h"
+#include "MovieSceneTangentDataSerializationHelper.h"
 #include "MovieSceneFloatValueSerializationHelper.generated.h"
 
 USTRUCT(BlueprintType)

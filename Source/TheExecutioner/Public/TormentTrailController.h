@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ReplicatedTrailPointList.h"
 #include "TrailControllerBase.h"
+#include "ReplicatedTrailPointList.h"
 #include "Engine/NetSerialization.h"
 #include "UObject/NoExportTypes.h"
 #include "TormentTrailController.generated.h"
 
-class ATormentTrailPoint;
 class AMobileTormentTrailRenderer;
+class ATormentTrailPoint;
 
 UCLASS()
 class ATormentTrailController : public ATrailControllerBase {

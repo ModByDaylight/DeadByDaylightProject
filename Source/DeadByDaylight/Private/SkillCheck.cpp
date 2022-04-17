@@ -1,7 +1,7 @@
 #include "SkillCheck.h"
 
-class UInteractionDefinition;
 class UChargeableInteractionDefinition;
+class UInteractionDefinition;
 class ADBDPlayer;
 
 bool USkillCheck::ShouldShowWarning() {
@@ -36,6 +36,9 @@ void USkillCheck::OnSkillCheckInput() {
 }
 
 void USkillCheck::Multicast_SkillCheckResponse_Implementation(FSkillCheckResponse skillCheckResponse) {
+}
+
+void USkillCheck::Multicast_OnTriggerSkillCheck_Implementation(UChargeableInteractionDefinition* currentInteraction, ESkillCheckCustomType skillCheckCustomType, const FString& id, const FString& salt) {
 }
 
 void USkillCheck::Multicast_DeactivateSkillCheck_Implementation() {
@@ -74,6 +77,9 @@ float USkillCheck::GetStartDelayInSeconds() const {
 
 bool USkillCheck::CanSkillCheckTypeGrantScore(ESkillCheckCustomType type) {
     return false;
+}
+
+void USkillCheck::Authority_OnSkillCheckTimeout() {
 }
 
 USkillCheck::USkillCheck() {

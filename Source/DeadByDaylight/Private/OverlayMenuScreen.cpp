@@ -21,10 +21,10 @@ void UOverlayMenuScreen::OnSelectTab(int32 tabIndex) {
 void UOverlayMenuScreen::OnResetDefaultSettings() {
 }
 
-void UOverlayMenuScreen::OnResetDefaultKeybindings(const FString& keyBindingsData, bool mustBeGamepadKey) {
+void UOverlayMenuScreen::OnResetDefaultKeybindings() {
 }
 
-void UOverlayMenuScreen::OnRequestKeyInput(const FString& name, bool isAxis, float scale, const FString& key) {
+void UOverlayMenuScreen::OnRequestKeyBindingInput(int32 id, const FString& key) {
 }
 
 void UOverlayMenuScreen::OnQuitButtonClick() {

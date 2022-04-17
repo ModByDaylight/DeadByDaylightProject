@@ -3,8 +3,8 @@
 #include "Blueprint/UserWidget.h"
 #include "UMGHudEditorVersionWidget.generated.h"
 
-class UButton;
 class UUMGDragWidget_HudEditor;
+class UButton;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGHudEditorVersionWidget : public UUserWidget {

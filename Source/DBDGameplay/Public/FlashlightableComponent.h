@@ -10,8 +10,8 @@ UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UFlashlightableComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFlashlightLitChangedEvent, bool, isLit);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFlashlightAddedRemovedEvent, const UFlashlightComponent*, flashlight);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFlashlightLitChangedEvent, bool, isLit);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFlashlightAddedRemovedEvent, const UFlashlightComponent*, flashlight);
     
     UPROPERTY(BlueprintAssignable)
     FOnFlashlightAddedRemovedEvent OnFlashlightAddedEvent;

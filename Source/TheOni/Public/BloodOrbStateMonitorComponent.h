@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "BloodOrbStateMonitorDelegate.h"
+#include "BloodOrbStateMonitorDelegateDelegate.h"
 #include "EBloodOrbState.h"
 #include "BloodOrbStateMonitorComponent.generated.h"
 

@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AISkillPerk.h"
-#include "DBDAIController.h"
-#include "GameplayTagContainer.h"
 #include "UObject/NoExportTypes.h"
+#include "DBDAIController.h"
+#include "AISkillPerk.h"
+#include "GameplayTagContainer.h"
 #include "Engine/EngineTypes.h"
 #include "DBDAIBTController.generated.h"
 
-class UDBDBehaviorTreeComponent;
-class UBehaviorTree;
-class UAISkill;
 class UDBDAIPerceptionComponent;
+class UAISkill;
+class UBehaviorTree;
+class UDBDBehaviorTreeComponent;
 class UDBDPathFollowingComponent;
 class UDBDBlackboardComponent;
 class UDBDNavMeshExplorerComponent;

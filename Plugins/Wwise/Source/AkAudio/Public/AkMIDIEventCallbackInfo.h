@@ -3,11 +3,11 @@
 #include "AkEventCallbackInfo.h"
 #include "AkMidiGeneric.h"
 #include "EAkMidiEventType.h"
-#include "AkMidiNoteAftertouch.h"
 #include "AkMidiProgramChange.h"
-#include "AkMidiChannelAftertouch.h"
 #include "AkMidiPitchBend.h"
 #include "AkMidiNoteOnOff.h"
+#include "AkMidiNoteAftertouch.h"
+#include "AkMidiChannelAftertouch.h"
 #include "AkMidiCc.h"
 #include "AkMIDIEventCallbackInfo.generated.h"
 

@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EItemHandPosition.h"
 #include "DBDBasePlayer.h"
 #include "StandDisplayable.h"
 #include "CharmAttachable.h"
-#include "OnItemEquipped.h"
+#include "OnItemEquippedDelegate.h"
+#include "EItemHandPosition.h"
 #include "ECustomizationCategory.h"
 #include "DBDMenuPlayer.generated.h"
 
-class AActor;
-class USkeletalMeshComponent;
 class UMaterialInterface;
+class USkeletalMeshComponent;
 class UMaterialHelper;
+class AActor;
 class UCharmSpawnerComponent;
 
 UCLASS()

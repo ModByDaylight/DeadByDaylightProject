@@ -3,7 +3,7 @@
 #include "Templates/SubclassOf.h"
 #include "GameplayModifierContainer.h"
 #include "GameplayModifierData.h"
-#include "OnTokenCountChangedBP.h"
+#include "OnTokenCountChangedBPDelegate.h"
 #include "PerkInitializationData.h"
 #include "Perk.generated.h"
 

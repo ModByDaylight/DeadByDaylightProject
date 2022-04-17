@@ -3,9 +3,9 @@
 #include "Templates/SubclassOf.h"
 #include "SurvivorStatusInterface.h"
 #include "Components/ActorComponent.h"
+#include "TunableStat.h"
 #include "TagStateBool.h"
 #include "DBDTunableRowHandle.h"
-#include "TunableStat.h"
 #include "EContaminator.h"
 #include "SurvivorContaminationComponent.generated.h"
 

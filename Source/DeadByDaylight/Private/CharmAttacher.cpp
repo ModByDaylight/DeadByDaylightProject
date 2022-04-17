@@ -1,8 +1,8 @@
 #include "CharmAttacher.h"
+#include "Components/SkeletalMeshComponent.h"
 
-class AActor;
 class ACharm;
-class USkeletalMeshComponent;
+class AActor;
 
 USkeletalMeshComponent* ACharmAttacher::GetSkeletalMeshComponentAttachedOn() {
     return NULL;

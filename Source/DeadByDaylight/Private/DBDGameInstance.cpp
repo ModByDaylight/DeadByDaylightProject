@@ -1,33 +1,33 @@
 #include "DBDGameInstance.h"
 #include "ShopManager.h"
 
-class URankManager;
-class UActorKnowledgeCollection;
-class ADBDPlayer;
-class AActor;
 class USoftBanManager;
-class UDBDTimeUtilities;
-class USpecialEventManager;
-class UPlayerNameRegistration;
-class UDBDPlayerLevelManager;
+class ADBDPlayer;
+class UActorKnowledgeCollection;
+class AActor;
 class UMapActorDB;
+class ULightingInterpolator;
+class USpecialEventManager;
+class UDBDTimeUtilities;
+class URankManager;
+class UPlayerNameRegistration;
+class UPrimitiveCollection;
+class UDBDPlayerLevelManager;
 class ADBDPlayerState;
 class APlayerController;
 class ULocalPlayer;
 class ULocalEventManager;
-class ULightingInterpolator;
-class UCinematicManager;
+class UGameEventDispatcher;
 class ULightingHelper;
 class ABaseSky;
-class UInventoryHandler;
 class ACamperPlayer;
+class UInventoryHandler;
 class ASlasherPlayer;
-class UGameEventDispatcher;
+class UWorld;
 class UDecalSpawnerCollection;
 class UConsentManager;
-class UPrimitiveCollection;
+class UCinematicManager;
 class UBonusPointEventsManager;
-class UWorld;
 
 void UDBDGameInstance::StartOfferingSequence() {
 }
@@ -181,25 +181,13 @@ void UDBDGameInstance::ForceCloseGame() {
 void UDBDGameInstance::EndLoadingScreen(UWorld* loadedWorld) {
 }
 
-void UDBDGameInstance::DBDToggleLightingLoaded() {
-}
-
-void UDBDGameInstance::DBDResetSaveData() {
-}
-
-void UDBDGameInstance::DBDForceSave() {
-}
-
-void UDBDGameInstance::DBDForceLoad() {
-}
-
-void UDBDGameInstance::DBDDeleteLocalSaveFile() {
-}
-
 void UDBDGameInstance::DBD_UpdateSteamInventory() {
 }
 
 void UDBDGameInstance::DBD_ToggleOnlineRole() {
+}
+
+void UDBDGameInstance::DBD_ToggleLightingLoaded() {
 }
 
 void UDBDGameInstance::DBD_TestTickedDiceRoll(float BaseProbability, float ticks, float MultiplicativeModifier, float AdditiveModifier) {
@@ -220,10 +208,10 @@ void UDBDGameInstance::DBD_SetStatsUploadEnabled(bool enabled) {
 void UDBDGameInstance::DBD_SetFearMarketDate(const FString& dateString) {
 }
 
-void UDBDGameInstance::DBD_SendFriendInvite() {
+void UDBDGameInstance::DBD_ResetSaveGameInventory() {
 }
 
-void UDBDGameInstance::DBD_ResetSaveGameInventory() {
+void UDBDGameInstance::DBD_ResetSaveData() {
 }
 
 void UDBDGameInstance::DBD_ResetCurrentAchievementStats(bool andUpload, bool andUpdateData) {
@@ -262,6 +250,12 @@ void UDBDGameInstance::DBD_GenerateNewRandomRitual() {
 void UDBDGameInstance::DBD_GenerateBloodWeb(int32 level) {
 }
 
+void UDBDGameInstance::DBD_ForceSave() {
+}
+
+void UDBDGameInstance::DBD_ForceLoad() {
+}
+
 void UDBDGameInstance::DBD_DumpSessions() {
 }
 
@@ -269,6 +263,9 @@ void UDBDGameInstance::DBD_DisplayCurrentAchievementStat(FName statName) {
 }
 
 void UDBDGameInstance::DBD_DestroySteamInventory() {
+}
+
+void UDBDGameInstance::DBD_DeleteLocalSaveFile() {
 }
 
 void UDBDGameInstance::DBD_ClaimRitualRewardAtIndex(int32 index) {
@@ -290,12 +287,6 @@ void UDBDGameInstance::DBD_ApplyNoMist() {
 }
 
 void UDBDGameInstance::DBD_ApplyMist(const float fogModifier) {
-}
-
-void UDBDGameInstance::DBD_AnalyticsTest() {
-}
-
-void UDBDGameInstance::DBD_AnalyticsReset() {
 }
 
 void UDBDGameInstance::DBD_AddToRitual(int32 index, float value) {
@@ -336,7 +327,6 @@ UDBDGameInstance::UDBDGameInstance() {
     this->CharacterProgressionManager = NULL;
     this->CharacterXPManager = NULL;
     this->AtlRitualsManager = NULL;
-    this->FreeTicketsManager = NULL;
     this->HasServerLeftMatch = false;
     this->HasWrittenGameEndStats = false;
     this->FearMarketManager = NULL;

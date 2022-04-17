@@ -1,8 +1,8 @@
 #include "AnimInstanceExt.h"
 
 class UAnimInstance;
-class AActor;
 class USkeletalMeshComponent;
+class AActor;
 class ACharacter;
 
 UAnimInstance* UAnimInstanceExt::GetSubAnimInstance(const UAnimInstance* root, UClass* type) {

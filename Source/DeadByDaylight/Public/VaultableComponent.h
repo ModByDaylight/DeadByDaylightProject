@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "OnVaultEvent.h"
+#include "OnVaultEventDelegate.h"
 #include "GameplayTagContainer.h"
 #include "VaultableComponent.generated.h"
 

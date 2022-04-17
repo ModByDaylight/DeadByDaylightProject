@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EDoctorAbilityPhase.h"
 #include "Components/ActorComponent.h"
 #include "EDoctorAbilityType.h"
+#include "EDoctorAbilityPhase.h"
 #include "DoctorPowerAnimStateComponent.generated.h"
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))

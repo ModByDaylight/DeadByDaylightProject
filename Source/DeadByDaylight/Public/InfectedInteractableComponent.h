@@ -3,11 +3,11 @@
 #include "Components/ActorComponent.h"
 #include "InfectedInteractableComponent.generated.h"
 
-class ACamperPlayer;
+class ADBDPlayer;
 class UCurveFloat;
+class ACamperPlayer;
 class UTimelineComponent;
 class AInteractable;
-class ADBDPlayer;
 
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UInfectedInteractableComponent : public UActorComponent {

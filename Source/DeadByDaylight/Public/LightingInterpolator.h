@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "InterpolationDoneEvent.h"
+#include "InterpolationDoneEventDelegate.h"
 #include "LightingInterpolator.generated.h"
 
 class UExponentialHeightFogComponent;
 class ABaseSky;
-class ULightComponent;
 class USkyLightComponent;
+class ULightComponent;
 
 UCLASS(BlueprintType)
 class ULightingInterpolator : public UObject {

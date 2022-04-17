@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "Styling/SlateColor.h"
 #include "EAIDifficultyLevel.h"
+#include "Styling/SlateColor.h"
 #include "UMGPartyBotSlotWidget.generated.h"
 
-class UCanvasPanel;
 class UTextBlock;
-class UUMGBaseButtonWidget;
 class UImage;
+class UUMGBaseButtonWidget;
+class UCanvasPanel;
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGPartyBotSlotWidget : public UMobileBaseUserWidget {

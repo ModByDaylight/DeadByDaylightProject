@@ -5,9 +5,9 @@
 #include "Navigation/PathFollowingComponent.h"
 #include "AIMoveToPosition.generated.h"
 
-class ADBDPlayer;
-class UAIMoveToPositionData;
 class UAICharacterBehaviourData;
+class UAIMoveToPositionData;
+class ADBDPlayer;
 class ADBDAIPlayerController;
 
 UCLASS()

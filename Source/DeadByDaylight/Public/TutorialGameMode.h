@@ -3,8 +3,8 @@
 #include "DBDBaseMatchGameMode.h"
 #include "TutorialGameMode.generated.h"
 
-class UTutorialObjectiveController;
 class UTutorialNotificationController;
+class UTutorialObjectiveController;
 class UTutorialHighlightController;
 class UAtlantaTutorialPlayerHudController;
 class AGenerator;
@@ -13,7 +13,7 @@ UCLASS(NonTransient)
 class DEADBYDAYLIGHT_API ATutorialGameMode : public ADBDBaseMatchGameMode {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCanStartAtlantaTutorialChange, bool, canStartTutorial);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCanStartAtlantaTutorialChange, bool, canStartTutorial);
     
 private:
     UPROPERTY(Transient)

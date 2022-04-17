@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EBloodwebNodeContentType.h"
 #include "EItemRarity.h"
+#include "EBloodwebNodeContentType.h"
 #include "BloodwebNodeProperties.generated.h"
 
 USTRUCT(BlueprintType)

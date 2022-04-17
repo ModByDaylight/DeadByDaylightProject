@@ -4,20 +4,20 @@
 #include "TagStateBool.h"
 #include "GhostStalkedComponent.generated.h"
 
-class UStatusEffect;
 class ASlasherPlayer;
 class UTimerObject;
+class UStatusEffect;
+class AActor;
 class UStalkedComponent;
 class ACharacter;
 class UCharacterSightComponent;
-class AActor;
 
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UGhostStalkedComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsSpottingKiller, bool, isSpotting);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsMarkedChanged, bool, isMarked);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsSpottingKiller, bool, isSpotting);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsMarkedChanged, bool, isMarked);
     
     UPROPERTY(BlueprintAssignable)
     FOnIsMarkedChanged OnIsMarkedChanged;

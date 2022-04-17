@@ -1,7 +1,7 @@
 #include "TormentTrailSpawnerComponent.h"
 
-class ATormentTrailController;
 class AActor;
+class ATormentTrailController;
 
 void UTormentTrailSpawnerComponent::Sever_SpawnTrailController_Implementation(ATormentTrailController* trailController, const FVector_NetQuantize10 location, const FRotator rotation) {
 }

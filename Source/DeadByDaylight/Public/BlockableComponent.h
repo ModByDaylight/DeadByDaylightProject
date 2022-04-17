@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BlockableReplicatedDatum.h"
 #include "Components/ActorComponent.h"
+#include "BlockableReplicatedDatum.h"
 #include "BlockableComponent.generated.h"
 
+class ADBDPlayer;
 class UBlockElement;
 class UObject;
-class ADBDPlayer;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UBlockableComponent : public UActorComponent {

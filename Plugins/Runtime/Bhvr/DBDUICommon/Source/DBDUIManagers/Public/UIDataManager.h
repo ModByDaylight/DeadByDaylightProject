@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
+#include "CurrencyProgressionUIData.h"
 #include "EItemRarity.h"
 #include "Styling/SlateTypes.h"
 #include "EProgressionType.h"
 #include "ECurrencyType.h"
-#include "CurrencyProgressionUIData.h"
 #include "UIDataManager.generated.h"
 
 class UMaterialInterface;

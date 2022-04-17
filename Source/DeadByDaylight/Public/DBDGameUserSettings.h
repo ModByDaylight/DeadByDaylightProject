@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/GameUserSettings.h"
-#include "GameFramework/PlayerInput.h"
-#include "GameFramework/PlayerInput.h"
-#include "OnSetAtlantaCustomizedHudsTimestamp.h"
 #include "SharedAuthenticationTokenInformation.h"
+#include "OnSetAtlantaCustomizedHudsTimestampDelegate.h"
+#include "GameFramework/PlayerInput.h"
 #include "AtlantaCustomizedHudSettings.h"
+#include "GameFramework/PlayerInput.h"
 #include "Rendering/RenderingCommon.h"
 #include "DBDGameUserSettings.generated.h"
 
@@ -114,6 +114,15 @@ private:
     
     UPROPERTY(Config)
     bool SurvivorInvertY;
+    
+    UPROPERTY(Config)
+    bool KillerToggleInteractions;
+    
+    UPROPERTY(Config)
+    bool SurvivorToggleInteractions;
+    
+    UPROPERTY(Config)
+    bool SprintToCancel;
     
     UPROPERTY(Config)
     FString Language;

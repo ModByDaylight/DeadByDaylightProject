@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Interface.h"
-#include "EGameManualMenuState.h"
-#include "HelpCategoryData.h"
 #include "HelpTopicData.h"
+#include "UObject/Interface.h"
+#include "HelpCategoryData.h"
+#include "EGameManualMenuState.h"
 #include "GameManualViewInterface.generated.h"
 
 UINTERFACE(Blueprintable)

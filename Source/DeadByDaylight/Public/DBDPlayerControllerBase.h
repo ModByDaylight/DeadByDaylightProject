@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
-#include "PlayerSavedProfileDataShared.h"
 #include "PlayerLoadoutData.h"
+#include "PlayerSavedProfileDataShared.h"
 #include "DBDPlayerControllerBase.generated.h"
 
 class ADBDPlayer;

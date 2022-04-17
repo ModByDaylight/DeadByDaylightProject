@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ScreenshotViewSetting.h"
 #include "RoleDropdown.h"
 #include "EGender.h"
+#include "ScreenshotViewSetting.h"
 #include "RoleGenderViewSetting.generated.h"
 
 USTRUCT(BlueprintType)

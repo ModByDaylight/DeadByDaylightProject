@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTableRowBase.h"
 #include "EAtlantaFriendUIStatus.h"
+#include "DBDTableRowBase.h"
 #include "FriendStatusUIData.generated.h"
 
 class UTexture2D;

@@ -6,16 +6,16 @@
 #include "EActionOnFriendType.h"
 #include "UMGAtlantaFriendListScreen.generated.h"
 
-class UWidgetSwitcher;
-class UUMGBaseButtonWidget;
 class UUMGBaseFriendListElement;
+class UWidgetSwitcher;
 class UTextBlock;
-class UUMGFriendSearchBarWidget;
-class UHorizontalBox;
 class UUMGFriendListTabWidget;
+class UUMGBaseButtonWidget;
+class UUMGFriendSearchBarWidget;
+class UUMGFriendTabButtonWidget;
+class UHorizontalBox;
 class UUMGSuggestionsListTabWidget;
 class UUMGRequestsListTabWidget;
-class UUMGFriendTabButtonWidget;
 class UUMGBaseFriendListContextualMenuWidget;
 class UExpandableArea;
 

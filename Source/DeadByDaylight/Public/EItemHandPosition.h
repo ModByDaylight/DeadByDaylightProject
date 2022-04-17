@@ -10,5 +10,6 @@ enum class EItemHandPosition : uint8 {
     SmallItem,
     FirecrackerItem,
     VaccineItem,
+    FragileObjectItem,
 };
 

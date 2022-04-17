@@ -3,8 +3,8 @@
 #include "Components/ActorComponent.h"
 #include "PossessionComponent.generated.h"
 
-class AAIController;
 class ADBDPlayer;
+class AAIController;
 
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UPossessionComponent : public UActorComponent {

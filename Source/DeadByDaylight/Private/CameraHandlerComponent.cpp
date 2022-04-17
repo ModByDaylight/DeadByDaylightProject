@@ -1,9 +1,9 @@
 #include "CameraHandlerComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class AActor;
-class UParticleSystemComponent;
 class USceneComponent;
+class UParticleSystemComponent;
+class AActor;
 
 void UCameraHandlerComponent::SetSocketID(EDBDCameraSocketID mode) {
 }

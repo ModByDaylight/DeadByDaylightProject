@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Animation/AnimInstance.h"
 #include "EAttackSubstate.h"
+#include "Animation/AnimInstance.h"
 #include "K24PowerAnimInstance.generated.h"
 
 class AK24Power;
@@ -11,10 +11,6 @@ UCLASS(NonTransient)
 class UK24PowerAnimInstance : public UAnimInstance {
     GENERATED_BODY()
 public:
-private:
-    UPROPERTY(Transient)
-    AK24Power* _k24Power;
-    
 protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     ASlasherPlayer* _owningKiller;
@@ -57,6 +53,10 @@ protected:
     
     UPROPERTY(BlueprintReadOnly, Transient)
     bool _isKilling;
+    
+private:
+    UPROPERTY(Transient)
+    AK24Power* _k24Power;
     
 public:
     UK24PowerAnimInstance();

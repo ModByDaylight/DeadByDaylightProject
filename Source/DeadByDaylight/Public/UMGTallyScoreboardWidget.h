@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UMGTallyListElementWidget.h"
-#include "OnTallyScoreboardAddFriendEvent.h"
-#include "OnTallyScoreboardReportEvent.h"
+#include "OnTallyScoreboardAddFriendEventDelegate.h"
+#include "OnTallyScoreboardReportEventDelegate.h"
 #include "UMGTallyScoreboardWidget.generated.h"
 
 class UUMGTallyScoreboardPlayerInfoWidget;

@@ -5,17 +5,17 @@
 #include "FlashlightFXComponent.generated.h"
 
 class UFlashlightTargetFXComponent;
+class ADBDPlayer;
 class USceneComponent;
+class UCurveFloat;
 class UStaticMeshComponent;
 class USplineMeshComponent;
-class UCurveFloat;
-class ADBDPlayer;
 
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DBDGAMEPLAY_API UFlashlightFXComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFlashEvent);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFlashEvent);
     
     UPROPERTY(BlueprintAssignable)
     FOnFlashEvent OnFlashEvent;

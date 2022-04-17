@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECamperDamageState.h"
 #include "BloodTrailComponent.h"
+#include "ECamperDamageState.h"
 #include "CamperBloodTrailComponent.generated.h"
 
 class UPerkManager;

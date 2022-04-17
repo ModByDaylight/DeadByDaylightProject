@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnButtonClickEvent.h"
 #include "MobileBaseUserWidget.h"
 #include "Components/SlateWrapperTypes.h"
+#include "OnButtonClickEventDelegate.h"
 #include "TooltipPressedData.h"
 #include "ECurrencyType.h"
 #include "UMGBankAndPlayerInfoWidget.generated.h"
 
-class UUMGLevelBannerWidget;
 class UUMGBankWidget;
 class UTextBlock;
 class UUMGSelectedCharacterWidget;
-class UUMGMainMenuMonthlyPassButton;
+class UUMGLevelBannerWidget;
 class UUMGRankBanner;
+class UUMGMainMenuMonthlyPassButton;
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGBankAndPlayerInfoWidget : public UMobileBaseUserWidget {

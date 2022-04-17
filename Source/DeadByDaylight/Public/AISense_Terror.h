@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Perception/AISense.h"
-#include "AITerrorEvent.h"
 #include "UObject/NoExportTypes.h"
+#include "AITerrorEvent.h"
+#include "Perception/AISense.h"
 #include "AISense_Terror.generated.h"
 
+class UTerrorRadiusEmitterComponent;
 class UObject;
 class AActor;
-class UTerrorRadiusEmitterComponent;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UAISense_Terror : public UAISense {

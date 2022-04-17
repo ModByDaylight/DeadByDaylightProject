@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "ChargeableInteractionDefinition.h"
 #include "DBDTunableRowHandle.h"
+#include "UObject/NoExportTypes.h"
 #include "DeathBedRescueInteraction.generated.h"
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))

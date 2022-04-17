@@ -1,7 +1,7 @@
 #include "BatchMeshCommands.h"
 
-class UMaterialInterface;
 class UTexture;
+class UMaterialInterface;
 
 void UBatchMeshCommands::UpdateMaterials() {
 }

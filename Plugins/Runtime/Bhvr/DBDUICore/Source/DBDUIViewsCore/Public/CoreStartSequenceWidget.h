@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CoreBaseHudWidget.h"
-#include "StartSequenceViewInterface.h"
-#include "StartSequenceFadeOutCompleted.h"
-#include "EEasingType.h"
 #include "UObject/NoExportTypes.h"
 #include "EThemeColorId.h"
+#include "CoreBaseHudWidget.h"
+#include "StartSequenceViewInterface.h"
+#include "EEasingType.h"
+#include "StartSequenceFadeOutCompletedDelegate.h"
 #include "CoreStartSequenceWidget.generated.h"
 
-class UDBDTextBlock;
 class UImage;
+class UDBDTextBlock;
 class UUITweenInstance;
 
 UCLASS(EditInlineNew)

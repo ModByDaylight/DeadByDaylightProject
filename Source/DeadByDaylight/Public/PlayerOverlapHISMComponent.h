@@ -6,7 +6,7 @@
 class UMaterialInterface;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
-class DEADBYDAYLIGHT_API UPlayerOverlapHISMComponent : public UHISMMaterialHelperComponent {
+class DEADBYDAYLIGHT_API UPlayerOverlapHISMComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:

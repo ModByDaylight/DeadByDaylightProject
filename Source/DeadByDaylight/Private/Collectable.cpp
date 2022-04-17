@@ -1,9 +1,9 @@
 #include "Collectable.h"
 #include "Net/UnrealNetwork.h"
-#include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
 #include "ItemModifier.h"
+#include "Components/SkeletalMeshComponent.h"
 #include "GameplayTagContainerComponent.h"
+#include "Components/SceneComponent.h"
 
 class UInteractor;
 class ADBDPlayer;
@@ -249,6 +249,7 @@ ACollectable::ACollectable() {
     this->_mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("ItemMesh"));
     this->_displayedInputType = EInputInteractionType::VE_ItemUse;
     this->_objectState = CreateDefaultSubobject<UGameplayTagContainerComponent>(TEXT("ObjectState"));
+    this->_isBoundToFirstCollector = false;
     this->_placementOrigin = CreateDefaultSubobject<USceneComponent>(TEXT("PlacementOrigin"));
     this->_collector = NULL;
     this->_firstCollector = NULL;

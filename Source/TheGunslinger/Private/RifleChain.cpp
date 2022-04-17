@@ -1,10 +1,10 @@
 #include "RifleChain.h"
 
-class URiflePlayerLinker;
-class UInstancedStaticMeshComponent;
-class URifleChainTensionComponent;
 class USplineComponent;
+class UInstancedStaticMeshComponent;
 class UCurveFloat;
+class URiflePlayerLinker;
+class URifleChainTensionComponent;
 
 void ARifleChain::UpdateChainMesh(UInstancedStaticMeshComponent* mesh, USplineComponent* spline, float alpha) {
 }

@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
 #include "AkGameObject.h"
 #include "AkExternalSourceInfo.h"
+#include "Engine/EngineTypes.h"
 #include "Engine/LatentActionManager.h"
 #include "ERTPCValueType.h"
 #include "AkComponent.generated.h"
 
 class UAkAuxBus;
 class UAkSwitchValue;
-class UAkRtpc;
 class UAkComponent;
+class UAkRtpc;
 class UAkTrigger;
 class UAkAudioEvent;
 

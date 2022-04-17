@@ -5,8 +5,8 @@
 
 class ASlasherPlayer;
 class UBaseProjectileLauncher;
-class UAkComponent;
 class UHatchetCooldown;
+class UAkComponent;
 
 UCLASS()
 class ATheHuntressPower : public ACollectable {

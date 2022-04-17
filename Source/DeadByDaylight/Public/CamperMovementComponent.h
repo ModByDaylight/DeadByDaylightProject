@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "DBDCharacterMovementComponent.h"
+#include "UObject/NoExportTypes.h"
 #include "ECamperDamageState.h"
 #include "CamperMovementComponent.generated.h"
 

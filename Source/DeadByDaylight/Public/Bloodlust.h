@@ -4,8 +4,8 @@
 #include "Bloodlust.generated.h"
 
 class UCurveFloat;
-class ASlasherPlayer;
 class ADBDPlayer;
+class ASlasherPlayer;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UBloodlust : public UStatusEffect {

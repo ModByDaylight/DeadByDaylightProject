@@ -3,8 +3,8 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "BloodOrbUtilities.generated.h"
 
-class ABloodOrb;
 class UObject;
+class ABloodOrb;
 
 UCLASS(BlueprintType)
 class THEONI_API UBloodOrbUtilities : public UBlueprintFunctionLibrary {

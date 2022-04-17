@@ -10,7 +10,7 @@ UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API URiflePlayerLinker : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLinkedPlayerSet, ADBDPlayer*, linkedPlayer);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLinkedPlayerSet, ADBDPlayer*, linkedPlayer);
     
     UPROPERTY(BlueprintAssignable)
     FOnLinkedPlayerSet OnLinkedPlayerSet;

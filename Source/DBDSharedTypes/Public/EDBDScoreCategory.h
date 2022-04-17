@@ -15,6 +15,7 @@ enum class EDBDScoreCategory : uint8 {
     DBD_CamperScoreCat_Untracked,
     DBD_CamperScoreCat_Streak,
     DBD_ScoreCat_SpecialEvents,
+    DBD_ScoreCat_Bonus,
     Count,
 };
 

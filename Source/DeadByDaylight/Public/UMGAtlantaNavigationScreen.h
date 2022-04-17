@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "ENavigationScreenButton.h"
 #include "Components/SlateWrapperTypes.h"
 #include "PartyMemberUIData.h"
+#include "ENavigationScreenButton.h"
 #include "UMGAtlantaNavigationScreen.generated.h"
 
-class UButton;
-class UTextBlock;
 class UUMGBankAndPlayerInfoWidget;
+class UTextBlock;
 class UWidgetSwitcher;
-class UUMGBaseCountdownWidget;
 class UUMGPartySlotsWidget;
+class UButton;
+class UUMGBaseCountdownWidget;
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGAtlantaNavigationScreen : public UMobileBaseUserWidget {

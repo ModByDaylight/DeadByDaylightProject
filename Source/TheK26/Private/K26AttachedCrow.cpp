@@ -1,18 +1,18 @@
 #include "K26AttachedCrow.h"
 #include "Net/UnrealNetwork.h"
 #include "FirecrackerEffectHandlerComponent.h"
-#include "DBDOutlineComponent.h"
-#include "LightBurnable.h"
 #include "FlashlightableComponent.h"
+#include "LightBurnable.h"
 #include "ChargeableComponent.h"
 #include "K26PowerOutlineUpdateStrategy.h"
+#include "DBDOutlineComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/SceneComponent.h"
 
+class AActor;
 class ACamperPlayer;
 class AK26AttachedCrow;
 class ASlasherPlayer;
-class AActor;
 
 void AK26AttachedCrow::OnRep_AttachmentStatus() {
 }

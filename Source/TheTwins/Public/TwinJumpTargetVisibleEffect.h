@@ -5,8 +5,8 @@
 #include "UObject/NoExportTypes.h"
 #include "TwinJumpTargetVisibleEffect.generated.h"
 
-class AActor;
 class USelectiveVisibilityComponent;
+class AActor;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UTwinJumpTargetVisibleEffect : public UStatusEffect {

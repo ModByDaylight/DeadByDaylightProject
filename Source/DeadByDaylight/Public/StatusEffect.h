@@ -2,15 +2,15 @@
 #include "CoreMinimal.h"
 #include "GameplayModifierContainer.h"
 #include "GameplayNotificationData.h"
-#include "StatusEffectInitializationData.h"
 #include "GameplayModifierData.h"
+#include "StatusEffectInitializationData.h"
 #include "EStatusEffectType.h"
 #include "Engine/EngineTypes.h"
 #include "StatusEffect.generated.h"
 
-class UStatusEffect;
-class ADBDPlayer;
 class AActor;
+class ADBDPlayer;
+class UStatusEffect;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UStatusEffect : public UGameplayModifierContainer {

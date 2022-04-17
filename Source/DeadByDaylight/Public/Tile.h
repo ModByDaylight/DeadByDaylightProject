@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPathType.h"
-#include "EDensity.h"
 #include "GameFramework/Actor.h"
-#include "ETileType.h"
-#include "UObject/NoExportTypes.h"
 #include "EBasementType.h"
 #include "EQuadrantSpawnType.h"
+#include "UObject/NoExportTypes.h"
+#include "EPathType.h"
 #include "EscapeStrategyType.h"
+#include "ETileType.h"
+#include "EDensity.h"
 #include "UObject/NoExportTypes.h"
 #include "Tile.generated.h"
 

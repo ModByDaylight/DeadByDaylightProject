@@ -21,7 +21,7 @@ private:
 public:
     UDecalSpawnerCollection();
     UFUNCTION(BlueprintCallable)
-    UDBDDecalComponent* SpawnDecalAtLocation(FName decalSpawnerName, const FVector& decalSize, const FVector& location, const FRotator& rotation, float lifeSpan, FName decalType);
+    UDBDDecalComponent* SpawnDecalAtLocation(FName decalSpawnerName, const FVector& decalSize, const FVector& location, const FRotator& rotation, float lifeSpan, FName decalType, const int32 sortOrder);
     
     UFUNCTION(BlueprintCallable)
     void ReleaseDecalSpawner(FName decalSpawnerName);

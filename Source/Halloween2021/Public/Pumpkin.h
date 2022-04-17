@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTunableRowHandle.h"
 #include "SpecialBehaviourInteractable.h"
 #include "EPumpkinType.h"
+#include "DBDTunableRowHandle.h"
 #include "UObject/NoExportTypes.h"
 #include "Pumpkin.generated.h"
 
+class USkeletalMeshComponent;
+class UChargeableComponent;
 class UDBDOutlineComponent;
 class UPumpkinInteraction;
-class UPrimitiveComponent;
-class UChargeableComponent;
 class UInteractor;
-class USkeletalMeshComponent;
+class UPrimitiveComponent;
 class UStatusEffect;
 class ADBDPlayer;
 

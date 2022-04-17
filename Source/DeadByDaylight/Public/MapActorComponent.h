@@ -4,8 +4,8 @@
 #include "EMapActorCategory.h"
 #include "MapActorComponent.generated.h"
 
-class UPrimitiveComponent;
 class ADBDPlayer;
+class UPrimitiveComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UMapActorComponent : public UActorComponent {

@@ -5,9 +5,9 @@
 #include "ECurrencyType.h"
 #include "UMGBaseRootStorefrontWidget.generated.h"
 
-class UPanelWidget;
 class UNamedSlot;
 class UUMGBaseButtonWidget;
+class UPanelWidget;
 class UTextBlock;
 
 UCLASS(Abstract, EditInlineNew)

@@ -3,8 +3,8 @@
 #include "Perk.h"
 #include "DyingLight.generated.h"
 
-class ACamperPlayer;
 class UStatusEffect;
+class ACamperPlayer;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API UDyingLight : public UPerk {

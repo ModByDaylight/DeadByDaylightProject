@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "OnHeatChargeUpdateDelegate.h"
-#include "TagStateBool.h"
 #include "TunableStat.h"
+#include "TagStateBool.h"
+#include "OnHeatChargeUpdateDelegateDelegate.h"
 #include "HillbillyChainsawOverheatComponent.generated.h"
 
 class UPowerChargeComponent;

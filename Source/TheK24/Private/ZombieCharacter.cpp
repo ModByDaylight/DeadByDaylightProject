@@ -1,11 +1,13 @@
 #include "ZombieCharacter.h"
 #include "Net/UnrealNetwork.h"
-#include "Components/SphereComponent.h"
-#include "AuthoritativePoolableActorComponent.h"
+#include "OtherCharactersVerticalCollisionsHandler.h"
 #include "Components/StaticMeshComponent.h"
+#include "CharacterPositionRecorderComponent.h"
+#include "Components/SphereComponent.h"
+#include "AuthoritativeMovementComponent.h"
+#include "AuthoritativePoolableActorComponent.h"
 #include "ZombieBlindableComponent.h"
 #include "ChargeableComponent.h"
-#include "CharacterPositionRecorderComponent.h"
 #include "FirecrackerEffectHandlerComponent.h"
 #include "FlashlightableComponent.h"
 #include "GameplayTagContainerComponent.h"
@@ -13,8 +15,6 @@
 class ASlasherPlayer;
 class UPrimitiveComponent;
 class AActor;
-class UOtherCharactersVerticalCollisionsHandler;
-class UAuthoritativeMovementComponent;
 class UFlashlightComponent;
 
 

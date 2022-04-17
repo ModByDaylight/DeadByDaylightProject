@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "DBDTableRowBase.h"
 #include "EPlayerRole.h"
 #include "ECustomizationCategory.h"
-#include "DBDTableRowBase.h"
 #include "CustomizationCategoryData.generated.h"
 
 USTRUCT()

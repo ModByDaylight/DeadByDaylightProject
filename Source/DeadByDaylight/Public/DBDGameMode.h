@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "OnPlayersLoadoutsCreatedDelegate.h"
 #include "DBDBaseMatchGameMode.h"
-#include "OnPlayersLoadoutsCreated.h"
 #include "EGameState.h"
 #include "DBDGameMode.generated.h"
 
-class APlayerState;
 class APlayerController;
 class APlayerStart;
+class APlayerState;
 
 UCLASS(NonTransient)
 class DEADBYDAYLIGHT_API ADBDGameMode : public ADBDBaseMatchGameMode {

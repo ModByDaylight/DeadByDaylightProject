@@ -4,11 +4,11 @@
 #include "EPlayerTeam.h"
 #include "CharacterCollectionUtilities.generated.h"
 
-class ACamperPlayer;
 class UObject;
-class ASlasherPlayer;
 class ADBDPlayer;
+class ASlasherPlayer;
 class ACharacter;
+class ACamperPlayer;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UCharacterCollectionUtilities : public UBlueprintFunctionLibrary {

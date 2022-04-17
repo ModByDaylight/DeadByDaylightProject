@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UMGTallyListElementWidget.h"
-#include "PlayerLevelData.h"
 #include "XpBonusData.h"
+#include "PlayerLevelData.h"
 #include "RewardItemData.h"
 #include "UMGTallyPlayerLevelWidget.generated.h"
 

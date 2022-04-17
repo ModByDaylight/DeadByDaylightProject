@@ -32,8 +32,8 @@ public:
     UPROPERTY(EditDefaultsOnly)
     UBloodDecalEffect* _bloodDecalEffect;
     
-    UPROPERTY(EditDefaultsOnly)
-    FBHVRPerDetailModeInt _decalPoolSize;
+    //UPROPERTY(EditDefaultsOnly)
+    //FBHVRPerDetailModeInt _decalPoolSize;
     
     UPROPERTY(EditAnywhere)
     float _recycleThresholdPercentage;
@@ -41,8 +41,8 @@ public:
     UPROPERTY(EditAnywhere)
     float _recycleDistancePercentage;
     
-    UPROPERTY(EditDefaultsOnly)
-    FBHVRPerDetailModeInt _maxOverlapping;
+    //UPROPERTY(EditDefaultsOnly)
+    //FBHVRPerDetailModeInt _maxOverlapping;
     
     UBloodTrailSettings();
 };

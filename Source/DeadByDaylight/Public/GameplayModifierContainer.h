@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EDBDScoreTypes.h"
+#include "GameEventData.h"
 #include "BaseModifierContainer.h"
 #include "ModifierTickableConditionReplicatedData.h"
 #include "GameplayTagContainer.h"
-#include "GameEventData.h"
+#include "EDBDScoreTypes.h"
 #include "EInventoryItemType.h"
 #include "StatusViewSource.h"
 #include "GameplayModifierContainer.generated.h"
 
-class ADBDPlayer;
 class UTimerObject;
 class AActor;
+class ADBDPlayer;
 class UGameplayModifierContainer;
 class UBaseModifierCondition;
 

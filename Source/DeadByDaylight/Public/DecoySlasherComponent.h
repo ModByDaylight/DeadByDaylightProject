@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
-#include "TriggerDecoyVisibilityVFX.h"
 #include "Components/ActorComponent.h"
-#include "OnPalletStunned_Authority.h"
+#include "OnPalletStunned_AuthorityDelegate.h"
+#include "UObject/NoExportTypes.h"
+#include "TriggerDecoyVisibilityVFXDelegate.h"
 #include "UObject/NoExportTypes.h"
 #include "DecoySlasherComponent.generated.h"
 
-class UTerrorRadiusEmitterComponent;
-class URedStainComponent;
 class ASlasherPlayer;
+class UTerrorRadiusEmitterComponent;
 class AActor;
+class URedStainComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDecoySlasherComponent : public UActorComponent {

@@ -5,11 +5,11 @@
 #include "KillerAtlantaTutorialLevel.generated.h"
 
 class ASlasherPlayer;
-class AGenerator;
-class ACamperPlayer;
-class AWindow;
 class AEscapeDoor;
+class ACamperPlayer;
+class AGenerator;
 class AHatch;
+class AWindow;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AKillerAtlantaTutorialLevel : public AAtlantaTutorialLevel {

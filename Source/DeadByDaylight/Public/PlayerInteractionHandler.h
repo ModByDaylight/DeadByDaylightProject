@@ -1,21 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnCurrentInteractionChangedBP.h"
 #include "Components/ActorComponent.h"
+#include "OnDeactivateSkillCheckDelegate.h"
+#include "OnSecondaryActionDoneDelegate.h"
 #include "InteractionPerformer.h"
-#include "OnSecondaryActionDone.h"
+#include "AvailableInteractionCalculator.h"
+#include "OnCurrentInteractionChangedBPDelegate.h"
 #include "EInteractionLayer.h"
-#include "OnDeactivateSkillCheck.h"
+#include "GameplayTagContainer.h"
 #include "EInputInteractionType.h"
 #include "ESkillCheckCustomType.h"
-#include "ERequestState.h"
 #include "StoredInteraction.h"
+#include "ERequestState.h"
 #include "EInteractionValidationState.h"
 #include "PlayerInteractionHandler.generated.h"
 
-class UInterruptionDefinition;
 class ADBDPlayer;
+class UObject;
 class UInteractionDefinition;
+class UInterruptionDefinition;
 class USkillCheck;
 class AActor;
 
@@ -96,6 +99,12 @@ private:
     UPROPERTY(Export, Transient)
     TArray<UInteractionDefinition*> _interactionsInZone;
     
+    UPROPERTY(EditDefaultsOnly)
+    FAvailableInteractionCalculator _availableInteractionCalculator;
+    
+    UPROPERTY(Transient)
+    TMap<UObject*, FGameplayTagContainer> _disableInteractionSourcesToExceptions;
+    
 public:
     UPlayerInteractionHandler();
     UFUNCTION(BlueprintCallable)
@@ -103,9 +112,6 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void StartCustomSkillCheck(ESkillCheckCustomType type, float warningSoundDelay);
-    
-    UFUNCTION(BlueprintCallable)
-    void SetSkillCheckTimer(float delay);
     
     UFUNCTION(BlueprintCallable)
     void SetScanForInteractionsEnabled(bool enabled);

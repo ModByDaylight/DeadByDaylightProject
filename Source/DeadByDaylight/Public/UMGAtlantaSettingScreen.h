@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "EOverlayTabs.h"
 #include "Components/SlateWrapperTypes.h"
+#include "EOverlayTabs.h"
 #include "UMGAtlantaSettingScreen.generated.h"
 
-class UUMGSettingMenuButton;
 class UWidgetSwitcher;
+class UUMGSettingMenuButton;
 class UHorizontalBox;
-class UTexture2D;
 class UUMGSettingContextWidget;
+class UTexture2D;
 
 UCLASS(EditInlineNew)
 class UUMGAtlantaSettingScreen : public UMobileBaseUserWidget {

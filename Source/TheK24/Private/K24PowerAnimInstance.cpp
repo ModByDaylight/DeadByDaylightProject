@@ -10,7 +10,6 @@ void UK24PowerAnimInstance::OnIntroCompleted() {
 }
 
 UK24PowerAnimInstance::UK24PowerAnimInstance() {
-    this->_k24Power = NULL;
     this->_owningKiller = NULL;
     this->_isInPowerMode = false;
     this->_isChargingPower = false;
@@ -25,5 +24,6 @@ UK24PowerAnimInstance::UK24PowerAnimInstance() {
     this->_forwardVelocity = 0.00f;
     this->_lateralVelocity = 0.00f;
     this->_isKilling = false;
+    this->_k24Power = NULL;
 }
 

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "GameplayElementSubstitutions.h"
 #include "DependencyElementSubstitutions.h"
-#include "DependencyElementAddition.h"
 #include "GameplayElementAddition.h"
+#include "DependencyElementAddition.h"
 #include "EventSubstitionData.generated.h"
 
 USTRUCT(BlueprintType)

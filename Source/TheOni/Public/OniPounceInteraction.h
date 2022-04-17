@@ -3,8 +3,8 @@
 #include "ChargeableInteractionDefinition.h"
 #include "OniPounceInteraction.generated.h"
 
-class UDemonModeComponent;
 class UOniDemonModeAttackStateComponent;
+class UDemonModeComponent;
 class ASlasherPlayer;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))

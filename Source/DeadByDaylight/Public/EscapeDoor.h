@@ -6,21 +6,21 @@
 #include "UObject/NoExportTypes.h"
 #include "EscapeDoor.generated.h"
 
-class UBlockableComponent;
-class UChargeableComponent;
-class UAIPerceptionStimuliSourceComponent;
-class ACamperPlayer;
 class UEscapeDoorAnimInstance;
 class UObject;
+class UChargeableComponent;
 class UAkComponent;
-class AEscapeBlocker;
+class UBlockableComponent;
 class USceneComponent;
-class USpotLightComponent;
 class ADBDPlayer;
-class USkeletalMeshComponent;
+class AEscapeBlocker;
+class USpotLightComponent;
+class ACamperPlayer;
+class UAIPerceptionStimuliSourceComponent;
 class AActor;
 class UChargeableInteractionDefinition;
 class UBoxComponent;
+class USkeletalMeshComponent;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AEscapeDoor : public AInteractable, public IAIPointOfInterestTargetInterface, public INoiseIndicatorEmitterInterface {

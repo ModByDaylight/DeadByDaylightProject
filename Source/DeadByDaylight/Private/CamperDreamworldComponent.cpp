@@ -1,9 +1,9 @@
 #include "CamperDreamworldComponent.h"
 #include "Net/UnrealNetwork.h"
 
+class ADBDPlayer;
 class ASlasherPlayer;
 class AActor;
-class ADBDPlayer;
 
 bool UCamperDreamworldComponent::ShouldLookSleepyToLocalPlayer() const {
     return false;

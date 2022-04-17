@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "OnSaveGamePopupComplete.h"
-#include "OnScreenTouched.h"
+#include "OnSaveGamePopupCompleteDelegate.h"
+#include "OnScreenTouchedDelegate.h"
 #include "UMGSplashScreen.generated.h"
 
 class UUMGDownloadProgressionWidget;
-class UButton;
-class UTextBlock;
-class UCanvasPanel;
 class UUMGCharacterSlideShowWidget;
+class UButton;
+class UCanvasPanel;
+class UTextBlock;
 
 UCLASS(EditInlineNew)
 class UUMGSplashScreen : public UMobileBaseUserWidget {

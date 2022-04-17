@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "DBDTunableRowHandle.h"
 #include "EK25TeleportLocationStatus.h"
+#include "UObject/NoExportTypes.h"
 #include "K25KillerTeleportationPositionFinderComponent.generated.h"
 
 class AEscapeDoor;

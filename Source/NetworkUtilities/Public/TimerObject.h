@@ -4,8 +4,8 @@
 #include "ReplicationTimerData.h"
 #include "TimerObject.generated.h"
 
-class AActor;
 class UTimerObject;
+class AActor;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class NETWORKUTILITIES_API UTimerObject : public UActorComponent {

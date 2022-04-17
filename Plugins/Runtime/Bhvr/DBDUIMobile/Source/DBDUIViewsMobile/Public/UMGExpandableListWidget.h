@@ -4,10 +4,10 @@
 #include "UMGExpandableListWidget.generated.h"
 
 class UUMGBaseButtonWidget;
+class UExpandableArea;
 class UVerticalBox;
 class UTextBlock;
 class UUserWidget;
-class UExpandableArea;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGExpandableListWidget : public UMobileBaseUserWidget {

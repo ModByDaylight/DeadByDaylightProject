@@ -3,10 +3,10 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGCustomizationItemWidget.generated.h"
 
+class UUMGCustomizationItemPriceWidget;
 class UImage;
 class UCanvasPanel;
 class UVerticalBox;
-class UUMGCustomizationItemPriceWidget;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGCustomizationItemWidget : public UMobileBaseUserWidget {

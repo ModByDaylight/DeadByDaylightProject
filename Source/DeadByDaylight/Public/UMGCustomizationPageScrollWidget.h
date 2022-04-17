@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "StoreItemSlotData.h"
 #include "UMGGridPageScrollWidget.h"
+#include "StoreItemSlotData.h"
 #include "UMGCustomizationPageScrollWidget.generated.h"
 
 class UUMGCustomizationItemWidget;

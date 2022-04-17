@@ -1,7 +1,7 @@
 #include "DBDWrapBox.h"
 
-class UWidget;
 class UDBDWrapBoxSlot;
+class UWidget;
 
 void UDBDWrapBox::SetInnerSlotPadding(FVector2D InPadding) {
 }

@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EGameplayModifierSource.h"
-#include "Components/ActorComponent.h"
-#include "GameplayTagContainer.h"
 #include "CompetenceFlagProvider.h"
+#include "Components/ActorComponent.h"
 #include "ModifierProvider.h"
+#include "GameplayTagContainer.h"
+#include "EGameplayModifierSource.h"
 #include "GameplayTagContainer.h"
 #include "PerkManager.generated.h"
 
+class ADBDPlayer;
 class UPerkCollectionComponent;
-class UPerk;
 class UStatusEffectCollectionComponent;
 class UStatusEffect;
 class UGameplayModifierContainer;
-class ADBDPlayer;
+class UPerk;
 
 UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UPerkManager : public UActorComponent, public ICompetenceFlagProvider, public IModifierProvider {

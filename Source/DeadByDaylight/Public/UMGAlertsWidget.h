@@ -4,8 +4,8 @@
 #include "UMGAlertsWidget.generated.h"
 
 class UUMGScoreAlertWidget;
-class UCanvasPanel;
 class UUMGGameplayAlertWidget;
+class UCanvasPanel;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGAlertsWidget : public UMobileBaseUserWidget {

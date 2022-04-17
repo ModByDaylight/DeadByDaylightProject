@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "EnergyPoweredInterface.h"
-#include "ChargeStateChangeDelegate.h"
-#include "ChargePercentChangeDelegate.h"
+#include "ChargeStateChangeDelegateDelegate.h"
+#include "ChargePercentChangeDelegateDelegate.h"
 #include "EEnergyTypeEnum.h"
 #include "ChargerComponent.generated.h"
 

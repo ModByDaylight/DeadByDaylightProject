@@ -4,6 +4,7 @@
 
 
 
+
 UCoreHudRootWidget::UCoreHudRootWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->WidgetContainer = NULL;
     this->OuterContainer = NULL;

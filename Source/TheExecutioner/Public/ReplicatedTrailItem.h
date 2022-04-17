@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Engine/NetSerialization.h"
+#include "Engine/NetSerialization.h"
 #include "UObject/NoExportTypes.h"
-#include "Engine/NetSerialization.h"
-#include "Engine/NetSerialization.h"
 #include "ReplicatedTrailItem.generated.h"
 
 class ATormentTrailPoint;

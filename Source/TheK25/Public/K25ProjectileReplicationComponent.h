@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "K25ProjectileDeactivationData.h"
 #include "BaseProjectileReplicationComponent.h"
 #include "LaunchInfo.h"
+#include "K25ProjectileDeactivationData.h"
 #include "K25ProjectileReplicationComponent.generated.h"
 
-class AK25Chain;
 class AK25Projectile;
+class AK25Chain;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THEK25_API UK25ProjectileReplicationComponent : public UBaseProjectileReplicationComponent {

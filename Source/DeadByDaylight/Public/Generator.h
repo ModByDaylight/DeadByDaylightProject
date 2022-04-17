@@ -1,31 +1,31 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
+#include "OnIsDamagedChangedEventDelegate.h"
 #include "Interactable.h"
 #include "AIPointOfInterestTargetInterface.h"
-#include "OnIsDamagedChangedEvent.h"
 #include "NoiseIndicatorEmitterInterface.h"
-#include "GeneratorRepairedEvent.h"
-#include "GeneratorRepairedBySurvivorEvent.h"
+#include "GeneratorRepairedEventDelegate.h"
+#include "UObject/NoExportTypes.h"
+#include "GeneratorRepairedBySurvivorEventDelegate.h"
 #include "GameplayTagContainer.h"
 #include "DamageData.h"
 #include "PlayerFloatTuple.h"
-#include "OnAkPostEventCallback.h"
+#include "OnAkPostEventCallbackDelegate.h"
 #include "AkExternalSourceInfo.h"
 #include "ESkillCheckCustomType.h"
 #include "Generator.generated.h"
 
 class UCurveLinearColor;
-class ACamperPlayer;
+class UCoopRepairTracker;
+class AActor;
 class UAIPerceptionStimuliSourceComponent;
+class UAkAudioEvent;
+class ADBDPlayer;
 class UObject;
 class UChargeableComponent;
-class UCoopRepairTracker;
-class ADBDPlayer;
-class UAkAudioEvent;
-class USkeletalMeshComponent;
-class AActor;
 class UInteractor;
+class USkeletalMeshComponent;
+class ACamperPlayer;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AGenerator : public AInteractable, public IAIPointOfInterestTargetInterface, public INoiseIndicatorEmitterInterface {
@@ -37,8 +37,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool IsRepaired;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
-    bool IsASMCachePreWarm;
+    UPROPERTY(BlueprintReadOnly)
+    bool WasASMCachePreWarmTriggered;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool IsPlaySkillcheckAesthetic;
@@ -96,7 +96,7 @@ private:
     UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool _isAutoCompleted;
     
-    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Replicated, meta=(AllowPrivateAccess=true))
     int32 _overchargeLevel;
     
     UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess=true))

@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UMGGenericPopup.h"
-#include "Layout/Margin.h"
 #include "Types/SlateEnums.h"
+#include "Layout/Margin.h"
 #include "UMGAtlantaPromoCodePopup.generated.h"
 
-class UOverlay;
-class UImage;
-class UUMGAtlantaPromoCodeRewardItemWidget;
-class UHorizontalBox;
 class UEditableTextBox;
+class UHorizontalBox;
+class UOverlay;
+class UUMGAtlantaPromoCodeRewardItemWidget;
+class UImage;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlantaPromoCodePopup : public UUMGGenericPopup {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPromoCodeInputOnPopup, const FString&, name);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPromoCodeInputOnPopup, const FString&, name);
     
 protected:
     UPROPERTY(Export)

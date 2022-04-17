@@ -5,8 +5,8 @@
 #include "Navigation/PathFollowingComponent.h"
 #include "AICharacterHideInLockerBehaviour.generated.h"
 
-class ADBDPlayer;
 class ADBDAIPlayerController;
+class ADBDPlayer;
 class UAICharacterHideInLockerBehaviourData;
 
 UCLASS()

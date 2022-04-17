@@ -1,9 +1,9 @@
 #include "K25Utilities.h"
 
-class UObject;
-class ALamentConfiguration;
 class AK25ControlledProjectile;
 class AK25Power;
+class UObject;
+class ALamentConfiguration;
 class AK25Husk;
 class AK25Gateway;
 

@@ -1,8 +1,8 @@
 #include "PhaseWalkingComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class UDecoySlasherComponent;
 class AActor;
+class UDecoySlasherComponent;
 
 void UPhaseWalkingComponent::UpdateSurvivorVisibility(bool visible) {
 }

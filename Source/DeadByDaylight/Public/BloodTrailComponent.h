@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "BloodDecal.h"
+#include "Components/ActorComponent.h"
 #include "BloodTrailComponent.generated.h"
 
-class UDBDDecalComponent;
 class UBloodTrailSettings;
 class UBloodDecalEffect;
+class UDBDDecalComponent;
 class UDecalSpawner;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))

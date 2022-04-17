@@ -3,9 +3,9 @@
 #include "GameFramework/Actor.h"
 #include "FoliageDensityContainer.generated.h"
 
+class UFoliageDensityHISM;
 class AFoliageActor;
 class UDBDMapFoliageDensityTunables;
-class UFoliageDensityHISM;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AFoliageDensityContainer : public AActor {

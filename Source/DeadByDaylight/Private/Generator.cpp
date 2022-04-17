@@ -3,10 +3,10 @@
 #include "Perception/AIPerceptionStimuliSourceComponent.h"
 
 class ADBDPlayer;
-class UChargeableComponent;
-class AActor;
-class UObject;
 class ACamperPlayer;
+class AActor;
+class UChargeableComponent;
+class UObject;
 
 
 void AGenerator::TriggerSkillCheckFailureLoudNoise(ADBDPlayer* instigatingPlayer) {
@@ -168,12 +168,13 @@ void AGenerator::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifeti
     
     DOREPLIFETIME(AGenerator, _damageData);
     DOREPLIFETIME(AGenerator, _isBlocked);
+    DOREPLIFETIME(AGenerator, _overchargeLevel);
 }
 
 AGenerator::AGenerator() {
     this->Activated = false;
     this->IsRepaired = false;
-    this->IsASMCachePreWarm = false;
+    this->WasASMCachePreWarmTriggered = false;
     this->IsPlaySkillcheckAesthetic = true;
     this->ForceRevealToLocalPlayer = false;
     this->KillerOutlineFadeCurve = NULL;

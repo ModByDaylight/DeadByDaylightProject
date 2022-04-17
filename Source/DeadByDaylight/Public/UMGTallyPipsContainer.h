@@ -4,8 +4,8 @@
 #include "Layout/Margin.h"
 #include "UMGTallyPipsContainer.generated.h"
 
-class UHorizontalBox;
 class UUMGTallyPip;
+class UHorizontalBox;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGTallyPipsContainer : public UMobileBaseUserWidget {

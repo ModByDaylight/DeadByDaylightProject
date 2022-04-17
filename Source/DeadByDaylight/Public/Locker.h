@@ -2,27 +2,27 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Interactable.h"
-#include "ECamperDamageState.h"
 #include "GameplayTagContainer.h"
+#include "ECamperDamageState.h"
 #include "Engine/EngineTypes.h"
 #include "Locker.generated.h"
 
-class UAnimationMontageSlave;
-class ULockerAnimInstance;
-class ADBDPlayer;
-class UPrimitiveComponent;
-class UMontagePlayer;
 class UInteractor;
+class UAnimationMontageSlave;
+class ADBDPlayer;
 class ACamperPlayer;
+class UMontagePlayer;
+class UPrimitiveComponent;
 class UInteractionDefinition;
 class UChildActorComponent;
+class ULockerAnimInstance;
 class AActor;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ALocker : public AInteractable {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnSurvivorInLockerChanged, ADBDPlayer*, oldSurvivor, ADBDPlayer*, newSurvivor);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnSurvivorInLockerChanged, ADBDPlayer*, oldSurvivor, ADBDPlayer*, newSurvivor);
     
     UPROPERTY(BlueprintAssignable)
     FOnSurvivorInLockerChanged OnSurvivorInLockerChanged;

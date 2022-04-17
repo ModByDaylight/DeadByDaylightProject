@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CustomGamePresetData.h"
-#include "PartyMatchmakingSettings.h"
 #include "PartySessionSettings.h"
+#include "PartyMatchmakingSettings.h"
 #include "SocialPartyState.generated.h"
 
 USTRUCT()

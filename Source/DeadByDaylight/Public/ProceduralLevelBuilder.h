@@ -10,13 +10,13 @@
 #include "ProceduralLevelBuilder.generated.h"
 
 class UDBDDesignTunables;
-class UTileMatrix;
-class ATile;
+class UTileBank;
 class UPaperTileMap;
 class UObjectLibrary;
-class UProceduralGenerationData;
+class ATile;
 class UMapData;
-class UTileBank;
+class UProceduralGenerationData;
+class UTileMatrix;
 class UActorSpawner;
 class AProceduralLevelData;
 class ADBDClientSyncer;
@@ -153,6 +153,9 @@ private:
     
     UPROPERTY(Transient)
     UEdgeObjectHandlingStrategy* _edgeObjectHandlingStrategy;
+    
+    UPROPERTY(Transient)
+    ATile* _backupKillerLairTile;
     
 public:
     AProceduralLevelBuilder();

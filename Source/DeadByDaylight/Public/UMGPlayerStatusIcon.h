@@ -3,14 +3,14 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGPlayerStatusIcon.generated.h"
 
-class UUMGStalkingStatusEffectUI;
-class UProgressBar;
-class UTexture2D;
-class UTextBlock;
-class UCanvasPanel;
 class UImage;
-class UMaterialInstanceDynamic;
 class UUMGLacerationStatusEffectUI;
+class UProgressBar;
+class UUMGStalkingStatusEffectUI;
+class UCanvasPanel;
+class UMaterialInstanceDynamic;
+class UTextBlock;
+class UTexture2D;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGPlayerStatusIcon : public UMobileBaseUserWidget {

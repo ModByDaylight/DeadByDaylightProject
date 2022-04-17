@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EEventItemContentType.h"
 #include "EItemRarity.h"
+#include "EEventItemContentType.h"
 #include "PurchaseItemUIData.generated.h"
 
 USTRUCT()

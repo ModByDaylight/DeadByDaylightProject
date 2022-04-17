@@ -4,10 +4,10 @@
 #include "Engine/EngineTypes.h"
 #include "HeadOn.generated.h"
 
+class AActor;
 class ALocker;
 class UPrimitiveComponent;
 class UStunnableComponent;
-class AActor;
 class ADBDPlayer;
 
 UCLASS(meta=(BlueprintSpawnableComponent))

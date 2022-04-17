@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTableRowBase.h"
 #include "EHintCategory.h"
+#include "DBDTableRowBase.h"
 #include "HintData.generated.h"
 
 USTRUCT(BlueprintType)

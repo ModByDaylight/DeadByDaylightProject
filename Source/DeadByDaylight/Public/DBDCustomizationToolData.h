@@ -3,9 +3,9 @@
 #include "CustomizationItemData.h"
 #include "DBDCustomizationToolData.generated.h"
 
-class UAnimationAsset;
-class USkeletalMesh;
 class UTexture2D;
+class USkeletalMesh;
+class UAnimationAsset;
 
 USTRUCT(BlueprintType)
 struct FDBDCustomizationToolData {

@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UmgPlayableHud.h"
-#include "Styling/SlateBrush.h"
 #include "UObject/NoExportTypes.h"
+#include "Styling/SlateBrush.h"
 #include "EInputInteractionType.h"
 #include "EInventoryType.h"
 #include "UmgKillerHud.generated.h"
 
-class UAtlantaHudPowerAttackJoystick;
+class ASlasherPlayer;
 class UPowerButton;
 class UCanvasPanel;
+class UAtlantaHudPowerAttackJoystick;
 class UActionButton;
-class ASlasherPlayer;
 class UMobileBaseUserWidget;
 class UUMGGhostfaceSpecific;
 class ACollectable;

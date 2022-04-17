@@ -8,20 +8,20 @@
 #include "FirecrackerEffectData.h"
 #include "ConjoinedTwin.generated.h"
 
-class UCustomizedAudioComponent;
 class URangeToActorsTrackerComponent;
-class UDBDAttackerComponent;
 class UTwinOutlineUpdateStrategy;
-class UFlashlightableComponent;
-class UFirecrackerEffectHandlerComponent;
 class UAkComponent;
-class UHitValidatorComponent;
+class UDBDAttackerComponent;
+class UCustomizedAudioComponent;
 class UKillerBlindingFXComponent;
-class UHitValidatorConfigurator;
+class UHitValidatorComponent;
 class UAnimationMontageSlave;
+class UHitValidatorConfigurator;
 class UTwinFirstPersonViewComponent;
-class UTwinPossessNegationEffectComponent;
+class UFlashlightableComponent;
 class UBlindFlashlightTargetFXComponent;
+class UFirecrackerEffectHandlerComponent;
+class UTwinPossessNegationEffectComponent;
 
 UCLASS()
 class AConjoinedTwin : public ADBDPlayer {

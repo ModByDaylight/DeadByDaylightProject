@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ChargeApplied.h"
+#include "ChargeableEmptiedDelegateDelegate.h"
 #include "Components/ActorComponent.h"
-#include "ChargeableEmptiedDelegate.h"
-#include "ChargeableCompletionStateChangeDelegate.h"
-#include "ChargeableSkillCheckResponse.h"
-#include "ChargeableCompletionPercentChangeDelegate.h"
-#include "ChargeableCompletionPercentChangeCosmeticDelegate.h"
-#include "DechargeBegin.h"
-#include "DechargeEnd.h"
+#include "ChargeableCompletionStateChangeDelegateDelegate.h"
+#include "ChargeableSkillCheckResponseDelegate.h"
+#include "ChargeAppliedDelegate.h"
+#include "ChargeableCompletionPercentChangeDelegateDelegate.h"
+#include "ChargeableCompletionPercentChangeCosmeticDelegateDelegate.h"
+#include "DechargeBeginDelegate.h"
+#include "DechargeEndDelegate.h"
 #include "SpeedBasedNetSyncedValue.h"
 #include "DBDTimer.h"
 #include "ChargeData.h"
@@ -16,7 +16,7 @@
 
 class AActor;
 
-UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UChargeableComponent : public UActorComponent {
     GENERATED_BODY()
 public:

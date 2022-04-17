@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECamperDamageState.h"
 #include "TargetFocusTimer.h"
+#include "ECamperDamageState.h"
 #include "ChaseUpdateInfo.generated.h"
 
 USTRUCT(BlueprintType)

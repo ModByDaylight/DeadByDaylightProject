@@ -14,8 +14,8 @@ UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API UFireHarpoonRifleInteraction : public UInteractionDefinition {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnHitPlayer);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFireHarpoon);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnHitPlayer);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFireHarpoon);
     
     UPROPERTY(BlueprintAssignable)
     FOnFireHarpoon OnFireHarpoon;

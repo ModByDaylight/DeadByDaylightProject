@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "TunableStat.h"
 #include "StatusEffect.h"
 #include "DBDTunableRowHandle.h"
-#include "TunableStat.h"
 #include "TwinLullabyRangeAdditiveEffect.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

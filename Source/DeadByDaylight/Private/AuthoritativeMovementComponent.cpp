@@ -1,8 +1,8 @@
 #include "AuthoritativeMovementComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class UCapsuleComponent;
 class UPrimitiveComponent;
+class UCapsuleComponent;
 class AActor;
 
 void UAuthoritativeMovementComponent::SetPawnDetector(UCapsuleComponent* pawnDetector) {

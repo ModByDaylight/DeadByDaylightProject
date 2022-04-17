@@ -5,10 +5,10 @@
 #include "ETrailType.h"
 #include "TrailControllerBase.generated.h"
 
+class ABaseTormentTrailPoint;
 class UTormentTrailPointCollectionComponent;
 class USplineComponent;
 class UAuthoritativePoolableActorComponent;
-class ABaseTormentTrailPoint;
 
 UCLASS(Abstract)
 class ATrailControllerBase : public AActor {

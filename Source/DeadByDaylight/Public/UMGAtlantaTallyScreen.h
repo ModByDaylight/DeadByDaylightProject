@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnTallyLeft.h"
 #include "MobileBaseUserWidget.h"
-#include "OnTallySpectateClicked.h"
-#include "OnTallyScoreboardAddFriendEvent.h"
-#include "OnTallyScoreboardReportEvent.h"
-#include "EPlayerRole.h"
-#include "EGameType.h"
 #include "Layout/Geometry.h"
+#include "OnTallyScoreboardAddFriendEventDelegate.h"
+#include "OnTallyLeftDelegate.h"
+#include "OnTallySpectateClickedDelegate.h"
+#include "OnTallyScoreboardReportEventDelegate.h"
+#include "EGameType.h"
+#include "EPlayerRole.h"
 #include "UMGAtlantaTallyScreen.generated.h"
 
-class UUMGTallyListWidget;
-class UUMGTallyBloodpointsWidget;
 class UUMGTallyScoreboardWidget;
+class UUMGTallyBloodpointsWidget;
+class UUMGTallyListWidget;
 class UUMGTallyRankWidget;
 class UUMGTallyPlayerLevelWidget;
 class UUMGTallyCharacterProgressionWidget;

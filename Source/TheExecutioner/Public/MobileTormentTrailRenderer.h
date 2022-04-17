@@ -4,8 +4,8 @@
 #include "TormentTrailPointInfo.h"
 #include "MobileTormentTrailRenderer.generated.h"
 
-class ABaseTormentTrailPoint;
 class UInstancedStaticMeshComponent;
+class ABaseTormentTrailPoint;
 class UMaterialInstanceDynamic;
 
 UCLASS()

@@ -1,7 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EAttackType.h"
 #include "Components/ActorComponent.h"
+#include "EAttackType.h"
+#include "DBDTunableRowHandle.h"
 #include "AttackDelegatePair.h"
 #include "DBDAttackerComponent.generated.h"
 
@@ -11,7 +12,7 @@ UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDAttackerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAttackPhaseChangedDelegate, const EAttackType, attackType);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAttackPhaseChangedDelegate, const EAttackType, attackType);
     
     UPROPERTY(BlueprintAssignable, Transient)
     FOnAttackPhaseChangedDelegate OnAttackStartDelegate;
@@ -20,6 +21,9 @@ public:
     FOnAttackPhaseChangedDelegate OnAttackFinishDelegate;
     
 private:
+    UPROPERTY(EditAnywhere)
+    FDBDTunableRowHandle _autonomousHitPredictionDelay;
+    
     UPROPERTY(Export, Transient)
     TArray<UDBDAttack*> _attacks;
     

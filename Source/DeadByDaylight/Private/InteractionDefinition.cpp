@@ -2,11 +2,11 @@
 
 class ADBDPlayer;
 class UInterruptionDefinition;
+class UInteractionDefinition;
 class UObject;
+class AActor;
 class UInteractor;
 class AInteractable;
-class AActor;
-class UInteractionDefinition;
 class UPrimitiveComponent;
 
 bool UInteractionDefinition::ShouldStartUpdateMontageDuringEnter(const ADBDPlayer* character) const {
@@ -257,11 +257,11 @@ bool UInteractionDefinition::DoesPlayerHaveClearPath(const ADBDPlayer* player) c
 void UInteractionDefinition::CompleteCharge(ADBDPlayer* character) {
 }
 
-EInteractionComparisonPriority UInteractionDefinition::ComparePriorityToInteraction_Implementation(UInteractionDefinition* interaction) const {
+EInteractionComparisonPriority UInteractionDefinition::ComparePriorityToInteraction_Implementation(const UInteractionDefinition* interaction) const {
     return EInteractionComparisonPriority::Lower;
 }
 
-bool UInteractionDefinition::CanOverrideInteraction_Implementation(UInteractionDefinition* interaction) const {
+bool UInteractionDefinition::CanOverrideInteraction_Implementation(const UInteractionDefinition* interaction) const {
     return false;
 }
 
@@ -326,7 +326,6 @@ UInteractionDefinition::UInteractionDefinition() {
     this->UseStartSnapTimeForSnapExitTime = false;
     this->CanInteractWhileIncapacitated = false;
     this->CanInteractWhileCloaked = false;
-    this->CanInteractWhileChainBlinking = false;
     this->CanInteractWhileAttacking = false;
     this->CanInteractWhileChainLinked = false;
     this->CanInteractWhileShocked = false;
@@ -377,6 +376,9 @@ UInteractionDefinition::UInteractionDefinition() {
     this->OwnershipUsability = EInteractionOwnership::AnyCanUse;
     this->ExitInteractionTime = 0.00f;
     this->ApplyModifiersToExitTime = false;
+    this->InteractionCanBeToggled = false;
+    this->IgnoreSprintToCancelSetting = false;
+    this->ForceWithSprintToCancelSetting = false;
     this->AtlantaLastButtonPressed = EButtonType::None;
     this->InteractionHeightDeltaMax = 150.00f;
     this->MaximumVelocity = -1.00f;

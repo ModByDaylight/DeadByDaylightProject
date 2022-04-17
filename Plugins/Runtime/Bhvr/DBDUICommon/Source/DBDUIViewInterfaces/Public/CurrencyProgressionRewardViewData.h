@@ -4,8 +4,8 @@
 #include "CurrencyProgressionTooltipViewData.h"
 #include "CurrencyProgressionRewardViewData.generated.h"
 
-class UTexture2D;
 class UMaterialInterface;
+class UTexture2D;
 
 USTRUCT(BlueprintType)
 struct DBDUIVIEWINTERFACES_API FCurrencyProgressionRewardViewData : public FRewardViewData {

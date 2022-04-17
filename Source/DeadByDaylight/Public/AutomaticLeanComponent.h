@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "SocketOrBoneCache.h"
 #include "Components/ActorComponent.h"
 #include "ELeanState.h"
-#include "SocketOrBoneCache.h"
 #include "AutomaticLeanComponent.generated.h"
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UAutomaticLeanComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLeanStateChanged, ELeanState, leanState);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCanInitiateLeanChanged, bool, canInitiate);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLeanStateChanged, ELeanState, leanState);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCanInitiateLeanChanged, bool, canInitiate);
     
     UPROPERTY(BlueprintAssignable)
     FOnLeanStateChanged OnLeanStateChanged;
@@ -56,7 +56,7 @@ private:
     float _sideTraceOffset;
     
     UPROPERTY(BlueprintReadOnly, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float _maxMovementDistance;
+    float _maxCameraDistance;
     
     UPROPERTY(BlueprintReadOnly, EditAnywhere, meta=(AllowPrivateAccess=true))
     float _maxCameraAngle;

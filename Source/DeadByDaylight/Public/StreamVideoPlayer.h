@@ -4,11 +4,11 @@
 #include "VideoPlayer.h"
 #include "StreamVideoPlayer.generated.h"
 
-class UMediaSoundComponent;
+class UAudioComponent;
 class UUMGStreamVideoWidget;
 class UMediaPlayer;
+class UMediaSoundComponent;
 class UStreamMediaSource;
-class UAudioComponent;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AStreamVideoPlayer : public AActor, public IVideoPlayer {

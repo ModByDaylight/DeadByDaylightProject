@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ChargedAttackStateComponent.h"
-#include "OnChargedAttackReadyChanged.h"
+#include "OnChargedAttackReadyChangedDelegate.h"
 #include "OniDemonModeAttackStateComponent.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

@@ -10,12 +10,12 @@
 #include "YawAndPitchRotator_NetQuantize32.h"
 #include "DBDCharacterMovementComponent.generated.h"
 
-class AActor;
+class UBaseCharacterRotationStrategy;
 class UBaseCharacterVelocityAdditiveStrategy;
 class UBaseInputAccelerationConstraintStrategy;
-class UBaseCharacterRotationStrategy;
-class UCurveFloat;
+class AActor;
 class UAnimMontage;
+class UCurveFloat;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDCharacterMovementComponent : public UCharacterMovementComponent {

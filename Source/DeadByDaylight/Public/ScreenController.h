@@ -4,11 +4,11 @@
 #include "EScreenType.h"
 #include "ScreenController.generated.h"
 
-class UUserWidget;
 class UDBDGameInstance;
+class UUserWidget;
+class UScreenBase;
 class UGFxObject;
 class UGFxMoviePlayer;
-class UScreenBase;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UScreenController : public UObject {

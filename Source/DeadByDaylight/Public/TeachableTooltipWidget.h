@@ -3,8 +3,8 @@
 #include "BaseTooltipWidget.h"
 #include "TeachableTooltipWidget.generated.h"
 
-class UTextBlock;
 class UImage;
+class UTextBlock;
 class UUMGHtmlRichText;
 
 UCLASS(Abstract, EditInlineNew)

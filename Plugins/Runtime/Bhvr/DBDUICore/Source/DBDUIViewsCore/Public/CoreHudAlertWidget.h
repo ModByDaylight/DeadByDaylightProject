@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "CoreBaseHudWidget.h"
-#include "HudAlertViewInterface.h"
 #include "EEasingType.h"
+#include "HudAlertViewInterface.h"
 #include "CoreHudAlertWidget.generated.h"
 
+class UCoreBaseUserWidget;
 class UCoreHudScoreAlertItem;
 class UCoreHudStatusEffectAlertItem;
 class UGridPanel;
-class UCoreBaseUserWidget;
 class UUITweenInstance;
 
 UCLASS(EditInlineNew)

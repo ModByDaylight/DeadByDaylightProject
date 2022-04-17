@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "CannibalChainsawPower.h"
-#include "TagStateBool.h"
 #include "TunableStat.h"
+#include "TagStateBool.h"
 #include "DBDTunableRowHandle.h"
 #include "CannibalChainsawPowerComponent.generated.h"
 
@@ -69,7 +69,7 @@ private:
     FTunableStat _tantrumDuration;
     
     UPROPERTY(EditDefaultsOnly)
-    FDBDTunableRowHandle _tantrumMaxDuration;
+    FTunableStat _tantrumMaxDuration;
     
 public:
     UCannibalChainsawPowerComponent();

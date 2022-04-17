@@ -3,8 +3,8 @@
 #include "BaseVFX.h"
 #include "SpiritPassivePhaseWalkHusk.generated.h"
 
-class UCustomizedSkeletalMesh;
 class USkeletalMeshComponent;
+class UCustomizedSkeletalMesh;
 
 UCLASS()
 class ASpiritPassivePhaseWalkHusk : public ABaseVFX {

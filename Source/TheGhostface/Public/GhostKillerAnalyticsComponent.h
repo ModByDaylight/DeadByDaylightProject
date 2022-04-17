@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GhostKillerAnalytics.h"
 #include "Components/ActorComponent.h"
-#include "ELeanState.h"
+#include "GhostKillerAnalytics.h"
 #include "GameplayTagContainer.h"
+#include "ELeanState.h"
 #include "GameEventData.h"
 #include "GhostKillerAnalyticsComponent.generated.h"
 

@@ -5,9 +5,9 @@
 #include "UMGAtlantaDailyRewardsScreen.generated.h"
 
 class UUMGPopupButton;
+class UCanvasPanel;
 class UUMGAtlantaDailyRewardsGrid;
 class UTextBlock;
-class UCanvasPanel;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlantaDailyRewardsScreen : public UMobileBaseUserWidget {

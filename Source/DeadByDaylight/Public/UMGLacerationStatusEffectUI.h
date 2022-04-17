@@ -4,9 +4,9 @@
 #include "UObject/NoExportTypes.h"
 #include "UMGLacerationStatusEffectUI.generated.h"
 
-class UPaperSprite;
 class UImage;
 class UTexture2D;
+class UPaperSprite;
 
 UCLASS(Abstract, EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGLacerationStatusEffectUI : public UMobileBaseUserWidget {

@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "BaseSurvivorAnimInstance.h"
-#include "ECamperGuidedAction.h"
 #include "UObject/NoExportTypes.h"
+#include "ECamperGuidedAction.h"
 #include "EInteractionAnimation.h"
+#include "UObject/NoExportTypes.h"
 #include "SurvivorAnimInstance.generated.h"
 
-class UAnimMontage;
 class ACamperPlayer;
+class UAnimMontage;
 class UAnimCompositeBase;
 
 UCLASS(NonTransient)
@@ -129,6 +129,9 @@ protected:
     
     UPROPERTY(BlueprintReadOnly, Transient)
     bool IsHoldingLamentConfiguration;
+    
+    UPROPERTY(BlueprintReadOnly, Transient)
+    bool IsHoldingFragileObject;
     
     UPROPERTY(BlueprintReadOnly, Transient)
     bool IsArmOverrideDisabled;

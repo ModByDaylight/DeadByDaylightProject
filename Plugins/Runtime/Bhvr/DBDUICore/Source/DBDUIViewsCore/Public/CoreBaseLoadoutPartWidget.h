@@ -5,8 +5,8 @@
 #include "CoreBaseLoadoutPartWidget.generated.h"
 
 class UDBDImage;
-class UTexture2D;
 class UTextBlock;
+class UTexture2D;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreBaseLoadoutPartWidget : public UUserWidget {

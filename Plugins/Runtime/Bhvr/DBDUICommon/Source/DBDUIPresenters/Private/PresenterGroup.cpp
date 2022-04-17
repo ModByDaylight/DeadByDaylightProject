@@ -1,7 +1,7 @@
 #include "PresenterGroup.h"
 #include "ContextObserver.h"
-#include "PawnObserver.h"
 #include "FocusHandler.h"
+#include "PawnObserver.h"
 #include "RootContainer.h"
 
 APresenterGroup::APresenterGroup() {

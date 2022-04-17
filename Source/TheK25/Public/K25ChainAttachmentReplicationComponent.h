@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
+#include "UObject/NoExportTypes.h"
 #include "EK25ChainDetachmentReason.h"
 #include "K25ChainAttachmentReplicationComponent.generated.h"
 
-class UK25SurvivorChainAttachmentComponent;
 class AK25Chain;
 class AK25SurvivorChainAttachmentAnchor;
+class UK25SurvivorChainAttachmentComponent;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class THEK25_API UK25ChainAttachmentReplicationComponent : public UActorComponent {

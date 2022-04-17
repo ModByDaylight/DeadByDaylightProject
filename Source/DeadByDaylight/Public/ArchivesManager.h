@@ -3,9 +3,9 @@
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "ArchivesManager.generated.h"
 
-class UArchiveStoriesContainer;
 class UArchiveVignettesContainer;
 class URewardTrackContainer;
+class UArchiveStoriesContainer;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UArchivesManager : public UGameInstanceSubsystem {

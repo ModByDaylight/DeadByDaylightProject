@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "PlayerStatusViewData.h"
 #include "UObject/Interface.h"
 #include "GameplayTagContainer.h"
-#include "PlayerStatusViewData.h"
 #include "PlayerStatusViewInterface.generated.h"
 
 UINTERFACE(Blueprintable)

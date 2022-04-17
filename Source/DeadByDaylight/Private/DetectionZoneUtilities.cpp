@@ -1,7 +1,7 @@
 #include "DetectionZoneUtilities.h"
 
-class UPhysicalMaterial;
 class ADBDPlayer;
+class UPhysicalMaterial;
 
 bool UDetectionZoneUtilities::DetectObstruction(const ADBDPlayer* player, EDetectionZone detectionZoneID, UPhysicalMaterial*& physicalMaterialOut, FVector& positionOut, FVector& normalOut) {
     return false;

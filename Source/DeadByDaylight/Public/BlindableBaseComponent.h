@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EBlindType.h"
 #include "Components/ActorComponent.h"
 #include "TagStateBool.h"
+#include "EBlindType.h"
 #include "BlindableBaseComponent.generated.h"
 
+class AActor;
 class UChargeableComponent;
 class UBlindingEffectorInterface;
 class IBlindingEffectorInterface;
-class AActor;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UBlindableBaseComponent : public UActorComponent {

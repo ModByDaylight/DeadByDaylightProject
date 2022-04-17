@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Dependency.h"
 #include "Components/ActorComponent.h"
+#include "Dependency.h"
 #include "ActorDependency.generated.h"
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))

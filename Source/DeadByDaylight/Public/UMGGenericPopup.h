@@ -4,10 +4,10 @@
 #include "Styling/SlateColor.h"
 #include "UMGGenericPopup.generated.h"
 
-class UUMGPopupButton;
 class UUMGHtmlRichText;
 class URichTextBlock;
 class UImage;
+class UUMGPopupButton;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGGenericPopup : public UMobileBaseUserWidget {

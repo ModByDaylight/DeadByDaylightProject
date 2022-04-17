@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AkXSXAdvancedInitializationSettings.h"
 #include "UObject/Object.h"
 #include "AkCommonInitializationSettings.h"
 #include "AkXSXApuHeapInitializationSettings.h"
+#include "AkXSXAdvancedInitializationSettings.h"
 #include "AkCommunicationSettingsWithSystemInitialization.h"
 #include "AkXSXInitializationSettings.generated.h"
 

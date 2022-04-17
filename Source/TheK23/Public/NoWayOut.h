@@ -3,9 +3,9 @@
 #include "Perk.h"
 #include "NoWayOut.generated.h"
 
+class AEscapeDoor;
 class ACamperPlayer;
 class ADBDPlayer;
-class AEscapeDoor;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UNoWayOut : public UPerk {

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "HillbillyChainsawAttack.h"
-#include "TagStateBool.h"
 #include "ButtonPromptSource.h"
+#include "TagStateBool.h"
 #include "CannibalChainsawAttack.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

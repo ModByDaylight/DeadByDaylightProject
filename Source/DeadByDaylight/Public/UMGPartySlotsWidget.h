@@ -5,9 +5,9 @@
 #include "EPartyPlayerSlotWidgetState.h"
 #include "UMGPartySlotsWidget.generated.h"
 
-class UPanelWidget;
-class UUMGPartyPlayerSlotWidget;
 class UVerticalBox;
+class UUMGPartyPlayerSlotWidget;
+class UPanelWidget;
 class UUMGPartyBotSlotWidget;
 
 UCLASS(Abstract, EditInlineNew)

@@ -1,22 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataAsset.h"
-#include "ThemeProperties.h"
 #include "QuadrantSpawnTypeProperties.h"
+#include "Engine/DataAsset.h"
 #include "SurvivorItemProperties.h"
 #include "QuadrantSpawnCategories.h"
+#include "ThemeProperties.h"
 #include "KillerItemDependencies.h"
 #include "EscapeStrategyProperty.h"
 #include "EscapeTypeObjects.h"
-#include "SpecialBehaviourPopulation.h"
 #include "GameplayElementsPopulation.h"
 #include "ManagedGameplayElementsPopulation.h"
 #include "SurvivorGroupingProbability.h"
 #include "UObject/NoExportTypes.h"
+#include "SpecialBehaviourPopulation.h"
 #include "EventSubstitionData.h"
 #include "ProceduralGenerationData.generated.h"
 
 class UCurveFloat;
+class AActor;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UProceduralGenerationData : public UDataAsset {
@@ -51,6 +52,9 @@ public:
     
     UPROPERTY(EditDefaultsOnly)
     TArray<FEscapeTypeObjects> EscapeTypeActors;
+    
+    UPROPERTY(EditDefaultsOnly)
+    TArray<TSoftClassPtr<AActor>> Basements;
     
     UPROPERTY(EditDefaultsOnly)
     TArray<FGameplayElementsPopulation> ElementsPopulation;

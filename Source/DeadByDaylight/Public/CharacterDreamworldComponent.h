@@ -2,12 +2,12 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Components/ActorComponent.h"
-#include "DreamStateChangedDelegate.h"
+#include "DreamStateChangedDelegateDelegate.h"
 #include "CharacterDreamworldComponent.generated.h"
 
-class AActor;
-class APostProcessUpdate;
 class ADBDPlayer;
+class APostProcessUpdate;
+class AActor;
 class UObject;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))

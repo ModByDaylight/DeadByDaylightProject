@@ -5,8 +5,8 @@
 #include "SetGroundPortalInteraction.generated.h"
 
 class UPortalPlacerStateComponent;
-class UObjectPlacerComponent;
 class ADemogorgonPortal;
+class UObjectPlacerComponent;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class USetGroundPortalInteraction : public UChargeableInteractionDefinition {

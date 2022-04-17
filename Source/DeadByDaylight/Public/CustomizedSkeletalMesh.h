@@ -5,17 +5,17 @@
 #include "ECustomizationCategory.h"
 #include "CustomizedSkeletalMesh.generated.h"
 
-class USkinnedMeshComponent;
+class USlaveAnimInstance;
 class USkeletalMeshComponent;
 class UCustomizedSkeletalMesh;
-class USlaveAnimInstance;
+class USkinnedMeshComponent;
 class AItemVfx;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCustomizedSkeletalMesh : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnMeshSwitchEventBP, ECustomizationCategory, category, USkeletalMeshComponent*, mesh);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnMeshSwitchEventBP, ECustomizationCategory, category, USkeletalMeshComponent*, mesh);
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TSubclassOf<USlaveAnimInstance> SlaveAnimInstanceClass;

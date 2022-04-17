@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnAcquiredChanged.h"
 #include "Components/ActorComponent.h"
 #include "PoolableActor.h"
+#include "OnAcquiredChangedDelegate.h"
 #include "BasePoolableActorComponent.generated.h"
 
 UCLASS(Abstract, BlueprintType, meta=(BlueprintSpawnableComponent))

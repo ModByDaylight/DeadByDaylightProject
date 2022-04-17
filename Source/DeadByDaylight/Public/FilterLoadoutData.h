@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "DBDTableRowBase.h"
 #include "ELoadoutType.h"
 #include "EPlayerRole.h"
-#include "DBDTableRowBase.h"
 #include "FilterLoadoutData.generated.h"
 
 class UTexture2D;

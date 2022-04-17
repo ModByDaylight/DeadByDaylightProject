@@ -5,8 +5,8 @@
 
 class UImage;
 class UTextBlock;
-class UUMGTallyEmblemProgressBar;
 class UVerticalBox;
+class UUMGTallyEmblemProgressBar;
 class UUMGTallyEmblemProgressionWidget;
 
 UCLASS(Abstract, EditInlineNew)

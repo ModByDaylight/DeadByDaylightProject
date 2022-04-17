@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "StatusEffect.h"
 #include "TunableStat.h"
+#include "StatusEffect.h"
 #include "DBDTunableRowHandle.h"
 #include "TwinBaseKillerInstinctEffect.generated.h"
 

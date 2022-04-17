@@ -1,9 +1,9 @@
 #include "CamperHealthComponent.h"
 #include "Net/UnrealNetwork.h"
 
+class UChargeableComponent;
 class AActor;
 class ADBDPlayer;
-class UChargeableComponent;
 
 void UCamperHealthComponent::SetCanBleedout(bool canBleedout) {
 }

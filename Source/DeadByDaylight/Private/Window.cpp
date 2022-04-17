@@ -1,14 +1,14 @@
 #include "Window.h"
 #include "Net/UnrealNetwork.h"
-#include "DBDNavEvadeLoopComponent.h"
-#include "LocalPlayerTrackerComponent.h"
 #include "BlockableComponent.h"
+#include "LocalPlayerTrackerComponent.h"
+#include "DBDNavEvadeLoopComponent.h"
 
 class UChildActorComponent;
 class ADBDPlayer;
-class UAkComponent;
-class UMaterialHelper;
 class UInteractionDefinition;
+class UMaterialHelper;
+class UAkComponent;
 
 void AWindow::OnRep_blockedByLevel() {
 }

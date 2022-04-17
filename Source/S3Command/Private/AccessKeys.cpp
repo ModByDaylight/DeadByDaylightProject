@@ -1,6 +1,6 @@
 #include "AccessKeys.h"
 
 UAccessKeys::UAccessKeys() {
-    this->AccessKeys.AddDefaulted(14);
+    this->AccessKeys.AddDefaulted(18);
 }
 

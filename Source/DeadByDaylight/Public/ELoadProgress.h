@@ -49,5 +49,6 @@ enum class ELoadProgress {
     LoadMarketingBanners,
     LoadingSubscriptionStatus,
     RequestingTrackingAuthorization,
+    LoadingExperimentalFeatures,
 };
 

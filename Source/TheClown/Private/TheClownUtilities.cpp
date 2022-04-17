@@ -1,9 +1,9 @@
 #include "TheClownUtilities.h"
 
 class ADBDPlayer;
-class UActiveGasCloudTrackerComponent;
 class UGassedStatusEffect;
 class UObject;
+class UActiveGasCloudTrackerComponent;
 
 bool UTheClownUtilities::IsGassed(const ADBDPlayer* player) {
     return false;

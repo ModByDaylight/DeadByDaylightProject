@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnAcquiredChangedDelegate.h"
 #include "GameFramework/Actor.h"
-#include "PoolableActor.h"
-#include "UObject/NoExportTypes.h"
-#include "OnAcquiredChanged.h"
-#include "DBDTunableRowHandle.h"
-#include "EK25ChainState.h"
 #include "FastTimer.h"
+#include "PoolableActor.h"
+#include "DBDTunableRowHandle.h"
+#include "UObject/NoExportTypes.h"
+#include "EK25ChainState.h"
 #include "EK25ChainCreationStrategy.h"
 #include "EK25ChainDetachmentReason.h"
 #include "K25Chain.generated.h"
 
-class AK25Projectile;
 class UCurveFloat;
+class AK25Projectile;
 class AK25SurvivorChainAttachmentAnchor;
-class USplineComponent;
 class UInstancedStaticMeshComponent;
+class USplineComponent;
 
 UCLASS()
 class AK25Chain : public AActor, public IPoolableActor {

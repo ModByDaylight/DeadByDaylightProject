@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MobileBaseUserWidget.h"
 #include "UObject/NoExportTypes.h"
+#include "MobileBaseUserWidget.h"
 #include "UMGTallyListElementWidget.generated.h"
 
 UCLASS(EditInlineNew)

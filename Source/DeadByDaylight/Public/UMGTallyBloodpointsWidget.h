@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UMGTallyListElementWidget.h"
 #include "TallyItemChangedData.h"
+#include "UMGTallyListElementWidget.h"
+#include "EDBDScoreCategory.h"
 #include "Components/SlateWrapperTypes.h"
 #include "UObject/NoExportTypes.h"
-#include "EDBDScoreCategory.h"
 #include "ScoreCategoryUIExtraData.h"
 #include "UMGTallyBloodpointsWidget.generated.h"
 

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "BaseSurvivorAnimInstance.h"
-#include "SkillCheckFailureTracker.h"
-#include "AnimInstanceLeader.h"
 #include "GameplayTagContainer.h"
+#include "AnimInstanceLeader.h"
+#include "SkillCheckFailureTracker.h"
+#include "UObject/NoExportTypes.h"
 #include "GameEventData.h"
 #include "RepairGeneratorSurvivorSubAnimInstance.generated.h"
 

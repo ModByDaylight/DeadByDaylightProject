@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EPlayerRole.h"
-#include "EDBDScoreTypes.h"
-#include "AtlantaRitualDifficulty.h"
 #include "UObject/NoExportTypes.h"
+#include "AtlantaRitualDifficulty.h"
+#include "EDBDScoreTypes.h"
 #include "AtlantaRitualInstance.generated.h"
 
 class UAtlantaRitualEvaluatorBase;

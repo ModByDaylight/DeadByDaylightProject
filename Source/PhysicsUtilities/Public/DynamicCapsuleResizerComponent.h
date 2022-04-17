@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "Engine/EngineTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "DynamicCapsuleResizerComponent.generated.h"
 
-class UCapsuleComponent;
 class UPrimitiveComponent;
+class UCapsuleComponent;
 class AActor;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))

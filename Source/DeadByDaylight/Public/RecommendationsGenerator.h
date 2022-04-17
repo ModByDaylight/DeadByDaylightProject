@@ -3,8 +3,8 @@
 #include "UObject/Object.h"
 #include "RecommendationsGenerator.generated.h"
 
-class UDBDGameInstance;
 class UShopManager;
+class UDBDGameInstance;
 class URecommendationsFilter;
 
 UCLASS()

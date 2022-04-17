@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EAttackSubstate.h"
-#include "BaseKillerAnimInstance.h"
 #include "UObject/NoExportTypes.h"
+#include "BaseKillerAnimInstance.h"
 #include "EInteractionAnimation.h"
+#include "EAttackSubstate.h"
 #include "KillerAnimInstance.generated.h"
 
 class UArmIKSensorComponent;

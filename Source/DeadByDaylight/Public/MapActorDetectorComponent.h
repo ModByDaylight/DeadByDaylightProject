@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "OnMapActorDetected.h"
-#include "Engine/EngineTypes.h"
 #include "EMapActorCategory.h"
+#include "OnMapActorDetectedDelegate.h"
+#include "Engine/EngineTypes.h"
 #include "MapActorDetectorComponent.generated.h"
 
 class UPrimitiveComponent;

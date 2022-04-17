@@ -1,7 +1,7 @@
 #include "BloodOrbUtilities.h"
 
-class UObject;
 class ABloodOrb;
+class UObject;
 
 TArray<ABloodOrb*> UBloodOrbUtilities::GetAllBloodOrbs(const UObject* worldContextObject) {
     return TArray<ABloodOrb*>();

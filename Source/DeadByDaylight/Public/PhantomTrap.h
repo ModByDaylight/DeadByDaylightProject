@@ -4,10 +4,10 @@
 #include "UObject/NoExportTypes.h"
 #include "PhantomTrap.generated.h"
 
-class ASlasherPlayer;
 class UTerrorRadiusEmitterComponent;
-class AActor;
+class ASlasherPlayer;
 class USkeletalMeshComponent;
+class AActor;
 
 UCLASS()
 class DEADBYDAYLIGHT_API APhantomTrap : public AInteractable {

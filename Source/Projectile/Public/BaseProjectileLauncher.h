@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
+#include "UObject/NoExportTypes.h"
 #include "LaunchInfo.h"
 #include "ImpactInfo.h"
 #include "UObject/NoExportTypes.h"
 #include "BaseProjectileLauncher.generated.h"
 
-class ABaseProjectile;
-class APawn;
 class UBaseProjectileReplicationComponent;
+class ABaseProjectile;
 class UProjectileProvider;
 class IProjectileProvider;
+class APawn;
 
 UCLASS(Blueprintable, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class PROJECTILE_API UBaseProjectileLauncher : public UActorComponent {

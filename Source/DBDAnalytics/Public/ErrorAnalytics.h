@@ -11,7 +11,22 @@ public:
     FString ErrorCategory;
     
     UPROPERTY()
-    FString LogMessage;
+    float FloatField1;
+    
+    UPROPERTY()
+    float FloatField2;
+    
+    UPROPERTY()
+    float FloatField3;
+    
+    UPROPERTY()
+    FString StringField1;
+    
+    UPROPERTY()
+    FString StringField2;
+    
+    UPROPERTY()
+    FString StringField3;
     
     DBDANALYTICS_API FErrorAnalytics();
 };

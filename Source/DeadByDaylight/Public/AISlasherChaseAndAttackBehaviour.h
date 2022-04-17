@@ -3,9 +3,9 @@
 #include "AICharacterBehaviour.h"
 #include "AISlasherChaseAndAttackBehaviour.generated.h"
 
-class ASlasherPlayer;
 class UAISlasherChaseAndAttackBehaviourData;
 class ADBDAIPlayerController;
+class ASlasherPlayer;
 
 UCLASS()
 class UAISlasherChaseAndAttackBehaviour : public UAICharacterBehaviour {

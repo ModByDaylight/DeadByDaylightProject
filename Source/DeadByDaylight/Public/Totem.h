@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Interactable.h"
 #include "UObject/NoExportTypes.h"
+#include "Interactable.h"
 #include "AIPointOfInterestTargetInterface.h"
 #include "DBDTunableRowHandle.h"
 #include "ETotemState.h"
 #include "Totem.generated.h"
 
+class UGameplayTagContainerComponent;
+class USceneComponent;
 class UBlockableComponent;
 class UTotemBoundPerk;
 class UAIPerceptionStimuliSourceComponent;
 class ULocalPlayerTrackerComponent;
-class ADBDPlayer;
 class UActivatorComponent;
-class UGameplayTagContainerComponent;
-class USceneComponent;
 class UTotemOutlineUpdateStrategy;
+class ADBDPlayer;
 class ATotem;
 class UInteractor;
 class UChargeableInteractionDefinition;

@@ -3,8 +3,8 @@
 #include "UMGPromoPackItemWidget.h"
 #include "UMGStorefrontCustomizationWidget.generated.h"
 
-class UCanvasPanel;
 class UTextBlock;
+class UCanvasPanel;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGStorefrontCustomizationWidget : public UUMGPromoPackItemWidget {

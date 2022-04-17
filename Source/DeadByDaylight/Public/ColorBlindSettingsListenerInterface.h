@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Rendering/RenderingCommon.h"
 #include "UObject/Interface.h"
+#include "Rendering/RenderingCommon.h"
 #include "ColorBlindSettingsListenerInterface.generated.h"
 
 UINTERFACE(Blueprintable)

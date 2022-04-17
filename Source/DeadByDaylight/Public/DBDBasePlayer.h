@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
 #include "GameFramework/Character.h"
-#include "OnCustomizationChanged.h"
+#include "OnCustomizationChangedDelegate.h"
+#include "UObject/NoExportTypes.h"
 #include "GameplayTagContainer.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
+#include "Engine/EngineTypes.h"
 #include "DBDBasePlayer.generated.h"
 
-class UBaseGroundDetectorComponent;
 class UCustomizedAudioComponent;
+class UBaseGroundDetectorComponent;
 class UAkComponent;
 
 UCLASS()

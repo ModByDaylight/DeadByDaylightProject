@@ -6,23 +6,23 @@
 #include "Engine/EngineTypes.h"
 #include "RifleChain.generated.h"
 
-class UAkAudioEvent;
+class URiflePlayerLinker;
+class USplineComponent;
+class UInstancedStaticMeshComponent;
 class UAkComponent;
 class UGunslingerHarpoon;
 class IGunslingerHarpoon;
-class UInstancedStaticMeshComponent;
-class USplineComponent;
-class UCurveFloat;
 class ADBDPlayer;
-class URiflePlayerLinker;
+class UAkAudioEvent;
+class UCurveFloat;
 class URifleChainTensionComponent;
 
 UCLASS()
 class THEGUNSLINGER_API ARifleChain : public AActor {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnProjectileSet, AActor*, projectile);
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsCollidingChanged, bool, isColliding);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnProjectileSet, AActor*, projectile);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsCollidingChanged, bool, isColliding);
     
     UPROPERTY(BlueprintAssignable)
     FOnProjectileSet OnProjectileSet;

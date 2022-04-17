@@ -3,8 +3,8 @@
 #include "BaseOutlineRenderStrategy.h"
 #include "CustomDepthOutlineRenderStrategy.generated.h"
 
-class UMaterialInterface;
 class UBatchMeshCommands;
+class UMaterialInterface;
 
 UCLASS()
 class GFXUTILITIES_API UCustomDepthOutlineRenderStrategy : public UBaseOutlineRenderStrategy {

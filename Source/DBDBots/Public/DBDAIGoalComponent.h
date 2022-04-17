@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AIGoal.h"
 #include "Components/ActorComponent.h"
 #include "AIDisplayDebugInterface.h"
+#include "AIGoal.h"
 #include "AIGoalWeightContainer.h"
 #include "DBDAIGoalComponent.generated.h"
 

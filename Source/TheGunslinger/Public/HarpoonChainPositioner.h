@@ -5,9 +5,9 @@
 #include "DBDTunableRowHandle.h"
 #include "HarpoonChainPositioner.generated.h"
 
+class ADBDPlayer;
 class AHarpoonProp;
 class AHarpoonProjectile;
-class ADBDPlayer;
 class ARifleChain;
 class AActor;
 

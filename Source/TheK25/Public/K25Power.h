@@ -5,24 +5,24 @@
 #include "CustomKillerInstinctData.h"
 #include "K25Power.generated.h"
 
-class ALamentConfiguration;
-class UK25SurvivorChainTargetterComponent;
-class UChargeableComponent;
 class AK25Gateway;
+class UChargeableComponent;
 class UK25SurvivorChainAttachmentComponent;
 class AK25ControlledProjectile;
+class UK25SurvivorChainTargetterComponent;
+class ALamentConfiguration;
 class AK25Husk;
 class UK25KillerTeleportationPositionFinderComponent;
 class AK25AnimationFollowerActor;
 class UDataTable;
+class UAuthoritativePoolProjectileProviderAdapter;
 class UK25ProjectileLauncher;
+class ASlasherPlayer;
 class UAuthoritativeActorPoolComponent;
 class UPowerChargeComponent;
-class UAuthoritativePoolProjectileProviderAdapter;
 class UK25PowerChargePresentationItemProgressComponent;
 class UK25ChainAttachmentReplicationComponent;
 class ACamperPlayer;
-class ASlasherPlayer;
 
 UCLASS()
 class AK25Power : public ACollectable {
@@ -130,6 +130,13 @@ private:
     
     UFUNCTION()
     void OnKillerAdded(ASlasherPlayer* killer);
+    
+protected:
+    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    void Cosmetic_OnKillerInterruptSFX(ASlasherPlayer* killer);
+    
+    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    void Cosmetic_OnKillerInterruptOpenHatchSFX(ASlasherPlayer* killer);
     
 };
 

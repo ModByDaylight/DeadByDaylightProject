@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "AkHololensAdvancedInitializationSettings.h"
 #include "UObject/Object.h"
 #include "AkCommonInitializationSettingsWithSampleRate.h"
 #include "AkCommunicationSettingsWithSystemInitialization.h"
-#include "AkHololensAdvancedInitializationSettings.h"
 #include "AkHololensInitializationSettings.generated.h"
 
 UCLASS(DefaultConfig, Config=Game)

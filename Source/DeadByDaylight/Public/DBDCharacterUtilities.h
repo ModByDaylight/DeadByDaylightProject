@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPlayerRole.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "EPlayerRole.h"
 #include "DBDCharacterUtilities.generated.h"
 
 class ADBDBasePlayer;

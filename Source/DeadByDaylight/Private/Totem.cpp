@@ -1,10 +1,10 @@
 #include "Totem.h"
 #include "Net/UnrealNetwork.h"
-#include "ActivatorComponent.h"
+#include "GameplayTagContainerComponent.h"
 #include "LocalPlayerTrackerComponent.h"
 #include "Perception/AIPerceptionStimuliSourceComponent.h"
+#include "ActivatorComponent.h"
 #include "BlockableComponent.h"
-#include "GameplayTagContainerComponent.h"
 #include "TotemOutlineUpdateStrategy.h"
 
 class ADBDPlayer;

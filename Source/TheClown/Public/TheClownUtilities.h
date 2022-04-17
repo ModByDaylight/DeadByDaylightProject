@@ -4,8 +4,8 @@
 #include "TheClownUtilities.generated.h"
 
 class ADBDPlayer;
-class UActiveGasCloudTrackerComponent;
 class UGassedStatusEffect;
+class UActiveGasCloudTrackerComponent;
 class UObject;
 
 UCLASS(BlueprintType)

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Camera/CameraActor.h"
 #include "UObject/NoExportTypes.h"
+#include "Camera/CameraActor.h"
 #include "UObject/NoExportTypes.h"
 #include "AtlantaOfflineLobbyCamera.generated.h"
 

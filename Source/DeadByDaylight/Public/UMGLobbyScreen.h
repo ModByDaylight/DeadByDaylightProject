@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnSearchingLobbyCancelled.h"
+#include "OnJoinedLobbyLeavedDelegate.h"
 #include "MobileBaseUserWidget.h"
-#include "OnJoinedLobbyLeaved.h"
+#include "OnSearchingLobbyCancelledDelegate.h"
 #include "UMGLobbyScreen.generated.h"
 
-class UUMGLobbyJoinedWidget;
+class UUMGLobbyOfferingWidget;
 class UUMGLobbySearchingWidget;
 class UWidgetSwitcher;
-class UUMGLobbyOfferingWidget;
+class UUMGLobbyJoinedWidget;
 class UUMGFogWidget;
 
 UCLASS(EditInlineNew)

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EBarColor.h"
 #include "MobileBaseUserWidget.h"
 #include "Components/SlateWrapperTypes.h"
 #include "StatusEffectSlotData.h"
+#include "EBarColor.h"
 #include "UMGChargeableInteractionWidget.generated.h"
 
 class UImage;

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ItemViewData.h"
 #include "AddonViewData.h"
+#include "ItemViewData.h"
 #include "ItemBundleViewData.generated.h"
 
 USTRUCT(BlueprintType)

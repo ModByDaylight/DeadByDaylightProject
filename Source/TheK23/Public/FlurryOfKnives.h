@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ChargeableInteractionDefinition.h"
-#include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
+#include "DBDTunableRowHandle.h"
 #include "FlurryOfKnives.generated.h"
 
-class UStatusEffect;
 class UCurveFloat;
+class UStatusEffect;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UFlurryOfKnives : public UChargeableInteractionDefinition {

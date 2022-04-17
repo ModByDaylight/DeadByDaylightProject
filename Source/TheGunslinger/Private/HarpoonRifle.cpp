@@ -1,13 +1,12 @@
 #include "HarpoonRifle.h"
-#include "ChainLinkableComponent.h"
-#include "TriggerableActivatorComponent.h"
+#include "RifleChain.h"
 #include "SurvivorChainLinkableComponent.h"
+#include "ChainLinkableComponent.h"
+#include "HarpoonLauncher.h"
+#include "HarpoonProviderComponent.h"
 #include "RiflePlayerLinker.h"
 #include "ChargeableComponent.h"
-#include "HarpoonProviderComponent.h"
-#include "HarpoonLauncher.h"
-
-class ARifleChain;
+#include "TriggerableActivatorComponent.h"
 
 ARifleChain* AHarpoonRifle::GetChain() const {
     return NULL;

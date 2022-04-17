@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "BTDecorator_TickableBase.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
-#include "AIRandomByDistancePercentagesAtTime.h"
 #include "AITunableParameter.h"
+#include "AIRandomByDistancePercentagesAtTime.h"
 #include "BTDecorator_RandomByDistance.generated.h"
 
 UCLASS()

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerInput.h"
-#include "GameFramework/PlayerInput.h"
 #include "AtlantaCustomizedHudSettings.h"
+#include "GameFramework/PlayerInput.h"
 #include "ConsoleUserSettings.generated.h"
 
 USTRUCT(BlueprintType)
@@ -68,6 +68,15 @@ public:
     
     UPROPERTY(SaveGame)
     bool SurvivorInvertY;
+    
+    UPROPERTY(SaveGame)
+    bool KillerToggleInteractions;
+    
+    UPROPERTY(SaveGame)
+    bool SurvivorToggleInteractions;
+    
+    UPROPERTY(SaveGame)
+    bool SprintToCancel;
     
     UPROPERTY(SaveGame)
     int32 HighestWeightSeenNews;

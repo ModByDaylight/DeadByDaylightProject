@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MobileBaseUserWidget.h"
 #include "EventItemsContentTypeUIData.h"
+#include "MobileBaseUserWidget.h"
 #include "UMGAtlEventItemWidget.generated.h"
 
 class UImage;
-class UCanvasPanel;
 class UTextBlock;
+class UCanvasPanel;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGAtlEventItemWidget : public UMobileBaseUserWidget {

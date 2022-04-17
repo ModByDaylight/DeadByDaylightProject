@@ -4,8 +4,8 @@
 #include "EActionOnFriendType.h"
 #include "UMGBaseFriendListContextualMenuWidget.generated.h"
 
-class UUMGFriendButtonWidget;
 class UAkAudioEvent;
+class UUMGFriendButtonWidget;
 
 UCLASS(Abstract, EditInlineNew)
 class DBDUIVIEWSMOBILE_API UUMGBaseFriendListContextualMenuWidget : public UMobileBaseUserWidget {

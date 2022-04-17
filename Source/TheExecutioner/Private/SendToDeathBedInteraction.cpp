@@ -1,7 +1,7 @@
 #include "SendToDeathBedInteraction.h"
 
-class ACamperPlayer;
 class ADeathBedInteractable;
+class ACamperPlayer;
 
 void USendToDeathBedInteraction::Multicast_SendCamperToDeathBed_Implementation(ADeathBedInteractable* deathBed) {
 }

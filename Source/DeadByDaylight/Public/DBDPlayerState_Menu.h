@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DBDPlayerState.h"
-#include "CharmIdSlot.h"
 #include "EPlayerRole.h"
+#include "CharmIdSlot.h"
 #include "ELoadoutSlot.h"
 #include "DBDPlayerState_Menu.generated.h"
 

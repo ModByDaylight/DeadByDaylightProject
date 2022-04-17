@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "PromoPackSelectedItemData.generated.h"
 
-class UTexture2D;
 class UUMGPromoPackItemWidget;
+class UTexture2D;
 
 USTRUCT(BlueprintType)
 struct FPromoPackSelectedItemData {

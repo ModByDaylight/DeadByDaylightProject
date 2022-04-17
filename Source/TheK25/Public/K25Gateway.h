@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "DBDTunableRowHandle.h"
 #include "SpectatingActorLinker.h"
+#include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
 #include "UObject/NoExportTypes.h"
 #include "FastTimer.h"

@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Perk.h"
 #include "ESkillCheckCustomType.h"
+#include "Perk.h"
 #include "Solidarity.generated.h"
 
+class AActor;
 class UChargeableComponent;
 class UChargeableInteractionDefinition;
 class ADBDPlayer;
-class AActor;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class DBDCOMPETENCE_API USolidarity : public UPerk {

@@ -4,9 +4,9 @@
 #include "Layout/Margin.h"
 #include "UMGMonthlyPassRewardsPopup.generated.h"
 
-class UUMGRewardWidget;
-class UTextBlock;
 class UHorizontalBox;
+class UTextBlock;
+class UUMGRewardWidget;
 class UImage;
 
 UCLASS(Abstract, EditInlineNew)

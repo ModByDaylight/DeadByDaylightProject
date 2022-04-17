@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "OnAtlantaRequestContentSucceeded.h"
-#include "OnAtlantaRequestContentFailed.h"
+#include "OnAtlantaRequestContentFailedDelegate.h"
+#include "OnAtlantaRequestContentSucceededDelegate.h"
 #include "AtlantaPatchingLibrary.generated.h"
 
-class UAtlantaInstalledContent;
 class UAtlantaPendingContent;
+class UAtlantaInstalledContent;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UAtlantaPatchingLibrary : public UBlueprintFunctionLibrary {

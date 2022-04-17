@@ -3,11 +3,11 @@
 #include "UObject/Object.h"
 #include "RootMovie.generated.h"
 
-class UGameInstance;
+class UDBDInputManager;
 class UGFxMoviePlayer;
 class UScreenController;
-class UDBDInputManager;
 class UUIController;
+class UGameInstance;
 class UGFxObject;
 
 UCLASS()
@@ -37,6 +37,9 @@ public:
     URootMovie();
     UFUNCTION()
     void SetCursorAsSticky(bool isSticky, bool lockVertical, bool lockHorizontal, float stickinessOverride);
+    
+    UFUNCTION()
+    void RemoveCursorBlockingWidget(const FString& id);
     
     UFUNCTION()
     void RegisterView(const FString& screenId, UGFxObject* screenObject);
@@ -70,6 +73,9 @@ public:
     
     UFUNCTION()
     void OnAssert(int32 type, const FString& message);
+    
+    UFUNCTION()
+    void AddCursorBlockingWidget(const FString& id, float x, float y, float width, float height);
     
 };
 

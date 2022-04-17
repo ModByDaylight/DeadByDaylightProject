@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDBaseInputHandler.h"
 #include "UObject/NoExportTypes.h"
+#include "DBDBaseInputHandler.h"
 #include "DBDAtlantaInputHandler.generated.h"
 
 UCLASS(BlueprintType)

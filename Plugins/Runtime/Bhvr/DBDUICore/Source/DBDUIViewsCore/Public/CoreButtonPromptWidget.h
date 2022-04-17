@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CoreBaseUserWidget.h"
-#include "ButtonPromptTriggeredDelegate.h"
-#include "EUIActionType.h"
+#include "ButtonPromptTriggeredDelegateDelegate.h"
 #include "InputCoreTypes.h"
+#include "EUIActionType.h"
 #include "CoreButtonPromptWidget.generated.h"
 
 class UAkAudioEvent;

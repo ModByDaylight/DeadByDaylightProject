@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AITrailEvent.h"
 #include "Perception/AISenseEvent.h"
+#include "AITrailEvent.h"
 #include "AISenseEvent_Trail.generated.h"
 
 UCLASS(BlueprintType, EditInlineNew)

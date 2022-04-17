@@ -3,10 +3,10 @@
 #include "Components/ActorComponent.h"
 #include "FranklinsDemiseConsumedByEntityComponent.generated.h"
 
+class ADBDPlayer;
 class UTimerObject;
 class UStatusEffect;
 class UChargerComponent;
-class ADBDPlayer;
 
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UFranklinsDemiseConsumedByEntityComponent : public UActorComponent {

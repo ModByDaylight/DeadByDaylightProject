@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "Engine/NetSerialization.h"
 #include "ImpactInfo.h"
+#include "Engine/NetSerialization.h"
 #include "LaunchInfo.h"
-#include "Engine/NetSerialization.h"
-#include "Engine/NetSerialization.h"
 #include "BaseProjectileReplicationComponent.generated.h"
 
 class ABaseProjectile;

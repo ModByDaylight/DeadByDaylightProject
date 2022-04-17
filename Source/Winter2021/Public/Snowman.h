@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESnowmanDestructionType.h"
-#include "ESnowmanState.h"
-#include "RespawnableInteractable.h"
 #include "DBDTunableRowHandle.h"
+#include "RespawnableInteractable.h"
+#include "ESnowmanState.h"
+#include "ESnowmanDestructionType.h"
 #include "SnowmanSpawnData.h"
 #include "UObject/NoExportTypes.h"
 #include "Snowman.generated.h"
 
 class USkeletalMeshComponent;
 class UDBDOutlineComponent;
+class UHideInSnowmanInteraction;
 class ACamperPlayer;
 class UCapsuleComponent;
-class UHideInSnowmanInteraction;
 class UChargeableComponent;
 class UInteractor;
 class UPrimitiveComponent;

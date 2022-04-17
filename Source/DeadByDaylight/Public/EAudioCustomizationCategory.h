@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAudioCustomizationCategory.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAudioCustomizationCategory : uint8 {
     AudioCharacterName,
     AudioCharacterSubName,

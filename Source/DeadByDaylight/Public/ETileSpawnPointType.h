@@ -10,6 +10,7 @@ enum class ETileSpawnPointType : uint8 {
     Killer,
     KillerItem,
     InteractableObject,
+    BasementObject,
     Count,
 };
 

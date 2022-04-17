@@ -1,26 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Styling/SlateBrush.h"
-#include "EPlayerRole.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "Styling/SlateBrush.h"
+#include "EInputInteractionType.h"
+#include "Styling/SlateColor.h"
+#include "EPlayerRole.h"
 #include "UObject/NoExportTypes.h"
 #include "EItemRarity.h"
 #include "EOfferingCategory.h"
 #include "EItemAvailability.h"
 #include "EEmblemQuality.h"
 #include "EAIDifficultyLevel.h"
-#include "EInputInteractionType.h"
 #include "ECurrencyType.h"
-#include "Styling/SlateColor.h"
 #include "AtlantaUtilities.generated.h"
 
-class UInteractionDefinition;
-class UPaperSprite;
 class UImage;
-class UButton;
+class UPaperSprite;
 class UTexture2D;
 class ADBDPlayer;
+class UButton;
 class AActor;
+class UInteractionDefinition;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UAtlantaUtilities : public UBlueprintFunctionLibrary {

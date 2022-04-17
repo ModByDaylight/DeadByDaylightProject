@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "OnActorDetected.h"
+#include "OnActorDetectedDelegate.h"
 #include "Engine/EngineTypes.h"
 #include "ActorDetectorComponent.generated.h"
 
-class AActor;
 class UPrimitiveComponent;
+class AActor;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UActorDetectorComponent : public UActorComponent {

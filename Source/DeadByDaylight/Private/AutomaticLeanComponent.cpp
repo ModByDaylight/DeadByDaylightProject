@@ -49,7 +49,7 @@ UAutomaticLeanComponent::UAutomaticLeanComponent() {
     this->_standingTraceHeightOffset = 0.00f;
     this->_crouchingTraceHeightOffset = 0.00f;
     this->_sideTraceOffset = 0.00f;
-    this->_maxMovementDistance = 50.00f;
+    this->_maxCameraDistance = 50.00f;
     this->_maxCameraAngle = 45.00f;
     this->_debugMode = false;
     this->_leanState = ELeanState::NotLeaning;

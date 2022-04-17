@@ -3,8 +3,8 @@
 #include "Interactable.h"
 #include "ReverseBearTrap.generated.h"
 
-class USkeletalMeshComponent;
 class UAnimationMontageSlave;
+class USkeletalMeshComponent;
 class ACamperPlayer;
 
 UCLASS()

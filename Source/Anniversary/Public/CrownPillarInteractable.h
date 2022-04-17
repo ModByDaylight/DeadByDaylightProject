@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "RespawnableInteractable.h"
 #include "DBDTunableRowHandle.h"
+#include "RespawnableInteractable.h"
 #include "CrownPillarInteractable.generated.h"
 
-class UStaticMeshComponent;
-class UDBDOutlineComponent;
 class UCrownPickupInteraction;
-class UPrimitiveComponent;
 class UChargeableComponent;
 class UInteractor;
+class UPrimitiveComponent;
+class UStaticMeshComponent;
+class UDBDOutlineComponent;
 class UNearTrackedActorComponent;
 class UCrownPillarOutlineUpdateStrategy;
 class ADBDPlayer;

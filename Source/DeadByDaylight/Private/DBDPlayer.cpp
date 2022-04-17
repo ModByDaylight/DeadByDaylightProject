@@ -1,12 +1,24 @@
 #include "DBDPlayer.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
-#include "DynamicCapsuleResizerComponent.h"
+#include "AuthoritativeMovementComponent.h"
+#include "BoxOcclusionQueryComponent.h"
 #include "ActivatorComponent.h"
-#include "MaterialHelper.h"
-#include "Components/BoxComponent.h"
 #include "CharacterChaseVisualComponent.h"
+#include "Components/BoxComponent.h"
 #include "CameraHandlerComponent.h"
+#include "OtherCharactersVerticalCollisionsHandler.h"
+#include "PlayerInteractionHandler.h"
+#include "PerkManager.h"
+#include "GameplayTagContainerComponent.h"
+#include "InteractionDetectorComponent.h"
+#include "MontagePlayer.h"
+#include "Components/SceneComponent.h"
+#include "ChaseComponent.h"
+#include "CharacterInventoryComponent.h"
+#include "BlindableComponent.h"
+#include "MaterialHelper.h"
+#include "ReversibleActionSystemComponent.h"
 #include "Perception/AIPerceptionStimuliSourceComponent.h"
 #include "ChargeableComponent.h"
 #include "PollableEventListener.h"
@@ -17,44 +29,33 @@
 #include "CharacterSightableComponent.h"
 #include "PrimitivesRegistererComponent.h"
 #include "ClippableProviderComponent.h"
+#include "DynamicCapsuleResizerComponent.h"
 #include "PlayerGameRelevancyComponent.h"
 #include "ContextualQuestComponent.h"
 #include "ChargeableProgressProviderComponent.h"
 
-class USceneComponent;
-class ADBDPlayer;
-class UInteractionDefinition;
-class UMontagePlayer;
+class UGameplayModifierContainer;
 class UAnimMontage;
 class UActorComponent;
-class ADBDPlayerCameraManager;
-class AActor;
-class UBlindableComponent;
-class ADBDPlayerController;
+class ADBDPlayer;
+class UInteractionDefinition;
+class ACharacter;
 class UAnimInstance;
-class UBoxOcclusionQueryComponent;
+class AActor;
+class AController;
 class ACollectable;
 class UStatusEffect;
-class UInteractionDetectorComponent;
-class AController;
-class APlayerState;
-class UCustomizedSkeletalMesh;
-class AInteractable;
-class UPlayerInteractionHandler;
-class UCameraComponent;
-class UPerkManager;
-class UOtherCharactersVerticalCollisionsHandler;
-class UGameplayTagContainerComponent;
-class UItemModifier;
 class UItemAddon;
-class UCharacterDreamworldComponent;
 class UPrimitiveComponent;
+class ADBDPlayerController;
+class UCameraComponent;
+class AInteractable;
+class UItemModifier;
+class UCharacterDreamworldComponent;
+class UCustomizedSkeletalMesh;
 class ADBDPlayerState;
-class UChaseComponent;
-class UAuthoritativeMovementComponent;
-class UCharacterInventoryComponent;
-class UGameplayModifierContainer;
-class ACharacter;
+class ADBDPlayerCameraManager;
+class APlayerState;
 class UInteractor;
 
 void ADBDPlayer::UpdateLoadoutFromInventory() {
@@ -440,9 +441,6 @@ void ADBDPlayer::Multicast_ConfirmItemDrop_Implementation(bool pressed) {
 }
 bool ADBDPlayer::Multicast_ConfirmItemDrop_Validate(bool pressed) {
     return true;
-}
-
-void ADBDPlayer::Local_RequestBlink(FTransform destination) {
 }
 
 void ADBDPlayer::Local_NotifyMatchEnded_Implementation() {
@@ -872,10 +870,6 @@ FVector ADBDPlayer::GetBoneLocation(FName name, TEnumAsByte<EBoneSpaces::Type> s
     return FVector{};
 }
 
-float ADBDPlayer::GetBlinkTime() const {
-    return 0.0f;
-}
-
 UBlindableComponent* ADBDPlayer::GetBlindableComponent() const {
     return NULL;
 }
@@ -1035,18 +1029,6 @@ bool ADBDPlayer::Broadcast_PlayMontage_Multicast_Validate(FAnimationMontageDescr
     return true;
 }
 
-void ADBDPlayer::Broadcast_Multicast_BlinkDestination_Implementation(FVector position, FRotator rotation) {
-}
-bool ADBDPlayer::Broadcast_Multicast_BlinkDestination_Validate(FVector position, FRotator rotation) {
-    return true;
-}
-
-void ADBDPlayer::Broadcast_BlinkDestination_Implementation(FVector position, FRotator rotation) {
-}
-bool ADBDPlayer::Broadcast_BlinkDestination_Validate(FVector position, FRotator rotation) {
-    return true;
-}
-
 bool ADBDPlayer::Authority_TryForceEndOngoingScoreEvent(EDBDScoreTypes scoreType) {
     return false;
 }
@@ -1129,9 +1111,6 @@ ADBDPlayer::ADBDPlayer() {
     this->CameraBoom = NULL;
     this->ForceSkillChecks = false;
     this->CameraResetSpeed = 2.25f;
-    this->BlinkFOVCurve = NULL;
-    this->CurrentBlinkDistance = 0.00f;
-    this->CurrentBlinkChargePercent = 0.00f;
     this->AverageSpeedBufferTime = 0.00f;
     this->AlmostCurrentSpeedBufferTime = 0.00f;
     this->GamepadYawCurve = NULL;
@@ -1177,6 +1156,7 @@ ADBDPlayer::ADBDPlayer() {
     this->_dreamworldComponent = NULL;
     this->_characterChaseVisualComponent = CreateDefaultSubobject<UCharacterChaseVisualComponent>(TEXT("CharacterChaseVisualComponent"));
     this->_cameraHandlerComponent = CreateDefaultSubobject<UCameraHandlerComponent>(TEXT("CameraHandlerComponent"));
+    this->_reversibleActionSystemComponent = CreateDefaultSubobject<UReversibleActionSystemComponent>(TEXT("ActionSystemComponent"));
     this->_itemDropOffPosition = CreateDefaultSubobject<USceneComponent>(TEXT("ItemDropOffPosition"));
     this->_perceptionStimuliComponent = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("AIPerceptionStimuliSourceComponent"));
     this->_blindingChargeableComponent = CreateDefaultSubobject<UChargeableComponent>(TEXT("BlindnessChargeableComponent"));

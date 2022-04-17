@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PlayerAnimInstance.h"
 #include "EInteractionAnimation.h"
+#include "PlayerAnimInstance.h"
 #include "EAttackSubstate.h"
 #include "ConjoinedTwinAnimInstance.generated.h"
 
-class AConjoinedTwin;
-class UDBDAttackerComponent;
-class UTwinAttachmentComponent;
 class UTwinLockerBlockerComponent;
+class UDBDAttackerComponent;
+class AConjoinedTwin;
+class UTwinAttachmentComponent;
 
 UCLASS(NonTransient)
 class UConjoinedTwinAnimInstance : public UPlayerAnimInstance {

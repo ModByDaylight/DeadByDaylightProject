@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "K26Path.h"
 #include "Components/ActorComponent.h"
 #include "DBDTunableRowHandle.h"
 #include "K26PathData.h"
-#include "K26Path.h"
 #include "K26PathHandlerComponent.generated.h"
 
-class AActor;
 class UK26CrowPlacementValidatorComponent;
+class AActor;
 class UK26AmmoHandlerComponent;
 
 UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))

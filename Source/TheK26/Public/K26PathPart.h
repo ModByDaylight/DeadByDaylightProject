@@ -4,9 +4,9 @@
 #include "K26PathPart.generated.h"
 
 class UStaticMeshComponent;
-class UK26PowerOutlineUpdateStrategy;
 class UDBDOutlineComponent;
 class UNiagaraComponent;
+class UK26PowerOutlineUpdateStrategy;
 class USceneComponent;
 
 UCLASS()

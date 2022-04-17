@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPlayerRole.h"
-#include "UObject/NoExportTypes.h"
-#include "EDBDScoreTypes.h"
 #include "GameplayTagContainer.h"
+#include "EPlayerRole.h"
+#include "EDBDScoreTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "LegacySavedDailyRitualInstance.generated.h"
 
 USTRUCT(BlueprintType)

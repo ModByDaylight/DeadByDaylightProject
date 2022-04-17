@@ -7,7 +7,7 @@ UCLASS(meta=(BlueprintSpawnableComponent))
 class UPossessNegationEffectComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayCantPossessSound);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayCantPossessSound);
     
     UPROPERTY(BlueprintAssignable)
     FPlayCantPossessSound PlayCantPossessSound;

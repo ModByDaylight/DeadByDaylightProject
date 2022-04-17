@@ -2,9 +2,9 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "ASColorTransform.h"
-#include "ASValue.h"
-#include "ASDisplayInfo.h"
 #include "UObject/NoExportTypes.h"
+#include "ASDisplayInfo.h"
+#include "ASValue.h"
 #include "GFxObject.generated.h"
 
 class UGFxMoviePlayer;

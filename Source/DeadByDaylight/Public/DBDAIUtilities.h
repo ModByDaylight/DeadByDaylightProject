@@ -5,11 +5,11 @@
 #include "UObject/NoExportTypes.h"
 #include "DBDAIUtilities.generated.h"
 
-class UNavigationQueryFilter;
-class UNavigationPath;
 class UActorComponent;
-class UObject;
 class AActor;
+class UNavigationPath;
+class UNavigationQueryFilter;
+class UObject;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UDBDAIUtilities : public UBlueprintFunctionLibrary {

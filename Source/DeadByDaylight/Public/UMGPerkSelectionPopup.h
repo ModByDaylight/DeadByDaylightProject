@@ -3,12 +3,12 @@
 #include "UMGGenericPopup.h"
 #include "UMGPerkSelectionPopup.generated.h"
 
-class UCanvasPanel;
-class UPerkSelectionSlotWidget;
 class UUMGCharacterPrestigeIcon;
+class UPerkSelectionSlotWidget;
 class UImage;
-class URichTextBlock;
+class UCanvasPanel;
 class UVerticalBox;
+class URichTextBlock;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGPerkSelectionPopup : public UUMGGenericPopup {

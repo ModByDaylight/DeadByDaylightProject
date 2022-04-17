@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "MapSoundsToAvoid.h"
 #include "MapMeshToAkAudioEvent.h"
 #include "Engine/EngineTypes.h"
+#include "MapSoundsToAvoid.h"
 #include "DBD_SoundClipUtil.generated.h"
 
-class AActor;
-class UStaticMeshComponent;
 class UAkAudioEvent;
 class UPrimitiveComponent;
+class UStaticMeshComponent;
+class AActor;
 
 UCLASS(Abstract, Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBD_SoundClipUtil : public UActorComponent {

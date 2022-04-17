@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "CharmSlot.h"
+#include "UObject/NoExportTypes.h"
 #include "CharmSpawnerComponent.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

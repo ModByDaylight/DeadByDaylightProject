@@ -3,8 +3,8 @@
 #include "UObject/Object.h"
 #include "Engine/EngineTypes.h"
 #include "Engine/EngineTypes.h"
-#include "Engine/EngineTypes.h"
 #include "AkGeometrySurfacePropertiesToMap.h"
+#include "Engine/EngineTypes.h"
 #include "AkSettings.generated.h"
 
 class UPhysicalMaterial;

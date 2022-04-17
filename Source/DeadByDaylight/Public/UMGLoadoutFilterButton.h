@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "OnLoadoutFilterClickedEvent.h"
+#include "OnLoadoutFilterClickedEventDelegate.h"
 #include "UMGLoadoutFilterButton.generated.h"
 
-class UTexture2D;
 class UButton;
+class UTexture2D;
 
 UCLASS(EditInlineNew)
 class DEADBYDAYLIGHT_API UUMGLoadoutFilterButton : public UMobileBaseUserWidget {

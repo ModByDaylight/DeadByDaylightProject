@@ -3,9 +3,9 @@
 #include "DBDBaseGameMode.h"
 #include "DBDBaseMatchGameMode.generated.h"
 
-class ANetworkFenceActor;
 class UEndGameComponent;
 class UEscapeRequirementTracker;
+class ANetworkFenceActor;
 
 UCLASS(NonTransient)
 class DEADBYDAYLIGHT_API ADBDBaseMatchGameMode : public ADBDBaseGameMode {

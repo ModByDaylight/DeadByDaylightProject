@@ -5,9 +5,9 @@
 #include "ConditionFactory.generated.h"
 
 class UIsTimerDoneCondition;
-class UTimerObject;
 class UOrModifierCondition;
 class UEventDrivenModifierCondition;
+class UTimerObject;
 class UConditionReceiver;
 class IConditionReceiver;
 class UNotModifierCondition;

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "PerPlatformProperties.h"
+#include "Components/ActorComponent.h"
 #include "DBDPlayerPositionOffsetComponent.generated.h"
 
 UCLASS(meta=(BlueprintSpawnableComponent))

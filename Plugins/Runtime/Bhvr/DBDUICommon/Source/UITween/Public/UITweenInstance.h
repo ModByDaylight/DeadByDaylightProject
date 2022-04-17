@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "TweenCompletedDelegate.h"
 #include "UObject/Object.h"
-#include "TweenCompleted.h"
-#include "TweenUpdated.h"
+#include "TweenUpdatedDelegate.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "EEasingType.h"
 #include "UITweenInstance.generated.h"
 
 class UUITweenMaterialScalarProperties;
-class UMaterialInstanceDynamic;
 class UUITweenMaterialVectorProperties;
+class UMaterialInstanceDynamic;
 class UUITweenInstance;
 class UWidget;
 

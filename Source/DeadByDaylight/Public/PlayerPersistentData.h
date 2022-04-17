@@ -2,11 +2,11 @@
 #include "CoreMinimal.h"
 #include "EPlayerRole.h"
 #include "PlayerLoadoutData.h"
-#include "UObject/NoExportTypes.h"
+#include "EProviderFlag.h"
 #include "DailyRitualInstance.h"
 #include "PlayerSavedProfileData.h"
 #include "EPlatformFlag.h"
-#include "EProviderFlag.h"
+#include "UObject/NoExportTypes.h"
 #include "PlayerPersistentData.generated.h"
 
 USTRUCT(BlueprintType)

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
-#include "EScaleType.h"
 #include "EDPIScaleCurveRatio.h"
+#include "EScaleType.h"
 #include "UIScaleManager.generated.h"
 
 class UCurveFloat;

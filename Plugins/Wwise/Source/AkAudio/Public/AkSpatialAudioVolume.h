@@ -3,9 +3,9 @@
 #include "GameFramework/Volume.h"
 #include "AkSpatialAudioVolume.generated.h"
 
+class UAkRoomComponent;
 class UAkSurfaceReflectorSetComponent;
 class UAkLateReverbComponent;
-class UAkRoomComponent;
 
 UCLASS()
 class AKAUDIO_API AAkSpatialAudioVolume : public AVolume {

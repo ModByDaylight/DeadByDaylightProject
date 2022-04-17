@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EK26AmmoCooldownReason.h"
+#include "OnCurrentAmmoStateChangedDelegate.h"
 #include "Components/ActorComponent.h"
-#include "OnMaxAmmoSetEvent.h"
-#include "OnCurrentAmmoStateChanged.h"
-#include "TagStateBool.h"
 #include "TunableStat.h"
+#include "TagStateBool.h"
+#include "EK26AmmoCooldownReason.h"
+#include "OnMaxAmmoSetEventDelegate.h"
 #include "DBDTunableRowHandle.h"
 #include "EK26AmmoState.h"
 #include "K26AmmoHandlerComponent.generated.h"
@@ -14,14 +14,14 @@
 class AActor;
 class UK26PathHandlerComponent;
 class UK26PowerStatusHandlerComponent;
-class UAuthoritativeActorPoolComponent;
 class ASlasherPlayer;
+class UAuthoritativeActorPoolComponent;
 
 UCLASS(Blueprintable, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UK26AmmoHandlerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FOnMaxAmmoSetDelegate, const int32, maxAmmo);
+    DECLARE_DYNAMIC_DELEGATE_OneParam(FOnMaxAmmoSetDelegate, const int32, maxAmmo);
     
     UPROPERTY(BlueprintAssignable)
     FOnCurrentAmmoStateChanged OnCurrentAmmoStateChanged;

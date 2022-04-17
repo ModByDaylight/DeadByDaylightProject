@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EAttackType.h"
 #include "Components/ActorComponent.h"
+#include "EAttackType.h"
 #include "KillerAudioHandlerComponent.generated.h"
 
-class ACamperPlayer;
 class ADBDPlayer;
+class ACamperPlayer;
 
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UKillerAudioHandlerComponent : public UActorComponent {

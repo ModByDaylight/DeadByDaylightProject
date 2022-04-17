@@ -3,10 +3,10 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGPromoPackContentWidget.generated.h"
 
-class UScrollBox;
 class UHorizontalBox;
-class UVerticalBox;
 class UPromoPackContentDataAsset;
+class UVerticalBox;
+class UScrollBox;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGPromoPackContentWidget : public UMobileBaseUserWidget {

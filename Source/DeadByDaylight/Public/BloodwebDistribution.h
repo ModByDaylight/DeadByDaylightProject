@@ -7,7 +7,7 @@ class UDBDDesignTunables;
 class UBloodwebTunables;
 
 UCLASS()
-class UBloodwebDistribution : public UObject {
+class DEADBYDAYLIGHT_API UBloodwebDistribution : public UObject {
     GENERATED_BODY()
 public:
 private:

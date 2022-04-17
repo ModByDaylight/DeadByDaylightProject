@@ -1,34 +1,34 @@
 #include "DBDUtilities.h"
 
-class AProceduralLevelBuilder;
-class UMaterialInterface;
-class UBoxComponent;
-class USkeletalMeshComponent;
+class UAnimMontage;
 class USphereComponent;
-class AActor;
-class ADBDPlayerControllerBase;
-class ADBDPlayerState;
 class UPrimitiveComponent;
-class UAnimInstance;
+class AActor;
+class UAnimSequence;
+class ADBDPlayerState;
 class UObject;
 class UMeshComponent;
-class ADBDPlayerCameraManager;
+class ADBDPlayerControllerBase;
+class UAnimInstance;
 class UTileSpawnPoint;
 class AGenerator;
 class ASlasherPlayer;
-class UActorComponent;
-class UWorld;
-class UAnimMontage;
-class ADBDGameMode;
+class UBoxComponent;
 class ADBDBasePlayer;
+class USkeletalMeshComponent;
 class ACamperPlayer;
-class UActorSpawner;
+class UWorld;
+class ADBDGameState;
+class UActorComponent;
 class ADBDPlayer;
 class UMaterialHelper;
-class ADBDGameState;
+class UMaterialInterface;
+class ADBDPlayerCameraManager;
+class UActorSpawner;
+class ADBDGameMode;
 class UDBDGameInstance;
 class ADBDAIPlayerController;
-class UAnimSequence;
+class AProceduralLevelBuilder;
 class UAkAudioBank;
 
 bool UDBDUtilities::WithinRangeExclusive(float min, float max, float value) {
@@ -317,7 +317,7 @@ AProceduralLevelBuilder* UDBDUtilities::GetBuilder(const UObject* WorldContextOb
     return NULL;
 }
 
-float UDBDUtilities::GetAnimSequenceLength(UAnimSequence* sequence) {
+float UDBDUtilities::GetAnimSequenceLength(const UAnimSequence* sequence) {
     return 0.0f;
 }
 

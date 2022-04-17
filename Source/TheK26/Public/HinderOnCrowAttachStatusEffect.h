@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BaseLingeringStatusEffect.h"
-#include "TunableStat.h"
 #include "GameplayTagContainer.h"
+#include "TunableStat.h"
 #include "HinderOnCrowAttachStatusEffect.generated.h"
 
 class ASlasherPlayer;

@@ -1,66 +1,66 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnKillerIntroCompletePercentChanged.h"
-#include "OfferingData.h"
-#include "LevelReadyToPlayEvent.h"
+#include "LevelReadyToPlayEventDelegate.h"
 #include "GameFramework/GameState.h"
 #include "GameflowEventsNotifier.h"
-#include "EscapeDoorActivatedEvent.h"
-#include "IntroCompletedEvent.h"
-#include "LightingGeneratedEvent.h"
-#include "AllPlayerLoadedEvent.h"
-#include "ActivatedGeneratorCountChangedDynamicEvent.h"
-#include "GamePresetData.h"
-#include "SlasherSetEvent.h"
+#include "EscapeDoorActivatedEventDelegate.h"
+#include "OnKillerIntroCompletePercentChangedDelegate.h"
+#include "IntroCompletedEventDelegate.h"
+#include "LightingGeneratedEventDelegate.h"
+#include "EEndGameReason.h"
+#include "AllPlayerLoadedEventDelegate.h"
+#include "ActivatedGeneratorCountChangedDynamicEventDelegate.h"
+#include "SlasherSetEventDelegate.h"
+#include "ObsessionChangedDynamicDelegateDelegate.h"
 #include "BuiltLevelData.h"
-#include "ObsessionChangedDynamicDelegate.h"
+#include "OfferingData.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "Dependency.h"
 #include "SelectedOffering.h"
 #include "UObject/NoExportTypes.h"
-#include "EEndGameReason.h"
-#include "OnSlasherSetDelegate.h"
+#include "GamePresetData.h"
+#include "UObject/NoExportTypes.h"
+#include "OnSlasherSetDelegateDelegate.h"
+#include "Dependency.h"
 #include "DBDGameState.generated.h"
 
-class UServerTimeProviderComponent;
-class APallet;
-class AMeatHook;
+class ADBDPlayerState_Menu;
+class ABaseTrap;
+class UCollectableCollection;
+class UCharacterCollection;
 class ASlasherPlayer;
-class AEscapeDoor;
+class AWindow;
+class AHatch;
+class ATotem;
 class USpecialEventGameplaySpawnerComponent;
-class ACamperPlayer;
+class UActorPairQueryEvaluatorComponent;
+class UScourgeHookManagerComponent;
 class URenderingFeaturesSequencer;
 class AClipManager;
-class ALocker;
+class AMeatHook;
 class ASearchable;
-class ABaseTrap;
 class AGenerator;
-class AHatch;
-class AReverseBearTrapRemover;
-class AWindow;
-class ADBDPlayerState;
-class ABreakableBase;
-class UCharacterCollection;
-class ATotem;
-class AInteractable;
-class UActorPairQueryEvaluatorComponent;
-class APawn;
 class UEndGameStateComponent;
-class UScourgeHookManagerComponent;
-class UCollectableCollection;
-class UInGameAssetPreloaderComponent;
+class AEscapeDoor;
+class AReverseBearTrapRemover;
+class APallet;
+class ALocker;
+class ABreakableBase;
 class UAkAudioBank;
-class ADBDPlayerState_Menu;
+class ACamperPlayer;
+class AInteractable;
+class UServerTimeProviderComponent;
+class UInGameAssetPreloaderComponent;
+class ADBDPlayerState;
 class ADBDPlayer;
+class APawn;
 
 UCLASS()
 class DEADBYDAYLIGHT_API ADBDGameState : public AGameState, public IGameflowEventsNotifier {
     GENERATED_BODY()
 public:
-    UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSlasherSetMultiDelegate, ASlasherPlayer*, SlasherPlayer);
-    UDELEGATE() DECLARE_DYNAMIC_DELEGATE(FOnLevelReadyToPlayDelegate);
-    UDELEGATE() DECLARE_DYNAMIC_DELEGATE(FOnIntroCompleteDelegate);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSlasherSetMultiDelegate, ASlasherPlayer*, SlasherPlayer);
+    DECLARE_DYNAMIC_DELEGATE(FOnLevelReadyToPlayDelegate);
+    DECLARE_DYNAMIC_DELEGATE(FOnIntroCompleteDelegate);
     
     UPROPERTY(BlueprintAssignable, Transient)
     FEscapeDoorActivatedEvent OnEscapeDoorActivated;

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "OnChargingStopped.h"
 #include "ChargeableInteractionDefinition.h"
-#include "OnChargingStarted.h"
-#include "OnProjectileSummoned.h"
+#include "OnChargingStartedDelegate.h"
+#include "OnChargingStoppedDelegate.h"
+#include "OnProjectileSummonedDelegate.h"
 #include "DBDTunableRowHandle.h"
 #include "UObject/NoExportTypes.h"
 #include "K26SpawnCrowProjectileChargeableInteractionDefinition.generated.h"

@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PerPlatformProperties.h"
 #include "GeneratorDrivenActor.h"
 #include "UObject/NoExportTypes.h"
 #include "FlickeringLightType.h"
 #include "Components/SceneComponent.h"
-#include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BHVRPerDetailModeBool -FallbackName=BHVRPerDetailModeBool
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BHVRPerDetailModeFloat -FallbackName=BHVRPerDetailModeFloat
+#include "PerPlatformProperties.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BHVRPerDetailModeBool -FallbackName=BHVRPerDetailModeBool
+#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "FlickeringLight.generated.h"
 
-class URectLightComponent;
 class ULightIntensityTimelineComponent;
 class UPointLightComponent;
+class URectLightComponent;
 class USpotLightComponent;
 class ULocalLightComponent;
 
@@ -31,17 +31,17 @@ private:
     UPROPERTY()
     FPerPlatformBool _castShadow;
     
-    UPROPERTY(EditAnywhere)
-    FBHVRPerDetailModeBool _isCastingShadow;
+    //UPROPERTY(EditAnywhere)
+    //FBHVRPerDetailModeBool _isCastingShadow;
     
-    UPROPERTY(EditAnywhere)
-    FBHVRPerDetailModeFloat _maxDrawDistance;
+    //UPROPERTY(EditAnywhere)
+    //FBHVRPerDetailModeFloat _maxDrawDistance;
     
-    UPROPERTY(EditAnywhere)
-    FBHVRPerDetailModeFloat _maxDistanceFadeRange;
+    //UPROPERTY(EditAnywhere)
+    //FBHVRPerDetailModeFloat _maxDistanceFadeRange;
     
-    UPROPERTY(EditAnywhere)
-    FBHVRPerDetailModeBool _castCinematicShadowsOnly;
+    //UPROPERTY(EditAnywhere)
+    //FBHVRPerDetailModeBool _castCinematicShadowsOnly;
     
     UPROPERTY(BlueprintReadOnly, EditAnywhere, meta=(AllowPrivateAccess=true))
     float _innerConneAngle;
@@ -70,8 +70,8 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float _minimumTimelimeSpeed;
     
-    UPROPERTY(EditAnywhere)
-    FBHVRPerDetailModeBool _secondaryLightVisibility;
+    //UPROPERTY(EditAnywhere)
+    //FBHVRPerDetailModeBool _secondaryLightVisibility;
     
     UPROPERTY(BlueprintReadOnly, EditAnywhere, meta=(AllowPrivateAccess=true))
     float _secondaryLightIntensity;
@@ -90,6 +90,9 @@ private:
     
     UPROPERTY(BlueprintReadOnly, EditAnywhere, meta=(AllowPrivateAccess=true))
     float _secondaryLightSpecularScale;
+    
+    UPROPERTY(EditAnywhere)
+    uint8 _isAlwaysCapturedAsON: 1;
     
     UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     ULightIntensityTimelineComponent* _lightIntensityTimeline;
@@ -119,6 +122,12 @@ protected:
     void Init();
     
 public:
+    UFUNCTION(BlueprintCallable)
+    bool GetSecondaryLightVisibilty();
+    
+    UFUNCTION(BlueprintCallable)
+    ULocalLightComponent* GetSecondaryLightComponent();
+    
     UFUNCTION(BlueprintCallable)
     ULocalLightComponent* GetActiveLightComponent();
     

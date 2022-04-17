@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DBDTableRowBase.h"
-#include "EAttackEventType.h"
 #include "GameplayTagContainer.h"
+#include "EAttackEventType.h"
 #include "AttackEventTypeDetails.generated.h"
 
 USTRUCT(BlueprintType)

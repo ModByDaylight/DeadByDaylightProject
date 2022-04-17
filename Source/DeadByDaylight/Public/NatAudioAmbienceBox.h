@@ -4,8 +4,8 @@
 #include "Engine/EngineTypes.h"
 #include "NatAudioAmbienceBox.generated.h"
 
-class UPrimitiveComponent;
 class UAkAudioEvent;
+class UPrimitiveComponent;
 class AActor;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))

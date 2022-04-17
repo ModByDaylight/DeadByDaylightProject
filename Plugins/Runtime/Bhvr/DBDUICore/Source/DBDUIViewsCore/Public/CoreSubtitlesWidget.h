@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CoreBaseUserWidget.h"
 #include "SubtitlesViewInterface.h"
+#include "CoreBaseUserWidget.h"
 #include "SubtitlesEntry.h"
 #include "Engine/EngineTypes.h"
 #include "ESubtitlesPosition.h"

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "CustomizedAudioChangedDelegate.h"
+#include "CustomizedAudioChangedDelegateDelegate.h"
 #include "EAudioCustomizationCategory.h"
 #include "CustomizedAudioComponent.generated.h"
 

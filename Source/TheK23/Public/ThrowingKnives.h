@@ -4,13 +4,13 @@
 #include "Collectable.h"
 #include "ThrowingKnives.generated.h"
 
-class UKnivesProvider;
 class UKnivesLauncher;
 class UFlurryComboScoreComponent;
-class ULacerationComponent;
+class UPowerChargeComponent;
+class UKnivesProvider;
 class UTricksterSuperModeComponent;
 class UK23PowerProgressPresentationComponent;
-class UPowerChargeComponent;
+class ULacerationComponent;
 class UReloadKnives;
 class AActor;
 class ASlasherPlayer;

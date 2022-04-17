@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "AkWaapiFieldNames.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "AKWaapiJsonObject.h"
-#include "AkWaapiFieldNames.h"
 #include "AkWaapiJsonManager.generated.h"
 
 UCLASS(BlueprintType)

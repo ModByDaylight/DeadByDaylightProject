@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AICharacterBehaviourData.h"
 #include "GameplayTagContainer.h"
+#include "AICharacterBehaviourData.h"
 #include "ECharacterMovementTypes.h"
 #include "AICharacterBehaviourInteractWithActorData.generated.h"
 

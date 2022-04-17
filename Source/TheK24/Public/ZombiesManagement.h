@@ -4,10 +4,10 @@
 #include "DBDTunableRowHandle.h"
 #include "ZombiesManagement.generated.h"
 
+class AZombieCharacter;
+class UZombiesPatrolAreaManager;
 class UAuthoritativeActorPoolComponent;
 class AZombieEscapeDoorPointsActor;
-class UZombiesPatrolAreaManager;
-class AZombieCharacter;
 
 UCLASS()
 class AZombiesManagement : public AActor {

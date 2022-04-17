@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DBDGameMode.h"
-#include "SlasherLoadout.h"
 #include "CamperLoadout.h"
+#include "SlasherLoadout.h"
 #include "DBDDebugGameMode.generated.h"
 
 class ADBDPlayerController;

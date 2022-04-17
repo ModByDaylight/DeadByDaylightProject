@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/SceneComponent.h"
 #include "ActorVariationElements.h"
+#include "Components/SceneComponent.h"
 #include "ActorVariationSpawner.generated.h"
 
 class AActor;

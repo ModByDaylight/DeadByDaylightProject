@@ -4,8 +4,8 @@
 
 class UProjectileProvider;
 class IProjectileProvider;
-class APawn;
 class ABaseProjectile;
+class APawn;
 
 
 void UBaseProjectileLauncher::SetProjectileProvider(TScriptInterface<IProjectileProvider> projectileProvider) {

@@ -1,9 +1,9 @@
 #include "AtlantaTutorialLevel.h"
 
 class AActor;
+class ADBDAIPlayerController;
 class ADBDPlayer;
 class APlayerController;
-class ADBDAIPlayerController;
 
 void AAtlantaTutorialLevel::StartCameraFadeIn() {
 }

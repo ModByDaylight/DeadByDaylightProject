@@ -4,11 +4,11 @@
 #include "GameplayTagContainer.h"
 #include "Firecracker.generated.h"
 
-class ACollectable;
-class AActor;
-class USphereComponent;
-class UGameplayModifierContainer;
 class ADBDPlayer;
+class USphereComponent;
+class ACollectable;
+class UGameplayModifierContainer;
+class AActor;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AFirecracker : public AInteractable {

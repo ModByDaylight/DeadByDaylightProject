@@ -4,8 +4,8 @@
 #include "NonTunableStat.h"
 #include "InteractionAudioComponent.generated.h"
 
-class UAkComponent;
 class UAkAudioEvent;
+class UAkComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DBDAUDIO_API UInteractionAudioComponent : public UActorComponent {

@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
-#include "AkGeometrySurfaceOverride.h"
 #include "AkMeshType.h"
+#include "AkGeometrySurfaceOverride.h"
 #include "AkGeometryData.h"
 #include "AkGeometryComponent.generated.h"
 
-class UMaterialInterface;
 class AActor;
+class UMaterialInterface;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class AKAUDIO_API UAkGeometryComponent : public USceneComponent {

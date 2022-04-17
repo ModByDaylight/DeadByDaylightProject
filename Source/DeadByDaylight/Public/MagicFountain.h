@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Interactable.h"
 #include "AIInteractableTargetInterface.h"
+#include "Interactable.h"
 #include "UObject/NoExportTypes.h"
 #include "MagicFountain.generated.h"
 

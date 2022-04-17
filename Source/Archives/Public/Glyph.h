@@ -1,22 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DBDTunableRowHandle.h"
-#include "SpecialBehaviourInteractable.h"
 #include "AI/Navigation/NavAgentInterface.h"
-#include "EAllowedPlayerType.h"
-#include "UObject/NoExportTypes.h"
 #include "GameplayTagContainer.h"
+#include "SpecialBehaviourInteractable.h"
+#include "EAllowedPlayerType.h"
+#include "DBDTunableRowHandle.h"
+#include "UObject/NoExportTypes.h"
 #include "Glyph.generated.h"
 
-class UDBDOutlineComponent;
-class UInteractor;
+class UNearTrackedActorComponent;
 class ADBDPlayer;
-class UPrimitiveComponent;
+class UInteractor;
+class ADBDPlayerState;
 class UChargeableComponent;
-class AActor;
 class UGlyphInteraction;
 class UStaticMeshComponent;
-class UNearTrackedActorComponent;
+class UPrimitiveComponent;
+class UDBDOutlineComponent;
+class AActor;
 
 UCLASS()
 class AGlyph : public ASpecialBehaviourInteractable, public INavAgentInterface {
@@ -37,6 +38,15 @@ protected:
     
     UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
     TWeakObjectPtr<ADBDPlayer> lastPlayerToStartInteraction;
+    
+    UPROPERTY(Replicated, Transient)
+    TArray<TWeakObjectPtr<ADBDPlayerState>> _isGlyphActivatedForPlayer;
+    
+    UPROPERTY(EditDefaultsOnly)
+    bool _grantChallengeProgress;
+    
+    UPROPERTY(EditDefaultsOnly)
+    bool _isAlwaysActivated;
     
 private:
     UPROPERTY(BlueprintReadOnly, Export, NoClear, VisibleAnywhere, meta=(AllowPrivateAccess=true))

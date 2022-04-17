@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
-#include "EInventoryType.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "EInventoryType.h"
 #include "CharacterInventoryComponent.generated.h"
 
-class UItemAddon;
 class ACollectable;
+class UItemAddon;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCharacterInventoryComponent : public UActorComponent {

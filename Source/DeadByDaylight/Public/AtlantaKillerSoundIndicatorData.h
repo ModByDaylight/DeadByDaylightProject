@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AtlantaKillerSoundConditionData.h"
 #include "DBDTableRowBase.h"
+#include "AtlantaKillerSoundConditionData.h"
 #include "AtlantaKillerSoundIndicatorData.generated.h"
 
 USTRUCT()

@@ -1,6 +1,6 @@
 #include "SplineAudioEmitterActor.h"
-#include "Components/SplineComponent.h"
 #include "Components/SceneComponent.h"
+#include "Components/SplineComponent.h"
 #include "AkComponent.h"
 
 ASplineAudioEmitterActor::ASplineAudioEmitterActor() {

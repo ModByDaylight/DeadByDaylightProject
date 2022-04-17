@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "LoudNoiseAddedEvent.h"
-#include "Components/SceneComponent.h"
 #include "LoudNoiseIndicatorData.h"
+#include "Components/SceneComponent.h"
+#include "LoudNoiseAddedEventDelegate.h"
 #include "UObject/NoExportTypes.h"
 #include "LoudNoiseHUDIndicator.generated.h"
 

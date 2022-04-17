@@ -3,12 +3,12 @@
 #include "MobileBaseUserWidget.h"
 #include "UMGStoreEventItemsPackButton.generated.h"
 
-class UUMGAtlStorePriceWidget;
-class UImage;
-class UCanvasPanel;
 class UUniformGridPanel;
-class UTextBlock;
 class UUMGBaseButtonWidget;
+class UImage;
+class UTextBlock;
+class UUMGAtlStorePriceWidget;
+class UCanvasPanel;
 class UUMGAtlEndDateTimerWidget;
 class UUMGAtlEventItemWidget;
 

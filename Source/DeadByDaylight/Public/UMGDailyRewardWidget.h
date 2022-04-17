@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EUMGDailyRewardWidgetState.h"
 #include "UMGBaseButtonWidget.h"
-#include "OnIntegerIntegerGenericEvent.h"
 #include "UObject/NoExportTypes.h"
+#include "EUMGDailyRewardWidgetState.h"
+#include "OnIntegerIntegerGenericEventDelegate.h"
 #include "UMGDailyRewardWidget.generated.h"
 
-class UWidgetSwitcher;
-class UCanvasPanel;
-class UTextBlock;
 class UImage;
+class UWidgetSwitcher;
+class UTextBlock;
+class UCanvasPanel;
 
 UCLASS(Abstract, EditInlineNew)
 class UUMGDailyRewardWidget : public UUMGBaseButtonWidget {

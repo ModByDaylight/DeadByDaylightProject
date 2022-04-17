@@ -1,7 +1,7 @@
 #include "DBD_SoundClipUtil.h"
 
-class UPrimitiveComponent;
 class UStaticMeshComponent;
+class UPrimitiveComponent;
 class AActor;
 class UAkAudioEvent;
 

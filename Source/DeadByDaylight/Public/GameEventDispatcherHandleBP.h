@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameEventDelegate.h"
 #include "GameplayTagContainer.h"
+#include "GameEventDelegateDelegate.h"
 #include "GameEventDispatcherHandleBP.generated.h"
 
 USTRUCT(BlueprintType)

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "EInboxMessageUIType.h"
-#include "ClaimableInboxMessage.h"
 #include "EInboxMessageUIState.h"
+#include "ClaimableInboxMessage.h"
 #include "InboxMessageUIData.generated.h"
 
 USTRUCT(BlueprintType)

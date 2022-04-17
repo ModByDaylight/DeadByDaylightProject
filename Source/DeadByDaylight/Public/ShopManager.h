@@ -3,8 +3,8 @@
 #include "UObject/Object.h"
 #include "ShopManager.generated.h"
 
-class UBannerDataProcessor;
 class UDBDGameInstance;
+class UBannerDataProcessor;
 class URecommendationsGenerator;
 
 UCLASS()

@@ -4,12 +4,12 @@
 #include "AssetLibraryLoader.h"
 #include "AssetLibraryManager.generated.h"
 
-class UMenuAssetLibrary;
-class UTutorialAssetLibrary;
-class UCharacterItemsAssetLibrary;
-class UGameAssetLibrary;
-class UIniAssetLibrary;
 class UShopManager;
+class UGameAssetLibrary;
+class UCharacterItemsAssetLibrary;
+class UIniAssetLibrary;
+class UTutorialAssetLibrary;
+class UMenuAssetLibrary;
 
 UCLASS(Config=Game)
 class UAssetLibraryManager : public UObject {

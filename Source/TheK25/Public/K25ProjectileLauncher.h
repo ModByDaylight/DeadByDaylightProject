@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BaseProjectileLauncher.h"
 #include "DBDTunableRowHandle.h"
+#include "BaseProjectileLauncher.h"
 #include "K25ProjectileLauncher.generated.h"
 
 class AK25ControlledProjectile;

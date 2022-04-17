@@ -5,12 +5,12 @@
 #include "EActionOnFriendType.h"
 #include "UMGBaseFriendListElement.generated.h"
 
-class UNamedSlot;
-class UImage;
-class UDataTable;
-class UCanvasPanel;
-class UTextBlock;
 class UUMGBaseButtonWidget;
+class UImage;
+class UTextBlock;
+class UCanvasPanel;
+class UDataTable;
+class UNamedSlot;
 
 UCLASS(Abstract, EditInlineNew)
 class DBDUIVIEWSMOBILE_API UUMGBaseFriendListElement : public UMobileBaseUserWidget {

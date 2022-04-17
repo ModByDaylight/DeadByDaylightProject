@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CoreBaseUserWidget.h"
-#include "OnKeyListenerInputPromptTriggeredDelegate.h"
+#include "OnKeyListenerInputPromptTriggeredDelegateDelegate.h"
 #include "EUIActionType.h"
 #include "CoreKeyListenerInputPromptWidget.generated.h"
 

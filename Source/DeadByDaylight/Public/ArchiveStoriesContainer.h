@@ -4,8 +4,8 @@
 #include "ArchiveStoriesContainer.generated.h"
 
 class URewardTrackContainer;
-class UWalletHandler;
 class UArchiveVignettesContainer;
+class UWalletHandler;
 
 UCLASS()
 class DEADBYDAYLIGHT_API UArchiveStoriesContainer : public UObject {

@@ -6,14 +6,15 @@
 #include "DBDTunableRowHandle.h"
 #include "K25SurvivorChainAttachmentComponent.generated.h"
 
-class UChargeableComponent;
 class AK25SurvivorChainAttachmentAnchor;
 class UK25SurvivorChainRotationStrategy;
 class UInteractionDefinition;
 class AK25Chain;
+class UChargeableComponent;
 class UK25ChainAttachmentReplicationComponent;
+class ASlasherPlayer;
 
-UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class THEK25_API UK25SurvivorChainAttachmentComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -57,9 +58,16 @@ private:
     UFUNCTION()
     void OnRep_RemoveChainChargeableComponent();
     
+    UFUNCTION(NetMulticast, Unreliable)
+    void Multicast_TriggerHitSurvivorInExitAreaSFX(ASlasherPlayer* killer);
+    
 public:
     UFUNCTION(BlueprintPure)
     AK25Chain* GetFirstChainToRelease() const;
+    
+protected:
+    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    void Cosmetic_TriggerHitSurvivorInExitAreaSFX(ASlasherPlayer* killer);
     
 };
 

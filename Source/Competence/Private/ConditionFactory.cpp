@@ -2,9 +2,9 @@
 #include "Templates/SubclassOf.h"
 
 class UEventDrivenModifierCondition;
+class UTimerObject;
 class UConditionReceiver;
 class IConditionReceiver;
-class UTimerObject;
 class UOrModifierCondition;
 class UAndModifierCondition;
 class UNotModifierCondition;

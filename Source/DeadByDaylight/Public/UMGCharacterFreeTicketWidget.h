@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MobileBaseUserWidget.h"
-#include "OnCharacterUseFreeTicketButtonClickedEvent.h"
+#include "OnCharacterUseFreeTicketButtonClickedEventDelegate.h"
 #include "UMGCharacterFreeTicketWidget.generated.h"
 
 class UUMGCharacterFreeTicketItemButton;
-class UWidgetSwitcher;
 class UVerticalBox;
+class UWidgetSwitcher;
 
 UCLASS(EditInlineNew)
 class UUMGCharacterFreeTicketWidget : public UMobileBaseUserWidget {
